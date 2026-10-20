@@ -11,7 +11,7 @@ Klaus = Niklaus Quek, men's health physiotherapist, founder of TITAN.AI. Brands:
 - Before any QC or rebuild ask: "Is there an existing brief or final cut?" Prior footage = evidence of intent, not errors.
 - Every joke: confirm whose body/prop carries the gag, any pun's second meaning, what stays hidden until the reveal → encode as hard_rules in spec.json.
 - Never spend credits without: an approved `projects/<p>/spec.json` (`"approved": true`) + a cost quote (get_cost). The cost-gate hook enforces this.
-- Cheap first: std/draft/low quality → QC → only then pro/final.
+- Cheap first: drafts at the LOWEST quality/resolution the model offers → QC → Klaus approves the draft → only then re-render at HIGHEST quality, 1080p.
 - QC every output with `scripts/qc_frames.py` and LOOK at the contact sheet before calling anything done.
 - After delivery: ask verdict + biggest miss → `/learn` writes the rule to the ledger.
 - Singapore health clients: no testimonials, paid reviews, superlatives or free-consult/discount inducements in ads (localisation.md SG pack).

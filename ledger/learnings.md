@@ -1,4 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-20 - draft vs final quality (Klaus)
+- [quality] Drafts always render at the LOWEST quality/resolution the model offers (cheapest tier, e.g. 480p/std/draft). Only after Klaus approves the draft, re-render at the HIGHEST quality at 1080p. Never render a draft at 1080p, never skip the draft.
 ## 2026-10-20 - villains & conflict (Klaus)
 - [story] Compelling stories need villains: rich one-uppers, bullies, slut-shamers, degraders are in scope. Depict honestly, never glorify: camera stays with the target, cruelty gets cold sound (no hype), show the aftermath, consequence lands (downfall/karma/realistic cost/earned redemption), end on side-choosing. Sexual-themed shaming = adult characters only.
 ## 2026-10-20 - class & status (Klaus)
