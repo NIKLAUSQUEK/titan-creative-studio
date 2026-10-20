@@ -1,0 +1,89 @@
+{
+  "title": "Are you spotting? v2 - pun reveal (heal360)",
+  "brand": "heal360",
+  "aspect_ratio": "9:16",
+  "model": "kling_o3_image_reference",
+  "render_strategy": "single shots + ffmpeg stitch (multi-shot broken on this route); one framing reference still per framing",
+  "look": "dark commercial gym, warm amber caged tungsten bulbs, deep shadows, light haze, natural unretouched skin texture, 9:16 vertical",
+  "set_map": "Flat bench inside the power rack, barbell RACKED in the hooks above. A lies on his back on the bench, NOT lifting, hands resting on his stomach. B stands at the head end of the bench behind A's head, facing A's feet, scrolling his phone. B's shorts are NEVER visible before shot 4.",
+  "cast": {
+    "A": "lean athletic man early 30s, short curly dark hair, light stubble, fitted plain black t-shirt, black shorts",
+    "B": "enormous bodybuilder late 20s, dark brown skin, close-cropped black hair, black deep-cut stringer vest, heather-grey sweat shorts, black phone"
+  },
+  "continuity": "same two men, same wardrobe, same amber gym, no face morphing",
+  "hard_rules": [
+    "B's shorts out of frame in shots 1-3",
+    "A never touches the bar",
+    "A delivers the line deadpan, no laughing",
+    "Hook text lives in post-production only; generation prompts never contain it"
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "dur": 3,
+      "size": "CU",
+      "owner": "neutral",
+      "angle": "high angle looking down on A's face and chest as he lies on the bench, racked barbell crossing the top of frame",
+      "lens": "50mm",
+      "move": "static tripod",
+      "framing_ref": "still_A_cu",
+      "action": "A lies still on the bench with hands resting on his stomach, eyes drifting slowly upward toward B above him, face completely deadpan",
+      "dialogue": null,
+      "audio": "low gym hum, faint phone tap sounds from above"
+    },
+    {
+      "id": 2,
+      "dur": 3,
+      "size": "MCU",
+      "owner": "A-POV",
+      "angle": "low angle looking straight up at B, framed from mid-chest to the top of his head, ceiling bulbs behind him",
+      "lens": "24mm",
+      "move": "slight handheld drift",
+      "framing_ref": "still_B_lowangle",
+      "action": "B looms above, eyes locked on his phone screen, thumb scrolling, face lit by the screen glow, oblivious",
+      "dialogue": null,
+      "audio": "phone tap sounds, gym hum"
+    },
+    {
+      "id": 3,
+      "dur": 4,
+      "size": "CU",
+      "owner": "neutral",
+      "angle": "same high angle on A as shot 1",
+      "lens": "50mm",
+      "move": "slow push-in",
+      "framing_ref": "still_A_cu",
+      "action": "A keeps staring straight up at B, totally flat expression, one slow blink before he speaks",
+      "dialogue": {
+        "speaker": "A",
+        "tone": "flat, deadpan, unhurried",
+        "line": "Bro... are you spotting?"
+      },
+      "audio": "gym hum"
+    },
+    {
+      "id": 4,
+      "dur": 3,
+      "size": "MCU",
+      "owner": "neutral",
+      "angle": "eye level on B's waist and grey sweat shorts, phone hand at the top of frame",
+      "lens": "35mm",
+      "move": "slow tilt down",
+      "framing_ref": "still_B_reveal",
+      "action": "the camera settles on B's heather-grey sweat shorts showing several small dark damp patches; his thumb freezes on the phone screen",
+      "dialogue": null,
+      "audio": "gym hum cuts to silence"
+    }
+  ],
+  "post": {
+    "end_card_3s": "Nik Soul still + 'Leaking when you lift? Common. Not normal.' clinic white + soft teal",
+    "captions": "burned in post",
+    "onscreen_hook": {
+      "text": "BUFF BOY PISSES HIMSELF IN GYM 😂",
+      "timing": "0.0s to end of shot 3 (before reveal), removed on the cut to shot 4",
+      "style": "bold condensed sans, white fill + black stroke, all caps, max 2 lines",
+      "position": "upper-centre, below the top 14% UI band, clear of the right-edge button column",
+      "rule": "burned in post only - never in a generation prompt (moderation)"
+    }
+  }
+}

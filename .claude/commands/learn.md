@@ -1,0 +1,1 @@
+Turn Klaus's latest feedback into 1-3 dated, tagged standing rules and prepend them to ledger/learnings.md under "## <date> - <project>". Rules must be specific and testable ("hook text never covers faces; place above 74% captions"). Commit with message "ledger: <summary>". $ARGUMENTS

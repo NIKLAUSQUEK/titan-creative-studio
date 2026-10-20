@@ -1,0 +1,1 @@
+Use the director agent to write and validate projects/<active>/spec.json from the approved brief + Klaus's answers. Show the shot table, set map, hard_rules and a cost quote per call (Higgsfield get_cost: true). Ask Klaus to approve; only on his yes set "approved": true. $ARGUMENTS

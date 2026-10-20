@@ -1,0 +1,1 @@
+Report the style-library build: Supabase titan-os → style_batches (status, credits_spent/cap), last 15 rows of style_run_log, count of style_cards. Also vidIQ balance if the vidIQ MCP is connected. Flag blocks (missing VIDIQ_API_KEY, waiting for pilot approval). To approve the pilot when Klaus says so: update style_settings set value='true' where key='pilot_approved'.

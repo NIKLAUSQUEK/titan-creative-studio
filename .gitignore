@@ -1,0 +1,4 @@
+.studio/allow_once
+**/outputs/*.mp4
+**/qc_out/
+.env

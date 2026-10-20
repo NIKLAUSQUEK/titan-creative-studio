@@ -1,0 +1,11 @@
+# Physio Spot - brand look file (source of truth: references/physio-spot-ad-brief-v4.md)
+- What: Nik's men's health physiotherapy clinic brand: erectile dysfunction, premature ejaculation, pelvic pain, prostate conditions.
+- Ad formula: deadpan gym comedy -> humiliating reveal (crash zoom + impact + silence + laugh) -> hard cut to black -> calm premium clinic ending with Nik.
+- Ending look: navy scrubs (no logos), warm beige minimalist room, single bare Edison bulb, bulb-flicker in, slow push-in.
+- Type: Cormorant Garamond Italic (conditions, tagline), Playfair Display Italic ("Physio Spot"), panel #EFE3D3 @88%, text #4E3B2E / #6B5544. Never clinical red.
+- Captions: DejaVu Sans Bold 46 px, white, 4 px black border, centred at 74% height, on the spoken word, key word CAPS.
+- Nik: Soul "Nik" soul_id 1e8acf3a-cd75-43a0-ac2b-e97706906d2c (retrain planned with better photos -> references/soul-training.md).
+- Voices: friend = ElevenLabs "Benji" via voice_change (e6f9b893-51b1-51d3-afe9-9e0482cb7ac1); buff guy = Kling native deep voice. "Dylan" rejected.
+- Signature line: "Once you spot it, come to Physio Spot ... Don't wait till it's too late."
+- SECTION 7 OF THE BRIEF (Dramatisation system) IS A STANDING RULE FOR EVERY AD.
+- COMPLIANCE (Singapore health advertising): no testimonials/endorsements/patient photos reproduced in ads, no paid reviews, no superlatives (best/leading/No.1/most trusted), no free-consult or discount inducements, claims must be substantiable (HCS (Advertisement) Regulations 2021 Reg 14 + professional codes — confirm which apply with counsel). Dramatised skits must not pose as real patient testimony.

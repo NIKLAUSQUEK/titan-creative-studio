@@ -1,0 +1,1 @@
+Curated stim library. Only add files with a licence that allows commercial use (CC0 or a paid commercial SFX pack); log each in LICENSES.csv. Folders map to the stim map in .claude/skills/higgsfield-creative-director/references/voice-persona-audio.md. Missing stims are synthesised in the edit scripts (whoosh/boom/riser).

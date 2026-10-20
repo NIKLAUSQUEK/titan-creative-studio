@@ -1,0 +1,1 @@
+Cinematic ad / story flow. Set or create the active project, then run the story-director agent: Gate 1 brief intake now. Wait for Klaus at each gate (brief confirmed → pick 1-5 → approve script) before moving on. After Gate 3 approval hand off to /plan. $ARGUMENTS

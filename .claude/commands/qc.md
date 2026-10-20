@@ -1,0 +1,1 @@
+Run the qc-reviewer agent on the latest outputs of the active project (download, scripts/qc_frames.py, view sheet, score). Present PASS/FIX/REGEN with prompt deltas and ask Klaus for verdict + biggest miss. $ARGUMENTS

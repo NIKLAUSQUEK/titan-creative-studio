@@ -1,0 +1,27 @@
+{
+  "title": "Are you spotting? (rebuild)",
+  "brand": "personal-gym-skits",
+  "aspect_ratio": "9:16",
+  "model": "kling_o3_image_reference",
+  "look": "dark commercial gym, warm amber tungsten practicals, deep shadows, light haze, natural skin texture, 9:16 vertical",
+  "set_map": "Flat bench runs north-south. A lies supine, head at the north end directly under the barbell. B stands at the north end behind A's head, facing south toward A's feet. Rack uprights either side of A's head. Practical lights overhead.",
+  "cast": {
+    "A": "lean man early 30s, curly dark hair, light stubble, fitted black t-shirt, black shorts, white trainers",
+    "B": "very muscular man late 20s, dark skin, close-cropped hair, black stringer vest, grey sweat shorts, phone in both hands"
+  },
+  "continuity": "same two men, same wardrobe, same gym, same amber grade as shot 1, no face morphing, no outfit change",
+  "shots": [
+    {"id":1,"dur":2.5,"size":"WS","owner":"neutral","angle":"side-on from the east wall, eye level","lens":"28mm","move":"static tripod",
+     "action":"A presses a loaded barbell, it stalls halfway up, arms trembling; B stands behind A's head eyes locked on his phone screen, thumb scrolling",
+     "dialogue":null,"audio":"gym hum, plates clink, A strains"},
+    {"id":2,"dur":4.5,"size":"MCU","owner":"A-POV","angle":"looking straight up past the bar","lens":"24mm","move":"slight handheld drift",
+     "action":"from A's eyes: the shaking bar fills the lower frame, B looms above lit by his phone, thumb scrolling",
+     "dialogue":{"speaker":"A","tone":"strained, flat deadpan","line":"Bro... are you spotting?"},"audio":"phone tap sounds"},
+    {"id":3,"dur":3,"size":"CU","owner":"neutral","angle":"low angle on B from bench height","lens":"50mm","move":"slow push-in",
+     "action":"B glances down for a split second, then straight back to his phone, both hands still holding it",
+     "dialogue":{"speaker":"B","tone":"casual, distracted","line":"Yeah bro, mentally."},"audio":"gym hum"},
+    {"id":4,"dur":2,"size":"CU","owner":"neutral","angle":"top-down on A's face","lens":"35mm","move":"static",
+     "action":"A's face reddens, he exhales and closes his eyes in defeat as the bar sinks toward his chest",
+     "dialogue":null,"audio":"bar clanks onto the safeties"}
+  ]
+}

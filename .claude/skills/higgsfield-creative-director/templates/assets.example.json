@@ -1,0 +1,6 @@
+{
+  "@BRIDE_PREP":   {"role": "Bride before styling", "source": "GENERATED", "image_job_ids": [], "element_id": null, "approved": false, "used": ["0-14s", "styling montage"]},
+  "@BRIDE_FINISHED": {"role": "Same bride, completed look", "derived_from": "@BRIDE_PREP", "source": "GENERATED", "image_job_ids": [], "approved": false, "used": ["hero reveal", "CTA"]},
+  "@FLAWLESS_STYLIST": {"role": "The stylist", "source": "REAL", "image_job_ids": [], "approved": false, "used": ["consultation", "montage", "CTA"]},
+  "@FLAWLESS_BRIDAL_STUDIO": {"role": "Shared location", "source": "GENERATED", "image_job_ids": [], "approved": false, "used": ["every scene"]}
+}

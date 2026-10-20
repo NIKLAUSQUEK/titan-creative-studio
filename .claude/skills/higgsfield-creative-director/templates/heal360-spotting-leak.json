@@ -1,0 +1,80 @@
+{
+  "title": "Are you spotting? - heal360 pelvic floor leak hook",
+  "brand": "heal360",
+  "aspect_ratio": "9:16",
+  "model": "kling_o3_image_reference",
+  "look": "dark commercial gym, warm amber tungsten practicals, deep shadows, light haze, natural unretouched skin texture, 9:16 vertical, key action framed in the centre of frame",
+  "set_map": "Flat bench runs north-south. A lies supine, head at the north end directly under the barbell, hands gripping the bar. B stands at the north end behind A's head, facing south toward A's feet. Rack uprights either side of A's head. Overhead practical lights.",
+  "cast": {
+    "A": "original character, lean athletic man early 30s, short curly dark hair, light stubble, fitted plain black t-shirt, black training shorts, white trainers",
+    "B": "original character, enormous competitive bodybuilder late 20s, dark brown skin, close-cropped black hair, clean-shaven, black deep-cut bodybuilding stringer vest, heather-grey sweat shorts, white trainers, black phone in both hands"
+  },
+  "continuity": "same two men, same wardrobe, same gym, same amber grade as shot 1, positions match the set map, no face morphing, no outfit change",
+  "shots": [
+    {
+      "id": 1,
+      "dur": 2,
+      "size": "WS",
+      "owner": "neutral",
+      "angle": "side-on from the east wall at bench height",
+      "lens": "28mm",
+      "move": "static tripod",
+      "action": "A presses a heavily loaded barbell, it stalls halfway up and his arms tremble; B stands behind A's head with eyes locked on his phone screen, thumb scrolling",
+      "dialogue": null,
+      "audio": "gym hum, plates rattle, A strains"
+    },
+    {
+      "id": 2,
+      "dur": 4,
+      "size": "MCU",
+      "owner": "A-POV",
+      "angle": "looking straight up past the shaking bar",
+      "lens": "24mm",
+      "move": "slight handheld drift",
+      "action": "the trembling bar crosses the lower third of frame; B looms in the centre of frame above, face lit blue by his phone, thumb scrolling, eyes on the screen",
+      "dialogue": {
+        "speaker": "A",
+        "tone": "strained, flat deadpan",
+        "line": "Bro... are you spotting?"
+      },
+      "audio": "phone tap sounds, B keeps scrolling with eyes on the screen"
+    },
+    {
+      "id": 3,
+      "dur": 3,
+      "size": "CU",
+      "owner": "neutral",
+      "angle": "side-on on A's face at bench height",
+      "lens": "50mm",
+      "move": "slow push-in",
+      "action": "A sucks in a huge breath, cheeks puff, face turns red as he bears down hard and drives the bar to full lockout, then his whole body freezes and his eyes widen slowly toward the ceiling",
+      "dialogue": null,
+      "audio": "sharp inhale, bar clicks into lockout, then the gym hum drops away"
+    },
+    {
+      "id": 4,
+      "dur": 3,
+      "size": "MCU",
+      "owner": "neutral",
+      "angle": "low angle on B from bench height",
+      "lens": "35mm",
+      "move": "static tripod",
+      "action": "B slowly lowers his phone, his gaze travels down along A's body toward A's hips just below frame, eyebrows rise, flat deadpan stare",
+      "dialogue": null,
+      "audio": "near silence"
+    }
+  ],
+  "post": {
+    "end_card_3s": [
+      "Leaking when you lift?",
+      "Common. Not normal.",
+      "Your pelvic floor is trainable - heal360"
+    ],
+    "captions": "burned in post via video-montage workflow or CapCut; keep top 14% and bottom 20% clear"
+  },
+  "locked_assets": {
+    "A_sheet": "3d8fba9a-c37b-4ba2-ba37-ad5d8ab97c6d",
+    "B_sheet": "1e336ee0-7e06-4596-acc1-e9300c675d3e",
+    "set_plate": "74a7696c-88d6-4c04-9787-1191ab29cb3a"
+  }
+}

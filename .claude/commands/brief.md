@@ -1,0 +1,1 @@
+Start or resume a creative job. Argument: project name and/or the script. Set `.studio/active_project`, create `projects/<name>/` if new, save the script to BRIEF.md (never overwrite an existing BRIEF.md — append "## Request <date>"), then run the script-interrogator agent and present its questions. $ARGUMENTS

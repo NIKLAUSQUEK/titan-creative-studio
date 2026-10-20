@@ -1,0 +1,23 @@
+-- Supabase project: titan-os (qdikcsxinpyfnljszvay). Creates the style-library job tables + seeds.
+create table if not exists public.style_batches (batch int primary key, run_date date not null, label text not null, credit_cap int not null, status text not null default 'pending', credits_spent int not null default 0, started_at timestamptz, finished_at timestamptz);
+create table if not exists public.style_creators (id serial primary key, name text unique not null, category text not null, country text, batch int, long_form boolean not null default false, status text not null default 'pending', notes text);
+create table if not exists public.style_videos (id serial primary key, creator_id int references public.style_creators(id), url text unique not null, job_id text, status text not null default 'pending', analysis text, credits int not null default 0, created_at timestamptz default now());
+create table if not exists public.style_cards (creator_id int primary key references public.style_creators(id), card_md text, dna jsonb, updated_at timestamptz default now());
+create table if not exists public.style_run_log (id serial primary key, ts timestamptz default now(), batch int, level text, message text, credits int default 0);
+create table if not exists public.style_settings (key text primary key, value text);
+alter table public.style_batches enable row level security; alter table public.style_creators enable row level security;
+alter table public.style_videos enable row level security; alter table public.style_cards enable row level security;
+alter table public.style_run_log enable row level security; alter table public.style_settings enable row level security;
+insert into public.style_settings(key,value) values ('pilot_approved','false'),('buffer_credits','270'),('total_spend_cap','1730'),('videos_per_creator','4') on conflict (key) do nothing;
+insert into public.style_batches(batch,run_date,label,credit_cap) values
+ (1,'2026-10-11','Pilot: Jun Yuh, Munya, Night Owl',135),(2,'2026-10-13','Yapping anchors',365),(3,'2026-10-15','Streamers & clip edits',350),
+ (4,'2026-10-18','Skits + ads anchors',450),(5,'2026-10-20','Niche anchors (physio/fitness)',135),(6,'2026-10-22','Depth batch',255) on conflict (batch) do nothing;
+insert into public.style_creators(name,category,country,batch,long_form) values
+ ('Jun Yuh','Yapping','USA',1,false),('Munya Chawawa','Skits','UK',1,false),('Night Owl Cinematics','Ads','Singapore',1,false),
+ ('Chandler Lee','Yapping','USA',2,false),('Mia McGrath','Yapping','USA',2,false),('Alex Hormozi','Yapping','USA',2,false),('Mel Robbins','Yapping','USA',2,false),('Gary Vaynerchuk','Yapping','USA',2,false),('Steven Bartlett','Yapping','UK',2,false),('Jerome Polin','Yapping','Indonesia',2,false),('Lukeychan','Yapping','Singapore',2,false),
+ ('Kai Cenat','Streamers','USA',3,false),('IShowSpeed','Streamers','USA',3,false),('Adin Ross','Streamers','USA',3,false),('Jynxzi','Streamers','USA',3,false),('Duke Dennis','Streamers','USA',3,false),('Plaqueboymax','Streamers','USA',3,false),('deagzzzshorts (clip editor)','Streamers','Unknown',3,false),('Angry Ginge','Streamers','UK',3,false),
+ ('Adam Waheed','Skits','USA',4,false),('Druski','Skits','USA',4,false),('Brittany Broski','Skits','USA',4,false),('Liza Koshy','Skits','USA',4,false),('Mr Funny (Sabinus)','Skits','Nigeria',4,false),('Puspa Wafiy','Skits','Malaysia',4,false),('Duolingo','Ads','USA',4,false),('Liquid Death','Ads','USA',4,false),('Thanonchai Sornsriwichai','Ads','Thailand',4,true),('Stepful','Ads','USA',4,false),
+ ('Pelvic Sanity','Niche','USA',5,false),('The Prehab Guys','Niche','USA',5,false),('Sam Sulek','Niche','USA',5,false),
+ ('Dr. Mike (Varshavski)','Niche','USA',6,false),('Adam Meakins (The Sports Physio)','Niche','UK',6,false),('Kayla Itsines','Niche','Australia',6,false),('Mikayla Nogueira','Niche','USA',6,false),('Frank Body','Ads','Australia',6,false),('Scrub Daddy','Ads','USA',6,false),
+ ('Chef Pierce','Skits','USA',99,false),('Darryl Mayes','Skits','USA',99,false),('Jaden Williams','Skits','USA',99,false),('DTay Known','Skits','USA',99,false),('FunnyMike','Skits','USA',99,false),('@ugcbymackenzie','Ads','USA',99,false),('@sarahbanks.ugc','Ads','USA',99,false),('Caseharden','Ads','USA',99,false),('7 Brew','Ads','USA',99,false),('Chipotle #GuacDance','Ads','USA',99,false),('Jessi Jean','Yapping','USA',99,false),('Kimberly Dang','Yapping','USA',99,false),('Ho Nguyen Minh Khang','Yapping','Vietnam',99,false),('Alix Earle','Niche','USA',99,false),('Nick DiGiovanni','Niche','USA',99,false),('Vivian Tu (Your Rich BFF)','Niche','USA',99,false),('MKBHD (Marques Brownlee)','Niche','USA',99,false),('Khairul Aming','Niche','Malaysia',99,false)
+on conflict (name) do nothing;

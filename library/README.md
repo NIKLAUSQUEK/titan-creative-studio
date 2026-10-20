@@ -1,0 +1,1 @@
+Creator Style DNA library. Live cards: Supabase titan-os → style_cards (join style_creators on creator_id). Draft DNA for all 56 creators: Creator_Style_DNA_Library.xlsx. Runner source: style-runner/ (deployed on Railway titan-os, cron 1 12 * * * UTC).
