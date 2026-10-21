@@ -28,7 +28,7 @@ Every phase below closes one of those holes. Do not skip phases; compress them f
 
 ## Phase 1 - Interrogate the script (ASK - this user explicitly wants questions on Higgsfield work)
 Read `references/interrogation.md`. Extract everything you can from what was given, then ask ONLY what blocks a correct render. Use `ask_user_input_v0` (max 3 questions, tappable) for the forks; free-text for anything nuanced. Always cover, if not already answered:
-- **Objective + platform + audience** (awareness skit vs clinic lead-gen vs product ad; TikTok/Reels 9:16 vs carousel 4:5).
+- **Objective + format + platform + audience** (skit, ad, documentary, film, explainer, motion piece, animation, photo/edit, carousel, clips; TikTok/Reels 9:16, YouTube 16:9, feed 4:5/1:1, cinema 2.39:1). Never assume vertical. Load the matching format guide from references/ (see CLAUDE.md routing).
 - **The single idea / punchline** in one sentence. Restate it back. If the visuals you would need contradict it, say so.
 - **Whose story, whose POV.** Name the camera owner per shot.
 - **Real vs AI talent.** Is Physio Niklaus on camera (needs a Soul / Element from real photos) or are these original characters?
