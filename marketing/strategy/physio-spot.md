@@ -137,3 +137,16 @@ Tracking setup to do before 2 Nov: a UTM per platform on the link-in-bio, plus a
 
 ## Changelog
 - v1 (2026-10-21): first draft from brand file, v4 brief, ledger, profile and STORY-001. No review data. Style cards not read (no Supabase access in session). Status: draft, awaiting Klaus's approval.
+
+## Style library picks (from Supabase style_cards, 2026-10-21)
+Use `/style <name>` for the full card before production.
+| Creator | Use for | Borrow |
+|---|---|---|
+| Jun Yuh | calm education yaps, myth-flips | static lowercase claim in upper third, skeptical look, flip the misconception; energy 2 |
+| Steven Bartlett | podcast clips / long-form explainer cut-downs | cold open mid-thought on the most quotable line, captions from word one, dark moody studio |
+| Mel Robbins | "one big idea" clinic tips | provocative why-question first line + rounded white banner title |
+| Mia McGrath | premium, reassuring brand feel | serif typography, soft window light, calm direct-to-camera |
+| Night Owl Cinematics | SG-local branded skits | Singlish line in frame 1 with subtitles, high-key sitcom look, brand as the premise |
+| Lukeychan | couple skits (partner's POV on ED/PE, stigma-free) | POV header + mundane Singlish line + hard-cut reveal |
+| Munya Chawawa | escalating character skits (Physio Spot gym series) | "POV:" title, one performer many characters, precise beat timing |
+| Hormozi / Chandler Lee | founder content (Klaus personal) | mid-story start, value-promise headline, number-driven teaching |
