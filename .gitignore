@@ -2,3 +2,12 @@
 **/outputs/*.mp4
 **/qc_out/
 .env
+
+# Creator Brain media stays in Drive (never commit photos/videos of people)
+brain/**/*.jpg
+brain/**/*.jpeg
+brain/**/*.png
+brain/**/*.heic
+brain/**/*.mov
+brain/**/*.mp4
+brain/**/*.m4a

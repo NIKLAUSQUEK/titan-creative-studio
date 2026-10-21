@@ -7,7 +7,7 @@ Klaus = Niklaus Quek, men's health physiotherapist, founder of TITAN.AI. Brands:
 Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies, explainers, motion design (ads, trailers, product videos), Disney/Pixar-style animation, podcast/long-form clipping and highlights, photos and photo edits, carousels, thumbnails, brand kits, websites. Every aspect ratio: 9:16, 16:9, 1:1, 4:5, 2.39:1. Ask the platform/format only if it isn't obvious; never assume vertical.
 
 ## Precedence (highest wins)
-1. `ledger/learnings.md` (Klaus's past corrections)  2. `brands/<brand>.md`  3. Klaus's script / existing brief / final cut  4. Style preset (StyleCard)  5. Model defaults.
+1. `ledger/learnings.md` (Klaus's past corrections)  2. `brands/<brand>.md` + `brain/identity/profile.md` (voice, values)  3. Klaus's script / existing brief / final cut  4. Style preset (StyleCard)  5. Model defaults.
 
 ## Hard rules
 - An existing brief, script or final cut is the MASTER SPEC. Never change staging, jokes, lines, CTAs or who-does-what. Offer changes separately as "proposal B"; Klaus's version stays version A.
@@ -50,6 +50,9 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "edit / relight / filter / restyle this photo", "photo effect" | photo-effects.md prompt library (GPT Image 2.5 / Nano Banana with image_references) |
 | "edit this in Premiere / After Effects / with code" | claude-editing.md |
 | "save credits / cheaper" | credit-saving.md (drafts lowest quality → approve → highest 1080p) |
+| "interview me / ask me questions / journal", "help me find my stories", "what are my values" | `/journal` → biographer agent (creator-brain skill): provoking questions by era/theme, verbatim journal, media asks, story cards, profile updates |
+| "write a hook / script / post / essay / carousel", "tell a story about…", "founder story", "make up a story that teaches…" | `/story` → story-writer agent: goal + trope stance + structure, corpus passages, 5 hooks, version A (+B/C) |
+| "storyboard my life / my origin / from birth" | `/storyboard <era>` → visual life storyboard from real photos → normal studio gates |
 
 ## Default render stack
 Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate high) + Genjutsu motion transfer for performance-critical shots (Klaus films a phone reference) + 4K upscale of the locked final. Other models only with a stated reason.
@@ -60,4 +63,5 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 - Generation log: `registry/generations.csv` (written by hook) · Projects: `projects/<name>/` (BRIEF.md, spec.json, outputs/, feedback.md)
 - Skill: `.claude/skills/higgsfield-creative-director/` (workflow, model routing, prompt patterns, QC rubric, edit taxonomy, plus format guides in references/: documentary, filmmaking, realism, clipping, motion, animation, photo effects, product VFX, Claude editing, credit saving)
 - Research notes + source takeaways: `research/`
+- Creator Brain (identity, timeline, journal, story cards, storyboard): `brain/` · skill: `.claude/skills/creator-brain/` · writing corpus: Supabase `titan_corpus` (5,472 tagged passages)
 - Active project: `.studio/active_project` (one line, folder name)
