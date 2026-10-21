@@ -53,6 +53,13 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "interview me / ask me questions / journal", "help me find my stories", "what are my values" | `/journal` → biographer agent (creator-brain skill): provoking questions by era/theme, verbatim journal, media asks, story cards, profile updates |
 | "write a hook / script / post / essay / carousel", "tell a story about…", "founder story", "make up a story that teaches…" | `/story` → story-writer agent: goal + trope stance + structure, corpus passages, 5 hooks, version A (+B/C) |
 | "storyboard my life / my origin / from birth" | `/storyboard <era>` → visual life storyboard from real photos → normal studio gates |
+| "strategy / pillars / positioning" | `/strategy <brand>` → strategist agent (marketing-engine skill) → `marketing/strategy/<brand>.md` |
+| "content calendar / what should I post" | `/calendar <yyyy-mm>` → strategist agent: strategy + brain story bank + trends → `marketing/calendar/` |
+| "repurpose this", "waterfall this" | `/repurpose <hero>` → repurpose-waterfall.md (+ clipping-podcast.md); cut before you generate |
+| "package this for posting / captions / titles / hashtags" | `/publish` → distributor agent: per-platform package + checklist (never posts) |
+| "how did it perform / review", "what's working" | `/review` → analytics-loop.md (vidIQ + native exports) → `marketing/reviews/` → `/learn` |
+| "launch / campaign" | `marketing:campaign-plan` skill + strategist agent → production via `/ad` |
+| "paid ads / boost / Meta / Google / TikTok ads" | `anthropic-skills:ads-*` skills (ads-plan, ads-meta, ads-google, ads-tiktok, ads-youtube, ads-linkedin) + marketing-engine compliance-sg.md |
 
 ## Default render stack
 Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate high) + Genjutsu motion transfer for performance-critical shots (Klaus films a phone reference) + 4K upscale of the locked final. Other models only with a stated reason.
@@ -64,4 +71,5 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 - Skill: `.claude/skills/higgsfield-creative-director/` (workflow, model routing, prompt patterns, QC rubric, edit taxonomy, plus format guides in references/: documentary, filmmaking, realism, clipping, motion, animation, photo effects, product VFX, Claude editing, credit saving)
 - Research notes + source takeaways: `research/`
 - Creator Brain (identity, timeline, journal, story cards, storyboard): `brain/` · skill: `.claude/skills/creator-brain/` · writing corpus: Supabase `titan_corpus` (5,472 tagged passages)
+- Marketing (strategy, calendar, reviews): `marketing/` · skill: `.claude/skills/marketing-engine/` (strategy, repurpose waterfall, distribution, analytics loop, SG compliance)
 - Active project: `.studio/active_project` (one line, folder name)
