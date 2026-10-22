@@ -50,7 +50,7 @@ Then open Obsidian, choose **Open folder as vault**, and pick `Documents\Obsidia
 ## Privacy
 - **Everything stays on your PC** except the transcript text and contact sheet sent to Claude for analysis.
 - **Keep the vault private.** It may contain family, minors and clients. Don't put it in a public GitHub repo; `sensitivity` flags what needs consent before use.
-- **Use the vault with the studio:** open Claude Code in the vault folder, or copy the notes you want into `brain/` in the studio repo once that repo is private. Then `/story`, `/journal` and `/storyboard` can build on them.
+- **Use the vault with the studio:** open Claude Code in the vault folder, or copy the notes you want into `brains/<who>/` in the studio repo once that repo is private. Then `/story`, `/journal` and `/storyboard` can build on them.
 
 ## Linux/macOS
 ```bash

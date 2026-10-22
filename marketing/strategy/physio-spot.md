@@ -1,6 +1,6 @@
 # Physio Spot strategy - v1 (2026-10-21) - status: draft
 
-Built by `/strategy physio-spot` (marketing-engine skill, content-strategy.md §9). Inputs read: `ledger/learnings.md`, `brands/physio-spot.md`, `brain/identity/profile.md`, `brain/stories/` (STORY-001 only), `projects/physio-spot-spotting/BRIEF.md` (v4 master brief). There are no `marketing/reviews/` yet, so every KPI baseline is **TBD**.
+Built by `/strategy physio-spot` (marketing-engine skill, content-strategy.md §9). Inputs read: `ledger/learnings.md`, `brands/physio-spot.md`, `brains/klaus/identity/profile.md`, `brains/klaus/stories/` (STORY-001 only), `projects/physio-spot-spotting/BRIEF.md` (v4 master brief). There are no `marketing/reviews/` yet, so every KPI baseline is **TBD**.
 Legend: `[confirmed]` = Klaus said it or it's in the brand file/brief. `[draft]` = my assumption, needs his yes. `CONFIRM` = a fact only Klaus can supply. Until he answers, it stays CONFIRM.
 Precedence: ledger > brand file + profile > this doc. Once approved, this doc counts as "Klaus's brief" for calendars.
 

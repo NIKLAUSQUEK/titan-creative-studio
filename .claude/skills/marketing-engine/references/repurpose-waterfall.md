@@ -8,7 +8,7 @@ Principle: record once, cut many, re-hook every derivative. A derivative is a ne
 |---|---|
 | Podcast / long talking-head (30-60 min) | 6-10 shorts, 2 carousels, 5 quote cards, 1 newsletter, 1 blog/LinkedIn article, 3-5 X/Threads posts, YouTube long + chapters |
 | YouTube explainer (8-15 min) | 3-5 shorts, 1 carousel, 1 newsletter, 1 LinkedIn post, 1 blog |
-| Story card (`brain/stories/STORY-###`) | 1 short, 1 long-form story post, 1 carousel, 2-3 quote cards, 1 newsletter essay |
+| Story card (`brains/<who>/stories/STORY-###`) | 1 short, 1 long-form story post, 1 carousel, 2-3 quote cards, 1 newsletter essay |
 | Studio ad / skit (finished cut) | cut-downs 6/15/30 s, 1:1 + 4:5 + 16:9 reframes, BTS short, "how we made it" (TITAN.AI) |
 
 ## 2. Derivative specs

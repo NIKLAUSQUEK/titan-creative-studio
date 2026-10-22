@@ -1,9 +1,9 @@
-# Creator Brain: Klaus's life, voice and story bank
+# Creator Brain: Klaus (brains/klaus)
 
 The source of truth for WHO is speaking in every piece of content. The studio (ads, films, photos) decides how it looks; the Brain decides what it means and why anyone should care.
 
 ```
-brain/
+brains/klaus/
   identity/profile.md      origin, cultural identity, values, beliefs, principles, wisdom, voice, audiences, no-go zones
   timeline/eras.md         life timeline by era (birth → now) + media index (photos/videos live in Drive; only pointers here)
   journal/YYYY-MM-DD-*.md  raw answers to provoking questions (Klaus or a client, with consent)

@@ -1,6 +1,6 @@
 # Content strategy
 
-A strategy doc per brand lives at `marketing/strategy/<brand>.md` (template §9). Build it from `brands/<brand>.md`, `brain/identity/profile.md`, `brain/stories/`, `ledger/learnings.md` and the latest `marketing/reviews/`. Everything below marked `[draft]` is a starting hypothesis for Klaus to confirm or kill.
+A strategy doc per brand lives at `marketing/strategy/<brand>.md` (template §9). Build it from `brands/<brand>.md`, `brains/<who>/identity/profile.md`, `brains/<who>/stories/`, `ledger/learnings.md` and the latest `marketing/reviews/`. Everything below marked `[draft]` is a starting hypothesis for Klaus to confirm or kill.
 
 ## 1. Positioning per brand `[draft]`
 Formula: **For** <segment> **who** <pain>, **<brand> is** <category> **that** <difference>, **because** <proof Klaus can substantiate>.

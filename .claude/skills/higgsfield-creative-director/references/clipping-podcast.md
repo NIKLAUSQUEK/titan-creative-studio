@@ -1,7 +1,7 @@
 # Clipping & podcast highlights (long-form → shorts, episodes → highlights)
 
 Use this for podcasts, interviews, webinars, Klaus's talking-head videos, clinic talks and livestreams. Source tags are explained in `research/sources-editing.md`.
-Compliance comes first. In Singapore health content, a clip must not become a testimonial, a superlative claim or an inducement. Re-check the hook line and the caption against the localisation.md SG pack, and never cut a clip so it changes what the speaker meant.
+Compliance comes first: apply the brand's compliance pack. Example, in Singapore health content, a clip must not become a testimonial, a superlative claim or an inducement. Re-check the hook line and the caption against the localisation.md SG pack, and never cut a clip so it changes what the speaker meant.
 
 ## 1. Pick the route
 | Situation | Route |

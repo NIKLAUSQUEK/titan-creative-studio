@@ -6,7 +6,7 @@
 | Wise | "he's been where I am and came out clearer" | personal story, one hard-won lesson, quiet wisdom line | lecturing, lists |
 | Expert / knowledgeable | "I finally understand" | myth vs fact, mechanism explained simply, one surprising number (sourced) | jargon, hedging everything |
 | Trust | "he's honest with me" | admitting a mistake, showing the unglamorous part, nuance | hype, superlatives |
-| Sell | "this solves my exact problem, and it's safe to act" | problem story → stakes → simple next step | testimonials/discounts/superlatives (SG health rules) |
+| Sell | "this solves my exact problem, and it's safe to act" | problem story → stakes → simple next step | anything the brand's compliance pack bans (e.g. SG health: testimonials/discounts/superlatives) |
 | Founder story | "I'm part of something with a reason" | origin wound → mission → proof → invitation | humble-brag, rags-to-riches clichés |
 | Entertain | laugh, then think | skit, irony, a reveal | punching down |
 
@@ -54,4 +54,4 @@ Show, don't name, the emotion. One sensory detail per scene. Cut every "very", "
 Long video/podcast → 3-5 shorts (each a different hook) → carousel (lessons) → quote cards (wisdom notes) → caption/thread → newsletter. See `clipping-podcast.md` for the cutting workflow.
 
 ## 8. Final checks
-True to profile.md · one lesson · sensory detail · earned emotion · contrarian not cruel · fiction labelled · client consent · SG health rules for sell pieces · CTA matches goal.
+True to profile.md · one lesson · sensory detail · earned emotion · contrarian not cruel · fiction labelled · client consent · brand compliance pack for sell pieces · CTA matches goal.

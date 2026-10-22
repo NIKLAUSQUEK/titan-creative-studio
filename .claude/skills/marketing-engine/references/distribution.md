@@ -10,7 +10,7 @@ Line 5  WISDOM / TAKEAWAY (Klaus's verbatim line where possible)
 Line 6  CTA (one action matched to funnel stage: follow / save / comment <word> / read / WhatsApp)
 Line 7  keywords / hashtags (per platform rules below)
 ```
-Write in Klaus's voice (`brain/identity/profile.md`). One CTA only. Health brands: CTA is a neutral next step ("WhatsApp us to book an assessment"), never a free/discount offer.
+Write in the brand's voice (`brands/<brand>.md` §5, plus `brains/<who>/identity/profile.md` when founder-led). One CTA only. Health brands: CTA is a neutral next step ("WhatsApp us to book an assessment"), never a free/discount offer.
 
 ## 2. Per-platform playbook
 ### TikTok

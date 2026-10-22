@@ -10,7 +10,7 @@ Tags used below: [CONOR] = Creating with Conor 3D doc tutorial · [CASH] = Cash-
 ## 0. Why the 3D mannequin look suits TITAN
 - A stylised matte mannequin or clay figure avoids real-person likeness entirely. That fits the CLAUDE.md rule against AI likenesses of real people, and it makes anatomy and medical topics read as diagrams, not gore or nudity. This is TITAN's own reasoning.
 - The niche works on YouTube: [CASH] cites a 3D mannequin true-crime channel at roughly 400k subscribers, with US/UK/CA audiences and an estimated RPM of $10 or more. That is the tutorial author's estimate, not verified.
-- **Singapore health pack still applies.** No testimonials, no superlatives, no inducements. Every factual claim gets a source in the project's `SOURCES.md` (see commentary-controversy.md for the fact-check layer).
+- **The brand's compliance pack still applies** (e.g. Singapore health: no testimonials, no superlatives, no inducements). Every factual claim gets a source in the project's `SOURCES.md` (see commentary-controversy.md for the fact-check layer).
 
 ## 1. Pipeline at a glance
 ```
