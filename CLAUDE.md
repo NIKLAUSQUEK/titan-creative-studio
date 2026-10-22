@@ -79,3 +79,12 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 - Creator Brain (identity, timeline, journal, story cards, storyboard): `brains/<who>/` (`<who>` = `.studio/active_brain`) · skill: `.claude/skills/creator-brain/` · writing corpus: Supabase `titan_corpus` (5,472 tagged passages)
 - Marketing (strategy, calendar, reviews): `marketing/` · skill: `.claude/skills/marketing-engine/` (strategy, repurpose waterfall, distribution, analytics loop, compliance packs)
 - Active project: `.studio/active_project` (one line, folder name)
+
+## Nik's to-do guides
+
+Whenever Nik (the owner: a non-technical physio founder with ADHD) has to do something himself, such as making an account, getting a key, setting up a store or domain, or deciding something, write it with the `nik-todo-guide` skill (`.claude/skills/nik-todo-guide/`).
+
+- Make it a To-do page with a checklist table and click-by-click steps. Use direct links, say where each thing is on screen, and add marked screenshots.
+- Label each guide ✅ Verified, ⚠️ Partly verified or ❓ Not verified.
+- Keep a JSON twin of the to-do list (`docs/nik/todo/TODO.json`) for TITAN OS.
+- In chat, give one line and the link. Never paste the full steps in chat, and never ask for secrets there.
