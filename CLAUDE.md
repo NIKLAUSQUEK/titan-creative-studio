@@ -22,6 +22,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 - QC every output with `scripts/qc_frames.py` and LOOK at the contact sheet before calling anything done.
 - After delivery: ask verdict + biggest miss → `/learn` writes the rule to the ledger.
 - Compliance: every brand file names its industry × market compliance pack (`.claude/skills/marketing-engine/references/compliance-packs.md`; SG health detail in compliance-sg.md). Apply it to every script, caption and ad. Example: SG health = no testimonials, paid reviews, superlatives or free-consult/discount inducements.
+- Every deliverable gets a market-localised sound plan (`/sound`: regional charts + TikTok-by-country licensed tracks + SFX cues) before /draft or /publish. Brand/ads use licensed or original audio only; trending chart songs go on personal/creator accounts in-app only.
 - No video renders until every @asset in the shot is visually approved (Gate 4, validator-enforced). Real photos of real staff/talent beat generated ones.
 - Never put API keys in files or chat. Brand-safe, platform-safe wording in generation prompts; crude hooks/captions go in post only.
 
@@ -39,7 +40,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "final", "pro it" | `/final` |
 | "that's wrong because…" / any correction | fix it, then `/learn` |
 | "how's the library run going" | `/status` |
-| "add trending audio / sound effects / stims", "make it funnier with sound" | `/sound` (licensed trending tracks + SFX cue sheet) |
+| "add trending audio / sound effects / stims", "make it funnier with sound", "what's trending in <country>" | `/sound` (regional charts via tools/trend-audio + TikTok CML by country + SFX cue sheet), saved in `marketing/audio/` and the project |
 | "add a villain / bully / make people pick a side" | villains-conflict.md: want-wound-method villain, cruelty beats with camera allegiance + cold sound + aftermath, consequence type, side-choosing ending |
 | "rich vs poor / class / struggle / pretty privilege story" | class-status.md: pick tone dial + format, both sides get humanity, sourced stats, localise |
 | "design a character / build our roster / beautiful female lead" | character-design.md: original character card → AI Influencer builder or sheet → Gate 4 approval → Element (never real-person lookalikes) |

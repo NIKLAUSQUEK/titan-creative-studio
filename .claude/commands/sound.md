@@ -1,5 +1,10 @@
-Trending audio + stim button for the active project.
-1. Read SCRIPT.md beats and the requested sound energy (stim-heavy / balanced / clean).
-2. Music: call Higgsfield tiktok_accounts → tiktok_music_trending (country from the brief's market, genre fitting the vibe, 7DAY unless asked) → propose 3 licensed Commercial Music Library tracks with listen links and why each fits. If no TikTok account is connected, say so and fall back to library/trends/ + original track options.
-3. Stims: write projects/<p>/SFX_CUES.md — timestamp | beat | stim | source (assets/sfx file, synth, or ElevenLabs) | level — following the stim map and density rules in references/voice-persona-audio.md.
-4. Flag licence status: brand ads use licensed/CC0 only; trending meme sounds are for personal accounts, added in-app. $ARGUMENTS
+Sound plan for ANY deliverable (video, reel, ad, doc, podcast clip, carousel/slideshow), localised to the brand's market. Every piece gets one before /draft or /publish.
+1. Read the brand file (market(s), language, audience, brand vs personal account) and SCRIPT.md beats; set energy (stim-heavy / balanced / clean) and vibe.
+2. Regional pulse (free, run every time): `python3 tools/trend-audio/trend_audio.py <CC> --out marketing/audio` for each target market (VN, SG, MY, TH, ID, PH, US, GB, AU, IN…; reuse today's file if it exists). It gives that country's YouTube + Spotify top and fastest risers: the local taste right now (e.g. Snap Saigon → VN: V-pop ballads, Vinahouse/remix energy, Vietnamese indie/rap).
+3. TikTok-native chart: Higgsfield tiktok_accounts → tiktok_music_trending(country_code=<CC>, genre fitting the vibe, 7DAY) → licensed Commercial Music Library tracks with listen links. If no TikTok account is connected, say once that connecting one (Higgsfield tiktok_connect) unlocks the per-country licensed chart, then continue. Also web-search the local term for this week's TikTok trend sounds (VN "nhạc trend TikTok tuần này", MY "lagu viral TikTok", TH "เพลงฮิต TikTok", ID "lagu viral TikTok minggu ini") and note the 3-5 named sounds with dates and sources.
+4. Recommend per placement, 3 options each:
+   - Brand / ads / business accounts: LICENSED only. Use TikTok CML (by country), Meta Sound Collection, a licensed library, or ORIGINAL music in the same vibe (Higgsfield generate_audio / ElevenLabs music, brief = genre + BPM + mood + instruments + language; never "in the style of <artist/song>").
+   - Personal / creator accounts (organic): may add the trending chart sound in-app inside TikTok/IG at posting time; record the exact sound name + link in the publish package. Never bake an unlicensed song into the exported file.
+   For each: why it fits, which beat it hits (hook at 0 s, drop on the reveal), trim points, and VO ducking level.
+5. Stims/SFX: write projects/<p>/SFX_CUES.md (timestamp | beat | stim | source: assets/sfx, synth, ElevenLabs | level), following the stim map and density rules in references/voice-persona-audio.md.
+6. Save the plan to projects/<p>/SOUND.md (market, sources checked + dates, picks, licence status per placement) and add the chosen sound to the calendar slot / PUBLISH.md. $ARGUMENTS

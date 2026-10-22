@@ -1,0 +1,3 @@
+# Trend audio radar
+`python trend_audio.py VN SG MY --out ../../marketing/audio` saves today's local music pulse per country: YouTube weekly top, Spotify daily top, and the fastest risers, all from kworb.net (free, no login). `/sound` runs it automatically and adds the TikTok-by-country licensed chart (Higgsfield TikTok connection) and a local-language web search for this week's TikTok trend sounds.
+Licensing: chart songs are for awareness and in-app use on personal/creator accounts. Brand and ad exports use TikTok Commercial Music Library, Meta Sound Collection, licensed libraries or original music.

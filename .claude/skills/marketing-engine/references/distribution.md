@@ -16,7 +16,7 @@ Write in the brand's voice (`brands/<brand>.md` §5, plus `brains/<who>/identity
 ### TikTok
 - Structure: hook 0-2 s (spoken + text), payoff by ~60%, loop-able ending or open loop to part 2.
 - Caption: 1-3 lines, keyword-rich (TikTok search reads captions, on-screen text and speech - RoT). 3-5 hashtags: 1-2 niche (#pelvichealth), 1 topic, 1 brand/series.
-- Sound: licensed only on brand accounts (`/sound`); trending meme sounds personal accounts only, added in-app (ledger).
+- Sound: every package names its sound from the project SOUND.md (`/sound`, localised to the market: regional charts + TikTok CML by country). Licensed/original only on brand accounts; trending chart sounds personal/creator accounts only, added in-app (ledger).
 - Pin a comment that adds context or a source.
 
 ### Instagram (Reels, carousels, Stories)
