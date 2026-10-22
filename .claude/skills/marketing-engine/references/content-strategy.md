@@ -10,7 +10,7 @@ Formula: **For** <segment> **who** <pain>, **<brand> is** <category> **that** <d
 | Physio Spot | men's health physiotherapy clinic (ED, PE, pelvic pain, prostate) | men 25-55, SG | stigma-free, deadpan humour → calm premium clinic; physio-led, conservative-care angle | conversion brand (bookings) |
 | heal360 | physio-led wellness & recovery clinic | expats, professionals, athletes, SG | holistic, patient-centred; Physio Niklaus on camera | conversion brand (bookings) |
 | Power Protein | protein cafe / cloud kitchen, Thao Dien HCMC | CONFIRM (gym-goers, expats, office lunch?) | CONFIRM | local orders; VN market pack |
-| PeachForm | CONFIRM - no brand file | CONFIRM | CONFIRM | CONFIRM |
+| PeachForm | [draft] physio-built glute/lower-body strength brand for women (brands/peachform.md; CONFIRM offer) | [draft] SG women 22-40 who lift or want to | [draft] confident, cheeky, form-first; Physio Niklaus as expert cameo | [draft] waitlist → purchases; fitness × SG pack |
 | TITAN.AI | AI-native content/marketing/software agency (SG/VN/UK/MY) | founders, SMB marketers | operator energy, volume-over-polish, built in public | B2B leads; case studies = this studio |
 | Klaus (personal) | thought leader: men's health + founder | men, founders, physios | true stories + clinical expertise + contrarian takes | trust engine feeding every brand |
 
