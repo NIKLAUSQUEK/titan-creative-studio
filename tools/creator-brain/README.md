@@ -59,3 +59,22 @@ python3 creator_brain.py extract --src ~/Videos --work ~/.creatorbrain
 python3 creator_brain.py sense --work ~/.creatorbrain
 python3 creator_brain.py vault --work ~/.creatorbrain --vault ~/Obsidian/KlausBrain
 ```
+
+---
+# Style Lab: build the creator style library for free
+`Run-StyleLab.ps1` does what the vidIQ-based style-runner does, on your PC, without vidIQ credits:
+1. **Download:** yt-dlp fetches each creator's top short-form videos (or the exact URLs you paste in).
+2. **Measure:** ffmpeg counts the cuts, average shot length and cuts in the first 3 s, and grabs hook frames (first 3 s) and a contact sheet; faster-whisper transcribes and gives words per minute.
+3. **Break down:** Claude looks at the frames, metrics and transcript and writes the style breakdown using the same headings as the runner.
+4. **StyleCard:** one card per creator, uploaded to Supabase `style_cards` or exported for import.
+
+```powershell
+# creators from Supabase batch 4 (needs $env:SUPABASE_URL and $env:SUPABASE_SERVICE_ROLE_KEY in this PowerShell window only)
+.\Run-StyleLab.ps1 -Batch 4 -Per 3 -Browser chrome
+# or your own list: copy creators.example.json, add creators + exact video URLs
+.\Run-StyleLab.ps1 -Creators .\creators.example.json -Browser chrome
+```
+- **Getting blocked?** `-Browser chrome` (or `edge`/`firefox`) uses your logged-in browser cookies, so YouTube's "are you a bot" check and Instagram/TikTok logins pass. Close the browser first if cookie reading fails.
+- **No Supabase key on the PC?** The `push` step exports `stylelab\style_cards_export.json`. Open Claude Code in the studio repo and say "import that file into style_cards".
+- **Disk space:** `-DeleteVideos` deletes each video right after analysis.
+- **Cost and use:** no vidIQ credits; it uses your Claude usage (about one call per video plus one per creator). Downloads are for private style analysis only: never re-upload another creator's video.

@@ -1,0 +1,6 @@
+[
+  {"name": "Jun Yuh", "category": "Yapping", "country": "USA", "long_form": false,
+   "urls": ["https://www.youtube.com/shorts/<id>", "https://www.tiktok.com/@junyuh/video/<digits>"],
+   "search": "Jun Yuh #shorts"},
+  {"name": "Gymshark", "category": "Ads", "country": "UK", "long_form": false, "urls": [], "search": "Gymshark #shorts"}
+]

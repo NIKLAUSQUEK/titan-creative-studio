@@ -72,7 +72,7 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 
 ## Where things live
 - Brands: `brands/<brand>.md` (template `brands/_TEMPLATE.md`) · People brains: `brains/<who>/` (template `brains/_template/`) · Cast (Soul/Element/voice IDs): `cast/registry.md` · Ledger: `ledger/learnings.md`
-- Style library: Supabase project `titan-os` (ref qdikcsxinpyfnljszvay) tables `style_cards`, `style_creators`, `style_run_log` (filled by Railway `style-runner`, 8:01pm SGT)
+- Style library: Supabase project `titan-os` (ref qdikcsxinpyfnljszvay) tables `style_cards`, `style_creators`, `style_run_log` (filled free on Klaus's PC by `tools/creator-brain/Run-StyleLab.ps1`, or by the vidIQ-based Railway `style-runner`, 8:01pm SGT)
 - Generation log: `registry/generations.csv` (written by hook) · Projects: `projects/<name>/` (BRIEF.md, spec.json, outputs/, feedback.md)
 - Skill: `.claude/skills/higgsfield-creative-director/` (workflow, model routing, prompt patterns, QC rubric, edit taxonomy, plus format guides in references/: documentary, filmmaking, realism, clipping, motion, animation, photo effects, product VFX, Claude editing, credit saving)
 - Research notes + source takeaways: `research/`
