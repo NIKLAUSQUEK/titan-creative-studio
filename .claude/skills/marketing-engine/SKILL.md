@@ -50,4 +50,4 @@ ledger/learnings.md  ←  Review (marketing/reviews/)  ←  Distribute (/publish
 6. **Never post, schedule, reply or spend on Klaus's behalf** without his explicit go for that item. `/publish` produces a package + checklist; Klaus (or a scheduler he approves) posts.
 7. **vidIQ budget:** state the call, its credit cost and the week's remaining credits before any vidIQ call (ledger 2026-10-11 rule).
 8. **Close the loop:** every review ends with 1-3 testable rules via `/learn`; strategy/calendar read the ledger first.
-9. Brand facts marked CONFIRM in `brands/*.md` stay CONFIRM - ask once, don't guess. PeachForm has no brand file yet: ask Klaus what it is before planning for it.
+9. Brand facts marked CONFIRM in `brands/*.md` stay CONFIRM - ask once, don't guess. PeachForm has a draft kit (brands/peachform.md, built by /onboard from almost no public info): plan from it, but treat its [draft] lines as hypotheses.
