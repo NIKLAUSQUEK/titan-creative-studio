@@ -297,6 +297,8 @@ def cmd_sense(a):
         tpath = d / "transcript.txt"
         transcript = tpath.read_text(encoding="utf-8") if tpath.exists() else "(no speech / no transcript)"
         words = len(transcript.split()); trunc = ""
+        if not a.max_words:
+            a.max_words = 40000 if a.mode == "course" else 9000  # course lessons: keep the whole lesson
         if words > a.max_words:
             parts = transcript.split()
             half = a.max_words // 2
@@ -473,7 +475,7 @@ def main():
     e.add_argument("--limit", type=int, default=0); e.add_argument("--no-transcribe", action="store_true")
     s = sp.add_parser("sense"); s.add_argument("--work", required=True); s.add_argument("--llm", choices=["claude-cli", "api"], default="claude-cli")
     s.add_argument("--model", default=None); s.add_argument("--claude-bin", default=shutil.which("claude") or "claude"); s.add_argument("--limit", type=int, default=0)
-    s.add_argument("--max-words", type=int, default=9000); s.add_argument("--no-vision", action="store_true")
+    s.add_argument("--max-words", type=int, default=0); s.add_argument("--no-vision", action="store_true")
     s.add_argument("--mode", choices=["life", "course"], default="life")
     v = sp.add_parser("vault"); v.add_argument("--work", required=True); v.add_argument("--vault", required=True); v.add_argument("--folder", default="Creator Brain"); v.add_argument("--mode", choices=["life", "course"], default="life")
     a = ap.parse_args()
