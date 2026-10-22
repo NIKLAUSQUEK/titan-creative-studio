@@ -224,6 +224,34 @@ TRANSCRIPT ({words} words{trunc}):
 """
 
 
+COURSE_SCHEMA = {
+    "title": "lesson title (max 10 words)",
+    "module": "module/section name if inferable from folder or file name, else null",
+    "summary": "3-4 sentences: what this lesson teaches",
+    "frameworks": [{"name": "", "steps": ["ordered steps"], "when_to_use": ""}],
+    "key_points": ["the lesson's main teaching points, concrete"],
+    "templates_prompts": ["any scripts, prompt templates, hook formulas, checklists or tool settings shown or spoken, verbatim where possible"],
+    "tools": ["software/AI tools/models named, with what they are used for"],
+    "examples": ["examples or case studies shown"],
+    "key_quotes": [{"t": "mm:ss", "quote": "verbatim"}],
+    "action_items": ["what a student should do after this lesson"],
+    "apply_to_titan": "how this lesson improves Klaus's creative studio (which skill/command/reference file it should update and how)",
+    "tags": ["lowercase-kebab tags"],
+}
+
+COURSE_PROMPT = """You are turning a paid course Klaus bought into private study notes and reusable workflows for his creative studio. Analyse ONE lesson video using its metadata, transcript and (if available) the contact-sheet image at {sheet} (read it with your Read tool if not "none"; slides and on-screen text matter).
+Rules: only what the lesson actually teaches; quotes verbatim; do not invent steps. Notes are for private learning, not republishing.
+Return ONLY a JSON object (no prose, no code fence) with exactly these keys:
+{schema}
+
+METADATA:
+{meta}
+
+TRANSCRIPT ({words} words{trunc}):
+{transcript}
+"""
+
+
 def call_llm(prompt, a, sheet_path):
     if a.llm == "api":
         key = os.environ.get("ANTHROPIC_API_KEY")
@@ -276,7 +304,8 @@ def cmd_sense(a):
             trunc = f", truncated to {a.max_words}"
         sheet = str(d / "sheet.jpg") if (d / "sheet.jpg").exists() and not a.no_vision else None
         meta = {k: item.get(k) for k in ("name", "folder", "kind", "duration", "created", "mtime", "gps", "device", "width", "height", "transcript")}
-        prompt = PROMPT.format(sheet=sheet or "none", schema=json.dumps(SCHEMA, indent=1), meta=json.dumps(meta, ensure_ascii=False), words=words, trunc=trunc, transcript=transcript)
+        tmpl, sch = (COURSE_PROMPT, COURSE_SCHEMA) if a.mode == "course" else (PROMPT, SCHEMA)
+        prompt = tmpl.format(sheet=sheet or "none", schema=json.dumps(sch, indent=1), meta=json.dumps(meta, ensure_ascii=False), words=words, trunc=trunc, transcript=transcript)
         log(f"[{i}/{len(todo)}] {item['name']}")
         for attempt in range(2):
             try:
@@ -315,6 +344,8 @@ def cmd_vault(a):
     log(f"writing {len(items)} notes to {root}")
     by = {"era": {}, "theme": {}, "person": {}}
     quotes, hooks, seeds, vbp, wisdom, ideas, refs = [], [], [], [], [], [], []
+    if getattr(a, "mode", "life") == "course":
+        return course_vault(a, root, items)
     for item, an, d in items:
         date = (str(item.get("created") or "")[:10] or item.get("mtime") or "")
         title = an.get("title") or item["name"]
@@ -397,6 +428,43 @@ def cmd_vault(a):
     log(f"vault ready: open {Path(a.vault)} in Obsidian → {a.folder}/00 Home")
 
 
+def course_vault(a, root, items):
+    (root / "Lessons").mkdir(exist_ok=True)
+    mods, tmpls, actions, tools, applies = {}, [], [], [], []
+    for item, an, d in sorted(items, key=lambda x: x[0]["path"]):
+        title = an.get("title") or item["name"]; mod = an.get("module") or Path(item["folder"]).name
+        note = slug(f"{mod} - {title}", 90); mods.setdefault(mod, []).append(note)
+        att = None
+        if (d / "sheet.jpg").exists():
+            att = f"{item['id']}.jpg"; shutil.copy2(d / "sheet.jpg", root / "_attachments" / att)
+        b = ["---", f"id: {item['id']}", f"title: {json.dumps(title, ensure_ascii=False)}", f"module: {json.dumps(mod, ensure_ascii=False)}",
+             f"source: {json.dumps(item['path'], ensure_ascii=False)}", f"tags: {yaml_list(['course'] + (an.get('tags') or []))}", "---",
+             f"# {title}", f"Module: [[{slug('Module - ' + mod)}]]", "", an.get("summary") or "", ""]
+        if att: b += [f"![[{att}]]", ""]
+        for fw in an.get("frameworks") or []:
+            b += [f"## Framework: {fw.get('name', '')}", f"_When:_ {fw.get('when_to_use', '')}", *[f"{i}. {st}" for i, st in enumerate(fw.get("steps") or [], 1)], ""]
+        for key, head in (("key_points", "Key points"), ("templates_prompts", "Templates & prompts"), ("tools", "Tools"), ("examples", "Examples"), ("action_items", "Action items")):
+            if an.get(key): b += [f"## {head}", *[f"- {x}" for x in an[key]], ""]
+        if an.get("key_quotes"): b += ["## Quotes", *[f"- `{q.get('t', '')}` \"{q.get('quote', '')}\"" for q in an["key_quotes"]], ""]
+        if an.get("apply_to_titan"): b += ["## Apply to TITAN studio", str(an["apply_to_titan"]), ""]
+        tp = d / "transcript.txt"
+        if tp.exists(): b += ["## Transcript", "> [!note]- Full transcript", *[f"> {l}" for l in tp.read_text(encoding="utf-8").splitlines()]]
+        (root / "Lessons" / f"{note}.md").write_text("\n".join(b), encoding="utf-8")
+        tmpls += [(x, note) for x in an.get("templates_prompts") or []]; actions += [(x, note) for x in an.get("action_items") or []]
+        tools += [(x, note) for x in an.get("tools") or []]
+        if an.get("apply_to_titan"): applies.append((an["apply_to_titan"], note))
+    (root / "Modules").mkdir(exist_ok=True)
+    for m, notes in mods.items():
+        (root / "Modules" / f"{slug('Module - ' + m)}.md").write_text("\n".join([f"# {m}", "", *[f"- [[{n}]]" for n in notes]]), encoding="utf-8")
+    agg = {"Templates and Prompts": tmpls, "Action Items": actions, "Tools": tools, "Apply to TITAN": applies}
+    for name, rows in agg.items():
+        (root / f"{name}.md").write_text("\n".join([f"# {name}", ""] + [f"- {x} — [[{n}]]" for x, n in rows]), encoding="utf-8")
+    home = ["# Course Brain", f"_{len(items)} lessons, built {time.strftime('%Y-%m-%d %H:%M')}._", "", *[f"- [[{n}]] ({len(agg[n])})" for n in agg], "", "## Modules",
+            *[f"- [[{slug('Module - ' + m)}]] ({len(v)})" for m, v in mods.items()]]
+    (root / "00 Home.md").write_text("\n".join(home), encoding="utf-8")
+    log(f"course vault ready: {root / '00 Home.md'}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
@@ -406,7 +474,8 @@ def main():
     s = sp.add_parser("sense"); s.add_argument("--work", required=True); s.add_argument("--llm", choices=["claude-cli", "api"], default="claude-cli")
     s.add_argument("--model", default=None); s.add_argument("--claude-bin", default=shutil.which("claude") or "claude"); s.add_argument("--limit", type=int, default=0)
     s.add_argument("--max-words", type=int, default=9000); s.add_argument("--no-vision", action="store_true")
-    v = sp.add_parser("vault"); v.add_argument("--work", required=True); v.add_argument("--vault", required=True); v.add_argument("--folder", default="Creator Brain")
+    s.add_argument("--mode", choices=["life", "course"], default="life")
+    v = sp.add_parser("vault"); v.add_argument("--work", required=True); v.add_argument("--vault", required=True); v.add_argument("--folder", default="Creator Brain"); v.add_argument("--mode", choices=["life", "course"], default="life")
     a = ap.parse_args()
     {"extract": cmd_extract, "sense": cmd_sense, "vault": cmd_vault}[a.cmd](a)
 

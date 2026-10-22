@@ -78,3 +78,6 @@ python3 creator_brain.py vault --work ~/.creatorbrain --vault ~/Obsidian/KlausBr
 - **No Supabase key on the PC?** The `push` step exports `stylelab\style_cards_export.json`. Open Claude Code in the studio repo and say "import that file into style_cards".
 - **Disk space:** `-DeleteVideos` deletes each video right after analysis.
 - **Cost and use:** no vidIQ credits; it uses your Claude usage (about one call per video plus one per creator). Downloads are for private style analysis only: never re-upload another creator's video.
+
+## Course mode (paid courses → study notes + workflows)
+`-Mode course` turns lesson videos into notes with frameworks (ordered steps), key points, templates and prompts, tools, examples, quotes, action items, and "Apply to TITAN" (which studio skill or command each lesson should improve). Output goes to `Course Brain/`: `00 Home`, `Modules/`, `Lessons/`, plus rolled-up `Templates and Prompts`, `Action Items`, `Tools` and `Apply to TITAN`. Zip files in `-Source` are unzipped automatically. Notes are for private study; never republish course content.

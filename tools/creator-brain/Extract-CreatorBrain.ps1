@@ -30,6 +30,7 @@ param(
   [string] $ClaudeModel = "",                    # e.g. "sonnet" or "opus"; empty = your Claude Code default
   [string[]] $Steps = @("extract", "sense", "vault"),
   [int] $Limit = 0,
+  [ValidateSet("life", "course")] [string] $Mode = "life",   # course = lessons -> frameworks, templates, action items
   [switch] $SkipInstall
 )
 $ErrorActionPreference = "Stop"
@@ -44,6 +45,22 @@ function Refresh-Path { $env:Path = [Environment]::GetEnvironmentVariable("Path"
 
 try {
   foreach ($s in $Source) { if (-not (Test-Path -LiteralPath $s)) { throw "Source not found: $s" } }
+
+  # Unzip any .zip files found in the sources (once) into the work folder and add them as sources
+  $unz = Join-Path $Work "unzipped"
+  $extra = @()
+  foreach ($s in $Source) {
+    $zips = if ((Get-Item -LiteralPath $s).PSIsContainer) { Get-ChildItem -LiteralPath $s -Recurse -Filter *.zip -File } else { Get-Item -LiteralPath $s | Where-Object Extension -eq ".zip" }
+    foreach ($z in $zips) {
+      $dest = Join-Path $unz $z.BaseName
+      if (-not (Test-Path $dest)) {
+        Write-Host "Unzipping $($z.Name) ..." -ForegroundColor Cyan
+        Expand-Archive -LiteralPath $z.FullName -DestinationPath $dest -Force
+      }
+      $extra += $dest
+    }
+  }
+  $Source = @($Source | Where-Object { -not ((Test-Path -LiteralPath $_ -PathType Leaf) -and $_ -like "*.zip") }) + $extra
 
   # ---------- one-time setup ----------
   if (-not $SkipInstall) {
@@ -93,16 +110,17 @@ try {
     if ($LASTEXITCODE) { throw "extract failed (see $logFile)" }
   }
   if ($Steps -contains "sense") {
-    $a = @($py, "sense", "--work", $Work, "--llm", $Llm)
+    $a = @($py, "sense", "--work", $Work, "--llm", $Llm, "--mode", $Mode)
     if ($ClaudeModel) { $a += @("--model", $ClaudeModel) }
     if ($Limit) { $a += @("--limit", $Limit) }
     & $vpy @a
     if ($LASTEXITCODE) { throw "sense failed (see $logFile)" }
   }
   if ($Steps -contains "vault") {
-    & $vpy $py vault --work $Work --vault $Vault
+    $folder = if ($Mode -eq "course") { "Course Brain" } else { "Creator Brain" }
+    & $vpy $py vault --work $Work --vault $Vault --mode $Mode --folder $folder
     if ($LASTEXITCODE) { throw "vault failed (see $logFile)" }
-    Write-Host "`nDone. In Obsidian: Open folder as vault -> $Vault -> 'Creator Brain/00 Home'" -ForegroundColor Green
+    Write-Host "`nDone. In Obsidian: Open folder as vault -> $Vault -> '$folder/00 Home'" -ForegroundColor Green
   }
 }
 finally {
