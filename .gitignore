@@ -11,3 +11,11 @@ brain/**/*.heic
 brain/**/*.mov
 brain/**/*.mp4
 brain/**/*.m4a
+
+# Auto-editor: renders, QC images and the selftest project stay local (recipes, briefs and ingest JSON are the record)
+__pycache__/
+projects/_selftest/
+projects/*/autoedit/renders/
+projects/*/autoedit/qc/
+projects/*/autoedit/ingest/**/*.jpg
+projects/*/autoedit/broll_sheet.jpg

@@ -1,0 +1,39 @@
+{
+  "name": "ugc-try-on-demo",
+  "label": "UGC: try-on / demo",
+  "kind": "ugc",
+  "description": "Before \u2192 doing it \u2192 result framing (no exaggerated claims), mirror/tripod shots, beat-synced cuts between looks or steps.",
+  "structure": {
+    "name": "demo",
+    "target_s": [
+      15,
+      45
+    ],
+    "beats": [
+      "result-first tease 0-2s",
+      "step 1",
+      "step 2",
+      "step 3",
+      "result hold",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "max_shot_s": 2.5
+  },
+  "captions": {
+    "max_words": 3,
+    "uppercase": true
+  },
+  "zoom": {
+    "every_s": 2.5
+  },
+  "broll": {
+    "every_s": 3,
+    "max_dur_s": 2
+  },
+  "sfx": {
+    "density_per_10s": 2
+  }
+}

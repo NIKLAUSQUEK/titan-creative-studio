@@ -1,0 +1,35 @@
+{
+  "name": "ugc-selfie-talking-head",
+  "label": "UGC: selfie talking head",
+  "kind": "ugc",
+  "description": "Phone-in-hand, eye contact, one idea. Hook line straight to camera, keep natural imperfections, light jump cuts.",
+  "structure": {
+    "name": "ugc-talking",
+    "target_s": [
+      15,
+      40
+    ],
+    "beats": [
+      "hook to camera 0-2s",
+      "problem/relatable moment",
+      "what I tried / what changed",
+      "one proof moment (demo, not a claim)",
+      "soft CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08
+  },
+  "captions": {
+    "max_words": 3
+  },
+  "zoom": {
+    "every_s": 4,
+    "scale": 1.06
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0
+  }
+}

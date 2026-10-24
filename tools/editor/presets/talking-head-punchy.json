@@ -1,0 +1,13 @@
+{
+  "name": "talking-head-punchy",
+  "label": "Talking head, punchy (default)",
+  "kind": "style",
+  "description": "Jump cuts on every pause, snap punch-ins every ~3 s, 2-3 word pop captions, light whooshes. The safe default for founder/expert reels.",
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06
+  },
+  "zoom": {
+    "every_s": 3.0
+  }
+}

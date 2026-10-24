@@ -1,0 +1,37 @@
+{
+  "name": "aura-cinematic",
+  "label": "Aura / cinematic",
+  "kind": "style",
+  "description": "Slow push-ins, minimal words, big statement captions, contrast-crushed grade with vignette, riser into the drop.",
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.2,
+    "max_shot_s": 6
+  },
+  "captions": {
+    "max_words": 4,
+    "animation": "fade",
+    "uppercase": true,
+    "size": 0.044
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 5,
+    "scale": 1.06
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "map": {
+      "hook": "riser"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 0.9,
+    "vignette": true
+  }
+}

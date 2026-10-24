@@ -1,0 +1,42 @@
+{
+  "name": "ugc-reaction",
+  "label": "UGC: reaction",
+  "kind": "ugc",
+  "description": "Source clip top/left, face reaction held 0.6-1.2 s and cut on the eyes, one stim per reaction, captions only on the punch.",
+  "structure": {
+    "name": "reaction",
+    "target_s": [
+      10,
+      35
+    ],
+    "beats": [
+      "the thing (0-2s)",
+      "face reaction hold",
+      "comment / take",
+      "second reaction",
+      "payoff line"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05
+  },
+  "captions": {
+    "max_words": 2,
+    "size": 0.05,
+    "uppercase": true
+  },
+  "zoom": {
+    "every_s": 2,
+    "scale": 1.15
+  },
+  "sfx": {
+    "density_per_10s": 3,
+    "map": {
+      "zoom": "impact"
+    }
+  },
+  "broll": {
+    "mode": "pip"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "_defaults",
+  "kind": "base",
+  "label": "Engine defaults (every preset merges onto these)",
+  "structure": {
+    "name": "short",
+    "target_s": [
+      20,
+      45
+    ],
+    "beats": [
+      "hook 0-3s",
+      "context",
+      "turn by ~60%",
+      "lesson/payoff",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08,
+    "remove_fillers": "hard",
+    "max_shot_s": 5.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "font": "DejaVu Sans",
+    "bold": true,
+    "size": 0.042,
+    "color": "#FFFFFF",
+    "highlight": "#FFE14D",
+    "outline": 4,
+    "outline_color": "#000000",
+    "shadow": 0,
+    "position_y": 0.7,
+    "max_words": 3,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": true,
+    "emoji": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 7,
+    "font": "DejaVu Sans",
+    "bold": true,
+    "size": 0.05,
+    "color": "#FFFFFF",
+    "outline": 6,
+    "position_y": 0.2,
+    "dur_s": 2.6,
+    "uppercase": true
+  },
+  "lower_third": {
+    "font": "DejaVu Sans",
+    "size": 0.028,
+    "color": "#FFFFFF",
+    "box": "#000000",
+    "box_alpha": 0.55,
+    "position_y": 0.8
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 3.5,
+    "scale": 1.08,
+    "on_hook": 1.12,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 7.0,
+    "max_dur_s": 2.5,
+    "min_dur_s": 1.0,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.0,
+    "db": -12,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -19,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.06,
+    "brightness": 0.0,
+    "gamma": 1.0,
+    "warmth": 0.0,
+    "lut": null,
+    "vignette": false
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.0
+  },
+  "safe_zone": {
+    "top": 0.14,
+    "bottom": 0.2,
+    "right": 0.15
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "ugc-green-screen",
+  "label": "UGC: green screen",
+  "kind": "ugc",
+  "description": "Creator in front of a screenshot/article/post (the B-roll fills the background), points at it; captions high, keyword colour, punch-ins on the reveal.",
+  "structure": {
+    "name": "greenscreen",
+    "target_s": [
+      15,
+      45
+    ],
+    "beats": [
+      "hook + the receipt on screen 0-2s",
+      "what it says",
+      "why it matters",
+      "my take",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3
+  },
+  "captions": {
+    "position_y": 0.62,
+    "max_words": 3
+  },
+  "zoom": {
+    "every_s": 3
+  },
+  "broll": {
+    "mode": "greenscreen",
+    "every_s": 0,
+    "max_dur_s": 30
+  }
+}

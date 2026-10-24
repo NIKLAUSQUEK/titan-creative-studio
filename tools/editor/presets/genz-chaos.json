@@ -1,0 +1,33 @@
+{
+  "name": "genz-chaos",
+  "label": "GenZ chaos",
+  "kind": "style",
+  "description": "0.8-1.5 s shots, punch-in every cut, 1-2 word captions with keyword colour + emoji, stim every 1.5-3 s, meme inserts as B-roll.",
+  "pacing": {
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.04,
+    "max_shot_s": 1.8
+  },
+  "captions": {
+    "max_words": 2,
+    "size": 0.05,
+    "uppercase": true,
+    "emoji": true
+  },
+  "zoom": {
+    "every_s": 1.5,
+    "scale": 1.12
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 1.2
+  },
+  "sfx": {
+    "density_per_10s": 4,
+    "db": -10
+  },
+  "music": {
+    "energy": "high",
+    "db": -17
+  }
+}

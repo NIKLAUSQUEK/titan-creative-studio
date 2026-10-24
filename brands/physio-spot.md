@@ -9,3 +9,17 @@
 - Signature line: "Once you spot it, come to Physio Spot ... Don't wait till it's too late."
 - SECTION 7 OF THE BRIEF (Dramatisation system) IS A STANDING RULE FOR EVERY AD.
 - COMPLIANCE (Singapore health advertising): no testimonials/endorsements/patient photos reproduced in ads, no paid reviews, no superlatives (best/leading/No.1/most trusted), no free-consult or discount inducements, claims must be substantiable (HCS (Advertisement) Regulations 2021 Reg 14 + professional codes — confirm which apply with counsel). Dramatised skits must not pose as real patient testimony.
+
+## 6b. Edit guide (machine-readable, read by tools/editor; sizes are fractions of frame height)
+Captions and hook placement follow ledger 2026-10-10 (hook text never covers faces; hook just above the 74% captions).
+```edit-brand
+{
+  "colors": {"primary": "#EFE3D3", "accent": "#6B5544", "text": "#4E3B2E"},
+  "fonts": {"display": "Playfair Display", "body": "Cormorant Garamond"},
+  "captions": {"font": "DejaVu Sans", "bold": true, "size": 0.024, "color": "#FFFFFF", "outline": 4, "outline_color": "#000000", "position_y": 0.74, "highlight": "#EFE3D3"},
+  "hook_text": {"font": "DejaVu Sans", "bold": true, "size": 0.031, "position_y": 0.615, "uppercase": true},
+  "end_card": {"enabled": true, "dur_s": 2.5, "bg": "#EFE3D3", "font": "Playfair Display", "color": "#4E3B2E", "sub_font": "Cormorant Garamond", "sub_color": "#6B5544"},
+  "grade": {"warmth": 0.03},
+  "compliance": {"forbid_words": ["best", "leading", "no.1", "#1", "most trusted", "guaranteed", "cure", "free consult", "discount"]}
+}
+```

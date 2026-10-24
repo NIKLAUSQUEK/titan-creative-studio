@@ -1,0 +1,31 @@
+{
+  "name": "documentary",
+  "label": "Documentary / explainer",
+  "kind": "style",
+  "description": "VO-led, B-roll heavy (every 4 s), lower-thirds for names/facts, sentence captions, clean cuts.",
+  "pacing": {
+    "remove_silence_over_s": 0.45,
+    "pad_s": 0.12
+  },
+  "captions": {
+    "max_words": 6,
+    "animation": "static",
+    "keyword_caps": false,
+    "size": 0.036
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 3.5
+  },
+  "sfx": {
+    "density_per_10s": 0.4
+  },
+  "music": {
+    "energy": "low",
+    "db": -21
+  }
+}

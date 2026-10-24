@@ -1,0 +1,41 @@
+{
+  "name": "ugc-pov",
+  "label": "UGC: POV",
+  "kind": "ugc",
+  "description": "On-screen 'POV: \u2026' text carries the premise, minimal talking, handheld, quick 1-2 s shots, trending-style sound (licensed for brands).",
+  "structure": {
+    "name": "pov",
+    "target_s": [
+      7,
+      25
+    ],
+    "beats": [
+      "POV text card over first shot 0-2.5s",
+      "situation beats",
+      "twist",
+      "reaction/payoff"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "max_shot_s": 2.2
+  },
+  "hook_text": {
+    "uppercase": false,
+    "max_words": 12,
+    "dur_s": 3.0
+  },
+  "captions": {
+    "max_words": 4
+  },
+  "zoom": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 1.5
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  }
+}

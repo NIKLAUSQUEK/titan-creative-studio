@@ -1,0 +1,52 @@
+{
+  "name": "ugc-testimonial-style",
+  "label": "UGC: experience-style (compliant)",
+  "kind": "ugc",
+  "description": "First-person EXPERIENCE format told by the founder/staff/creator about their own experience, NOT a customer endorsement. For regulated brands (e.g. SG health) never use patients, results claims or 'it cured me'; the compliance pack check is mandatory.",
+  "structure": {
+    "name": "experience",
+    "target_s": [
+      20,
+      45
+    ],
+    "beats": [
+      "relatable problem hook 0-3s",
+      "what it's like (honest)",
+      "what we/I do differently (process, not outcome)",
+      "who it's for",
+      "soft CTA (no inducement)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.4
+  },
+  "captions": {
+    "max_words": 4,
+    "keyword_caps": false
+  },
+  "zoom": {
+    "every_s": 4.5,
+    "scale": 1.05
+  },
+  "sfx": {
+    "density_per_10s": 0.3
+  },
+  "music": {
+    "energy": "low",
+    "db": -21
+  },
+  "compliance": {
+    "forbid_words": [
+      "cured",
+      "guaranteed",
+      "best",
+      "no.1",
+      "#1",
+      "miracle",
+      "100%",
+      "free consult",
+      "discount"
+    ],
+    "note": "experience-style only; no patient testimony in regulated health markets"
+  }
+}

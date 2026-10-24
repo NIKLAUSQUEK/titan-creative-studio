@@ -1,0 +1,49 @@
+{
+  "name": "ugc-unboxing",
+  "label": "UGC: unboxing",
+  "kind": "ugc",
+  "description": "Hands + product, ASMR-ish sound, reveal held 1-2 s, captions name what is in the box, close-up B-roll of details.",
+  "structure": {
+    "name": "unboxing",
+    "target_s": [
+      15,
+      35
+    ],
+    "beats": [
+      "box in hand + hook text 0-2s",
+      "open (sound up)",
+      "reveal hold 1-2s",
+      "3 detail close-ups",
+      "first use / reaction",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.72
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 3.5,
+    "max_dur_s": 1.6
+  },
+  "sfx": {
+    "density_per_10s": 1.2,
+    "map": {
+      "hook": "pop",
+      "broll": "pop"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -21
+  }
+}

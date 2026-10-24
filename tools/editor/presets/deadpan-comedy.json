@@ -1,0 +1,29 @@
+{
+  "name": "deadpan-comedy",
+  "label": "Deadpan comedy",
+  "kind": "style",
+  "description": "Held beats, silence kept on purpose, static frame, no zooms except the crash zoom on the reveal, one impact SFX on the payoff, captions static.",
+  "pacing": {
+    "remove_silence_over_s": 1.2,
+    "pad_s": 0.25,
+    "remove_fillers": "none",
+    "max_shot_s": 8
+  },
+  "captions": {
+    "animation": "static",
+    "max_words": 6,
+    "keyword_caps": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "sfx": {
+    "density_per_10s": 0.3
+  },
+  "music": {
+    "energy": "none"
+  }
+}
