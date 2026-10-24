@@ -7,4 +7,5 @@ Sound plan for ANY deliverable (video, reel, ad, doc, podcast clip, carousel/sli
    - Personal / creator accounts (organic): may add the trending chart sound in-app inside TikTok/IG at posting time; record the exact sound name + link in the publish package. Never bake an unlicensed song into the exported file.
    For each: why it fits, which beat it hits (hook at 0 s, drop on the reveal), trim points, and VO ducking level.
 5. Stims/SFX: write projects/<p>/SFX_CUES.md (timestamp | beat | stim | source: assets/sfx, synth, ElevenLabs | level), following the stim map and density rules in references/voice-persona-audio.md.
-6. Save the plan to projects/<p>/SOUND.md (market, sources checked + dates, picks, licence status per placement) and add the chosen sound to the calendar slot / PUBLISH.md. $ARGUMENTS
+6. If the piece is cut by the auto-editor, put the chosen track in the recipe: `editor.py assemble --music <file> --music-licence original|licensed:<source>` (in-app sounds stay out of the file).
+7. Save the plan to projects/<p>/SOUND.md (market, sources checked + dates, picks, licence status per placement) and add the chosen sound to the calendar slot / PUBLISH.md. $ARGUMENTS

@@ -120,23 +120,23 @@ def build_items(beats, clips_by_id, style):
 
 
 def auto_sfx(r):
+    """Cues in priority order (hook > B-roll in > punch-ins), capped by the preset's density budget."""
     st = r["style"].get("sfx", {})
     mp, dens, db = st.get("map", {}), st.get("density_per_10s", 1.0), st.get("db", -12)
-    if dens <= 0:
-        return []
-    out = []
+    total = sum((i["out"] - i["in"]) / i.get("speed", 1) for i in r["items"])
+    budget = max(1, round(dens * total / 10)) if dens > 0 else 0
+    cands = []
     if r["items"] and mp.get("hook"):
-        out.append({"type": mp["hook"], "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "db": db + 2, "why": "hook"})
+        cands.append({"type": mp["hook"], "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "db": db + 2, "why": "hook"})
     for b in r["broll"]:
         if mp.get("broll"):
-            out.append({"type": mp["broll"], "anchor": {"item": b["anchor"]["item"], "offset": max(0.0, b["anchor"]["offset"] - 0.08)}, "db": db, "why": "broll in"})
-    total = sum((i["out"] - i["in"]) / i.get("speed", 1) for i in r["items"])
-    budget = max(0, int(dens * total / 10) - len(out))
-    if mp.get("zoom") and budget:
+            cands.append({"type": mp["broll"], "anchor": {"item": b["anchor"]["item"], "offset": max(0.0, b["anchor"]["offset"] - 0.08)}, "db": db, "why": "broll in"})
+    if mp.get("zoom"):
         snaps = [(it["id"], z["at"]) for it in r["items"] for z in it.get("zoom", []) if z["at"] > 0 and z.get("ease") != "linear"]
-        step = max(1, len(snaps) // budget) if snaps else 1
-        out += [{"type": mp["zoom"], "anchor": {"item": i, "offset": max(0.0, at - 0.08)}, "db": db - 2, "why": "punch-in"} for i, at in snaps[::step][:budget]]
-    return out
+        left = max(0, budget - len(cands))
+        step = max(1, len(snaps) // left) if left and snaps else 1
+        cands += [{"type": mp["zoom"], "anchor": {"item": i, "offset": max(0.0, at - 0.08)}, "db": db - 2, "why": "punch-in"} for i, at in snaps[::step][:left]]
+    return cands[:budget]
 
 
 def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None, note="assembled from brief"):
@@ -148,6 +148,8 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
     preset = preset or brief.get("preset") or "talking-head-punchy"
     style = resolve_style(preset, brand)
     beats = [{"i": i, "beat": b.get("beat"), "clip": b["clip"], "t0": float(b["t0"]), "t1": float(b["t1"])} for i, b in enumerate(brief.get("beats", [])) if b.get("clip") in clips]
+    if not beats:
+        raise SystemExit(f"brief.json has no beats that point at an ingested clip (known ids: {', '.join(clips) or 'none'}). Fix the clip ids in brief.json, then: brief --from-json brief.json")
     items = build_items(beats, clips, style)
     master = brief.get("aspect") or "9:16"
     outs = [master] + [x for x in (aspects or brief.get("extra_aspects") or []) if x != master]

@@ -272,7 +272,10 @@ def build_ass(r, clips, W, H, total, path):
             y = int(H * (ht.get("position_y", 0.2) if t["type"] == "hook" else t.get("position_y", 0.32)))
             ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Hook,,0,0,0,,{{\\an5\\pos({cx},{y})\\fscx90\\fscy90\\t(0,120,\\fscx100\\fscy100)\\fad(0,120)}}{txt}")
         elif t["type"] == "lower_third":
-            y = int(H * lt.get("position_y", 0.8))
+            ly, cy = lt.get("position_y", 0.8), c.get("position_y", 0.7)
+            if abs(ly - cy) < 0.09:  # never sit on the caption band
+                ly = cy - 0.09
+            y = int(H * ly)
             ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Lower,,0,0,0,,{{\\an1\\pos({int(W * 0.06)},{y})\\fad(150,150)}}{txt}")
     ecr = r.get("end_card", {})
     if ecr.get("enabled"):

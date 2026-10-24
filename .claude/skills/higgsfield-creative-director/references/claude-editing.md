@@ -61,6 +61,7 @@ ffmpeg -i comp.mp4 -vf "ass=captions.ass" -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:v
 python3 scripts/qc_frames.py final.mp4
 ```
 Ask Claude to keep every decision as data (`edl.json`: clips, in/out, overlays, captions, SFX cues) so changes are re-runs, not re-edits.
+This pipeline now ships as the studio auto-editor: `tools/editor` (recipe = `edit.vN.json`, see references/editor.md).
 
 ## 5. Sound design pass (any route) [UE-Sound]
 The Drive training doc "UE-Sound-Design-Claude-Training-COMPLETE.md" boils down to:

@@ -36,6 +36,8 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "edit like <creator>", "Jun Yuh vibe" | `/style <creator>` → pull StyleCard from Supabase `style_cards` |
 | "rewrite / punch up / alternate version" | script-doctor agent (keeps original as A) |
 | "go", "draft it" | `/draft` (cost-gated) |
+| "edit this footage", "cut my talking head", "make a UGC edit / unboxing / POV / day-in-the-life edit", "make 9:16 + 1:1 + 16:9 versions" | `/edit` → editor agent (references/editor.md, tools/editor): ingest → strategist edit brief → local B-roll match → edit.v1.json → lowest-quality draft → QC |
+| "revise the edit", "cut first 2 s", "punchier captions", "go back to v3" | `/edit <note>` → new recipe version + new draft (quick phrases cost 0 tokens); final 1080p only after `editor.py approve` |
 | "QC this", "check it" | `/qc` |
 | "final", "pro it" | `/final` |
 | "that's wrong because…" / any correction | fix it, then `/learn` |
@@ -80,3 +82,4 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 - Creator Brain (identity, timeline, journal, story cards, storyboard): `brains/<who>/` (`<who>` = `.studio/active_brain`) · skill: `.claude/skills/creator-brain/` · writing corpus: Supabase `titan_corpus` (5,472 tagged passages)
 - Marketing (strategy, calendar, reviews): `marketing/` · skill: `.claude/skills/marketing-engine/` (strategy, repurpose waterfall, distribution, analytics loop, compliance packs)
 - Active project: `.studio/active_project` (one line, folder name)
+- Auto-editor: `tools/editor/` (Python package + `Run-Editor.ps1`, local + `claude -p` only) · recipes `projects/<p>/autoedit/edit.vN.json` · presets `tools/editor/presets/` (style + UGC + `style-<creator>` from StyleCards) · brand edit guide = the `edit-brand` block in `brands/<brand>.md` · B-roll index `%LOCALAPPDATA%\TitanEditor\broll.sqlite`
