@@ -137,7 +137,8 @@ def heuristic_brief(a, edit_dir, brand):
     _, brand_text = brand_guide(brand)
     comp = [l.strip("- ").strip() for l in (brand_text or "").splitlines() if "COMPLIANCE" in l or l.strip().startswith("- Don't")]
     return {"goal": a.goal or "expert", "audience": "[draft] from brand file", "platform": plat, "aspect": a.aspect or aspect,
-            "extra_aspects": [x for x in ("9:16", "1:1", "16:9") if x != (a.aspect or aspect)], "target_s": rng[1] if not a.target_s else a.target_s,
+            "extra_aspects": [x for x in ("9:16", "1:1", "16:9") if x != (a.aspect or aspect)],
+            "target_s": a.target_s or round(max(rng[0], min(rng[1], sum(b["t1"] - b["t0"] for b in beats) + 2))),
             "preset": a.preset or "talking-head-punchy", "trope_stance": None, "structure": "short",
             "hooks": [{"rank": i + 1, "text": h["text"], "formula": h["formula"], "source": "footage", "clip": h["clip"], "t0": h["t0"], "t1": h["t1"],
                        "why": ", ".join(h["why"])} for i, h in enumerate(hooks)],

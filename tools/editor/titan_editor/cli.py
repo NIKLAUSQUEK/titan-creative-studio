@@ -70,7 +70,7 @@ def main(argv=None):
         a.whisper_model = "large-v3" if have("nvidia-smi") else "small"
 
     if a.cmd == "check":
-        return check()
+        return check(a.project)
     if a.cmd == "preset":
         from .presets import cmd_preset
         return cmd_preset(a)
@@ -180,7 +180,7 @@ def chat(a, ed):
             log(f"! {e}")
 
 
-def check():
+def check(project=None):
     ok = True
     for c in ("ffmpeg", "ffprobe"):
         print(f"{c:14} {'ok' if have(c) else 'MISSING (winget install Gyan.FFmpeg)'}"); ok &= have(c)
@@ -192,7 +192,7 @@ def check():
         except Exception:
             print(f"{mod:14} MISSING ({hint})"); ok &= mod not in ("torch", "open_clip")
     print(f"{'gpu':14} {'nvidia' if have('nvidia-smi') else 'cpu only (fine; whisper small + CLIP on CPU)'}")
-    print(f"{'project':14} {studio('active_project') or '(none: pass --project)'}  brand={studio('active_brand')}  brain={studio('active_brain')}")
+    print(f"{'project':14} {project or studio('active_project') or '(none: pass --project)'}  brand={studio('active_brand')}  brain={studio('active_brain')}")
     return 0 if ok else 1
 
 

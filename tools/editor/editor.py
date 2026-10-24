@@ -6,4 +6,5 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from titan_editor.cli import main  # noqa: E402
 
-sys.exit(main() or 0)
+rc = main()
+sys.exit(rc if isinstance(rc, int) else 0)  # commands may return data objects; only ints are exit codes
