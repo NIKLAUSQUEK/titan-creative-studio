@@ -80,3 +80,5 @@ eyes move off-partner to camera on the beat, small head tilt on the button. Appl
 
 ## 8. Animation QC add-ons
 Check that the style is consistent across every character (no photoreal intruders), outfits match the sheet, the voice is the same across clips, lips sit within 2 frames, eyelines hold across cuts, and character scale doesn't drift between shots. [HF-Blender] [Kieft]
+
+> Style home: every animation/faceless look (stickman, whiteboard, flat vector, anime, 3D, clay, collage, kinetic type, data-viz, parallax, diorama, AI doc) has a card with route, reusable STYLE KEY, pacing, voice, cost tips and failures in `styles/animation.json` (`python scripts/styles.py show <style>`).

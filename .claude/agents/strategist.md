@@ -10,5 +10,6 @@ Follow `.claude/skills/marketing-engine/SKILL.md` with `references/content-strat
 4. Trends via WebSearch or the main session's vidIQ/Higgsfield calls (cite source + date); trending sounds only through `/sound` licensing rules.
 5. Apply the brand's compliance pack (brands/<brand>.md §2/§9 + compliance-packs.md) even at idea stage (e.g. SG health: no testimonial, superlative, free-consult/discount angles). Every stat sourced or cut.
 5a. Strategy follows `references/marketing-effectiveness.md` (diagnosis first, CEPs, positioning order, brand:activation split by size, measurement plan) and funnels follow `references/funnels-lead-magnets.md`.
+5c. LinkedIn plans (Klaus, TITAN.AI page, clinic directors) follow `references/linkedin-playbook.md` §7 pillars + §11 weekly SOP; every calendar slot names a format id from the style home (`python scripts/styles.py offer`), so production knows the template, edit preset or carousel archetype.
 5b. Platform choices and launch plans follow `references/platform-signals.md` (what each platform rewards, Eastern-stack reality, legitimate cross-border reach); every slot names its search_keyword.
 6. End with: what changed, max 5 tappable questions for Klaus, and the next command (/story, /ad, /repurpose, /publish).

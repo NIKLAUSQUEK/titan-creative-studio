@@ -343,8 +343,12 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False):
         lst.write_text("ffconcat version 1.0\n" + "".join(f"file '{f.name}'\n" for f in files), encoding="utf-8")
         base = cache / f"{tag}_base.mkv"
         ffmpeg(["-f", "concat", "-safe", "0", "-i", lst.name, "-c", "copy", base.name], cwd=cache)
-        n_ev = build_ass(r, clips, W, H, total, cache / f"{tag}.ass")
         starts, _ = item_starts(r)
+        rc = r
+        full = [(at_of(r, b["anchor"], starts), float(b.get("dur", 3))) for b in r.get("boards", []) if b.get("mode") == "full" and not b.get("captions")]
+        if full:  # a full-frame board carries the words itself; captions would collide with it (the VO keeps playing)
+            rc = dict(r, captions=dict(r["captions"], hide=list(r["captions"].get("hide") or []) + [[a, a + d] for a, d in full if a is not None]))
+        n_ev = build_ass(rc, clips, W, H, total, cache / f"{tag}.ass")
         inputs, fc, last, n = ["-i", base.name], [], "0:v", 1
         for b in r["broll"]:
             a = at_of(r, b["anchor"], starts)
@@ -362,6 +366,19 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False):
             else:
                 fc.append(f"[{last}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             last, n = f"o{n}", n + 1
+        if r.get("boards"):
+            from .cards import board_clip, theme_for
+            theme = theme_for(r.get("brand"), r["style"].get("cards"))
+            for bd in r["boards"]:
+                a = at_of(r, bd["anchor"], starts)
+                if a is None or a >= body:
+                    continue
+                bd = dict(bd, dur=min(float(bd.get("dur", 3.0)), body - a))
+                f = board_clip(bd, W, H, theme, cache, quality)
+                inputs += ["-i", f.name]
+                fc.append(f"[{n}:v]format=rgba,setpts=PTS-STARTPTS+{a:.3f}/TB[k{n}]")
+                fc.append(f"[{last}][k{n}]overlay=0:0:eof_action=pass:enable='between(t,{a:.3f},{a + bd['dur']:.3f})'[o{n}]")
+                last, n = f"o{n}", n + 1
         logo = r["style"].get("logo")
         if logo and logo.get("path"):
             lp = Path(logo["path"]); lp = lp if lp.is_absolute() else REPO / lp

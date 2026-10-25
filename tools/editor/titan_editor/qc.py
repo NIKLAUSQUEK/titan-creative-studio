@@ -125,6 +125,13 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     fok, fdetail = face_occlusion(Path(first["path"]), first["W"], first["H"], text_overlays(r, starts, cw, total))
     if fok is not None:
         chk(f"[{first['aspect']}] no caption/hook text over a face", fok, fdetail)
+    if r.get("boards"):
+        nosrc = [b["id"] for b in r["boards"] if b["card"].get("type") in ("stat", "chart") and not b["card"].get("source")]
+        todo = [b["id"] for b in r["boards"] if b["card"].get("_todo")]
+        chk("every stat/chart board has a source", not nosrc, ", ".join(nosrc) or f"{len(r['boards'])} boards")
+        chk("no unfinished boards (_todo)", not todo, ", ".join(todo))
+        short = [b["id"] for b in r["boards"] if float(b.get("dur", 3)) < 2.0]
+        chk("boards on screen ≥ 2 s (readable twice)", not short, ", ".join(short))
     unknown = attribution_manifest(r, qd / f"ATTRIBUTION_v{r['version']}.md")
     if unknown:
         log(f"attribution: no licence entry for {', '.join(unknown[:6])} (add rows to assets/licences.csv; own footage = original)")

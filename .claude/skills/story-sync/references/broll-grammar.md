@@ -58,4 +58,4 @@ Too literal (picture mickey-mousing) · stock clichés · mismatched generic foo
 ## Explainer insert rule (faceless and talking-head explainers)
 When the narration states a **date, number, cause, definition or step**, cut to a diagram, board or whiteboard frame that shows it. Design the board from the brand system, time it to the word, and keep it on screen long enough to read twice.
 
-To plan boards, ask of every line: "Is this understandable by listening alone, or does it need a visual layer?" If the answer is "needs a layer", that line gets a board.
+To plan boards, ask of every line: "Is this understandable by listening alone, or does it need a visual layer?" If the answer is "needs a layer", that line gets a board. In the editor: `editor.py boards` drafts them (cards engine, `mode panel|full`); see editor.md §8.

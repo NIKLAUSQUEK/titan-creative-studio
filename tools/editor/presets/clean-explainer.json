@@ -89,5 +89,10 @@
   "evidence": "medium (several caption-tool breakdowns)",
   "compliance_lock": [
     "health: factual benefits only, no 'best/guaranteed', no patient quotes"
-  ]
+  ],
+  "boards": {
+    "auto": true,
+    "mode": "panel",
+    "max": 6
+  }
 }

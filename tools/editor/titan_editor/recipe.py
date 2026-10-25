@@ -8,6 +8,7 @@ Recipe keys (times in seconds):
   items:     [{"id": "c01", "clip": <ingest id>, "in", "out", "beat", "speed": 1, "zoom": [{"at", "scale", "ease"}], "focus_x": 0.5}]
   broll:     [{"id": "b01", "path", "src_in", "dur", "anchor": {"item", "offset"}, "mode": "full|pip|greenscreen", "flag"}]
   texts:     [{"type": "hook|title|lower_third", "text", "anchor": {"item", "offset"}, "dur"}]
+  boards:    [{"id": "k01", "card": {cards.py card}, "anchor": {"item", "offset"}, "dur", "mode": "panel|full"}]   animated explainer boards (cards.py)
   captions:  {"enabled", "replace": {"word": "fix"}, "emphasis": ["words"], "hide": [[t0, t1] output time]}
   audio:     {"music": {"path", "licence": "original|licensed:<source>|in-app", "db", "duck"}, "sfx": [{"type", "anchor", "db"}], "loudness": -14}
   end_card:  {"enabled", "dur", "lines": [], "cta": ""}
@@ -128,6 +129,9 @@ def auto_sfx(r):
     cands = []
     if r["items"] and mp.get("hook"):
         cands.append({"type": mp["hook"], "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "db": db + 2, "why": "hook"})
+    for bd in r.get("boards", []):
+        if mp.get("board", mp.get("title")):
+            cands.append({"type": mp.get("board", mp.get("title")), "anchor": dict(bd["anchor"]), "db": db - 1, "why": "board in"})
     for b in r["broll"]:
         if mp.get("broll"):
             cands.append({"type": mp["broll"], "anchor": {"item": b["anchor"]["item"], "offset": max(0.0, b["anchor"]["offset"] - 0.08)}, "db": db, "why": "broll in"})
@@ -154,7 +158,7 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
     master = brief.get("aspect") or "9:16"
     outs = [master] + [x for x in (aspects or brief.get("extra_aspects") or []) if x != master]
     r = {"project": edit_dir.parent.name, "brand": brand, "preset": preset, "outputs": [{"aspect": a} for a in outs], "style": style,
-         "beats": beats, "items": items, "broll": [], "texts": [], "captions": {"enabled": style["captions"].get("enabled", True), "replace": {}, "emphasis": [], "hide": []},
+         "beats": beats, "items": items, "broll": [], "texts": [], "boards": [], "captions": {"enabled": style["captions"].get("enabled", True), "replace": {}, "emphasis": [], "hide": []},
          "audio": {"music": {"path": music, "licence": music_licence, "db": style["music"].get("db", -19), "duck": style["music"].get("duck", True)},
                    "sfx": [], "loudness": -14},
          "end_card": {"enabled": style.get("end_card", {}).get("enabled", True), "dur": style.get("end_card", {}).get("dur_s", 2.0),
@@ -194,6 +198,9 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
         r["broll"].append({"id": f"b{len(r['broll']) + 1:02d}", "path": c["path"], "kind": c["kind"], "src_in": round(src_in, 2), "dur": dur,
                            "anchor": {"item": its[0]["id"], "offset": off}, "mode": br.get("mode", "full"), "flag": c.get("flag"), "query": b["query"]})
         last_at = start
+    if style.get("boards", {}).get("auto"):
+        from .cards import plan_boards
+        r["boards"] = plan_boards(r, edit_dir, style["boards"].get("max"), style["boards"].get("mode", "panel"))
     r["audio"]["sfx"] = auto_sfx(r)
     return save_new(edit_dir, r, note, parent=None)
 
@@ -235,7 +242,7 @@ def validate(r, edit_dir):
     for o in r.get("outputs", []):
         if o.get("aspect") not in ASPECTS:
             errs.append(f"bad aspect {o.get('aspect')}")
-    for k in ("broll", "texts"):
+    for k in ("broll", "texts", "boards"):
         for x in r.get(k, []):
             a = x.get("anchor", {})
             if "at" not in a and a.get("item") not in ids:
@@ -249,8 +256,8 @@ def validate(r, edit_dir):
 
 def prune_anchors(r):
     ids = {it["id"] for it in r["items"]}
-    for k in ("broll", "texts"):
-        r[k] = [x for x in r[k] if "at" in x["anchor"] or x["anchor"].get("item") in ids]
+    for k in ("broll", "texts", "boards"):
+        r[k] = [x for x in r.get(k, []) if "at" in x["anchor"] or x["anchor"].get("item") in ids]
     r["audio"]["sfx"] = [x for x in r["audio"]["sfx"] if "at" in x["anchor"] or x["anchor"].get("item") in ids]
     return r
 
@@ -266,8 +273,8 @@ def trim_start(r, secs):
         else:
             cut = left * it.get("speed", 1)
             it["in"] = round(it["in"] + cut, 3)
-            for k in ("broll", "texts"):
-                for x in r[k]:
+            for k in ("broll", "texts", "boards"):
+                for x in r.get(k, []):
                     if x["anchor"].get("item") == it["id"]:
                         x["anchor"]["offset"] = round(max(0.0, x["anchor"]["offset"] - left), 3)
             for x in r["audio"]["sfx"]:
@@ -309,7 +316,7 @@ def recut(r, edit_dir):
     for it in r["items"]:
         new_first.setdefault(it["beat"], it["id"])
     remap = {old_first[b]: new_first[b] for b in old_first if b in new_first}
-    for coll in (r["broll"], r["texts"], r["audio"]["sfx"]):
+    for coll in (r["broll"], r["texts"], r.get("boards", []), r["audio"]["sfx"]):
         for x in coll:
             if x["anchor"].get("item") in remap:
                 x["anchor"]["item"] = remap[x["anchor"]["item"]]
@@ -336,6 +343,9 @@ QUICK = [
     (r"\bhook\s+text\s*[:=]\s*[\"“]?(.+?)[\"”]?\s*$", "hook_text"),
     (r"\b(?:only|just)\s+(9:16|1:1|16:9|4:5)\b", "only_aspect"),
     (r"\badd\s+(9:16|1:1|16:9|4:5)\b", "add_aspect"),
+    (r"\b(?:no|remove|kill)\s+boards?\b", "boards_off"),
+    (r"\bboards?\s+full(?:[- ]?screen)?\b", "boards_full"),
+    (r"\bboards?\s+panel\b", "boards_panel"),
 ]
 
 
@@ -388,6 +398,11 @@ def quick_revise(r, instruction, edit_dir):
         elif op == "add_aspect":
             if all(o["aspect"] != arg for o in r["outputs"]):
                 r["outputs"].append({"aspect": arg})
+        elif op == "boards_off":
+            r["boards"] = []
+        elif op in ("boards_full", "boards_panel"):
+            for bd in r.get("boards", []):
+                bd["mode"] = "full" if op == "boards_full" else "panel"
         applied.append(op + (f"({arg})" if arg else ""))
         text = text[: m.start()] + " " + text[m.end():]
     leftover = re.sub(r"[\s,.;&]+|\band\b|\bthen\b|\balso\b|\bplease\b", " ", text, flags=re.I).strip()

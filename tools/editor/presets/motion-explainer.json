@@ -81,5 +81,10 @@
   "references": [
     "research/sources-style-library.md#kurzgesagt"
   ],
-  "evidence": "est. from public sources; calibrate with measured references"
+  "evidence": "est. from public sources; calibrate with measured references",
+  "boards": {
+    "auto": true,
+    "mode": "full",
+    "max": 8
+  }
 }

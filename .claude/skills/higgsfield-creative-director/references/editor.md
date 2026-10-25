@@ -91,3 +91,12 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
   - `decode-style <reference>` → preset JSON
   - person-tagged B-roll library (cast photos → tags, action captions)
   - an optional script-following teleprompter that logs takes (local speech recognition only, for client privacy)
+
+## 8. Boards and cards (explainer graphics, carousels, LinkedIn PDFs)
+- **Boards** = animated brand cards over the video, timed to the word: `boards[]` in the recipe (`{id, card, anchor, dur, mode}`). `mode: panel` keeps the speaker visible (card in the top ~40 %, panel shrinks to its content); `mode: full` replaces the frame and auto-hides captions while it is up (the VO keeps playing).
+- **Card types:** title, stat (counts up), list, steps, quote, compare, definition, myth_fact, chart (bars grow), cta. `*word*` = highlight colour. Brand colours/fonts come from the `edit-brand` block (`colors`, `fonts`, optional `cards` overrides, `handle`); brand font files in `assets/fonts/<brand>/`.
+- **Planning (0 tokens):** `editor.py boards [--mode panel|full --max N --dry-run]` runs the "understandable by listening alone?" test per spoken phrase (numbers, dates, steps, definitions) and drafts cards; presets with `"boards": {"auto": true}` (clean-explainer, b2b-founder, linkedin-founder-video, motion-explainer, myth-buster-expert, map-explainer) plan them at assemble. Drafted stat cards carry `_todo: add source`; Claude or Klaus finishes the copy in the recipe.
+- **QC:** every stat/chart board has a `source`; no `_todo` left; each board ≥ 2 s on screen. Board-in SFX uses the preset's `sfx.map.board` (else `title`).
+- **Revise phrases:** "no boards", "boards full", "boards panel".
+- **Carousels / LinkedIn documents:** `editor.py cards SPEC.json --aspect 4:5|1:1|9:16|16:9 [--brand B --out DIR --no-pdf]` → `slide_NN.png` + `slides.pdf` + `contact_sheet.jpg` (page numbers, handle, "swipe →"). Spec = `{"brand", "aspect", "theme": {...}, "cards": [...]}`. Look at the contact sheet before calling it done. Archetypes: `styles/carousel.json`.
+- Premium path: the same card JSON drives HyperFrames/Remotion when a piece needs bespoke motion.

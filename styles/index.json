@@ -1,0 +1,2738 @@
+[
+ {
+  "id": "absurd-sketch",
+  "family": "edit",
+  "name": "Absurd brand sketch (Liquid Death-style)",
+  "aliases": [
+   "absurd sketch"
+  ],
+  "what": "Straight-faced genre parody that escalates into absurdity, deadpan tag, heavy sting. Never for clinics.",
+  "brands": [
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset absurd-sketch  (or /edit with this preset)",
+  "compliance": "not for health/clinic brands"
+ },
+ {
+  "id": "aesthetic-lifestyle",
+  "family": "edit",
+  "name": "Aesthetic fitness lifestyle (Whitney Simmons-style)",
+  "aliases": [
+   "aesthetic lifestyle"
+  ],
+  "what": "Music-first, soft pastel grade, slow gimbal B-roll, diary VO, minimal lowercase text, sets × reps cards.",
+  "brands": [
+   "peachform",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset aesthetic-lifestyle  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; licensed music on brand accounts"
+ },
+ {
+  "id": "aura-cinematic",
+  "family": "edit",
+  "name": "Aura / cinematic",
+  "aliases": [
+   "aura cinematic"
+  ],
+  "what": "Slow push-ins, minimal words, big statement captions, contrast-crushed grade with vignette, riser into the drop.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset aura-cinematic  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "b2b-founder",
+  "family": "edit",
+  "name": "B2B founder talking head (LinkedIn)",
+  "aliases": [
+   "b2b founder"
+  ],
+  "what": "Professional talking head: persistent top headline bar, burned captions with accent highlight, punch-in jump cuts, data callouts, name lower third, soft CTA.",
+  "brands": [
+   "clinic-director",
+   "heal360",
+   "klaus",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube",
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU",
+   "BOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset b2b-founder  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "cinematic-vlog",
+  "family": "edit",
+  "name": "Cinematic vlog (Peter McKinnon / Casey Neistat)",
+  "aliases": [
+   "cinematic vlog"
+  ],
+  "what": "Host-led vlog with cinematic B-roll: sensory cold open, speed ramps, whips, match cuts, jump-cut talking, time-lapse bridges, sincere long-take monologue.",
+  "brands": [
+   "heal360",
+   "klaus",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset cinematic-vlog  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "clean-explainer",
+  "family": "edit",
+  "name": "Clean explainer (Ali Abdaal-style)",
+  "aliases": [
+   "clean explainer"
+  ],
+  "what": "Calm curious talking head, kinetic text beside the speaker with yellow keywords, framework cards per point, paper transitions, low lo-fi bed.",
+  "brands": [
+   "heal360",
+   "klaus",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset clean-explainer  (or /edit with this preset)",
+  "compliance": "health: factual benefits only, no 'best/guaranteed', no patient quotes"
+ },
+ {
+  "id": "clinic-trust",
+  "family": "edit",
+  "name": "Clinic trust film (premium healthcare)",
+  "aliases": [
+   "clinic trust"
+  ],
+  "what": "Calm clinician-led brand film: real staff, soft daylight, slow moves, dissolves, low music, factual supers. SG health-compliant by default.",
+  "brands": [
+   "heal360",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "MOFU",
+   "BOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset clinic-trust  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims"
+ },
+ {
+  "id": "deadpan-comedy",
+  "family": "edit",
+  "name": "Deadpan comedy",
+  "aliases": [
+   "deadpan comedy"
+  ],
+  "what": "Held beats, silence kept on purpose, static frame, no zooms except the crash zoom on the reveal, one impact SFX on the payoff, captions static.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset deadpan-comedy  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "doc-trailer",
+  "family": "edit",
+  "name": "Documentary trailer (Netflix true-story style)",
+  "aliases": [
+   "doc trailer"
+  ],
+  "what": "Three-act trailer: bite over black, title cards, accelerating montage on risers, silence, button line, title + date.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset doc-trailer  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "doctor-reacts",
+  "family": "edit",
+  "name": "Clinician reacts to a viral claim",
+  "aliases": [
+   "doctor reacts"
+  ],
+  "what": "Recreated claim card or in-app stitch, freeze-frame verdict, diagram explanation, what's actually true, takeaway.",
+  "brands": [
+   "heal360",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset doctor-reacts  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims; react to the claim, not the person; no likeness of real people without rights (commentary-controversy.md)"
+ },
+ {
+  "id": "documentary",
+  "family": "edit",
+  "name": "Documentary / explainer",
+  "aliases": [
+   "documentary"
+  ],
+  "what": "VO-led, B-roll heavy (every 4 s), lower-thirds for names/facts, sentence captions, clean cuts.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset documentary  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "exercise-demo",
+  "family": "edit",
+  "name": "Exercise demo education (Prehab Guys / Kayla Itsines)",
+  "aliases": [
+   "exercise demo"
+  ],
+  "what": "The exercise is the A-roll: problem title over a moving demo, cue overlays, mistake vs correct, progression, save CTA + safety line.",
+  "brands": [
+   "heal360",
+   "peachform",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset exercise-demo  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims; no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; add 'general info - get assessed if pain persists'"
+ },
+ {
+  "id": "fast-recipe",
+  "family": "edit",
+  "name": "Fast recipe ASMR (Nick DiGiovanni / Khairul Aming)",
+  "aliases": [
+   "fast recipe"
+  ],
+  "what": "Hero shot + premise in 1 s, beat-cut ASMR step montage, plating, the bite in silence, verdict.",
+  "brands": [
+   "peachform",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset fast-recipe  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; halal check before Ramadan tie-ins"
+ },
+ {
+  "id": "genz-chaos",
+  "family": "edit",
+  "name": "GenZ chaos",
+  "aliases": [
+   "genz chaos"
+  ],
+  "what": "0.8-1.5 s shots, punch-in every cut, 1-2 word captions with keyword colour + emoji, stim every 1.5-3 s, meme inserts as B-roll.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset genz-chaos  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "linkedin-founder-video",
+  "family": "edit",
+  "name": "LinkedIn native vertical founder video",
+  "aliases": [
+   "linkedin founder video"
+  ],
+  "what": "Vertical/4:5 founder talking to the ICP: promise in line 1 and first spoken sentence, 2-4 word captions in the lower third, B-roll/screen recordings every 3-6 s on key nouns, explainer boards on numbers/steps, ducked low bed, one CTA line. 30-75 s.",
+  "brands": [
+   "clinic-director",
+   "heal360",
+   "klaus",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset linkedin-founder-video  (or /edit with this preset)",
+  "compliance": "clinic directors: educational only, no patients on camera, no offers, credentials accurate"
+ },
+ {
+  "id": "luxury-broll",
+  "family": "edit",
+  "name": "Luxury B-roll talking head (Iman Gadzhi-style)",
+  "aliases": [
+   "luxury broll"
+  ],
+  "what": "Cinematic two-angle talking head over aspirational B-roll, accent-colour UI/graph pops, animation-dense intro (4-10 visuals/min) easing to ~2/min.",
+  "brands": [
+   "klaus",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset luxury-broll  (or /edit with this preset)",
+  "compliance": "no income/lifestyle guarantees; not for health brands"
+ },
+ {
+  "id": "magic-transition",
+  "family": "edit",
+  "name": "Magic transition one-take (Zach King-style)",
+  "aliases": [
+   "magic transition"
+  ],
+  "what": "Single-take feel; a mundane setup transforms through a hidden cut (whip, lens block, object pass); SFX hit sells the magic; loopable end. Sound-off friendly.",
+  "brands": [
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "paid hooks"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset magic-transition  (or /edit with this preset)",
+  "compliance": "never show an instant body or pain transformation (misleading)"
+ },
+ {
+  "id": "manifesto-montage",
+  "family": "edit",
+  "name": "Manifesto montage (Nike / Gymshark brand film)",
+  "aliases": [
+   "manifesto montage"
+  ],
+  "what": "VO manifesto over documentary/athlete montage, building from solo instrument to full, ending on a held thesis image and tagline card.",
+  "brands": [
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset manifesto-montage  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording"
+ },
+ {
+  "id": "map-explainer",
+  "family": "edit",
+  "name": "Map/archival explainer (Johnny Harris / Vox-style)",
+  "aliases": [
+   "map explainer"
+  ],
+  "what": "Host on camera + paper textures, archival, map zooms, serif type; cold-open question, chapters, twist, synthesis.",
+  "brands": [
+   "klaus",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset map-explainer  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "mascot-unhinged",
+  "family": "edit",
+  "name": "Unhinged mascot / brand-as-creator (Duolingo, Scrub Daddy)",
+  "aliases": [
+   "mascot unhinged"
+  ],
+  "what": "Lo-fi phone skit timed to an audio drop, static meme caption at the top, self-aware brand humour, mascot or staff as recurring character.",
+  "brands": [
+   "klaus",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset mascot-unhinged  (or /edit with this preset)",
+  "compliance": "licensed audio on brand accounts; not for clinics (don't trivialise conditions)"
+ },
+ {
+  "id": "moral-skit",
+  "family": "edit",
+  "name": "Moral-lesson skit (Dhar Mann-style)",
+  "aliases": [
+   "moral skit"
+  ],
+  "what": "Scripted archetype drama: injustice hook → escalating wrongs → reveal → consequence → moral stated to camera. Make 4-5 hook/ending variants.",
+  "brands": [
+   "heal360",
+   "peachform",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset moral-skit  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims; fictional actors, 'dramatisation' tag, never posed as a patient; cruelty gets cold sound (ledger)"
+ },
+ {
+  "id": "motion-explainer",
+  "family": "edit",
+  "name": "Motion-graphics explainer (Kurzgesagt-style)",
+  "aliases": [
+   "motion explainer"
+  ],
+  "what": "No host: flat-vector animation timed to VO, saturated palette, consistent character set, gentle score, chapter cards.",
+  "brands": [
+   "heal360",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset motion-explainer  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "myth-buster-expert",
+  "family": "edit",
+  "name": "Myth-buster expert (Adam Meakins / Dr Mike-style)",
+  "aliases": [
+   "myth buster expert"
+  ],
+  "what": "Clinician states a common myth, rejects it in 2 s, gives 1-2 evidence points and a 'do this instead' demo.",
+  "brands": [
+   "heal360",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset myth-buster-expert  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims; no profanity on brand accounts; never name or deride other providers"
+ },
+ {
+  "id": "podcast-clip",
+  "family": "edit",
+  "name": "Podcast clip (DOAC / clip-channel style)",
+  "aliases": [
+   "podcast clip"
+  ],
+  "what": "Hook claim first (no welcome), speaker-fill ↔ stacked split switching, bold karaoke captions, host reaction cutaways, low tension bed, 30-90 s.",
+  "brands": [
+   "heal360",
+   "klaus",
+   "physio-spot",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset podcast-clip  (or /edit with this preset)",
+  "compliance": "keep qualifiers; cut context fairly; health: no patient-guest 'it cured me' clips, no outcome promises"
+ },
+ {
+  "id": "premium-calm",
+  "family": "edit",
+  "name": "Premium clinic / calm",
+  "aliases": [
+   "premium calm"
+  ],
+  "what": "Slow pace, soft push-ins, serif sentence captions low in frame, warm grade, music low, 0-2 SFX total.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset premium-calm  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "product-hero",
+  "family": "edit",
+  "name": "Product hero (Apple-style)",
+  "aliases": [
+   "product hero"
+  ],
+  "what": "Premium reveal with no talking head: macro edge-light, kinetic claim type on the beat, silence before the hero hold, logo end card.",
+  "brands": [
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "launch"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset product-hero  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "quiz-reveal",
+  "family": "edit",
+  "name": "Quiz reveal (question card → countdown → answer)",
+  "aliases": [
+   "quiz reveal"
+  ],
+  "what": "Interview-puzzle / myth-quiz format: question card on screen, a short thinking countdown, then the reveal and the why. Built for comments ('what did you guess?') and rewatches. Health brands: questions are educational, never diagnostic.",
+  "brands": [
+   "peachform",
+   "physio-spot",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset quiz-reveal  (or /edit with this preset)",
+  "compliance": "health: educational questions only, no self-diagnosis quizzes, no superlatives"
+ },
+ {
+  "id": "raw-gym-vlog",
+  "family": "edit",
+  "name": "Raw gym vlog (Sam Sulek-style)",
+  "aliases": [
+   "raw gym vlog"
+  ],
+  "what": "Minimal-edit, narration-led long-form gym vlog: car plan, sets with commentary, pump check, ride-home reflection. Continuity over cuts.",
+  "brands": [
+   "klaus",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset raw-gym-vlog  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording"
+ },
+ {
+  "id": "retention-max",
+  "family": "edit",
+  "name": "Retention-max (MrBeast-style)",
+  "aliases": [
+   "retention max"
+  ],
+  "what": "Promise-matched cold open, stakes in 5 s, stair-step escalation with re-engagement spikes, abrupt end. 2024 style lets scenes breathe (~23 cuts/min long-form).",
+  "brands": [
+   "klaus",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset retention-max  (or /edit with this preset)",
+  "compliance": "health brands: no prizes/giveaways (inducements), no superlatives"
+ },
+ {
+  "id": "sea-skit",
+  "family": "edit",
+  "name": "SEA skit (Singlish / Malay comedy)",
+  "aliases": [
+   "sea skit"
+  ],
+  "what": "Localised one-person or couple skit: situation text on top, in-character open, escalation, music stops dead on the punchline, reaction tag.",
+  "brands": [
+   "klaus",
+   "peachform",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset sea-skit  (or /edit with this preset)",
+  "compliance": "licensed audio on brand accounts (no drama OSTs); never mock patients; localisation.md pack"
+ },
+ {
+  "id": "sensitive-health-edu",
+  "family": "edit",
+  "name": "Sensitive health education (pelvic / men's health)",
+  "aliases": [
+   "sensitive health edu"
+  ],
+  "what": "Calm, destigmatising clinician education: plain-language symptom question, normalise, mechanism on a model/diagram (never bodies), when to seek care. No humour SFX.",
+  "brands": [
+   "heal360",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset sensitive-health-edu  (or /edit with this preset)",
+  "compliance": "no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no before/after outcome claims; anatomical terms, no innuendo (platform ad policy); diagrams, not bodies"
+ },
+ {
+  "id": "silent-deadpan",
+  "family": "edit",
+  "name": "Silent deadpan fix (Khaby Lame-style)",
+  "aliases": [
+   "silent deadpan"
+  ],
+  "what": "Over-complicated 'hack' (recreated with our own cast) → static deadpan stare → the obvious simple way → long hold → palms-up gesture. No speech, no captions.",
+  "brands": [
+   "physio-spot",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset silent-deadpan  (or /edit with this preset)",
+  "compliance": "recreate hacks with our cast, never stitch others without rights; health: the correct way is factual, not 'the only' way"
+ },
+ {
+  "id": "story-vlog",
+  "family": "edit",
+  "name": "Story vlog / serial challenge (Ryan Trahan-style)",
+  "aliases": [
+   "story vlog"
+  ],
+  "what": "Earnest serialized challenge diary: one-line rules, named recurring segments, running counter, a heart moment, cliffhanger to the next episode.",
+  "brands": [
+   "klaus",
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset story-vlog  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; health brands: staff-led challenges only, no patient journeys (testimonial)"
+ },
+ {
+  "id": "storytime-text",
+  "family": "edit",
+  "name": "Storytime over satisfying B-roll (faceless split)",
+  "aliases": [
+   "storytime text"
+  ],
+  "what": "Original story (never scraped posts) told by VO over looping brand-owned satisfying B-roll, word-by-word captions on the seam, verdict question or Part 2 ending.",
+  "brands": [
+   "klaus",
+   "peachform",
+   "physio-spot"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset storytime-text  (or /edit with this preset)",
+  "compliance": "original scripts only (no Reddit/others' posts); label AI voice; health: fictional + educational, never first-person 'I was cured'"
+ },
+ {
+  "id": "street-interview",
+  "family": "edit",
+  "name": "Street interview / vox pop (Daniel Mac, Subway Takes)",
+  "aliases": [
+   "street interview"
+  ],
+  "what": "One fixed recurring question in 0-2 s, persistent top title bar with the question/take, natural ambience, answer as the payoff, host reaction.",
+  "brands": [
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset street-interview  (or /edit with this preset)",
+  "compliance": "signed releases from everyone on camera; health: no patient vox pops about results"
+ },
+ {
+  "id": "talking-head-punchy",
+  "family": "edit",
+  "name": "Talking head, punchy (default)",
+  "aliases": [
+   "talking head punchy"
+  ],
+  "what": "Jump cuts on every pause, snap punch-ins every ~3 s, 2-3 word pop captions, light whooshes. The safe default for founder/expert reels.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset talking-head-punchy  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "tech-review-premium",
+  "family": "edit",
+  "name": "Premium review (MKBHD-style)",
+  "aliases": [
+   "tech review premium"
+  ],
+  "what": "Calm authority: dark matte set, motion-control product glides, sparse spec callouts, balanced pros/cons, verdict.",
+  "brands": [
+   "physio-spot",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset tech-review-premium  (or /edit with this preset)",
+  "compliance": "no comparative superlatives; an 'honest verdict' must not become a self-review testimonial (health)"
+ },
+ {
+  "id": "ugc-ad-hook-stack",
+  "family": "edit",
+  "name": "UGC ad hook-stack (paid social)",
+  "aliases": [
+   "ugc ad hook stack"
+  ],
+  "what": "Native selfie UGC ad: emotion-first hook in 1.5 s, re-hook every 5-15 s, problem → product → proof → CTA. Make a hook matrix (same body, 3-5 hooks). Product brands only.",
+  "brands": [
+   "peachform",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "BOFU"
+  ],
+  "route": "python tools/editor/editor.py assemble --preset ugc-ad-hook-stack  (or /edit with this preset)",
+  "compliance": "no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; disclose paid partnerships; NOT for SG clinics in proof/testimonial form; clinics use the structure with a clinician presenting education"
+ },
+ {
+  "id": "ugc-day-in-the-life",
+  "family": "edit",
+  "name": "UGC: day in the life",
+  "aliases": [
+   "ugc day in the life"
+  ],
+  "what": "Timestamped vignettes (6:00 AM, 9:30 AM …) as lower-thirds, 1-3 s shots, VO or captions, warm natural grade, steady music bed.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-day-in-the-life  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-green-screen",
+  "family": "edit",
+  "name": "UGC: green screen",
+  "aliases": [
+   "ugc green screen"
+  ],
+  "what": "Creator in front of a screenshot/article/post (the B-roll fills the background), points at it; captions high, keyword colour, punch-ins on the reveal.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-green-screen  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-pov",
+  "family": "edit",
+  "name": "UGC: POV",
+  "aliases": [
+   "ugc pov"
+  ],
+  "what": "On-screen 'POV: …' text carries the premise, minimal talking, handheld, quick 1-2 s shots, trending-style sound (licensed for brands).",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-pov  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-reaction",
+  "family": "edit",
+  "name": "UGC: reaction",
+  "aliases": [
+   "ugc reaction"
+  ],
+  "what": "Source clip top/left, face reaction held 0.6-1.2 s and cut on the eyes, one stim per reaction, captions only on the punch.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-reaction  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-selfie-talking-head",
+  "family": "edit",
+  "name": "UGC: selfie talking head",
+  "aliases": [
+   "ugc selfie talking head"
+  ],
+  "what": "Phone-in-hand, eye contact, one idea. Hook line straight to camera, keep natural imperfections, light jump cuts.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-selfie-talking-head  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-testimonial-style",
+  "family": "edit",
+  "name": "UGC: experience-style (compliant)",
+  "aliases": [
+   "ugc testimonial style"
+  ],
+  "what": "First-person EXPERIENCE format told by the founder/staff/creator about their own experience, NOT a customer endorsement. For regulated brands (e.g. SG health) never use patients, results claims or 'it cured me'; the compliance pack check is mandatory.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-testimonial-style  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-try-on-demo",
+  "family": "edit",
+  "name": "UGC: try-on / demo",
+  "aliases": [
+   "ugc try on demo"
+  ],
+  "what": "Before → doing it → result framing (no exaggerated claims), mirror/tripod shots, beat-synced cuts between looks or steps.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-try-on-demo  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "ugc-unboxing",
+  "family": "edit",
+  "name": "UGC: unboxing",
+  "aliases": [
+   "ugc unboxing"
+  ],
+  "what": "Hands + product, ASMR-ish sound, reveal held 1-2 s, captions name what is in the box, close-up B-roll of details.",
+  "brands": [
+   "all"
+  ],
+  "platforms": [
+   "tiktok",
+   "instagram",
+   "youtube"
+  ],
+  "funnel": [],
+  "route": "python tools/editor/editor.py assemble --preset ugc-unboxing  (or /edit with this preset)",
+  "compliance": ""
+ },
+ {
+  "id": "hormozi-math",
+  "family": "script",
+  "name": "Business math, binary verdicts",
+  "aliases": [
+   "hormozi",
+   "alex hormozi",
+   "value equation",
+   "business math"
+  ],
+  "what": "Contrarian verdict, the math said out loud, if-A-then-B rules, one fix. Promise, proof, plan.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinics: never 'free' or discount 'grand slam' offers, no guaranteed outcomes; keep the math non-clinical."
+ },
+ {
+  "id": "meakins-mythbust",
+  "family": "script",
+  "name": "Blunt evidence myth-buster (physio)",
+  "aliases": [
+   "meakins",
+   "adam meakins",
+   "myth buster",
+   "sports physio myth"
+  ],
+  "what": "Name the myth flatly, why people believe it, what the evidence says, the 'it depends' nuance, simple safe advice.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "klaus"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; never mock named clinics or competitors; no 'only clinic that'."
+ },
+ {
+  "id": "robbins-empathy",
+  "family": "script",
+  "name": "Empathetic self-help",
+  "aliases": [
+   "mel robbins",
+   "empathetic",
+   "self help",
+   "validation"
+  ],
+  "what": "Validate the feeling, normalise it ('it's how your brain works'), one named tool, a tiny first step.",
+  "brands": [
+   "peachform",
+   "klaus"
+  ],
+  "platforms": [
+   "email",
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "nurture"
+  ],
+  "compliance": "Health: 'can help', never 'this will fix your pain'."
+ },
+ {
+  "id": "junyuh-story",
+  "family": "script",
+  "name": "Personal life-lesson story",
+  "aliases": [
+   "jun yuh",
+   "life lesson",
+   "storytelling reel",
+   "personal story"
+  ],
+  "what": "A specific remembered line or moment, tension, realisation, universal lesson, gentle challenge. Cinematic B-roll + intimate VO.",
+  "brands": [
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Klaus's own story only (brains/ story card); never patient stories."
+ },
+ {
+  "id": "mrbeast-stakes",
+  "family": "script",
+  "name": "Stakes and escalation challenge",
+  "aliases": [
+   "mrbeast",
+   "challenge",
+   "we tested",
+   "stakes"
+  ],
+  "what": "Deliver the thumbnail promise in seconds, rising stakes per step, twist, measured payoff.",
+  "brands": [
+   "power-protein",
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinics: no giveaways/contests (inducements), no transformation results."
+ },
+ {
+  "id": "abdaal-framework",
+  "family": "script",
+  "name": "Calm research-backed framework",
+  "aliases": [
+   "ali abdaal",
+   "framework",
+   "productivity",
+   "calm explainer"
+  ],
+  "what": "N named ideas, each = concept + source + personal example, then the common thread, lead-magnet CTA.",
+  "brands": [
+   "titan-ai",
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "newsletter",
+   "youtube"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Lead magnets are never 'free consult' inducements; PDPA consent."
+ },
+ {
+  "id": "garyvee-raw",
+  "family": "script",
+  "name": "Raw motivational truth",
+  "aliases": [
+   "gary vee",
+   "garyvee",
+   "gary vaynerchuk",
+   "motivational rant"
+  ],
+  "what": "Blunt call-out, reframe to the long game, practical push, human note.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "No profanity on clinic channels."
+ },
+ {
+  "id": "bartlett-interview",
+  "family": "script",
+  "name": "Question-led founder interview",
+  "aliases": [
+   "steven bartlett",
+   "diary of a ceo",
+   "interview",
+   "podcast clip"
+  ],
+  "what": "Cold-open the guest's most surprising line, then the question, backstory, the hard 'why', vulnerable beat, one lesson.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinician guests stay educational; no patient guests endorsing services."
+ },
+ {
+  "id": "dharmann-parable",
+  "family": "script",
+  "name": "Moral parable (with nuance)",
+  "aliases": [
+   "dhar mann",
+   "moral skit",
+   "parable",
+   "lesson skit"
+  ],
+  "what": "Injustice in 3 s, dignified response, reveal, proportionate consequence, humanising change, moral on screen.",
+  "brands": [
+   "peachform",
+   "klaus",
+   "titan-ai",
+   "physio-spot"
+  ],
+  "platforms": [
+   "facebook",
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; actors never presented as patients; the clinic is never the 'hero cure'."
+ },
+ {
+  "id": "drmike-reacts",
+  "family": "script",
+  "name": "Expert reacts to a viral claim",
+  "aliases": [
+   "dr mike",
+   "doctor reacts",
+   "physio reacts",
+   "reacts"
+  ],
+  "what": "Clip, verdict (true / half-true / false), mechanism, fair credit, safer approach, red-flag referral.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; only clips you have rights to (stitch/duet); state credentials accurately; no ridicule of named practitioners."
+ },
+ {
+  "id": "sinek-why",
+  "family": "script",
+  "name": "Why-first manifesto",
+  "aliases": [
+   "simon sinek",
+   "golden circle",
+   "start with why",
+   "manifesto"
+  ],
+  "what": "Your own counterintuitive principle, why -> how -> what, one story proving it, principle restated.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "website",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "about page"
+  ],
+  "compliance": "Safe when the why makes no outcome claims. Write your own principle, never his lines."
+ },
+ {
+  "id": "welsh-linkedin",
+  "family": "script",
+  "name": "LinkedIn system post",
+  "aliases": [
+   "justin welsh",
+   "linkedin system",
+   "solopreneur post"
+  ],
+  "what": "One-line result or contrarian hook, context, numbered system, the key insight, what people skip, newsletter CTA.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin",
+   "threads",
+   "x"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: no patient-count bragging."
+ },
+ {
+  "id": "sanchez-contrarian",
+  "family": "script",
+  "name": "Contrarian boring-business",
+  "aliases": [
+   "codie sanchez",
+   "contrarian",
+   "boring business"
+  ],
+  "what": "Everyone chases the sexy thing; the money is in the boring thing. Economics, why nobody competes, 3 checks, honest risk.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "No clinic pricing claims."
+ },
+ {
+  "id": "koe-philosophy",
+  "family": "script",
+  "name": "Philosophical one-person business",
+  "aliases": [
+   "dan koe",
+   "philosophical",
+   "aphorism",
+   "essay"
+  ],
+  "what": "Abstract thesis, critique of the default path, reframe, practical system, an aphorism.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "newsletter",
+   "x",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "-"
+ },
+ {
+  "id": "williamson-curiosity",
+  "family": "script",
+  "name": "Intellectual curiosity clip",
+  "aliases": [
+   "chris williamson",
+   "modern wisdom",
+   "fascinating idea"
+  ],
+  "what": "Surprising finding from a named source, mechanism, what it means for you, the ironic twist.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Cite primary sources."
+ },
+ {
+  "id": "protocol-science",
+  "family": "script",
+  "name": "Protocol science, evidence-graded",
+  "aliases": [
+   "huberman",
+   "protocol",
+   "science protocol"
+  ],
+  "what": "Mechanism, protocol with what/when/how long, an explicit evidence grade, who should skip it.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "MOFU (saves)"
+  ],
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; no supplement claims beyond approved wording; no dosing that implies diagnosis."
+ },
+ {
+  "id": "gadzhi-aspire",
+  "family": "script",
+  "name": "Aspirational 'start over' story",
+  "aliases": [
+   "iman gadzhi",
+   "aspirational",
+   "if i started over"
+  ],
+  "what": "If I started over at [age]: origin struggle, the vehicle, 3 steps, the honest trade-off, soft CTA.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Never for clinics. No income guarantees anywhere; results must be real and typical."
+ },
+ {
+  "id": "wisdom-parable",
+  "family": "script",
+  "name": "Wisdom story with attribution",
+  "aliases": [
+   "jay shetty",
+   "wisdom story",
+   "old story",
+   "parable quote"
+  ],
+  "what": "There's a story (attributed / adapted / original), setup, turn, wisdom line, application.",
+  "brands": [
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "facebook",
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "HOUSE RULE: origin-check every parable/quote and attribute on screen or mark 'original parable' (the style's namesake faced plagiarism allegations, Guardian 2024)."
+ },
+ {
+  "id": "acosta-slay",
+  "family": "script",
+  "name": "SLAY LinkedIn story",
+  "aliases": [
+   "lara acosta",
+   "slay",
+   "linkedin story"
+  ],
+  "what": "Story -> Lesson -> Actionable advice -> You (question). Short lines, whitespace.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin",
+   "threads",
+   "x"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinics: no patient stories as proof."
+ },
+ {
+  "id": "polin-quiz",
+  "family": "script",
+  "name": "Playful edu-challenge (SEA)",
+  "aliases": [
+   "jerome polin",
+   "quiz challenge",
+   "can you solve"
+  ],
+  "what": "A timed question, a friend's funny wrong try, hint, answer + why, bonus fact, comment-your-time CTA.",
+  "brands": [
+   "physio-spot",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "No diagnosis-by-quiz; add 'see a professional for assessment'."
+ },
+ {
+  "id": "aming-series",
+  "family": "script",
+  "name": "Warm daily series (SEA)",
+  "aliases": [
+   "khairul aming",
+   "30 days series",
+   "daily series",
+   "recipe series"
+  ],
+  "what": "Day X of a named series: tease, what you need, quick steps, cheeky aside, result moment, tomorrow's teaser.",
+  "brands": [
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "retention"
+  ],
+  "compliance": "Protein: VN claim rules, no 'cures'/'burns fat'. Originality matters (copycat backlash)."
+ },
+ {
+  "id": "noc-sg-sketch",
+  "family": "script",
+  "name": "SG observational sketch",
+  "aliases": [
+   "night owl cinematics",
+   "noc",
+   "singlish skit",
+   "things singaporeans say"
+  ],
+  "what": "Recognisable SG situation, stereotype riff list, escalation, twist/tag, tag-a-friend CTA.",
+  "brands": [
+   "physio-spot",
+   "peachform",
+   "klaus",
+   "personal-gym-skits"
+  ],
+  "platforms": [
+   "instagram",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Never mock patients or show testimonials; label dramatisation."
+ },
+ {
+  "id": "stickman",
+  "family": "animation",
+  "name": "Stickman / doodle explainer",
+  "aliases": [
+   "stickman",
+   "stick figure",
+   "stick man",
+   "doodle psychology",
+   "casually explained"
+  ],
+  "what": "Black-line stick figures, dot eyes, off-white paper, 1-2 accent colours, labels beside figures, slight line boil.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "klaus",
+   "titan-ai",
+   "peachform",
+   "power-protein"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "higgsfield-video-explainer skill (Gemini Omni 10-s blocks; run get_explainer_presets live, names change) -> Stickman preset (faceless or stickman mascot). High cut rate (1.5 s/image): Nano Banana stills + local editor Ken Burns (cheaper)."
+ },
+ {
+  "id": "whiteboard",
+  "family": "animation",
+  "name": "Whiteboard / hand-drawn draw-on",
+  "aliases": [
+   "whiteboard",
+   "doodle explainer",
+   "rsa animate",
+   "hand drawn"
+  ],
+  "what": "Marker drawings appear stroke by stroke on a white board and accumulate; 1-2 accent colours.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "titan-ai",
+   "power-protein"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Nano Banana final-state frames -> draw-on stroke-mask reveal in HyperFrames/Remotion (deterministic, cheap); or explainer skill custom key. Labels via cards engine."
+ },
+ {
+  "id": "flat-vector",
+  "family": "animation",
+  "name": "Flat vector motion explainer (Kurzgesagt-like, generic)",
+  "aliases": [
+   "kurzgesagt",
+   "flat vector",
+   "flat 2d",
+   "pastel flat",
+   "motion explainer"
+  ],
+  "what": "Flat geometric shapes on a saturated dark palette, soft glows, rounded cute creatures, constant gentle looping motion.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "higgsfield-video-explainer skill (Gemini Omni 10-s blocks; run get_explainer_presets live, names change) -> 'Pastel Flat 2D' or custom flat key (Nano Banana); precise loops/data in HyperFrames/Remotion with vectorised GPT Image assets."
+ },
+ {
+  "id": "anime-2d",
+  "family": "animation",
+  "name": "2D anime / hand-painted (generic)",
+  "aliases": [
+   "anime",
+   "ghibli",
+   "lofi anime",
+   "cel shaded"
+  ],
+  "what": "Cel-shaded characters, painterly gouache backgrounds, big skies, warm nostalgic light. Never name a studio, film or character.",
+  "brands": [
+   "klaus",
+   "peachform",
+   "heal360"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Character sheet (Nano Banana turnaround) -> key frames -> Seedance 2.5 / Kling I2V; explainer skill (Watercolor Chronicle or custom) for narrated pieces."
+ },
+ {
+  "id": "animation-3d",
+  "family": "animation",
+  "name": "3D feature-animation cartoon (generic)",
+  "aliases": [
+   "pixar",
+   "disney",
+   "3d cartoon",
+   "zack d films",
+   "what happens if 3d"
+  ],
+  "what": "Stylised 3D, soft subsurface skin, big eyes, appealing shapes, warm cinematic light. See animation-3d-cartoon.md.",
+  "brands": [
+   "power-protein",
+   "peachform",
+   "physio-spot",
+   "heal360",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Nano Banana 2 character sheet -> Seedance 2.5 omni_reference (Kling for motion-control acting); generate_3d / scene builder for body interiors."
+ },
+ {
+  "id": "claymation",
+  "family": "animation",
+  "name": "Claymation / stop-motion look",
+  "aliases": [
+   "claymation",
+   "stop motion",
+   "plasticine",
+   "felt"
+  ],
+  "what": "Plasticine figures with fingerprints, felt/cardboard miniature set, stepped motion on twos, tilt-shift light.",
+  "brands": [
+   "power-protein",
+   "peachform",
+   "physio-spot"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Clay character + set key (Nano Banana) -> Seedance/Kling I2V ('stop-motion animation on twos') -> decimate to 12 fps locally in ffmpeg."
+ },
+ {
+  "id": "collage",
+  "family": "animation",
+  "name": "Paper collage / editorial mixed media (Vox-like)",
+  "aliases": [
+   "vox",
+   "collage",
+   "paper cut out",
+   "mixed media",
+   "johnny harris"
+  ],
+  "what": "Torn paper, tape, halftone, newsprint, cut-out archival photos, highlighter and red-circle annotations, stop-motion jitter.",
+  "brands": [
+   "titan-ai",
+   "klaus",
+   "physio-spot"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Higgsfield /vox-mixed-media ('Editorial Motion Graphics' explainer preset); real documents/charts composited in HyperFrames/Remotion (never generate documents)."
+ },
+ {
+  "id": "motion-typography",
+  "family": "animation",
+  "name": "Motion typography / kinetic text",
+  "aliases": [
+   "kinetic text",
+   "motion typography",
+   "text reel",
+   "quote reel",
+   "hormozi captions"
+  ],
+  "what": "Words are the visuals: bold type animated to VO and beat, keyword highlights, icons, solid/gradient or blurred B-roll background.",
+  "brands": [
+   "titan-ai",
+   "klaus",
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Local editor caption presets / cards engine boards (tools/editor), or HyperFrames/Remotion template. Explainer skill explicitly excludes this. Zero generation credits."
+ },
+ {
+  "id": "data-viz",
+  "family": "animation",
+  "name": "Infographic / data-viz animation",
+  "aliases": [
+   "infographic",
+   "data viz",
+   "chart animation",
+   "visual capitalist"
+  ],
+  "what": "Animated charts, counters, maps, timelines, icon arrays in brand palette, clean type, source line on screen.",
+  "brands": [
+   "titan-ai",
+   "power-protein",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine chart/stat boards (tools/editor cards.py) or HyperFrames/Remotion; dataviz skill rules. Never generate numbers with image/video models."
+ },
+ {
+  "id": "parallax-2-5d",
+  "family": "animation",
+  "name": "2.5D parallax photo documentary",
+  "aliases": [
+   "parallax",
+   "ken burns",
+   "depthflow",
+   "2.5d",
+   "photo animation"
+  ],
+  "what": "Real stills split into depth layers with a slow dolly, grain, dust, vignette.",
+  "brands": [
+   "klaus",
+   "physio-spot",
+   "heal360",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Real photos (rights) -> optional upscale_image -> depth map -> DepthFlow locally (free) or Seedance/Kling camera-only I2V -> grain, VO, score. Label any AI recreation."
+ },
+ {
+  "id": "diorama-3d",
+  "family": "animation",
+  "name": "Isometric diorama / toy-brick world (generic)",
+  "aliases": [
+   "isometric",
+   "diorama",
+   "lego",
+   "toy brick",
+   "tiny world"
+  ],
+  "what": "Tiny world on a floating base, isometric camera, tilt-shift, cute miniature detail; or generic toy bricks (never LEGO marks).",
+  "brands": [
+   "titan-ai",
+   "physio-spot",
+   "power-protein"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Diorama key (Nano Banana) -> Seedance/Kling orbit, or Higgsfield 3D scene builder / generate_3d for consistent angles."
+ },
+ {
+  "id": "ai-doc-photoreal",
+  "family": "animation",
+  "name": "Faceless photoreal AI documentary",
+  "aliases": [
+   "ai documentary",
+   "cinematic documentary",
+   "faceless documentary",
+   "photoreal doc"
+  ],
+  "what": "Cinematic photoreal B-roll (landscapes, hands, silhouettes), anamorphic grade, documentary VO; faces mostly unseen.",
+  "brands": [
+   "klaus",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "documentary-3d.md + realism.md: keyframes (Nano Banana/GPT Image) -> Seedance 2.5 omni_reference 480p -> approve -> 1080p -> 4K upscale. Explainer skill cannot (non-photoreal only)."
+ },
+ {
+  "id": "listicle",
+  "family": "carousel",
+  "name": "Listicle",
+  "aliases": [
+   "list",
+   "top 5"
+  ],
+  "what": "Hook with a number -> re-hook -> one item per slide (headline + why + mini visual) -> recap grid + save CTA",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "step-by-step",
+  "family": "carousel",
+  "name": "Step-by-step",
+  "aliases": [
+   "how to",
+   "steps",
+   "tutorial carousel"
+  ],
+  "what": "Outcome promise -> who/what you need -> numbered steps with a 'common error' sticker -> full sequence slide -> save + try",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "myth-vs-fact",
+  "family": "carousel",
+  "name": "Myth vs fact",
+  "aliases": [
+   "myth",
+   "myth fact",
+   "myths"
+  ],
+  "what": "'Stop believing these 5...' -> MYTH (red) -> FACT (green + tiny source), repeated -> 'Which surprised you?'",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
+ },
+ {
+  "id": "mistake-fix",
+  "family": "carousel",
+  "name": "Mistake -> fix",
+  "aliases": [
+   "doing it wrong",
+   "mistakes"
+  ],
+  "what": "'You're doing X wrong' -> why it matters -> wrong/right split pairs -> checklist -> CTA",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "framework",
+  "family": "carousel",
+  "name": "Framework",
+  "aliases": [
+   "model",
+   "system",
+   "framework carousel"
+  ],
+  "what": "Name it -> problem it solves -> full diagram -> one element per slide -> worked example -> diagram again ('screenshot this') -> CTA",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "story",
+  "family": "carousel",
+  "name": "Story",
+  "aliases": [
+   "story carousel",
+   "founder story"
+  ],
+  "what": "In-scene tension -> one beat per slide, photo-led, 1-2 lines -> lesson -> how it applies to you -> follow",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "before-after",
+  "family": "carousel",
+  "name": "Before / after (non-health)",
+  "aliases": [
+   "before after",
+   "transformation"
+  ],
+  "what": "Workflow/setup/routine before -> after. NEVER body or treatment results for SG health",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
+ },
+ {
+  "id": "comparison",
+  "family": "carousel",
+  "name": "Comparison table",
+  "aliases": [
+   "vs",
+   "comparison",
+   "which is better"
+  ],
+  "what": "'X vs Y: which is right for you?' -> criteria -> one criterion per slide -> full table -> 'Choose X if...' -> CTA. Categories, never named competitors with superlatives",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "data",
+  "family": "carousel",
+  "name": "Data / infographic",
+  "aliases": [
+   "stats",
+   "infographic carousel",
+   "data carousel"
+  ],
+  "what": "Big stat + source -> why it matters -> one chart per slide -> so-what -> sources slide -> CTA",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
+ },
+ {
+  "id": "checklist",
+  "family": "carousel",
+  "name": "Checklist / cheat sheet",
+  "aliases": [
+   "cheat sheet",
+   "checklist"
+  ],
+  "what": "Title -> grouped checklists -> whole sheet on one screenshot-friendly slide -> save",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "case-study",
+  "family": "carousel",
+  "name": "Case study (non-testimonial)",
+  "aliases": [
+   "case study",
+   "composite case"
+  ],
+  "what": "Problem pattern -> what we assess -> what research says -> typical pathway -> 'timelines vary / see a professional'. No patient quotes/outcomes/photos; labelled composite",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
+ },
+ {
+  "id": "thought-leadership",
+  "family": "carousel",
+  "name": "Quote / thought leadership",
+  "aliases": [
+   "contrarian carousel",
+   "opinion"
+  ],
+  "what": "Bold contrarian line -> one point per slide in large type -> counter-argument -> conclusion -> 'Agree or disagree?'",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "save-this",
+  "family": "carousel",
+  "name": "'Save this' reference",
+  "aliases": [
+   "reference",
+   "bookmark",
+   "swipe file"
+  ],
+  "what": "'Bookmark this for your next ___' -> dense ordered tables/swaps/prompts -> everything on one slide",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "product-feature",
+  "family": "carousel",
+  "name": "Product feature",
+  "aliases": [
+   "product carousel",
+   "features"
+  ],
+  "what": "Benefit hook (not product name) -> problem -> one feature = one benefit + close-up -> how to use -> specs/FAQ -> where to buy. No disease claims",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "meme",
+  "family": "carousel",
+  "name": "Meme",
+  "aliases": [
+   "meme carousel",
+   "relatable"
+  ],
+  "what": "Relatable template -> escalating variations -> branded twist -> 'send to a friend who...'",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "tweet-style",
+  "family": "carousel",
+  "name": "Tweet-style / text-only",
+  "aliases": [
+   "text only",
+   "tweet carousel"
+  ],
+  "what": "Screenshot-style card, one thought per slide -> summary",
+  "platforms": [
+   "facebook",
+   "instagram",
+   "linkedin",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "compliance": ""
+ },
+ {
+  "id": "text-contrarian",
+  "family": "linkedin",
+  "name": "Contrarian take",
+  "aliases": [
+   "contrarian post",
+   "hot take"
+  ],
+  "what": "Common belief -> why it's backwards -> 3 reasons -> what to do -> genuine 'where do you disagree?'",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "text-framework",
+  "family": "linkedin",
+  "name": "Framework post",
+  "aliases": [
+   "framework post",
+   "system post"
+  ],
+  "what": "Named framework, numbered steps, the step teams skip, save CTA.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "text-listicle",
+  "family": "linkedin",
+  "name": "Listicle",
+  "aliases": [
+   "listicle post",
+   "things i'd tell"
+  ],
+  "what": "N things I'd tell a <role> starting <task>, one line why each, one cost me something.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "text-failure",
+  "family": "linkedin",
+  "name": "Lesson from failure",
+  "aliases": [
+   "failure post",
+   "mistake story"
+  ],
+  "what": "Mistake with a specific cost, lesson, the system now, advice.",
+  "brands": [
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "behind-the-scenes",
+  "family": "linkedin",
+  "name": "Behind the scenes",
+  "aliases": [
+   "bts",
+   "inside titan"
+  ],
+  "what": "What a deliverable really looks like inside, with an authentic photo/screen, the part clients never see.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "case-study",
+  "family": "linkedin",
+  "name": "Case study (anonymised, permissioned)",
+  "aliases": [
+   "case study post",
+   "client result"
+  ],
+  "what": "Problem with a number, 3 changes, metric after time, the non-obvious cause. NOT for clinics.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "BOFU"
+  ],
+  "compliance": "TITAN.AI only, written client permission. Never clinics (testimonial rules)."
+ },
+ {
+  "id": "data-observation",
+  "family": "linkedin",
+  "name": "Data / observation",
+  "aliases": [
+   "data post",
+   "i looked at"
+  ],
+  "what": "I looked at N items from a source: findings, the surprise, implication. Source in first comment.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "myth-evidence",
+  "family": "linkedin",
+  "name": "Myth vs evidence",
+  "aliases": [
+   "myth post",
+   "evidence post"
+  ],
+  "what": "Myth, evidence (source + year), practical takeaway, not-individual-advice line. Safest clinic-director format.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "text-story",
+  "family": "linkedin",
+  "name": "Story -> principle (SLAY)",
+  "aliases": [
+   "story post",
+   "slay post"
+  ],
+  "what": "Vivid moment, tension, turn, principle, how it shows up today; question to readers.",
+  "brands": [
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "trend-breakdown",
+  "family": "linkedin",
+  "name": "Prediction / trend breakdown",
+  "aliases": [
+   "trend post",
+   "prediction"
+  ],
+  "what": "Trend, 3 signals, what it means in SG/MY/UK, what I'm doing about it.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "how-to",
+  "family": "linkedin",
+  "name": "How-to",
+  "aliases": [
+   "how to post",
+   "tutorial post"
+  ],
+  "what": "Outcome in time without pain, 5 steps, the tool, the common mistake.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "genuine-question",
+  "family": "linkedin",
+  "name": "Genuine question / debate",
+  "aliases": [
+   "question post",
+   "debate"
+  ],
+  "what": "A real A-or-B question with conditions for each. Never 'comment YES' (downranked Mar 2026).",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "document-carousel",
+  "family": "linkedin",
+  "name": "Document (PDF) carousel",
+  "aliases": [
+   "linkedin carousel",
+   "pdf carousel",
+   "document post"
+  ],
+  "what": "Saveable teaching: framework, checklist, table. Rendered by the cards engine as PDF.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "native-video",
+  "family": "linkedin",
+  "name": "Native vertical video",
+  "aliases": [
+   "linkedin video",
+   "vertical video linkedin"
+  ],
+  "what": "You on camera speaking to the ICP, captions burned, B-roll on key nouns, text matches the video.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "newsletter",
+  "family": "linkedin",
+  "name": "LinkedIn newsletter edition",
+  "aliases": [
+   "newsletter",
+   "linkedin newsletter"
+  ],
+  "what": "Deep dive every 2 weeks; subscribers get push + in-app + email notification each edition (bypasses the ranker).",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "poll-genuine",
+  "family": "linkedin",
+  "name": "Poll (genuine only)",
+  "aliases": [
+   "poll",
+   "linkedin poll"
+  ],
+  "what": "Real research question; publish results later as a carousel. Poll-baiting is downranked.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)"
+ },
+ {
+  "id": "thought-leader-ad",
+  "family": "linkedin",
+  "name": "Thought Leader Ad (boost a person's post)",
+  "aliases": [
+   "tla",
+   "thought leader ads",
+   "boost linkedin"
+  ],
+  "what": "Sponsor Klaus's best organic post (by saves, sends, profile views) to the ICP.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "Clinic TLAs are advertisements: full HCS rules, no offers."
+ }
+]

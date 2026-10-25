@@ -91,3 +91,5 @@ Joseph's method uses three "brains" (skills): [Joseph-Vox]
 
 ## 8. QC for motion pieces (add to qc-rubric)
 Check at 10 fps, not 1 fps [Duncan]: an animation playing twice, a graphic flashing for one frame, text too late or too short to read, a graphic covering a face, a repeated word, lip drift, two of the same person on screen, music under graphics, and whoosh peaks off the fastest frame.
+
+> Style home: every animation/faceless look (stickman, whiteboard, flat vector, anime, 3D, clay, collage, kinetic type, data-viz, parallax, diorama, AI doc) has a card with route, reusable STYLE KEY, pacing, voice, cost tips and failures in `styles/animation.json` (`python scripts/styles.py show <style>`).

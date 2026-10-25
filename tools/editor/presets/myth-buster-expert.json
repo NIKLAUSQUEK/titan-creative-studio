@@ -93,5 +93,10 @@
     "no before/after outcome claims",
     "no profanity on brand accounts",
     "never name or deride other providers"
-  ]
+  ],
+  "boards": {
+    "auto": true,
+    "mode": "panel",
+    "max": 4
+  }
 }

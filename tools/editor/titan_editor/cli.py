@@ -14,6 +14,8 @@
   editor.py run     --project P <footage...>                  ingest -> brief -> broll -> assemble -> draft -> qc
   editor.py chat    --project P                               revision loop: type a note, get a new draft
   editor.py export  --project P [--version N] [--fps 30]      CMX3600 EDL of the cut (A-roll + B-roll on V2) for Premiere/Resolve finishing
+  editor.py boards  --project P [--mode panel|full --max N --dry-run]   plan explainer boards (numbers/dates/steps/definitions) -> new version
+  editor.py cards   SPEC.json [--aspect 4:5|1:1|9:16|16:9 --brand B --out DIR --no-pdf]   carousel PNGs + LinkedIn PDF + contact sheet
   editor.py preset  list | show NAME | from-stylecard NAME [--file card.json]
   editor.py selftest                                          synthetic end-to-end test
 """
@@ -56,6 +58,10 @@ def main(argv=None):
     p = sp.add_parser("render"); p.add_argument("--version", default=None); p.add_argument("--final", action="store_true"); p.add_argument("--aspects"); p.add_argument("--force", action="store_true")
     p = sp.add_parser("qc"); p.add_argument("--version", default=None); p.add_argument("--final", action="store_true"); add_llm(p, "none")
     p = sp.add_parser("handoff"); p.add_argument("--version", default=None)
+    p = sp.add_parser("boards"); p.add_argument("--mode", default="panel", choices=["panel", "full"]); p.add_argument("--max", type=int, default=None)
+    p.add_argument("--base", default=None); p.add_argument("--dry-run", action="store_true")
+    p = sp.add_parser("cards"); p.add_argument("spec"); p.add_argument("--aspect", default=None); p.add_argument("--brand", default=None)
+    p.add_argument("--out", default=None); p.add_argument("--no-pdf", action="store_true")
     p = sp.add_parser("export"); p.add_argument("--version", default=None); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("run"); p.add_argument("footage", nargs="*"); add_llm(p)
     for k in ("goal", "platform", "aspect", "preset", "ask", "brand", "brain", "course-brain", "music", "music-licence", "aspects"):
@@ -82,6 +88,9 @@ def main(argv=None):
     if a.cmd == "broll-search":
         from .broll import cmd_search
         return cmd_search(a)
+    if a.cmd == "cards":
+        from .cards import cmd_cards
+        return cmd_cards(a)
     if a.cmd == "selftest":
         from .selftest import selftest
         return selftest(a)
@@ -117,6 +126,18 @@ def main(argv=None):
     if a.cmd == "qc":
         from .qc import cmd_qc
         return cmd_qc(a, ed)
+    if a.cmd == "boards":
+        import json as _j
+        from .cards import plan_boards
+        from .recipe import load, save_new
+        r = load(edit_dir, a.base)
+        bds = plan_boards(r, edit_dir, a.max, a.mode)
+        print(_j.dumps(bds, indent=2, ensure_ascii=False))
+        if a.dry_run or not bds:
+            log(f"{len(bds)} board(s) proposed" + (" (dry run)" if a.dry_run else "")); return
+        r["boards"] = bds
+        save_new(edit_dir, r, f"boards: {len(bds)} planned ({a.mode})", parent=r["version"])
+        log("boards with _todo need a source/edit before final: edit the new recipe or revise in chat"); return
     if a.cmd == "export":
         from .checks import export_edl
         from .ingest import load_clips

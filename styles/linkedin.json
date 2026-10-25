@@ -1,0 +1,634 @@
+[
+ {
+  "id": "text-contrarian",
+  "family": "linkedin",
+  "name": "Contrarian take",
+  "aliases": [
+   "contrarian post",
+   "hot take"
+  ],
+  "what": "Common belief -> why it's backwards -> 3 reasons -> what to do -> genuine 'where do you disagree?'",
+  "template": [
+   "Most <SMEs> think <common belief>.",
+   "After <N projects>, I think it's backwards.",
+   "Here's why: <reason 1> / <reason 2> / <reason 3>.",
+   "What I'd do instead: <1 action>.",
+   "Where do you disagree?"
+  ],
+  "specs": "700-900 chars; hook <=140 chars over 2 lines; 0-3 hashtags; single blank lines",
+  "best_for": "market POV pillar",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "script": [
+    "sanchez-contrarian",
+    "hormozi-math"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "text-framework",
+  "family": "linkedin",
+  "name": "Framework post",
+  "aliases": [
+   "framework post",
+   "system post"
+  ],
+  "what": "Named framework, numbered steps, the step teams skip, save CTA.",
+  "template": [
+   "The <Name> framework we use for <outcome>:",
+   "1. <step>  2. <step>  3. <step>",
+   "Most teams skip step <X>, and that's where <cost> comes from.",
+   "Save this for your next <moment>."
+  ],
+  "specs": "700-1,300 chars; pair with a framework carousel for saves",
+  "best_for": "AI-for-SME pillar",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "pairs": {
+   "script": [
+    "welsh-linkedin",
+    "abdaal-framework"
+   ],
+   "carousel": [
+    "framework"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "text-listicle",
+  "family": "linkedin",
+  "name": "Listicle",
+  "aliases": [
+   "listicle post",
+   "things i'd tell"
+  ],
+  "what": "N things I'd tell a <role> starting <task>, one line why each, one cost me something.",
+  "template": [
+   "<N> things I'd tell a <role> starting <task> in <market>:",
+   "<item> - <1-line why>  (xN)",
+   "#<N> cost me <consequence>."
+  ],
+  "specs": "700-1,200 chars",
+  "best_for": "all pillars",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "carousel": [
+    "listicle"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "text-failure",
+  "family": "linkedin",
+  "name": "Lesson from failure",
+  "aliases": [
+   "failure post",
+   "mistake story"
+  ],
+  "what": "Mistake with a specific cost, lesson, the system now, advice.",
+  "template": [
+   "In <year> I <mistake>.",
+   "It cost <specific>.",
+   "What I learned: <lesson>.",
+   "What I do now: <system>.",
+   "If you're <situation>, <advice>."
+  ],
+  "specs": "150-250 words",
+  "best_for": "founder story pillar",
+  "brands": [
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "script": [
+    "acosta-slay"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "behind-the-scenes",
+  "family": "linkedin",
+  "name": "Behind the scenes",
+  "aliases": [
+   "bts",
+   "inside titan"
+  ],
+  "what": "What a deliverable really looks like inside, with an authentic photo/screen, the part clients never see.",
+  "template": [
+   "What <deliverable> actually looks like inside <TITAN>:",
+   "[authentic photo / screen recording]",
+   "Step 1 <...>. Step 2 <...>.",
+   "The part clients never see: <insight>."
+  ],
+  "specs": "own-camera photo beats polished branding; image must match the text",
+  "best_for": "building TITAN pillar",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "pairs": {
+   "edit": [
+    "b2b-founder"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "case-study",
+  "family": "linkedin",
+  "name": "Case study (anonymised, permissioned)",
+  "aliases": [
+   "case study post",
+   "client result"
+  ],
+  "what": "Problem with a number, 3 changes, metric after time, the non-obvious cause. NOT for clinics.",
+  "template": [
+   "A <industry> SME in <city> had <problem, number>.",
+   "We changed <3 things>.",
+   "After <time>: <metric>.",
+   "What made the difference wasn't <obvious>, it was <non-obvious>."
+  ],
+  "specs": "written permission on file; real numbers only",
+  "best_for": "proof pillar (TITAN.AI only)",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "BOFU"
+  ],
+  "pairs": {
+   "carousel": [
+    "data"
+   ]
+  },
+  "compliance": "TITAN.AI only, written client permission. Never clinics (testimonial rules).",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "data-observation",
+  "family": "linkedin",
+  "name": "Data / observation",
+  "aliases": [
+   "data post",
+   "i looked at"
+  ],
+  "what": "I looked at N items from a source: findings, the surprise, implication. Source in first comment.",
+  "template": [
+   "I looked at <N items> from <source>.",
+   "<Finding 1>. <Finding 2>.",
+   "The surprise: <finding 3>.",
+   "What it means for <audience>: <implication>."
+  ],
+  "specs": "cite source in first comment; chart image or doc",
+  "best_for": "market POV / AI pillar",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "pairs": {
+   "animation": [
+    "data-viz"
+   ],
+   "carousel": [
+    "data"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "myth-evidence",
+  "family": "linkedin",
+  "name": "Myth vs evidence",
+  "aliases": [
+   "myth post",
+   "evidence post"
+  ],
+  "what": "Myth, evidence (source + year), practical takeaway, not-individual-advice line. Safest clinic-director format.",
+  "template": [
+   "Myth: <claim>.",
+   "Evidence: <source + year> shows <finding>.",
+   "Practical takeaway: <action>.",
+   "(Educational, not individual advice.)"
+  ],
+  "specs": "text + image or document carousel",
+  "best_for": "clinic directors, protein",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "script": [
+    "meakins-mythbust"
+   ],
+   "carousel": [
+    "myth-vs-fact"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "text-story",
+  "family": "linkedin",
+  "name": "Story -> principle (SLAY)",
+  "aliases": [
+   "story post",
+   "slay post"
+  ],
+  "what": "Vivid moment, tension, turn, principle, how it shows up today; question to readers.",
+  "template": [
+   "<Vivid moment, 2 lines>.",
+   "<Tension>. <Turn>.",
+   "That's when I realised <principle>.",
+   "Today, <how it shows up in the business>.",
+   "<Question to readers>?"
+  ],
+  "specs": "150-250 words; personal stories reach your existing network most",
+  "best_for": "founder story pillar",
+  "brands": [
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "script": [
+    "acosta-slay",
+    "junyuh-story"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "trend-breakdown",
+  "family": "linkedin",
+  "name": "Prediction / trend breakdown",
+  "aliases": [
+   "trend post",
+   "prediction"
+  ],
+  "what": "Trend, 3 signals, what it means in SG/MY/UK, what I'm doing about it.",
+  "template": [
+   "<Trend> is changing <industry> faster than people think.",
+   "3 signals: <...>.",
+   "What it means in SG/MY/UK specifically: <...>.",
+   "What I'm doing about it: <...>."
+  ],
+  "specs": "LinkedIn's Mar 2026 feed update favours actionable trend breakdowns",
+  "best_for": "market POV pillar",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "script": [
+    "williamson-curiosity"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "how-to",
+  "family": "linkedin",
+  "name": "How-to",
+  "aliases": [
+   "how to post",
+   "tutorial post"
+  ],
+  "what": "Outcome in time without pain, 5 steps, the tool, the common mistake.",
+  "template": [
+   "How to <outcome> in <time> without <pain>:",
+   "Step 1 ... Step 5.",
+   "Tool I use: <...>.",
+   "Common mistake: <...>."
+  ],
+  "specs": "pairs with a vertical video or doc carousel",
+  "best_for": "AI-for-SME pillar",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "pairs": {
+   "carousel": [
+    "step-by-step"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "genuine-question",
+  "family": "linkedin",
+  "name": "Genuine question / debate",
+  "aliases": [
+   "question post",
+   "debate"
+  ],
+  "what": "A real A-or-B question with conditions for each. Never 'comment YES' (downranked Mar 2026).",
+  "template": [
+   "Genuine question for <role>s:",
+   "when you <situation>, do you <A> or <B>?",
+   "I've seen <A> work when <condition> and <B> when <condition>.",
+   "Curious what's worked for you."
+  ],
+  "specs": "no engagement bait; reply to every comment",
+  "best_for": "community / research",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {},
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "document-carousel",
+  "family": "linkedin",
+  "name": "Document (PDF) carousel",
+  "aliases": [
+   "linkedin carousel",
+   "pdf carousel",
+   "document post"
+  ],
+  "what": "Saveable teaching: framework, checklist, table. Rendered by the cards engine as PDF.",
+  "template": [
+   "Cover: promise + who it's for",
+   "1 idea per slide, <=40 words",
+   "Full framework / sheet slide",
+   "CTA slide: save / send / newsletter"
+  ],
+  "specs": "PDF 4:5 or 1:1, 6-12 slides (doc fatigue beyond); set document title; up to 300 pages/100 MB",
+  "best_for": "saves + out-of-network reach",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "pairs": {
+   "carousel": [
+    "framework",
+    "checklist",
+    "myth-vs-fact",
+    "data"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "native-video",
+  "family": "linkedin",
+  "name": "Native vertical video",
+  "aliases": [
+   "linkedin video",
+   "vertical video linkedin"
+  ],
+  "what": "You on camera speaking to the ICP, captions burned, B-roll on key nouns, text matches the video.",
+  "template": [
+   "Caption line 1 = the promise; first spoken sentence = the same promise",
+   "Talking head 9:16/4:5, 2-4 word captions in lower third",
+   "B-roll / screen recording every 3-6 s on key nouns",
+   "One CTA line at the end"
+  ],
+  "specs": "native upload (YouTube links become link posts); 30-75 s feed; burn captions + upload SRT; custom cover face + 3-5 word claim",
+  "best_for": "trust, B2B explainers",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "pairs": {
+   "edit": [
+    "linkedin-founder-video",
+    "b2b-founder"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "newsletter",
+  "family": "linkedin",
+  "name": "LinkedIn newsletter edition",
+  "aliases": [
+   "newsletter",
+   "linkedin newsletter"
+  ],
+  "what": "Deep dive every 2 weeks; subscribers get push + in-app + email notification each edition (bypasses the ranker).",
+  "template": [
+   "Title = search-friendly promise",
+   "Intro story (3-5 lines)",
+   "3-5 sections with subheads",
+   "Takeaway box",
+   "CTA: lead magnet -> owned email list (PDPA consent)"
+  ],
+  "specs": "followers are invited to subscribe automatically; add to Featured + banner",
+  "best_for": "depth, repeat reach, funnel",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "pairs": {
+   "script": [
+    "abdaal-framework"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "poll-genuine",
+  "family": "linkedin",
+  "name": "Poll (genuine only)",
+  "aliases": [
+   "poll",
+   "linkedin poll"
+  ],
+  "what": "Real research question; publish results later as a carousel. Poll-baiting is downranked.",
+  "template": [
+   "Question tied to your ICP's real decision",
+   "3-4 mutually exclusive options",
+   "Context in post text: why you're asking",
+   "Follow-up: results carousel"
+  ],
+  "specs": "use sparingly",
+  "best_for": "research, debate",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "pairs": {
+   "carousel": [
+    "data"
+   ]
+  },
+  "compliance": "Clinic directors: linkedin-playbook.md §8 gate (no testimonials, recommendations, superlatives, offers)",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ },
+ {
+  "id": "thought-leader-ad",
+  "family": "linkedin",
+  "name": "Thought Leader Ad (boost a person's post)",
+  "aliases": [
+   "tla",
+   "thought leader ads",
+   "boost linkedin"
+  ],
+  "what": "Sponsor Klaus's best organic post (by saves, sends, profile views) to the ICP.",
+  "template": [
+   "Pick Friday's top organic post",
+   "Author approves the sponsorship",
+   "Target SG/MY SMEs (UK separately)",
+   "Retarget 50% video viewers -> gated Document Ad -> Conversation Ad / book a call"
+  ],
+  "specs": "eligible: image, video, link, event posts; not documents, polls, multi-image, reshares; daily min $10; cost gate + Klaus approval",
+  "best_for": "paid reach on a person",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "pairs": {},
+  "compliance": "Clinic TLAs are advertisements: full HCS rules, no offers.",
+  "sources": "marketing-engine/references/linkedin-playbook.md; research/sources-linkedin.md"
+ }
+]

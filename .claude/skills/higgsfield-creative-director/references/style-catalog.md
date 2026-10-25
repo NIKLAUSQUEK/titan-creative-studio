@@ -1,5 +1,7 @@
 # Style catalog — pick a preset
 
+> This file covers **edit** presets. Every other style family (script/voice, animation/faceless, carousel, LinkedIn) and the cross-family pairings live in the style home: `/styles`, `python scripts/styles.py offer|find|show`, menu `styles/STYLE_MENU.md`.
+
 Every preset is a one-tap bundle for the auto-editor (`editor.py assemble --preset <name>`) and a style brief for generated work (Gate 3 look + edit rhythm). Brand guide (`edit-brand` block) and ledger still win (precedence). Sync behaviour per preset: `.claude/skills/story-sync/references/style-sync-patterns.md`. Creator evidence: `research/sources-style-library.md`. A specific creator's StyleCard → `editor.py preset from-stylecard <name>` (`style-<creator>`).
 
 **Health brands (Physio Spot, heal360):** only presets without a 'not for health' lock; SG health compliance locks are listed per preset.
@@ -26,6 +28,7 @@ Every preset is a one-tap bundle for the auto-editor (`editor.py assemble --pres
 | Preset | Use for | Brands | Funnel | Aspect | Compliance lock |
 |---|---|---|---|---|---|
 | `absurd-sketch` | Straight-faced genre parody that escalates into absurdity, deadpan tag, heavy sting. Never for clinics. | Power Protein, TITAN.AI | TOFU | 9:16 | not for health/clinic brands |
+| `linkedin-founder-video` | LinkedIn native vertical founder video: promise in sentence 1 = caption line 1, 2-4 word captions, B-roll/screens every 3-6 s, auto panel boards, low bed, one CTA (linkedin-playbook.md §9). | TITAN.AI, Klaus, clinic directors | TOFU, MOFU | 9:16 (4:5 alt) | clinic: educational only, no patients, no offers |
 | `b2b-founder` | Professional talking head: persistent top headline bar, burned captions with accent highlight, punch-in jump cuts, data callouts, name lower third, soft CTA. | TITAN.AI, Klaus, clinic directors | MOFU, BOFU | 1:1 (4:5 alt) | - |
 | `cinematic-vlog` | Host-led vlog with cinematic B-roll: sensory cold open, speed ramps, whips, match cuts, jump-cut talking, time-lapse bridges, sincere long-take monologue. | Klaus personal, gym/clinic atmosphere | TOFU | 16:9 (9:16 cut) | - |
 | `clinic-trust` | Calm clinician-led brand film: real staff, soft daylight, slow moves, dissolves, low music, factual supers. SG health-compliant by default. | Physio Spot, heal360 | MOFU, BOFU | 16:9 + 4:5 + 9:16 | no testimonials or patient results; no superlatives (best/No.1/leading); no free-consult/discount inducements; general education only, no individual advice; no  |
