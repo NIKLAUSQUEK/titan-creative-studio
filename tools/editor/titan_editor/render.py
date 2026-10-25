@@ -78,6 +78,13 @@ def zoom_chain(keys, d, W, H):
     keys = sorted(keys or [{"at": 0, "scale": 1.0}], key=lambda k: k["at"])
     if keys[0]["at"] > 0:
         keys = [{"at": 0, "scale": 1.0}] + keys
+    if len(keys) == 2 and keys[1].get("ease") == "drift":   # premium virtual camera: eased push + slow pan on overscanned footage
+        s0, s1 = keys[0]["scale"], keys[1]["scale"]
+        x0, x1 = keys[0].get("x", 0.5), keys[1].get("x", 0.5)
+        y0 = keys[0].get("y", 0.38)
+        P = f"(min(1,t/{max(d, 0.1):.3f})*min(1,t/{max(d, 0.1):.3f})*(3-2*min(1,t/{max(d, 0.1):.3f})))"   # smoothstep ease-in-out
+        return [(0, d, f"scale=w='trunc({W}*({s0}+({s1}-{s0})*{P})/2)*2':h=-2:eval=frame,"
+                       f"crop={W}:{H}:'(in_w-{W})*({x0}+({x1}-{x0})*{P})':'(in_h-{H})*{y0}',setsar=1")]
     if len(keys) == 2 and keys[1].get("ease") == "linear":
         s0, s1 = keys[0]["scale"], keys[1]["scale"]
         expr = f"{s0}+({s1}-{s0})*t/{max(d, 0.1):.3f}"

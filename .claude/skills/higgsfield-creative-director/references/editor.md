@@ -150,6 +150,8 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
   - absurd-howto-3d, code-motion-tutorial, stick-compare-loop (AI animation);
   - petty-sermon (comedy).
   - Keys marked `_needs_feature` are specs for features not built yet; the engine ignores them.
+- **Drift camera:** `zoom.mode: "drift"` (premium moving talking head). Every shot gets an eased push and a slow pan on overscanned footage, alternating wide (`zoom.wide`, default 1.04→1.10) and close (`zoom.close`, 1.16→1.22, subject on a thirds line). Pan direction flips every other shot. Preset premium-moving-talking-head.
+- **Silent loop reaction:** preset silent-loop-reaction (one 1.6-2 s take looped ×8, a caption swapped per loop; research/refs-2026-10-25/silent-and-premium.md A.7 has a recipe). The automatic loop builder is still `_needs_feature`.
 - **Which style for whom:** style-archetypes.md.
 
 ## 7e. Sound: real SFX + voice enhancement

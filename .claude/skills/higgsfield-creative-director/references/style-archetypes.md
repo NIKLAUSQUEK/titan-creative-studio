@@ -45,6 +45,8 @@ Status: [measured] = studied from a reference with numbers (research/edit-refere
 | 22 | Dad / family relatable | warm, cringe-cute | the kid's line | handheld, real moments, slow zoom | 2-3 word pop | soft bed | feelgood-emotional [draft] |
 | 23 | Hype sermon / motivational | over the top | the rhetorical question | ONE take, haze grade | one big word, cyan outline | choir/epic bed | petty-sermon [measured: comedy1] |
 | 24 | Exposé / scam alert | alarm → protected | "⚠️ SCAM ALERT" kicker | receipts, screenshots, red circles | kicker cards | sting, ticks | news-expose |
+| 25 | Service-worker relatable (silent) | "literally me at work" | the first trigger caption over the peak action | ONE locked phone take looped ×8 (1.83 s), hard caption swap per loop, no zoom/SFX; or a B-roll montage, one caption per shot | sentence-case white Poppins outline, one line, y 0.66, no animation | any licensed/original bed, -14 LUFS, works on mute | silent-loop-reaction [measured: refA] |
+| 26 | Premium moving talking head | sleek, expensive, calm authority | the boldest claim in a close-up | eased virtual-camera drift on every shot, wide/close per sentence on thirds, moving B-roll + floating cards, light-leak at sections | small sentence subs (Space Grotesk) + serif keyword titles (Instrument Serif), fade | ducked ambient bed, sparse whooshes, swell to CTA | premium-moving-talking-head [draft: refB blocked, 429] |
 
 ## B. Comedy format library
 Every format has three locks (playbook-skit.md + CLAUDE.md joke rule): whose body or prop carries the gag, the pun's second meaning, and what stays hidden until the reveal.
@@ -66,6 +68,7 @@ Every format has three locks (playbook-skit.md + CLAUDE.md joke rule): whose bod
 | C14 | Musical punchline | the skit ends in a jingle or rap line | the last rhyme | edu-song / editor.py song |
 | C15 | Reaction duet | react to your own old video or a trend (Remix/Stitch only) | your face in the corner | ugc-reaction |
 | C16 | Plot-twist loop | the ending reveals the first frame differently | the reveal frame = the first frame | mystery-reveal |
+| C17 | Same reaction, every trigger (silent loop) | one 1.6-2 s locked take looped ×8; captions in opposite pairs, then shrink to one word; invisible seam; optional "results" shot of your own work | the actor's one big action + prop (the thrown bag) | silent-loop-reaction [measured: refA] |
 
 ## C. Choosing fast
 1. Who is speaking (brand file / brain): pick the archetype row.

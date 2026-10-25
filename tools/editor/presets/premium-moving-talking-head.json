@@ -1,0 +1,196 @@
+{
+  "name": "premium-moving-talking-head",
+  "label": "Premium moving talking head (virtual camera drift, per-sentence framing, soft leaks)",
+  "kind": "style",
+  "description": "DRAFT from Klaus's ref B (Instagram DYwset0R5kP, not yet downloadable: HTTP 429). Locked or gimbal talking head that never sits still: eased 4-8% drift per shot, wide/close alternation on sentence starts with thirds offset, moving B-roll cutaways and floating cards, serif keyword titles + small sentence subs, soft warm grade with depth blur and grain, light-leak at section changes, sparse whooshes, ambient bed ducked.",
+  "reference": "research/refs-2026-10-25/silent-and-premium.md#b",
+  "structure": {
+    "name": "short",
+    "target_s": [
+      25,
+      50
+    ],
+    "beats": [
+      "hook claim 0-3s (close)",
+      "context (wide)",
+      "point 1-3 (alternate framing, B-roll per point)",
+      "turn/insight (close + leak)",
+      "CTA (wide, swell)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.45,
+    "pad_s": 0.12,
+    "remove_fillers": "hard",
+    "max_shot_s": 4.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Space Grotesk",
+    "bold": false,
+    "size": 0.03,
+    "color": "#FFFFFF",
+    "highlight": "#F3E6D3",
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.78,
+    "max_words": 6,
+    "animation": "fade",
+    "uppercase": false,
+    "keyword_caps": false,
+    "emoji": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "font": "Instrument Serif",
+    "bold": false,
+    "size": 0.05,
+    "uppercase": false,
+    "position_y": 0.22,
+    "dur_s": 2.4
+  },
+  "zoom": {
+    "mode": "drift",
+    "every_s": 0,
+    "scale": 1.06,
+    "on_hook": 1.12,
+    "on_emphasis": true,
+    "wide": [
+      1.04,
+      1.1
+    ],
+    "close": [
+      1.16,
+      1.22
+    ]
+  },
+  "camera": {
+    "drift": {
+      "scale": [
+        1.04,
+        1.08
+      ],
+      "pan_x": [
+        -0.02,
+        0.02
+      ],
+      "pan_y": [
+        -0.01,
+        0.01
+      ],
+      "rotate_deg": [
+        -0.4,
+        0.4
+      ],
+      "ease": "inOutSine",
+      "alternate": true,
+      "overscan": 1.12,
+      "focus_from_face": true
+    },
+    "handheld": {
+      "enabled": false,
+      "amp_px": 3,
+      "rot_deg": 0.15
+    },
+    "parallax": {
+      "enabled": false,
+      "subject_ratio": 0.6
+    },
+    "_needs_feature": "camera.drift / handheld / parallax (B.3 #1, #2, #8)"
+  },
+  "framing": {
+    "plan": "per_sentence",
+    "cycle": [
+      "close",
+      "wide",
+      "medium_left",
+      "close",
+      "medium_right"
+    ],
+    "scales": {
+      "wide": 1.0,
+      "medium": 1.15,
+      "close": 1.32
+    },
+    "x_bias": 0.06,
+    "min_hold_s": 2.0,
+    "_needs_feature": "sentence-aligned framing plan (B.3 #3); until built, zoom.mode smooth + every_s 3 approximates it"
+  },
+  "broll": {
+    "every_s": 6.0,
+    "max_dur_s": 3.0,
+    "min_dur_s": 1.5,
+    "mode": "full",
+    "video_drift": true,
+    "card": {
+      "radius": 0.04,
+      "shadow": 0.35,
+      "scale": 0.78,
+      "bg": "blur_speaker"
+    },
+    "_needs_feature": "broll video_drift + mode card (B.3 #9, #10)"
+  },
+  "transitions": {
+    "default": "glow",
+    "on": "beats",
+    "dur_s": 0.18,
+    "strength": 0.5,
+    "section": {
+      "kind": "leak",
+      "dur_s": 0.45,
+      "palette": "warm",
+      "_needs_feature": "leak / blur_dissolve / zoom_whip (B.3 #5, #6)"
+    }
+  },
+  "sfx": {
+    "density_per_10s": 0.8,
+    "db": -20,
+    "cut_coverage": 0.25,
+    "min_gap_s": 2.5,
+    "map": {
+      "hook": "swell",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "tick",
+      "end": "swell"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 0.98,
+    "saturation": 0.94,
+    "brightness": 0.01,
+    "gamma": 1.02,
+    "warmth": 0.04,
+    "lut": null,
+    "vignette": true,
+    "grain": 0.04,
+    "halation": {
+      "threshold": 0.85,
+      "sigma": 14,
+      "tint": "#FF7A3D",
+      "mix": 0.12
+    },
+    "depth_blur": {
+      "enabled": true,
+      "sigma": 10,
+      "feather_px": 12,
+      "engine": "mediapipe_selfie"
+    },
+    "_needs_feature": "grade.grain / halation / depth_blur (B.3 #7, #11)"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.0
+  },
+  "safe_zone": {
+    "top": 0.14,
+    "bottom": 0.2,
+    "right": 0.15
+  }
+}

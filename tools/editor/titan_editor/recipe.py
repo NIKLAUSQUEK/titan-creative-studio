@@ -93,6 +93,14 @@ def place_zooms(items, style):
     for k, it in enumerate(items):
         d = (it["out"] - it["in"]) / it.get("speed", 1)
         keys = []
+        if mode == "drift":
+            # alternate wide / close framing per shot, each drifting slowly the opposite way (premium moving talking head)
+            wide = k % 2 == 0
+            a, b = (z.get("wide", [1.04, 1.10]) if wide else z.get("close", [1.16, 1.22]))
+            x0, x1 = (0.35, 0.65) if k % 4 in (0, 3) else (0.65, 0.35)
+            keys = [{"at": 0.0, "scale": a, "x": x0, "y": 0.38 if wide else 0.3}, {"at": round(d, 3), "scale": b, "x": x1, "ease": "drift"}]
+            it["zoom"] = keys
+            continue
         if mode == "smooth" and every:
             keys = [{"at": 0.0, "scale": 1.0}, {"at": round(d, 3), "scale": scale, "ease": "linear"}]
         elif every:

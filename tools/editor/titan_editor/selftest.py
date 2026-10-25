@@ -265,6 +265,9 @@ def selftest(a):
     _, sres = render(E, quality="draft", aspects=["9:16"], recipe=rs, out_dir=E / "renders" / "styles", name="styles")
     ok("styles: two-level captions + flash transitions + stacked SFX (+ motion card) render", probe(sres[0]["path"]).get("duration", 0) > 5,
        f"{len(sres[0]['sfx'])} sfx, broll {[b.get('kind') for b in rs['broll']]}")
+    from .render import zoom_chain
+    dz = zoom_chain([{"at": 0.0, "scale": 1.04, "x": 0.35}, {"at": 4.0, "scale": 1.1, "x": 0.65, "ease": "drift"}], 4.0, 360, 640)
+    ok("drift camera: eased push + pan expression", len(dz) == 1 and "3-2*min(1" in dz[0][2] and "crop=360:640:'(in_w-360)*(0.35+" in dz[0][2])
     from .textcard import card
     im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
     colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()

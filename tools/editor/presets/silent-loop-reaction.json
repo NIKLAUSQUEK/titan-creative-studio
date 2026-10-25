@@ -1,0 +1,117 @@
+{
+  "name": "silent-loop-reaction",
+  "label": "Silent loop: same reaction to every trigger (caption swaps per loop)",
+  "kind": "style",
+  "description": "From ref A (@waxedbyolesya, measured 2026-10-25): one 1.83 s locked phone take looped x8, one sentence-case outline caption per loop (opposite pairs, then escalation by subtraction to one word), no speech, flat music bed, no zooms, no SFX, no end card, invisible loop seam. Variants: results (break the loop with your own work), montage (different B-roll per caption).",
+  "reference": "research/refs-2026-10-25/silent-and-premium.md#a",
+  "structure": {
+    "name": "silent-loop",
+    "target_s": [
+      12,
+      16
+    ],
+    "beats": [
+      "trigger A",
+      "opposite A",
+      "trigger B",
+      "opposite B",
+      "trigger C",
+      "opposite C",
+      "C minus verb",
+      "one word -> loop"
+    ],
+    "loop": {
+      "repeats": 8,
+      "loop_s": [
+        1.6,
+        2.0
+      ],
+      "seam": "auto",
+      "_needs_feature": "structure.loop auto builder + seam finder (A.7 #1)"
+    },
+    "variants": {
+      "results": {
+        "result_after": [
+          2,
+          4,
+          6
+        ],
+        "result_dur_s": 0.6,
+        "_needs_feature": "structure.loop.result_clip"
+      },
+      "montage": {
+        "broll_per_caption": true
+      }
+    }
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 2.2,
+    "drop_retakes": false
+  },
+  "captions": {
+    "enabled": false,
+    "font": "Poppins"
+  },
+  "hook_text": {
+    "enabled": false,
+    "renderer": "card",
+    "card_style": "outline",
+    "font": "Poppins",
+    "size": 0.04,
+    "color": "#FFFFFF",
+    "uppercase": false,
+    "position_y": 0.66,
+    "max_words": 6
+  },
+  "loop_captions": {
+    "style": "outline",
+    "font": "Poppins",
+    "size": 0.04,
+    "position_y": 0.66,
+    "uppercase": false,
+    "fit": "one_line",
+    "max_w": 0.82,
+    "swap": "hard_on_cut",
+    "min_s_per_word": 0.35,
+    "_needs_feature": "per-loop caption list + text_fit one_line + labels.style outline (A.7 #1-3)"
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0,
+    "mode": "full"
+  },
+  "transitions": {
+    "default": "none"
+  },
+  "sfx": {
+    "density_per_10s": 0.0
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0,
+    "warmth": 0.0,
+    "vignette": false
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "safe_zone": {
+    "top": 0.12,
+    "bottom": 0.22,
+    "right": 0.15
+  }
+}
