@@ -49,7 +49,13 @@
    "higgsfield.ai/skills/stickman-cartoon",
    "sozai stickman transcript 2026",
    "style research A1"
-  ]
+  ],
+  "routes": {
+   "free": "Rive/Manim/HyperFrames rigs, or Nano Banana stills + editor Ken Burns + Kokoro VO",
+   "cheap": "Google Flow Veo 3.1 Lite (free 50 credits/day) on the stickman style key",
+   "premium": "higgsfield-video-explainer stickman preset",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "whiteboard",
@@ -96,7 +102,13 @@
   "sources": [
    "Atlabs 2026 whiteboard guide",
    "style research A2"
-  ]
+  ],
+  "routes": {
+   "free": "Manim / HyperFrames stroke reveal of Nano Banana final frames",
+   "cheap": "Google Vids templates",
+   "premium": "explainer skill custom whiteboard key",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "flat-vector",
@@ -144,7 +156,13 @@
   "sources": [
    "Kurzgesagt Skillshare course",
    "style research A3"
-  ]
+  ],
+  "routes": {
+   "free": "Rive/Lottie + HyperFrames (vector assets from GPT Image/Nano Banana)",
+   "cheap": "Google Vids (10 free/mo) + Canva Pro",
+   "premium": "explainer skill flat preset (Gemini Omni)",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "anime-2d",
@@ -189,7 +207,13 @@
   ],
   "sources": [
    "style research A4"
-  ]
+  ],
+  "routes": {
+   "free": "Nano Banana stills -> Wan 2.2 image-to-video locally (Apache-2.0)",
+   "cheap": "Dreamina Seedance / Kling Standard",
+   "premium": "Nano Banana key -> Seedance 2.5 / Kling",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "animation-3d",
@@ -239,7 +263,13 @@
    "animation-3d-cartoon.md",
    "OutlierKit (Zack D. Films)",
    "style research A5"
-  ]
+  ],
+  "routes": {
+   "free": "Gemini/Nano Banana stills -> Wan 2.2 locally",
+   "cheap": "Google Flow (50 credits/day) -> AI Pro for 1080p",
+   "premium": "Nano Banana 2 -> Seedance 2.5 omni_reference",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "claymation",
@@ -285,7 +315,13 @@
   "sources": [
    "Magnific Seedance 2.5 animation prompts (via search)",
    "style research A6"
-  ]
+  ],
+  "routes": {
+   "free": "stills + Wan 2.2, decimated to 12 fps in the editor",
+   "cheap": "Google Flow Fast / Dreamina",
+   "premium": "Nano Banana clay key -> Seedance/Kling",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "collage",
@@ -333,7 +369,13 @@
    "videoai.me Vox style 2026",
    "motion-design.md",
    "style research A7"
-  ]
+  ],
+  "routes": {
+   "free": "stills + DepthFlow layers + HyperFrames compositing",
+   "cheap": "Runway Standard",
+   "premium": "Nano Banana collage key -> Kling, or /vox-mixed-media",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "motion-typography",
@@ -383,7 +425,13 @@
   ],
   "sources": [
    "style research A8"
-  ]
+  ],
+  "routes": {
+   "free": "cards engine boards / HyperFrames (free is best)",
+   "cheap": "-",
+   "premium": "not needed",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "data-viz",
@@ -430,7 +478,13 @@
   "sources": [
    "dataviz skill",
    "style research A9"
-  ]
+  ],
+  "routes": {
+   "free": "cards engine chart/stat boards / HyperFrames / Manim (sourced stats only)",
+   "cheap": "-",
+   "premium": "not needed",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "parallax-2-5d",
@@ -478,7 +532,13 @@
   "sources": [
    "DepthFlow (PyPI)",
    "style research A10"
-  ]
+  ],
+  "routes": {
+   "free": "DepthFlow locally (no watermark)",
+   "cheap": "Immersity paid packs",
+   "premium": "Higgsfield camera-move presets",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "diorama-3d",
@@ -525,7 +585,13 @@
   "sources": [
    "Carat 2026 brick-world guide",
    "style research A11"
-  ]
+  ],
+  "routes": {
+   "free": "stills + DepthFlow push-in",
+   "cheap": "Google Flow Fast / Luma Plus",
+   "premium": "Nano Banana diorama key -> Seedance / 3D scene builder",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  },
  {
   "id": "ai-doc-photoreal",
@@ -571,6 +637,12 @@
   "sources": [
    "documentary-3d.md",
    "style research A12"
-  ]
+  ],
+  "routes": {
+   "free": "real footage/photos + DepthFlow + Kokoro VO",
+   "cheap": "Google Flow Lite/Fast or Veo API Lite (~$0.05-0.08/s)",
+   "premium": "Seedance 2.5 omni_reference -> 1080p -> 4K upscale",
+   "guide": "higgsfield-creative-director/references/render-routes.md"
+  }
  }
 ]

@@ -1,3 +1,5 @@
+> First choose the route: `render-routes.md` (free → cheap → premium per shot and style). Text, data, diagrams, parallax and real-footage shots never need generation credits.
+
 # Credit-saving playbook (Higgsfield + Claude tokens + local render time)
 
 Studio law still applies first: approved `spec.json` + `get_cost` quote, then a **draft at the LOWEST quality/resolution the model offers**, then QC and Klaus's approval, and only then a re-render at the HIGHEST quality, 1080p, followed by a 4K upscale of the locked final. Everything below is about spending fewer credits *inside* that loop.

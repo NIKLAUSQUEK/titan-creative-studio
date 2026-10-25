@@ -17,9 +17,29 @@ from PIL import Image, ImageDraw, ImageFont
 
 from .common import REPO, TOOL, ffmpeg, log, rjson, wjson
 
-DEFAULT_THEME = {"bg": "#0E0F13", "panel": "#16181F", "text": "#FFFFFF", "muted": "#A7ADBB", "accent": "#FFD43B", "accent2": "#4DA3FF",
-                 "good": "#3CCB7F", "bad": "#FF5A5F", "font_display": None, "font_body": None, "radius": 0.035, "handle": ""}
-CARDS_VERSION = 4  # bump when card layout changes (invalidates cached board clips)
+DEFAULT_THEME = {"look": "studio", "bg": "#0E0F13", "panel": "#16181F", "text": "#FFFFFF", "muted": "#A7ADBB", "accent": "#FFD43B", "accent2": "#4DA3FF",
+                 "good": "#3CCB7F", "bad": "#FF5A5F", "font_display": None, "font_body": None, "font_hand": "Caveat:Bold", "radius": 0.035, "handle": "",
+                 "highlight_style": "color", "grain": 0.0, "author": None, "logo": None}
+# LOOKS = whole design systems, not colour swaps. "studio" is the old dark default (fine for video boards, reads generic on LinkedIn).
+# The human looks copy what top creator carousels do: a person (headshot + name) on every slide, warm paper not black,
+# a real type pairing, a marker stroke behind key words, handwritten notes/arrows, quiet page chrome. Brand colours slot into accent/marker.
+LOOKS = {
+    "studio": {},
+    "creator": {"bg": "#F7F3EA", "panel": "#FFFFFF", "text": "#141414", "muted": "#6B6B6B", "accent": "#1B4DFF", "marker": "#FFE45C",
+                "good": "#1E9E5A", "bad": "#D9412B", "font_display": "Space Grotesk:Bold", "font_body": "Inter:Regular",
+                "highlight_style": "marker", "grain": 0.05, "radius": 0.03, "header": True, "footer": "hand"},
+    "editorial": {"bg": "#F3EEE4", "panel": "#FFFFFF", "text": "#171512", "muted": "#6E675C", "accent": "#C2410C", "marker": "#F6D7B8",
+                  "good": "#2F7D4F", "bad": "#B42318", "font_display": "Instrument Serif:Regular", "font_body": "Inter:Regular",
+                  "highlight_style": "italic", "grain": 0.06, "radius": 0.0, "header": True, "footer": "rule", "kicker_style": "rule"},
+    "brand-block": {"bg": "#1B4DFF", "panel": "#FFFFFF", "text": "#FFFFFF", "muted": "#DCE3FF", "accent": "#FFFFFF", "marker": "#0B1F7A",
+                    "good": "#B8F5CF", "bad": "#FFC9C2", "font_display": "Inter:Black", "font_body": "Inter:Medium",
+                    "highlight_style": "underline", "accent2": "#FFFFFF", "grain": 0.03, "radius": 0.02, "header": True, "footer": "bar", "alt_bg": "#F7F3EA", "alt_text": "#141414"},
+}
+BUNDLED = {"inter": "Inter-Variable.ttf", "space grotesk": "SpaceGrotesk-Variable.ttf", "instrument serif": "InstrumentSerif-Regular.ttf",
+           "instrument serif italic": "InstrumentSerif-Italic.ttf", "fraunces": "Fraunces-Variable.ttf", "caveat": "Caveat-Variable.ttf",
+           "dejavu sans": "DejaVuSans.ttf", "dejavu sans bold": "DejaVuSans-Bold.ttf", "dejavu serif": "DejaVuSerif.ttf"}
+WEIGHTS = {"thin": 100, "extralight": 200, "light": 300, "regular": 400, "medium": 500, "semibold": 600, "bold": 700, "extrabold": 800, "black": 900}
+CARDS_VERSION = 10  # bump when card layout changes (invalidates cached board clips)
 TYPES = ("title", "stat", "list", "steps", "quote", "compare", "definition", "myth_fact", "chart", "cta")
 ASPECT_PX = {"4:5": (1080, 1350), "1:1": (1080, 1080), "9:16": (1080, 1920), "16:9": (1920, 1080)}
 
@@ -28,47 +48,109 @@ ASPECT_PX = {"4:5": (1080, 1350), "1:1": (1080, 1080), "9:16": (1080, 1920), "16
 def theme_for(brand=None, overrides=None):
     """Brand guide colours/fonts (brands/<brand>.md edit-brand block) over the default dark theme."""
     t = dict(DEFAULT_THEME)
+    look = (overrides or {}).get("look")
     if brand:
         from .presets import brand_guide
         g, _ = brand_guide(brand)
         c = g.get("colors", {})
-        t.update({k: v for k, v in {"bg": c.get("background") or c.get("primary"), "text": c.get("text"), "accent": c.get("accent"),
-                                     "accent2": c.get("secondary")}.items() if v})
         f = g.get("fonts", {})
-        t["font_display"], t["font_body"] = f.get("display"), f.get("body")
         t["handle"] = g.get("handle", "")
         t["brand"] = brand
-        if isinstance(g.get("cards"), dict):
-            t.update(g["cards"])
+        cards = g.get("cards") if isinstance(g.get("cards"), dict) else {}
+        look = look or cards.get("look")
+        t.update(LOOKS.get(look or "studio", {}))  # look first, then the brand's own colours/fonts win
+        exact = "edit-brand" in str(g.get("_source", ""))  # heuristic §6 parses may only tint the accent
+        t.update({k: v for k, v in {"bg": c.get("background") if exact else None, "text": c.get("text") if exact else None, "accent": c.get("accent") or c.get("primary"),
+                                     "accent2": c.get("secondary"), "marker": c.get("marker")}.items() if v})
+        if f.get("display"):
+            t["font_display"] = f["display"]
+        if f.get("body"):
+            t["font_body"] = f["body"]
+        if g.get("logo"):
+            t["logo"] = g["logo"].get("path") if isinstance(g["logo"], dict) else g["logo"]
+        if g.get("author"):
+            t["author"] = g["author"]
+        t.update(cards)
+    else:
+        t.update(LOOKS.get(look or "studio", {}))
     t.update(overrides or {})
+    t["look"] = look or t.get("look", "studio")
     return t
 
 
 _FONT_CACHE = {}
+_WARNED = set()
 
 
 def font(theme, role, px):
-    """Resolve brand font files (assets/fonts/<brand>/*), then bundled DejaVu. role: display|body."""
-    name = theme.get("font_display" if role == "display" else "font_body") or ""
-    key = (theme.get("brand"), name, role, px)
+    """Font for a role (display|body|hand). Theme values look like "Space Grotesk:Bold". Order: brand files in
+    assets/fonts/<brand>/ (matched by family name), then bundled OFL fonts (tools/editor/fonts), then DejaVu."""
+    spec = theme.get({"display": "font_display", "body": "font_body", "hand": "font_hand"}[role]) or ""
+    fam, _, wt = spec.partition(":")
+    wt = (wt or {"display": "Bold", "body": "Regular", "hand": "Bold"}[role]).replace(" ", "").lower()
+    key = (theme.get("brand"), spec, role, px)
     if key in _FONT_CACHE:
         return _FONT_CACHE[key]
     cands = []
     bdir = REPO / "assets" / "fonts" / str(theme.get("brand") or "_none")
-    if bdir.exists():
-        files = sorted(bdir.glob("*.[ot]tf"))
-        want = name.replace(" ", "").lower()
-        bold = role == "display"
-        cands += sorted(files, key=lambda p: (want not in p.stem.replace(" ", "").lower(), bold != bool(re.search(r"bold|black|heavy", p.stem, re.I))))
-    cands += [TOOL / "fonts" / ("DejaVuSans-Bold.ttf" if role == "display" else "DejaVuSans.ttf")]
+    if bdir.exists() and fam:
+        want = fam.replace(" ", "").lower()
+        base = want.replace("italic", "")
+        files = [p for p in sorted(bdir.glob("*.[ot]tf")) if base in p.stem.replace(" ", "").replace("-", "").lower()
+                 and (("italic" in p.stem.lower()) == ("italic" in want))]
+        cands += sorted(files, key=lambda p: (wt not in p.stem.lower(), "variable" not in p.stem.lower()))
+    if fam.lower() in BUNDLED:
+        cands.append(TOOL / "fonts" / BUNDLED[fam.lower()])
+    elif fam and not cands:  # brand font not installed yet: use the look's designed pairing, never silently DejaVu
+        lk = LOOKS.get(theme.get("look") or "studio", {})
+        alt = (lk.get({"display": "font_display", "body": "font_body", "hand": "font_hand"}[role]) or "").partition(":")[0].lower()
+        if alt in BUNDLED:
+            cands.append(TOOL / "fonts" / BUNDLED[alt])
+            wk = (theme.get("brand"), fam)
+            if wk not in _WARNED:
+                _WARNED.add(wk)
+                log(f"font '{fam}' not found in assets/fonts/{theme.get('brand')}/ - using {alt} (drop the brand font files there)")
+    cands.append(TOOL / "fonts" / ("DejaVuSans-Bold.ttf" if role != "body" else "DejaVuSans.ttf"))
     for c in cands:
         try:
             f = ImageFont.truetype(str(c), px)
-            _FONT_CACHE[key] = f
-            return f
         except OSError:
             continue
+        try:  # variable font: set weight (and optical size for display)
+            axes = f.get_variation_axes()
+            vals = []
+            for ax in axes:
+                n = ax["name"].decode() if isinstance(ax["name"], bytes) else ax["name"]
+                v = ax["default"]
+                if n.lower() == "weight":
+                    v = max(ax["minimum"], min(ax["maximum"], WEIGHTS.get(wt, 400)))
+                elif n.lower() == "optical size":
+                    v = ax["maximum"] if role == "display" else ax["minimum"]
+                vals.append(v)
+            f.set_variation_by_axes(vals)
+        except Exception:
+            pass
+        _FONT_CACHE[key] = f
+        return f
     return ImageFont.load_default()
+
+
+def lum(hexv):
+    r, g, b, _ = rgb(hexv)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def ink_on(hexv):
+    """Readable text colour on a fill."""
+    return "#141414" if lum(hexv) > 150 else "#FFFFFF"
+
+
+def soft(draw, paint):
+    """Translucent drawing that really blends (Pillow overwrites alpha when drawing on RGBA): paint on a layer, composite."""
+    im = draw._image
+    layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    paint(ImageDraw.Draw(layer))
+    im.alpha_composite(layer)
 
 
 def rgb(hexv, a=255):
@@ -104,18 +186,84 @@ def fit_text(draw, text, theme, role, max_w, max_h, start_px, min_px=18, spacing
     return f, wrap(draw, text, f, max_w), min_px
 
 
+_STYLE = {"hl": "color", "marker": "#FFE45C", "theme": None}
+
+
+def _jit(seed, amp):
+    """Deterministic wobble so hand-drawn marks look human but never flicker between animation frames."""
+    return ((hash(seed) % 1000) / 1000.0 - 0.5) * 2 * amp
+
+
+def marker_stroke(draw, x0, y0, x1, y1, colour, seed=""):
+    """Highlighter swipe behind a word: slightly skewed, uneven ends, translucent."""
+    h = y1 - y0
+    j = lambda k: _jit(f"{seed}{k}", h * 0.08)
+    pts = [(x0 - h * 0.08 + j(1), y0 + h * 0.18 + j(2)), (x1 + h * 0.1 + j(3), y0 + h * 0.12 + j(4)),
+           (x1 + h * 0.06 + j(5), y1 - h * 0.02 + j(6)), (x0 - h * 0.04 + j(7), y1 + h * 0.04 + j(8))]
+    soft(draw, lambda dd: dd.polygon(pts, fill=rgb(colour, 200)))
+
+
+def scribble_underline(draw, x0, x1, y, colour, width, seed=""):
+    """Hand-drawn underline: a gentle wave with a little overshoot."""
+    n = 14
+    pts = [(x0 - width + (x1 - x0 + 2 * width) * i / n, y + math.sin(i * 0.9 + (hash(seed) % 7)) * width * 0.6 + _jit(f"{seed}{i}", width * 0.3)) for i in range(n + 1)]
+    draw.line(pts, fill=colour, width=width, joint="curve")
+
+
+def italic_font(theme, px):
+    """The brand display family's italic if its file exists (e.g. PlayfairDisplay-Italic), else Instrument Serif Italic."""
+    fam, _, wt = (theme.get("font_display") or "").partition(":")
+    bdir = REPO / "assets" / "fonts" / str(theme.get("brand") or "_none")
+    if fam and bdir.exists() and any("italic" in p.stem.lower() and fam.replace(" ", "").lower() in p.stem.replace("-", "").lower() for p in bdir.glob("*.[ot]tf")):
+        return font(dict(theme, font_display=f"{fam} Italic:{wt or 'Regular'}"), "display", px)
+    return font(dict(theme, font_display="Instrument Serif Italic"), "display", px)
+
+
 def draw_lines(draw, xy, lines, fnt, px, fill, spacing=1.18, align="left", box_w=None, highlight=None, hl_fill=None):
-    """Draw wrapped lines; words wrapped in *asterisks* render in the highlight colour."""
+    """Draw wrapped lines. Text between *asterisks* (one word or a phrase) is highlighted in the theme's style:
+    color (accent text) | marker (one highlighter swipe per run) | underline (scribble under the run) | italic (serif italic in accent)."""
     x0, y = xy
-    for ln in lines:
+    style = _STYLE["hl"]
+    th = _STYLE["theme"] or {}
+    on = False  # inside a *phrase* across words and lines
+    for li, ln in enumerate(lines):
         words = ln.split(" ")
         total = draw.textlength(ln.replace("*", ""), font=fnt)
         x = x0 + ((box_w - total) / 2 if align == "center" and box_w else 0)
+        placed = []
         for i, w in enumerate(words):
-            hl = w.startswith("*") or w.endswith("*") or (highlight and w.lower().strip(".,!?") in highlight)
+            starts = w.startswith("*")
+            hl = on or starts or (highlight and w.lower().strip(".,!?") in highlight)
+            if starts and w.count("*") == 1:
+                on = True
+            if w.endswith("*") and (w.count("*") == 1 and not starts or w.count("*") == 2):
+                on = False
+                hl = True
+            hl = hl and hl_fill is not None
             clean = w.replace("*", "")
-            draw.text((x, y), clean, font=fnt, fill=hl_fill if hl and hl_fill else fill)
-            x += draw.textlength(clean + (" " if i < len(words) - 1 else ""), font=fnt)
+            f = fnt
+            if hl and style == "italic" and th:
+                f = italic_font(th, px)
+            wl = draw.textlength(clean, font=f)
+            placed.append((x, clean, f, wl, hl))
+            x += wl + (draw.textlength(" ", font=fnt) if i < len(words) - 1 else 0)
+        if style in ("marker", "underline"):  # one stroke per contiguous run
+            runs, cur = [], None
+            for (wx, clean, f, wl, hl) in placed:
+                if hl:
+                    cur = [cur[0], wx + wl] if cur else [wx, wx + wl]
+                elif cur:
+                    runs.append(cur); cur = None
+            if cur:
+                runs.append(cur)
+            for k, (rx0, rx1) in enumerate(runs):
+                if style == "marker":
+                    marker_stroke(draw, rx0, y + px * 0.12, rx1, y + px * 1.02, _STYLE["marker"], seed=f"{ln}{k}")
+                else:
+                    a = hl_fill[3] if isinstance(hl_fill, tuple) and len(hl_fill) == 4 else 255
+                    scribble_underline(draw, rx0, rx1, y + px * 1.04, rgb(_STYLE.get("ul") or "#FFFFFF", a), max(2, int(px * 0.07)), seed=f"{ln}{k}")
+        for (wx, clean, f, wl, hl) in placed:
+            draw.text((wx, y), clean, font=f, fill=hl_fill if hl and style in ("color", "italic") else fill)
         y += px * spacing
     return y
 
@@ -134,6 +282,134 @@ def stagger(p, i, n, span=0.55):
     return ease_out((p - start) / span)
 
 
+# ---------------- page furniture: paper, header, footer, notes ----------------
+_BG = {}
+
+
+def paint_bg(theme, W, H, colour=None):
+    """Solid colour + fine paper grain (cached). Grain is what stops a flat fill from reading as a template."""
+    colour = colour or theme["bg"]
+    key = (colour, W, H, theme.get("grain", 0))
+    if key not in _BG:
+        im = Image.new("RGBA", (W, H), rgb(colour))
+        g = float(theme.get("grain", 0) or 0)
+        if g > 0:
+            import random
+            rnd = random.Random(7)
+            small = Image.new("L", (W // 2, H // 2))
+            small.putdata([int(128 + rnd.gauss(0, 60)) for _ in range((W // 2) * (H // 2))])
+            noise = small.resize((W, H)).convert("RGBA")
+            im = Image.blend(im, Image.composite(noise, im, Image.new("L", (W, H), 255)), g)
+        _BG[key] = im
+    return _BG[key].copy()
+
+
+def header_h(theme, W, H, page):
+    return int(min(W, H) * 0.12) if page and theme.get("header") and (theme.get("author") or theme.get("logo") or theme.get("handle")) else 0
+
+
+def _path(p):
+    if not p:
+        return None
+    q = Path(p)
+    q = q if q.is_absolute() else REPO / q
+    return q if q.exists() else None
+
+
+def avatar(theme, size):
+    """Round headshot from author.photo; initials disc when there is no photo yet (never a generated face)."""
+    a = theme.get("author") or {}
+    im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    m = Image.new("L", (size * 4, size * 4), 0)
+    ImageDraw.Draw(m).ellipse([0, 0, size * 4 - 1, size * 4 - 1], fill=255)
+    m = m.resize((size, size), Image.LANCZOS)
+    ph = _path(a.get("photo"))
+    if ph:
+        src = Image.open(ph).convert("RGBA")
+        sw, sh = src.size
+        k = min(sw, sh)
+        src = src.crop(((sw - k) // 2, max(0, int((sh - k) * 0.25)), (sw - k) // 2 + k, max(0, int((sh - k) * 0.25)) + k)).resize((size, size), Image.LANCZOS)
+        im.paste(src, (0, 0), m)
+    else:
+        disc = Image.new("RGBA", (size, size), rgb(theme["accent"]))
+        im.paste(disc, (0, 0), m)
+        d = ImageDraw.Draw(im)
+        ini = "".join(w[0] for w in str(a.get("name") or theme.get("handle") or "?").replace("@", "").split()[:2]).upper()
+        f = font(theme, "display", int(size * 0.42))
+        d.text((size / 2 - d.textlength(ini, font=f) / 2, size * 0.24), ini, font=f, fill=rgb(ink_on(theme["accent"])))
+    return im
+
+
+def chrome(img, d, theme, card, page, W, H, S, T, MU, A):
+    """Header (who is talking) + footer (where you are). Quiet on purpose: content is the hero."""
+    m = int(S * 0.08)
+    hh = header_h(theme, W, H, page)
+    if hh:
+        a = theme.get("author") or {}
+        size = int(S * 0.075)
+        x = m
+        if a or theme.get("handle"):
+            img.alpha_composite(avatar(theme, size), (m, int(S * 0.045)))
+            x = m + size + int(S * 0.022)
+            nf = font(theme, "body", int(S * 0.03))
+            nf_b = font(dict(theme, font_body=(theme.get("font_body") or "Inter").split(":")[0] + ":SemiBold"), "body", int(S * 0.03))
+            d.text((x, int(S * 0.05)), a.get("name") or theme.get("handle", ""), font=nf_b, fill=T)
+            sub = a.get("title") or (theme.get("handle") if a.get("name") else "")
+            if sub:
+                d.text((x, int(S * 0.05) + int(S * 0.038)), sub, font=nf, fill=MU)
+        lp = _path(theme.get("logo"))
+        if lp:
+            lg = Image.open(lp).convert("RGBA")
+            lh = int(S * 0.05)
+            lg = lg.resize((max(1, int(lg.width * lh / lg.height)), lh), Image.LANCZOS)
+            img.alpha_composite(lg, (W - m - lg.width, int(S * 0.058)))
+    if not page:
+        return
+    i, n = page
+    fy = H - int(H * 0.065)
+    pf = font(theme, "body", int(S * 0.026))
+    style = theme.get("footer", "text")
+    if style == "rule":  # editorial: hairline + "03 / 08"
+        d.line([m, fy - int(S * 0.02), W - m, fy - int(S * 0.02)], fill=rgb(theme["muted"], 110), width=max(1, int(S * 0.0025)))
+        lab = f"{i:02d} / {n:02d}"
+        d.text((W - m - d.textlength(lab, font=pf), fy), lab, font=pf, fill=MU)
+        if theme.get("handle"):
+            d.text((m, fy), theme["handle"], font=pf, fill=MU)
+    elif style == "bar":  # progress bar segments
+        seg_w = (W - 2 * m) / n
+        for k in range(n):
+            d.rounded_rectangle([m + k * seg_w + 3, fy + S * 0.012, m + (k + 1) * seg_w - 3, fy + S * 0.02], radius=4,
+                                fill=rgb(theme["text"], 230 if k < i else 70))
+    else:
+        lab = f"{i}/{n}"
+        if style == "hand":  # page count bottom-left, the handwritten swipe owns the right
+            d.text((m, fy), lab, font=pf, fill=MU)
+        else:
+            d.text((W - m - d.textlength(lab, font=pf), fy), lab, font=pf, fill=MU)
+            if theme.get("handle") and not hh:
+                d.text((m, fy), theme["handle"], font=pf, fill=MU)
+    if i < n and card.get("type") != "cta":
+        if style == "hand":  # handwritten "swipe" + drawn arrow
+            hf = font(theme, "hand", int(S * 0.05))
+            txt = card.get("swipe", "swipe")
+            tw = d.textlength(txt, font=hf)
+            x = W - m - tw - int(S * 0.1)
+            yy = fy - int(S * 0.035)
+            d.text((x, yy), txt, font=hf, fill=A)
+            ax0, ax1, ay = x + tw + int(S * 0.015), x + tw + int(S * 0.09), yy + int(S * 0.04)
+            d.line([(ax0, ay + 4), ((ax0 + ax1) / 2, ay - 3), (ax1, ay)], fill=A, width=max(2, int(S * 0.005)), joint="curve")
+            d.line([(ax1 - S * 0.02, ay - S * 0.018), (ax1, ay), (ax1 - S * 0.022, ay + S * 0.014)], fill=A, width=max(2, int(S * 0.005)))
+        elif style not in ("bar", "rule"):
+            d.text((W / 2 - d.textlength("swipe →", font=pf) / 2, fy), "swipe →", font=pf, fill=A)
+
+
+def hand_note(d, theme, note, x, y, S, A):
+    """A handwritten aside ("this one surprised me") - the cheapest way to look made by a person."""
+    hf = font(theme, "hand", int(S * 0.055))
+    d.text((x, y), note, font=hf, fill=A)
+    return y + S * 0.07
+
+
 # ---------------- card renderer ----------------
 _DY = {}
 
@@ -142,16 +418,16 @@ def render_card(card, W, H, theme, p=1.0, mode="full", page=None):
     """One frame of a card at reveal progress p (1.0 = static). Returns RGBA Image (transparent outside the panel in 'panel' mode).
     Full-frame cards are optically centred (slightly above middle) using the finished layout, so animation frames never jitter."""
     if mode == "full" and card.get("type") in ("title", "stat", "quote", "definition", "steps", "list", "cta"):
-        key = json.dumps([card, W, H, theme.get("brand"), theme.get("font_display")], sort_keys=True)
+        key = json.dumps([card, W, H, theme.get("brand"), theme.get("look"), theme.get("font_display"), bool(page)], sort_keys=True)
         if key not in _DY:
-            probe_img = _render(card, W, H, theme, 1.0, mode, None, 0, content_only=True)
+            probe_img = _render(card, W, H, theme, 1.0, mode, page, 0, content_only=True)
             bb = probe_img.getbbox()
             S = min(W, H)
-            top, bottom = int(H * 0.09), H - int(H * 0.11)
+            top, bottom = int(H * 0.09) + header_h(theme, W, H, page), H - int(H * 0.11)
             _DY[key] = max(0, int(((bottom - top) - (bb[3] - bb[1])) * 0.42 + top - bb[1])) if bb else 0
         return _render(card, W, H, theme, p, mode, page, _DY[key])
     if mode == "panel":
-        key = json.dumps(["panel", card, W, H, theme.get("brand"), theme.get("font_display")], sort_keys=True)
+        key = json.dumps(["panel", card, W, H, theme.get("brand"), theme.get("look"), theme.get("font_display")], sort_keys=True)
         if key not in _DY:
             bb = _render(card, W, H, theme, 1.0, mode, None, 0, content_only=True).getbbox()
             S = min(W, H)
@@ -162,21 +438,36 @@ def render_card(card, W, H, theme, p=1.0, mode="full", page=None):
 
 def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=None):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    d = ImageDraw.Draw(img)
+    d = ImageDraw.Draw(img, "RGBA")  # blend translucent fills (pills, markers, shadows) instead of punching holes
     S = min(W, H)
+    alt = card.get("alt") and theme.get("alt_bg")  # brand-block: alternate slides flip to paper
+    if alt:
+        theme = dict(theme, bg=theme["alt_bg"], text=theme.get("alt_text", "#141414"), muted="#6B6B6B", accent=theme.get("marker", "#1B4DFF"))
+    _STYLE.update(hl=theme.get("highlight_style", "color"), marker=theme.get("marker", theme["accent"]), theme=theme,
+                  ul=theme.get("accent2") if theme.get("look") == "brand-block" else theme.get("accent"))
     if mode == "panel":
         bx0, by0, bx1 = int(W * 0.05), int(H * 0.06), int(W * 0.95)
         by1 = int(H * 0.06 + H * 0.40)
         lift = int((1 - ease_out(p / 0.35)) * S * 0.04)
         if not content_only:
             a = int(235 * ease_out(p / 0.25))
-            d.rounded_rectangle([bx0, by0 + lift, bx1, by0 + (panel_h or (by1 - by0)) + lift], radius=int(S * theme["radius"]), fill=rgb(theme["panel"], a))
+            if theme.get("look", "studio") != "studio":  # soft shadow under a light card
+                sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+                ImageDraw.Draw(sh).rounded_rectangle([bx0, by0 + lift + S * 0.01, bx1, by0 + (panel_h or (by1 - by0)) + lift + S * 0.015],
+                                                    radius=int(S * theme["radius"]), fill=(0, 0, 0, int(60 * a / 235)))
+                from PIL import ImageFilter
+                img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(S * 0.012)))
+            d.rounded_rectangle([bx0, by0 + lift, bx1, by0 + (panel_h or (by1 - by0)) + lift], radius=int(S * theme["radius"]),
+                                fill=rgb(theme["bg"] if theme.get("look", "studio") != "studio" else theme["panel"], a))
         box = (bx0 + int(S * 0.05), by0 + lift + int(S * 0.045), bx1 - int(S * 0.05), by1 + lift - int(S * 0.045))
     else:
         if not content_only:
-            d.rectangle([0, 0, W, H], fill=rgb(theme["bg"], int(255 * ease_out(p / 0.2))))
+            bg = paint_bg(theme, W, H)
+            if p < 0.2:
+                bg.putalpha(int(255 * ease_out(p / 0.2)))
+            img.alpha_composite(bg)
         m = int(S * 0.08)
-        box = (m, int(H * 0.09) + dy, W - m, H - int(H * 0.11))
+        box = (m, int(H * 0.09) + header_h(theme, W, H, page) + dy, W - m, H - int(H * 0.11))
     x0, y0, x1, y1 = box
     foot_y = H - int(H * 0.11)
     src_y = (foot_y + S * 0.015) if mode == "full" else (by0 + (panel_h or (by1 - by0)) - S * 0.04)
@@ -185,9 +476,18 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
     t = card.get("type", "title")
     y = y0
     if card.get("kicker"):
-        kf = font(theme, "body", int(S * 0.032))
-        d.text((x0, y), card["kicker"].upper(), font=kf, fill=A)
-        y += int(S * 0.055)
+        kf = font(dict(theme, font_body=(theme.get("font_body") or "Inter").split(":")[0] + ":SemiBold"), "body", int(S * 0.03))
+        ktxt = card["kicker"].upper()
+        if theme.get("kicker_style") == "rule":
+            d.line([x0, y + S * 0.018, x0 + S * 0.06, y + S * 0.018], fill=A, width=max(2, int(S * 0.004)))
+            d.text((x0 + S * 0.08, y), ktxt, font=kf, fill=A)
+        elif theme.get("look") == "creator":
+            tw = d.textlength(ktxt, font=kf)
+            soft(d, lambda dd: dd.rounded_rectangle([x0, y - S * 0.008, x0 + tw + S * 0.04, y + S * 0.045], radius=int(S * 0.026), fill=rgb(theme["accent"], 30)))
+            d.text((x0 + S * 0.02, y), ktxt, font=kf, fill=A)
+        else:
+            d.text((x0, y), ktxt, font=kf, fill=A)
+        y += int(S * 0.065)
     reveal = lambda i, n: stagger(p, i, n)
 
     if t in ("title", "cta"):
@@ -195,7 +495,7 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
         y = draw_lines(d, (x0, y + (1 - reveal(0, 2)) * S * 0.03), lines, f, px, T, hl_fill=A)
         if card.get("body"):
             f2, l2, px2 = fit_text(d, card["body"], theme, "body", bw, bh * 0.3, int(S * 0.045))
-            draw_lines(d, (x0, y + S * 0.03), l2, f2, px2, rgb(theme["muted"], int(255 * reveal(1, 2))))
+            y = draw_lines(d, (x0, y + S * 0.03), l2, f2, px2, rgb(theme["muted"], int(255 * reveal(1, 2))))
         if t == "cta" and card.get("cta"):
             cf = font(theme, "display", int(S * 0.05))
             tw = d.textlength(card["cta"], font=cf)
@@ -248,6 +548,7 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
                 tx = x0 + fpx * 0.5 + S * 0.03
             ff, ll, pp = fit_text(d, it, theme, "body", x1 - tx, row_h * 0.92, fpx, min_px=int(fpx * 0.6))
             draw_lines(d, (tx, ry), ll, ff, pp, rgb(theme["text"], al), hl_fill=rgb(theme["accent"], al))
+        y = y + n * row_h
 
     elif t == "quote":
         qf = font(theme, "display", int(S * 0.2))
@@ -284,13 +585,17 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
             else:
                 cx0, cy0, cx1, cy1 = x0 + i * bw / 2 + (S * 0.01 if i else 0), y, x0 + (i + 1) * bw / 2 - (0 if i else S * 0.01), y1
             al = int(255 * k)
-            d.rounded_rectangle([cx0, cy0, cx1, cy1], radius=int(S * 0.025), fill=rgb(theme["panel"] if mode == "full" else theme["bg"], int(al * 0.9)),
+            d.rounded_rectangle([cx0, cy0, cx1, cy1], radius=int(S * 0.025), fill=rgb((theme["panel"] if mode == "full" else theme["bg"]), int(al * (0.9 if theme.get("look", "studio") == "studio" else 1.0))),
                                 outline=rgb(colr, al), width=max(2, int(S * 0.005)))
             pad = S * 0.035
+            pfill = theme["panel"] if mode == "full" else theme["bg"]
+            ptxt = rgb(ink_on(pfill), al) if theme.get("look", "studio") != "studio" else rgb(theme["text"], al)
+            if theme.get("look", "studio") != "studio" and abs(lum(colr) - lum(pfill)) < 60:  # label colour too close to the panel
+                colr = theme.get("marker") if abs(lum(theme.get("marker", "#000000")) - lum(pfill)) > 60 else ink_on(pfill)
             d.text((cx0 + pad, cy0 + pad), str(col.get("title", "")).upper(), font=font(theme, "display", int(S * 0.04)), fill=rgb(colr, al))
             txt = "\n".join(col.get("items", []))
             ff, ll, pp = fit_text(d, txt, theme, "body", cx1 - cx0 - 2 * pad, cy1 - cy0 - pad * 2 - S * 0.07, int(S * 0.05))
-            draw_lines(d, (cx0 + pad, cy0 + pad + S * 0.07), ll, ff, pp, rgb(theme["text"], al), hl_fill=rgb(theme["accent"], al))
+            draw_lines(d, (cx0 + pad, cy0 + pad + S * 0.07), ll, ff, pp, ptxt, hl_fill=rgb(theme["accent"], al))
 
     elif t == "chart":
         bars = card.get("bars", [])[:6]
@@ -310,20 +615,15 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
             d.rounded_rectangle([x0, ry + row * 0.42, x0 + max(bwid, 2), ry + row * 0.82], radius=int(row * 0.1), fill=rgb(theme["accent"] if hi else theme["muted"]))
             d.text((x0 + bwid + S * 0.015, ry + row * 0.42), f"{b.get('value')}{card.get('unit', '')}", font=lf, fill=T)
 
+    if card.get("note") and t not in ("compare", "myth_fact", "chart"):
+        hand_note(d, theme, card["note"], x0 + S * 0.02, min(y + S * 0.05, y1 - S * 0.06), S, A)
     if content_only:
         return img
     if card.get("source"):
         sf = font(theme, "body", int(S * 0.022))
         d.text((x0, src_y), "Source: " + card["source"], font=sf, fill=rgb(theme["muted"], int(200 * min(1, p * 2))))
-    if page:
-        pf = font(theme, "body", int(S * 0.026))
-        i, n = page
-        lab = f"{i}/{n}"
-        d.text((W - int(S * 0.08) - d.textlength(lab, font=pf), H - int(H * 0.065)), lab, font=pf, fill=MU)
-        if theme.get("handle"):
-            d.text((int(S * 0.08), H - int(H * 0.065)), theme["handle"], font=pf, fill=MU)
-        if i < n and card.get("type") != "cta":
-            d.text((W / 2 - d.textlength("swipe →", font=pf) / 2, H - int(H * 0.065)), "swipe →", font=pf, fill=A)
+    if page or header_h(theme, W, H, page):
+        chrome(img, d, theme, card, page, W, H, S, T, MU, A)
     return img
 
 
@@ -476,10 +776,13 @@ def plan_boards(r, edit_dir, max_boards=None, mode="panel", min_gap_s=4.0):
 
 # ---------------- CLI ----------------
 def cmd_cards(a):
-    """editor.py cards render SPEC.json [--aspect 4:5 --brand B --out DIR --no-pdf] | preview SPEC.json"""
+    """editor.py cards SPEC.json [--aspect 4:5 --brand B --look creator|editorial|brand-block|studio --out DIR --no-pdf]"""
     spec = rjson(a.spec)
     cards = spec.get("cards", spec if isinstance(spec, list) else [])
-    theme = theme_for(a.brand or spec.get("brand"), spec.get("theme"))
+    over = dict(spec.get("theme") or {})
+    if getattr(a, "look", None):
+        over["look"] = a.look
+    theme = theme_for(a.brand or spec.get("brand"), over)
     bad = [i + 1 for i, c in enumerate(cards) if c.get("type") not in TYPES]
     if bad:
         raise SystemExit(f"unknown card type on slide(s) {bad}; types: {', '.join(TYPES)}")

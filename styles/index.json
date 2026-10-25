@@ -2013,7 +2013,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2036,7 +2036,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2059,7 +2059,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
  },
  {
@@ -2081,7 +2081,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2104,7 +2104,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2126,7 +2126,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2148,7 +2148,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
  },
  {
@@ -2171,7 +2171,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2194,7 +2194,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
  },
  {
@@ -2216,7 +2216,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2238,7 +2238,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats"
  },
  {
@@ -2260,7 +2260,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2283,7 +2283,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2305,7 +2305,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2327,7 +2327,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {
@@ -2349,7 +2349,7 @@
    "TOFU",
    "MOFU"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "compliance": ""
  },
  {

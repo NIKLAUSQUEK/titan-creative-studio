@@ -14,7 +14,7 @@
    "list",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -44,7 +44,7 @@
    "steps",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -74,7 +74,7 @@
    "myth_fact",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -104,7 +104,7 @@
    "list",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -135,7 +135,7 @@
    "definition",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -164,7 +164,7 @@
    "quote",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -193,7 +193,7 @@
    "compare",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -223,7 +223,7 @@
    "compare",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -253,7 +253,7 @@
    "chart",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -282,7 +282,7 @@
    "list",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -312,7 +312,7 @@
    "definition",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -341,7 +341,7 @@
    "title",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -371,7 +371,7 @@
    "list",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -400,7 +400,7 @@
    "list",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -428,7 +428,7 @@
    "title",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",
@@ -457,7 +457,7 @@
    "quote",
    "cta"
   ],
-  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "route": "Cards engine: editor.py cards SPEC.json --brand <b> [--look creator|editorial|brand-block] (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
   "platforms": [
    "instagram",
    "linkedin",

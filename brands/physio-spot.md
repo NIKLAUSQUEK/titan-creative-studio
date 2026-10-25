@@ -20,6 +20,7 @@ Captions and hook placement follow ledger 2026-10-10 (hook text never covers fac
   "hook_text": {"font": "DejaVu Sans", "bold": true, "size": 0.031, "position_y": 0.615, "uppercase": true},
   "end_card": {"enabled": true, "dur_s": 2.5, "bg": "#EFE3D3", "font": "Playfair Display", "color": "#4E3B2E", "sub_font": "Cormorant Garamond", "sub_color": "#6B5544"},
   "grade": {"warmth": 0.03},
+  "cards": {"look": "editorial", "bg": "#EFE3D3", "panel": "#F8F1E7", "text": "#3E2F24", "muted": "#7A6656", "accent": "#6B5544", "marker": "#DCC5A8"},
   "compliance": {"forbid_words": ["best", "leading", "no.1", "#1", "most trusted", "guaranteed", "cure", "free consult", "discount"]}
 }
 ```

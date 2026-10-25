@@ -65,7 +65,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "Disney / Pixar / cartoon / animated" | animation-3d-cartoon.md (character sheet → style key → consistency) |
 | "edit / relight / filter / restyle this photo", "photo effect" | photo-effects.md prompt library (GPT Image 2.5 / Nano Banana with image_references) |
 | "edit this in Premiere / After Effects / with code" | claude-editing.md |
-| "save credits / cheaper" | credit-saving.md (drafts lowest quality → approve → highest 1080p) |
+| "save credits / cheaper", "use something free / Google / Veo / not Higgsfield" | render-routes.md (free → cheap → premium per style: cards engine, DepthFlow, Wan 2.2/LTX-2 local, Google Flow free credits, Veo API, Dreamina, Higgsfield) + credit-saving.md (drafts lowest quality → approve → highest 1080p) |
 | "interview me / ask me questions / journal", "help me find my stories", "what are my values" | `/journal` → biographer agent (creator-brain skill): provoking questions by era/theme, verbatim journal, media asks, story cards, profile updates |
 | "write a hook / script / post / essay / carousel", "tell a story about…", "founder story", "make up a story that teaches…" | `/story` → story-writer agent: goal + trope stance + structure, corpus passages, 5 hooks, version A (+B/C) |
 | "storyboard my life / my origin / from birth" | `/storyboard <era>` → visual life storyboard from real photos → normal studio gates |
@@ -75,7 +75,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "how does the algorithm work / optimise for <platform> / Xiaohongshu / Douyin / reach another country" | platform-signals.md (marketing-engine): platform signals, build spec, Eastern stack, legitimate cross-border SOP |
 | "funnel / lead magnet / landing page / WhatsApp or email nurture / quiz" | funnels-lead-magnets.md (+ buyer-psychology.md) → strategist for the plan, story-writer for copy |
 | "make it persuasive / ad copy / headline / offer / pricing" | buyer-psychology.md frameworks + checklist |
-| "carousel / static ad / infographic / thumbnail / cover" | carousels-statics.md (+ higgsfield-youtube-thumbnail for YT); carousels and LinkedIn PDFs render free via the cards engine: `editor.py cards <spec.json> --aspect 4:5 --brand <b>` |
+| "carousel / static ad / infographic / thumbnail / cover" | carousels-statics.md (+ higgsfield-youtube-thumbnail for YT); carousels and LinkedIn PDFs render free via the cards engine: `editor.py cards <spec.json> --aspect 4:5 --brand <b> [--look creator|editorial|brand-block]` (brand kit = `edit-brand` block: colours, fonts, `author` headshot, `logo`, `cards.look`) |
 | "where should B-roll go / what music / sync to the beat / make it feel more <emotion> / edit feels flat" | `story-sync` skill → Sync Map → /edit recipe or Gate 3 script |
 | "show me edit styles / presets / edit like a <viral|pro|niche> style" | style-catalog.md (46 presets; all families in `/styles`) → `editor.py assemble --preset <name>`; specific creator → `/style` |
 | "package this for posting / captions / titles / hashtags" | `/publish` → distributor agent: per-platform package + checklist (never posts) |
@@ -83,8 +83,10 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "launch / campaign" | `marketing:campaign-plan` skill + strategist agent → production via `/ad` |
 | "paid ads / boost / Meta / Google / TikTok ads" | `anthropic-skills:ads-*` skills (ads-plan, ads-meta, ads-google, ads-tiktok, ads-youtube, ads-linkedin) + marketing-engine compliance-packs.md |
 
-## Default render stack
-Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate high) + Genjutsu motion transfer for performance-critical shots (Klaus films a phone reference) + 4K upscale of the locked final. Other models only with a stated reason.
+## Default render stack (free-first; Higgsfield is the premium route, not the only one)
+- Route every shot by `higgsfield-creative-director/references/render-routes.md`: text/data/diagrams → cards engine or HyperFrames (free) · real people/places → film or photograph, DepthFlow for stills (free) · non-hero motion → Wan 2.2 / LTX-2 locally or Google Flow's free daily credits · hero shots → premium. Record the mix in spec.json `render_routes`; offer Klaus the free / cheap / premium option per style (`styles.py show <style>` lists all three).
+- Premium cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate high) + Genjutsu motion transfer for performance-critical shots (Klaus films a phone reference) + 4K upscale of the locked final. Google Veo (Flow / Veo API) is an equal alternative when Klaus prefers it.
+- Every paid route (Veo API, Dreamina, Kling, Runway, Luma, Higgsfield) goes through the cost gate; client work only on routes whose terms allow commercial use at the tier used; never crop watermarks; label AI at /publish (Google clips always carry SynthID/C2PA).
 
 ## Where things live
 - Brands: `brands/<brand>.md` (template `brands/_TEMPLATE.md`) · People brains: `brains/<who>/` (template `brains/_template/`) · Cast (Soul/Element/voice IDs): `cast/registry.md` · Ledger: `ledger/learnings.md`

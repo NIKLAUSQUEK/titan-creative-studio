@@ -32,7 +32,7 @@ Mark every line `[confirmed]` (from the client/their materials) or `[draft]` (in
 - Logo files, colours (hex), fonts, grade/LUT, wardrobe, sets, props (link or describe): _
 - Real people/talent available (names, consent, Soul/Element ids in cast/registry.md): _
 - Style references (creators/brands whose look we borrow → `/style`): _
-- Edit guide for the auto-editor (optional but exact): a fenced `edit-brand` JSON block with colors, fonts, captions {font, size, color, position_y, highlight}, hook_text, end_card, grade, compliance.forbid_words. Example: brands/physio-spot.md §6b.
+- Edit guide for the auto-editor (optional but exact): a fenced `edit-brand` JSON block with colors, fonts, captions {font, size, color, position_y, highlight}, hook_text, end_card, grade, compliance.forbid_words, plus for cards/carousels: "handle", "author" {name, title, photo: real headshot path}, "logo" (path), "cards" {"look": "creator|editorial|brand-block|studio", optional bg/panel/text/muted/accent/marker overrides}. Fonts as "Family:Weight"; put brand font files in assets/fonts/<brand>/ (else the look's bundled pairing is used). Example: brands/physio-spot.md §6b, brands/titan-ai.md §6b.
 
 ## 7. Channels & capacity
 | Channel | Handle | Goal | Current baseline | Posts/week |

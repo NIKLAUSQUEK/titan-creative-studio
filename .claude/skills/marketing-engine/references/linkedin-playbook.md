@@ -298,6 +298,16 @@ Every clinic post and profile passes `compliance-sg.md` before publishing. Re-ch
 | Package (caption, first comment, alt text, document title) | `/publish` (distributor) using §3 and the platform-signals §8 gate |
 | Weekly loop | `/linkedin week` (see the command): plan → write → film → publish → comment blocks → Friday review |
 
+### Make it look human and on-brand (not AI)
+AI-looking carousels share tells: black/neon gradient, generic sans (DejaVu/Arial), no person, centred everything, emoji bullets, stock icons, a different look every post, generic copy. Ours:
+1. **A person on every slide**: `author` header with Klaus's (or the clinic director's) real headshot, name and title. Brands without a person (clinic page) use logo + handle.
+2. **One look per brand, every time**: the brand's `cards.look` (TITAN: `creator`; Physio Spot: `editorial`) with brand colours and fonts from the `edit-brand` block. Recognition comes from repetition (distinctive assets).
+3. **Warm paper, not black**, with a real type pairing; marker highlight on 1-3 key words per slide, never more.
+4. **One handwritten touch** (`note` or the hand-drawn swipe) per 2-3 slides, saying something a person would ("#3 is the one people skip").
+5. **Real photos/screens** beat generated imagery: screenshots of the actual workflow, team photos, whiteboard snaps (cards engine for type, Canva/Figma when a slide is photo-led).
+6. **Copy in Klaus's voice** from a real story or number (AI edits only); no "In today's fast-paced world", no emoji bullets, no "Here's the thing".
+7. Before posting: `contact_sheet.jpg` side by side with the last 3 posts: same look, same header, readable at phone size.
+
 ## 11. Weekly SOP (Klaus, TITAN.AI page, one clinic director)
 
 **Monday (90 min), plan:**

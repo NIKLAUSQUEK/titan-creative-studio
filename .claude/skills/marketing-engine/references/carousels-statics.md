@@ -212,7 +212,7 @@ Format bank to add to §3:
 - Plan the grid rhythm: alternate face / text / product, and colour-code series.
 
 ## 8. Production workflow
-0. **Free local render (default for text/data carousels and LinkedIn PDFs):** write the slides as cards JSON (archetype → card types in `styles/carousel.json`) and run `python tools/editor/editor.py cards <spec.json> --aspect 4:5 --brand <b>` → PNGs + PDF + contact sheet, on-brand from the `edit-brand` block. Use Canva/Figma (below) when a slide needs photography, complex layout or client-editable files.
+0. **Free local render (default for text/data carousels and LinkedIn PDFs):** write the slides as cards JSON (archetype → card types in `styles/carousel.json`) and run `python tools/editor/editor.py cards <spec.json> --aspect 4:5 --brand <b>` → PNGs + PDF + contact sheet, on-brand from the `edit-brand` block (looks `creator` / `editorial` / `brand-block`, author headshot header, logo, brand fonts in `assets/fonts/<brand>/`; anti-AI checklist in `linkedin-playbook.md` §10). Use Canva/Figma (below) when a slide needs photography, complex layout or client-editable files.
 1. **Master template per brand** (Canva brand kit or Figma components): cover, re-hook, content variants (text / photo + text / chart / ✅❌ split / quote), recap, CTA, footer with progress. Export 1080×1350 PNG, or PDF for LinkedIn. The `edit-brand` block is the source of truth.
 2. **AI images.** Generate **imagery without text**, then set all type in Canva or Figma: spelling stays exact, text stays editable, and localisation (EN/MS/VI/ZH) becomes a text swap. Model routing:
 

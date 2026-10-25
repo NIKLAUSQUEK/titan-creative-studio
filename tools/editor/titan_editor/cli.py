@@ -15,7 +15,7 @@
   editor.py chat    --project P                               revision loop: type a note, get a new draft
   editor.py export  --project P [--version N] [--fps 30]      CMX3600 EDL of the cut (A-roll + B-roll on V2) for Premiere/Resolve finishing
   editor.py boards  --project P [--mode panel|full --max N --dry-run]   plan explainer boards (numbers/dates/steps/definitions) -> new version
-  editor.py cards   SPEC.json [--aspect 4:5|1:1|9:16|16:9 --brand B --out DIR --no-pdf]   carousel PNGs + LinkedIn PDF + contact sheet
+  editor.py cards   SPEC.json [--aspect 4:5|1:1|9:16|16:9 --brand B --look creator|editorial|brand-block --out DIR --no-pdf]   carousel PNGs + LinkedIn PDF + contact sheet
   editor.py preset  list | show NAME | from-stylecard NAME [--file card.json]
   editor.py selftest                                          synthetic end-to-end test
 """
@@ -62,6 +62,7 @@ def main(argv=None):
     p.add_argument("--base", default=None); p.add_argument("--dry-run", action="store_true")
     p = sp.add_parser("cards"); p.add_argument("spec"); p.add_argument("--aspect", default=None); p.add_argument("--brand", default=None)
     p.add_argument("--out", default=None); p.add_argument("--no-pdf", action="store_true")
+    p.add_argument("--look", default=None, choices=["creator", "editorial", "brand-block", "studio"], help="design system; default = brand's cards.look")
     p = sp.add_parser("export"); p.add_argument("--version", default=None); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("run"); p.add_argument("footage", nargs="*"); add_llm(p)
     for k in ("goal", "platform", "aspect", "preset", "ask", "brand", "brain", "course-brain", "music", "music-licence", "aspects"):

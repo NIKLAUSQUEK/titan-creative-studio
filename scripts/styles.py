@@ -114,8 +114,11 @@ def rank(items, q="", family=None, brand=None, platform=None, funnel=None, fmt=N
 
 
 def line(s):
+    r = s.get("routes")
     extra = s.get("route") or ""
-    return f"[{s['family']}] {s['id']} - {s.get('name', '')}: {s.get('what', '')[:150]}" + (f"\n      how: {extra[:160]}" if extra else "")
+    if r:
+        extra = f"free: {r['free']} | cheap: {r['cheap']} | premium: {r['premium']}"
+    return f"[{s['family']}] {s['id']} - {s.get('name', '')}: {s.get('what', '')[:150]}" + (f"\n      how: {extra[:330]}" if extra else "")
 
 
 def bundle(items, s):
