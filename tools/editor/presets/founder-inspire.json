@@ -1,38 +1,89 @@
 {
   "name": "founder-inspire",
-  "label": "Founder / comeback / inspirational",
+  "label": "Founder film / comeback (11b, produced arc)",
   "kind": "genre",
-  "description": "Past cold and desaturated, present warm; build-up score; VO-led with B-roll of the grind.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Produced founder ad film: archival/recreated past -> decision -> grind -> proof -> invitation. VO in the founder's real voice, build-up score, proof B-roll. Unmeasured (researched); for organic founder content use founder-clip.",
+  "reference": "research/genre-research-2026-10/action-feelgood-founder.md#3",
+  "structure": {
+    "name": "founder-arc",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "lowest moment / archival proof 0-3s",
+      "wound",
+      "decision + grind",
+      "proof",
+      "invitation"
+    ]
+  },
   "pacing": {
     "remove_silence_over_s": 0.5,
-    "pad_s": 0.12
+    "pad_s": 0.12,
+    "max_shot_s": 4.0
   },
   "captions": {
-    "max_words": 4,
-    "animation": "pop"
+    "enabled": true,
+    "font": "Space Grotesk",
+    "bold": false,
+    "size": 0.032,
+    "max_words": 5,
+    "animation": "fade",
+    "keyword_caps": false,
+    "outline": 0,
+    "shadow": 2
+  },
+  "hook_text": {
+    "enabled": true,
+    "font": "Instrument Serif",
+    "bold": false,
+    "uppercase": false,
+    "size": 0.05,
+    "dur_s": 3.0
   },
   "zoom": {
     "mode": "smooth",
     "every_s": 5,
     "scale": 1.05
   },
+  "broll": {
+    "every_s": 3,
+    "max_dur_s": 3,
+    "min_dur_s": 1.2,
+    "mode": "full"
+  },
   "sfx": {
-    "density_per_10s": 0.4,
+    "density_per_10s": 0.5,
+    "db": -18,
     "map": {
-      "hook": "riser"
+      "hook": "riser",
+      "end": "swell"
     }
   },
   "music": {
     "energy": "mid",
-    "db": -19
+    "db": -19,
+    "duck": true
   },
   "grade": {
-    "contrast": 1.06,
+    "contrast": 1.04,
     "saturation": 0.95
   },
-  "broll": {
-    "every_s": 4,
-    "max_dur_s": 3
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.0
+  },
+  "grade_progression": {
+    "from": {
+      "saturation": 0.6,
+      "contrast": 0.95
+    },
+    "to": {
+      "saturation": 1.05,
+      "contrast": 1.06
+    },
+    "by": "beat",
+    "_needs_feature": "per-beat grade override (grade is global today)"
   }
 }

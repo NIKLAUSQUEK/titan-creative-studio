@@ -1,0 +1,108 @@
+{
+  "name": "founder-clip",
+  "label": "Founder clip: one scene, talk-led (11a)",
+  "kind": "genre",
+  "description": "Measured on Sara Blakely @hellosunshine (11k likes; 4.5 s avg shot, close<->wide-with-audience every 3-5 s, 7 s CAPS header, small sentence subs) and Ben Francis @benfrancis (2.4k likes; 234 wpm, 2-line captions with a yellow keyword, 2-up close/wide stack). Words from frame 0, header carries the stakes, no music under speech, punch-in on the quoted line, proof B-roll only.",
+  "reference": "research/genre-research-2026-10/action-feelgood-founder.md#3",
+  "structure": {
+    "name": "founder-scene",
+    "target_s": [
+      40,
+      80
+    ],
+    "beats": [
+      "header + cold start mid-scene",
+      "set the scene",
+      "the ask / the risk (quoted dialogue)",
+      "the turn (reaction wide)",
+      "lesson line"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06,
+    "remove_fillers": "hard",
+    "max_shot_s": 6.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": true,
+    "size": 0.034,
+    "color": "#FFFFFF",
+    "highlight": "#FFE14D",
+    "outline": 2,
+    "shadow": 1,
+    "position_y": 0.72,
+    "max_words": 6,
+    "animation": "fade",
+    "uppercase": false,
+    "keyword_caps": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": true,
+    "uppercase": true,
+    "size": 0.05,
+    "position_y": 0.42,
+    "max_words": 7,
+    "dur_s": 7.0,
+    "outline": 0
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 4.0,
+    "scale": 1.15,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 12,
+    "max_dur_s": 2.5,
+    "min_dur_s": 1.2,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.2,
+    "db": -20,
+    "map": {
+      "hook": "swell"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -30,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.03,
+    "saturation": 1.0,
+    "warmth": 0.02,
+    "vignette": false
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "framing": {
+    "plan": "per_sentence",
+    "cycle": [
+      "close",
+      "wide"
+    ],
+    "min_hold_s": 3.0,
+    "_needs_feature": "sentence-aligned framing plan (same as premium-moving-talking-head B.3 #3); zoom snap every 4 s approximates it"
+  },
+  "layout": {
+    "stack2": {
+      "top": "close",
+      "bottom": "wide"
+    },
+    "_needs_feature": "speaker-only 2-up stack from two camera angles (broll mode split puts B-roll top, speaker bottom)"
+  },
+  "speed": {
+    "talk_speedup": 1.1,
+    "_needs_feature": "global speech speed-up with pitch kept (expand has --speeds; base render does not)"
+  }
+}

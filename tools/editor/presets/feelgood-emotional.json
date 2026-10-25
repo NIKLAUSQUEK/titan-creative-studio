@@ -1,40 +1,107 @@
 {
   "name": "feelgood-emotional",
-  "label": "Feel-good / emotional",
+  "label": "Feel-good / emotional (quiet hero + reveal hold)",
   "kind": "genre",
-  "description": "Gentle pace, silence allowed to breathe, push-in on the emotional line, warm soft grade, no SFX.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured on Thai Life 'Unsung Hero' (median 2.1 s, slows 2.2->2.7 s, 10.6 s reveal hold, no dialogue for 37 s, ~18 s quiet hole before the payoff), PETRONAS 'My Son' (median 1.8 s, dialogue shot-reverse-shot) and PETRONAS 'Once More' cutdown (median 2.9 s, macro detail, title card). Brisk 2-2.5 s storytelling, one long reveal hold, the bed drops out before the reveal, slow VO wisdom line, warm washed grade, small header, title card + logo.",
+  "reference": "research/genre-research-2026-10/action-feelgood-founder.md#2",
+  "structure": {
+    "name": "feelgood",
+    "target_s": [
+      60,
+      180
+    ],
+    "beats": [
+      "act + header (no dialogue)",
+      "repetition + details",
+      "doubt / tension",
+      "quiet hole",
+      "reveal hold",
+      "wisdom line + title card + logo"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 1.0,
-    "pad_s": 0.25,
-    "max_shot_s": 6
+    "remove_silence_over_s": 1.2,
+    "pad_s": 0.3,
+    "max_shot_s": 3.5,
+    "remove_fillers": "light"
   },
   "captions": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": false,
+    "size": 0.032,
+    "max_words": 7,
     "animation": "fade",
-    "max_words": 6,
+    "uppercase": false,
     "keyword_caps": false,
-    "size": 0.036
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.8
+  },
+  "hook_text": {
+    "enabled": true,
+    "font": "Instrument Serif",
+    "bold": false,
+    "uppercase": false,
+    "size": 0.045,
+    "position_y": 0.16,
+    "max_words": 8,
+    "dur_s": 3.5,
+    "outline": 0
   },
   "zoom": {
     "mode": "smooth",
-    "every_s": 6,
-    "scale": 1.05,
-    "on_hook": 1.0
+    "every_s": 0,
+    "scale": 1.04,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 2.5,
+    "max_dur_s": 3.0,
+    "min_dur_s": 1.5,
+    "mode": "full"
   },
   "sfx": {
     "density_per_10s": 0
   },
   "music": {
     "energy": "low",
-    "db": -20
+    "db": -18,
+    "duck": true
   },
   "grade": {
-    "contrast": 0.98,
-    "saturation": 1.0,
-    "warmth": 0.05
+    "contrast": 0.92,
+    "saturation": 0.9,
+    "brightness": 0.02,
+    "gamma": 1.04,
+    "warmth": 0.06,
+    "vignette": false
   },
-  "broll": {
-    "every_s": 5,
-    "max_dur_s": 3
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.4,
+    "strength": 0.3
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 4.0
+  },
+  "reveal_hold": {
+    "min_s": 4,
+    "max_s": 11,
+    "push_in": 1.04,
+    "_needs_feature": "brief beat role 'reveal' that is exempt from max_shot_s and gets the only push-in"
+  },
+  "music_hole": {
+    "before": "reveal",
+    "len_s": [
+      5,
+      15
+    ],
+    "drop_db": -14,
+    "swell_after_s": 2.5,
+    "_needs_feature": "bed automation: drop before the reveal beat, re-enter after the cut (sfx.silence / music.drop_before_reveal are specced in story-sfx-dense but only for 0.2-0.3 s holes)"
   }
 }

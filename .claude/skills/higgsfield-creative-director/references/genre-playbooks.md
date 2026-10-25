@@ -426,19 +426,55 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 - **Compliance:** sourced statistics only; punch at behaviours and systems, never at being poor.
 - **Preset:** talking-head-punchy, or genz-header-skit for the comedy version.
 
-### 9. Feel-good / emotional [draft]
-- **Why it works:** small specific details, the payoff earned through restraint, and one tear-moment held long.
-- **Pacing:** 0-3 s an unusual act of kindness as the hook; 3-20 s context through small details; 20-26 s the reveal of why; 26-30 s the warm resolution plus a wisdom line.
+### 9. Feel-good / emotional [measured: F1 https://www.instagram.com/reel/DWXnBo1DMbN/, F2 https://www.instagram.com/reel/DU2O_tWEZf8/, F3 https://www.instagram.com/reel/DSrCoZ4EYfo/]
+- **Why it works:**
+  - a repeated small act the viewer doesn't understand yet (curiosity);
+  - others doubting it (tension);
+  - the reveal of what it gave back, held long enough to land;
+  - one wisdom line;
+  - the brand only at the end. SE-Asian audiences share these (Unruly).
+- **Two structures:**
+  - **9a Quiet hero** (Thai Life model): wordless repetition → doubt → near-silence → reveal hold → VO wisdom.
+  - **9b Ensemble turn** (PETRONAS model): warm, funny dialogue among family or friends → a line that turns it → a held reaction.
+- **Pacing map (hero film 90-180 s; 30 s cutdown in brackets):**
+
+| Beat | Film | 30 s cutdown | Shots |
+|---|---|---|---|
+| Hook: the act | 0-10 s | 0-3 s | the kind act with a small header ("He does this every day. Why?"); no dialogue |
+| Repetition + details | 10-60 s | 3-12 s | the same act on different days; hands, coins, a plant, a dog; 2-2.5 s shots |
+| Doubt / tension | 60-100 s | 12-17 s | someone mocks, shakes their head, or he loses something; 2.5-3 s |
+| Quiet hole | 100-120 s | 17-20 s | the bed drops ~15 dB to room tone; slower shots |
+| Reveal hold | 1 shot, 8-11 s | 20-25 s (one 4-5 s hold) | the payoff (the girl in school uniform, the mother's face); push-in 3-5% |
+| Wisdom + brand | last 15-25 s | 25-30 s | the VO line, the title card (handwritten or serif), the logo |
+
 - **Shot grammar:**
-  - handheld but steady;
-  - close-ups of hands and eyes;
-  - push-in on the emotional line;
-  - let silence breathe for 1-2 s.
-- **Look:** warm, soft contrast, golden hour or window light.
-- **genre_key:** `warm natural window light, soft contrast, intimate handheld close-ups, gentle shallow depth of field, genuine understated emotion, golden tones`
-- **Sound:** a gentle piano or strings bed, natural sound up at the emotional beat, and no SFX.
-- **Ad template:** the brand as an enabler of the moment; no exploiting real people's grief; consent for anyone real.
-- **Preset:** feelgood-emotional.
+  - observational handheld that is steady but alive;
+  - mid-shots for the act, macro for hands and objects (F3's baby fist);
+  - over-the-shoulder shot-reverse-shot for dialogue (9b);
+  - a single push-in only on the reveal;
+  - 35-50 mm, natural eye level, nothing showy.
+- **Look:**
+  - warm, washed, low contrast;
+  - beige/golden daylight (F1) or tungsten practicals and fairy lights at night (F3);
+  - lifted blacks, never crushed;
+  - skin warm.
+- **genre_key:** `warm natural light, washed low-contrast film look, lifted shadows, observational handheld, everyday streets and homes, genuine understated emotion, small tactile details, golden beige tones` (night variant: replace the first item with `tungsten practicals and fairy lights`).
+- **Shot (reveal):** `{"id":"S14","dur":9,"camera":"locked 50mm mid-shot, push-in 4% over the shot","subject":"@GIRL in a school uniform, @HERO sees her","action":"start: he stops on the pavement -> end: he smiles, eyes wet, says nothing","light":"warm late-afternoon daylight, soft","audio":"room tone only for 2 s, then piano re-enters","constraints":"no dialogue, no music swell before 3 s","genre_key":"<9 key>"}`
+- **Sound:**
+  - a single instrument bed (piano, guitar or strings) that carries the first half;
+  - **a 5-15 s quiet hole (bed -12 to -15 dB, room tone up) before the reveal**;
+  - the swell enters 2-3 s into the reveal hold, not on the cut;
+  - the VO is spoken slowly (≤ 60 wpm) in the last part;
+  - no SFX except diegetic foley;
+  - a festive original song works as the bed and the title track (PETRONAS 2026 commissioned "Seindah Kasih", https://www.instagram.com/reel/DV0xuA_Gc6s/).
+- **Compliance:**
+  - the brand is the enabler, never the saviour of real hardship;
+  - no exploiting real people's grief; consent for anyone real;
+  - insurance and health brands make no claims inside the story;
+  - SG health (Physio Spot/heal360): no patient stories as testimonials, so stage the act around staff or family, not a treated patient's outcome;
+  - festive films respect each festival's customs (localisation.md).
+- **Preset:** `feelgood-emotional` (corrected, below); the cutdown uses the same preset with `target_s` [15, 30].
+- **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
 ### 10. Romance / aura / sensual (implied) [draft; ledger: implied only, adults 25+]
 - **Pacing:** slow 3-6 s shots; a glance → a glance back → a near-touch → a cutaway (a metaphor); the aura statement line.
@@ -452,19 +488,60 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 - **Ad template:** confidence and attraction (fragrance, fitness, men's health "feel like yourself"). No sexual claims; clinical wording for sexual-health brands.
 - **Preset:** aura-cinematic.
 
-### 11. Founder / comeback / inspirational [draft; story-engine.md founder arc]
-- **Pacing:**
-  - 0-3 s: the lowest moment or a bold claim;
-  - 3-12 s: the wound, shot desaturated;
-  - 12-20 s: the decision, then the grind montage;
-  - 20-26 s: proof as the grade warms;
-  - 26-30 s: the invitation.
-- **Shot grammar:** past = static, cold, handheld memories; present = confident tracking, low-angle hero.
-- **Look:** a grade progression across the piece (sat 0.6 → 1.05).
-- **genre_key:** `documentary-style cinematic realism, natural light, intimate framing, earned optimism, no stock-footage gloss`
-- **Sound:** a build-up score where silence becomes the music swell; VO in the founder's real voice.
-- **Compliance:** no humble-brag; claims must be substantiable.
-- **Preset:** founder-inspire.
+### 11. Founder / comeback (two modes) [measured: C1 https://www.instagram.com/reel/DC47FDWxlpv/, C2 https://www.instagram.com/reel/DRnBLsXDQE-/, C3 https://www.instagram.com/reel/DehjfyxRDu2/; researched: Dollar Shave Club 2012 https://echai.ventures/videos/dollar-shave-club-dollarshaveclub-com-our-blades-are-f-ing-great]
+- **Why it works:**
+  - a real person retelling one scene where it could have gone wrong, in their own words and with the specific details only they know;
+  - the viewer gets the founder's nerve rather than a CV.
+  - A header frames the stakes; the payoff is a line of dialogue.
+- **Modes:**
+  - **11a Founder clip** (default, organic + Thought-Leader/Spark ads): a podcast, stage, interview or walk-and-talk;
+  - **11b Founder film** (produced ad): the cinematic arc from the old card, used when there's budget and real archive.
+- **Pacing map 11a (45-80 s):**
+
+| Beat | Time | Shot | What |
+|---|---|---|---|
+| Header + cold start | 0-7 s | close-up, words from frame 0 | the header states the stakes ("The moment…" / "I had $800 and a desk"); the founder is mid-sentence in the scene |
+| Set the scene | 7-20 s | alternate close ↔ wide every 3-5 s | where, who, what was at risk; one concrete number or object |
+| The ask / the risk | 20-45 s | close-ups, punch-in on the key line | the dialogue of the moment, quoted ("I said…", "she said…") |
+| The turn | 45-60 s | a reaction wide (the audience or the interviewer) | the line that changed everything, then a beat |
+| Payoff + lesson | last 10-15 s | a close-up hold | one-sentence lesson; the brand appears only as the result, no hard CTA in organic |
+
+- **Pacing 11b (30-60 s film):**
+  - 0-3 s: the lowest moment, or archival proof;
+  - 3-15 s: the wound in archive or recreation;
+  - 15-30 s: the decision, then the grind;
+  - 30-45 s: proof;
+  - then the invitation.
+  - Shots 2-4 s (unmeasured).
+- **Shot grammar 11a:**
+  - two cameras, a 50-85 mm close-up and a wide that includes the host or audience;
+  - punch-in (×1.15-1.3) for the key line;
+  - an optional 2-up stack (close-up on top, wide below) for podcast clips;
+  - B-roll only for real proof (the first product, the garage, the receipt), never stock.
+- **Shot grammar 11b:** past = static and archival; present = steady tracking and low-angle hero.
+- **Look 11a:**
+  - the real room (office, stage, warehouse) with natural or practical light;
+  - no heavy grade (contrast 1.0-1.05).
+  - Cybertize: shoot in the founder's own workspace; a studio set reads as "production".
+- **genre_key (11a, for generated inserts only):** `real founder workspace, natural practical light, documentary two-camera interview coverage, candid unpolished moment, honest texture, no stock-footage gloss`
+- **genre_key (11b):** `documentary-style cinematic realism, archival texture for the past, natural light, intimate framing, earned optimism, no stock-footage gloss`
+- **Shot (11a):** `{"id":"S03","dur":4,"camera":"85mm close-up, punch-in to 1.2 on the quoted line","subject":"@FOUNDER","action":"start: leans in -> end: delivers 'Can I have fifteen minutes?' to camera-left","light":"soft practical key, real office behind","audio":"clean lav, room tone; no music under the quote","genre_key":"<11a key>"}`
+- **Sound 11a:**
+  - the voice is everything (enhance first);
+  - the music bed is low or absent (C1, C2 have none: LRA 2.9 = speech only);
+  - one soft riser or swell into the turn line at most;
+  - audience laughter or reaction kept live.
+- **Sound 11b:** a build-up score, with silence becoming the swell (old card, unchanged).
+- **Compliance:**
+  - every number must be substantiable (revenue, customers, "first in SG");
+  - no humble-brag "overnight" myths;
+  - in SG health the founder speaks about their own journey, never patient outcomes;
+  - speeding up speech is fine but never changes words; keep the original as version A.
+- **Presets:**
+  - 11a `founder-clip` (new, below);
+  - 11b `founder-inspire` (corrected, below);
+  - dense-SFX documentary retellings stay `story-sfx-dense`.
+- **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
 ### 12. Cautionary / decision ladder [draft; deeper: mature-edge.md §1]
 - **Pacing:** each bad choice is a step of 3-5 s with an on-screen step number; things get slowly worse; the consequence; the "don't be him" wisdom.
@@ -493,19 +570,73 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 - **Sound:** sparse piano and a riser into the reveal, then a silence beat.
 - **Preset:** mystery-reveal.
 
-### 15. Action / sport hype [draft]
-- **Pacing:** 0.5-1.5 s cuts on the beat; speed ramps into impacts; a freeze-frame on the peak rep or goal; a hero shot at the end.
+### 15. Action / sport hype (two modes) [measured: A1 https://www.instagram.com/reel/Cy-JFIkyqgM/, A2 https://www.instagram.com/reel/C9po_ojpF6t/, A3 https://www.instagram.com/reel/Dd4VcGmoFYN/, A4 https://www.instagram.com/reel/Da2Tou0o9c5/, A5 https://www.instagram.com/reel/DbS6it8t1fj/, A6 https://www.instagram.com/reel/DZ7owTXN8Yp/]
+- **Why it works:**
+  - The anthem mode makes a provocation (a question or a "we will…" vow) and then proves it with faces and effort.
+  - The edit speeds up as the argument builds, so the viewer's pulse follows the cut rate.
+  - The creator mode is pure rhythm: one action per beat, then the payoff rep held in full.
+- **Pick a mode:**
+  - **15a Anthem** for brand films and ads with a message (Power Protein, TITAN.AI "we don't quit");
+  - **15b Gym / event hype** for training reels, event recaps and launches (Physio Spot return-to-sport day, Power Protein gym collab).
+- **Pacing map, 15a Anthem (30 s ad, scaled from the 90 s measurements):**
+
+| Beat | 30 s | Shot length | What happens |
+|---|---|---|---|
+| Provocation | 0-4 s | one 3-4 s hold | a face in extreme close-up, eyes to lens or just off; the VO asks the question or names the doubt |
+| Build 1 | 4-12 s | 2-3 s | effort details (breath, chalk, a grip, a sweat drop) in slow motion; VO line, beat, VO line |
+| Build 2 | 12-22 s | 1-1.5 s | more athletes and sports, match-cut on motion (a jump continues into another jump) |
+| Peak | 22-26 s | 0.4-1 s burst | 5-8 fast impacts; the music peaks; the mix is at its loudest |
+| Payoff + brand | 26-30 s | one 3-4 s hold | a held face or the full action, then the line and the logo on black |
+
+- **Pacing map, 15b Gym / event hype (15-30 s):**
+  - 0-1.5 s: a word-by-word title or the heaviest moment;
+  - 1.5 s → drop: 1-2 beats per shot (~0.6-1.0 s);
+  - after the drop: one shot per beat (0.4-0.65 s), with bursts of 0.15-0.3 s;
+  - **the money rep / finish is held uncut (3-12 s)**;
+  - a 2-3 s logo or end card.
 - **Shot grammar:**
-  - low-angle hero;
-  - tracking alongside;
-  - macro on sweat, chalk, the ball;
-  - 180° shutter look for crisp motion, or motion blur for speed.
-- **Look:** high contrast, crushed blacks, desaturated with one accent colour (the brand).
-- **genre_key:** `high-energy sports commercial, dramatic low angles, hard rim light, sweat and chalk detail, speed ramp, crushed blacks, one accent colour`
-- **Shot:** `{"camera":"low-angle tracking, 24mm, speed ramp 1.0->0.3x at impact","action":"start: sprinter drives off the blocks -> end: frozen mid-stride, chalk dust in the air"}`
-- **Sound:** bass hits on the beat, whooshes on speed ramps, breath.
-- **Compliance:** no unrealistic body claims (fitness pack); age-gate weight content.
-- **Preset:** action-hype.
+  - **15a:**
+    - 85-135 mm extreme close-ups of faces and eyes on dark, clean backgrounds;
+    - slow push-ins;
+    - 50-100 fps slow motion on effort;
+    - match-cuts on motion direction across different sports or people (A1's split-screen pairs are the extreme version);
+    - one hero wide at the payoff.
+  - **15b:**
+    - 14-24 mm low-angle handheld at knee height running with the group;
+    - over-the-shoulder lifts;
+    - 2-up stacked split screens to show two moments at once (A3);
+    - a federation, venue or brand logo flashed on a beat;
+    - phone footage is fine.
+- **Look:**
+  - One colour world per piece.
+  - 15a: dark contrasty skin-rich, or archival natural.
+  - 15b: venue light (neon, gym fluorescents, daylight) pushed for saturation.
+  - Brand accent: one colour (the brand's), carried by set dressing or kit, not by a grade trick.
+- **genre_key 15a:** `high-end sports anthem film, extreme close-up portraits on dark clean backgrounds, rich skin tones, hard side light, slow motion effort detail, sweat and breath visible, shallow depth of field, deliberate slow push-in`
+- **genre_key 15b:** `raw high-energy fitness event footage, low wide-angle handheld at knee height, motion blur, venue neon and daylight, saturated, crowd energy, authentic phone-camera texture`
+- **Shot (15a):** `{"id":"S01","dur":3.5,"camera":"locked 100mm extreme close-up, slow push-in 3%","subject":"@ATHLETE face, eyes just off lens","action":"start: exhales through the nose -> end: eyes lift to lens, jaw sets","light":"single hard side key, black background, rim on sweat","audio":"breath, low room tone; VO line 1 starts at 0.8 s","genre_key":"<15a key>"}`
+- **Shot (15b):** `{"id":"S07","dur":6,"camera":"low 18mm handheld, side-on, no cut","subject":"@LIFTER deadlift","action":"start: grips bar -> end: lockout and roar, plates settle","constraints":"full rep in one take; do not speed up the rep","genre_key":"<15b key>"}`
+- **Sound:**
+  - **15a:**
+    - an orchestral or cinematic bed that grows ~6-8 dB from start to end;
+    - VO sparse (≤ 100 wpm), each line followed by a breath of picture;
+    - SFX are foley (breath, impact, crowd) rather than whooshes;
+    - one sub-hit on the peak burst; silence of ≤ 0.5 s before the payoff line.
+  - **15b:**
+    - the music carries it (licensed or original for brands, phonk/trend on personal accounts only);
+    - cut on onsets (aim ≥ 60% of cuts within 60 ms of an onset);
+    - impact on the lockout;
+    - the crowd or a roar is kept live.
+- **Compliance (fitness pack):**
+  - no unrealistic transformations or "X kg in Y days";
+  - no body shaming;
+  - age-gate weight-loss content.
+  - SG health brands (Physio Spot, heal360): sport hype is fine for return-to-sport *stories*, but never as an outcome promise ("back on court in 2 weeks"), and never a patient as the athlete.
+  - Real athletes need image rights. No AI likeness of real athletes.
+- **Preset:**
+  - 15a `sport-anthem` (new, below);
+  - 15b `action-hype` (corrected, below).
+- **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
 ### 16. Sci-fi / tech futurism (TITAN.AI) [draft]
 - **Pacing:** smooth 2-4 s shots; an interface or hologram reveal; "the future" line; product as the hero.

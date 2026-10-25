@@ -1,0 +1,105 @@
+{
+  "name": "sport-anthem",
+  "label": "Sport anthem film (15a, Nike-style VO manifesto)",
+  "kind": "genre",
+  "description": "Measured on Nike 'Winning Isn't for Everyone' (median 1.0 s, 3.75->2.31->1.04 s by third, holds to 9.6 s) and 'You Can't Stop Us' (median 2.0 s, 2.5->1.9 s, cuts on motion not beats, mix +8 dB start->end). Sparse VO manifesto (~90 wpm), extreme close-ups on dark grounds, slow motion effort, peak burst, held payoff and logo on black. No captions in the films; burn sentence subs only for mute-first placements.",
+  "reference": "research/genre-research-2026-10/action-feelgood-founder.md#1",
+  "beat_sync": false,
+  "structure": {
+    "name": "anthem",
+    "target_s": [
+      30,
+      90
+    ],
+    "beats": [
+      "provocation hold",
+      "build 1 (2-3 s)",
+      "build 2 (1-1.5 s, match cuts)",
+      "peak burst (0.4-1 s)",
+      "payoff hold + line + logo"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 4.0,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Space Grotesk",
+    "bold": false,
+    "size": 0.03,
+    "max_words": 6,
+    "animation": "fade",
+    "uppercase": false,
+    "keyword_caps": false,
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.8
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 3,
+    "scale": 1.04,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 2.0,
+    "max_dur_s": 3.0,
+    "min_dur_s": 0.4,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.2,
+    "db": -16,
+    "cut_coverage": 0.1,
+    "min_gap_s": 1.5,
+    "map": {
+      "hook": "swell",
+      "broll": "whoosh",
+      "end": "boom"
+    },
+    "reveal_every_s": 0
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 0.92,
+    "warmth": 0.02,
+    "vignette": true
+  },
+  "transitions": {
+    "default": "cut"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.5
+  },
+  "pacing_curve": {
+    "by_third_s": [
+      3.5,
+      2.2,
+      1.0
+    ],
+    "_needs_feature": "per-third shot-length targets (acceleration)"
+  },
+  "music_arc": {
+    "start_db": -24,
+    "end_db": -14,
+    "_needs_feature": "bed gain ramp across the piece (measured +8 dB on A1)"
+  },
+  "speed": {
+    "slowmo_on": "effort",
+    "factor": 0.5,
+    "_needs_feature": "per-item speed exists (constant 0.25-4); ramps 1.0->0.3 within one item do not"
+  }
+}

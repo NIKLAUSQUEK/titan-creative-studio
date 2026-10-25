@@ -1,47 +1,114 @@
 {
   "name": "action-hype",
-  "label": "Action / sport hype",
+  "label": "Action / sport hype: gym & event edit (15b)",
   "kind": "genre",
-  "description": "0.5-1.5 s cuts on the beat, punch-in every cut, bass hits and whooshes, crushed contrast with one accent colour.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured on Gymshark Conditioning Club recap (median 0.44 s, accelerating 1.05->0.44 s by third), Gymshark spec (83% of cuts on onsets) and powerlifting edits (metronomic ~0.62 s; the full lift held uncut up to 12.5 s). Music-led, no VO, cut on onsets, word-by-word title in the first 1.5 s, small or big type depending on account, one held money-rep, logo card at the end.",
+  "reference": "research/genre-research-2026-10/action-feelgood-founder.md#1",
   "beat_sync": true,
+  "structure": {
+    "name": "hype",
+    "target_s": [
+      15,
+      35
+    ],
+    "beats": [
+      "title / heaviest moment 0-1.5s",
+      "build to drop (1-2 beats per shot)",
+      "drop: one shot per beat",
+      "money rep held uncut",
+      "logo card"
+    ]
+  },
   "pacing": {
     "remove_silence_over_s": 0.2,
     "pad_s": 0.03,
-    "max_shot_s": 1.5
+    "max_shot_s": 1.0,
+    "remove_fillers": "hard"
   },
   "captions": {
-    "max_words": 2,
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "font": "Anton",
     "uppercase": true,
-    "size": 0.05
+    "size": 0.07,
+    "position_y": 0.12,
+    "max_words": 5,
+    "dur_s": 1.5,
+    "color": "#FFE14D",
+    "outline": 0
   },
   "zoom": {
     "mode": "snap",
-    "every_s": 1.2,
-    "scale": 1.14
+    "every_s": 0,
+    "scale": 1.08,
+    "on_hook": 1.12,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0.6,
+    "max_dur_s": 0.9,
+    "min_dur_s": 0.3,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 4,
-    "db": -10,
+    "density_per_10s": 2,
+    "db": -12,
+    "cut_coverage": 0.15,
+    "min_gap_s": 0.8,
     "map": {
-      "hook": "bass",
-      "zoom": "impact",
-      "broll": "whoosh"
+      "hook": "impact",
+      "broll": "whoosh",
+      "end": "boom"
     }
   },
   "music": {
     "energy": "high",
-    "db": -14,
-    "duck": true
+    "db": -8,
+    "duck": false
   },
   "grade": {
-    "contrast": 1.2,
-    "saturation": 0.85,
-    "vignette": true
+    "contrast": 1.12,
+    "saturation": 1.1,
+    "vignette": false
   },
-  "broll": {
-    "every_s": 2,
-    "max_dur_s": 1.2,
-    "min_dur_s": 0.6
-  }
+  "transitions": {
+    "default": "flash",
+    "on": "beats",
+    "dur_s": 0.06,
+    "strength": 0.35
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.5
+  },
+  "hold": {
+    "money_rep": {
+      "min_s": 3,
+      "max_s": 12,
+      "uncut": true
+    },
+    "_needs_feature": "mark one beat as a protected uncut hold that max_shot_s and beat-sync must not split (brief beat role 'proof_hold')"
+  },
+  "pacing_curve": {
+    "by_third_s": [
+      1.0,
+      0.7,
+      0.45
+    ],
+    "burst": {
+      "len_s": [
+        0.15,
+        0.3
+      ],
+      "count": [
+        3,
+        6
+      ],
+      "where": "before_drop"
+    },
+    "_needs_feature": "per-third shot-length targets + burst cuts; today max_shot_s is one number"
+  },
+  "_needs_feature_split": "broll mode 'split' exists (top/bottom); A3 uses 2-up stacked clips of the SAME energy (two B-rolls, no speaker). Needs broll mode 'stack2'."
 }
