@@ -26,8 +26,8 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 14 | Mystery / reveal | a question answered at the end | curiosity | 3-5 s | slow clues → twist | moody low-key | sparse piano, risers | mystery-reveal |
 | 15 | Action / sport hype | training, game day, transformation | adrenaline | 0.5-1.5 s | fast, speed ramps | high contrast, crushed | bass, whoosh, hits on beat | action-hype |
 | 16 | Sci-fi / tech futurism | AI, product-of-the-future (TITAN.AI) | awe | 2-4 s | smooth, deliberate | cool cyan + one accent | synth pads, glitch ticks | scifi-tech |
-| 17 | K-drama | soft romance, family, longing glances | tenderness | 3-5 s | slow, held looks | pastel, soft bloom | OST piano, slow-mo | kdrama-soft |
-| 18 | Anime-inspired | hype, rivalry, "power-up" | intensity | 0.8-2 s | impact frames, holds | saturated, speed lines | whooshes, impact, choir hits | anime-energy |
+| 17 | K-drama | rom-com mini-film, crush or confession, a romance played straight then punctured; PPL gags | tenderness → laugh | 1.5-2 s median; holds of 3-6 s only on the one romantic beat | premise header → attempts × 3 → the real moment (held) → twist → logo | warm low-contrast film, golden autumn or tungsten night (pastel optional) | real silences, OST only under the moment, hard stop on the twist | kdrama-soft (+ kdrama-fan-edit for beat-synced POV recuts of own footage) |
+| 18 | Anime-inspired | a product jingle, mascot chant, "<X> be like" trope parody, hype | intensity, delight | 0.5 s (chant CM) to 1.5 s (trope list); real OP 0.27 s | chant verse → proof card → chorus → packshot held 4 s; or setup card → one trope per shot → held tableau | flat 2D cel on pastel fields, saturated | the song is the ad (original chant 90-100 BPM); flash pairs optional | anime-energy (+ anime-op-parody) |
 | 19 | 3D Pixar / cartoon | mascots, kids-safe explainers | charm | 2-3 s | bouncy | bright, clean | playful foley | (see animation-3d-cartoon.md) |
 | 20 | Documentary / investigative | real story, research, recon | trust, revelation | 3-6 s | measured, VO-led | neutral, archival | VO + subtle bed | documentary |
 | 21 | Explainer / myth-buster | expert education | "I finally get it" | 2-3 s | brisk | clean, bright | light whooshes on graphics | talking-head-punchy |
@@ -38,7 +38,7 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 26 | Before / after transformation | change over time (home, car, hair, product) | proof, "wait for it" | **process 0.6 s median (detailing) or locked one-take time-lapse 7+ s (rug); reveal held to the last 3-5 s** | before shown at 0 s → process → split/wipe reveal at the end (or "part 2") | matched light, locked camera | real process foley, no VO; a whoosh/ding on the reveal | before-after-process (new) |
 | 27 | ASMR / satisfying | process, pouring, building, cleaning | calm, completion | **top performer: one locked take (11-20 s) → completed state held 2-3 s; brand reels cut 0.7-1.5 s** | one continuous action → finished object → loop | clean, bright, macro | loud close foley (onsets 15-54 per 10 s), no music, no VO | asmr-satisfying (one-take default) + asmr-product-cut (new) |
 | 28 | Event / retail / mall promo | openings, pop-ups, launches, mall events | FOMO, fun | **0.8-1.0 s median (music-only); 1.5 s when there is a VO** | storefront at 0 s → 1 s hero/product/activation inserts → bag-out or what-where-when | bright, natural store light | licensed upbeat track; ~140 wpm VO with dates for events | event-retail-promo (new) |
-| 29 | Edu-song / mnemonic / musical explainer | teaching steps, routines, checklists, myths ("boring" health or how-to) | delight, "I can't unhear it" | 1-3 s, on the beat | spoken hook → song → recap chorus → CTA | bright, clean, saturated | the song IS the music (original or public-domain melody) + pops | edu-song |
+| 29 | Edu-song / mnemonic / musical explainer | anatomy, steps, checklists, red flags; study content; PSA songs | "I can't unhear it", save-for-later | the diagram changes every 1-2 s inside one take | song + header at 0 s → labelled sections → recap/count line; CTA in the caption | whatever the screen shows, plus bold labels; 3D mascot on black | the original song, not ducked, -11 to -14 LUFS; adults 3.0-3.4 syll/s | edu-song (+ edu-song-screen) |
 | 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
 | 31 | Borrowed cold open / bait-and-switch | a lesson that needs a scroll-stopper; riding a moment everyone recognises | recognition → surprise | the borrowed clip 3-16 s, then the creator's normal pace | familiar viral moment → "skip" → your lesson | match the borrowed clip, then your own look | the original's audio, a skip/whoosh on the switch, then yours | split layout + trend-beat-switch or talking-head-punchy |
 | 32 | Absurd how-to / survival recipe (narrated 3D) | a calm tutorial voice over an impossible task; series with a recurring character | delight, "wait what" | 2-2.5 s | step per shot → sensory payoff → wordless twist | hyper-detailed 3D on a blank cobalt grid void | deadpan VO, foley per verb, one impact | absurd-howto-3d |
@@ -854,25 +854,139 @@ Changes vs the current preset:
 - **Compliance:** AI claims must be substantiable; no "replaces humans" fear angle.
 - **Preset:** scifi-tech.
 
-### 17. K-drama [draft; localisation packs for market]
-- **Pacing:** held looks of 3-5 s; a slow-motion turn; an OST cue on the realisation; a cliffhanger last line.
-- **Shot grammar:** two-shot → close-up → close-up; rain or snow; umbrella framing; a lingering back-of-head shot.
-- **Look:** pastel, soft bloom, bright clean skin.
-- **genre_key:** `Korean drama aesthetic, soft pastel grade, gentle bloom, slow motion glance, romantic framing, clean bright skin tones`
-- **Sound:** OST-style piano and strings (original or licensed), a heartbeat on the look.
-- **Preset:** kdrama-soft.
+### 17. K-drama [measured: K1 https://www.instagram.com/reel/DSRr7PTkc3E/ , K2 https://www.instagram.com/reel/DTuIUuuiNF9/ , K3 https://www.instagram.com/reel/Ddo6qjHg2Fh/ , K4 https://www.instagram.com/reel/DW8SWRzjaRM/ , K5 https://www.instagram.com/reel/DYXvT8iNLjg/ ; researched: Colgate "The Purple Café" (contentgrip.com), The Venti × Park Ji-hoon 15 M (sports.khan.co.kr 2026-10-08)]
+- **What changed and why:**
+  - Shots were "held looks of 3-5 s". Measured brand ads run at a **1.5-2.0 s median** (K1, K2) or 3.3 s (K3), with only the romantic beat held 4-6 s.
+  - The look was "pastel, soft bloom". The 2025-26 ads are **warm golden autumn daylight or low-key tungsten night**, filmic and low-contrast; pastel is one option, not the default.
+  - The structure gains a **subversion button**: every measured brand ad ends on a comic puncture, not a swoon.
+- **Two modes:**
+  - **17 Rom-com mini-film (brand)**: K1-K3. Sincere K-drama grammar, then a twist. Preset `kdrama-soft` (corrected).
+  - **17a Fan-edit montage**: K4, see below.
+- **Pacing map (30-45 s ad; 60-80 s film in brackets):**
 
-### 18. Anime-inspired [draft; mature-edge.md Japanese mode]
+| Beat | 30-45 s | Film | Shots |
+|---|---|---|---|
+| Hook header + setup | 0-3 s | 0-8 s | top header naming the premise ("Why I'm scared to talk to girls"); a wide of the lead hesitating; the product worn and visible |
+| Attempt × 2-3 (rule of three) | 3-20 s | 8-45 s | shot-reverse-shot close-ups at 1.5-2 s; each attempt fails faster; a 1-2 s silence before each rejection line |
+| The real K-drama moment | 20-30 s | 45-65 s | rain/umbrella or a car at night: a wide two-shot 4-6 s → CU → CU, a slow push-in, the OST enters, a held look of 3-5 s (the ONLY long holds) |
+| Twist / button | 30-40 s | 65-75 s | one line breaks the spell (a phone call, she flees, the PPL product appears "out of nowhere"); hard cut, the music stops |
+| Brand | last 3-4 s | last 4-5 s | logo card on a soft field, or the product in the final frame |
+
+- **Shot grammar:**
+  - two-shot → CU → CU for dialogue, eye-level, 50-85 mm, shallow depth of field;
+  - an umbrella frame (two people under one umbrella, a wide from across the street) or a car interior (dash light on faces, K3);
+  - a lingering back-of-head or over-the-shoulder shot before the confession;
+  - one slow push-in (≤ 4 %) on the held look;
+  - a macro "PPL insert" of the product in a hand: comic when it comes out of nowhere (K5 trope).
+- **Look:**
+  - warm low-contrast film: lifted blacks, golden-hour autumn trees or tungsten street lamps at night (K1, K3);
+  - clean, bright, soft skin;
+  - an optional pastel/cream variant for spring and morning scenes (K4);
+  - never crushed or teal (that is horror/thriller).
+- **genre_key:** `Korean drama cinematography, warm low-contrast film grade, soft golden-hour or tungsten street-lamp light, shallow depth of field, gentle slow push-in, rain and umbrella romance framing, clean luminous skin, quiet held glances`
+- **Shot JSON (the real moment):** `{"id":"S9","dur":5,"camera":"wide two-shot across the street, 85mm, then locked; push-in 3% over the shot","subject":"@LEAD and @CRUSH under one clear umbrella, @LEAD wearing @PRODUCT jacket","action":"start: she looks up at him -> end: he holds her gaze, says nothing","environment":"autumn campus path, wet leaves, light rain","light":"soft overcast golden hour, warm","audio":"rain room tone, OST piano enters at 1.5 s","constraints":"adults 25+, no school uniforms, no real actor likeness","genre_key":"<17 key>"}`
+- **Sound:**
+  - room tone and **real silences** for the comedy (a K1 silence beat measured at -43 dB);
+  - an OST-style piano/strings cue only under the real moment, cut dead on the twist;
+  - no SFX except one comic sting or record-scratch on the button (optional);
+  - original or licensed OST only (`/sound`).
+- **Compliance:**
+  - no real-actor lookalikes, ever (character-design.md);
+  - romance = adults 25+; avoid school uniforms in romantic beats, and flashback "high school" scenes need cast who clearly read as adults or non-romantic staging (mature-edge.md hard lines);
+  - PPL in organic posts still carries #ad / a paid-partnership label;
+  - SG health brands: the twist may not be a treatment outcome, and the clinic appears as the setting or the staff, not as a cure.
+- **Preset:** `kdrama-soft` (corrected):
+(preset `kdrama-soft`: tools/editor/presets/kdrama-soft.json)
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 17a. K-drama fan-edit montage (`kdrama-fan-edit`) [measured: K4 https://www.instagram.com/reel/DW8SWRzjaRM/]
+- **Use:** a brand already has K-drama-style film footage (its own long ad or BTS) and wants a reel recut, or a creator account edits "POV" romance montages.
 - **Pacing:**
-  - impact frames (a 2-4 frame flash);
-  - a power-up hold of 1-2 s;
-  - speed lines;
-  - an exaggerated reaction cut-in.
-- **Shot grammar:** extreme low angles, dramatic zooms, split-panel compositions, dramatic still holds.
-- **Look:** saturated, cel-shaded if animated; live-action uses hard colour light.
-- **genre_key:** `anime-inspired dynamic composition, dramatic perspective, speed lines, impact frame flash, saturated cel-shaded colour` (an original style, never a named studio or IP)
-- **Sound:** whooshes, impacts, choir or orchestral hits.
-- **Preset:** anime-energy.
+  - median 0.63 s, max 2.3 s;
+  - cuts on beat (47 % of cuts within 80 ms of an onset);
+  - the opening store-front/meet shot is held ~1.5 s, then the montage of memories, then a return to the present and a last held look.
+- **Text:** one persistent POV header ("POV: you meet your high school love after years 🥹✨"). No subtitles, no dialogue.
+- **Look:** soft cream/blue-washed, slightly desaturated, flashbacks a touch brighter.
+- **Sound:** one licensed song (an original OST for brands, a trending sound in-app for personal accounts), not ducked.
+- **Compliance:** brands recut **their own** footage only, never another brand's ad or a drama's footage. Fans editing celebrity ads (K4) is fan culture, not something we copy. School-uniform flashbacks follow the adults-only rule above.
+(preset `kdrama-fan-edit`: tools/editor/presets/kdrama-fan-edit.json)
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 17b. Self-aware PPL gag (`kdrama-soft`, button variant) [measured: K5 https://www.instagram.com/reel/DYXvT8iNLjg/ ; researched: K-drama PPL studies (journal.untar.ac.id; burjcdigital.urjc.es)]
+- **Why:** viewers love spotting K-drama product placement. K5 drew 1,834 comments by asking viewers to shout the brand name ("3, 2, 1… Kopiko").
+- **Use:** the brand **parodies its own placement**. In the big romantic moment a character hands over the product "out of nowhere", with a slow-mo close-up and a sparkle, while the other character stares at the camera. Use it as the 17 twist beat or as a 10-15 s standalone.
+- **Rules:**
+  - make the gag about our own brand only;
+  - never mock a named competitor's placement;
+  - SG health clinics avoid the "fixes everything" implication: the product can be a heat pack or a water bottle, not a cure.
+
+---
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 18. Anime-inspired [measured: A1 https://www.instagram.com/reel/DayFKseMzpH/ , A2 https://www.instagram.com/reel/C064YKqLshP/ , A3 https://www.instagram.com/reel/CflwSqeDh_z/ (grammar control), A4 https://www.instagram.com/reel/Dc9MHZLkfeC/ (control); researched: Popeyes × One Piece (ypulse 2026-04-14), Adidas original anime-style art (Animenomics 2026-05)]
+- **What changed and why:**
+  - "Impact frames" are real OP craft: A3 has 10 two-to-five-frame flashes in 90 s, mostly in pairs. The reels that perform (A1 brand CM, A2 at 513 K likes) use **zero flashes**. Their energy comes from **a label on every shot** and a song that drives the cut.
+  - Flashes become optional seasoning (≤ 1 pair per 10 s), not the default.
+  - "Power-up holds 1-2 s" survive only as the last-shot hold (A1 packshot 4.5 s, A2 sunset ~3 s).
+  - A straight live-action pastiche with trailer pacing (A4, 4.8 s median) underperformed. Keep it comedic or jingle-led.
+- **Two modes:**
+  - **18 Anime CM / jingle (brand)**: A1. Flat 2D original characters, a chanted label per shot, one stat card, packshot last.
+  - **18a Anime-OP parody / trope list**: A2. See below.
+- **Pacing map (30 s):**
+
+| Beat | Time | Shots |
+|---|---|---|
+| Cold open | 0-1 s | a white/pastel field, the first chant word slams in, the character pops in |
+| Chant verse | 1-12 s | 0.3-0.6 s cuts on the beat, each with ONE big label (the product's 2-4 sound/benefit words, repeated); character poses alternate with macro product-texture plates |
+| Proof card | 12-16 s | one stat or fact card ("9 in 10 …" only if it is substantiated), pie or counter animating in, held ~2.5 s |
+| Chorus / group shot | 16-25 s | all characters together, a sky or fruit-field background, the chant repeated; cuts slow to ~1 s |
+| Packshot | last 4-5 s | product + logo held, the final chant line sung once |
+
+- **Real-OP grammar (only when you need a full "anime opening", e.g. a brand-mascot OP; from A3):**
+  - a dark, quiet credit intro of 4-6 s;
+  - the title-logo card on the first chorus hit (~25-30 s of a 90 s OP);
+  - character intros with name or credit text;
+  - fight montage cuts at 0.17-0.3 s;
+  - flash pairs on the chorus hits.
+- **Shot grammar:**
+  - extreme low angle for the hero pose;
+  - a frontal "camera-bow" pose with hand gestures to the lens (A1);
+  - a falling-through-sky shot and a running-at-sunset shot (the A2 tropes everyone recognises);
+  - a split panel or manga frame for the reaction;
+  - speed lines behind a static character for motion (cheap in AI).
+- **Look:**
+  - **flat hand-drawn 2D** on solid pastel fields (A1), or lush painted backgrounds with a simple mascot dropped in (A2);
+  - saturated but not neon;
+  - live action uses hard coloured gels plus a speed-line overlay.
+- **genre_key:** `original anime-inspired 2D illustration, clean confident line art, flat cel shading, solid pastel background fields, dynamic low-angle hero pose, speed lines, saturated cheerful palette, Japanese TV commercial energy` (original characters only; never a named studio, series or artist)
+- **Shot JSON (chant shot):** `{"id":"S3","dur":0.5,"camera":"locked frontal medium, slight low angle","subject":"@MASCOT_GIRL original character in brand-colour hoodie","action":"start: arms down -> end: both hands framing the product bowl, wink","environment":"solid pastel yellow field with the product bowl","light":"flat even cel light","audio":"chant word on the downbeat","constraints":"original character, no IP, label added in post","genre_key":"<18 key>"}`
+- **Sound:**
+  - **the song is the ad**: an original chant-style jingle of 2-4 words repeated, at 90-100 BPM (A1 ~91 BPM);
+  - one impact or whoosh only on the title or packshot;
+  - a licensed J-pop/anime OP only with written licence (Nissin's spot is an official tie-in parody of a hit OP; treat that as licensed, never as a precedent for using an OP freely).
+- **Compliance:**
+  - original characters and art (the Adidas route) or a properly licensed collab (the Popeyes × One Piece route);
+  - no AI lookalikes of real people (the Shiro AI-style political OPs are out);
+  - anime-style characters who could read as minors never appear in suggestive or romantic beats (mature-edge.md);
+  - stat cards need a source (SG health: no superlatives, no outcome claims).
+- **Preset:** `anime-energy` (corrected):
+(preset `anime-energy`: tools/editor/presets/anime-energy.json)
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 18a. Anime-OP parody / trope list (`anime-op-parody`) [measured: A2 https://www.instagram.com/reel/C064YKqLshP/ (513,548 likes)]
+- **Use:** comedy on brand or personal accounts: "Physio appointments be like (anime opening)", "Every gym bro's anime opening", "Your lower back's anime OP".
+- **Pacing:**
+  - 15-25 s, median 1.5 s per trope;
+  - a 1.4 s "<X> be like:" setup card, then 9-12 trope shots;
+  - the last shot is a ~3 s hold (sunset, field, freeze).
+- **The engine is a white label box per shot naming the trope** in plain English, top third. Each trope is one shot; the mascot or the creator is dropped into each scene.
+- **Trope bank** (all public-domain clichés, no IP): falling through the sky · serious side-profile face with wind · "Their future love interest" · huge rival with a huge weapon · "insanely complex fight" · unrelated cute scene with petals · running for no reason · floating heroine "defying physics" · group pose on a hill · title card with fake katakana.
+- **Physio version:** "Main character's knee clicks" · "Serious stretching face" · "The rival: Desk Chair" · "Training arc (2 reps)" · "Unrelated cute scene: the clinic cat". The comedy is the label; the clinical content stays true.
+- **Sound:** an **original** J-rock-style OP pastiche (a Suno/original track with a commercial licence noted, or a commissioned one). A2 used an OP-style song: fine for a creator, not for a brand unless licensed.
+(preset `anime-op-parody`: tools/editor/presets/anime-op-parody.json)
+
+---
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
 
 ### 19. 3D Pixar / cartoon: see animation-3d-cartoon.md (style key, character sheet, consistency); pace as comedy or feel-good.
 
@@ -1135,21 +1249,75 @@ Changes vs the current preset:
 - **Preset:** event-retail-promo (music-only) or event-guide-vo (with VO).
 - **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
-### 29. Edu-song / mnemonic / musical explainer (`edu-song`) [draft]
-Full guide: edu-songs-mnemonics.md (formats, kids-TV levers, copyright). Tool: `editor.py song`.
-- **Pacing map (30-45 s do-along):**
-  - 0-3 s: a spoken or on-screen hook that frames the gag ("Your pelvic floor routine, but it's a nursery rhyme");
-  - 3-5 s: count-in;
-  - 5-35 s: the song, one step per line, a cut or visual change on every line, with the exercise done on camera in real time;
-  - 35-42 s: the recap chorus, double speed or with all the moves in a row;
-  - last 3 s: the CTA (save this / follow for part 2).
-- **Shot grammar:** locked frontal medium (the host mirrors the viewer), big hand gestures, one prop or diagram per line, a cartoon mascot insert for the "dumb question" (animation-3d-cartoon.md), and karaoke words on screen.
-- **Look:** bright, high-key, saturated brand colours, clean background; kids-TV clarity, not kids-TV cheapness.
-- **genre_key:** `bright high-key studio, clean solid-colour backdrop, cheerful saturated palette, playful educational children's-show staging, crisp friendly lighting`
-- **Shot:** `{"camera":"locked frontal medium, eye level","action":"start: host counts on fingers -> end: host freezes in the stretch, grinning","light":"soft high-key, no shadows"}`
-- **Sound:** the vocal plus an original or public-domain backing, a pop or ding per step, a riser into the recap. No pop-song melodies on brand accounts.
-- **Compliance:** every lyric is a clinical claim; run the compliance pack line by line. No promised outcomes in SG health.
-- **Preset:** edu-song.
+### 29. Edu-song / mnemonic / musical explainer (`edu-song`) [measured: E1 https://www.instagram.com/reel/C6LnMbiiLuT/ , E2 https://www.instagram.com/reel/C3J3vLDuHKo/ , E3 https://www.instagram.com/reel/DImv5FFt773/ , E4 https://www.instagram.com/reel/DeXXrE9PV2Y/ ; controls E5 DUdsT_hgZEs, Denvh2gCKae, DWedzSdDZ87; researched: Dumb Ways to Die (warc.com), Ghen Cô Vy (wikipedia), Wallace 1994]
+Full guide: edu-songs-mnemonics.md. Tool: `editor.py song`.
+- **What changed and why:**
+  - The old map opened with a **spoken hook (0-3 s) then a count-in (3-5 s)**. All three high performers (302 K, 142 K, 51 K likes) **start singing at 0.0 s** and put the hook in a **value-promise header** on screen. The low-performing kids' channels open on an instrumental intro (first word at 4.6 s). Drop the count-in from published cuts; keep it only on the guide track for recording.
+  - "One syllable per note" is right for nursery re-lyrics, but **adult study songs run 3.0-3.4 syllables/s (≈ 2-2.6 per beat)**, rap-adjacent. The kids' controls sat at 1.1-2.0 syll/s and got no saves. Pick the density for the audience.
+  - Winners are **one-take "proof" shots** (a phone filming a monitor or laptop, E1/E3) or one continuous 3D animation (E2). The "cut" happens inside the diagram: a new label or part on every line, ~every 1-2 s. Production polish did not predict performance.
+  - The **step label** is persistent and changes per section (E1 "Mitosis 1. Prophase" → "2. Metaphase"), the visual twin of the chorus.
+- **Formats now ranked by evidence:**
+  1. **Study / mnemonic song** (measured winner): 20-60 s, dense lyric, a diagram per line.
+  2. **Brand PSA original song** (researched winner: Dumb Ways to Die, Ghen Cô Vy): original melody, a character or dance, the safety message as the chorus.
+  3. **Do-along routine** (physio): still a hypothesis, unmeasured. Test it against format 1.
+- **Pacing map (30-45 s study song):**
+  - 0 s: the song starts AND the header is on screen ("If you treat backs and don't know this song…", "PSA: how to remember the 4 rotator cuff muscles"), held 8-12 s;
+  - 0-30 s: one fact per line; the diagram or animation changes on every line (1-2 s); the named part is highlighted as it's sung; a persistent step label per section;
+  - last 5-10 s: the recap chorus or the count line ("Four muscles: that's your SITS"), with all labels on screen at once;
+  - CTA in the caption, not in the video ("Send this to someone who has bones", E2; "save for your exam"). An end card is optional (≤ 1.5 s).
+- **Shot grammar:**
+  - **A (proof screen):** a phone at the monitor or laptop playing the animated diagram, a bit of desk visible, a slow handheld drift; header top, subtitle-style lyrics optional.
+  - **B (3D mascot):** a dancing skeleton or mascot on black with spotlights; the named body part flies in enlarged and colour-tinted; the background changes per verse.
+  - **C (host do-along):** locked frontal medium, the host mirrors the viewer; one gesture per line, the same gesture every time.
+- **Look:**
+  - A: whatever the screen shows, with high-contrast labels;
+  - B: black with RGB spotlight cones ↔ a white bubble field;
+  - C: bright high-key;
+  - all: labels in one bold sans and one accent colour per section.
+- **genre_key (B, 3D mascot):** `stylised 3D anatomical character dancing on a black stage under coloured spotlight cones, clean glossy materials, the highlighted body part enlarged and colour-tinted, crisp educational clarity, playful music-video energy`
+- **Shot JSON (B, one lyric line):** `{"id":"L4","dur":1.6,"camera":"locked full-body, eye level","subject":"@SPINEY 3D skeleton mascot","action":"start: dancing -> end: points at the enlarged glowing @SUPRASPINATUS floating beside it","environment":"black stage, three coloured spotlight cones","light":"spot-lit, rim light","audio":"sung line 'supraspinatus lifts your arm'","constraints":"anatomy must be correct, label added in post","genre_key":"<29 key>"}`
+- **Sound:**
+  - the song is the mix: vocal over an original or public-domain backing, not ducked, at -11 to -14 LUFS (E2 -11.1, LRA 1.8);
+  - **90-100 BPM** for study songs (E1 ~92, E4 ~98) or a half-time 130-150 BPM rap feel (E2, E3);
+  - no SFX except a pop per label (optional);
+  - no pop-song melodies on brand accounts (§5 copyright: E1 and the Antibody Song are creator parodies of copyrighted melodies, so they are creator-only patterns).
+- **Compliance:**
+  - every lyric is a clinical claim, so run the compliance pack line by line;
+  - accuracy beats rhyme;
+  - SG health: no outcomes, superlatives or testimonials;
+  - stat or count lines must be true ("seven bones total").
+- **Preset:** `edu-song` (corrected):
+(preset `edu-song`: tools/editor/presets/edu-song.json)
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 29a. Proof-screen study song, one take (`edu-song-screen`) [measured: E1 https://www.instagram.com/reel/C6LnMbiiLuT/ , E3 https://www.instagram.com/reel/DImv5FFt773/ , E4 https://www.instagram.com/reel/DeXXrE9PV2Y/]
+- **What it is:** the physio films a laptop or clinic monitor playing the brand's own animated diagram (tools/motion step-cards, or a Higgsfield explainer clip) while the original song plays. It's the cheapest winner in this set: one take, no on-camera talent.
+- **Rules:**
+  - header from frame 1 (value promise plus who it's for);
+  - the step label changes per section;
+  - no cuts (or one), 20-60 s;
+  - the diagram must change on every line;
+  - the song mix is loud and clear;
+  - lyrics as small subtitles or none.
+- **Physio seeds:**
+  - "If you treat shoulders and don't know this song…" (SITS rotator cuff);
+  - "PSA: the 3 ankle-sprain grades in 20 seconds";
+  - "The 7 tarsal bones, sung" (anatomy for students: an audience-building pillar, not a patient pitch).
+(preset `edu-song-screen`: tools/editor/presets/edu-song-screen.json)
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
+
+### 29b. Brand PSA original song (`edu-song`, PSA variant) [researched: Dumb Ways to Die https://www.warc.com/content/article/cannes/metro-trains-dumb-ways-to-die/en-gb/101929 ; Ghen Cô Vy https://en.wikipedia.org/wiki/Ghen_C%C3%B4_Vy]
+- **Why:** the biggest edu-song brand wins are **original songs with a recurring character set or a dance**, where the message is the chorus. Dumb Ways to Die: 5 Cannes Grand Prix, 50 M views in about 7 months, 200+ covers. Ghen Cô Vy: the composer re-lyricised his own hit, and it became a TikTok dance challenge.
+- **Structure:** one cute character per verse doing a "dumb" thing (comedy), the chorus repeats the title phrase, and the message comes only in the last 10 s.
+- **Rules:**
+  - a fully original melody, or a re-lyric **by the rights holder**;
+  - a dance or hand move simple enough to copy (the challenge mechanic);
+  - the brand only on the end card.
+- **Physio adaptation:** "Dumb ways to hurt your back" (lifting with a twist, phone neck, the weekend-warrior sprint). Run the compliance pack: no fear claims, and no "only we can fix it".
+- **Status:** researched only. Draft it with `editor.py song --beat` plus an original melody, then test.
+
+---
+- **Research file:** research/genre-research-2026-10/kdrama-anime-edusong.md
 
 ### 30. Texting / receipts suspense (`texting-suspense`) [measured: ref #7]
 - **Pacing map (60-90 s):**

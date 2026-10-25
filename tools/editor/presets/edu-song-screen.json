@@ -1,0 +1,69 @@
+{
+  "name": "edu-song-screen",
+  "label": "Proof-screen study song (one take of a screen + header)",
+  "kind": "style",
+  "description": "Measured on AsapSCIENCE mitosis repost (302 K likes: phone filming a monitor, header 'If you study biology and you don't know this song...' ~11 s, then a step label per phase) and SimpleNursing (51 K likes: one 59 s take of a laptop playing an animated heart diagram, header 'PSA: this is how you get As in nursing school', 136 wpm rap). One take, the cut lives inside the animation, header first, song from 0 s, CTA in the caption.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#29a",
+  "structure": {
+    "name": "proof-screen-song",
+    "target_s": [
+      20,
+      60
+    ],
+    "beats": [
+      "header + song",
+      "sections (step label each)",
+      "recap"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 60
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": true,
+    "position_y": 0.66,
+    "size": 0.03,
+    "uppercase": false,
+    "max_words": 16
+  },
+  "zoom": {
+    "mode": "drift",
+    "every_s": 0,
+    "wide": [
+      1.02,
+      1.05
+    ]
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0
+  },
+  "music": {
+    "energy": "high",
+    "db": -4,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.05
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "labels": {
+    "style": "box",
+    "position_y": 0.12,
+    "_needs_feature": "per-section step label from lyrics.json section markers"
+  }
+}

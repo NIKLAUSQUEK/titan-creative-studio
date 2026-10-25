@@ -1,17 +1,98 @@
 {
   "name": "edu-song",
-  "label": "Edu-song / do-along / mnemonic (kids-TV grammar)",
+  "label": "Edu-song / study song / mnemonic (header hook, song from 0 s)",
   "kind": "style",
-  "description": "Song-led teaching: a 2-4 s spoken hook, then the song carries the lesson. Bouncy karaoke captions (2 words, sung word highlighted), one visual per line, on-beat cuts, a big centred label per step, bright clean grade, a recap chorus before the CTA. Music = the song mix (original vocal over a public-domain or original melody), not ducked. See edu-songs-mnemonics.md.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/edu-songs-mnemonics.md",
+  "description": "Measured on AsapSCIENCE mitosis song repost (302 K likes), studysongz Skeletal Bones (142 K) and SimpleNursing cardio rap (51 K): singing starts at 0.0 s, the hook is a value-promise HEADER on screen ('If you study X and don't know this song...'), no spoken intro or count-in; 3.0-3.4 syllables/s at 90-100 BPM; one diagram change per lyric line (1-2 s) with the named part highlighted; a persistent step label per section; recap or count line last; CTA in the caption. Kids-tempo songs (1-2 syll/s, instrumental intros) flopped. Music = the original song mix, not ducked.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#29",
   "beat_sync": true,
-  "pacing": {"remove_silence_over_s": 0.6, "pad_s": 0.1, "remove_fillers": "soft", "max_shot_s": 3.0},
-  "captions": {"enabled": true, "size": 0.05, "max_words": 2, "animation": "karaoke", "uppercase": true, "highlight": "#FFD23F", "outline": 6, "position_y": 0.66, "emoji": true},
-  "hook_text": {"enabled": true, "renderer": "card", "card_style": "box", "dur_s": 3.0, "position_y": 0.2, "size": 0.038, "uppercase": false, "max_words": 12},
-  "zoom": {"mode": "snap", "every_s": 2.0, "scale": 1.06, "on_hook": 1.1},
-  "broll": {"every_s": 2.5, "max_dur_s": 2.0, "min_dur_s": 1.0, "mode": "pip"},
-  "sfx": {"density_per_10s": 1.2, "db": -14, "map": {"hook": "ding", "zoom": "pop", "broll": "pop", "title": "pop", "end": "ding"}},
-  "music": {"energy": "high", "db": -6, "duck": false},
-  "grade": {"contrast": 1.06, "saturation": 1.18, "brightness": 0.02, "warmth": 0.04},
-  "end_card": {"enabled": true, "dur_s": 2.0}
+  "structure": {
+    "name": "study-song",
+    "target_s": [
+      20,
+      60
+    ],
+    "beats": [
+      "song + header (0 s)",
+      "section 1 (label)",
+      "section 2 (label)",
+      "section 3 (label)",
+      "recap / count line",
+      "optional end card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.05,
+    "remove_fillers": "none",
+    "max_shot_s": 2.0
+  },
+  "captions": {
+    "enabled": true,
+    "size": 0.045,
+    "max_words": 3,
+    "animation": "karaoke",
+    "uppercase": true,
+    "highlight": "#FFD23F",
+    "outline": 6,
+    "position_y": 0.7,
+    "emoji": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": false,
+    "dur_s": 10.0,
+    "position_y": 0.12,
+    "size": 0.032,
+    "uppercase": false,
+    "max_words": 18
+  },
+  "labels": {
+    "style": "box",
+    "size": 0.034,
+    "position_y": 0.12,
+    "uppercase": false,
+    "_needs_feature": "persistent per-section step label that replaces the header after it ends (beat 'label' shows only on its own clip)"
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.05,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 1.6,
+    "max_dur_s": 2.0,
+    "min_dur_s": 0.8,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.6,
+    "db": -16,
+    "map": {
+      "broll": "pop",
+      "end": "ding"
+    },
+    "min_gap_s": 1.2
+  },
+  "music": {
+    "energy": "high",
+    "db": -4,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 1.12,
+    "brightness": 0.02,
+    "warmth": 0.02
+  },
+  "end_card": {
+    "enabled": false,
+    "dur_s": 1.5
+  },
+  "audio_qc": {
+    "min_lufs": -15,
+    "_needs_feature": "warn when the sung span is < 2.8 syll/s for an adult study song or > 2.2 for a do-along"
+  }
 }

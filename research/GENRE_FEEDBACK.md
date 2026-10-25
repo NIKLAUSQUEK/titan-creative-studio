@@ -27,6 +27,9 @@ Tick one box per row: approve, fix (write what), or reject (the old card comes b
 | 22 | News / scam-expose (+22b trick-on-the-viewer remix, 22c news-card carousel) | Voice or kicker at frame 0; official advisories (7.6-9.8 s to the first word) were the weakest. A one-take parody that plays the scam on the viewer got ~400-1,600× the likes of the police advisories | [Hougang NPC "Singa(pore) Inferno" 370K](https://www.instagram.com/reel/DWkv0WID7gG/) | Voice at frame 0 · one trick per post, performed on the viewer · one stat with source + date | ☐ ☐ ☐ |
 | 20 | Documentary | Medians 1.2-3.2 s inside 6-10 s VO beats at 170-216 wpm (not 3-6 s shots); the investigator on screen in the cold open; a source tag on every evidence shot. New `doc-paper-trail` | [Johnny Harris paper trail](https://www.instagram.com/reel/DRfLDUfk4qJ/) | See research file §D | ☐ ☐ ☐ |
 | 21 | Explainer / myth-buster | The myth as its own artefact → "look closely" → labelled evidence + expert PiP → where it started → one-line verdict. 230-240 wpm; dead air loses, not shot length. New default `myth-buster-stitch` | [Dr Karan Rajan 75K](https://www.instagram.com/reel/CxkzKPFs6Dx/) | See research file §D | ☐ ☐ ☐ |
+| 17 | K-drama (+17a fan edit, 17b self-aware product-placement gag) | 2025-26 brand K-drama ads are **rom-com subversions**, not pastel swooning: 1.5-2.0 s median, ONE romantic beat held 3-6 s (umbrella/car), then a twist punctures it; warm low-contrast film or tungsten night | Wacky Willy (4,050 likes on the repost); Kopiko PPL commentary (1,834 comments) | See research file | ☐ approve ☐ fix ☐ reject |
+| 18 | Anime (+18a OP parody) | Impact flashes are real anime-opening craft, but the reels that perform use **zero flashes**: Nissin CM 0.53 s median with a chanted label per shot + packshot; "Anime Openings Be Like" (513K) 1.53 s with a label box per trope | Anime Openings Be Like (513K) | See research file | ☐ ☐ ☐ |
+| 29 | Edu-song (+29a screen song, 29b brand PSA original song) | Winners **start singing at 0.0 s** with the hook in a header: no spoken hook, no count-in. 3.0-3.4 syllables/s (~2-2.6 per beat at 90-100 BPM); the slow kids' controls flopped. Copyrighted-melody covers are creator-only | AsapSCIENCE mitosis (302K repost), studysongz (142K), SimpleNursing (51K) | Sing at frame 0 · header carries the hook · ~3 syllables/s | ☐ ☐ ☐ |
 
 ## Decisions only you can make
 1. **Crash zoom** in your own skits: the new deadpan default has none (the measured reels use none). Keep your BUFF BOY-style crash zooms as proposal B?
@@ -36,7 +39,8 @@ Tick one box per row: approve, fix (write what), or reject (the old card comes b
 5. **Romance paid vs organic line:** proposal is that organic may show a completed kiss between adults, while paid stops at the near-kiss with no bed framing.
 6. **The white/black 9:16 frame container** (the picture inside a frame with a header, common in drama and mystery reels): on brand accounts it can read like a repost page. Build it anyway?
 7. **AI/CGI labels** for FOOH-style spectacle: caption only, or on screen too?
-8. **Send references** you rate for mystery/heist, gym edits and SG founder reels: the evidence there was the thinnest.
+8. **Physio do-along song:** no measured winner exists yet. Proposal: A/B a do-along against a study-song format before investing.
+9. **Send references** you rate for mystery/heist, gym edits and SG founder reels: the evidence there was the thinnest.
 
 ## Engine features the research asks for (not built yet; marked `_needs_feature` in presets)
 Ordered by how many modules need them:

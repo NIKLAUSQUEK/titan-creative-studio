@@ -1,0 +1,78 @@
+{
+  "name": "anime-op-parody",
+  "label": "Anime-OP parody / trope list (label per shot)",
+  "kind": "style",
+  "description": "Measured on 'Anime Openings Be Like' (513 K likes): 20.8 s, median 1.53 s, a '<X> be like:' setup card then one trope per shot, each with a white rounded label box naming the trope at the top, a creator mascot dropped into lush anime-style plates, OP-style song under the whole thing (-12 LUFS), no subtitles, no flash frames, last shot held ~3 s.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#18a",
+  "beat_sync": true,
+  "structure": {
+    "name": "trope-list",
+    "target_s": [
+      15,
+      25
+    ],
+    "beats": [
+      "'<X> be like:' setup",
+      "trope 1-10 (one shot each, labelled)",
+      "final held tableau"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.05,
+    "remove_fillers": "none",
+    "max_shot_s": 2.2
+  },
+  "captions": {
+    "enabled": false
+  },
+  "labels": {
+    "style": "box",
+    "size": 0.034,
+    "position_y": 0.2,
+    "uppercase": false,
+    "_needs_feature": "labels.style/font/position per beat (beat 'label' exists; styling keys not yet)"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "dur_s": 1.4,
+    "position_y": 0.2,
+    "size": 0.036,
+    "uppercase": false,
+    "max_words": 6
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.04,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 1.5,
+    "max_dur_s": 2.2,
+    "min_dur_s": 0.8,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "db": -14,
+    "map": {
+      "title": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -6,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.15,
+    "brightness": 0.03
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

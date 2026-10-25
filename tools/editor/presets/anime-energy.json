@@ -1,44 +1,92 @@
 {
   "name": "anime-energy",
-  "label": "Anime-inspired",
+  "label": "Anime CM / jingle (chant label per shot)",
   "kind": "genre",
-  "description": "Impact holds, crash zooms, saturated colour, whoosh and impact hits, 1-word caps captions.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured on Nissin Cisco 'Gorogura' anime CM (median 0.53 s, slows 0.53 -> 0.84 -> 1.0 s into a 4.5 s packshot, a big chanted label on every shot, one stat card, 0 flash frames) with real-OP grammar from a DNF Duel OP (median 0.27 s, paired white flashes ~every 10-12 s, -7.8 LUFS) as an optional seasoning. Song-led, labels instead of subtitles, flat saturated grade.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#18",
+  "beat_sync": true,
+  "structure": {
+    "name": "anime-cm",
+    "target_s": [
+      15,
+      30
+    ],
+    "beats": [
+      "cold open chant",
+      "chant verse",
+      "proof card",
+      "chorus group shot",
+      "packshot"
+    ]
+  },
   "pacing": {
     "remove_silence_over_s": 0.25,
-    "pad_s": 0.04,
-    "max_shot_s": 2
+    "pad_s": 0.03,
+    "remove_fillers": "aggressive",
+    "max_shot_s": 1.2
   },
   "captions": {
-    "max_words": 1,
+    "enabled": false
+  },
+  "labels": {
+    "style": "outline",
+    "font": "Archivo Black",
+    "size": 0.075,
+    "position_y": 0.78,
     "uppercase": true,
-    "size": 0.055,
-    "highlight": "#FF5FC8"
+    "_needs_feature": "labels.style/font/position per beat (beat 'label' exists; styling keys not yet)"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "dur_s": 1.2,
+    "position_y": 0.5,
+    "size": 0.07,
+    "uppercase": true,
+    "max_words": 3
   },
   "zoom": {
     "mode": "snap",
-    "every_s": 1.5,
-    "scale": 1.18
+    "every_s": 1.0,
+    "scale": 1.12,
+    "on_hook": 1.2
+  },
+  "broll": {
+    "every_s": 0.6,
+    "max_dur_s": 1.0,
+    "min_dur_s": 0.3,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 3.5,
-    "db": -10,
+    "density_per_10s": 1.0,
+    "db": -12,
     "map": {
       "hook": "impact",
-      "zoom": "whoosh",
-      "broll": "impact"
-    }
+      "title": "whoosh",
+      "end": "impact"
+    },
+    "min_gap_s": 3.0
   },
   "music": {
     "energy": "high",
-    "db": -16
+    "db": -6,
+    "duck": false
   },
   "grade": {
-    "contrast": 1.15,
-    "saturation": 1.25
+    "contrast": 1.08,
+    "saturation": 1.22,
+    "brightness": 0.03
   },
-  "broll": {
-    "every_s": 3,
-    "max_dur_s": 1.2
+  "transitions": {
+    "default": "flash",
+    "on": "beats",
+    "dur_s": 0.07,
+    "strength": 0.8,
+    "_needs_feature": "flash only on role 'title' and chorus hits, max 1 pair per 10 s (now fires on every beat change)"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 4.0
   }
 }

@@ -1,0 +1,56 @@
+{
+  "name": "kdrama-fan-edit",
+  "label": "K-drama POV fan-edit montage (beat-synced)",
+  "kind": "style",
+  "description": "Measured on a Compose Coffee x V ad fan edit: median shot 0.63 s, 47 % of cuts on a music onset, no dialogue, one persistent 'POV: ...' header with emoji, soft cream/blue grade, present -> flashback memories -> present held look. Music-led; recut of the brand's OWN K-drama-style film footage only.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#17a",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 1.4
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "persistent": true,
+    "size": 0.032,
+    "position_y": 0.1,
+    "uppercase": false,
+    "max_words": 12
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.02,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 0.7,
+    "max_dur_s": 1.4,
+    "min_dur_s": 0.4,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0
+  },
+  "music": {
+    "energy": "medium",
+    "db": -8,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 0.94,
+    "saturation": 0.86,
+    "brightness": 0.03,
+    "warmth": -0.02
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

@@ -1,41 +1,105 @@
 {
   "name": "kdrama-soft",
-  "label": "K-drama",
+  "label": "K-drama rom-com mini-film (sincere grammar, comic button)",
   "kind": "genre",
-  "description": "Held looks, soft pastel grade, fade captions, OST-style bed, slow pushes.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured on Wacky Willy 'rejection' ad (median 1.97 s, 1.53 s in the 49 s cut, holds 5-6 s only on the umbrella beat, real silences before each rejection line) and National Geographic Apparel KR (median 3.3 s, night tungsten, LRA 13: whisper confession then a scream). 1.5-2 s storytelling cuts, one held romantic beat with a slow push, small bilingual-style subtitles low in frame, a top premise header, warm low-contrast film grade, OST only under the real moment, a hard cut to the button and the logo.",
+  "reference": "research/genre-research-2026-10/kdrama-anime-edusong.md#17",
+  "structure": {
+    "name": "kdrama-romcom",
+    "target_s": [
+      30,
+      80
+    ],
+    "beats": [
+      "premise header + setup",
+      "attempt 1",
+      "attempt 2",
+      "attempt 3 (optional)",
+      "the real moment (held)",
+      "twist / button",
+      "logo"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 1.0,
-    "pad_s": 0.25,
-    "max_shot_s": 6
+    "remove_silence_over_s": 1.6,
+    "pad_s": 0.3,
+    "remove_fillers": "light",
+    "max_shot_s": 6.0,
+    "keep_pause_before_punch_s": 1.2
   },
   "captions": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": false,
+    "size": 0.03,
+    "max_words": 8,
     "animation": "fade",
-    "max_words": 6,
+    "uppercase": false,
     "keyword_caps": false,
-    "font": "DejaVu Serif",
-    "bold": false
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.86
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": true,
+    "font": "Instrument Serif",
+    "size": 0.032,
+    "position_y": 0.12,
+    "uppercase": false,
+    "max_words": 12
   },
   "zoom": {
     "mode": "smooth",
-    "every_s": 6,
-    "scale": 1.04,
-    "on_hook": 1.0
-  },
-  "sfx": {
-    "density_per_10s": 0.1
-  },
-  "music": {
-    "energy": "low",
-    "db": -19
-  },
-  "grade": {
-    "contrast": 0.94,
-    "saturation": 0.92,
-    "brightness": 0.03,
-    "warmth": 0.02
+    "every_s": 0,
+    "scale": 1.03,
+    "on_hook": 1.0,
+    "on_emphasis": false
   },
   "broll": {
     "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.1,
+    "db": -16,
+    "map": {
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 0.92,
+    "saturation": 0.92,
+    "brightness": 0.02,
+    "gamma": 1.03,
+    "warmth": 0.05,
+    "vignette": false
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.35,
+    "strength": 0.25
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 3.0
+  },
+  "reveal_hold": {
+    "min_s": 3,
+    "max_s": 6,
+    "push_in": 1.03,
+    "_needs_feature": "beat role 'moment' exempt from the median pace, gets the only push-in"
+  },
+  "music_arc": {
+    "start_db": -30,
+    "end_db": -18,
+    "_needs_feature": "OST enters on the 'moment' beat and hard-stops on the 'button' beat (music.stop_at_beat exists only as a single stop)"
   }
 }
