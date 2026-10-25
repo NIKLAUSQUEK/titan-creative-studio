@@ -39,7 +39,7 @@ BUNDLED = {"inter": "Inter-Variable.ttf", "space grotesk": "SpaceGrotesk-Variabl
            "instrument serif italic": "InstrumentSerif-Italic.ttf", "fraunces": "Fraunces-Variable.ttf", "caveat": "Caveat-Variable.ttf",
            "dejavu sans": "DejaVuSans.ttf", "dejavu sans bold": "DejaVuSans-Bold.ttf", "dejavu serif": "DejaVuSerif.ttf"}
 WEIGHTS = {"thin": 100, "extralight": 200, "light": 300, "regular": 400, "medium": 500, "semibold": 600, "bold": 700, "extrabold": 800, "black": 900}
-CARDS_VERSION = 10  # bump when card layout changes (invalidates cached board clips)
+CARDS_VERSION = 13  # bump when card layout changes (invalidates cached board clips)
 TYPES = ("title", "stat", "list", "steps", "quote", "compare", "definition", "myth_fact", "chart", "cta")
 ASPECT_PX = {"4:5": (1080, 1350), "1:1": (1080, 1080), "9:16": (1080, 1920), "16:9": (1920, 1080)}
 
@@ -388,7 +388,7 @@ def chrome(img, d, theme, card, page, W, H, S, T, MU, A):
             d.text((W - m - d.textlength(lab, font=pf), fy), lab, font=pf, fill=MU)
             if theme.get("handle") and not hh:
                 d.text((m, fy), theme["handle"], font=pf, fill=MU)
-    if i < n and card.get("type") != "cta":
+    if i < n and card.get("type") != "cta" and card.get("layout") != "cutout":
         if style == "hand":  # handwritten "swipe" + drawn arrow
             hf = font(theme, "hand", int(S * 0.05))
             txt = card.get("swipe", "swipe")
@@ -410,6 +410,145 @@ def hand_note(d, theme, note, x, y, S, A):
     return y + S * 0.07
 
 
+# ---------------- images: own photos, free-licensed downloads, AI assets ----------------
+def cover(im, w, h, focus=(0.5, 0.38)):
+    """Crop-to-fill around a focus point (faces usually sit in the upper third)."""
+    sw, sh = im.size
+    k = max(w / sw, h / sh)
+    im = im.resize((max(1, int(sw * k + 0.5)), max(1, int(sh * k + 0.5))), Image.LANCZOS)
+    fx, fy = focus
+    x = int(min(max(0, im.width * fx - w / 2), im.width - w))
+    y = int(min(max(0, im.height * fy - h / 2), im.height - h))
+    return im.crop((x, y, x + w, y + h))
+
+
+def rounded(im, r):
+    m = Image.new("L", (im.width * 2, im.height * 2), 0)
+    ImageDraw.Draw(m).rounded_rectangle([0, 0, im.width * 2 - 1, im.height * 2 - 1], radius=r * 2, fill=255)
+    out = im.convert("RGBA")
+    out.putalpha(Image.composite(out.getchannel("A"), Image.new("L", im.size, 0), m.resize(im.size, Image.LANCZOS)))
+    return out
+
+
+def placeholder(w, h, theme, label, kind):
+    """Visible stand-in while the asset is missing: drafts show the layout, nobody mistakes it for final."""
+    im = Image.new("RGBA", (w, h), rgb(theme.get("panel", "#FFFFFF")))
+    d = ImageDraw.Draw(im)
+    step = max(12, w // 18)
+    for x in range(-h, w, step):
+        d.line([(x, h), (x + h, 0)], fill=rgb(theme["muted"], 45), width=2)
+    d.rectangle([1, 1, w - 2, h - 2], outline=rgb(theme["muted"], 160), width=3)
+    S = min(w, h)
+    f = font(theme, "body", max(14, int(S * 0.07)))
+    head = {"gen": "AI ASSET", "missing": "ADD PHOTO"}.get(kind, "IMAGE")
+    d.text((S * 0.08, S * 0.08), head, font=font(theme, "display", max(16, int(S * 0.09))), fill=rgb(theme["accent"]))
+    for i, ln in enumerate(wrap(d, label[:140], f, w - S * 0.16)[:4]):
+        d.text((S * 0.08, S * 0.22 + i * S * 0.09), ln, font=f, fill=rgb(theme["text"]))
+    return im
+
+
+def load_image(r, w, h, theme, keep_alpha=False):
+    if r and r.get("path"):
+        im = Image.open(r["path"])
+        if keep_alpha and im.mode in ("RGBA", "LA", "P"):
+            return im.convert("RGBA")
+        return cover(im.convert("RGB"), w, h, tuple(r.get("focus") or (0.5, 0.38))).convert("RGBA")
+    return placeholder(w, h, theme, (r or {}).get("label", "image"), (r or {}).get("kind", "missing"))
+
+
+def image_layer(img, theme, card, W, H, S, top):
+    """Lay out the card's image; returns (text box, theme override). Layouts:
+    photo (full-bleed + scrim, text bottom) | split (image top, text below) | inset (text top, framed image below) |
+    screen (browser frame around a real screenshot) | polaroid (tilted print + handwritten caption) | cutout (founder PNG beside the text)."""
+    from .assets import resolve
+    r = resolve(card["image"], theme.get("brand"))
+    lay = card.get("layout") or ("photo" if card.get("type") in ("title", "quote", "cta") else "split")
+    m = int(S * 0.08)
+    foot = H - int(H * 0.11)
+    rad = int(S * max(0.012, theme.get("radius", 0.03)))
+    credit = (r or {}).get("credit")
+    over = {}
+    if lay == "photo":
+        im = load_image(r, W, H, theme)
+        img.alpha_composite(im)
+        scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(scrim)
+        for yy in range(H):  # bottom scrim for the text + light top scrim for the header
+            a = max(0.0, (yy / H - 0.36) / 0.64) ** 1.1 * 225 + max(0.0, (0.22 - yy / H) / 0.22) ** 0.8 * 170
+            sd.line([(0, yy), (W, yy)], fill=(10, 10, 12, int(min(235, a))))
+        img.alpha_composite(scrim)
+        over = {"text": "#FFFFFF", "muted": "#E4E4E4", "_photo": True, "highlight_style": "color", "accent": theme.get("marker", "#FFE45C")}
+        box = (m, int(H * 0.5), W - m, foot)
+        cy = foot - S * 0.03
+    elif lay == "cutout":
+        ch = int(H * (0.62 if H > W else 0.8))
+        im = load_image(r, int(ch * 0.8), ch, theme, keep_alpha=True)
+        if im.mode == "RGBA" and r and r.get("path") and im.getchannel("A").getextrema()[0] < 250:
+            k = min(ch / im.height, W * 0.5 / im.width)  # never wider than half the slide
+            im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))), Image.LANCZOS)
+            blob = Image.new("RGBA", (W, H), (0, 0, 0, 0))  # soft brand-colour shape behind the person
+            bd = ImageDraw.Draw(blob)
+            cx = W - im.width // 2 - int(S * 0.02)
+            bd.ellipse([cx - im.width * 0.55, H - ch * 0.78, cx + im.width * 0.55, H - ch * 0.78 + im.width * 1.1], fill=rgb(theme.get("marker", theme["accent"]), 170))
+            img.alpha_composite(blob)
+            img.alpha_composite(im, (W - im.width, H - im.height))
+        else:  # no transparent cutout yet: framed portrait in the right column
+            pw, ph = int(W * 0.4), int(H * 0.5)
+            img.alpha_composite(rounded(load_image(r, pw, ph, theme), rad), (W - m - pw, int(top + (foot - top - ph) / 2)))
+        box = (m, top, int(W * 0.58), foot)
+        cy = foot
+    else:  # split / inset / screen / polaroid
+        if lay == "split":
+            iy0, iy1 = top, int(top + (foot - top) * 0.5)
+            box = (m, iy1 + int(S * 0.05), W - m, foot)
+        else:
+            iy0, iy1 = int(top + (foot - top) * 0.47), foot - int(S * 0.02)
+            box = (m, top, W - m, iy0 - int(S * 0.04))
+        iw, ih = W - 2 * m, iy1 - iy0
+        if lay == "screen":
+            bar = int(S * 0.045)
+            frame = Image.new("RGBA", (iw, ih), rgb("#FFFFFF"))
+            fd = ImageDraw.Draw(frame)
+            fd.rectangle([0, 0, iw, bar], fill=rgb("#ECECEC"))
+            for k, col in enumerate(("#FF5F57", "#FEBC2E", "#28C840")):
+                fd.ellipse([bar * 0.45 + k * bar * 0.55, bar * 0.33, bar * 0.45 + k * bar * 0.55 + bar * 0.34, bar * 0.67], fill=rgb(col))
+            frame.alpha_composite(load_image(r, iw, ih - bar, theme), (0, bar))
+            sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            ImageDraw.Draw(sh).rounded_rectangle([m, iy0 + S * 0.012, m + iw, iy1 + S * 0.018], radius=rad, fill=(0, 0, 0, 70))
+            from PIL import ImageFilter
+            img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(S * 0.015)))
+            img.alpha_composite(rounded(frame, rad), (m, iy0))
+        elif lay == "polaroid":
+            side = min(iw * 0.72, (ih - S * 0.05) / 1.2)  # leave room for tilt + credit
+            pad = side * 0.05
+            pol = Image.new("RGBA", (int(side), int(side + pad * 2.6)), rgb("#FFFFFF"))
+            pol.alpha_composite(load_image(r, int(side - 2 * pad), int(side - 2 * pad), theme), (int(pad), int(pad)))
+            cap = (card["image"].get("caption") if isinstance(card["image"], dict) else None) or card.get("caption")
+            if cap:
+                pd = ImageDraw.Draw(pol)
+                hf = font(theme, "hand", int(side * 0.075))
+                pd.text((pad, side - pad * 0.6), cap, font=hf, fill=rgb("#2A2A2A"))
+            ang = card.get("tilt", -3)
+            rot = pol.rotate(ang, expand=True, resample=Image.BICUBIC)
+            sh = Image.new("RGBA", rot.size, (0, 0, 0, 0))
+            sh.putalpha(rot.getchannel("A").point(lambda v: int(v * 0.35)))
+            from PIL import ImageFilter
+            sh = sh.filter(ImageFilter.GaussianBlur(S * 0.01))
+            px_ = int(m + (iw - rot.width) / 2)
+            img.alpha_composite(sh, (px_ + int(S * 0.008), iy0 + int(S * 0.012)))
+            img.alpha_composite(rot, (px_, iy0))
+        else:
+            img.alpha_composite(rounded(load_image(r, iw, ih, theme), rad), (m, iy0))
+        cy = iy1 + S * 0.004
+    if credit:
+        cf = font(theme, "body", int(S * 0.019))
+        cd = ImageDraw.Draw(img, "RGBA")
+        ctext = credit[:110]
+        cx = m if over.get("_photo") else W - m - cd.textlength(ctext, font=cf)  # right-aligned under the image
+        cd.text((cx, cy), ctext, font=cf, fill=rgb("#FFFFFF" if over.get("_photo") else theme["muted"], 210))
+    return box, over
+
+
 # ---------------- card renderer ----------------
 _DY = {}
 
@@ -417,7 +556,7 @@ _DY = {}
 def render_card(card, W, H, theme, p=1.0, mode="full", page=None):
     """One frame of a card at reveal progress p (1.0 = static). Returns RGBA Image (transparent outside the panel in 'panel' mode).
     Full-frame cards are optically centred (slightly above middle) using the finished layout, so animation frames never jitter."""
-    if mode == "full" and card.get("type") in ("title", "stat", "quote", "definition", "steps", "list", "cta"):
+    if mode == "full" and card.get("type") in ("title", "stat", "quote", "definition", "steps", "list", "cta") and not card.get("image"):
         key = json.dumps([card, W, H, theme.get("brand"), theme.get("look"), theme.get("font_display"), bool(page)], sort_keys=True)
         if key not in _DY:
             probe_img = _render(card, W, H, theme, 1.0, mode, page, 0, content_only=True)
@@ -468,6 +607,11 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
             img.alpha_composite(bg)
         m = int(S * 0.08)
         box = (m, int(H * 0.09) + header_h(theme, W, H, page) + dy, W - m, H - int(H * 0.11))
+        if card.get("image") and not content_only:
+            box, over = image_layer(img, theme, card, W, H, S, int(H * 0.07) + header_h(theme, W, H, page))
+            if over:
+                theme = dict(theme, **{k: v for k, v in over.items() if not k.startswith("_")})
+                _STYLE.update(theme=theme, hl=theme.get("highlight_style", "color"))
     x0, y0, x1, y1 = box
     foot_y = H - int(H * 0.11)
     src_y = (foot_y + S * 0.015) if mode == "full" else (by0 + (panel_h or (by1 - by0)) - S * 0.04)
@@ -483,7 +627,8 @@ def _render(card, W, H, theme, p, mode, page, dy, content_only=False, panel_h=No
             d.text((x0 + S * 0.08, y), ktxt, font=kf, fill=A)
         elif theme.get("look") == "creator":
             tw = d.textlength(ktxt, font=kf)
-            soft(d, lambda dd: dd.rounded_rectangle([x0, y - S * 0.008, x0 + tw + S * 0.04, y + S * 0.045], radius=int(S * 0.026), fill=rgb(theme["accent"], 30)))
+            pill = (0, 0, 0, 110) if theme["text"].upper() == "#FFFFFF" else rgb(theme["accent"], 30)  # dark backing on photos
+            soft(d, lambda dd: dd.rounded_rectangle([x0, y - S * 0.008, x0 + tw + S * 0.04, y + S * 0.045], radius=int(S * 0.026), fill=pill))
             d.text((x0 + S * 0.02, y), ktxt, font=kf, fill=A)
         else:
             d.text((x0, y), ktxt, font=kf, fill=A)
@@ -792,6 +937,14 @@ def cmd_cards(a):
     out = Path(a.out or Path(a.spec).with_suffix("")).resolve()
     aspect = a.aspect or spec.get("aspect", "4:5")
     paths = render_carousel(cards, out, aspect, theme, pdf=not a.no_pdf)
+    from .assets import assets_needed, resolve
+    need = assets_needed(cards, theme, out / "ASSETS_NEEDED.md")
+    if need:
+        log(f"placeholders on some slides: see {need}")
+    credits = [f"- slide {i}: {r['credit']}" for i, c in enumerate(cards, 1) if c.get("image")
+               for r in [resolve(c["image"], theme.get("brand"))] if r and r.get("credit")]
+    if credits:
+        (out / "CREDITS.md").write_text("# Image credits (keep in the post caption or first comment when the licence asks for it)\n" + "\n".join(credits) + "\n", encoding="utf-8")
     sheet = contact_sheet(paths, out / "contact_sheet.jpg")
     for p in paths:
         print(p)

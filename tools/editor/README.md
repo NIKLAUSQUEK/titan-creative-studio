@@ -92,7 +92,7 @@ The editor reads the ```` ```edit-brand ```` JSON block in `brands/<brand>.md` (
 ## Linux/macOS (and the cloud container)
 ```bash
 python3 -m venv ~/.titan-editor/venv && . ~/.titan-editor/venv/bin/activate
-pip install faster-whisper pillow numpy "opencv-python-headless<5"   # opencv = face-occlusion QC
+pip install faster-whisper pillow numpy "opencv-python-headless<5" rembg   # opencv = face-occlusion QC
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu && pip install open_clip_torch
 python tools/editor/editor.py selftest          # needs espeak-ng for the synthetic voice
 python tools/editor/editor.py --project P run /path/to/footage --brand physio-spot --goal expert --platform tiktok

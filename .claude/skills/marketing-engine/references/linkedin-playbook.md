@@ -304,7 +304,7 @@ AI-looking carousels share tells: black/neon gradient, generic sans (DejaVu/Aria
 2. **One look per brand, every time**: the brand's `cards.look` (TITAN: `creator`; Physio Spot: `editorial`) with brand colours and fonts from the `edit-brand` block. Recognition comes from repetition (distinctive assets).
 3. **Warm paper, not black**, with a real type pairing; marker highlight on 1-3 key words per slide, never more.
 4. **One handwritten touch** (`note` or the hand-drawn swipe) per 2-3 slides, saying something a person would ("#3 is the one people skip").
-5. **Real photos/screens** beat generated imagery: screenshots of the actual workflow, team photos, whiteboard snaps (cards engine for type, Canva/Figma when a slide is photo-led).
+5. **Make it visual: an image every 2-3 slides**, in this order: Klaus's own photos and real screens (`assets/people/klaus/`, see `assets/people/README.md`; `lib:<tags>`), free-licensed places/objects (`editor.py assets fetch`; never identifiable strangers), AI concept frames last (`gen:`; labelled). Founder-led covers: `photo` layout with a real stage/office shot, or `cutout` with his headshot. Proof slides: `screen` with the real dashboard. Story slides: `polaroid` with a handwritten caption.
 6. **Copy in Klaus's voice** from a real story or number (AI edits only); no "In today's fast-paced world", no emoji bullets, no "Here's the thing".
 7. Before posting: `contact_sheet.jpg` side by side with the last 3 posts: same look, same header, readable at phone size.
 

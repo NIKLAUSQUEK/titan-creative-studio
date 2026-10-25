@@ -26,7 +26,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "split or inset per item"
  },
  {
   "id": "step-by-step",
@@ -56,7 +57,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "screen (real UI) or inset (hands doing it)"
  },
  {
   "id": "myth-vs-fact",
@@ -86,7 +88,8 @@
    "MOFU"
   ],
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "inset (neutral object/place)"
  },
  {
   "id": "mistake-fix",
@@ -116,7 +119,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "split (wrong vs right photo pair)"
  },
  {
   "id": "framework",
@@ -147,7 +151,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "cutout cover (founder) + diagram cards"
  },
  {
   "id": "story",
@@ -176,7 +181,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "photo cover + polaroid moments (own photos only)"
  },
  {
   "id": "before-after",
@@ -205,7 +211,8 @@
    "MOFU"
   ],
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "screen pairs (workflow, never bodies)"
  },
  {
   "id": "comparison",
@@ -235,7 +242,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "inset product/category shots"
  },
  {
   "id": "data",
@@ -265,7 +273,8 @@
    "MOFU"
   ],
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "no photos needed; chart/stat cards"
  },
  {
   "id": "checklist",
@@ -294,7 +303,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "cutout cover"
  },
  {
   "id": "case-study",
@@ -324,7 +334,8 @@
    "MOFU"
   ],
   "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "screen / premises photos, no patients"
  },
  {
   "id": "thought-leadership",
@@ -353,7 +364,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "photo cover (stage/office) or cutout"
  },
  {
   "id": "save-this",
@@ -383,7 +395,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "none or screen"
  },
  {
   "id": "product-feature",
@@ -412,7 +425,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "split close-ups (real product)"
  },
  {
   "id": "meme",
@@ -440,7 +454,8 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "photo (own), reaction polaroids"
  },
  {
   "id": "tweet-style",
@@ -469,6 +484,7 @@
    "MOFU"
   ],
   "compliance": "",
-  "sources": "carousels-statics.md §3"
+  "sources": "carousels-statics.md §3",
+  "visuals": "none: author header carries it"
  }
 ]
