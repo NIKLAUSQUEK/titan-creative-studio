@@ -1,0 +1,82 @@
+{
+  "name": "raw-gym-vlog",
+  "label": "Raw gym vlog (Sam Sulek-style)",
+  "kind": "niche",
+  "description": "Minimal-edit, narration-led long-form gym vlog: car plan, sets with commentary, pump check, ride-home reflection. Continuity over cuts.",
+  "structure": {
+    "name": "raw-gym-vlog",
+    "target_s": [
+      900,
+      2400
+    ],
+    "beats": [
+      "car / plan intro",
+      "warm-up",
+      "working sets + commentary",
+      "pump / flex check",
+      "ride-home reflection"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 3.0,
+    "pad_s": 0.4,
+    "max_shot_s": 90.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": null,
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "none",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "aspect": "16:9",
+  "sync": {
+    "broll": "none (100% A-roll)",
+    "fillers": "none; continuity is the device",
+    "music": "none; gym ambience",
+    "emotion_map": "familiarity → grind → pride → calm reflection",
+    "transitions": "straight cuts"
+  },
+  "brands": [
+    "Klaus personal",
+    "Power Protein (in-use placement)"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://vidiq.com/blog/post/sam-sulek-breaks-youtube-rules-goes-viral/",
+    "https://klap.app/briefs/embracing-simplicity-the-rise-of-minimal-editing-on-youtube"
+  ],
+  "evidence": "medium-high for format (vidIQ stats, analyses)",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording"
+  ]
+}

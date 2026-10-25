@@ -1,0 +1,82 @@
+{
+  "name": "magic-transition",
+  "label": "Magic transition one-take (Zach King-style)",
+  "kind": "viral",
+  "description": "Single-take feel; a mundane setup transforms through a hidden cut (whip, lens block, object pass); SFX hit sells the magic; loopable end. Sound-off friendly.",
+  "structure": {
+    "name": "magic-transition",
+    "target_s": [
+      10,
+      25
+    ],
+    "beats": [
+      "mundane setup 0-2s",
+      "misdirection gesture",
+      "hidden cut / composite",
+      "reveal + SFX hit",
+      "deadpan hold / loop"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 3.0,
+    "pad_s": 0.2,
+    "max_shot_s": 20.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.8,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.05
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "none: one continuous A-roll",
+    "fillers": "none; the illusion is the interrupt; hold 0.3-0.5 s after the reveal",
+    "music": "one light track; the transformation lands on a beat + SFX; brief silence just before the reveal",
+    "emotion_map": "familiarity → anticipation → surprise/delight → loop urge",
+    "transitions": "hidden only: whip pan, body/object pass across lens, match on action"
+  },
+  "brands": [
+    "Power Protein",
+    "PeachForm",
+    "TITAN.AI"
+  ],
+  "funnel": [
+    "TOFU",
+    "paid hooks"
+  ],
+  "references": [
+    "https://en.wikipedia.org/wiki/Zach_King",
+    "https://www.adobe.com/creativecloud/video/hub/ideas/what-is-an-invisible-cut-in-film.html"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "never show an instant body or pain transformation (misleading)"
+  ]
+}

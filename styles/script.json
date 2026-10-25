@@ -1,0 +1,1075 @@
+[
+ {
+  "id": "hormozi-math",
+  "family": "script",
+  "name": "Business math, binary verdicts",
+  "aliases": [
+   "hormozi",
+   "alex hormozi",
+   "value equation",
+   "business math"
+  ],
+  "what": "Contrarian verdict, the math said out loud, if-A-then-B rules, one fix. Promise, proof, plan.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "length": "30-60 s / 120-200 words",
+  "template": [
+   "Most [audience] think [belief]. That's why they're stuck.",
+   "Here's the math: [input] x [rate] = [result].",
+   "If [condition A], do [X]. If [condition B], do [Y].",
+   "I saw this when [own example, real numbers].",
+   "The fix is [single action].",
+   "Do that for [time] and the math does the rest."
+  ],
+  "devices": "dichotomies, analogies, value equation (dream outcome x likelihood / time x effort), own numbers as proof, soft or no CTA",
+  "compliance": "Clinics: never 'free' or discount 'grand slam' offers, no guaranteed outcomes; keep the math non-clinical.",
+  "pairs": {
+   "edit": [
+    "b2b-founder",
+    "talking-head-punchy",
+    "retention-max"
+   ],
+   "animation": [
+    "motion-typography",
+    "data-viz"
+   ],
+   "stylecard": "Alex Hormozi"
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "research/sources-style-library.md; style research 2026-10-25 (Part B #1)"
+ },
+ {
+  "id": "meakins-mythbust",
+  "family": "script",
+  "name": "Blunt evidence myth-buster (physio)",
+  "aliases": [
+   "meakins",
+   "adam meakins",
+   "myth buster",
+   "sports physio myth"
+  ],
+  "what": "Name the myth flatly, why people believe it, what the evidence says, the 'it depends' nuance, simple safe advice.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "klaus"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "linkedin",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "30-90 s",
+  "template": [
+   "\"[Myth].\" Let's talk about that.",
+   "It sounds right because [plausible reason].",
+   "But the research says [finding, cited on screen].",
+   "That doesn't mean [overcorrection]; it depends on [factors].",
+   "What actually helps most people: [simple, safe action].",
+   "Send this to the friend who still [myth behaviour]."
+  ],
+  "devices": "rhetorical questions, everyday analogies, humility about evidence limits, research summaries not anecdotes, send/share CTA",
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; never mock named clinics or competitors; no 'only clinic that'.",
+  "pairs": {
+   "edit": [
+    "myth-buster-expert",
+    "clinic-trust",
+    "doctor-reacts"
+   ],
+   "animation": [
+    "whiteboard",
+    "motion-typography",
+    "stickman"
+   ],
+   "carousel": [
+    "myth-vs-fact"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Lederman 2010 core-stability critique (PubMed 20006294); Lift the Bar podcast; style research Part B #2"
+ },
+ {
+  "id": "robbins-empathy",
+  "family": "script",
+  "name": "Empathetic self-help",
+  "aliases": [
+   "mel robbins",
+   "empathetic",
+   "self help",
+   "validation"
+  ],
+  "what": "Validate the feeling, normalise it ('it's how your brain works'), one named tool, a tiny first step.",
+  "brands": [
+   "peachform",
+   "klaus"
+  ],
+  "platforms": [
+   "reels",
+   "tiktok",
+   "youtube",
+   "email"
+  ],
+  "funnel": [
+   "TOFU",
+   "nurture"
+  ],
+  "length": "45-90 s",
+  "template": [
+   "If you've ever [relatable struggle], this is for you.",
+   "You're not [lazy/broken]; here's what's happening: [simple mechanism].",
+   "Try this: [one-step tool].",
+   "It works because [plain-language reason, sourced].",
+   "Start with [tiny action] today.",
+   "Come back and tell me what changed."
+  ],
+  "devices": "repetition, permission statements, a named tool, research reference + relatable scenario",
+  "compliance": "Health: 'can help', never 'this will fix your pain'.",
+  "pairs": {
+   "edit": [
+    "story-vlog",
+    "aesthetic-lifestyle"
+   ],
+   "animation": [
+    "stickman",
+    "anime-2d"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #3"
+ },
+ {
+  "id": "junyuh-story",
+  "family": "script",
+  "name": "Personal life-lesson story",
+  "aliases": [
+   "jun yuh",
+   "life lesson",
+   "storytelling reel",
+   "personal story"
+  ],
+  "what": "A specific remembered line or moment, tension, realisation, universal lesson, gentle challenge. Cinematic B-roll + intimate VO.",
+  "brands": [
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "reels",
+   "tiktok",
+   "shorts",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "45-90 s",
+  "template": [
+   "[Specific age/place], [someone] said \"[line].\"",
+   "I didn't understand it until [event].",
+   "[Sensory detail of the turning moment].",
+   "What I learned: [lesson in one line].",
+   "Maybe for you it's [viewer application].",
+   "What's the sentence that changed you?"
+  ],
+  "devices": "callbacks, sensory detail, aesthetic B-roll, lived experience, reflective question CTA",
+  "compliance": "Klaus's own story only (brains/ story card); never patient stories.",
+  "pairs": {
+   "edit": [
+    "cinematic-vlog",
+    "story-vlog",
+    "aura-cinematic"
+   ],
+   "animation": [
+    "anime-2d",
+    "parallax-2-5d"
+   ],
+   "stylecard": "Jun Yuh"
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #4; creator-brain storytelling-playbook.md"
+ },
+ {
+  "id": "mrbeast-stakes",
+  "family": "script",
+  "name": "Stakes and escalation challenge",
+  "aliases": [
+   "mrbeast",
+   "challenge",
+   "we tested",
+   "stakes"
+  ],
+  "what": "Deliver the thumbnail promise in seconds, rising stakes per step, twist, measured payoff.",
+  "brands": [
+   "power-protein",
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "youtube",
+   "shorts",
+   "tiktok",
+   "reels"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "45 s-15 min",
+  "template": [
+   "I [extreme premise] to find out [question].",
+   "Day/Step 1: [baseline], stakes are [X].",
+   "Then it got harder: [escalation].",
+   "At [point], [unexpected twist].",
+   "Final result: [measured payoff].",
+   "Which should we test next, [A] or [B]?"
+  ],
+  "devices": "countdowns, numbers, 'but then', re-engagement every segment, on-camera reality as proof",
+  "compliance": "Clinics: no giveaways/contests (inducements), no transformation results.",
+  "pairs": {
+   "edit": [
+    "retention-max",
+    "story-vlog"
+   ],
+   "animation": [
+    "animation-3d"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "MrBeast production memo (authenticity unconfirmed); style research Part B #5"
+ },
+ {
+  "id": "abdaal-framework",
+  "family": "script",
+  "name": "Calm research-backed framework",
+  "aliases": [
+   "ali abdaal",
+   "framework",
+   "productivity",
+   "calm explainer"
+  ],
+  "what": "N named ideas, each = concept + source + personal example, then the common thread, lead-magnet CTA.",
+  "brands": [
+   "titan-ai",
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "youtube",
+   "linkedin",
+   "reels",
+   "newsletter"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "length": "60 s-15 min",
+  "template": [
+   "[N] ideas that changed how I [outcome].",
+   "Idea 1: [name], from [source]: [one-line explanation].",
+   "How I use it: [personal example].",
+   "Idea 2 / 3: [repeat pattern].",
+   "The common thread: [synthesis].",
+   "I put the full system in [lead magnet], link in bio."
+  ],
+  "devices": "named frameworks, book citations, on-screen numbered lists",
+  "compliance": "Lead magnets are never 'free consult' inducements; PDPA consent.",
+  "pairs": {
+   "edit": [
+    "clean-explainer",
+    "tech-review-premium"
+   ],
+   "animation": [
+    "flat-vector",
+    "motion-typography"
+   ],
+   "carousel": [
+    "framework",
+    "listicle"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #6"
+ },
+ {
+  "id": "garyvee-raw",
+  "family": "script",
+  "name": "Raw motivational truth",
+  "aliases": [
+   "gary vee",
+   "garyvee",
+   "gary vaynerchuk",
+   "motivational rant"
+  ],
+  "what": "Blunt call-out, reframe to the long game, practical push, human note.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "20-60 s (great for podcast clips)",
+  "template": [
+   "Real talk: [harsh truth].",
+   "You're worried about [short-term thing].",
+   "Meanwhile [long-term reality].",
+   "Here's what I'd do: [blunt action].",
+   "And be kind while you do it: [human note].",
+   "Stop watching. Go [action]."
+  ],
+  "devices": "rants, rhetorical questions, repetition, emotional emphasis",
+  "compliance": "No profanity on clinic channels.",
+  "pairs": {
+   "edit": [
+    "podcast-clip",
+    "talking-head-punchy",
+    "raw-gym-vlog"
+   ],
+   "animation": [
+    "motion-typography"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #7"
+ },
+ {
+  "id": "bartlett-interview",
+  "family": "script",
+  "name": "Question-led founder interview",
+  "aliases": [
+   "steven bartlett",
+   "diary of a ceo",
+   "interview",
+   "podcast clip"
+  ],
+  "what": "Cold-open the guest's most surprising line, then the question, backstory, the hard 'why', vulnerable beat, one lesson.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "youtube",
+   "shorts",
+   "reels",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "length": "45-60 s clip / long form",
+  "template": [
+   "[Guest]: \"[shocking line].\"",
+   "Q: What did you get wrong about [topic]?",
+   "Guest backstory beat: [moment].",
+   "Q: Why do most people miss that?",
+   "Lesson: [one line].",
+   "Full conversation: [link/episode]."
+  ],
+  "devices": "patient follow-ups, silence, a closing ritual question",
+  "compliance": "Clinician guests stay educational; no patient guests endorsing services.",
+  "pairs": {
+   "edit": [
+    "podcast-clip"
+   ],
+   "animation": []
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #8; clipping-podcast.md"
+ },
+ {
+  "id": "dharmann-parable",
+  "family": "script",
+  "name": "Moral parable (with nuance)",
+  "aliases": [
+   "dhar mann",
+   "moral skit",
+   "parable",
+   "lesson skit"
+  ],
+  "what": "Injustice in 3 s, dignified response, reveal, proportionate consequence, humanising change, moral on screen.",
+  "brands": [
+   "peachform",
+   "klaus",
+   "titan-ai",
+   "physio-spot"
+  ],
+  "platforms": [
+   "youtube",
+   "tiktok",
+   "reels",
+   "shorts",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "60 s-10 min",
+  "template": [
+   "[Character] mocks [underdog] for [trait].",
+   "Underdog responds with [quiet dignity/act].",
+   "Reveal: [hidden truth].",
+   "Consequence for mocker: [proportionate outcome].",
+   "Mocker changes: [humanising beat].",
+   "Lesson on screen: \"[moral].\""
+  ],
+  "devices": "twist reveal, end-card moral; give both sides humanity (villains-conflict.md)",
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; actors never presented as patients; the clinic is never the 'hero cure'.",
+  "pairs": {
+   "edit": [
+    "moral-skit",
+    "sea-skit"
+   ],
+   "animation": [
+    "animation-3d",
+    "anime-2d"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Wikipedia; NYT critique via bdnews24; style research Part B #9"
+ },
+ {
+  "id": "drmike-reacts",
+  "family": "script",
+  "name": "Expert reacts to a viral claim",
+  "aliases": [
+   "dr mike",
+   "doctor reacts",
+   "physio reacts",
+   "reacts"
+  ],
+  "what": "Clip, verdict (true / half-true / false), mechanism, fair credit, safer approach, red-flag referral.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "30-60 s",
+  "template": [
+   "Physio reacts: \"[viral claim]\".",
+   "Verdict: [true / half-true / false].",
+   "What's actually happening: [mechanism].",
+   "Where it's right: [fair credit].",
+   "Safer approach: [action] (source on screen).",
+   "If [red-flag symptom], see a professional."
+  ],
+  "devices": "rating scale, credentials shown, humour, guidelines and studies as proof",
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; only clips you have rights to (stitch/duet); state credentials accurately; no ridicule of named practitioners.",
+  "pairs": {
+   "edit": [
+    "doctor-reacts",
+    "myth-buster-expert"
+   ],
+   "animation": []
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #10"
+ },
+ {
+  "id": "sinek-why",
+  "family": "script",
+  "name": "Why-first manifesto",
+  "aliases": [
+   "simon sinek",
+   "golden circle",
+   "start with why",
+   "manifesto"
+  ],
+  "what": "Your own counterintuitive principle, why -> how -> what, one story proving it, principle restated.",
+  "brands": [
+   "klaus",
+   "titan-ai",
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "youtube",
+   "linkedin",
+   "reels",
+   "website"
+  ],
+  "funnel": [
+   "TOFU",
+   "about page"
+  ],
+  "length": "60-120 s",
+  "template": [
+   "Most [businesses] explain what they do. The ones people love start with why.",
+   "Our why: [belief].",
+   "So we [how: distinctive method].",
+   "Which is why we [what].",
+   "Example: [story showing the belief in action].",
+   "What's your why?"
+  ],
+  "devices": "contrast pairs, repetition, simple circle diagram, case stories",
+  "compliance": "Safe when the why makes no outcome claims. Write your own principle, never his lines.",
+  "pairs": {
+   "edit": [
+    "manifesto-montage",
+    "luxury-broll"
+   ],
+   "animation": [
+    "flat-vector"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #11"
+ },
+ {
+  "id": "welsh-linkedin",
+  "family": "script",
+  "name": "LinkedIn system post",
+  "aliases": [
+   "justin welsh",
+   "linkedin system",
+   "solopreneur post"
+  ],
+  "what": "One-line result or contrarian hook, context, numbered system, the key insight, what people skip, newsletter CTA.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "linkedin",
+   "x",
+   "threads"
+  ],
+  "funnel": [
+   "MOFU"
+  ],
+  "length": "150-250 words",
+  "template": [
+   "[Result] in [time] without [common pain].",
+   "Here's the system:",
+   "1/ [Step] 2/ [Step] 3/ [Step]",
+   "The key: [insight].",
+   "Most people skip [step] because [reason].",
+   "I break this down weekly in [newsletter]."
+  ],
+  "devices": "whitespace, short lines, lists, before/after, own metrics",
+  "compliance": "Clinic directors: no patient-count bragging.",
+  "pairs": {
+   "edit": [
+    "b2b-founder"
+   ],
+   "carousel": [
+    "framework",
+    "tweet-style"
+   ],
+   "linkedin": [
+    "text-framework",
+    "document-carousel"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "contentin.io teardown; style research Part B #12"
+ },
+ {
+  "id": "sanchez-contrarian",
+  "family": "script",
+  "name": "Contrarian boring-business",
+  "aliases": [
+   "codie sanchez",
+   "contrarian",
+   "boring business"
+  ],
+  "what": "Everyone chases the sexy thing; the money is in the boring thing. Economics, why nobody competes, 3 checks, honest risk.",
+  "brands": [
+   "titan-ai",
+   "klaus"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "length": "45-75 s",
+  "template": [
+   "Everyone wants [trendy thing]. I'd rather own [unsexy thing].",
+   "Here's why: [revenue/margin example].",
+   "Nobody competes because [reason].",
+   "How to check one: [3 criteria].",
+   "The risk: [honest caveat].",
+   "Comment \"[keyword]\" and I'll send the checklist."
+  ],
+  "devices": "myth inversion, deal math, specific numbers, keyword-comment CTA",
+  "compliance": "No clinic pricing claims.",
+  "pairs": {
+   "edit": [
+    "b2b-founder",
+    "street-interview"
+   ],
+   "animation": [
+    "data-viz"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #13"
+ },
+ {
+  "id": "koe-philosophy",
+  "family": "script",
+  "name": "Philosophical one-person business",
+  "aliases": [
+   "dan koe",
+   "philosophical",
+   "aphorism",
+   "essay"
+  ],
+  "what": "Abstract thesis, critique of the default path, reframe, practical system, an aphorism.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "x",
+   "linkedin",
+   "youtube",
+   "newsletter",
+   "reels"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "60 s or long essay",
+  "template": [
+   "[Abstract thesis about work/identity].",
+   "Most people [default path] because [conditioning].",
+   "But [reframe].",
+   "In practice: [system: learn -> create -> share].",
+   "[Aphorism].",
+   "Full essay in [newsletter]."
+  ],
+  "devices": "aphorisms, long + short sentence mix, minimal visuals",
+  "compliance": "-",
+  "pairs": {
+   "edit": [
+    "aesthetic-lifestyle",
+    "luxury-broll"
+   ],
+   "animation": [
+    "motion-typography"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #14"
+ },
+ {
+  "id": "williamson-curiosity",
+  "family": "script",
+  "name": "Intellectual curiosity clip",
+  "aliases": [
+   "chris williamson",
+   "modern wisdom",
+   "fascinating idea"
+  ],
+  "what": "Surprising finding from a named source, mechanism, what it means for you, the ironic twist.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "youtube",
+   "shorts",
+   "reels",
+   "linkedin"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "45-90 s",
+  "template": [
+   "One of the most interesting ideas I've heard: [idea], from [source].",
+   "The finding: [result].",
+   "Why it happens: [mechanism].",
+   "What it means for you: [implication].",
+   "The twist: [irony/counterpoint].",
+   "Full breakdown in [episode]."
+  ],
+  "devices": "named studies and thinkers, wry irony",
+  "compliance": "Cite primary sources.",
+  "pairs": {
+   "edit": [
+    "podcast-clip",
+    "clean-explainer"
+   ],
+   "animation": [
+    "stickman",
+    "collage"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #15"
+ },
+ {
+  "id": "protocol-science",
+  "family": "script",
+  "name": "Protocol science, evidence-graded",
+  "aliases": [
+   "huberman",
+   "protocol",
+   "science protocol"
+  ],
+  "what": "Mechanism, protocol with what/when/how long, an explicit evidence grade, who should skip it.",
+  "brands": [
+   "physio-spot",
+   "heal360",
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "youtube",
+   "reels",
+   "tiktok",
+   "linkedin"
+  ],
+  "funnel": [
+   "MOFU (saves)"
+  ],
+  "length": "45-120 s",
+  "template": [
+   "A simple protocol for [outcome].",
+   "Why it works: [mechanism, plain language].",
+   "Protocol: [what], [when], [how long].",
+   "Evidence level: [strong/mixed/early] ([source]).",
+   "Who should skip it: [contraindications].",
+   "Educational only, not individual medical advice."
+  ],
+  "devices": "named studies, specific numbers, ALWAYS grade evidence (critics: confidence can exceed evidence)",
+  "compliance": "SG health pack: no testimonials/patient stories as proof, no superlatives, no free/discount inducements, no guarantees, sources on stats, label dramatisations; no supplement claims beyond approved wording; no dosing that implies diagnosis.",
+  "pairs": {
+   "edit": [
+    "clean-explainer",
+    "sensitive-health-edu",
+    "exercise-demo"
+   ],
+   "animation": [
+    "flat-vector",
+    "data-viz"
+   ],
+   "carousel": [
+    "save-this"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #16"
+ },
+ {
+  "id": "gadzhi-aspire",
+  "family": "script",
+  "name": "Aspirational 'start over' story",
+  "aliases": [
+   "iman gadzhi",
+   "aspirational",
+   "if i started over"
+  ],
+  "what": "If I started over at [age]: origin struggle, the vehicle, 3 steps, the honest trade-off, soft CTA.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "youtube",
+   "reels",
+   "tiktok"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "45-90 s",
+  "template": [
+   "If I lost everything and started over at [age], I'd do this.",
+   "[Origin struggle beat].",
+   "The vehicle: [skill/business].",
+   "Steps: [1], [2], [3].",
+   "What it cost me: [honest trade-off].",
+   "[Soft CTA to resource]."
+  ],
+  "devices": "luxury contrast, 'if I were starting over'",
+  "compliance": "Never for clinics. No income guarantees anywhere; results must be real and typical.",
+  "pairs": {
+   "edit": [
+    "luxury-broll",
+    "cinematic-vlog"
+   ],
+   "animation": []
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "style research Part B #17"
+ },
+ {
+  "id": "wisdom-parable",
+  "family": "script",
+  "name": "Wisdom story with attribution",
+  "aliases": [
+   "jay shetty",
+   "wisdom story",
+   "old story",
+   "parable quote"
+  ],
+  "what": "There's a story (attributed / adapted / original), setup, turn, wisdom line, application.",
+  "brands": [
+   "klaus",
+   "peachform"
+  ],
+  "platforms": [
+   "reels",
+   "tiktok",
+   "shorts",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "45-90 s",
+  "template": [
+   "There's a story [attributed to / adapted from: source].",
+   "[Setup of the parable].",
+   "[Turn].",
+   "The lesson: [wisdom line].",
+   "In your life, this looks like [application].",
+   "Share this with someone who needs it."
+  ],
+  "devices": "quotes, metaphors, poetic cadence",
+  "compliance": "HOUSE RULE: origin-check every parable/quote and attribute on screen or mark 'original parable' (the style's namesake faced plagiarism allegations, Guardian 2024).",
+  "pairs": {
+   "edit": [
+    "storytime-text",
+    "aesthetic-lifestyle"
+   ],
+   "animation": [
+    "anime-2d",
+    "stickman"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Plagiarism Today 2024-03-05; style research Part B #18"
+ },
+ {
+  "id": "acosta-slay",
+  "family": "script",
+  "name": "SLAY LinkedIn story",
+  "aliases": [
+   "lara acosta",
+   "slay",
+   "linkedin story"
+  ],
+  "what": "Story -> Lesson -> Actionable advice -> You (question). Short lines, whitespace.",
+  "brands": [
+   "klaus",
+   "titan-ai"
+  ],
+  "platforms": [
+   "linkedin",
+   "threads",
+   "x"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "length": "150-250 words",
+  "template": [
+   "[Vulnerable or surprising first line].",
+   "Story: [what happened, concrete].",
+   "Lesson: [one insight].",
+   "Action: [one thing to do].",
+   "[Reinforcing line].",
+   "You: [question to readers]?"
+  ],
+  "devices": "vulnerable first line, whitespace, question CTA for comments",
+  "compliance": "Clinics: no patient stories as proof.",
+  "pairs": {
+   "edit": [
+    "b2b-founder"
+   ],
+   "linkedin": [
+    "text-story"
+   ],
+   "carousel": [
+    "story"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Creator Science podcast; Cool Story newsletter; style research Part B #19"
+ },
+ {
+  "id": "polin-quiz",
+  "family": "script",
+  "name": "Playful edu-challenge (SEA)",
+  "aliases": [
+   "jerome polin",
+   "quiz challenge",
+   "can you solve"
+  ],
+  "what": "A timed question, a friend's funny wrong try, hint, answer + why, bonus fact, comment-your-time CTA.",
+  "brands": [
+   "physio-spot",
+   "power-protein",
+   "titan-ai"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "30-60 s",
+  "template": [
+   "Can you solve this in [N] seconds? [puzzle/question]",
+   "[Friend/guest] tries: [wrong answer, funny].",
+   "Hint: [clue].",
+   "Answer + why: [explanation].",
+   "Bonus fact: [culture/science nugget].",
+   "Comment your time below."
+  ],
+  "devices": "challenge, friends on camera, bilingual jokes",
+  "compliance": "No diagnosis-by-quiz; add 'see a professional for assessment'.",
+  "pairs": {
+   "edit": [
+    "quiz-reveal",
+    "street-interview"
+   ],
+   "animation": [
+    "flat-vector"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Waseda Weekly 2021; style research Part B #20"
+ },
+ {
+  "id": "aming-series",
+  "family": "script",
+  "name": "Warm daily series (SEA)",
+  "aliases": [
+   "khairul aming",
+   "30 days series",
+   "daily series",
+   "recipe series"
+  ],
+  "what": "Day X of a named series: tease, what you need, quick steps, cheeky aside, result moment, tomorrow's teaser.",
+  "brands": [
+   "power-protein",
+   "peachform"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts"
+  ],
+  "funnel": [
+   "TOFU",
+   "retention"
+  ],
+  "length": "30-60 s",
+  "template": [
+   "Day [X] of [series]: [dish/thing].",
+   "You need: [3-5 items].",
+   "Step: [quick step], [quick step].",
+   "[Cheeky aside].",
+   "[Taste/result moment].",
+   "Save this. Tomorrow: [next]."
+  ],
+  "devices": "series consistency, ASMR process, casual bilingual banter, save CTA",
+  "compliance": "Protein: VN claim rules, no 'cures'/'burns fat'. Originality matters (copycat backlash).",
+  "pairs": {
+   "edit": [
+    "fast-recipe",
+    "story-vlog"
+   ],
+   "animation": [
+    "claymation"
+   ]
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Kosmo; NST 2026; style research Part B #21"
+ },
+ {
+  "id": "noc-sg-sketch",
+  "family": "script",
+  "name": "SG observational sketch",
+  "aliases": [
+   "night owl cinematics",
+   "noc",
+   "singlish skit",
+   "things singaporeans say"
+  ],
+  "what": "Recognisable SG situation, stereotype riff list, escalation, twist/tag, tag-a-friend CTA.",
+  "brands": [
+   "physio-spot",
+   "peachform",
+   "klaus",
+   "personal-gym-skits"
+  ],
+  "platforms": [
+   "tiktok",
+   "reels",
+   "shorts",
+   "youtube"
+  ],
+  "funnel": [
+   "TOFU"
+  ],
+  "length": "30-90 s",
+  "template": [
+   "Things every Singaporean [persona] says at [place]:",
+   "\"[line 1]\"",
+   "\"[line 2]\" (escalate)",
+   "\"[line 3]\" (absurd)",
+   "Twist: [reversal/tag].",
+   "Tag the [friend] who does this."
+  ],
+  "devices": "Singlish, MRT/hawker/NS references, escalating exaggeration (localisation.md SG pack)",
+  "compliance": "Never mock patients or show testimonials; label dramatisation.",
+  "pairs": {
+   "edit": [
+    "sea-skit",
+    "absurd-sketch",
+    "deadpan-comedy"
+   ],
+   "animation": []
+  },
+  "avoid": "Borrow structure only: no catchphrases, signature openers, cadence imitation, voice clones or implied endorsement.",
+  "sources": "Wikipedia; Mothership 2022; style research Part B #22"
+ }
+]

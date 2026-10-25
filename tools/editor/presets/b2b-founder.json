@@ -1,0 +1,93 @@
+{
+  "name": "b2b-founder",
+  "label": "B2B founder talking head (LinkedIn)",
+  "kind": "pro",
+  "description": "Professional talking head: persistent top headline bar, burned captions with accent highlight, punch-in jump cuts, data callouts, name lower third, soft CTA.",
+  "structure": {
+    "name": "b2b-founder",
+    "target_s": [
+      45,
+      90
+    ],
+    "beats": [
+      "contrarian / numeric hook 0-3s",
+      "context / problem",
+      "2-3 numbered insights with callouts",
+      "proof / example",
+      "takeaway + soft CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.08,
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "max_words": 5,
+    "position_y": 0.78,
+    "uppercase": false,
+    "highlight": "#2F6FED",
+    "animation": "karaoke"
+  },
+  "zoom": {
+    "every_s": 5,
+    "scale": 1.12,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 12.0,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": "whoosh",
+      "title": "click",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0,
+    "warmth": 0.02
+  },
+  "hook_text": {
+    "max_words": 8,
+    "position_y": 0.16,
+    "dur_s": 90,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "1:1 (4:5 alt)",
+  "sync": {
+    "broll": "screen recordings, data charts, office/process on each insight; 20-30%",
+    "fillers": "punch-ins on numbers, number cards per insight",
+    "music": "very low or none; sound-off first (LinkedIn autoplays muted)",
+    "emotion_map": "challenge → recognition → insight → confidence",
+    "transitions": "hard cuts; the headline bar persists"
+  },
+  "brands": [
+    "TITAN.AI",
+    "Klaus",
+    "clinic directors"
+  ],
+  "funnel": [
+    "MOFU",
+    "BOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#b2b-founder"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "boards": {
+    "auto": true,
+    "mode": "panel",
+    "max": 4
+  }
+}

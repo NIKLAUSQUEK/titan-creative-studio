@@ -1,0 +1,93 @@
+{
+  "name": "tech-review-premium",
+  "label": "Premium review (MKBHD-style)",
+  "kind": "niche",
+  "description": "Calm authority: dark matte set, motion-control product glides, sparse spec callouts, balanced pros/cons, verdict.",
+  "structure": {
+    "name": "tech-review-premium",
+    "target_s": [
+      60,
+      900
+    ],
+    "beats": [
+      "cold-open product glide + question",
+      "intro sting",
+      "design / hardware",
+      "features with macro B-roll",
+      "drawbacks",
+      "verdict"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.12,
+    "max_shot_s": 8.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.8,
+    "uppercase": false,
+    "highlight": "#E1251B",
+    "animation": "static"
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.03,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 6,
+    "max_dur_s": 6.0
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": "whoosh",
+      "zoom": null,
+      "broll": "whoosh",
+      "title": "click",
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.97,
+    "warmth": -0.03,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 6,
+    "position_y": 0.2,
+    "dur_s": 2.5,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "16:9 (9:16 cut)",
+  "sync": {
+    "broll": "product macro on every feature mention, 3-6 s, ~50:50",
+    "fillers": "spec callouts, slow push-ins; no memes",
+    "music": "minimal electronic bed, slight swell on glides, thins for drawbacks; cuts on phrase ends, not beats",
+    "emotion_map": "intrigue → trust → desire → scepticism → resolution",
+    "transitions": "motion-control moves as transitions, match cuts"
+  },
+  "brands": [
+    "Power Protein product hero",
+    "TITAN.AI showreel",
+    "Physio Spot space/equipment"
+  ],
+  "funnel": [
+    "MOFU"
+  ],
+  "references": [
+    "https://rosetta.to/u/mkbhd/the-mkbhd-gear-tour-2019"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no comparative superlatives",
+    "an 'honest verdict' must not become a self-review testimonial (health)"
+  ]
+}

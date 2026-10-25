@@ -57,3 +57,18 @@ Build 6-8 recurring leads across heritages and builds (e.g. West African sprinte
 4. **No real names, team names, or brand logos in any prompt.**
 5. **Lookalike QC**: if the output reads as a recognisable real person → REGEN with 2 features changed.
 Generator: `scripts/roster_gen.py --n 8 --female-ratio 0.75 --seed 7` → balanced heritage/age/build cards.
+
+## Character sheet v2 (from reference workflows, 2026-10-25)
+Run this after the character card is approved (original character, or a real staff member with consent). **Never seed from an internet photo of a real person.**
+1. **Face Lock.** 4:3, highest resolution, forehead to upper chest, neutral expression, **18% grey seamless background**, flat shadowless catalog light, 50 mm look. **Pore-level skin texture is mandatory** (realism.md): ignore guides that ask for "no visible pores".
+2. **Two-panel body.** 16:9. Image 1 is the face lock; image 2 is an outfit and pose reference. Left panel: full-body front. Right panel: back view in the identical pose ("do not mirror"), divided by a thin line.
+3. **Five-panel merge.** 16:9, generated at 4K:
+   - large chest-up front portrait
+   - left profile and right profile (head and neck)
+   - **headless** full-body front, so the model reads the face only from the portrait
+   - full-body rear
+4. **Duplicate-face erase.** If any panel still shows a second face: "Erase the face from the full-body shot on the right panel."
+5. **Single-attribute edits ("Additions").** "Keep the same character-sheet layout, physical features and expression; facial structure must not change at all. Change only: [hair / accessory / tattoo / wardrobe item], as in the reference image."
+6. **State variants.** Use a separate sheet per state (dry/wet, clean/dirty, injured/recovering, uniform/casual), saved as `@handle_state`, and list them in the Asset Bible card's `variants[]` field.
+7. **Wardrobe ideation.** Ask for 10 outfit prompts, render them, then combine the best items into one prompt. Composite-mask the clothes onto the original still to keep detail (ai-video-playbook.md §10).
+8. **Motion test.** Keep 2 face candidates through a 480p motion test before locking (Gate 4).

@@ -1,0 +1,88 @@
+{
+  "name": "cinematic-vlog",
+  "label": "Cinematic vlog (Peter McKinnon / Casey Neistat)",
+  "kind": "pro",
+  "description": "Host-led vlog with cinematic B-roll: sensory cold open, speed ramps, whips, match cuts, jump-cut talking, time-lapse bridges, sincere long-take monologue.",
+  "structure": {
+    "name": "cinematic-vlog",
+    "target_s": [
+      45,
+      600
+    ],
+    "beats": [
+      "sensory B-roll cold open 0-5s",
+      "host hook to camera",
+      "segments bridged by B-roll montages",
+      "sincere monologue (long take)",
+      "payoff montage + sign-off"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08,
+    "max_shot_s": 5.0
+  },
+  "captions": {
+    "max_words": 3,
+    "position_y": 0.75,
+    "uppercase": true,
+    "highlight": "#FFB347",
+    "animation": "pop"
+  },
+  "zoom": {
+    "every_s": 5,
+    "scale": 1.1,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 5.0,
+    "max_dur_s": 2.0
+  },
+  "sfx": {
+    "density_per_10s": 3,
+    "map": {
+      "hook": "whoosh",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "impact",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 0.9,
+    "warmth": 0.04,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 5,
+    "position_y": 0.3,
+    "dur_s": 2.0,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "16:9 (9:16 cut)",
+  "sync": {
+    "broll": "sensory macro (coffee, gear, city) at section openers; speed-ramped transitions; ~50%",
+    "fillers": "whips, match cuts, time-lapses as bridges",
+    "music": "montages cut on downbeats; music out for the sincere monologue (L-cut ambience)",
+    "emotion_map": "sensation → energy → curiosity → sincerity → satisfaction",
+    "transitions": "whip pans with whoosh, match cuts, speed ramps"
+  },
+  "brands": [
+    "Klaus personal",
+    "gym/clinic atmosphere"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#mckinnon",
+    "research/sources-style-library.md#neistat"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references"
+}

@@ -1,0 +1,97 @@
+{
+  "name": "ugc-ad-hook-stack",
+  "label": "UGC ad hook-stack (paid social)",
+  "kind": "niche",
+  "description": "Native selfie UGC ad: emotion-first hook in 1.5 s, re-hook every 5-15 s, problem → product → proof → CTA. Make a hook matrix (same body, 3-5 hooks). Product brands only.",
+  "structure": {
+    "name": "ugc-ad-hook-stack",
+    "target_s": [
+      20,
+      40
+    ],
+    "beats": [
+      "hook (verbal + text + visual) 0-3s",
+      "problem 3-8s",
+      "product + demo",
+      "value props / proof",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05,
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.6,
+    "uppercase": false,
+    "highlight": "#00E676",
+    "animation": "karaoke",
+    "emoji": true
+  },
+  "zoom": {
+    "every_s": 4,
+    "scale": 1.12,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 5,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "map": {
+      "hook": "pop",
+      "zoom": "click",
+      "broll": "whoosh",
+      "title": "ding",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22
+  },
+  "grade": {
+    "contrast": 1.02,
+    "saturation": 1.03,
+    "warmth": 0.03
+  },
+  "hook_text": {
+    "max_words": 6,
+    "position_y": 0.2,
+    "dur_s": 2.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "product-in-use on product name/benefit words, 1.5-3 s, ~55:45",
+    "fillers": "re-hook text card every 5-15 s, snap zooms, reaction cutaways",
+    "music": "low licensed bed or none; no drops",
+    "emotion_map": "frustration → curiosity → relief → trust → urgency",
+    "transitions": "jump cuts, hand-cover/whip into B-roll"
+  },
+  "brands": [
+    "Power Protein",
+    "PeachForm",
+    "TITAN.AI client ads"
+  ],
+  "funnel": [
+    "TOFU",
+    "BOFU"
+  ],
+  "references": [
+    "https://ugcsocial.substack.com/p/hook-stacking-the-secret-to-longer",
+    "https://www.gotolstoy.com/blog/how-to-structure-ugc-ads"
+  ],
+  "evidence": "medium (practitioner guides, vendor-biased)",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording",
+    "disclose paid partnerships",
+    "NOT for SG clinics in proof/testimonial form; clinics use the structure with a clinician presenting education"
+  ]
+}

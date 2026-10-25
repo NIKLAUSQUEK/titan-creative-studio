@@ -1,0 +1,474 @@
+[
+ {
+  "id": "listicle",
+  "family": "carousel",
+  "name": "Listicle",
+  "aliases": [
+   "list",
+   "top 5"
+  ],
+  "what": "Hook with a number -> re-hook -> one item per slide (headline + why + mini visual) -> recap grid + save CTA",
+  "best_for": "everything",
+  "cards": [
+   "title",
+   "list",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "step-by-step",
+  "family": "carousel",
+  "name": "Step-by-step",
+  "aliases": [
+   "how to",
+   "steps",
+   "tutorial carousel"
+  ],
+  "what": "Outcome promise -> who/what you need -> numbered steps with a 'common error' sticker -> full sequence slide -> save + try",
+  "best_for": "exercises, recipes, AI workflows",
+  "cards": [
+   "title",
+   "steps",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "myth-vs-fact",
+  "family": "carousel",
+  "name": "Myth vs fact",
+  "aliases": [
+   "myth",
+   "myth fact",
+   "myths"
+  ],
+  "what": "'Stop believing these 5...' -> MYTH (red) -> FACT (green + tiny source), repeated -> 'Which surprised you?'",
+  "best_for": "protein, physio",
+  "cards": [
+   "title",
+   "myth_fact",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "mistake-fix",
+  "family": "carousel",
+  "name": "Mistake -> fix",
+  "aliases": [
+   "doing it wrong",
+   "mistakes"
+  ],
+  "what": "'You're doing X wrong' -> why it matters -> wrong/right split pairs -> checklist -> CTA",
+  "best_for": "fitness form, prompts",
+  "cards": [
+   "title",
+   "compare",
+   "list",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "framework",
+  "family": "carousel",
+  "name": "Framework",
+  "aliases": [
+   "model",
+   "system",
+   "framework carousel"
+  ],
+  "what": "Name it -> problem it solves -> full diagram -> one element per slide -> worked example -> diagram again ('screenshot this') -> CTA",
+  "best_for": "AI agency, founder",
+  "cards": [
+   "title",
+   "steps",
+   "definition",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "story",
+  "family": "carousel",
+  "name": "Story",
+  "aliases": [
+   "story carousel",
+   "founder story"
+  ],
+  "what": "In-scene tension -> one beat per slide, photo-led, 1-2 lines -> lesson -> how it applies to you -> follow",
+  "best_for": "founder",
+  "cards": [
+   "title",
+   "quote",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "before-after",
+  "family": "carousel",
+  "name": "Before / after (non-health)",
+  "aliases": [
+   "before after",
+   "transformation"
+  ],
+  "what": "Workflow/setup/routine before -> after. NEVER body or treatment results for SG health",
+  "best_for": "AI agency",
+  "cards": [
+   "title",
+   "compare",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "comparison",
+  "family": "carousel",
+  "name": "Comparison table",
+  "aliases": [
+   "vs",
+   "comparison",
+   "which is better"
+  ],
+  "what": "'X vs Y: which is right for you?' -> criteria -> one criterion per slide -> full table -> 'Choose X if...' -> CTA. Categories, never named competitors with superlatives",
+  "best_for": "protein types, AI tools",
+  "cards": [
+   "title",
+   "compare",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "data",
+  "family": "carousel",
+  "name": "Data / infographic",
+  "aliases": [
+   "stats",
+   "infographic carousel",
+   "data carousel"
+  ],
+  "what": "Big stat + source -> why it matters -> one chart per slide -> so-what -> sources slide -> CTA",
+  "best_for": "physio, AI",
+  "cards": [
+   "stat",
+   "chart",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "checklist",
+  "family": "carousel",
+  "name": "Checklist / cheat sheet",
+  "aliases": [
+   "cheat sheet",
+   "checklist"
+  ],
+  "what": "Title -> grouped checklists -> whole sheet on one screenshot-friendly slide -> save",
+  "best_for": "all",
+  "cards": [
+   "title",
+   "list",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "case-study",
+  "family": "carousel",
+  "name": "Case study (non-testimonial)",
+  "aliases": [
+   "case study",
+   "composite case"
+  ],
+  "what": "Problem pattern -> what we assess -> what research says -> typical pathway -> 'timelines vary / see a professional'. No patient quotes/outcomes/photos; labelled composite",
+  "best_for": "physio",
+  "cards": [
+   "title",
+   "steps",
+   "definition",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "SG health: no testimonials/outcomes/patient photos; sources on stats",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "thought-leadership",
+  "family": "carousel",
+  "name": "Quote / thought leadership",
+  "aliases": [
+   "contrarian carousel",
+   "opinion"
+  ],
+  "what": "Bold contrarian line -> one point per slide in large type -> counter-argument -> conclusion -> 'Agree or disagree?'",
+  "best_for": "founder, B2B",
+  "cards": [
+   "quote",
+   "title",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "save-this",
+  "family": "carousel",
+  "name": "'Save this' reference",
+  "aliases": [
+   "reference",
+   "bookmark",
+   "swipe file"
+  ],
+  "what": "'Bookmark this for your next ___' -> dense ordered tables/swaps/prompts -> everything on one slide",
+  "best_for": "protein, AI prompts",
+  "cards": [
+   "title",
+   "list",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "product-feature",
+  "family": "carousel",
+  "name": "Product feature",
+  "aliases": [
+   "product carousel",
+   "features"
+  ],
+  "what": "Benefit hook (not product name) -> problem -> one feature = one benefit + close-up -> how to use -> specs/FAQ -> where to buy. No disease claims",
+  "best_for": "protein, apparel",
+  "cards": [
+   "title",
+   "list",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "meme",
+  "family": "carousel",
+  "name": "Meme",
+  "aliases": [
+   "meme carousel",
+   "relatable"
+  ],
+  "what": "Relatable template -> escalating variations -> branded twist -> 'send to a friend who...'",
+  "best_for": "fitness, founder",
+  "cards": [
+   "title",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ },
+ {
+  "id": "tweet-style",
+  "family": "carousel",
+  "name": "Tweet-style / text-only",
+  "aliases": [
+   "text only",
+   "tweet carousel"
+  ],
+  "what": "Screenshot-style card, one thought per slide -> summary",
+  "best_for": "founder, LinkedIn",
+  "cards": [
+   "title",
+   "quote",
+   "cta"
+  ],
+  "route": "Cards engine: editor.py cards SPEC.json (--aspect 4:5 IG / 1:1 or 4:5 LinkedIn PDF / 9:16 TikTok photo mode); copy rules carousels-statics.md §4-5",
+  "platforms": [
+   "instagram",
+   "linkedin",
+   "tiktok",
+   "facebook"
+  ],
+  "funnel": [
+   "TOFU",
+   "MOFU"
+  ],
+  "compliance": "",
+  "sources": "carousels-statics.md §3"
+ }
+]

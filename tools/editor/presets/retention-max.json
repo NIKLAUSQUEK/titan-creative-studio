@@ -1,0 +1,93 @@
+{
+  "name": "retention-max",
+  "label": "Retention-max (MrBeast-style)",
+  "kind": "viral",
+  "description": "Promise-matched cold open, stakes in 5 s, stair-step escalation with re-engagement spikes, abrupt end. 2024 style lets scenes breathe (~23 cuts/min long-form).",
+  "structure": {
+    "name": "retention-max",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "show the thumbnail promise 0-3s",
+      "stakes + rules 3-10s",
+      "early wow by ~30s (Shorts: by 5s)",
+      "escalate every segment; spike ~every 15s (Shorts) / ~3:00 & ~6:00 (long)",
+      "payoff, hard cut, no outro"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05,
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "max_words": 3,
+    "position_y": 0.62,
+    "uppercase": true,
+    "highlight": "#FFE500",
+    "animation": "pop",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 3,
+    "scale": 1.12,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 1.5
+  },
+  "sfx": {
+    "density_per_10s": 3,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 1.15,
+    "warmth": 0.03
+  },
+  "hook_text": {
+    "max_words": 5,
+    "position_y": 0.18,
+    "dur_s": 2.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "scale wides, drone, prize/number inserts on every stake or number word, 0.5-2 s, ~70:30 A:B, full-frame",
+    "fillers": "reaction cutaways every few cuts, snap zooms on punchlines, timer/number cards; interrupt every 3-5 s (Shorts)",
+    "music": "continuous upbeat cue that switches per segment; 0.5-1 s drop-out before each reveal then impact; montages on the beat",
+    "emotion_map": "curiosity → awe → investment → tension (ticking, drones) → spike (riser+hit) → triumph → abrupt cut",
+    "transitions": "hard cuts, whip/zoom between segments, 'Day 3' time-skip cards"
+  },
+  "brands": [
+    "TITAN.AI",
+    "Power Protein",
+    "Klaus personal"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://www.alexanderjarvis.com/memo-how-to-succeed-in-mrbeast-production/",
+    "https://tubefilter.com/2024/03/04/mrbeast-editing-style-number-of-cuts-per-video/",
+    "https://passionfru.it/youtube-editing-mrbeast-54202/"
+  ],
+  "evidence": "high for structure (production memo, measured cuts/min); captions/SFX est.",
+  "compliance_lock": [
+    "health brands: no prizes/giveaways (inducements), no superlatives"
+  ]
+}

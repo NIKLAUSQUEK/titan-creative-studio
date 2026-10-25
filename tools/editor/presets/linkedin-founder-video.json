@@ -1,0 +1,96 @@
+{
+  "name": "linkedin-founder-video",
+  "label": "LinkedIn native vertical founder video",
+  "kind": "pro",
+  "description": "Vertical/4:5 founder talking to the ICP: promise in line 1 and first spoken sentence, 2-4 word captions in the lower third, B-roll/screen recordings every 3-6 s on key nouns, explainer boards on numbers/steps, ducked low bed, one CTA line. 30-75 s.",
+  "structure": {
+    "name": "linkedin-founder-video",
+    "target_s": [
+      30,
+      75
+    ],
+    "beats": [
+      "promise said in the first sentence (matches post line 1)",
+      "context: who this is for / the problem",
+      "2-3 steps or insights, each with a board or B-roll",
+      "proof (own numbers, screen recording)",
+      "one CTA line (save / send / newsletter)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.08,
+    "max_shot_s": 5.0
+  },
+  "captions": {
+    "max_words": 3,
+    "position_y": 0.72,
+    "uppercase": false,
+    "highlight": "#2F6FED",
+    "animation": "karaoke"
+  },
+  "zoom": {
+    "every_s": 6,
+    "scale": 1.08,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 4.5,
+    "max_dur_s": 2.5
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": "click",
+      "board": "click",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0,
+    "warmth": 0.02
+  },
+  "hook_text": {
+    "max_words": 7,
+    "position_y": 0.14,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16 (4:5 alt)",
+  "sync": {
+    "broll": "screen recordings, workplace, product UI on key nouns every 3-6 s; ~25-35%",
+    "fillers": "panel boards on numbers/steps/definitions; gentle push-ins",
+    "music": "very low bed ducked under voice or none (79% sound-off, LinkedIn 2021)",
+    "emotion_map": "recognition → insight → confidence",
+    "transitions": "hard cuts; no whooshes"
+  },
+  "brands": [
+    "TITAN.AI",
+    "Klaus",
+    "clinic directors"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "marketing-engine/references/linkedin-playbook.md#9-video",
+    "research/sources-linkedin.md"
+  ],
+  "evidence": "van der Blom 2025 (vertical, <1 min, captions, you as the star) + LinkedIn Help specs; numbers are starting points",
+  "boards": {
+    "auto": true,
+    "mode": "panel",
+    "max": 5
+  },
+  "compliance_lock": "clinic directors: educational only, no patients on camera, no offers, credentials accurate"
+}

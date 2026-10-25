@@ -1,0 +1,90 @@
+{
+  "name": "motion-explainer",
+  "label": "Motion-graphics explainer (Kurzgesagt-style)",
+  "kind": "pro",
+  "description": "No host: flat-vector animation timed to VO, saturated palette, consistent character set, gentle score, chapter cards.",
+  "structure": {
+    "name": "motion-explainer",
+    "target_s": [
+      60,
+      600
+    ],
+    "beats": [
+      "premise question 0-15s",
+      "title sting",
+      "concept chapters",
+      "scale / twist",
+      "reflective synthesis"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.1,
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "max_words": 5,
+    "position_y": 0.85,
+    "uppercase": false,
+    "highlight": "#FFD23F",
+    "animation": "fade"
+  },
+  "zoom": {
+    "every_s": 0,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 4.0,
+    "max_dur_s": 8.0
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "riser",
+      "zoom": null,
+      "broll": "pop",
+      "title": "impact",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -20
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.15
+  },
+  "hook_text": {
+    "max_words": 7,
+    "position_y": 0.2,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "16:9 (9:16 shorts cut)",
+  "sync": {
+    "broll": "100% animation (higgsfield-video-explainer / motion-design.md); each sentence gets a visual idea",
+    "fillers": "pops and small motion accents on labels; no live-action memes",
+    "music": "ambient/electronic score that swells at the scale moment and thins for reflective lines",
+    "emotion_map": "curiosity → awe (scale) → understanding → calm reflection",
+    "transitions": "morphs and camera moves inside the illustration"
+  },
+  "brands": [
+    "Physio Spot/heal360 anatomy explainers",
+    "TITAN.AI"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#kurzgesagt"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "boards": {
+    "auto": true,
+    "mode": "full",
+    "max": 8
+  }
+}

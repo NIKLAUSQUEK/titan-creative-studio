@@ -1,0 +1,81 @@
+{
+  "name": "silent-deadpan",
+  "label": "Silent deadpan fix (Khaby Lame-style)",
+  "kind": "viral",
+  "description": "Over-complicated 'hack' (recreated with our own cast) → static deadpan stare → the obvious simple way → long hold → palms-up gesture. No speech, no captions.",
+  "structure": {
+    "name": "silent-deadpan",
+    "target_s": [
+      10,
+      25
+    ],
+    "beats": [
+      "over-complicated hack 0-6s",
+      "cut to deadpan stare",
+      "simple fix",
+      "2-3 s hold",
+      "gesture / end"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 3.0,
+    "pad_s": 0.3,
+    "max_shot_s": 12.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": null,
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "none",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "the source hack is the 'B' (~40:60 hack:reaction)",
+    "fillers": "none; the silent hold is the joke",
+    "music": "none or very low; silence carries the punchline",
+    "emotion_map": "disbelief → anticipation → release → shared smugness",
+    "transitions": "hard cuts only"
+  },
+  "brands": [
+    "Physio Spot (myth stretch vs correct one)",
+    "Power Protein"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://krdo.com/news/national-world/cnn-world/2021/10/02/hes-the-most-popular-man-on-tiktok-and-he-doesnt-say-a-word/",
+    "https://shapes.inc/fandom/khaby-lame/content-style"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "recreate hacks with our cast, never stitch others without rights",
+    "health: the correct way is factual, not 'the only' way"
+  ]
+}

@@ -13,6 +13,7 @@ Works for any person: `<who>` = `.studio/active_brain` (Klaus = `klaus`; new peo
 - `brains/<who>/journal/` - raw interview answers. `brains/<who>/stories/` - story cards (`_TEMPLATE.md`).
 - `references/question-bank.md` - provoking questions by era and theme.
 - `references/story-engine.md` - goals, trope stances, hook formulas, structures, emotive language, short vs long form.
+- `references/storytelling-playbook.md` - why stories work (and myths not to cite), 12 structures and when to use each, character (want/need, abstract villains, brand as guide), scene craft (value turns, 2+2, setups/payoffs, comedy), short-form mechanics + retention map, brand/founder/B2B stories, SG health-safe customer stories, documentary method, SEA festive storytelling, 20 timed templates, story diagnosis, 30 prompts.
 - `references/corpus.md` - how to pull model passages from Supabase `titan_corpus` (5,472 tagged passages from great writers, screenplays, ad scripts and narrative theory).
 
 ## Mode 1 - Interview (biographer agent, `/journal`)

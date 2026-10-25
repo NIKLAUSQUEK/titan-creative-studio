@@ -99,5 +99,7 @@ After delivering, ask 2 quick things (tappable): overall verdict (ship / tweak /
 - **Cinematic ads, story-led shorts, skits (DEFAULT FLOW)** -> `references/cinematic-ad-director.md`: Gate 1 brief intake → Gate 2 five story directions (diversity matrix + 13-field cards, one Recommended) → Gate 3 second-by-second production script → spec → render. Default stack: Seedance 2.5 omni_reference (draft→1080p high bitrate) + Genjutsu for performance-critical shots + 4K upscale on the final.
 - **Physio Spot ads** -> `references/physio-spot-ad-brief-v4.md` (sections 4-8 are the production standard, section 7 always applies)
 - **Skit / dialogue short** -> `references/playbook-skit.md`
-- **Carousel (4:5, 6-10 slides)** -> `references/playbook-carousel.md`
+- **Carousel (4:5, 6-10 slides)** -> `references/playbook-carousel.md` (quick spec) + `.claude/skills/marketing-engine/references/carousels-statics.md` (archetypes, hooks, type sizes, QC)
+- **Any AI video (ads, shorts, films)** -> `references/ai-video-playbook.md`: model routing Oct 2026, edit-before-generate pre-production, shot-list prompt anatomy, hybrid workflows (Genjutsu, real footage + AI inserts), slop fixes, disclosure law, AI QC rubric, SOPs, 10 shot templates.
+- **Edit style menu / "edit like…"** -> `references/style-catalog.md` (44 presets with brand/funnel fit and compliance locks); beat-by-beat B-roll/music sync -> `story-sync` skill.
 - **Clinic / educational explainer, product ad, UGC** -> `references/prompt-patterns.md` + Higgsfield's own workflows (`get_workflow_instructions`: ugc-video, product-photoshoot, thumbnail-generation, video-montage for captions/assembly, brand-asset-creation).

@@ -46,6 +46,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | aura-cinematic | statement edits: slow pushes, minimal words, riser, crushed grade + vignette |
 | documentary | VO-led, B-roll every ~4 s, lower-thirds, sentence captions |
 | ugc-selfie-talking-head · ugc-unboxing · ugc-try-on-demo · ugc-reaction · ugc-pov · ugc-testimonial-style · ugc-day-in-the-life · ugc-green-screen | UGC formats; each preset carries its typical beat structure, pacing and caption style |
+| **30 researched styles** (retention-max, story-vlog, clean-explainer, luxury-broll, moral-skit, magic-transition, silent-deadpan, podcast-clip, street-interview, storytime-text, product-hero, manifesto-montage, map-explainer, motion-explainer, cinematic-vlog, doc-trailer, absurd-sketch, mascot-unhinged, clinic-trust, b2b-founder, myth-buster-expert, exercise-demo, doctor-reacts, raw-gym-vlog, aesthetic-lifestyle, fast-recipe, tech-review-premium, ugc-ad-hook-stack, sea-skit, sensitive-health-edu) | pick from `style-catalog.md` (use-for, brands, funnel, compliance locks); each carries a `sync` block (B-roll, fillers, music, emotion map) used by the story-sync skill |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 
 - **Precedence:** ledger > brand file (the `edit-brand` block) > Klaus's script/brief > preset > defaults. The brand block wins on fonts, caption/hook placement, colours and the end card.
@@ -73,3 +74,29 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **SFX:** density and stim types follow the preset (see `voice-persona-audio.md` stim map).
 - **Compliance:** the QC word scan uses the brand's `compliance.forbid_words` plus the health pack list for health/clinic brands. It is a tripwire, not legal review: still run the compliance pack in `/publish`.
 - **B-roll consent:** clips flagged by path markers, `broll_flags.json` or Creator Brain sensitivity are never auto-picked.
+
+## 7. QC checks, staged passes and handoff (added 2026-10-25 from Klaus's reference videos)
+- **Critique before cutting.** The brief's `critique[]` holds "watch it all, tell me what would make it better" notes, each with its fix. It shows up in `EDIT_BRIEF.md`.
+- **Edit in staged passes, one recipe version per pass:** cut → captions → B-roll → style → graphics. Never ask for everything in one note.
+- **New `qc` checks:**
+  - **No leaked retakes.** Fails if any 6-word run is spoken twice in the cut.
+  - **Script coverage.** When `brief.script_lines` holds the approved script, every line must appear once, in order.
+  - **Face occlusion.** OpenCV face boxes are compared against the caption and hook-text boxes on the 9:16 render. Fails if text covers a face. Needs `opencv-python-headless<5` (installed by `Run-Editor.ps1`); otherwise the check is skipped and noted in the report.
+  - **Attribution manifest.** `qc/ATTRIBUTION_vN.md` lists every music, B-roll and SFX file with licence, scope, source and credit line, taken from `assets/licences.csv` (columns: path, source_url, licence, scope, attribution). Unknown licences are flagged; `/publish` copies the credit lines into the description. YouTube Audio Library or "free" stock assets need a row, with platform scope, before they go on brand accounts.
+- **Human-editor handoff.** `editor.py export [--version N]` writes `edit_vN.edl` (CMX3600: the A-roll cut plus B-roll on V2, with source file names) for finishing in Premiere or Resolve. Captions and graphics stay in the burned render.
+- **Quiz-reveal preset.** `quiz-reveal`: question card → countdown → reveal → "what did you guess?".
+- **Roadmap (not built yet; see `research/sources-reference-videos.md`):**
+  - a boards pipeline (per-line "needs a visual?" planner → HTML boards from the brand design system → word-timestamp sync → HyperFrames render → `boards` layer)
+  - human-edit diff learning (re-read the edited timeline and propose `/learn` rules)
+  - `decode-style <reference>` → preset JSON
+  - person-tagged B-roll library (cast photos → tags, action captions)
+  - an optional script-following teleprompter that logs takes (local speech recognition only, for client privacy)
+
+## 8. Boards and cards (explainer graphics, carousels, LinkedIn PDFs)
+- **Boards** = animated brand cards over the video, timed to the word: `boards[]` in the recipe (`{id, card, anchor, dur, mode}`). `mode: panel` keeps the speaker visible (card in the top ~40 %, panel shrinks to its content); `mode: full` replaces the frame and auto-hides captions while it is up (the VO keeps playing).
+- **Card types:** title, stat (counts up), list, steps, quote, compare, definition, myth_fact, chart (bars grow), cta. `*word*` = highlight colour. Brand colours/fonts come from the `edit-brand` block (`colors`, `fonts`, optional `cards` overrides, `handle`); brand font files in `assets/fonts/<brand>/`.
+- **Planning (0 tokens):** `editor.py boards [--mode panel|full --max N --dry-run]` runs the "understandable by listening alone?" test per spoken phrase (numbers, dates, steps, definitions) and drafts cards; presets with `"boards": {"auto": true}` (clean-explainer, b2b-founder, linkedin-founder-video, motion-explainer, myth-buster-expert, map-explainer) plan them at assemble. Drafted stat cards carry `_todo: add source`; Claude or Klaus finishes the copy in the recipe.
+- **QC:** every stat/chart board has a `source`; no `_todo` left; each board ≥ 2 s on screen. Board-in SFX uses the preset's `sfx.map.board` (else `title`).
+- **Revise phrases:** "no boards", "boards full", "boards panel".
+- **Carousels / LinkedIn documents:** `editor.py cards SPEC.json --aspect 4:5|1:1|9:16|16:9 [--brand B --out DIR --no-pdf]` → `slide_NN.png` + `slides.pdf` + `contact_sheet.jpg` (page numbers, handle, "swipe →"). Spec = `{"brand", "aspect", "theme": {...}, "cards": [...]}`. Look at the contact sheet before calling it done. Archetypes: `styles/carousel.json`.
+- Premium path: the same card JSON drives HyperFrames/Remotion when a piece needs bespoke motion.

@@ -1,0 +1,96 @@
+{
+  "name": "story-vlog",
+  "label": "Story vlog / serial challenge (Ryan Trahan-style)",
+  "kind": "viral",
+  "description": "Earnest serialized challenge diary: one-line rules, named recurring segments, running counter, a heart moment, cliffhanger to the next episode.",
+  "structure": {
+    "name": "story-vlog",
+    "target_s": [
+      45,
+      90
+    ],
+    "beats": [
+      "tease + one-line challenge 0-8s",
+      "recap / counter",
+      "named segments + obstacle + stranger/heart moment",
+      "setback → small win, counter update",
+      "reflection + next-episode cliffhanger"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.1,
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "max_words": 5,
+    "position_y": 0.7,
+    "uppercase": false,
+    "highlight": "#FFD166",
+    "animation": "fade",
+    "emoji": true
+  },
+  "zoom": {
+    "every_s": 8,
+    "scale": 1.08,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 12,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 1,
+    "map": {
+      "hook": "ding",
+      "zoom": "pop",
+      "broll": "whoosh",
+      "title": "click",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.08,
+    "warmth": 0.06
+  },
+  "hook_text": {
+    "max_words": 7,
+    "position_y": 0.2,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "establishing shots between locations, time-lapse on 'later that day', receipts/screens as PiP; ~80:20",
+    "fillers": "comedic cutaway that proves/contradicts the line every 20-40 s, freeze + label on introductions, counter graphics",
+    "music": "soft bed under talk, cut out for jokes and heartfelt lines, swell on the win, montages on the beat",
+    "emotion_map": "amusement → curiosity → anxiety (music drops, ambience only) → warmth (acoustic swell) → pride → anticipation",
+    "transitions": "hard cuts, location title cards, time-lapse bridges"
+  },
+  "brands": [
+    "Klaus personal",
+    "TITAN.AI build-in-public",
+    "PeachForm/Power Protein creator challenges"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://news.thepublishpress.com/p/inside-ryan-trahan-s-50-day-youtube-marathon-d08f84877f8a7a62",
+    "https://colinandsamir.com/resources/how-ryan-trahan-changed-youtube-with-0-01"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording",
+    "health brands: staff-led challenges only, no patient journeys (testimonial)"
+  ]
+}

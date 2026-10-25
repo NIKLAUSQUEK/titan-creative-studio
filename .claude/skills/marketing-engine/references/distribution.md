@@ -1,6 +1,6 @@
 # Distribution playbook
 
-Specs table lives in `repurpose-waterfall.md` §2 (verify in-app; specs change). Every package passes `compliance-sg.md` first for health brands. Klaus posts; we package.
+Specs table lives in `repurpose-waterfall.md` §2 (verify in-app; specs change). Every package passes `compliance-sg.md` first for health brands, then the **platform-fit gate** (`platform-signals.md` §8: how each platform ranks, originality, AI/paid labels, legitimate account ops). Klaus posts; we package.
 
 ## 1. Universal caption formula
 ```
@@ -10,6 +10,7 @@ Line 5  WISDOM / TAKEAWAY (Klaus's verbatim line where possible)
 Line 6  CTA (one action matched to funnel stage: follow / save / comment <word> / read / WhatsApp)
 Line 7  keywords / hashtags (per platform rules below)
 ```
+Line 1 carries the piece's `search_keyword` in plain local words (captions are search input everywhere; public IG pro-account posts are Google-indexed). Hashtags help categorisation, not reach (Mosseri): fewer, specific ones.
 Write in the brand's voice (`brands/<brand>.md` §5, plus `brains/<who>/identity/profile.md` when founder-led). One CTA only. Health brands: CTA is a neutral next step ("WhatsApp us to book an assessment"), never a free/discount offer.
 
 ## 2. Per-platform playbook
@@ -20,7 +21,7 @@ Write in the brand's voice (`brands/<brand>.md` §5, plus `brains/<who>/identity
 - Pin a comment that adds context or a source.
 
 ### Instagram (Reels, carousels, Stories)
-- Reels: as TikTok; cover frame designed for the 3:4 grid crop. Caption keyword-first (IG search indexes captions - RoT). Hashtags: 3-5 relevant (Instagram has repeatedly advised few, relevant hashtags; verify the current cap in-app).
+- Reels: as TikTok; cover frame designed for the 3:4 grid crop. Caption keyword-first (IG search indexes captions - RoT). Hashtags: 3-5 relevant; **hard cap 5** (Instagram, Dec 2025). Ranking = watch time, likes/reach, **sends/reach** (sends matter most for non-followers): build a "send this to…" reason into every Reel. Test hooks with **Trial Reels** (non-followers first).
 - Carousels: playbook-carousel.md; last slide = save/share prompt + CTA; caption repeats slide 1 hook in other words. Add alt text per image (accessibility + context).
 - Stories: daily lightweight - poll, question box, BTS, link sticker to the week's hero. Use answers as content ideas.
 - Collab posts with brand account when founder content features the clinic.
@@ -49,9 +50,16 @@ Question to the reader (invites comments that are about them, not us)
 
 ### Facebook
 - Reels cross-post from IG (Meta Business Suite) + 4:5 feed video for older/local audiences. Groups: answer questions as Klaus, no link-dropping.
+- Meta's own best practice: captions with no links, minimal capitals, ≤ 5 hashtags; no third-party watermarks.
 
 ### X / Threads
 - One idea per post; thread = hook post + 3-6 posts + recap + link. Pull lines from the hero transcript. Threads: conversational, 500 chars.
+
+### Xiaohongshu (RedNote) — Chinese-speaking SG/MY audiences
+- Note = search answer (platform-signals.md §5.1): title ≤ 20 chars with the keyword, structured body ≤ 1,000 chars, 5-10 relevant tags, 3:4 cover with big Chinese hook text, up to 18 images (guides, tables, "how to choose").
+- Native-written Simplified Chinese with SG/MY context. No 最/第一/最佳, no efficacy or cure claims, no testimonials/before-afters, no fabricated "素人" reviews.
+- **Never** put WhatsApp/WeChat IDs, phone numbers, QR codes or links in notes, comments, profile or auto-replies. Leads via 社媒名片 / 私信获客·留资 tools / XHS shop. Paid creators only via 蒲公英. Declare AI content.
+- Douyin / WeChat Channels: only with a licensed China partner (§5.2-5.3); never self-register with borrowed IDs or VPNs.
 
 ### Newsletter / blog
 ```
@@ -100,6 +108,7 @@ Checklist: see §5
 [ ] Post time from account analytics (not a generic "best time")
 [ ] First-hour plan: pinned comment, who replies, Stories share
 [ ] Log the post URL + hero_id in the calendar row (for /review)
+[ ] Platform-fit gate PASS (platform-signals.md §8): hook ≤ 3 s, search_keyword said/shown/written, send/save trigger, original + clean export, hashtag caps, AI/paid labels, posted via role-based access
 ```
 
 ## 6. Comments / community reply playbook
@@ -111,7 +120,8 @@ Checklist: see §5
 - Log recurring questions + pains to `marketing/reviews/` → they feed pillars and the calendar.
 
 ## 7. Cross-posting rules
-- Same video can go to TikTok, Reels, Shorts, FB Reels; export clean files without another platform's watermark (Instagram has said it de-prioritises recycled watermarked content - Instagram/@mosseri statements; verify current guidance).
+- Same video can go to TikTok, Reels, Shorts, FB Reels; export clean files without another platform's watermark (IG shows watermarked/already-posted Reels less; TikTok treats other-platform watermarks as FYF-ineligible).
+- Only our own content gets cross-posted. Never repost others' work with crop/zoom/speed/colour tweaks to dodge detection: every platform says those edits are not original, and disguising them is circumvention (platform-signals.md §4).
 - Re-write caption, hook text and hashtags per platform; change the cover.
 - Stagger by hours/days, not the same minute, so you can learn which platform leads.
 - LinkedIn and newsletter get rewritten text, not pasted captions.

@@ -1,0 +1,90 @@
+{
+  "name": "doc-trailer",
+  "label": "Documentary trailer (Netflix true-story style)",
+  "kind": "pro",
+  "description": "Three-act trailer: bite over black, title cards, accelerating montage on risers, silence, button line, title + date.",
+  "structure": {
+    "name": "doc-trailer",
+    "target_s": [
+      60,
+      120
+    ],
+    "beats": [
+      "cold-open bite over black 0-8s",
+      "act 1 setup",
+      "act 2 complication",
+      "act 3 accelerating montage",
+      "silence + button line",
+      "title / date card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.8,
+    "pad_s": 0.2,
+    "max_shot_s": 4.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "max_words": 5,
+    "position_y": 0.5,
+    "uppercase": true,
+    "highlight": "#C8102E",
+    "animation": "fade",
+    "font": "DejaVu Serif"
+  },
+  "zoom": {
+    "every_s": 4,
+    "scale": 1.05,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 3.0,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "impact",
+      "zoom": "riser",
+      "broll": "whoosh",
+      "title": "impact",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.18,
+    "saturation": 0.78,
+    "warmth": -0.06,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 6,
+    "position_y": 0.5,
+    "dur_s": 2.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "16:9 (9:16, 4:5 cutdowns)",
+  "sync": {
+    "broll": "archival, interviews, establishing; shot length shrinks act by act",
+    "fillers": "title cards as act breaks, flash cuts in act 3 (no repeated white flashes)",
+    "music": "ambient → pulse → riser-driven climax → hard silence → button sting",
+    "emotion_map": "intrigue → unease → dread/urgency → shock (silence) → must-watch",
+    "transitions": "cuts to black, hard cuts on hits"
+  },
+  "brands": [
+    "Klaus origin story",
+    "TITAN.AI client case-study docs"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#doc-trailer"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references"
+}

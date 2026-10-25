@@ -1,0 +1,91 @@
+{
+  "name": "storytime-text",
+  "label": "Storytime over satisfying B-roll (faceless split)",
+  "kind": "viral",
+  "description": "Original story (never scraped posts) told by VO over looping brand-owned satisfying B-roll, word-by-word captions on the seam, verdict question or Part 2 ending.",
+  "structure": {
+    "name": "storytime-text",
+    "target_s": [
+      45,
+      65
+    ],
+    "beats": [
+      "most dramatic line 0-3s",
+      "setup 3-15s",
+      "escalation 15-40s",
+      "twist 40-50s",
+      "verdict question / Part 2 50-60s"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.15,
+    "pad_s": 0.03,
+    "max_shot_s": 60.0
+  },
+  "captions": {
+    "max_words": 2,
+    "position_y": 0.5,
+    "uppercase": true,
+    "highlight": "#FFE500",
+    "animation": "pop",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 0
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 60
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "map": {
+      "hook": "pop",
+      "zoom": null,
+      "broll": null,
+      "title": "ding",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.1
+  },
+  "hook_text": {
+    "max_words": 8,
+    "position_y": 0.1,
+    "dur_s": 3.0,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "brand-owned satisfying loop (taping, protein pour, gym) fills one half for the whole piece",
+    "fillers": "caption pops, 'Part 1' / 'wait for it' cards",
+    "music": "none or very low so the VO dominates",
+    "emotion_map": "intrigue → indignation → suspense → shock → judgement urge",
+    "transitions": "none; cut the series at a cliffhanger"
+  },
+  "brands": [
+    "Klaus personal",
+    "PeachForm",
+    "Physio Spot (fictional parables)"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://ghostshorts.com/blog/how-to-make-reddit-story-videos-for-tiktok-2026",
+    "https://www.kapwing.com/resources/how-to-make-tiktok-videos-from-reddit-stories/"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "original scripts only (no Reddit/others' posts)",
+    "label AI voice",
+    "health: fictional + educational, never first-person 'I was cured'"
+  ]
+}
