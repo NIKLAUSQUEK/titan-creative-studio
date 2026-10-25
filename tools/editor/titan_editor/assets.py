@@ -3,6 +3,7 @@
 Where an image comes from (card "image" field):
   "assets/people/klaus/stage.jpg"   a path (repo-relative or absolute)
   "lib:klaus whiteboard"            best match in the brand/founder library (assets/library/index.csv tags) - Klaus's own photos win
+  "immich:speaking on stage@klaus"  best usable match from the self-hosted Immich library (immich_bridge.pick)
   "gen:<prompt>"                    an AI asset to make; cards render a labelled placeholder and `cards` writes ASSETS_NEEDED.md
                                     (free: Nano Banana in the Gemini app / Google Flow images; premium: Higgsfield after a cost quote)
   {"src": ..., "focus": [0.5, 0.35], "credit": "..."}   same, with crop focus and an on-slide credit
@@ -92,6 +93,20 @@ def resolve(img, brand=None):
            "frame": spec.get("frame")}
     if src.startswith("gen:"):
         out.update(kind="gen", label=src[4:].strip())
+        return out
+    if src.startswith("immich:"):  # "immich:speaking on stage@klaus" -> best usable match straight from Immich
+        q, _, person = src[7:].partition("@")
+        try:
+            from .immich_bridge import Immich, fetch_original, pick
+            api = Immich()
+            rows = pick(q.strip(), person.strip() or None, n=1, api=api)
+            if rows:
+                r0 = rows[0]
+                out.update(path=Path(r0["path"]) if r0["path"] else fetch_original(api, r0["id"], r0["file"]), kind="immich", label=r0["file"])
+                return out
+        except SystemExit as e:
+            log(f"immich image '{src}': {e}")
+        out.update(kind="missing", label=f"immich: {src[7:]}")
         return out
     if src.startswith("lib:"):
         r = find(src[4:], brand, spec.get("person"), allow_people=True)

@@ -103,9 +103,27 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Carousels / LinkedIn documents:** `editor.py cards SPEC.json --aspect 4:5|1:1|9:16|16:9 [--brand B --out DIR --no-pdf]` → `slide_NN.png` + `slides.pdf` + `contact_sheet.jpg` (page numbers, handle, "swipe →"). Spec = `{"brand", "aspect", "theme": {...}, "cards": [...]}`. Look at the contact sheet before calling it done. Archetypes: `styles/carousel.json`.
 - Premium path: the same card JSON drives HyperFrames/Remotion when a piece needs bespoke motion.
 
-## 9. Organise a whole media library (`editor.py organize`, `/organize`)
-For 10k+ personal photos/videos. All local and free (open_clip + OpenCV YuNet/SFace); Claude only names events with `--llm claude-cli` (one contact sheet per event).
-- `organize run <folders>`: index (shared B-roll index) → analyse (EXIF/file-name dates, sharpness/exposure/resolution → quality, faces + embeddings) → classify (16 CLIP categories via prompt ensembles; sensitive: children, documents, patients, folder markers) → people (face clusters + `people_sheet.jpg`) → events (time gaps; undated stays "Undated") + near-duplicate bursts → best pick → `REVIEW.html` + `catalog.csv`.
-- `organize name <cluster#> <who> [--consent yes]`, `organize apply --to DIR [--mode link|copy --all --include-sensitive]`, `organize export-library [--person klaus --categories Headshots,Speaking --min-quality 0.55]` (feeds `lib:` on cards).
-- Measured on a 69-item mixed test library (CPU): ~0.5 s/item; categories 57/69 correct after prompt ensembles; 5/5 founder photos in one face cluster; bursts grouped with a sharp best pick (blurred frame never chosen). CLIP still confuses close classes (kids/selfies, physio/gym, networking/speaking), so treat categories as a first sort, not truth.
-- Originals are never moved; sensitive items never leave review; people photos + index are git-ignored.
+## 9. Media library = Immich + studio bridge (`/organize`)
+We don't maintain our own photo organiser. Our CLIP script measured 83% on categories; Immich does the job better and is maintained by a large open-source project:
+- benchmarked SigLIP2 smart search
+- InsightFace faces
+- duplicates, timeline, map, OCR, phone backup
+- REST API
+
+Setup: `tools/immich/Setup-Immich.ps1`. The official `docker-compose.yml` is kept unmodified (v3.3.5). Our `docker-compose.override.yml` adds:
+- read-only `PHOTOS_1..4` mounts
+- the database in a Docker volume
+- an IPv4 ML listener (needed where IPv6 is absent)
+
+`docker-compose.gpu.yml` switches to CUDA.
+
+The bridge (`immich_bridge.py`, `editor.py immich …`):
+- `setup`: automates first run (admin, model choice, scoped key outside the repo, read-only library, scan)
+- `pick`: smart search + person filter + sensitive/consent filter + one-per-duplicate + quality re-rank + contact sheet + local paths via `path_map`
+- `sync-library`: favourites and the "Studio Picks" album → `assets/library/index.csv`
+- `tag-sensitive`: smart-search candidates confirmed locally (CLIP: positive vs the best of 7 negatives, margins calibrated) → "⚠ Sensitive – …" review albums. They're database-only, because tags need writable XMP sidecars. Klaus's removals are remembered
+- `consent`
+
+Cards: `"image": "immich:<query>@<person>"`.
+
+Video moments still come from the B-roll multi-frame index. Immich indexes one poster frame per video.

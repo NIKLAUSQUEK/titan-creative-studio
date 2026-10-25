@@ -1,37 +1,45 @@
-Organise a big photo and video library with AI (local, free; Claude only names events if Klaus asks). The argument is the folder(s), or one of: `name <#> <who>`, `apply <dest>`, `review`.
+Organise Klaus's big photo and video library with **Immich**, an open-source, self-hosted photo platform that runs on his PC. A thin studio bridge (`tools/editor/titan_editor/immich_bridge.py`) adds consent rules, sensitive tags, best-shot ranking and the export into cards and B-roll. The argument is a request such as `setup`, `pick <query> [@person]`, `sync`, `tag-sensitive`, or `consent <name> yes`.
 
-The library lives on Klaus's PC or Drive, not in this repo. So the run happens there:
+## Why Immich and not our own script
+Klaus's library lives on his PC and Drive, not in this repo. Our own CLIP script scored 83% on categories, and the research (`research/sources-photo-library.md`) found Immich does it better:
+- benchmarked SigLIP2 smart search (about 85–86% recall)
+- InsightFace face recognition, where you name a person once
+- duplicate detection
+- timeline and map
+- OCR
+- phone backup
+- a REST API
 
-1. **Klaus runs, in PowerShell from `tools/editor`:**
-   ```
-   .\Run-Editor.ps1 -Organize "G:\My Drive\Photos","D:\Phone backup"
-   ```
-   - The first run installs dependencies.
-   - About 0.3–0.6 s per item on CPU, so 10,000 items takes roughly 1–1.5 h. It's much faster with an NVIDIA GPU.
-   - It's resumable: re-runs only process new files.
-   - Add `-Llm claude-cli` to name events: one contact sheet and one short call per event.
-2. **What it does** (`tools/editor/titan_editor/organize.py`):
-   - CLIP index (shared with B-roll search).
-   - Dates from EXIF, then file names. Undated items go to "Undated"; they never get fake events.
-   - Sharpness, exposure and resolution feed a quality score.
-   - Faces are detected (YuNet) and grouped by person (SFace).
-   - 16 categories: Headshots, Selfies, Speaking, Meetings, Working, Screens, Gym, Clinic, Food, Product, Events, Travel, Family, Documents, Memes, Pets.
-   - Sensitive flags: children, documents and personal data, patients, and folder markers (`private`, `patients`, `kids`…).
-   - Near-duplicates and bursts get one best pick each.
-   - Events are split by time gaps.
-   - Outputs `REVIEW.html` plus `catalog.csv` in `%LOCALAPPDATA%\TitanEditor\organize\`.
-3. **Klaus names faces once:**
-   - Open `people_sheet.jpg`. Cluster #1 is usually him.
-   - Run `.\Run-Editor.ps1 -NameFace 1,klaus`. His consent is automatic.
-   - Other people stay "unknown" until Klaus confirms consent with `editor.py organize name <#> <who> --consent yes`.
-4. **Use it:**
-   - Best picks of Klaus are exported to `assets/library/index.csv`. Cards can then use `"image": "lib:klaus speaking"`, B-roll search finds the same clips, and Creator Brain `/storyboard` and `/journal` can use event names and "story potential".
-   - An optional browsable copy goes in `.\Run-Editor.ps1 -OrganizedTo "D:\Organised"`, laid out as Category\Event\file. Hardlinks on the same drive take no extra space; anywhere else it copies.
-   - **Originals are never moved, renamed or deleted.**
+His folders are mounted **read-only**, so nothing is ever moved, edited or deleted.
 
-**Rules**
-- Sensitive items are excluded from library export, event naming and the organised tree. They sit in `_Review_sensitive` only with `--include-sensitive`.
-- Flags are deliberately cautious (false positives are fine, misses are not). Klaus clears them by looking.
-- Nothing leaves the PC except event contact sheets, and only when `-Llm claude-cli` is used. Never upload the library to a third-party service without Klaus asking.
+## Setup (once, on Klaus's PC, about 1–2 h of hands-on time, then indexing overnight)
+1. **Google Drive.** Switch Drive for desktop to *Mirror files* (Settings → My Drive), e.g. into `D:\GDriveMirror`, or copy the photo folders to a local disk. Docker can't read the streamed `G:` drive reliably.
+2. **Install:** run `tools\immich\Setup-Immich.ps1 -Photos "D:\GDriveMirror\My Drive\Photos","D:\Phone backup" -Email <his email>`. It:
+   - installs or checks Docker Desktop
+   - starts Immich v3.3.5 (with the GPU image if there's an NVIDIA card)
+   - picks the smart-search model: `ViT-B-16-SigLIP2__webli` on CPU, `ViT-SO400M-16-SigLIP2-384__webli` on GPU
+   - creates a read-scoped API key, saved in `%LOCALAPPDATA%\TitanEditor\immich.json` (never in the repo)
+   - adds the read-only library
+   - starts indexing
+3. **Name faces.** Next day, open http://localhost:2283 → Explore → People → name his face `klaus` and merge any strays. This is the only manual step.
+4. **Optional:** install the Immich phone app for automatic backup.
+
+## Studio use
+- `editor.py immich pick "speaking on stage" --person klaus --out projects/<p>/picks`
+  - Immich smart search, filtered to Klaus.
+  - Sensitive or unconsented items are dropped.
+  - One image per duplicate group.
+  - Results are re-ranked by sharpness and exposure.
+  - Output: a contact sheet plus local paths. **LOOK** at the sheet before using.
+- On cards: `"image": "immich:speaking on stage@klaus"`, or curate first and use `lib:`.
+- `editor.py immich sync-library`: Klaus's hearts and the "Studio Picks" album go into `assets/library/index.csv` (`lib:<tags>`).
+- `editor.py immich tag-sensitive`: run nightly or weekly. Candidates for children, documents and patients go into the review albums **"⚠ Sensitive – minors / documents / patients"**, and the studio never uses anything in them. Klaus removes a fine photo from the album and it is never re-added. These are albums rather than tags because Immich stores tags in XMP files next to the photo, and those can't be written on read-only folders.
+- `editor.py immich consent <name> yes`: anyone other than Klaus is unusable until this is set.
+- `editor.py immich queries`: the saved studio searches (speaking, meeting, headshot, screen, gym…).
+- **Video moments:** Immich indexes one poster frame per video. To find the exact second inside a clip, use the B-roll index (`editor.py broll-index` + `broll-search`), which samples several frames.
+
+## Rules
+- Immich runs locally; keep it off the public internet (no port forwarding; use Tailscale only if remote access is needed).
 - Patients are never used for health brands.
-- People photos and the index stay out of git (`.gitignore`).
+- People photos, the API key and `tools/immich/.env` stay out of git.
+- Nothing is uploaded to third-party services.

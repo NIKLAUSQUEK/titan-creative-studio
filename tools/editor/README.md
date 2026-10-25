@@ -98,10 +98,12 @@ python tools/editor/editor.py selftest          # needs espeak-ng for the synthe
 python tools/editor/editor.py --project P run /path/to/footage --brand physio-spot --goal expert --platform tiktok
 ```
 
-## Organise your whole photo/video library (10k+ files)
+## Organise your whole photo/video library (10k+ files): Immich
 ```
-.\Run-Editor.ps1 -Organize "G:\My Drive\Photos","D:\Phone backup"     # local + free; opens REVIEW.html and people_sheet.jpg
-.\Run-Editor.ps1 -NameFace 1,klaus                                     # name your face cluster once
-.\Run-Editor.ps1 -OrganizedTo "D:\Organised"                           # optional Category\Event copy/hardlink tree
+..\immich\Setup-Immich.ps1 -Photos "D:\GDriveMirror\My Drive\Photos","D:\Phone backup" -Email you@titan.ai
 ```
-The pipeline indexes everything with CLIP, reads dates (EXIF, then file names) and scores quality (sharp, exposed, resolution). It groups faces into people, sorts items into 16 categories, flags sensitive items (children, documents, patients) and splits events by time gaps. Each burst of near-duplicates gets one best pick. Add `-Llm claude-cli` to name events: one contact sheet per event. Originals are never moved. Best picks of you go to `assets/library/index.csv`, so carousels can use `"image": "lib:klaus speaking"`. Details: `.claude/commands/organize.md`.
+This installs Immich (self-hosted, open source) in Docker Desktop. Your folders are mounted read-only. It does smart search, face recognition (name yourself once at http://localhost:2283 → People), duplicates, timeline, map and OCR. The studio then asks it for shots:
+- `editor.py immich pick "speaking on stage" --person klaus --out picks` for ranked best matches plus a contact sheet
+- `editor.py immich sync-library` for your hearts and the "Studio Picks" album → `lib:`
+
+Details: `.claude/commands/organize.md`.

@@ -1,0 +1,17 @@
+# TITAN studio additions on top of Immich's official docker-compose.yml (kept unmodified, v3.3.5).
+# - Your photo/video folders are mounted READ-ONLY: Immich can index them but can never move, edit or delete a file.
+# - The database lives in a Docker volume (Windows/NTFS folders are not supported for Postgres).
+# Folders come from .env: PHOTOS_1 .. PHOTOS_4 (Windows paths with forward slashes, e.g. D:/GDriveMirror/My Drive/Photos).
+services:
+  immich-server:
+    volumes:
+      - ${PHOTOS_1:-./empty1}:/mnt/photos1:ro
+      - ${PHOTOS_2:-./empty2}:/mnt/photos2:ro
+      - ${PHOTOS_3:-./empty3}:/mnt/photos3:ro
+      - ${PHOTOS_4:-./empty4}:/mnt/photos4:ro
+  immich-machine-learning:
+    environment:
+      # listen on IPv4: the default '[::]' fails on hosts/WSL setups without IPv6 (found while testing; harmless elsewhere)
+      IMMICH_HOST: 0.0.0.0
+volumes:
+  immich-pgdata:

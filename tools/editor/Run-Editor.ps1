@@ -13,11 +13,7 @@
     draft    : lowest-quality render of every aspect, then QC (contact sheets + checks)
 
 .EXAMPLE
-  .\Run-Editor.ps1 -Organize "G:\My Drive\Photos","D:\Phone backup"
-  (AI-organise a whole photo/video library, locally and free: categories, people, events, best picks, sensitive flags.
-   Opens REVIEW.html. Originals are never moved. Add -Llm claude-cli to also name each event from one contact sheet.)
-  .\Run-Editor.ps1 -NameFace 1,klaus            (name a face cluster from people_sheet.jpg; consent "yes" for you)
-  .\Run-Editor.ps1 -OrganizedTo "D:\Organised"   (copy/hardlink best picks into Category\Event folders)
+  Organising a whole photo/video library now uses Immich (self-hosted, open source): ..\immich\Setup-Immich.ps1 -Photos "D:\Photos" -Email you@titan.ai
 
 .EXAMPLE
   .\Run-Editor.ps1 -SelfTest
@@ -60,9 +56,6 @@ param(
   [ValidateSet("auto", "tiny", "base", "small", "medium", "large-v3")] [string] $WhisperModel = "auto",
   [ValidateSet("claude-cli", "none")] [string] $Llm = "claude-cli",
   [string] $ClaudeModel = "",                # sonnet (cheaper) | opus; empty = your Claude Code default
-  [string[]] $Organize = @(),                # folders of photos/videos to AI-organise
-  [string[]] $NameFace = @(),                # e.g. -NameFace 1,klaus
-  [string] $OrganizedTo = "",                # build an organised copy/hardlink tree here
   [switch] $SkipInstall
 )
 $ErrorActionPreference = "Stop"
@@ -109,17 +102,6 @@ try {
 
   if ($SelfTest) { & $vpy $py selftest --whisper-model tiny; exit $LASTEXITCODE }
   if ($Presets) { Ed @("preset", "list"); return }
-  if ($Organize.Count -gt 0) {
-    $orgLlm = if ($PSBoundParameters.ContainsKey("Llm")) { $Llm } else { "none" }   # local-only unless you ask for event names
-    Ed (@("organize", "run") + $Organize + @("--index-dir", $IndexDir, "--llm", $orgLlm))
-    Ed @("organize", "export-library", "--person", "klaus", "--index-dir", $IndexDir)
-    Start-Process (Join-Path $IndexDir "organize\REVIEW.html"); Start-Process (Join-Path $IndexDir "organize\people_sheet.jpg"); return
-  }
-  if ($NameFace.Count -ge 2) {
-    Ed @("organize", "name", $NameFace[0], $NameFace[1], "--index-dir", $IndexDir); Ed @("organize", "report", "--index-dir", $IndexDir)
-    Ed @("organize", "export-library", "--person", $NameFace[1].ToLower(), "--index-dir", $IndexDir); return
-  }
-  if ($OrganizedTo) { Ed @("organize", "apply", "--to", $OrganizedTo, "--index-dir", $IndexDir); Start-Process $OrganizedTo; return }
   & $vpy @($base + @("check"))
 
   if ($BrollRoots.Count -gt 0) {

@@ -1,4 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-25 - "not accurate enough; use existing open-source tools, no hours of debugging" (Klaus)
+- [library] Don't hand-build what mature open source does better. The media library is Immich (self-hosted, read-only folders, SigLIP2 smart search, InsightFace faces, duplicates, OCR, API); our code is a thin bridge for studio-only needs (consent, sensitive tags, best-shot ranking, export to cards/B-roll). Before building any new capability, search for a maintained open-source tool or skill first and report what exists.
 ## 2026-10-25 - "10,000 photos and videos: can AI look and organise them?" (Klaus)
 - [library] Organise big personal libraries locally (`/organize`, Run-Editor.ps1 -Organize): categories, face groups (Klaus names himself once), events, best-of-burst, sensitive flags, REVIEW.html. Originals never moved; sensitive items (children, documents, patients) never exported or sent to Claude; other people need consent before use; only event contact sheets go to Claude, and only when asked. Best picks feed `lib:` cards, B-roll search and Creator Brain.
 ## 2026-10-25 - "make it more visual, founder-friendly with my own images" (Klaus)

@@ -34,3 +34,7 @@ assets/library/**/*.jpeg
 assets/library/**/*.png
 assets/library/**/*.webp
 assets/library/index.csv
+
+# Immich (self-hosted library): secrets and local mount placeholders
+tools/immich/.env
+tools/immich/empty*/

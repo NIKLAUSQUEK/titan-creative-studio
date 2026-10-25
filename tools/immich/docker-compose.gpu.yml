@@ -1,0 +1,11 @@
+# Optional NVIDIA acceleration for Immich's machine learning (smart search, faces). Used automatically by Setup-Immich.ps1 when nvidia-smi works.
+services:
+  immich-machine-learning:
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION}-cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
