@@ -43,3 +43,11 @@ His folders are mounted **read-only**, so nothing is ever moved, edited or delet
 - Patients are never used for health brands.
 - People photos, the API key and `tools/immich/.env` stay out of git.
 - Nothing is uploaded to third-party services.
+
+## Google Photos
+Google Photos can't be read in place: its API only exposes media the app uploaded itself. The route is **Google Takeout → immich-go**. immich-go is open source and imports the Takeout zips into Immich, keeping dates, albums, descriptions, locations and favourites, and skipping duplicates.
+1. Go to takeout.google.com, select only Google Photos, choose .zip with 50 GB parts, and download all parts to a big drive (e.g. `D:\Takeout`).
+2. In Immich, open Account settings → API Keys and create a key named `immich-go` with upload permission. This is separate from the studio's read-only key.
+3. Download `immich-go` for Windows from github.com/simulot/immich-go/releases, then run:
+   `immich-go upload from-google-photos --server=http://localhost:2283 --api-key=<key> D:\Takeout\takeout-*.zip`
+4. The imported copies live in Immich's storage (`-DataDir`), so set up with `-DataDir "D:\ImmichData"` on a drive with room for the whole library. After importing, the Takeout zips can be deleted.

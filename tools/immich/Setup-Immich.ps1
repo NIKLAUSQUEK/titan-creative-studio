@@ -14,7 +14,8 @@
   Indexing then runs in the background (roughly overnight for 10k items on CPU, much faster with an NVIDIA GPU).
 
 .EXAMPLE
-  .\Setup-Immich.ps1 -Photos "D:\GDriveMirror\My Drive\Photos","D:\Phone backup" -Email you@titan.ai
+  .\Setup-Immich.ps1 -Photos "D:\Photos","D:\Phone backup" -Email you@titan.ai -DataDir "D:\ImmichData"
+  (Google Photos: import the Takeout afterwards with immich-go; it lands in -DataDir, so give that a big drive)
   Then open http://localhost:2283 -> Explore -> People -> name your face "klaus" (once).
 #>
 [CmdletBinding()]
@@ -24,6 +25,7 @@ param(
   [string] $Name = "Klaus",
   [ValidateSet("auto", "cpu", "gpu", "multilingual")] [string] $Model = "auto",
   [string] $Version = "v3.3.5",
+  [string] $DataDir = (Join-Path $env:LOCALAPPDATA "TitanEditor\immich-data"),   # Immich's own storage (thumbnails + anything uploaded, e.g. a Google Photos Takeout). Put it on a big drive: -DataDir "D:\ImmichData"
   [switch] $AllowStreamedDrive
 )
 $ErrorActionPreference = "Stop"
@@ -51,7 +53,7 @@ if ($Model -eq "auto") { $Model = if ($gpu) { "gpu" } else { "cpu" } }
 
 # .env (git-ignored)
 $envFile = Join-Path $here ".env"
-$data = Join-Path $env:LOCALAPPDATA "TitanEditor\immich-data"
+$data = $DataDir
 New-Item -ItemType Directory -Force -Path $data | Out-Null
 if (-not (Test-Path $envFile)) {
   $pw = -join ((48..57) + (65..90) + (97..122) | Get-Random -Count 24 | ForEach-Object { [char]$_ })
