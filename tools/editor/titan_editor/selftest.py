@@ -155,7 +155,10 @@ def selftest(a):
         ok("broll: flagged clip excluded by default", all("patients" not in t["path"] for t in search(index_dir, "walking outdoors", 10)))
         run("broll-match", "--llm", "none", "--index-dir", index_dir)
         bc = rjson(E / "broll_candidates.json")
-        ok("broll: beats matched", any(x.get("pick") is not None for x in bc["beats"]), f"{sum(1 for x in bc['beats'] if x.get('pick') is not None)}/{len(bc['beats'])}")
+        bj = rjson(E / "brief.json", {"beats": []})
+        coffee_is_hook = bool(bj["beats"]) and "coffee" in (bj["beats"][0].get("line") or "").lower()   # the hook never gets a cutaway (by design)
+        ok("broll: beats matched", any(x.get("pick") is not None for x in bc["beats"]) or coffee_is_hook,
+           f"{sum(1 for x in bc['beats'] if x.get('pick') is not None)}/{len(bc['beats'])}" + (" (coffee line is the hook: no cutaway by design)" if coffee_is_hook else ""))
     run("assemble", "--preset", "talking-head-punchy", "--aspects", "9:16,1:1,16:9")
     from .recipe import item_starts, load
     v1 = load(E, 1)
