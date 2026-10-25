@@ -1,0 +1,59 @@
+{
+  "name": "quote-reality-oneshot",
+  "label": "Quote vs reality (one shot)",
+  "kind": "style",
+  "description": "Measured corporatenatalie DNNv34yR8oE (233K likes, 10.9 s, 0 cuts, 4 words) and yuripomo DIM2e7JgSwW (691K, 8.3 s): a persistent white-box quote header + label line, one static take that contradicts it, sparse live lines as small captions, no music or the trend sound in-app.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#2b",
+  "structure": {
+    "name": "quote-reality",
+    "target_s": [
+      7,
+      14
+    ],
+    "beats": [
+      "quote + label header (persistent)",
+      "contradicting take",
+      "deadpan line or hold"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 15
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": true,
+    "position_y": 0.08,
+    "size": 0.026,
+    "uppercase": false,
+    "max_words": 18,
+    "second_line_box": true,
+    "_needs_feature": "hook_text.second_line_box: render the label line ('The culture:') as its own smaller box under the quote"
+  },
+  "captions": {
+    "enabled": true,
+    "animation": "static",
+    "max_words": 4,
+    "size": 0.028,
+    "position_y": 0.55,
+    "uppercase": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "sfx": {
+    "density_per_10s": 0.0
+  },
+  "music": {
+    "energy": "none"
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

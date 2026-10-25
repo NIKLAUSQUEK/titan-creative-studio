@@ -1,0 +1,62 @@
+{
+  "name": "deadpan-silent-rebuttal",
+  "label": "Silent over-complication rebuttal",
+  "kind": "style",
+  "description": "Measured khaby00 DceEuVnii0u / C5bLa77NFDa: trigger montage 5-12 s (several 0.7-4.7 s shots, music-led), hard cut to ONE locked wide 18-28 s of the silent fix, 0.4-0.5 s dead-air beats between attempts, ends on the signature gesture. 0-1 spoken words.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#2a",
+  "structure": {
+    "name": "rebuttal",
+    "target_s": [
+      20,
+      35
+    ],
+    "beats": [
+      "trigger (their way)",
+      "hard cut",
+      "silent fix one take",
+      "gesture button"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 30,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0,
+    "mode": "split",
+    "_needs_feature": "optional duet layout (trigger top, performer bottom) for the reaction variant"
+  },
+  "sfx": {
+    "density_per_10s": 0.0
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16,
+    "duck": false,
+    "stop_at_beat": "fix",
+    "_needs_feature": "music.stop_at_beat: hard-stop the bed when the beat with role=fix starts"
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

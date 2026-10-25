@@ -1,41 +1,71 @@
 {
   "name": "ugc-pov",
-  "label": "UGC: POV",
+  "label": "UGC: POV (three vignettes)",
   "kind": "ugc",
-  "description": "On-screen 'POV: \u2026' text carries the premise, minimal talking, handheld, quick 1-2 s shots, trending-style sound (licensed for brands).",
+  "description": "Measured 2026-10-25 (amitmizrachix Dd9hI51P_aw 406K likes, kylezhengg DW9oL7zAQXW): a persistent 'POV: the friend who…' header the whole video, 3 vignettes in 3 locations, each one locked take to the lens (5-12 s), dialogue at ~200-225 wpm with small centred subtitles, the longest pause before the punch in vignette 3 (~65% of runtime), no music under dialogue, no zooms, no end card.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#5",
   "structure": {
     "name": "pov",
     "target_s": [
-      7,
-      25
+      15,
+      32
     ],
     "beats": [
-      "POV text card over first shot 0-2.5s",
-      "situation beats",
-      "twist",
-      "reaction/payoff"
+      "POV header (persistent)",
+      "vignette 1: establish the trait",
+      "vignette 2: bigger",
+      "vignette 3: pause -> punch",
+      "petty button"
     ]
   },
   "pacing": {
-    "remove_silence_over_s": 0.3,
-    "max_shot_s": 2.2
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.1,
+    "remove_fillers": "hard",
+    "max_shot_s": 12.5,
+    "keep_pause_before_punch_s": 0.8,
+    "_needs_feature": "pacing.keep_pause_before_punch_s"
   },
   "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "persistent": true,
+    "position_y": 0.08,
+    "size": 0.032,
     "uppercase": false,
-    "max_words": 12,
-    "dur_s": 3.0
+    "max_words": 12
   },
   "captions": {
-    "max_words": 4
+    "enabled": true,
+    "animation": "static",
+    "max_words": 5,
+    "size": 0.026,
+    "position_y": 0.38,
+    "uppercase": false,
+    "keyword_caps": false
   },
   "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
     "every_s": 0
   },
   "sfx": {
-    "density_per_10s": 1.5
+    "density_per_10s": 0.0
   },
   "music": {
-    "energy": "high",
-    "db": -16
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.02,
+    "saturation": 1.04
+  },
+  "end_card": {
+    "enabled": false
   }
 }

@@ -1,0 +1,79 @@
+{
+  "name": "meme-chaos-short",
+  "label": "Absurdist meme (label escalation, 6-16 s)",
+  "kind": "style",
+  "description": "Measured 2026-10-25 (duolingo DFttLM7ATju 253K, C764VubMXTL 89K; yuripomo DIM2e7JgSwW 691K): 2-3 shots of 1.5-5.8 s, each with a big label, each image more absurd, sound-led (no VO, no SFX stack), last image held, hard end, no end card. -14 LUFS.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#6",
+  "structure": {
+    "name": "meme-escalation",
+    "target_s": [
+      5,
+      16
+    ],
+    "beats": [
+      "label 1 + image",
+      "label 2 + weirder image",
+      "label 3 + most absurd image (hold)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "enabled": false
+  },
+  "labels": {
+    "style": "outline",
+    "font": "Archivo Black",
+    "size": 0.06,
+    "position_y": 0.72,
+    "uppercase": true,
+    "_needs_feature": "labels.style/font/position per beat (beat 'label' exists; styling keys not yet)"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "persistent": true,
+    "position_y": 0.1,
+    "size": 0.026,
+    "uppercase": false,
+    "max_words": 8
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "beat_sync": true,
+  "transitions": {
+    "default": "none"
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "db": -12,
+    "map": {
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 1.15
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

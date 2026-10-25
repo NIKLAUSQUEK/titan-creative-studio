@@ -1,0 +1,62 @@
+{
+  "name": "brand-meme-reply",
+  "label": "Brand meme reply (Stitch + mascot)",
+  "kind": "style",
+  "description": "Measured ryanair DWb_vEDDzzd (6.9 s, shots 1.6/1.8/2.5/1.0): platform Stitch of a customer clip, mascot-face reply with one-word white caps outline captions, 1 s fake product card punch, no end card. Brand self-deprecation only.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#6a",
+  "structure": {
+    "name": "reply",
+    "target_s": [
+      5,
+      9
+    ],
+    "beats": [
+      "their clip (platform Stitch only)",
+      "mascot reply word by word",
+      "1 s punch card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "max_shot_s": 3.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 1,
+    "uppercase": true,
+    "font": "Archivo Black",
+    "size": 0.06,
+    "outline": 7,
+    "position_y": 0.62,
+    "animation": "pop"
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "kind": "motion",
+    "template": "kinetic-quote",
+    "_needs_feature": "a 'fake-card' motion template (product/fee card pop-in, 1 s)"
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "db": -12,
+    "map": {
+      "broll": "pop",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": false
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

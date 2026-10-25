@@ -11,11 +11,11 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | # | Genre | Use when the script is… | Feeling | Avg shot | Pace curve | Grade | Sound | Editor preset |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Horror / tension | a fear, a reveal, a parody scare | dread → jolt | 6-10 s | slow → slower → SNAP | cold teal, crushed | drone, stings, silence | horror-tension |
-| 2 | Comedy skit / deadpan | a joke with a reveal | anticipation → laugh | 1.5-3 s | steady → hold → punch | natural / brand | room tone, one impact | deadpan-comedy |
+| 2 | Comedy skit / deadpan | a joke with a reveal; "their way vs the obvious way"; quote vs reality | anticipation → laugh | premise 1-5 s, then ONE 10-28 s take | premise → still take → pause → punch at ~65 % | natural / brand | room tone, no music under the take, ≤ 1 hit | deadpan-comedy (+ deadpan-silent-rebuttal, quote-reality-oneshot) |
 | 3 | Gen Z vlog / reaction | real-life moment, travel, banter | "nahhh" | 3-6 s | raw, reaction-led | natural, bright | SFX per reaction | genz-header-skit |
 | 4 | Trend beat-switch montage | a list, roles, "they call me…" | delight, recognition | 1.2-2 s | intro → drop → on beat | punchy | music-led | trend-beat-switch |
-| 5 | POV / relatable | "POV: you…" situations | recognition | 1-2.5 s | quick | phone-natural | trend/licensed | ugc-pov |
-| 6 | Absurdist / meme chaos | escalating nonsense | shock-laugh | 0.5-1.5 s | accelerating | saturated | stims every 1.5 s | genz-chaos |
+| 5 | POV / relatable | "POV: the friend who…", a recognisable type | recognition | 5-12 s per vignette | 3 vignettes, escalating; pause before the punch | phone-natural | dialogue-led (~200+ wpm), no bed | ugc-pov |
+| 6 | Absurdist / meme chaos | brand self-mockery, escalating nonsense, mascot lore | shock-laugh | 1.5-5 s (memes 5-16 s in total) | label escalation → hold the most absurd image | saturated, one consistent style | the sound/track is the rhythm, one hit at the end | meme-chaos-short (+ brand-meme-reply, lore-rollcall); genz-chaos for chaos talking-head edits |
 | 7 | Drama / conflict (villain) | bully, betrayal, side-picking | anger → justice | 2-4 s | build → confrontation → consequence | contrasty, warm/cold split | score swells, cold cruelty beats | drama-conflict |
 | 8 | Class & status | rich vs broke, same problem two wallets | recognition, both-sides | 2-3 s | split-screen rhythm | two grades | ironic music | talking-head-punchy |
 | 9 | Feel-good / emotional | kindness, family, small win | warmth, tears | 3-5 s | gentle rise → payoff | warm, soft | piano/strings, natural sound | feelgood-emotional |
@@ -143,25 +143,89 @@ Each card gives:
 
 Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, action, environment, light, audio, constraints, genre_key); only the key fields are shown below.
 
-### 2. Comedy skit / deadpan [draft; deeper rules: playbook-skit.md, ledger skit entries]
-- **Why it works:** the audience knows before the character does (anticipation). The deadpan hold lets the laugh land, and the reveal is a body or prop gag set up earlier.
-- **Pacing (30 s):**
-  - 0-2 s: hook text that states the payoff ("BUFF BOY…").
-  - 2-15 s: normal situation, the setup line.
-  - 15-20 s: escalation, two exchanges.
-  - 20-22 s: REVEAL with a crash zoom plus a 0.5 s freeze plus an impact.
-  - 22-24 s: silence and a reaction hold of 0.6-1.2 s.
-  - 24-30 s: tag joke, or a brand turn (cut to black, then the brand world).
-- **Shot grammar:** static 3rd-person wides for the situation; one push or crash zoom only for the reveal; reaction close-ups cut on the eyes. Hide the gag object until the reveal (hard_rules).
-- **Look:** naturalistic and slightly warm; the comedy comes from staging, not from the grade.
-- **genre_key:** `naturalistic comedic tone, locked-off framing, clean even practical light, deadpan performances, no exaggerated mugging, realistic skin, everyday setting`
-- **Shot:** `{"camera":"static WS 28mm, tripod, eye level","action":"start: A explains calmly -> end: A freezes mid-word, eyes slide to B","constraints":"B's shorts stay out of frame until S05"}`
+### 2. Comedy skit / deadpan [measured: khaby1 https://www.instagram.com/reel/DceEuVnii0u/ , khaby2 https://www.instagram.com/reel/C5bLa77NFDa/ , corp1 https://www.instagram.com/reel/DNNv34yR8oE/ ; deeper rules: playbook-skit.md]
+- **Why it works:** the viewer is shown the absurd premise first, so the laugh is anticipation. The deadpan performer is **still** while everything around them is ridiculous, and stillness before the punch measurably predicts laughter (TIC-TALK, r = -0.75 kinetic energy vs laughter rate). The best performers are silent or nearly so: Khaby Lame's wordless format took him to the most-followed TikTok account (142.8 M, Guinness, June 2022), because "the best way [to reach the most people] was not to speak" (CNN quote via the coverage below).
+- **Pacing map (measured; 30 s):**
+
+| Beat | Time | Shot | Sound | Measured from |
+|---|---|---|---|---|
+| Trigger / premise | 0-6 s (up to 12 s if it's itself funny) | the problem or the over-complicated "normal" way; can be several 1-3 s shots | its own audio/music (khaby1 onsets every ~1.14 s) | khaby1 0-12.3 s, khaby2 0-5.7 s |
+| or: Quote header | 0 s → end | a persistent top header: the claim in quotes + "The reality:" label | room tone | corp1 |
+| Deadpan answer | one locked wide, **10-28 s, 0 cuts** | the performer does the simple or absurd thing; escalation happens INSIDE the take | near-silence; 0.4-0.5 s dead-air beats between escalations | khaby1 18.4 s, khaby2 27.5 s, corp1 10.9 s |
+| Punch | ~60-70 % of runtime | the reveal (the empty office, the obvious fix) | the longest pause right before it (0.5-1.7 s), then ONE hit or none | corp1, pov1 |
+| Button | last 1-3 s | the signature gesture (the Khaby hands), a deadpan look to the lens, or a walk-off | silence or a single sting | khaby1 end, khaby2 walk-off |
+| Brand turn (ads) | +3-5 s | cut to the brand world | calm VO | (studio rule) |
+
+- **Shot grammar:**
+  - A static, locked wide (full body or 3/4) at eye level; the performer occupies the centre third.
+  - Cut only between "their way" and "our way", never inside the deadpan answer.
+  - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Keep at most one snap zoom ×1.1 for a brand ad if Klaus wants it (a proposal B).
+  - Hide the gag until the reveal (hard_rules).
+- **Look:** phone-natural, flat daylight or office fluorescent, no grade tricks. The comedy comes from staging and the header.
+- **Header type:** quote header in a white rounded box, sentence case, centred at y ≈ 0.07-0.10, two lines max, plus a short label line ("The culture:") in a second box (corp1). The Khaby format has no text at all.
+- **genre_key (unchanged in spirit, tightened):** `naturalistic deadpan comedy, locked-off tripod wide, eye level, flat even everyday light, performer perfectly still and expressionless, no mugging, realistic skin and clothing, ordinary real location, phone-camera look`
+- **Shot JSON:**
+```json
+{"id":"S02","dur":10,"model":"seedance_2_5","mode":"omni_reference",
+ "camera":"locked tripod wide, 24mm, eye level, from behind a desk toward the office door",
+ "subject":"@LEAD (office outfit, tote bag) enters through the far door",
+ "action":"start: @LEAD walks in smiling, 'good morning' -> 4 s: slows, looks left and right at empty desks -> end: stops centre frame, deadpan stare toward the lens",
+ "environment":"@SET_OFFICE: open-plan, every desk empty, monitors off, one yellow sticky note",
+ "light":"flat overhead fluorescent, no accent light",
+ "audio":"room tone, footsteps, her two lines only",
+ "constraints":"no camera move, no cuts, nobody else visible anywhere in frame",
+ "genre_key":"<§2 genre key>"}
+```
 - **Sound:**
-  - room tone;
-  - ONE impact or vine-style hit on the reveal (meme sounds only on personal accounts, in-app);
-  - a silence beat after the reveal.
-- **Ad template:** relatable embarrassment → reveal → "Common. Not normal." → calm expert turn → CTA. Dramatised skits must not pose as patient testimony (SG health).
-- **Preset:** deadpan-comedy.
+  - Live room tone, with no music under the deadpan take (khaby1 drops its music when Khaby enters).
+  - Keep the 0.4-1.7 s pause before the punch.
+  - At most ONE hit on the punch: a vine-boom-style meme hit only on personal accounts, in-app; brands use an original or licensed impact.
+  - Deliver at -14 LUFS.
+- **Ad template:** quote header with the industry's cliché ("'Just stretch it out,' they said") / "The reality:" → one take of the deadpan truth → hard cut to the brand world.
+- **Compliance:**
+  - Dramatised skits never pose as patient testimony (SG health).
+  - The "their way vs our way" structure must not disparage a named competitor or real person; Khaby-style trigger clips are **third-party footage**, so brand accounts recreate the trigger (format-jack, genre §31).
+- **Preset:** deadpan-comedy (corrected below); new sub-presets deadpan-silent-rebuttal and quote-reality-oneshot.
+
+(preset `deadpan-comedy`: tools/editor/presets/deadpan-comedy.json)
+Changes vs the current preset:
+- max_shot_s 8 → 30, so the one-take answer isn't chopped;
+- silence removal 1.2 → 1.8 s, plus a protected pre-punch pause (`_needs_feature`);
+- a persistent quote-header box (existing `hook_text.persistent` + `card_style: box`);
+- the crash zoom on the hook removed;
+- smaller static captions;
+- no end card (none of the refs has one; the brand turn is a cut, not a card).
+
+**3 core rules (§2):**
+1. **One take for the answer.** Cut between the premise and the deadpan answer, never inside the answer; escalate inside the shot.
+2. **The pause is the punchline's runway.** Keep 0.5-1.7 s of stillness and silence right before the reveal; never let silence removal eat it.
+3. **The header or the trigger tells the joke; the performer never explains it.** No mugging, no music under the take, at most one hit.
+
+**Unsure, for Klaus:**
+- **Is the measured "one-take" grammar right for HIS skits?** Klaus's ledger skit entries (e.g. "BUFF BOY" reveal) may need the crash zoom; I kept it out of the default and suggest it as proposal B.
+- **Brand use of the Khaby structure:** it needs a recreated trigger clip (a staged over-complicated method). Is it OK to parody generic "bad advice" in a physio context without reading as health misinformation? Compliance-check per piece.
+- **khaby2 loudness:** it measured -11.2 LUFS / +3.3 dBTP (clipped by the platform). Don't copy it; target -14 / -1.
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
+
+### 2a. NEW sub-style: Silent over-complication rebuttal (`deadpan-silent-rebuttal`) [measured: khaby1, khaby2]
+- **What:** a "life hack" or "expert" method that is absurdly over-complicated (0-12 s) → the performer, silent, does the obvious thing in one locked take → the signature open-palm "it's that easy" gesture.
+- **Why:** it's wordless, so it is language-free and works in every market. Khaby Lame built 142.8 M+ TikTok followers on it (Guinness 2022) and 7.9-9.7 M likes per IG reel in 2024-26 (measured above).
+- **Brand version:** "How people think you fix a stiff neck (17-step gadget routine)" → the physio silently does one simple, safe cue → the gesture → the brand card.
+  - The rebuttal must be **safe general education**, never a treatment claim.
+  - Never mock a real creator's clip: recreate a generic version.
+- **Preset JSON:**
+(preset `deadpan-silent-rebuttal`: tools/editor/presets/deadpan-silent-rebuttal.json)
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
+
+### 2b. NEW sub-style: Quote vs reality, one shot (`quote-reality-oneshot`) [measured: corp1; also brain2 "Other people lives: / Me:"]
+- **What:** a persistent two-part header: the quote or claim ("We need you in the office to experience the company culture"), then the label ("The culture:"). Under it, ONE static take that contradicts it. 8-12 s.
+- **Measured:** corp1 is 10.9 s, 0 cuts, 4 words. brain2 is 8.3 s: "Other people lives:" for 2.6 s, then "Me:" held for 4.2 s.
+- **Brand use:** corporate satire (TITAN.AI: "'AI will do it all for you' / The AI:"); for SG health, "'Just rest it' / Your desk setup:" (no outcome claims).
+- **Preset JSON:**
+(preset `quote-reality-oneshot`: tools/editor/presets/quote-reality-oneshot.json)
+
+---
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
 
 ### 3. Gen Z vlog / reaction [measured: ref #1]
 - **Why it works:** a header frames the viewer's reaction before the payoff. The footage is raw, so it feels real, and every reaction gets a sound hit.
@@ -191,21 +255,149 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 - **Ad template:** "We're a clinic, but our patients call us…" (no testimonials in SG health; use roles or services instead of patient quotes).
 - **Preset:** trend-beat-switch.
 
-### 5. POV / relatable [draft]
-- **Pacing:** the "POV: …" text card is the hook (0-2.5 s); 3-5 quick situation beats; a twist; a reaction.
-- **Shot grammar:** first person or over-the-shoulder; the actor looks into the lens as "you"; fast 1-2 s shots.
-- **genre_key:** `first-person POV framing, subject reacting directly to camera as if to the viewer, phone-natural light, everyday location`
-- **Sound:** a trend or licensed sound; one sting on the twist.
-- **Ad template:** "POV: you finally…" with the product as the resolution.
-- **Preset:** ugc-pov.
+### 5. POV / relatable [measured: pov1 https://www.instagram.com/reel/Dd9hI51P_aw/ (406 K likes), pov3 https://www.instagram.com/reel/DW9oL7zAQXW/ ; brand stitch ryan1 https://www.instagram.com/reel/DWb_vEDDzzd/]
+- **Why it works:** the camera IS the viewer ("POV: the friend who…"), so every line lands as if said to you. The hook is not "funny", it is **recognised**: a specific social type everyone has met (async.com reels-format guide; contentstudio / brandwatch POV glossaries). Three escalating examples of the same trait turn recognition into a laugh, and the last one is the punch.
+- **Pacing map (measured; 25-30 s):**
 
-### 6. Absurdist / meme chaos [draft]
-- **Pacing:** escalate every 2-3 s; each beat bigger than the last; end on the most absurd image, then a hard cut.
-- **Shot grammar:** crash zooms, Dutch angles, freeze frames, inserted reaction stills.
-- **genre_key:** `over-the-top comedic exaggeration, saturated colours, wide-angle distortion, dramatic crash zoom framing`
-- **Sound:** a stim every 1.5 s (personal accounts get meme sounds in-app; brands use synth or licensed hits).
-- **Compliance:** no punching down (mature-edge.md hard lines).
-- **Preset:** genz-chaos.
+| Beat | Time | Shot | Text | Sound | Measured |
+|---|---|---|---|---|---|
+| Header | 0 s → end | — | **persistent** "POV: the friend who …" top, y ≈ 0.06-0.10, white with a black outline, 1-2 lines | — | pov1, pov3 |
+| Vignette 1 (establish the trait) | 0-8 s | one locked handheld/tripod mid-full shot, actor talking into the lens; location A | small centred subtitles on the chest, y ≈ 0.35-0.40 | live dialogue, first word at 0.0 s | pov1 8.3 s, pov3 4.8 s |
+| Vignette 2 (bigger) | 8-18 s | new location B, same framing | subs | dialogue at 200-225 wpm | pov1 10.1 s, pov3 8.8 s |
+| Vignette 3 (the punch) | 18-30 s | location C; the punch word comes after the longest pause (pov1: 1.72 s gap → "Emily?" at 67 % of runtime) | subs | the pause, then the line | pov1 12.0 s, pov3 9.6 s |
+| Button | last 2 s | the actor's last petty line, no CTA card | — | — | pov1 "give me your phone, I'm gonna change it" |
+
+- **Shot grammar:**
+  - Lens = the viewer: the actor looks straight into the lens, eye level, a mid-full or medium shot.
+  - One take per vignette; a vignette may include a 1.5 s reverse or insert (pov3).
+  - Change the **location** per vignette (it signals "another time this happened"). No zooms; outdoor daylight, car, hallway.
+  - The off-camera "you" is either silent or voiced off-screen. Klaus to confirm which he wants; pov1's transcript contains both sides.
+- **Look:** phone-natural, bright daylight; wardrobe stays the same across vignettes (continuity = "same friend").
+- **genre_key:** `first-person point of view, the camera is the viewer, subject talks and reacts directly into the lens at eye level, medium shot, natural phone-camera daylight, everyday real locations, candid relatable performance, no camera movement`
+- **Shot JSON:**
+```json
+{"id":"S03","dur":10,"model":"seedance_2_5","mode":"omni_reference",
+ "camera":"handheld-steady medium shot at eye level, 26mm phone lens, subject looks straight into the lens as if at the viewer",
+ "subject":"@LEAD (same white tee and denim as S01-S02) in a parked car passenger seat, phone in hand",
+ "action":"start: scrolls her phone, asks 'wait, what do you have me saved as?' -> 2 s pause, she reads it, flat face -> end: deadpan look up into the lens",
+ "environment":"@SET_CAR interior, daylight through the windscreen",
+ "light":"soft natural daylight, no grade",
+ "audio":"car interior room tone, her dialogue only",
+ "constraints":"no cuts, same wardrobe as earlier shots, keep the phone screen unreadable",
+ "genre_key":"<§5 genre key>"}
+```
+- **Sound:**
+  - Dialogue-led and fast (pov1: 223 wpm); NOT trend-music-led as the old card said.
+  - No music bed under dialogue POV. The trend sound only for silent POV variants, on personal accounts in-app.
+  - One sting max, on the punch, or none (both refs have none). Deliver at -14 LUFS.
+- **Ad template (corrected):** "POV: the friend who [has the problem the brand solves]" → 3 vignettes escalating the trait → the 3rd vignette's punch is the brand-relevant moment → a short tag line in the caption, not on screen.
+  - **Brand-reply variant (ryan1):** Stitch/Remix a customer's POV clip (where the platform permits it) and reply in-character in ≤ 7 s.
+- **Compliance:**
+  - SG health: a POV skit about a "type" is fine; the "friend" must not be a patient, no outcome or cure lines, no "my physio fixed me".
+  - Stitch replies only use the platform's own Stitch/Remix, with the original enabled (§31 rights rules).
+- **Preset:** ugc-pov (corrected below).
+
+(preset `ugc-pov`: tools/editor/presets/ugc-pov.json)
+Changes vs the current preset:
+- max_shot 2.2 → 12.5;
+- SFX 1.5/10 s → 0;
+- music high → none;
+- the 3 s hook text becomes a persistent header;
+- small static subtitles at y 0.38;
+- a 3-vignette structure.
+
+**3 core rules (§5):**
+1. **A header names a TYPE, not a situation.** "POV: the friend who can't show affection" beats "POV: you're at lunch". It stays on screen the whole time.
+2. **Three vignettes, three locations, one locked take each, looking into the lens.** Escalate the same trait; the third has the punch.
+3. **Dialogue is the speed.** ~200+ wpm and no music bed, but the one long pause (≈ 1-1.7 s) sits right before the punch line.
+
+**Unsure, for Klaus:**
+- **Who voices "you"?** pov1's transcript includes the other side's lines (an off-camera voice or the creator dubbing). For brand POVs, is a silent "you" (actor reacts to unheard lines, captions show them) preferred? It reads better for SG compliance (no second fake person).
+- **Both POV refs are personal-creator accounts.** I found no high-like *brand* POV skit on IG; the brand evidence is Ryanair's Stitch replies (TikTok-scale; only 7.3 K likes on IG). Treat brand POV performance as unproven on IG.
+- **Silent music-led POVs** (a one-line POV over a trend sound, e.g. ryan1's customer clip) are a different format. If Klaus wants that, use silent-loop-reaction or the brand-reply preset (§6a) rather than ugc-pov.
+
+---
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
+
+### 6. Absurdist / meme chaos [measured: duo1 https://www.instagram.com/reel/DFttLM7ATju/ , duo2 https://www.instagram.com/reel/C764VubMXTL/ , ryan1 https://www.instagram.com/reel/DWb_vEDDzzd/ , brain1 https://www.instagram.com/reel/DH4Mk9ORXzA/ , brain2 https://www.instagram.com/reel/DIM2e7JgSwW/]
+- **Why it works:** an escalating non-sequitur, with the brand or mascot as an unhinged character that "shouldn't" behave this way.
+  - The chaos lives in the **picture and the text**, not in cut speed: measured medians are 1.7-5.2 s and the brand memes are 5.7-16 s long.
+  - Researched brand evidence:
+    - Duolingo grew from 50 K TikTok followers (Sept 2021) to ~16-17 M by 2025 with the "unhinged" owl (The Drum 2025-02-25; Contagious; digitalsummit speaker bio for Zaria Parvez). Its first owl video got ~800 K views, 3× its previous best, and the next 3.5 M (marketingmag.com.au). Parvez: "anything over a million views, we'll see an uptick in users" (Marketplace 2022-01-17).
+    - Ryanair's TikTok has ~2.9 M followers (Social Blade), built on the plane-face filter, self-deprecation, trend speed over polish, "mostly under 10 seconds", and snark aimed at itself, never at customers in distress (namecheap / whito / Travel Weekly; head of social Michael Corcoran).
+- **Pacing map (measured; three shapes, pick one):**
+
+| Shape | Length | Grammar | Measured |
+|---|---|---|---|
+| A. Meme reply (brand) | 5-8 s | a customer/trend clip or setup line (2-3.5 s) → the mascot's in-character reply, one-word CAPS captions per beat ("NICE. / NOW / FOR") → a fake product card punch (1.0 s) | ryan1: 1.6 / 1.8 / 2.5 / 1.0 s |
+| B. Label escalation | 6-16 s | 2-3 shots, each with a big label (years, ratings, "Other people: / Me:"), each image weirder; the final image is the most absurd and held | duo1: 3 × ~5.3 s; duo2: ~2.3 / 3.4 s; brain2: 2.6 / 1.5 / 4.2 s |
+| C. Roll-call / lore parade | 20-30 s | one absurd character per shot (1-4.5 s) with a name tag top-right, a name chanted on each cut, the last character held 8-11 s | brain1: median 2.7 s, last hold 11.2 s |
+
+- **Shot grammar:**
+  - Centred single subject, frontal, filling the frame (plane face, owl, creature).
+  - A hard cut or a quick wipe between beats. Crash zoom / Dutch angle are optional accents, not the base grammar: they appear in none of the 5 measured reels.
+  - End on the most absurd image and either hard-cut (A) or hold (B, C).
+- **Look:** saturated and clean for brand mascots; or a consistent "found media" style (a fake-1998-cartoon in brain1, a cheap 2000s clip-art collage in duo1). The style consistency is what makes the nonsense read as a world.
+- **Text:**
+  - Shape A: one word at a time, white heavy-sans caps with a black outline, centred at y ≈ 0.62.
+  - Shape B: big labels (years) at the bottom (y ≈ 0.72) or a small sentence header top.
+  - Shape C: a small name tag top-right.
+- **genre_key:** `absurdist meme comedy, single bizarre subject centred and frontal filling the frame, saturated clean colours, deadpan straight-faced presentation of an impossible situation, consistent illustration style across shots, no extra text in frame`
+- **Shot JSON:**
+```json
+{"id":"S02","dur":2.5,"model":"seedance_2_5","mode":"omni_reference",
+ "camera":"locked frontal close-up, centred, eye level with the subject's face",
+ "subject":"@MASCOT (brand-original character from the asset bible) stares into the lens",
+ "action":"start: neutral stare -> 1 s: slow exaggerated smile spreads -> end: holds the too-wide smile, unblinking",
+ "environment":"plain bright brand-colour backdrop",
+ "light":"flat bright key, no shadows",
+ "audio":"none (the edit adds the beat)",
+ "constraints":"same mascot design as the sheet, no text in frame, no real-person likeness",
+ "genre_key":"<§6 genre key>"}
+```
+- **Sound:**
+  - The track or trend sound IS the rhythm (all 5 refs are music- or sound-led, 0-1 spoken lines). Cut on its onsets; one hit on the final image.
+  - The old "stim every 1.5 s" rule is not supported by the refs (none uses SFX stacks); keep it only for the genz-chaos *talking* edit.
+  - Brands: licensed or original sound only. A trend sound only on personal accounts, in-app.
+- **Ad template:** shape A as a reply to a real comment or trend (the brand mocks itself, e.g. a fake "Boogie Fee") or shape B "rating things [brand] did".
+- **Compliance:**
+  - Self-deprecation only; never punch down at customers, patients or real people (Ryanair's own boundary, whito.co.uk).
+  - No fake fees or prices that could be read as real offers: label them clearly as jokes, and never add an inducement in SG health.
+  - Brainrot-style characters must be original (no lookalikes of existing IP or real people; Gate 4).
+  - Kids' audiences: the Italian-brainrot wave drew parent-safety coverage (Instagram DJWSQ2yCRl_), so avoid violent or slur-laden "lore".
+- **Preset:** genz-chaos stays for the *talking-head chaos edit* (archetype #6). New preset meme-chaos-short for this card (below); plus brand-meme-reply (6a) and lore-rollcall (6b).
+
+**New `meme-chaos-short.json` (the default for §6; genz-chaos stays as is):**
+(preset `meme-chaos-short`: tools/editor/presets/meme-chaos-short.json)
+**`genz-chaos.json` correction (small):** the description claims "[measured]" in style-archetypes #6, but no reel in this run supports a punch-in every 1.5 s or 4 SFX per 10 s for *meme* content. Keep the preset for a fast talking-head edit only, and relabel it in §0 row 6 → meme-chaos-short. If Klaus wants it calmer: `zoom.every_s` 1.5 → 3.0 and `sfx.density_per_10s` 4 → 2. **Flag for Klaus: I did not measure a talking-head chaos reel, so I'm not changing genz-chaos numbers myself.**
+
+**3 core rules (§6):**
+1. **Chaos is in the image, not the cut.** One bizarre, centred, frontal subject per shot, held long enough to read (1.5-5 s); the last, most absurd image gets the longest hold.
+2. **Label every beat.** A year, rating, "Me:", a name tag or a one-word caps line: the label turns nonsense into a pattern the viewer can follow.
+3. **The brand mocks itself, fast and short.** 5-16 s, sound-led, a reply to something the audience already said, never punching down.
+
+**Unsure, for Klaus:**
+- **Is "brainrot" style on-brand for any of his brands?** It is huge (445-691 K likes on single reels) but polarising, with child-safety press. I'd keep it to TITAN.AI or personal accounts.
+- **Fake product cards** ("Boogie Fee 49.00") are a strong punch for Power Protein / PeachForm, but a fake price can read as an advertised price; it needs a "joke" signal. Not for SG health at all.
+- **Plane-face-style "mascot face" effects need a mascot.** Which brands have one? A Gate 4 character-design job may come first (character-design.md).
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
+
+### 6a. NEW sub-style: Brand meme reply (`brand-meme-reply`) [measured: ryan1]
+- **Format:** platform Stitch/Remix of a customer or trend clip (≤ 3.5 s) → the brand mascot/face replies in-character (one word per caption beat) → a 1 s fake-card or product punch. 5-8 s in total.
+- **Researched:** Ryanair reports 111 M organic impressions in a month from low-fi memes and reactive posts (podcast summary via WebSearch; unverified). The team posts within days of a trend, and speed beats polish.
+(preset `brand-meme-reply`: tools/editor/presets/brand-meme-reply.json)
+Rights: the opening clip comes in only through the platform's Stitch/Remix, or with written permission (genre §31). Never downloaded and re-uploaded.
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
+
+### 6b. NEW sub-style: Lore roll-call / character parade (`lore-rollcall`) [measured: brain1]
+- **Format:** 5-8 original AI characters, one per shot (1-4.5 s, median 2.7 s), each with a name tag top-right and a chanted name; the final character is held 8-11 s while the chant loops.
+- **Why:** each character is a collectible and a comment prompt ("which one are you?"). It fits a studio that already builds character sheets (Gate 4).
+- **Brand use:** TITAN.AI "meet the agents" or a Power Protein flavour-creature roster, built from original characters only.
+- **genre_key for the set:** `vintage 1990s cel-animated TV cartoon look, warm sunlit forest background, one hybrid creature centred full body, soft film grain, consistent character design style across shots, no text`
+(preset `lore-rollcall`: tools/editor/presets/lore-rollcall.json)
+
+---
+- **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
 
 ### 7. Drama / conflict (villain) [draft; deeper: villains-conflict.md]
 - **Why it works:** the camera's allegiance stays with the target; cruelty gets cold sound; the consequence lands, and the viewer picks a side.

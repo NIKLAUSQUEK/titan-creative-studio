@@ -2,28 +2,81 @@
   "name": "deadpan-comedy",
   "label": "Deadpan comedy",
   "kind": "style",
-  "description": "Held beats, silence kept on purpose, static frame, no zooms except the crash zoom on the reveal, one impact SFX on the payoff, captions static.",
+  "description": "Measured 2026-10-25 (khaby00 DceEuVnii0u 9.7M likes, C5bLa77NFDa 7.9M; corporatenatalie DNNv34yR8oE 233K): a trigger/premise (0-12 s, may be several short shots) then ONE locked take of the deadpan answer (10-28 s, 0 cuts), the escalation inside the take, the longest pause right before the punch, at most one hit. Optional persistent quote header. No zooms, no music under the take, -14 LUFS.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#2",
+  "structure": {
+    "name": "deadpan",
+    "target_s": [
+      10,
+      35
+    ],
+    "beats": [
+      "trigger or quote header 0-6s",
+      "deadpan take (one shot)",
+      "pause >=0.5s",
+      "punch at ~65%",
+      "button / walk-off"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 1.2,
-    "pad_s": 0.25,
+    "remove_silence_over_s": 1.8,
+    "pad_s": 0.35,
     "remove_fillers": "none",
-    "max_shot_s": 8
+    "max_shot_s": 30,
+    "drop_retakes": true,
+    "keep_pause_before_punch_s": 0.6,
+    "_needs_feature": "pacing.keep_pause_before_punch_s: protect the gap before a beat marked role=punch from silence removal"
   },
   "captions": {
+    "enabled": true,
     "animation": "static",
     "max_words": 6,
-    "keyword_caps": false
+    "keyword_caps": false,
+    "size": 0.032,
+    "position_y": 0.62,
+    "uppercase": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": true,
+    "position_y": 0.08,
+    "size": 0.03,
+    "uppercase": false,
+    "max_words": 16
   },
   "zoom": {
     "mode": "snap",
     "every_s": 0,
+    "scale": 1.0,
     "on_hook": 1.0,
     "on_emphasis": false
   },
+  "broll": {
+    "every_s": 0
+  },
+  "transitions": {
+    "default": "none"
+  },
   "sfx": {
-    "density_per_10s": 0.3
+    "density_per_10s": 0.3,
+    "db": -12,
+    "map": {
+      "hook": "impact",
+      "end": "impact"
+    }
   },
   "music": {
     "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0,
+    "warmth": 0.0,
+    "vignette": false
+  },
+  "end_card": {
+    "enabled": false
   }
 }

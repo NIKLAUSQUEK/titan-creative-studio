@@ -1,0 +1,52 @@
+{
+  "name": "lore-rollcall",
+  "label": "Lore roll-call (character parade)",
+  "kind": "style",
+  "description": "Measured fabianmosele DH4Mk9ORXzA (445K likes, 28 s, 7 shots median 2.7 s, last hold 11.2 s, chanted names ~123 wpm): one original character per shot with a small name tag top-right, a cut on each new name, final character held, no end card.",
+  "reference": "research/genre-research-2026-10/comedy-pov-absurd.md#6b",
+  "structure": {
+    "name": "rollcall",
+    "target_s": [
+      18,
+      30
+    ],
+    "beats": [
+      "character 1..N (1-4.5 s each)",
+      "final character hold 8-11 s"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "max_shot_s": 12,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": false
+  },
+  "labels": {
+    "position": "top_right",
+    "size": 0.022,
+    "style": "plain",
+    "_needs_feature": "labels.position top_right + per-beat name tag"
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.03
+  },
+  "beat_sync": true,
+  "sfx": {
+    "density_per_10s": 0.0
+  },
+  "music": {
+    "energy": "mid",
+    "db": -14,
+    "duck": false
+  },
+  "end_card": {
+    "enabled": false
+  }
+}
