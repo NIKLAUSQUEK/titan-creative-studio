@@ -91,16 +91,16 @@ def creator_brain_flags(work):
     return out
 
 
-def sample_frames(src, dur, n, tmp, kind):
+def sample_frames(src, dur, n, tmp, kind, width=640):
     outs = []
     if kind == "image":
         o = tmp / "f0.jpg"
-        ffmpeg(["-i", src, "-vf", "scale=320:-2", "-frames:v", 1, o], check=False)
+        ffmpeg(["-i", src, "-vf", f"scale='min({width},iw)':-2", "-frames:v", 1, o], check=False)
         return [(0.0, o)] if o.exists() else []
     for k in range(n):
         t = dur * (k + 0.5) / n if dur else 0
         o = tmp / f"f{k}.jpg"
-        ffmpeg(["-ss", f"{t:.2f}", "-i", src, "-vf", "scale=320:-2", "-frames:v", 1, "-q:v", 4, o], check=False)
+        ffmpeg(["-ss", f"{t:.2f}", "-i", src, "-vf", f"scale='min({width},iw)':-2", "-frames:v", 1, "-q:v", 4, o], check=False)
         if o.exists():
             outs.append((round(t, 2), o))
     return outs
@@ -109,6 +109,12 @@ def sample_frames(src, dur, n, tmp, kind):
 def cmd_index(a):
     con = db_open(a.index_dir)
     cbf = creator_brain_flags(a.creator_brain_work)
+    from . import faces
+    do_faces = faces.available() and not getattr(a, "no_faces", False)
+    if do_faces:
+        faces.ensure_tables(con)
+    else:
+        log("face recognition off (pip install opencv-python to tag who is in each clip)")
     seen, added, skipped = 0, 0, 0
     for root in a.roots:
         root = Path(root)
@@ -130,10 +136,12 @@ def cmd_index(a):
             if kind == "video" and (m.get("duration") or 0) < a.min_dur:
                 continue
             with tempfile.TemporaryDirectory() as td:
-                fr = sample_frames(f, m.get("duration") or 0, a.frames, Path(td), kind)
+                fr = sample_frames(f, m.get("duration") or 0, a.frames, Path(td), kind, width=960 if do_faces else 640)
                 if not fr:
                     log(f"  no frames: {f.name}"); continue
                 embs = embed_images([p for _, p in fr])
+                if do_faces:
+                    faces.store_faces(con, cid, fr, a.index_dir)
             con.execute("delete from frames where clip_id=?", (cid,))
             con.executemany("insert into frames values(?,?,?,?)", [(cid, k, t, embs[k].tobytes()) for k, (t, _) in enumerate(fr)])
             con.execute("insert or replace into clips values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
@@ -145,6 +153,8 @@ def cmd_index(a):
     gone = [r[0] for r in con.execute("select id,path from clips").fetchall() if not Path(r[1]).exists() and any(r[1].startswith(str(Path(x).resolve())) for x in a.roots)]
     for g in gone:
         con.execute("delete from clips where id=?", (g,)); con.execute("delete from frames where clip_id=?", (g,))
+        if do_faces:
+            con.execute("delete from faces where clip_id=?", (g,))
     con.commit()
     n, nf = con.execute("select count(*), sum(flag is not null) from clips").fetchone()
     log(f"index: {added} new/changed, {skipped} unchanged, {len(gone)} removed; {n} clips total ({nf or 0} flagged sensitive) -> {Path(a.index_dir) / 'broll.sqlite'}")
@@ -162,21 +172,64 @@ def load_index(index_dir):
                  for r in con.execute("select id,path,root,folder,name,kind,duration,width,height,tags,flag from clips")}
         rows = con.execute("select clip_id,k,t,emb from frames").fetchall()
         E = np.stack([np.frombuffer(r[3], np.float16).astype(np.float32) for r in rows]) if rows else np.zeros((0, 512), np.float32)
+        try:
+            from .faces import clip_people
+            for cid, v in clip_people(con).items():
+                if cid in clips:
+                    clips[cid]["people"], clips[cid]["unknown_faces"] = v["people"], v["unknown"]
+        except Exception:
+            pass
         _CACHE[key] = (clips, [(r[0], r[1], r[2]) for r in rows], E)
     return _CACHE[key]
 
 
-def search(index_dir, query, k=5, min_dur=0.0, allow_sensitive=False, exclude=()):
+VOCAB = ["a person talking to camera", "a man exercising in a gym", "a woman exercising", "people walking outdoors", "a city street", "an office desk with a laptop",
+         "a clinic treatment room", "a doctor or physiotherapist with a patient", "a close-up of hands", "food on a table", "a cup of coffee", "a kitchen",
+         "a car interior", "a beach or the ocean", "nature, trees and mountains", "a phone screen", "a computer screen with text", "a product close-up",
+         "a box being opened", "a sports field", "running or jogging", "stretching or yoga", "lifting weights", "a bedroom or bed", "a bathroom mirror",
+         "a crowd or event", "a stage or presentation", "a family at home", "children playing", "a pet", "night city lights", "sunrise or sunset",
+         "rain or bad weather", "a chart or graph", "text or a sign", "a supplement bottle or pills", "a medical diagram or anatomy", "shopping",
+         "money or a wallet", "a podcast microphone setup", "a selfie video", "a meeting at a table", "travel or an airport", "a restaurant or cafe"]
+_VOC = {}
+
+
+def describe(index_dir, cid, n=3):
+    """Zero-token scene labels for a clip (CLIP vs a fixed vocabulary): the compact text Claude reads instead of frames."""
+    import numpy as np
+    clips, refs, E = load_index(index_dir)
+    if "V" not in _VOC:
+        _VOC["V"] = np.stack([embed_text(v) for v in VOCAB]).astype(np.float32)
+    rows = [i for i, r in enumerate(refs) if r[0] == cid]
+    if not rows:
+        return ""
+    sc = (E[rows] @ _VOC["V"].T).max(0)
+    return ", ".join(VOCAB[i] for i in np.argsort(-sc)[:n])
+
+
+def parse_query(query):
+    """'@klaus walking | sunrise run' -> (['walking', 'sunrise run'], 'klaus'). '|' separates literal and metaphor queries."""
+    m = re.search(r"@([\w-]+)", query)
+    person = m.group(1).lower() if m else None
+    q = re.sub(r"@[\w-]+", " ", query)
+    parts = [x.strip() for x in q.split("|") if x.strip()]
+    return parts or (["a person"] if person else [query]), person
+
+
+def search(index_dir, query, k=5, min_dur=0.0, allow_sensitive=False, exclude=(), person=None, avoid_unknown_faces=True):
+    """Text -> clips, zero tokens. Several queries ('literal | metaphor') are max-pooled; '@name' or person= keeps only
+    clips where that enrolled person is recognised; clips with unrecognised faces are nudged down (consent)."""
     import numpy as np
     clips, refs, E = load_index(index_dir)
     if not len(E):
         return []
-    sims = E @ embed_text(query).astype(np.float32)
+    queries, p2 = parse_query(query)
+    person = (person or p2 or "").lower() or None
+    sims = np.max(np.stack([E @ embed_text(q).astype(np.float32) for q in queries]), axis=0)
     best = {}
     for (cid, fk, t), s in zip(refs, sims):
         if s > best.get(cid, (-9, 0))[0]:
             best[cid] = (float(s), t)
-    qt = set(re.findall(r"[a-z]{3,}", query.lower()))
+    qt = set(re.findall(r"[a-z]{3,}", " ".join(queries).lower()))
     out = []
     for cid, (s, t) in best.items():
         c = clips.get(cid)
@@ -184,14 +237,25 @@ def search(index_dir, query, k=5, min_dur=0.0, allow_sensitive=False, exclude=()
             continue
         if c["kind"] == "video" and (c["duration"] or 0) < min_dur:
             continue
+        ppl = c.get("people") or {}
+        if person and person not in ppl:
+            continue
         tag_hits = len(qt & set((c["tags"] or "").split()))
-        out.append({**c, "score": round(s + 0.02 * tag_hits, 4), "clip_sim": round(s, 4), "tag_hits": tag_hits, "best_t": t})
-    return sorted(out, key=lambda x: -x["score"])[:k]
+        score = s + 0.02 * tag_hits + (0.05 * ppl.get(person, 0) if person else 0)
+        if avoid_unknown_faces and not person:
+            score -= 0.015 * min(3, c.get("unknown_faces") or 0)
+        out.append({**c, "people": ppl, "unknown_faces": c.get("unknown_faces") or 0, "score": round(score, 4), "clip_sim": round(s, 4), "tag_hits": tag_hits, "best_t": t})
+    out = sorted(out, key=lambda x: -x["score"])[:k]
+    for o in out:
+        o["describe"] = describe(index_dir, o["id"])
+    return out
 
 
 def cmd_search(a):
     for r in search(a.index_dir, a.query, a.k, a.min_dur, a.allow_sensitive):
-        print(f"{r['score']:.3f}  {r['duration']:6.1f}s  {r['name']}  [{r['tags']}]  {'FLAG:' + r['flag'] if r['flag'] else ''}\n        {r['path']}")
+        who = ", ".join(r["people"]) or ("unknown faces" if r["unknown_faces"] else "no faces")
+        print(f"{r['score']:.3f}  {r['duration']:6.1f}s  {r['name']}  [{r['tags']}]  {'FLAG:' + r['flag'] if r['flag'] else ''}\n"
+              f"        sees: {r['describe']} | people: {who}\n        {r['path']}")
 
 
 def candidates_sheet(beats, out):
@@ -217,13 +281,29 @@ def candidates_sheet(beats, out):
     return out
 
 
-CHOOSE = """Pick B-roll for an edit. For each beat choose A, B, C or none (none if no candidate truly fits the line, would mislead,
-or shows a person/patient who may not have consented). Look at the contact sheet first with your Read tool: {sheet}
-(one row per beat, candidates A/B/C left to right). Brand: {brand}. Return ONLY JSON: {{"picks": [{{"beat_i": 0, "pick": "A|B|C|none", "why": "<=10 words"}}]}}
+CHOOSE = """Pick the visual for each beat of an edit: A, B, C or none. Read the contact sheet first with your Read tool: {sheet}
+(one row per beat, candidates A/B/C left to right). Pick what makes the LINE land: literal when the line names a thing,
+a metaphor shot when it's an idea, the speaker ('me') when the line is personal. Choose none if nothing fits, if it could mislead,
+if it shows an identifiable stranger/patient/child, or a real person in a way that implies endorsement (brand: {brand}, goal: {goal}).
+Return ONLY JSON: {{"picks": [{{"beat_i": 0, "pick": "A|B|C|none", "why": "<=10 words"}}]}}
 {rows}"""
 
 
+def beat_visual(b, who):
+    """Normalise a brief beat into a visual spec. Brief beats may carry visual: {type, query, metaphor, person, entity, web}."""
+    v = dict(b.get("visual") or {})
+    v.setdefault("query", b.get("broll_query"))
+    t = v.get("type") or ("own_broll" if v.get("query") else None)
+    if t in ("me", "speaker"):
+        v["person"] = v.get("person") or who
+    v["type"] = t
+    qs = [x for x in (v.get("query"), v.get("metaphor")) if x]
+    v["queries"] = qs or ([v["entity"]] if v.get("entity") else [])
+    return v
+
+
 def cmd_match(a, edit_dir):
+    from .common import studio
     brief = rjson(edit_dir / "brief.json")
     if not brief:
         raise SystemExit("No brief.json: run `brief` first")
@@ -233,34 +313,63 @@ def cmd_match(a, edit_dir):
         style = load_preset(brief.get("preset") or "talking-head-punchy")
     except SystemExit:
         pass
+    who = (brief.get("brain") or studio("active_brain") or "").lower() or None
     mind = (style.get("broll") or {}).get("min_dur_s", 1.0)
+    web_ok = getattr(a, "web", False)
     beats, used = [], set()
     for i, b in enumerate(brief.get("beats", [])):
-        q = b.get("broll_query")
-        if not q:
+        v = beat_visual(b, who)
+        if not v["type"] or v["type"] in ("none", "text_card") or not v["queries"]:
             continue
         need = min(max(mind, (float(b["t1"]) - float(b["t0"])) * 0.6), (style.get("broll") or {}).get("max_dur_s", 2.5))
-        cands = search(a.index_dir, q, a.k, min_dur=need, allow_sensitive=a.allow_sensitive, exclude=used)
-        beats.append({"beat_i": i, "beat": b.get("beat"), "line": b.get("line"), "query": q, "need_s": round(need, 2),
-                      "candidates": [{k: c[k] for k in ("id", "path", "name", "kind", "duration", "tags", "score", "best_t", "flag")} for c in cands]})
-        if cands:
-            used.add(cands[0]["id"])
+        cands = []
+        if v["type"] != "web_image":
+            q = " | ".join(v["queries"]) + (f" @{v['person']}" if v.get("person") else "")
+            cands = search(a.index_dir, q, a.k + 4, min_dur=need, allow_sensitive=a.allow_sensitive)
+        weak = not cands or cands[0]["score"] < a.min_score
+        if (v["type"] == "web_image" or (web_ok and weak and v["type"] != "me")) and (v.get("entity") or v["queries"]):
+            from .webimg import find, rank
+            log(f"  beat {i}: web images for '{v.get('entity') or v['queries'][0]}'")
+            web = rank(find(v.get("entity") or v["queries"][0], edit_dir / "web", 6, bool(v.get("real_person"))), v["queries"] or [v["entity"]])
+            cands = sorted(cands + [dict(c, id="web-" + Path(c["path"]).stem, name=Path(c["path"]).name, kind="image", duration=0, tags=c.get("title") or "",
+                                         best_t=0, flag=None, describe=c.get("title") or "", people={}, unknown_faces=0) for c in web],
+                           key=lambda c: -c["score"])[: a.k]
+        keep = ("id", "path", "name", "kind", "duration", "tags", "score", "best_t", "flag", "describe", "people", "unknown_faces",
+                "credit", "licence", "licence_url", "source", "page", "creator", "title", "real_person")
+        beats.append({"beat_i": i, "beat": b.get("beat"), "line": b.get("line"), "query": " | ".join(v["queries"]), "visual": v["type"],
+                      "person": v.get("person"), "need_s": round(need, 2), "candidates": [{k: c.get(k) for k in keep} for c in cands]})
+    # global assignment: strongest (beat, clip) pairs first, each clip used once, weak matches reserve nothing
+    pairs = sorted(((c["score"], bi, c["id"]) for bi, b in enumerate(beats) for c in b["candidates"]), reverse=True)
+    owner, taken = {}, set()
+    for sc, bi, cid in pairs:
+        if bi in owner or cid in taken or sc < a.min_score:
+            continue
+        owner[bi] = cid; taken.add(cid)
+    for bi, b in enumerate(beats):
+        mine = owner.get(bi)
+        cs = [c for c in b["candidates"] if c["id"] == mine or c["id"] not in taken]
+        b["candidates"] = sorted(cs, key=lambda c: (c["id"] != mine, -c["score"]))[: a.k]
     sheet = candidates_sheet(beats, edit_dir / "broll_sheet.jpg")
     picks = {}
     if a.llm == "claude-cli" and sheet:
-        rows = "\n".join(f"beat {b['beat_i']} ({b['beat']}): line=\"{(b['line'] or '')[:120]}\" query=\"{b['query']}\" | " +
-                         " | ".join(f"{chr(65 + j)}: {c['name']} [{c['tags']}] {c['duration']:.1f}s sim={c['score']:.2f}" for j, c in enumerate(b["candidates"][:3]))
-                         for b in beats if b["candidates"])
+        def desc(c):
+            who_ = ", ".join(c.get("people") or {}) or (f"{c['unknown_faces']} unknown faces" if c.get("unknown_faces") else "no faces")
+            src = f"web {c['licence']}{' REAL PERSON' if c.get('real_person') else ''}" if c.get("credit") else f"{c['duration']:.1f}s own"
+            return f"{c['name'][:40]} [{c.get('describe') or c['tags']}] {who_}, {src}, sim={c['score']:.2f}"
+        rows = "\n".join(f"beat {b['beat_i']} ({b['beat']}, wants {b['visual']}{' of ' + b['person'] if b.get('person') else ''}): "
+                         f"line=\"{(b['line'] or '')[:120]}\" query=\"{b['query']}\" | " +
+                         " | ".join(f"{chr(65 + j)}: {desc(c)}" for j, c in enumerate(b["candidates"][:3])) for b in beats if b["candidates"])
         log("broll: one claude -p call to choose among top-3 per beat")
-        res = parse_json(claude(CHOOSE.format(sheet=sheet, brand=brief.get("brand"), rows=rows), image_dir=edit_dir, model=a.claude_model))
+        res = parse_json(claude(CHOOSE.format(sheet=sheet, brand=brief.get("brand"), goal=brief.get("goal"), rows=rows), image_dir=edit_dir, model=a.claude_model))
         picks = {p["beat_i"]: p for p in res.get("picks", [])}
     for b in beats:
         p = picks.get(b["beat_i"])
         if p:
             b["pick"] = None if p["pick"] == "none" else "ABC".index(p["pick"]); b["why"] = p.get("why")
-        else:  # local default: top match if it clears the similarity floor
-            b["pick"] = 0 if b["candidates"] and b["candidates"][0]["score"] >= a.min_score else None
-            b["why"] = "top local match" if b["pick"] == 0 else "no candidate above the similarity floor"
+        else:  # local default: top match if it clears the similarity floor; never a real-person web photo without a human/Claude pick
+            top = b["candidates"][0] if b["candidates"] else None
+            b["pick"] = 0 if top and top["score"] >= a.min_score and not top.get("real_person") else None
+            b["why"] = "top local match" if b["pick"] == 0 else "no candidate above the similarity floor (or needs a human pick)"
     wjson(edit_dir / "broll_candidates.json", {"index": str(a.index_dir), "sheet": str(sheet) if sheet else None, "beats": beats})
     n = sum(1 for b in beats if b["pick"] is not None)
     log(f"broll: {n}/{len(beats)} beats matched -> broll_candidates.json" + (f", sheet {sheet}" if sheet else ""))

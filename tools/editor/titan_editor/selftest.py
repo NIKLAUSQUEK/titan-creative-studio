@@ -157,6 +157,14 @@ def selftest(a):
     run("qc", "--final")
     run("handoff")
     ok("handoff for /publish", (E / "HANDOFF.md").exists())
+    run("expand", "--count", 6)
+    vj = rjson(E / "variants" / "v3" / "variants.json")
+    vs = vj["variants"] if vj else []
+    ok("expand: 6 variants with files", len(vs) == 6 and all(v["files"] for v in vs), ", ".join(f"{v['id']}:{v['format']}" for v in vs))
+    reels = [v for v in vs if v["format"] == "reel"]
+    ok("expand: reels differ on >= 2 axes", all(sum(a[k] != b[k] for k in ("hook", "header", "duration", "speed", "captions", "swap")) >= 2
+                                              for i, a in enumerate(reels) for b in reels[i + 1:]))
+    ok("expand: CTA stays last in every reel", all(v["beats"][-1] == reels[0]["beats"][-1] for v in reels if v["duration"] != "micro" or len(v["beats"]) > 2))
     from .presets import stylecard_to_preset
     p = stylecard_to_preset({"creator": {"name": "Test Creator"}, "dna": {"energy": 5, "avg_shot_s": 1.1, "captions": "word-by-word pop, yellow highlight, all caps, centre",
                                                                          "sound": "whooshes and bass drops", "lighting": "high contrast, warm"}})

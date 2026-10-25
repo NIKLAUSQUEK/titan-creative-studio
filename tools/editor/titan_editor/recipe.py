@@ -177,6 +177,7 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
     bc = rjson(edit_dir / "broll_candidates.json", {"beats": []})
     br = style.get("broll", {})
     last_at = -1e9
+    web_used = []
     for b in bc["beats"]:
         if b.get("pick") is None:
             continue
@@ -192,9 +193,18 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
         off = round(min(0.4, max(0.0, beat_len - dur) / 2), 2)
         src_in = max(0.0, min(c["best_t"] - dur / 2, (c["duration"] or 0) - dur)) if c["kind"] == "video" else 0.0
         r["broll"].append({"id": f"b{len(r['broll']) + 1:02d}", "path": c["path"], "kind": c["kind"], "src_in": round(src_in, 2), "dur": dur,
-                           "anchor": {"item": its[0]["id"], "offset": off}, "mode": br.get("mode", "full"), "flag": c.get("flag"), "query": b["query"]})
+                           "anchor": {"item": its[0]["id"], "offset": off}, "mode": br.get("mode", "full"), "flag": c.get("flag"), "query": b["query"],
+                           "people": list(c.get("people") or {}), "unknown_faces": c.get("unknown_faces") or 0,
+                           "credit": c.get("credit"), "licence": c.get("licence"), "real_person": bool(c.get("real_person"))})
+        if c.get("credit") and not str(c.get("licence", "")).lower().startswith(("cc0", "public")):
+            r["texts"].append({"type": "credit", "text": c["credit"], "anchor": {"item": its[0]["id"], "offset": off}, "dur": dur})
+        if c.get("credit"):
+            web_used.append(c)
         last_at = start
     r["audio"]["sfx"] = auto_sfx(r)
+    if web_used:
+        from .webimg import attribution
+        log(f"image credits -> {attribution(edit_dir, web_used)} (add to the caption)")
     return save_new(edit_dir, r, note, parent=None)
 
 

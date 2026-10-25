@@ -68,6 +68,45 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - For revisions, prefer quick phrases. Otherwise edit the JSON directly; the recipe has no word lists, so it stays small.
 - Use the self-review (`qc --llm claude-cli`) only on Klaus's PC runs. In a session, you look at the sheets yourself.
 
+## 6b. Smart visuals (who, what, where)
+- **Beat visuals:** each brief beat has `visual: {type, query, metaphor, person, entity, real_person}`.
+  - `own_broll`: your footage, searched with both the literal query and the metaphor (`"walk | fresh start sunrise"`).
+  - `me` / `person`: clips where an enrolled person is recognised.
+  - `web_image`: licensed photo of a named thing or place.
+  - `text_card` / `none`: no cutaway (hooks and CTAs stay on the face).
+- **Faces (local, OpenCV YuNet + SFace):**
+  - Enrol: `people enroll klaus <photos> --consent self`. Search: `broll-search "@klaus gym"`.
+  - Every candidate carries `people` and `unknown_faces`. QC fails a sell piece with unrecognised faces in B-roll.
+- **Scene labels:** `describe` is zero-token CLIP labels ("a man exercising in a gym, lifting weights"). That is the text Claude reads when picking.
+- **Web images:** `broll-match --web` (or the `web_image` type) searches Openverse then Wikimedia Commons.
+  - Licences: CC0, PD, CC BY and CC BY-SA only. Images are ranked locally with CLIP.
+  - CC BY images get an on-screen credit plus `web/ATTRIBUTION.md` for the caption.
+  - Never Google Images (no licence data; ToS).
+  - Real people only as credited editorial/commentary context, never in ads (QC flags).
+- **Assignment:** the strongest beat↔clip pairs are assigned first, each clip is used once, and weak matches reserve nothing.
+
+## 7. Trial-reel expander (`expand`)
+- **What it makes:** one base edit → N variants (default 12) in `variants/v<N>/`: reels, carousel-text, carousel-image, single quote card, single poster.
+- **Axes:**
+  - hook: original, or another footage hook moved first
+  - header: intro, persistent, or none (header text from the brief's ranked hooks + optional `brief.headers`, CTA lines excluded)
+  - length: full, short (~60%), or micro
+  - speed: within `--speeds`, default 1.0-1.4 with pitch kept
+  - captions: one of 7 caption packs
+  - sequence: one safe swap of adjacent beats
+  - framing: punch-in/crop and a small saturation nudge
+- **Diversity:** every reel pair differs on ≥3 axes (≥2 when hooks are scarce).
+- **Story guard:**
+  - Hook first, CTA last.
+  - Roles hook/turn/lesson/payoff/cta are never dropped.
+  - Beats marked `fixed` never move.
+  - A line starting with so/and/but/because/that's why/this/which/then/it never swaps.
+  - So: give beats roles in the brief.
+- **Cost:** zero Claude tokens. About 3-5 s per draft reel variant on a CPU.
+- **Honest note:**
+  - Platforms fingerprint audio and video, so speed or crop tweaks alone don't make a repost "new". The hook, structure and format changes are what make a fresh test.
+  - One variant per test slot, own caption, never cross-posting duplicates from several accounts.
+
 ## 6. Sound and compliance hooks
 - **Sound:** `/sound` decides the track. Brand accounts get `audio.music.licence` = `original` or `licensed:<source>`; the renderer refuses unlicensed music for brand accounts. Trending sounds on personal accounts are `in-app`: never baked into the file, and recorded in `PUBLISH.md`.
 - **SFX:** density and stim types follow the preset (see `voice-persona-audio.md` stim map).

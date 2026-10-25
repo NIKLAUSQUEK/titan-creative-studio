@@ -38,6 +38,8 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "go", "draft it" | `/draft` (cost-gated) |
 | "edit this footage", "cut my talking head", "make a UGC edit / unboxing / POV / day-in-the-life edit", "make 9:16 + 1:1 + 16:9 versions" | `/edit` → editor agent (references/editor.md, tools/editor): ingest → strategist edit brief → local B-roll match → edit.v1.json → lowest-quality draft → QC |
 | "revise the edit", "cut first 2 s", "punchier captions", "go back to v3" | `/edit <note>` → new recipe version + new draft (quick phrases cost 0 tokens); final 1080p only after `editor.py approve` |
+| "trial reels", "make 10-15 variations / versions", "A/B test this video", "carousel + reel versions of this" | `/expand` → trial-reel expander (tools/editor): reels + carousels + single images varying hook, header, length, speed, captions, sequence (story guard on) → VARIANTS.md → `/publish` each |
+| "which clips am I in", "use B-roll of me", "find a photo of <thing/place>" | editor `people enroll` (local face recognition, consent required) · `broll-search "@<name> ..."` · `web-images` (licensed Openverse/Wikimedia only, credits kept) |
 | "QC this", "check it" | `/qc` |
 | "final", "pro it" | `/final` |
 | "that's wrong because…" / any correction | fix it, then `/learn` |

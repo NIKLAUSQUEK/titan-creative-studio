@@ -25,7 +25,11 @@ SCHEMA = {
     "hooks": [{"rank": 1, "text": "hook (<=12 words)", "formula": "contrarian|confession|cold-open|curiosity|outcome-twist|question|number|pattern-interrupt",
                "source": "footage (verbatim line) | text-overlay | new-vo", "clip": "clip id if footage", "t0": 0.0, "t1": 0.0, "why": ""}],
     "beats": [{"beat": "hook|context|turn|lesson|proof|cta|...", "purpose": "", "clip": "clip id", "t0": 0.0, "t1": 0.0,
-               "line": "verbatim kept line(s) from the summary", "on_screen_text": "or null", "broll_query": "short visual description or null", "sfx": "or null"}],
+               "line": "verbatim kept line(s) from the summary", "on_screen_text": "or null", "broll_query": "short visual description or null", "sfx": "or null",
+               "role": "hook|context|body|example|proof|turn|lesson|payoff|cta (the expander only reorders/drops context/body/example/proof)", "fixed": "true if this beat must not move",
+               "visual": {"type": "none|own_broll|me (the speaker in other footage)|person (an enrolled person)|web_image (licensed photo of a named thing/place/person)|text_card",
+                          "query": "literal visual (3-8 concrete words)", "metaphor": "a visual metaphor for the idea, or null", "person": "enrolled name or null",
+                          "entity": "named product/place/person to fetch if own footage lacks it, or null", "real_person": "true if entity is a real person (editorial only)"}}],
     "cta": {"spoken": "", "on_screen": "", "end_card": ""}, "compliance": ["rule that bites + how this edit obeys it"],
     "sound": {"vibe": "", "energy": "none|low|mid|high", "licence_rule": "brand=licensed/original only; personal=trending in-app"},
     "assumptions": ["anything you assumed"]}
@@ -107,6 +111,8 @@ A hook can be a footage line (source=footage), an on-screen text overlay (text-o
 Respect precedence: ledger > brand file + brain voice > Klaus's ask > preset > defaults. Apply every compliance pack rule to hooks,
 captions, on-screen text and CTA. Pick the preset from the menu that best fits the goal and footage. Beats must be in playback order,
 each mapped to a clip range from the footage; add a broll_query (3-8 concrete visual words) where a cutaway helps.
+For every beat choose a visual that makes the LINE land (literal for things, a metaphor for ideas, 'me' for personal moments, web_image only for a named
+thing/place the footage can't show; never a real person in a sell piece). Mark roles so variants can shorten/reorder without breaking the story.
 Rank exactly 5 hooks. Return ONLY one JSON object with exactly these keys:
 {schema}
 
@@ -124,15 +130,23 @@ def heuristic_brief(a, edit_dir, brand):
         for s in c["an"]["sentences"]:
             if s.get("best") and not s.get("throat_clearing"):
                 words = [w for w in re.findall(r"[a-zA-Z']+", s["text"].lower()) if w not in STOP and len(w) > 2]
+                entity = next((m for m in re.findall(r"(?<=\s)([A-Z][a-zA-Z0-9]+(?:\s[A-Z][a-zA-Z0-9]+)*)", s["text"]) if m not in ("I", "I'm", "OK")), None)
+                personal = bool(re.search(r"\b(I|I'm|I've|my|me)\b", s["text"]))
+                q = " ".join(words[:5]) or None
                 beats.append({"beat": "body", "purpose": "", "clip": c["id"], "t0": s["t0"], "t1": s["t1"], "line": s["text"],
-                              "on_screen_text": None, "broll_query": " ".join(words[:5]) or None, "sfx": None})
+                              "on_screen_text": None, "broll_query": q, "sfx": None, "role": "body", "fixed": False,
+                              "visual": {"type": ("me" if personal else "own_broll") if q else "none", "query": q, "metaphor": None, "person": None,
+                                         "entity": entity, "real_person": False}})
     if hooks and beats and (beats[0]["clip"], beats[0]["t0"]) != (hooks[0]["clip"], hooks[0]["t0"]) and hooks[0]["score"] >= 1.5:
         i = next((k for k, b in enumerate(beats) if (b["clip"], b["t0"]) == (hooks[0]["clip"], hooks[0]["t0"])), None)
         if i is not None:
             beats.insert(0, beats.pop(i))
     if beats:
-        beats[0]["beat"] = "hook"; beats[0]["on_screen_text"] = None
-        beats[-1]["beat"] = "cta" if len(beats) > 2 else beats[-1]["beat"]
+        beats[0]["beat"] = beats[0]["role"] = "hook"; beats[0]["on_screen_text"] = None; beats[0]["fixed"] = True
+        beats[0]["visual"] = {"type": "none"}
+        if len(beats) > 2:
+            beats[-1]["beat"] = beats[-1]["role"] = "cta"; beats[-1]["fixed"] = True
+            beats[-1]["visual"] = {"type": "none"}; beats[-1]["broll_query"] = None  # stay on the face for the ask
         beats[0]["broll_query"] = None  # never cut away from the face on the hook
     _, brand_text = brand_guide(brand)
     comp = [l.strip("- ").strip() for l in (brand_text or "").splitlines() if "COMPLIANCE" in l or l.strip().startswith("- Don't")]

@@ -231,6 +231,7 @@ def build_ass(r, clips, W, H, total, path):
     fonts = st.get("fonts", {})
     ec = st.get("end_card", {})
     styles.append(ass_style("EndTitle", ec.get("font") or fonts.get("display") or "DejaVu Sans", ec.get("title_size", 0.05) * U, ec.get("color") or st.get("colors", {}).get("text") or "#FFFFFF", 0, bold=False))
+    styles.append(ass_style("Credit", "DejaVu Sans", 0.014 * U, "#FFFFFF", max(1, round(2 * k)), "#000000", False))
     styles.append(ass_style("EndSub", ec.get("sub_font") or fonts.get("body") or "DejaVu Sans", ec.get("sub_size", 0.03) * U, ec.get("sub_color") or ec.get("color") or "#FFFFFF", 0, bold=False))
     ev = []
     cx = W // 2
@@ -266,11 +267,13 @@ def build_ass(r, clips, W, H, total, path):
             continue
         b = min(a + float(t.get("dur", 2.5)), body)
         txt = ass_escape(t["text"])
-        if t["type"] in ("hook", "title"):
-            if ht.get("uppercase", True):
+        if t["type"] in ("hook", "title", "header"):
+            if t.get("uppercase", ht.get("uppercase", True)):
                 txt = txt.upper()
-            y = int(H * (ht.get("position_y", 0.2) if t["type"] == "hook" else t.get("position_y", 0.32)))
+            y = int(H * t.get("position_y", ht.get("position_y", 0.2) if t["type"] in ("hook", "header") else 0.32))
             ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Hook,,0,0,0,,{{\\an5\\pos({cx},{y})\\fscx90\\fscy90\\t(0,120,\\fscx100\\fscy100)\\fad(0,120)}}{txt}")
+        elif t["type"] == "credit":
+            ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Credit,,0,0,0,,{{\\an1\\pos({int(W * 0.04)},{int(H * (0.13 if H > W else 0.95))})}}{txt}")
         elif t["type"] == "lower_third":
             ly, cy = lt.get("position_y", 0.8), c.get("position_y", 0.7)
             if abs(ly - cy) < 0.09:  # never sit on the caption band
@@ -308,13 +311,15 @@ def music_ok(r):
     return (True, "unlicensed, personal account draft only") if personal else (False, "music has no licence (set audio.music.licence to original|licensed:<source>); brand accounts use licensed/original audio only")
 
 
-def render(edit_dir, version=None, quality="draft", aspects=None, force=False):
-    r = load(edit_dir, version)
+def render(edit_dir, version=None, quality="draft", aspects=None, force=False, recipe=None, out_dir=None, name=None):
+    """recipe/out_dir/name let the variant expander render recipes that live outside the edit.vN chain."""
+    r = recipe or load(edit_dir, version)
     if quality == "final" and not r.get("approved") and not force:
         raise SystemExit(f"v{r['version']} is not approved. Show Klaus the draft, then: editor.py approve --version {r['version']} (studio rule: draft -> approval -> final).")
     clips = {c["id"]: c for c in load_clips(edit_dir)}
-    out_dir = edit_dir / "renders"
-    cache = out_dir / "cache"
+    out_dir = Path(out_dir) if out_dir else edit_dir / "renders"
+    cache = edit_dir / "renders" / "cache"
+    out_dir.mkdir(parents=True, exist_ok=True)
     cache.mkdir(parents=True, exist_ok=True)
     fonts = cache / "fonts"
     fonts.mkdir(exist_ok=True)
@@ -338,7 +343,7 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False):
         if r["end_card"].get("enabled"):
             files.append(end_card_seg(r, W, H, quality, cache))
         total = body + (r["end_card"]["dur"] if r["end_card"].get("enabled") else 0)
-        tag = f"v{r['version']}_{A.replace(':', 'x')}_{quality}"
+        tag = f"{name or 'v' + str(r['version'])}_{A.replace(':', 'x')}_{quality}"
         lst = cache / f"{tag}.txt"
         lst.write_text("ffconcat version 1.0\n" + "".join(f"file '{f.name}'\n" for f in files), encoding="utf-8")
         base = cache / f"{tag}_base.mkv"
@@ -407,9 +412,10 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False):
                ["-movflags", "+faststart", str(final.resolve())], cwd=cache)
         log(f"  -> {final}  ({total:.2f} s)")
         results.append({"aspect": A, "quality": quality, "path": str(final), "duration": round(total, 2), "W": W, "H": H, "music": why})
-    man = rjson(out_dir / "renders.json", [])
-    man += [dict(x, version=r["version"]) for x in results]
-    wjson(out_dir / "renders.json", man)
+    if not name:
+        man = rjson(out_dir / "renders.json", [])
+        man += [dict(x, version=r["version"]) for x in results]
+        wjson(out_dir / "renders.json", man)
     return r, results
 
 

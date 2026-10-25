@@ -18,7 +18,7 @@ Everything runs on your PC. The heavy work (transcription, B-roll search, render
 cd C:\path\to\titan-creative-studio\tools\editor
 .\Run-Editor.ps1 -SelfTest
 ```
-It ends with `SELFTEST 26/26 passed`. It uses Windows' built-in voice to make a test clip.
+It ends with `SELFTEST 29/29 passed`. It uses Windows' built-in voice to make a test clip.
 
 ## Daily use
 ```powershell
@@ -50,6 +50,24 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 | `-ClaudeModel sonnet` | your default | Sonnet is cheaper and plenty for briefs and revisions |
 | `-WhisperModel` | `large-v3` with a GPU, else `small` | use `medium` for Singlish/Chinese on a fast CPU |
 | `-IndexDir` | `%LOCALAPPDATA%\TitanEditor` | where the B-roll index (`broll.sqlite`) lives |
+
+## Trial reels: 10-15 variations of one video
+```powershell
+.\Run-Editor.ps1 -Project back-pain-myth -Expand 12                 # drafts of 12 variants (reels + carousels + single images)
+.\Run-Editor.ps1 -Project back-pain-myth -Expand 12 -Speeds "1.0,1.2" -Final   # finals, only from an approved base
+```
+`projects\<p>\autoedit\variants\v<N>\VARIANTS.md` lists every variant. Each one differs on the hook (another strong line moved first), the header text and its style (intro or persistent), the length (full, about 60%, or micro), the speed, the caption style (7 packs), a safe reorder of two body beats, and the punch-in and crop. About 4 variants are carousels (text-heavy and image-heavy) or single images (a quote card or a poster).
+The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
+
+## B-roll of you + licensed photos
+```powershell
+.\Run-Editor.ps1 -EnrollMe "D:\Photos\me" -EnrollName klaus      # 5-20 clear photos of just you; local face recognition
+.\Run-Editor.ps1 -Project back-pain-myth -Web                       # allow licensed web photos when your footage has no match
+```
+- **Face recognition** runs on your PC with OpenCV models (no cloud). Only enrol people who agreed to it.
+- **"Me" shots:** the brief can ask for a "me" shot ("when I started lifting" → a clip where you're recognised).
+- **Web photos** come from Openverse and Wikimedia Commons, with commercial-use licences only. Credits go on screen and into `web\ATTRIBUTION.md` for your caption.
+- **No Google Images:** they come with no licence data, so nothing found there is safe to post.
 
 ## Revision phrases that cost zero tokens
 These revision phrases are applied locally, with no Claude call:

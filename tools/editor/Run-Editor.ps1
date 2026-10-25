@@ -49,6 +49,11 @@ param(
   [switch] $Approve,
   [switch] $Final,
   [switch] $SelfTest,
+  [int] $Expand = 0,                         # trial-reel expander: make N variants (10-15) of the latest/approved edit
+  [string] $Speeds = "1.0,1.4",              # min,max playback speed across variants
+  [string] $EnrollMe = "",                   # folder of 5-20 clear photos of you -> face recognition in B-roll
+  [string] $EnrollName = "",                 # default: your active brain (e.g. klaus)
+  [switch] $Web,                             # allow licensed web images (Openverse/Wikimedia) when footage has no match
   [switch] $Presets,
   [ValidateSet("auto", "tiny", "base", "small", "medium", "large-v3")] [string] $WhisperModel = "auto",
   [ValidateSet("claude-cli", "none")] [string] $Llm = "claude-cli",
@@ -85,7 +90,7 @@ try {
     $idx = if (Have "nvidia-smi") { "https://download.pytorch.org/whl/cu124" } else { "https://download.pytorch.org/whl/cpu" }
     Write-Host "Installing PyTorch ($idx) + open_clip (one-time, ~1-3 GB)..." -ForegroundColor Cyan
     & $vpy -m pip install --quiet torch torchvision --index-url $idx
-    & $vpy -m pip install --quiet open_clip_torch
+    & $vpy -m pip install --quiet open_clip_torch opencv-python
     if ($LASTEXITCODE -eq 0) { Set-Content $stamp (Get-Date) }
   }
   if ($Llm -eq "claude-cli" -and -not (Have "claude")) {
@@ -107,6 +112,17 @@ try {
     Ed $a
     if ($Steps.Count -eq 1 -and $Steps[0] -eq "broll-index") { return }
   }
+  if ($EnrollMe) {
+    $n = if ($EnrollName) { $EnrollName } else { (Get-Content (Join-Path (Split-Path (Split-Path $here)) ".studio\active_brain") -ErrorAction SilentlyContinue) }
+    if (-not $n) { $n = "me" }
+    Ed @("people", "enroll", $n, $EnrollMe, "--consent", "self", "--index-dir", $IndexDir)
+    Ed @("people", "scan", "--index-dir", $IndexDir); Ed @("people", "list", "--index-dir", $IndexDir); return
+  }
+  if ($Expand -gt 0) {
+    $a = @("expand", "--count", $Expand, "--speeds", $Speeds); if ($Final) { $a += "--final" }
+    Ed $a
+    Write-Host "`nVariants: projects\$Project\autoedit\variants\ (see VARIANTS.md). Package each with /publish." -ForegroundColor Green; return
+  }
   if ($Revise) { Ed (@("revise", $Revise) + $llmArgs); Ed @("render"); Ed @("qc"); return }
   if ($Chat) { & $vpy @($base + @("chat") + $llmArgs); return }
   if ($Approve) { Ed @("approve") }
@@ -127,7 +143,7 @@ try {
     foreach ($kv in @(@("--brand", $Brand), @("--goal", $Goal), @("--platform", $Platform), @("--preset", $Preset), @("--ask", $Ask))) { if ($kv[1]) { $a += $kv } }
     Ed $a
   }
-  if ($Steps -contains "broll") { Ed (@("broll-match", "--index-dir", $IndexDir) + $llmArgs) }
+  if ($Steps -contains "broll") { $a = @("broll-match", "--index-dir", $IndexDir) + $llmArgs; if ($Web) { $a += "--web" }; Ed $a }
   if ($Steps -contains "assemble") {
     $a = @("assemble")
     foreach ($kv in @(@("--preset", $Preset), @("--aspects", $Aspects), @("--music", $Music), @("--music-licence", $MusicLicence))) { if ($kv[1]) { $a += $kv } }

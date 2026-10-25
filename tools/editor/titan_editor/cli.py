@@ -14,6 +14,9 @@
   editor.py run     --project P <footage...>                  ingest -> brief -> broll -> assemble -> draft -> qc
   editor.py chat    --project P                               revision loop: type a note, get a new draft
   editor.py preset  list | show NAME | from-stylecard NAME [--file card.json]
+  editor.py people  enroll NAME PHOTOS --consent self | list | scan | forget NAME   (local face recognition: "which clips am I in")
+  editor.py web-images "query" [--real-person]               licensed photos (Openverse / Wikimedia), credits kept
+  editor.py expand  --project P [--count 12] [--final]       trial-reel expander: 10-15 variants (reels, carousels, single images)
   editor.py selftest                                          synthetic end-to-end test
 """
 import argparse, shutil, sys
@@ -41,10 +44,18 @@ def main(argv=None):
     p = sp.add_parser("broll-index"); p.add_argument("roots", nargs="+"); p.add_argument("--index-dir", default=str(default_index_dir()))
     p.add_argument("--frames", type=int, default=4); p.add_argument("--min-dur", type=float, default=0.8); p.add_argument("--images", action="store_true")
     p.add_argument("--creator-brain-work", default=None, help="Creator Brain work folder: reuse its sensitivity flags")
+    p.add_argument("--no-faces", action="store_true", help="skip face detection while indexing")
+    p = sp.add_parser("people"); p.add_argument("action", choices=["enroll", "list", "scan", "forget"]); p.add_argument("name", nargs="?")
+    p.add_argument("photos", nargs="?"); p.add_argument("--consent", default=None); p.add_argument("--index-dir", default=str(default_index_dir()))
+    p = sp.add_parser("web-images"); p.add_argument("query"); p.add_argument("-n", type=int, default=6); p.add_argument("--real-person", action="store_true")
+    p = sp.add_parser("expand"); p.add_argument("--count", type=int, default=12); p.add_argument("--version", default=None); p.add_argument("--final", action="store_true")
+    p.add_argument("--speeds", default="1.0,1.4", help="min,max playback speed across variants"); p.add_argument("--reels-only", action="store_true")
+    p.add_argument("--aspects", default=None); p.add_argument("--seed", type=int, default=7)
     p = sp.add_parser("broll-search"); p.add_argument("query"); p.add_argument("--index-dir", default=str(default_index_dir())); p.add_argument("-k", type=int, default=5)
     p.add_argument("--min-dur", type=float, default=0); p.add_argument("--allow-sensitive", action="store_true")
     p = sp.add_parser("broll-match"); add_llm(p); p.add_argument("--index-dir", default=str(default_index_dir())); p.add_argument("-k", type=int, default=5)
     p.add_argument("--min-score", type=float, default=0.2); p.add_argument("--allow-sensitive", action="store_true")
+    p.add_argument("--web", action="store_true", help="fetch licensed web images when your footage has no good match")
     p = sp.add_parser("assemble"); p.add_argument("--preset"); p.add_argument("--aspects"); p.add_argument("--music"); p.add_argument("--music-licence")
     p = sp.add_parser("revise"); p.add_argument("instruction"); p.add_argument("--base", default=None); add_llm(p)
     p = sp.add_parser("revert"); p.add_argument("to", type=int)
@@ -80,6 +91,9 @@ def main(argv=None):
     if a.cmd == "broll-search":
         from .broll import cmd_search
         return cmd_search(a)
+    if a.cmd == "people":
+        from .faces import cmd_people
+        return cmd_people(a)
     if a.cmd == "selftest":
         from .selftest import selftest
         return selftest(a)
@@ -90,6 +104,12 @@ def main(argv=None):
     if a.cmd == "brief":
         from .brief import cmd_brief
         return cmd_brief(a, ed)
+    if a.cmd == "web-images":
+        from .webimg import cmd_web
+        return cmd_web(a, ed)
+    if a.cmd == "expand":
+        from .expand import cmd_expand
+        return cmd_expand(a, ed)
     if a.cmd == "broll-match":
         from .broll import cmd_match
         return cmd_match(a, ed)
@@ -138,11 +158,11 @@ def pipeline(a, ed):
     if not a.no_broll:
         if a.broll_roots:
             from .broll import cmd_index
-            cmd_index(argparse.Namespace(roots=a.broll_roots, index_dir=a.index_dir, frames=4, min_dur=0.8, images=False, creator_brain_work=None))
+            cmd_index(argparse.Namespace(roots=a.broll_roots, index_dir=a.index_dir, frames=4, min_dur=0.8, images=False, creator_brain_work=None, no_faces=False))
         from .broll import cmd_match, db_open
         con = db_open(a.index_dir)
         if con.execute("select count(*) from clips").fetchone()[0]:
-            cmd_match(argparse.Namespace(index_dir=a.index_dir, k=5, min_score=0.2, allow_sensitive=False, llm=a.llm, claude_model=a.claude_model), ed)
+            cmd_match(argparse.Namespace(index_dir=a.index_dir, k=5, min_score=0.2, allow_sensitive=False, llm=a.llm, claude_model=a.claude_model, web=False), ed)
         else:
             log("no B-roll index yet (run broll-index on your footage folders); continuing without B-roll")
     assemble(ed, a.preset, a.aspects.split(",") if a.aspects else None, a.music, a.music_licence)
@@ -185,12 +205,12 @@ def check(project=None):
     for c in ("ffmpeg", "ffprobe"):
         print(f"{c:14} {'ok' if have(c) else 'MISSING (winget install Gyan.FFmpeg)'}"); ok &= have(c)
     print(f"{'claude':14} {'ok' if have('claude') else 'missing: npm install -g @anthropic-ai/claude-code, then run claude once to sign in'}")
-    for mod, hint in (("faster_whisper", "pip install faster-whisper"), ("numpy", "pip install numpy"), ("PIL", "pip install pillow"),
+    for mod, hint in (("cv2", "pip install opencv-python (face recognition)"), ("faster_whisper", "pip install faster-whisper"), ("numpy", "pip install numpy"), ("PIL", "pip install pillow"),
                       ("torch", "pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu"), ("open_clip", "pip install open_clip_torch")):
         try:
             __import__(mod); print(f"{mod:14} ok")
         except Exception:
-            print(f"{mod:14} MISSING ({hint})"); ok &= mod not in ("torch", "open_clip")
+            print(f"{mod:14} MISSING ({hint})"); ok &= mod not in ("torch", "open_clip", "cv2")
     print(f"{'gpu':14} {'nvidia' if have('nvidia-smi') else 'cpu only (fine; whisper small + CLIP on CPU)'}")
     print(f"{'project':14} {project or studio('active_project') or '(none: pass --project)'}  brand={studio('active_brand')}  brain={studio('active_brain')}")
     return 0 if ok else 1
