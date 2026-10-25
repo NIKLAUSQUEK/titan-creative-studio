@@ -92,12 +92,17 @@ def h(obj):
     return hashlib.sha1(json.dumps(obj, sort_keys=True).encode()).hexdigest()[:14]
 
 
+def voice_key(meta):
+    ap = meta.get("audio_path")
+    return f"{ap}|{Path(ap).stat().st_mtime}" if ap and Path(ap).exists() else None
+
+
 def render_item(it, clip, W, H, q, style, cache, lut):
     src, meta = clip["meta"]["path"], clip["meta"]
     sp = it.get("speed", 1.0)
     d = (it["out"] - it["in"]) / sp
     key = h({"src": src, "in": it["in"], "out": it["out"], "sp": sp, "z": it.get("zoom"), "fx": it.get("focus_x"), "fit": it.get("fit"),
-             "W": W, "H": H, "q": q, "g": style.get("grade"), "fx": it.get("fx"), "v": 4})
+             "W": W, "H": H, "q": q, "g": style.get("grade"), "fx": it.get("fx"), "voice": voice_key(meta), "v": 4})
     out = cache / f"seg_{key}.mkv"
     if out.exists():
         return out, d
@@ -114,9 +119,12 @@ def render_item(it, clip, W, H, q, style, cache, lut):
             fc += f";[s{i}]trim={t0:.3f}:{t1:.3f},setpts=PTS-STARTPTS,{f}[z{i}]"
         fc += ";" + "".join(f"[z{i}]" for i in range(len(parts))) + f"concat=n={len(parts)}:v=1:a=0[v]"
     args = ["-ss", f"{it['in']:.3f}", "-t", f"{it['out'] - it['in']:.3f}", "-i", src]
+    ap = meta.get("audio_path")
+    if ap and Path(ap).exists():                      # enhanced voice (enhance.py), sample-aligned to the clip
+        args += ["-ss", f"{it['in']:.3f}", "-t", f"{it['out'] - it['in']:.3f}", "-i", ap]
     if meta.get("has_audio"):
         at = f"atempo={sp}," if sp != 1 else ""
-        fc += f";[0:a]{at}aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=0.012,afade=t=out:st={max(0, d - 0.015):.3f}:d=0.015[a]"
+        fc += f";[{1 if ap and Path(ap).exists() else 0}:a]{at}aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=0.012,afade=t=out:st={max(0, d - 0.015):.3f}:d=0.015[a]"
     else:
         args += ["-f", "lavfi", "-t", f"{d:.3f}", "-i", "anullsrc=r=48000:cl=stereo"]
         fc += ";[1:a]anull[a]"
@@ -160,11 +168,7 @@ def end_card_seg(r, W, H, q, cache):
 
 
 def sfx_file(kind, cache):
-    lib = REPO / "assets" / "sfx" / kind
-    if lib.is_dir():
-        files = sorted(f for f in lib.iterdir() if f.suffix.lower() in (".wav", ".mp3", ".ogg", ".flac"))
-        if files:
-            return files[0]
+    """The built-in synthesised take (last resort; sfx.pick prefers real library recordings, then Earshot)."""
     out = cache / f"sfx_{kind}.wav"
     if not out.exists():
         ffmpeg(["-f", "lavfi", "-i", SFX_SYNTH.get(kind, SFX_SYNTH["whoosh"]), "-ar", "48000", "-ac", "2", out], cwd=cache)
@@ -450,18 +454,21 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
             n += 1
         elif r["audio"]["music"].get("path"):
             log(f"music skipped: {why}")
-        for s in r["audio"].get("sfx", []):
-            a = at_of(r, s["anchor"], starts)
+        from . import sfx as sfxlib
+        cues = [(at_of(r, s["anchor"], starts), s.get("type", "whoosh"), s.get("db", -12), s.get("place", "auto")) for s in r["audio"].get("sfx", [])]
+        cues += [(t_, kind, -14, "auto") for t_, kind in pops]
+        used = []
+        for a, kind, db, how in cues:
             if a is None or a >= total:
                 continue
-            inputs += ["-i", str(sfx_file(s.get("type", "whoosh"), cache).resolve())]
-            ms = int(a * 1000)
-            mix.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,volume={s.get('db', -12)}dB,adelay={ms}|{ms}[s{n}]"); mix_in.append(f"[s{n}]")
-            n += 1
-        for t_, kind in pops:
-            inputs += ["-i", str(sfx_file(kind, cache).resolve())]
-            ms = int(t_ * 1000)
-            mix.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,volume=-14dB,adelay={ms}|{ms}[s{n}]"); mix_in.append(f"[s{n}]")
+            f, src = sfxlib.pick(kind, a, cache, sfx_file)
+            start = sfxlib.place(kind, a, sfxlib.meta_of(f, cache)) if how == "auto" else a   # onset/peak lands on the cut by role
+            head = max(0.0, -start)
+            ms = int(max(0.0, start) * 1000)
+            inputs += ["-i", str(Path(f).resolve())]
+            mix.append(f"[{n}:a]atrim=start={head:.3f},asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,volume={db}dB,adelay={ms}|{ms}[s{n}]")
+            mix_in.append(f"[s{n}]")
+            used.append({"t": round(a, 3), "kind": kind, "file": Path(f).name, "source": src, "start": round(start, 3)})
             n += 1
         lufs = r["audio"].get("loudness", -14)
         mix.append("".join(mix_in) + (f"amix=inputs={len(mix_in)}:normalize=0:duration=first," if len(mix_in) > 1 else "anull,") +
@@ -471,7 +478,11 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
         ffmpeg(inputs + ["-filter_complex", ";".join(fc + mix), "-map", "[vout]", "-map", "[aout]", "-t", f"{total:.3f}"] + venc(quality) + ab +
                ["-movflags", "+faststart", str(final.resolve())], cwd=cache)
         log(f"  -> {final}  ({total:.2f} s)")
-        results.append({"aspect": A, "quality": quality, "path": str(final), "duration": round(total, 2), "W": W, "H": H, "music": why})
+        owed = sfxlib.credits_for([sfxlib.LIB / u["kind"] / u["file"] for u in used if u["source"] == "library"])
+        results.append({"aspect": A, "quality": quality, "path": str(final), "duration": round(total, 2), "W": W, "H": H, "music": why,
+                        "sfx": used, "sfx_credits": owed})
+        if owed:
+            log("  SFX credits for the caption (CC BY): " + "; ".join(owed))
     if not name:
         man = rjson(out_dir / "renders.json", [])
         man += [dict(x, version=r["version"]) for x in results]

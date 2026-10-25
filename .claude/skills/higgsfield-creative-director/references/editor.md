@@ -132,6 +132,22 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Beat sync:** `beat_sync` presets snap B-roll, labels and SFX to the music's onsets (detected locally).
 - **Precedence:** the brand's `edit-brand` hook placement still wins over the preset (e.g. Physio Spot hook at 61.5%).
 
+## 7e. Sound: real SFX + voice enhancement
+- **SFX sources** per cue kind (whoosh, impact, pop, ding, riser, click, bass, sting, scratch, shutter, drone):
+  1. `assets/sfx/<kind>/`: real recordings. Fill it with `editor.py sfx fetch <kind|all> [-n 6] [--query ...] [--cc0-only]`:
+     - Openverse (mostly Freesound), commercial-use licences only;
+     - files are trimmed and normalised;
+     - filters reject the wrong length, slow attacks on hits, tones too bright for the role (a "boom" that is really glass) and multi-hit pack files;
+     - credits go to `assets/sfx/CREDITS.md`, and a render logs the CC BY lines owed for the caption.
+  2. Earshot, if its CLI is installed: an MIT bank of 252 code-made SFX (whooshes aimed with `--apex`); `earshot rank` orders fetched takes by how well they match.
+  3. The built-in synth.
+- Takes rotate per cue; `sfx list` shows coverage.
+- **Placement:** each file's onset and peak are measured once (cached). Hits, pops, clicks and dings land their attack ~10 ms before the cut; whooshes put their peak ~37 ms after it; risers peak on it (Earshot / Clipwing real-sfx measurements). `"place": "start"` on a cue turns this off.
+- **Voice:** `editor.py enhance [--engine local|auphonic] [--strength light|normal|strong] [--clips ...] [--off]` writes `ingest/<clip>/voice.enhanced.wav`, sample-aligned to the clip; the renderer then uses it.
+  - **local:** measures the noise floor → high-pass → denoise at that floor → (RNNoise if a model is in assets/models/rnnoise/) → soft gate → EQ → de-ess → compressor → limiter.
+  - **auphonic:** `AUPHONIC_API_KEY` env var only. All clips go up as ONE production (the free plan bills ≥3 min each), then are split back and re-aligned. Free-plan output carries Auphonic's jingle outside the timeline; use paid credits for brand work if in doubt. Klaus's own voice only unless the speaker consents; never patient audio.
+  - The Auphonic path is untested live until Klaus adds his key.
+
 ## 7d. Learn a style from links (`editor.py study`)
 - `editor.py study <3-5 links or files> --name "<style>" [--llm claude-cli]`:
   1. downloads the refs with yt-dlp (study only, git-ignored);

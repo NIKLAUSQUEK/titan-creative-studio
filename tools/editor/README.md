@@ -60,6 +60,19 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
+## Sound effects and voice
+```powershell
+.\Run-Editor.ps1 -SfxFetch all                        # real sound effects (Openverse/Freesound, commercial licences) into assets\sfx
+.\Run-Editor.ps1 -Project back-pain-myth -Enhance     # clean up your voice, free and local, then re-draft
+$env:AUPHONIC_API_KEY = "<your key>"; .\Run-Editor.ps1 -Project back-pain-myth -Enhance -VoiceEngine auphonic
+```
+- **SFX:** real recordings are used first, then Earshot (if you install it: `pip install` from github.com/Leonxlnx/earshot into the same venv), then the built-in synth. Each effect is placed by its measured hit or peak, so it lands on the cut instead of late. CC BY sounds need the credit line in your caption: the render log prints them, and `assets\sfx\CREDITS.md` lists all of them.
+- **Voice:**
+  - *Local* (free): removes hiss, fan and room noise and evens out the level.
+  - *Auphonic* (free 2 h a month): their AI leveler and noise/reverb removal. All of a project's clips go up as one production, because each production is billed at least 3 minutes.
+  - On the free plan Auphonic adds its jingle to the returned file. It falls outside your clip, but for published brand work their paid credits ($12 for 5 h) are the clean option.
+  - Only upload your own voice, or voices of people who agreed. Never patient audio.
+
 ## Learn a style from 3-5 links
 ```powershell
 & "$env:LOCALAPPDATA\TitanEditor\venv\Scripts\python.exe" editor.py study https://www.instagram.com/reel/AAA https://www.instagram.com/reel/BBB --name "clean educator" --llm claude-cli

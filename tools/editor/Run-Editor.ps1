@@ -24,6 +24,11 @@
   .\Run-Editor.ps1 -Project back-pain-myth -Footage "D:\Shoots\2026-10-24" -Brand physio-spot -Goal expert -Platform tiktok -Ask "myth-bust for men 30-45"
 
 .EXAMPLE
+  .\Run-Editor.ps1 -SfxFetch all                                     (real sound effects for every cue kind, licences + credits kept)
+  .\Run-Editor.ps1 -Project back-pain-myth -Enhance                  (studio-style voice clean-up, free and local)
+  $env:AUPHONIC_API_KEY = "<from auphonic.com/accounts/settings>"; .\Run-Editor.ps1 -Project back-pain-myth -Enhance -VoiceEngine auphonic
+
+.EXAMPLE
   .\Run-Editor.ps1 -Project back-pain-myth -Revise "cut first 2 s, punchier captions"
   .\Run-Editor.ps1 -Project back-pain-myth -Chat            (type notes, get a new draft each time)
   .\Run-Editor.ps1 -Project back-pain-myth -Approve -Final  (1080p finals of every aspect + QC + handoff for /publish)
@@ -55,6 +60,10 @@ param(
   [string] $EnrollName = "",                 # default: your active brain (e.g. klaus)
   [switch] $Web,                             # allow licensed web images (Openverse/Wikimedia) when footage has no match
   [switch] $Presets,
+  [string] $SfxFetch = "",                   # "all" or "whoosh,pop,impact": real CC0/CC BY sound effects from Openverse into assets\sfx
+  [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
+  [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)
+  [ValidateSet("light", "normal", "strong")] [string] $VoiceStrength = "normal",
   [ValidateSet("auto", "tiny", "base", "small", "medium", "large-v3")] [string] $WhisperModel = "auto",
   [ValidateSet("claude-cli", "none")] [string] $Llm = "claude-cli",
   [string] $ClaudeModel = "",                # sonnet (cheaper) | opus; empty = your Claude Code default
@@ -117,6 +126,14 @@ try {
     if (-not $n) { $n = "me" }
     Ed @("people", "enroll", $n, $EnrollMe, "--consent", "self", "--index-dir", $IndexDir)
     Ed @("people", "scan", "--index-dir", $IndexDir); Ed @("people", "list", "--index-dir", $IndexDir); return
+  }
+  if ($SfxFetch) {
+    foreach ($k in ($SfxFetch -split ",")) { Ed @("sfx", "fetch", $k.Trim()) }
+    Ed @("sfx", "list"); Write-Host "`nCredits owed (CC BY): assets\sfx\CREDITS.md" -ForegroundColor Green; return
+  }
+  if ($Enhance) {
+    if (-not $Project) { throw "Pass -Project <name>." }
+    Ed @("enhance", "--engine", $VoiceEngine, "--strength", $VoiceStrength); Ed @("render"); Ed @("qc"); return
   }
   if ($Expand -gt 0) {
     $a = @("expand", "--count", $Expand, "--speeds", $Speeds); if ($Final) { $a += "--final" }

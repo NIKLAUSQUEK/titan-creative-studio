@@ -6,6 +6,10 @@ Sound plan for ANY deliverable (video, reel, ad, doc, podcast clip, carousel/sli
    - Brand / ads / business accounts: LICENSED only. Use TikTok CML (by country), Meta Sound Collection, a licensed library, or ORIGINAL music in the same vibe (Higgsfield generate_audio / ElevenLabs music, brief = genre + BPM + mood + instruments + language; never "in the style of <artist/song>").
    - Personal / creator accounts (organic): may add the trending chart sound in-app inside TikTok/IG at posting time; record the exact sound name + link in the publish package. Never bake an unlicensed song into the exported file.
    For each: why it fits, which beat it hits (hook at 0 s, drop on the reveal), trim points, and VO ducking level.
-5. Stims/SFX: write projects/<p>/SFX_CUES.md (timestamp | beat | stim | source: assets/sfx, synth, ElevenLabs | level), following the stim map and density rules in references/voice-persona-audio.md.
+5. Stims/SFX: write projects/<p>/SFX_CUES.md (timestamp | beat | stim | source: assets/sfx, Earshot, synth, ElevenLabs | level), following the stim map and density rules in references/voice-persona-audio.md.
+   - Real recordings first: if assets/sfx/<kind>/ is thin, run `editor.py sfx fetch <kind>` (Openverse/Freesound CC0 + CC BY, commercial use, credits in assets/sfx/CREDITS.md; CC BY lines go in the caption).
+   - Earshot (optional, if installed on the PC) fills the gaps with original code-made SFX.
+   - The editor places each by role: hits attack ~10 ms before the cut, whooshes peak ~37 ms after, risers peak on it.
+5b. Voice: if the voice was recorded on a phone, lav or in a noisy room, run `editor.py enhance` (local, free) or `--engine auphonic` (AUPHONIC_API_KEY; free 2 h/month; own voice only, never patient audio) before the draft.
 6. If the piece is cut by the auto-editor, put the chosen track in the recipe: `editor.py assemble --music <file> --music-licence original|licensed:<source>` (in-app sounds stay out of the file).
 7. Save the plan to projects/<p>/SOUND.md (market, sources checked + dates, picks, licence status per placement) and add the chosen sound to the calendar slot / PUBLISH.md. $ARGUMENTS

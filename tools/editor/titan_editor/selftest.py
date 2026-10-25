@@ -187,6 +187,31 @@ def selftest(a):
     rows, tim = make_song("Squeeze and lift and hold for three\nNow relax and let it be", E / "song", "twinkle")
     ok("song: syllable fit + guide track + karaoke timings", all(r["status"] == "ok" for r in rows) and (E / "song" / "guide.wav").exists()
        and probe(E / "song" / "guide.wav").get("duration", 0) > 8 and tim[1]["start"] > tim[0]["start"], f"{[r['syllables'] for r in rows]}")
+    from .enhance import align, enhance, local_chain, noise_floor
+    sw = E / "enh_test"; sw.mkdir(exist_ok=True)
+    ffmpeg(["-i", load_clips(E)[0]["meta"]["path"], "-f", "lavfi", "-i", "anoisesrc=c=pink:a=0.02:d=30", "-filter_complex",
+            "[0:a]aresample=48000,aformat=channel_layouts=mono[v];[1:a]aresample=48000[n];[v][n]amix=inputs=2:duration=first:normalize=0",
+            "-ac", "1", "-ar", "48000", sw / "noisy.wav"])
+    ffmpeg(["-i", sw / "noisy.wav", "-af", local_chain("normal", noise_floor(sw / "noisy.wav")), sw / "clean.wav"])
+    nf0, nf1 = noise_floor(sw / "noisy.wav"), noise_floor(sw / "clean.wav")
+    ok("enhance (local): noise floor drops >= 6 dB", nf1 < nf0 - 6, f"{nf0} -> {nf1} dBFS")
+    ffmpeg(["-f", "lavfi", "-i", "sine=f=660:d=1.234", "-i", sw / "clean.wav", "-filter_complex", "[0:a]aresample=48000[j];[j][1:a]concat=n=2:v=0:a=1",
+            "-ac", "1", sw / "jingled.wav"])
+    off = align(sw / "clean.wav", sw / "jingled.wav")
+    ok("enhance (auphonic path): returned audio re-aligned to the clip", abs(off - 1.234) < 0.003, f"found {off:.4f} s, expected 1.234")
+    rows = enhance(E, "local")
+    vk = load_clips(E)[0]["meta"].get("audio_path")
+    _, eres = render(E, quality="draft", aspects=["9:16"], recipe=load(E, 3), out_dir=E / "renders" / "enh", name="enh")
+    ok("enhance: render uses the enhanced voice, same length", bool(vk) and abs(eres[0]["duration"] - probe(eres[0]["path"])["duration"]) < 0.1, f"{rows[0]}")
+    enhance(E, "local", off=True)
+    from .sfx import KINDS, place
+    pw = place("whoosh", 5.0, {"peak_s": 0.25, "onset_s": 0.02})
+    ph = place("impact", 5.0, {"peak_s": 0.03, "onset_s": 0.006})
+    ok("sfx placement: whoosh peaks just after the cut, hit attacks just before", abs(pw + 0.25 - 5.037) < 1e-6 and abs(ph + 0.006 - 4.99) < 1e-6,
+       f"whoosh starts {pw:.3f}, impact starts {ph:.3f}")
+    srcs = {u["source"] for u in eres[0]["sfx"]}
+    ok("sfx: real library recordings used when assets/sfx has them", srcs <= {"library", "earshot", "synth"} and eres[0]["sfx"] != [],
+       f"{[(u['kind'], u['source'], u['file'][:24]) for u in eres[0]['sfx']]}")
     from .textcard import card
     im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
     colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()
