@@ -407,7 +407,7 @@ def expand(edit_dir, count=12, version=None, quality="draft", speeds=(1.0, 1.4),
             from .render import caption_words
             strings = [t["text"] for t in r["texts"]] + [" ".join(w["w"] for w in caption_words(r, clips))]
             res.append({**{q: v[q] for q in ("id", "format", "hook", "header", "header_text", "duration", "speed", "captions", "swap", "punch")},
-                        "cold_open": v["cold_open"], "broll": sorted(Path(b["path"]).name for b in r["broll"]),
+                        "cold_open": v["cold_open"], "broll": sorted(Path(b.get("path") or b.get("template", "motion")).name for b in r["broll"]),
                         "beats": [x["i"] for x in order], "seconds": round(total, 1), "files": files, "compliance": compliance_hits(strings, base, base.get("brand")),
                         "opening_words": " ".join(w["w"] for w in caption_words(r, clips) if w["t0"] < 3.0)[:80]})
         else:

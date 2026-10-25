@@ -1,0 +1,116 @@
+{
+  "name": "mograph-metaphor-interview",
+  "label": "Interview → 3D metaphor motion graphics (two-tier glow captions)",
+  "kind": "style",
+  "description": "From ref ed01 mahdiology.edit: sit-down interview clip; two-tier captions (small light setup words + big glowing yellow/orange payoff) that move beside the head; full-screen warm 3D 'desk still-life' metaphor inserts (~36% of runtime) with elements popping on per keyword; one colour-wash transition; hard punch-in for the final number.",
+  "reference": "research/refs-2026-10-25/editors-A.md#ed01",
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08,
+    "remove_fillers": "hard",
+    "max_shot_s": 8.0
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": true,
+    "size": 0.045,
+    "color": "#FFFFFF",
+    "highlight": "#F2E15A",
+    "outline": 0,
+    "shadow": 0,
+    "position_y": 0.66,
+    "max_words": 5,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": false,
+    "layout": "two_level",
+    "key_font": "Instrument Serif Italic",
+    "glow": "#F2E15A",
+    "small_scale": 0.5,
+    "_needs_feature": {
+      "avoid_face": true,
+      "alt_positions": [
+        [
+          0.74,
+          0.25
+        ]
+      ]
+    }
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 4.0,
+    "scale": 1.05,
+    "on_hook": 1.0,
+    "on_emphasis": true,
+    "_needs_feature": {
+      "final_punch_scale": 1.35
+    }
+  },
+  "broll": {
+    "every_s": 6.0,
+    "max_dur_s": 6.3,
+    "min_dur_s": 2.3,
+    "mode": "full",
+    "_needs_feature": {
+      "source": "metaphor_stills",
+      "style_key": "photoreal 3D still life, top-down cream desk, soft window-shadow light, warm",
+      "build_on": "pop_per_keyword"
+    }
+  },
+  "sfx": {
+    "density_per_10s": 2.0,
+    "db": -14,
+    "map": {
+      "hook": "pop",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    },
+    "_needs_feature": {
+      "map": {
+        "transition": "shimmer",
+        "element": "pop"
+      }
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -21,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 1.0,
+    "warmth": 0.0,
+    "vignette": true,
+    "_needs_feature": {
+      "bottom_gradient": 0.3
+    }
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "transitions": [
+      {
+        "type": "color_wash",
+        "colors": [
+          "#E040A0",
+          "#8040E0"
+        ],
+        "dur_s": 0.5,
+        "on": "summary_line"
+      }
+    ]
+  },
+  "transitions": {
+    "default": "glow",
+    "on": "beats"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "absurd-howto-3d",
+  "label": "Absurd how-to / survival recipe (narrated 3D, one word per caption)",
+  "kind": "style",
+  "description": "From ref anim1 (@storygoaten, 140K likes, measured 2026-10-25): deadpan imperative VO at ~210 wpm, one recipe step per 2-2.5 s shot on a blue-grid void, single-word centred captions, foley on every process verb, a wordless twist ending (callback to an open-loop line) and a series tombstone/end card.",
+  "reference": "research/refs-2026-10-25/ai-animation.md#anim1",
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.05,
+    "remove_fillers": "hard",
+    "max_shot_s": 4.5
+  },
+  "captions": {
+    "enabled": true,
+    "size": 0.05,
+    "max_words": 1,
+    "animation": "pop",
+    "uppercase": true,
+    "keyword_caps": false,
+    "outline": 0,
+    "shadow": 3,
+    "position_y": 0.78,
+    "color": "#FFFFFF",
+    "highlight": "#FFFFFF",
+    "font": "Poppins"
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.03,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.8,
+    "db": -14,
+    "map": {
+      "hook": "impact",
+      "title": "pop",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.08,
+    "warmth": 0.0
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+:root{--bg:#050507;--ink:#FFFFFF;--accent:#FFB547}
+#stage{background:var(--bg);font-family:"Space Grotesk";color:var(--ink)}
+.h{position:absolute;top:200px;width:100%;text-align:center;font-size:66px;letter-spacing:4px;font-weight:700}
+.lab{position:absolute;top:1450px;width:420px;text-align:center;font-size:40px;color:#bbb}
+.col{position:absolute;bottom:560px;width:220px;border-radius:30px 30px 8px 8px;background:#e9e9e9}
+.val{position:absolute;width:420px;text-align:center;font-size:46px;font-weight:700}
+.end{position:absolute;top:1600px;width:100%;text-align:center;font-family:Anton;font-size:84px;color:var(--accent)}
+</style></head><body><div id="stage" class="grain">
+<div class="h" id="h"></div><div class="col" id="a" style="left:220px"></div><div class="col" id="b" style="left:640px"></div>
+<div class="val" id="va" style="left:120px"></div><div class="val" id="vb" style="left:540px;color:var(--accent)"></div>
+<div class="lab" id="la" style="left:120px"></div><div class="lab" id="lb" style="left:540px"></div><div class="end" id="end"></div>
+</div><script src="_base.js"></script><script>
+// "Same X. Only one added Y." DATA: {ticker:"MONTH", steps:7, step_s:1.5, a:{label:"No change", start:60, add:0}, b:{label:"+10 kg / month", start:60, add:10}, unit:"KG", end:"SAME SQUATS. DIFFERENT LEGS."}
+const S = stage(), n = D.steps || 7, ss = D.step_s || 1.5; window.DURATION = n * ss + 2.2;
+const A = D.a || {label: 'Same routine', start: 60, add: 0}, B = D.b || {label: '+10 kg a month', start: 60, add: 10}, mx = Math.max(A.start + A.add * (n - 1), B.start + B.add * (n - 1));
+document.getElementById('la').textContent = A.label; document.getElementById('lb').textContent = B.label;
+window.seek = function (t) {
+  const m = Math.min(n, 1 + Math.floor(t / ss)), f = Math.min(n - 1, t / ss);
+  document.getElementById('h').textContent = (D.ticker || 'MONTH') + ' ' + m + ' >>';
+  const va = A.start + A.add * Math.floor(Math.min(n - 1, f)), vb = B.start + B.add * Math.floor(Math.min(n - 1, f));
+  const ha = 860 * (A.start + A.add * f) / mx, hb = 860 * (B.start + B.add * f) / mx;
+  for (const [id, h] of [['a', ha], ['b', hb]]) document.getElementById(id).style.height = h + 'px';
+  document.getElementById('va').style.top = (1360 - 560 - ha - 80 + 560) + 'px'; document.getElementById('vb').style.top = (1360 - hb - 80) + 'px';
+  document.getElementById('va').textContent = va + ' ' + (D.unit || ''); document.getElementById('vb').textContent = vb + ' ' + (D.unit || '');
+  const e = D.end || '', p = seg(t, n * ss, .9); document.getElementById('end').textContent = e.slice(0, Math.round(e.length * p));
+};
+</script></body></html>

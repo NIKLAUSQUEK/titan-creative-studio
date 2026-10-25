@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+:root{--bg:#0B0C0B;--ink:#F3F1EA;--accent:#C8F560}
+#stage{background:var(--bg);color:var(--ink)}
+.q{position:absolute;left:100px;right:100px;top:640px;font-family:"Instrument Serif";font-size:118px;line-height:1.05}
+.q span{display:inline-block;margin-right:26px;will-change:transform}
+.q em{color:var(--accent);font-style:italic}
+.sub{position:absolute;left:104px;right:100px;top:1300px;font-family:Poppins;font-size:38px;color:#bdbdb4}
+.tag{position:absolute;left:104px;top:520px;font-family:"Space Grotesk";font-size:30px;letter-spacing:6px;color:var(--accent);border:2px solid var(--accent);padding:10px 18px;border-radius:8px}
+</style></head><body><div id="stage" class="grain">
+<div class="tag" id="tag"></div><div class="q" id="q"></div><div class="sub" id="sub"></div>
+</div><script src="_base.js"></script><script>
+// DATA: {tag:"EXHIBIT A", text:"Nobody joins an *empty* party.", sub:"Build the line before the door opens.", word_s:0.28, hold:1.6}
+const S = stage(); const words = (D.text || 'Nobody joins an *empty* party.').split(/\s+/);
+const ws = D.word_s || .28; window.DURATION = .4 + words.length * ws + (D.hold || 1.8);
+document.getElementById('tag').textContent = D.tag || ''; if (!D.tag) document.getElementById('tag').style.display = 'none'; document.getElementById('sub').textContent = D.sub || '';
+document.getElementById('q').innerHTML = words.map(w => { const em = /^\*.*\*[.,!?]?$/.test(w); const c = w.replace(/\*/g, ''); return `<span>${em ? '<em>' + c + '</em>' : c}</span>`; }).join('');
+const sp = [...document.querySelectorAll('.q span')];
+window.seek = function (t) {
+  sp.forEach((s, i) => { const p = ease.out(seg(t, .4 + i * ws, .35)); s.style.opacity = p; s.style.transform = `translateY(${(1 - p) * 40}px)`; s.style.filter = `blur(${(1 - p) * 8}px)`; });
+  document.getElementById('tag').style.opacity = seg(t, 0, .3); document.getElementById('sub').style.opacity = seg(t, .4 + words.length * ws, .4);
+  document.getElementById('stage').style.transform = `scale(${(window.OUT_W || 1080) / 1080 * (1 + .03 * t / window.DURATION)})`;
+};
+</script></body></html>

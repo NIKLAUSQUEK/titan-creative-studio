@@ -1,0 +1,17 @@
+{
+  "name": "petty-sermon",
+  "label": "Petty victory sermon (dreamy hype-preacher comedy)",
+  "kind": "style",
+  "description": "From ref 'Who is that man in my family that said I'll fail?' (@jerrydeberry2333, 50K likes, 35 s, ONE take, 0 cuts, 125 wpm). A deadpan-proud character in a victory setting (graduation gown, gym, clinic opening) delivers an over-the-top preacher cadence rant at the doubters; heavy dreamy haze/glow grade; ONE big word at a time, white caps with a cyan outline, centred; epic/choir bed. The joke is the mismatch: tiny win, biblical delivery.",
+  "reference": "research/refs-2026-10-25/comedy-clone.md#comedy1",
+  "pacing": {"remove_silence_over_s": 0.9, "pad_s": 0.2, "remove_fillers": "none", "max_shot_s": 60.0, "drop_retakes": true},
+  "captions": {"enabled": true, "font": "Archivo Black", "size": 0.062, "max_words": 1, "animation": "pop", "uppercase": true, "color": "#FFFFFF", "outline": 7, "outline_color": "#36D6E7",
+               "highlight": "#FFFFFF", "position_y": 0.5, "keyword_caps": false},
+  "hook_text": {"enabled": false},
+  "zoom": {"mode": "smooth", "every_s": 0, "scale": 1.05, "on_hook": 1.0, "on_emphasis": false},
+  "broll": {"every_s": 0},
+  "sfx": {"density_per_10s": 0.3, "db": -16, "map": {"hook": "riser", "end": "sting"}},
+  "music": {"energy": "mid", "db": -17, "duck": true},
+  "grade": {"contrast": 0.8, "saturation": 0.82, "brightness": 0.07, "gamma": 1.12, "warmth": 0.09, "vignette": false},
+  "end_card": {"enabled": false}
+}

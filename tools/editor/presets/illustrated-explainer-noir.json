@@ -1,0 +1,115 @@
+{
+  "name": "illustrated-explainer-noir",
+  "label": "Illustrated noir explainer (faceless founder / startup)",
+  "kind": "style",
+  "description": "From ref ed10 getclayhook: faceless VO over 2.5D vector illustrations on near-black with spotlight pools and ONE lime accent; continuous camera push/pull between scenes, no hard cuts; serif chapter titles with italic lime keyword at top, small white sans subtitles at bottom with italic-lime emphasis words; Exhibit A/B museum plaques for sources; stamps; loop ending on the first frame.",
+  "reference": "research/refs-2026-10-25/editors-A.md#ed10",
+  "pacing": {
+    "remove_silence_over_s": 0.45,
+    "pad_s": 0.1,
+    "remove_fillers": "hard",
+    "max_shot_s": 4.0
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Space Grotesk",
+    "bold": true,
+    "size": 0.028,
+    "color": "#FFFFFF",
+    "highlight": "#C0F000",
+    "outline": 0,
+    "shadow": 0,
+    "position_y": 0.81,
+    "max_words": 5,
+    "animation": "fade",
+    "uppercase": false,
+    "keyword_caps": false,
+    "_needs_feature": {
+      "font": "clean_sans",
+      "emphasis_font": "serif_italic"
+    }
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 5,
+    "font": "DejaVu Serif",
+    "bold": true,
+    "size": 0.04,
+    "color": "#FFFFFF",
+    "outline": 0,
+    "position_y": 0.19,
+    "dur_s": 1.0,
+    "uppercase": false,
+    "_needs_feature": {
+      "accent_last_word": {
+        "font": "serif_italic",
+        "color": "#C0F000"
+      },
+      "chapter_titles": true
+    }
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 2.2,
+    "scale": 1.15,
+    "on_hook": 1.0,
+    "on_emphasis": false,
+    "_needs_feature": {
+      "hook_move": "pull_back",
+      "hook_from_scale": 2.2,
+      "join": "zoom_through"
+    }
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "db": -14,
+    "map": {
+      "hook": "whoosh",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    },
+    "_needs_feature": {
+      "map": {
+        "stamp": "stamp",
+        "element": "pop"
+      }
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0,
+    "vignette": true
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "mode": "stills_explainer",
+    "palette": {
+      "bg": "#1A1416",
+      "spot": "#302020",
+      "accent": "#C0F000"
+    },
+    "style_key": "2.5D flat vector illustration, near-black warm background, soft spotlight pools, single lime #C0F000 accent, rounded cute props",
+    "devices": [
+      "exhibit_plaque",
+      "stamp",
+      "marquee"
+    ],
+    "watermark": {
+      "corner": "top_left",
+      "shape": "circle_logo"
+    },
+    "loop_end": true
+  }
+}

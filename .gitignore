@@ -21,3 +21,5 @@ projects/*/autoedit/ingest/**/*.jpg
 projects/*/autoedit/broll_sheet.jpg
 research/style-studies/*/videos/
 research/style-studies/*/*.jpg
+tools/motion/node_modules/
+tools/motion/package-lock.json

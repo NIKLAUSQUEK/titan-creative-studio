@@ -173,8 +173,8 @@ def selftest(a):
     rc["chats"] = [{"id": "chat1", "anchor": {"item": rc["items"][0]["id"], "offset": 0.5}, "dur": 2.5,
                     "messages": [{"side": "me", "name": "Ashley", "text": "Did you do the exercises? 👀", "at": 0.0},
                                  {"side": "them", "text": "...define exercises", "at": 1.2, "typing": 0.5}]}]
-    for b_ in rc["broll"]:
-        b_["mode"] = "split"                  # also exercises the split-screen layout (B-roll top, speaker bottom)
+    for i_, b_ in enumerate(rc["broll"]):
+        b_["mode"] = "split" if i_ % 2 == 0 else "side"                  # also exercises the split-screen layout (B-roll top, speaker bottom)
     _, cres = render(E, quality="draft", aspects=["9:16"], recipe=rc, out_dir=E / "renders" / "chat", name="chat")
     fr = E / "renders" / "chat" / "chat_frame.png"
     ffmpeg(["-ss", "2.4", "-i", cres[0]["path"], "-frames:v", "1", fr])
@@ -207,11 +207,27 @@ def selftest(a):
     from .sfx import KINDS, place
     pw = place("whoosh", 5.0, {"peak_s": 0.25, "onset_s": 0.02})
     ph = place("impact", 5.0, {"peak_s": 0.03, "onset_s": 0.006})
-    ok("sfx placement: whoosh peaks just after the cut, hit attacks just before", abs(pw + 0.25 - 5.037) < 1e-6 and abs(ph + 0.006 - 4.99) < 1e-6,
+    ok("sfx placement: whoosh peaks just after the cut, hit attacks just before", abs(pw + 0.25 - 5.06) < 1e-6 and abs(ph + 0.006 - 4.98) < 1e-6,
        f"whoosh starts {pw:.3f}, impact starts {ph:.3f}")
     srcs = {u["source"] for u in eres[0]["sfx"]}
     ok("sfx: real library recordings used when assets/sfx has them", srcs <= {"library", "earshot", "synth"} and eres[0]["sfx"] != [],
        f"{[(u['kind'], u['source'], u['file'][:24]) for u in eres[0]['sfx']]}")
+    import shutil as _sh
+    from .recipe import auto_sfx
+    rs = copy.deepcopy(load(E, 3))
+    rs["style"]["sfx"].update({"density_per_10s": 8, "reveal_every_s": 4, "cut_coverage": 0.5, "map": {"hook": "impact", "cut": "cut", "end": "swell"},
+                               "stacks": {"cut": [{"type": "whoosh", "db": -17}], "reveal": [{"type": "swell", "db": -15}, {"type": "impact", "db": -9}, {"type": "boom", "db": -10}]}})
+    cues = auto_sfx(rs)
+    ok("sfx design: reveal stacks + cut coverage + bed dips", any("[reveal stack]" in c["why"] for c in cues) and any(c["why"].startswith("cut") for c in cues)
+       and rs["audio"].get("dips"), f"{len(cues)} cues, dips {rs['audio'].get('dips')}")
+    rs["audio"]["sfx"] = cues
+    rs["style"]["captions"].update(layout="two_level", font="Poppins", key_font="Anton", glow="#FF8A00")
+    rs["style"]["transitions"] = {"default": "flash", "on": "cuts"}
+    if _sh.which("node") and (REPO / "tools" / "motion" / "node_modules").exists() or Path("/opt/node22/lib/node_modules/playwright").exists():
+        rs["broll"] = [dict(rs["broll"][0], kind="motion", template="stat-counter", data={"value": 2315, "pre": "men followed", "source": "test"}, dur=2.5, mode="full")] if rs["broll"] else []
+    _, sres = render(E, quality="draft", aspects=["9:16"], recipe=rs, out_dir=E / "renders" / "styles", name="styles")
+    ok("styles: two-level captions + flash transitions + stacked SFX (+ motion card) render", probe(sres[0]["path"]).get("duration", 0) > 5,
+       f"{len(sres[0]['sfx'])} sfx, broll {[b.get('kind') for b in rs['broll']]}")
     from .textcard import card
     im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
     colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()

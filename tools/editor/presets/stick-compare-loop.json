@@ -1,0 +1,68 @@
+{
+  "name": "stick-compare-loop",
+  "label": "Side-by-side stick-figure progression loop (one variable, counters, typed punchline)",
+  "kind": "style",
+  "description": "From ref anim3 (@stickmaxx, measured 2026-10-25): one continuous 12-16 s shot, two identical figures, one changes a variable each period (~1.5 s per tick), counters top-left/right, typed punchline over a push-in, hard loop to frame 1. Music-led, no VO, pop per tick.",
+  "reference": "research/refs-2026-10-25/ai-animation.md#anim3",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 20.0,
+    "drop_retakes": false
+  },
+  "captions": {
+    "enabled": false,
+    "font": "Poppins"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "kicker",
+    "persistent": true,
+    "position_y": 0.06,
+    "size": 0.03,
+    "uppercase": true,
+    "max_words": 4,
+    "font": "DejaVu Sans"
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 6.0,
+    "db": -18,
+    "map": {
+      "hook": "pop",
+      "title": "click",
+      "end": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -10,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.1,
+    "saturation": 1.05,
+    "vignette": true
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "safe_zone": {
+    "top": 0.05,
+    "bottom": 0.2,
+    "right": 0.12
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "name": "story-sfx-dense",
+  "label": "Story edit, SFX-dense (editbymmh / Metro Media House)",
+  "kind": "style",
+  "description": "Founder/celebrity story reels: VO-led, archival + editorial white cards, cut every ~0.5 s, word-by-word small captions, and a sound layer on almost everything. Continuous bed, 40-60 % of cuts carry a whoosh/thump, ticks on type-ons, swell -> impact + sub-boom stacks on reveals with a 150-400 ms bed hole, rare silence beats. Measured on ed04-ed09 (research/refs-2026-10-25/editbymmh-sound.md).",
+  "reference": "research/refs-2026-10-25/editbymmh-sound.md",
+  "structure": {
+    "name": "story-short",
+    "target_s": [
+      45,
+      100
+    ],
+    "beats": [
+      "paradox/claim hook 0-3s",
+      "context",
+      "origin",
+      "escalation",
+      "twist/reveal by ~65%",
+      "callback punchline",
+      "logo sting"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05,
+    "remove_fillers": "hard",
+    "max_shot_s": 2.5,
+    "drop_retakes": true
+  },
+  "captions": {
+    "max_words": 2,
+    "animation": "pop",
+    "size": 0.034,
+    "position_y": 0.5,
+    "uppercase": false,
+    "keyword_caps": false,
+    "highlight": "#FFFFFF",
+    "outline": 0,
+    "shadow": 1,
+    "font": "Poppins"
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 6,
+    "size": 0.06,
+    "uppercase": true,
+    "position_y": 0.45,
+    "dur_s": 1.6
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 2.0,
+    "scale": 1.05,
+    "on_hook": 1.1,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 1.5,
+    "max_dur_s": 1.6,
+    "min_dur_s": 0.4,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 8,
+    "db": -16,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "tick",
+      "end": "swell",
+      "cut": "cut",
+      "cut_burst": "glitch",
+      "section": "reveal",
+      "number": "reveal",
+      "photo": "paper",
+      "broll_out": "whoosh"
+    },
+    "stacks": {
+      "reveal": [
+        {
+          "type": "swell",
+          "db": -15
+        },
+        {
+          "type": "impact",
+          "db": -9
+        },
+        {
+          "type": "boom",
+          "db": -10,
+          "pre_lap_ms": -70
+        }
+      ],
+      "cut": [
+        {
+          "type": "whoosh",
+          "db": -17
+        },
+        {
+          "type": "bass",
+          "db": -21,
+          "p": 0.3
+        }
+      ]
+    },
+    "cut_coverage": 0.5,
+    "title_word_every": 2,
+    "min_gap_s": 0.12,
+    "reserve_for_reveal": 0.15,
+    "max_reveals_per_10s": 1,
+    "gain_jitter_db": 3,
+    "offset_ms": {
+      "impact": -20,
+      "click": -15,
+      "tick": -5,
+      "glitch": -20,
+      "whoosh_peak": 55,
+      "swell_peak": 0,
+      "riser_peak": 0,
+      "boom": -10
+    },
+    "tails": "ring",
+    "silence": {
+      "before": [
+        "hook_line_2",
+        "after_cold_open",
+        "twist"
+      ],
+      "len_s": 0.25,
+      "max_per_min": 3
+    },
+    "qc_targets": {
+      "strong_transients_per_10s": [
+        6,
+        18
+      ],
+      "cut_events_with_hit_250ms": [
+        0.4,
+        0.65
+      ],
+      "hit_lag_ms_median": [
+        -40,
+        10
+      ],
+      "time_below_-30dbfs": [
+        0.0,
+        0.04
+      ],
+      "dropouts_per_min": [
+        0,
+        4
+      ],
+      "lufs": -14
+    },
+    "reveal_every_s": 10
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20,
+    "duck": true,
+    "duck_depth_db": 7,
+    "insert_duck_db": 12,
+    "bed_always": true,
+    "bed_fallback": "texture",
+    "drop_before_reveal_s": 0.2,
+    "drop_floor_db": -30,
+    "drop_max_per_min": 4,
+    "new_cue_after_reveal": true
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.95,
+    "brightness": 0.0,
+    "gamma": 1.0,
+    "warmth": -0.02,
+    "lut": null,
+    "vignette": true
+  },
+  "transitions": {
+    "default": "cut",
+    "burst_flash_frames": 3
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "sfx.map.cut / cut_burst / section / number / photo / broll_out": "auto_sfx event sources beyond hook/broll/zoom; map.title and map.end exist in _defaults but are never read today",
+    "sfx.map values naming a stack + sfx.stacks": "one cue -> several layered sounds, each with own db, probability p and role placement",
+    "sfx kinds swell, tick, glitch, boom, paper, texture (+ tape_stop, foley:<noun>)": "new KINDS entries in sfx.py with Openverse queries, durations, align/offset; synth fallbacks in render.SFX_SYNTH",
+    "sfx.cut_coverage": "share of item boundaries that get a cut cue (deterministic hash pick)",
+    "sfx.title_word_every": "tick on every Nth caption word appear (word-by-word kinetic text)",
+    "sfx.min_gap_s / reserve_for_reveal / max_reveals_per_10s": "budget spread over time instead of list truncation",
+    "sfx.gain_jitter_db": "per-cue random gain, deterministic by cue time",
+    "sfx.offset_ms": "per-preset override of KINDS offset_ms; whoosh_peak/swell_peak are peak-aligned",
+    "sfx.stacks.*.pre_lap_ms": "start a layer's body before the cut (ed08 low-end pre-lap)",
+    "sfx.tails": "'ring' = never truncate SFX at the next cut (already true in render; keep when pre-mixing)",
+    "sfx.silence": "mute bed + SFX (not voice) for len_s at named moments",
+    "sfx.qc_targets": "qc.py audio check against these ranges",
+    "music.duck_depth_db / insert_duck_db": "replace fixed sidechain ratio 6 with a target depth; deeper duck under inserted clip audio",
+    "music.bed_always / bed_fallback": "always lay a bed; synth/library 'texture' when no music given",
+    "music.drop_before_reveal_s / drop_floor_db / drop_max_per_min": "bed hole automation before reveal stacks",
+    "music.new_cue_after_reveal": "switch to the next music section/cue at a reveal",
+    "transitions.default 'cut' + burst_flash_frames": "flash-frame stutter bursts at section changes (only 'flicker' exists today)",
+    "render: SFX stem pre-mix": "60-100 cues per reel; mix SFX to one stem before the ffmpeg graph"
+  }
+}

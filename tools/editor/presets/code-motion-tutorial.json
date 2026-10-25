@@ -1,0 +1,71 @@
+{
+  "name": "code-motion-tutorial",
+  "label": "Code-made motion + screen tutorial (calm explain, burst proof, keyword CTA)",
+  "kind": "style",
+  "description": "From ref anim2 (@miftahul_islam_efaz, measured 2026-10-25): 16:9 or 9:16, ~120 wpm conversational VO, screen recordings with kinetic keyword captions in the empty half of the frame, code-rendered showreel burst (cards 0.1-0.6 s) as proof mid-video, series tag up front, comment-keyword CTA at the end.",
+  "reference": "research/refs-2026-10-25/ai-animation.md#anim2",
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.12,
+    "remove_fillers": "hard",
+    "max_shot_s": 12.0
+  },
+  "captions": {
+    "enabled": true,
+    "size": 0.04,
+    "max_words": 3,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": true,
+    "highlight": "#F05A28",
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.5,
+    "font": "Poppins"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "dur_s": 2.0,
+    "position_y": 0.35,
+    "size": 0.06,
+    "uppercase": true,
+    "max_words": 3
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 6,
+    "scale": 1.12,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 0,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.0,
+    "db": -15,
+    "map": {
+      "hook": "whoosh",
+      "zoom": "click",
+      "title": "pop",
+      "broll": "whoosh",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.03,
+    "saturation": 1.0
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 4.0
+  }
+}

@@ -41,6 +41,11 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 29 | Edu-song / mnemonic / musical explainer | teaching steps, routines, checklists, myths ("boring" health or how-to) | delight, "I can't unhear it" | 1-3 s, on the beat | spoken hook → song → recap chorus → CTA | bright, clean, saturated | the song IS the music (original or public-domain melody) + pops | edu-song |
 | 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
 | 31 | Borrowed cold open / bait-and-switch | a lesson that needs a scroll-stopper; riding a moment everyone recognises | recognition → surprise | the borrowed clip 3-16 s, then the creator's normal pace | familiar viral moment → "skip" → your lesson | match the borrowed clip, then your own look | the original's audio, a skip/whoosh on the switch, then yours | split layout + trend-beat-switch or talking-head-punchy |
+| 32 | Absurd how-to / survival recipe (narrated 3D) | a calm tutorial voice over an impossible task; series with a recurring character | delight, "wait what" | 2-2.5 s | step per shot → sensory payoff → wordless twist | hyper-detailed 3D on a blank cobalt grid void | deadpan VO, foley per verb, one impact | absurd-howto-3d |
+| 33 | Code-made motion + screen tutorial | tools/AI how-to, founder build-in-public, exact numbers on screen | "I can do this" | screen holds + 0.03-0.13 s bursts | calm walkthrough → proof burst → CTA | dark UI, brand accent | voice-led, clicks/ticks | code-motion-tutorial (tools/motion) |
+| 34 | Stick / minimal compare loop | "same X, only one added Y", compounding habits | recognition → "do it" | one shot, ticker every ~1.5 s | identical start → divergence → typed verdict → loop | black, white figures, one accent | trending/licensed track only | stick-compare-loop (tools/motion compare-loop) |
+| 35 | Petty victory sermon (hype-preacher comedy) | a small win delivered like scripture at the doubters | laugh at the mismatch | one long take | slow-mo stance → rising sermon → "touch it" button | dreamy haze, warm, washed | epic/choir bed, a riser into the last line | petty-sermon |
+| 36 | Clone / character swap ("this is also me") | one person becomes many characters, A/B model tests, one actor plays every role | "how??" | match cut every 1.5-2.5 s | me → also me ×4-6 → how-to → CTA | match the driver clip | walk/beat-synced cuts, whoosh on each swap | side/split B-roll + genz-header-skit (clone-character-swap.md) |
 
 **Pairing rules:**
 - Comedy can borrow any genre's grammar for a parody (horror parody, heist parody); hold the genre seriously until the reveal.
@@ -466,3 +471,71 @@ The idea: open on something the audience already knows and loves (a viral clip, 
 - **Compliance:** the switch must not misrepresent (no fake "news" or fake "patient" footage).
 - **Preset:** talking-head-punchy or genz-header-skit, plus B-roll `mode: split` for the opener; trend-beat-switch if music-led.
 
+### 32. Absurd how-to / survival recipe, narrated 3D (`absurd-howto-3d`) [draft; measured: ref anim1]
+- **Why it works:** an impossible ingredient or task explained in a calm, familiar tutorial voice. The process is satisfying, an early aside opens a loop, and a wordless twist pays it off and sets up the next episode.
+- **Pacing map (35-40 s):**
+  - 0-2.5 s: the absurd action is already happening (no intro); VO "First, X, but don't just Y."
+  - 2.5-5 s: the open-loop aside ("This is our last recipe…").
+  - 5-30 s: one step per shot, 2-2.5 s each, with an imperative verb on each cut and state carried across cuts.
+  - 30-34 s: the sensory payoff (crack, pour, bite) and the longest hold (3.5-4.5 s).
+  - 34-38 s: the wordless twist (threat appears / it backfires), then an in-world series card ("CAVEMAN 1 RIP").
+- **Shot grammar:** one master angle (a high 3/4 overhead, cooking-show top shot) for most steps; 3-4 macro inserts on hands and material; one low hero angle saved for the twist. A locked camera or slow push. The character's outfit and markings never change.
+- **Look:** a hyper-detailed 3D character on an infinite cobalt-blue grid void; warm food and material tones against cold blue; soft overhead key light.
+- **genre_key:** `hyper-detailed 3D character render on an infinite saturated cobalt-blue studio floor with a thin white perspective grid fading to a pale-blue horizon, no walls, no other props, soft overhead key light with gentle contact shadows, tactile macro textures, warm food tones against the cold blue, clean tutorial staging, same character design in every shot, no text in frame`
+- **Shot:** `{"camera":"high three-quarter overhead, 35mm, locked, slight push-in","action":"start: @CAVEMAN packs rock salt around the leg -> end: only the bone end pokes out of a smooth white mound","light":"soft overhead key, contact shadows, cold blue bounce"}`
+- **Sound:** a deadpan VO at ~200-210 wpm (~7-8 words per shot); one-word captions; foley on every process verb (crunch, sizzle, crack); a low bed at -24 dB; one impact on the twist; no meme sounds on brand accounts.
+- **Compliance:** for a health brand, the "recipe" must be safe technique or education, with no outcome or cure claims, no testimonials and no superlatives. The twist can be slapstick but never a medical injury scare. Food or supplement versions make no nutrition claims beyond the label.
+- **Preset:** absurd-howto-3d (JSON in research/refs-2026-10-25/ai-animation.md).
+
+### 33. Code-made motion + screen tutorial (`code-motion-tutorial`) [draft; measured: ref anim2]
+- **Why it works:** the contrast hook ("slop vs this"), then proof (a 10-15 s burst of code-rendered cards), then a calm, doable how-to. The series tag and comment-keyword CTA drive comments and follows.
+- **Pacing map (60-145 s; 16:9 YouTube/LinkedIn or 9:16):**
+  - 0-3 s: series tag plus a glitch-in title ("PART 2").
+  - 3-12 s: the contrast claim on two screens ("AI SLOP" vs "WITH THE SKILL") and the price or effort hook.
+  - 12-25 s: who it's for / where it runs (a chalkboard or card list), then "now let's cook" (a mascot card).
+  - 25-60 s: steps over screen recordings, with keyword captions in the empty half of the frame and smooth push-ins on the UI.
+  - 60-76 s: the PROOF BURST, a code-rendered showreel with cards at 0.03-0.6 s and one idea per card.
+  - 76-130 s: the second method or part, over a painted plate background.
+  - Last 8 s: the keyword CTA ("Comment X") plus "part 3".
+- **Shot grammar:** real screen recordings for UI (never faked UI). A voxel or illustrated host room for the bookends. Code cards for claims and numbers. The camera is a smooth digital push in the edit.
+- **Look:** dark UI + cream/black type cards, a heavy grotesk for punch words, an italic serif for poetic lines, mono HUD micro-text (frame counters, coordinates); accents in mint and orange-red, or the brand's hex.
+- **genre_key (non-code layers only):** `cosy voxel-art 3D diorama, chunky cube-built characters and furniture, soft warm desk-lamp key with cool window fill, muted sage-green walls, gentle depth of field, clean readable silhouettes, no text`
+- **Shot:** `{"camera":"slow dolly-in, 35mm, eye level toward the desk","action":"start: @VOXEL_HOST beside two dark monitors -> end: left monitor flickers on showing cluttered slop, right shows a clean card, host leans in","light":"warm desk lamp key, monitor glow on the host"}`
+- **Sound:** a conversational VO at ~120 wpm with 5-10 word sentences; a mid-energy bed at -20 dB ducked under the VO; clicks and whooshes on UI moves; the burst cut to a beat-synced track with one hit per card.
+- **Compliance:** only claim what our real outputs show (no "Higgsfield-level for free" claims we can't back). Reference videos are study-only and never downloaded and re-cut. A keyword CTA must deliver what it promises, and it is never an inducement on SG health posts. Show real client work only with permission.
+- **Preset:** code-motion-tutorial; the burst comes from tools/motion (proposed) as one full B-roll clip.
+
+### 34. Side-by-side progression loop, stick figures (`stick-compare-loop`) [draft; measured: ref anim3]
+- **Why it works:** two identical figures and ONE variable. Counters tick on screen and the difference compounds visually (glow, size, colour) until a typed punchline lands. Then it loops to frame 1, so it reads muted and in any language.
+- **Pacing map (12-16 s):**
+  - 0-1.5 s: Month/Week 1, both figures equal, counters visible (the persistent header "SAME X. SAME Y.").
+  - 1.5-11 s: 6-7 ticks at ~1.5 s each; per tick, a synced action rep, the variable changes on the right only, the delta pops ("+0" grey / "+10" amber) and the exaggeration grows.
+  - 11-14 s: the typed punchline with a cursor ("SAME SQUATS. DIFFERENT LEGS.") over a slow push-in on the changed feature.
+  - 14 s: a hard cut back to the first frame (seamless loop).
+- **Shot grammar:** one continuous shot, zero cuts; a locked, perfectly symmetrical wide; a single shared prop between the figures as the "same" anchor; only the final push-in moves the camera.
+- **Look:** white capsule stick figures, a black reflective void, warm emissive floor tiles, bloom on the "winning" figure's head, a pixel/mono display font, white header + amber winner stats + grey control stats.
+- **genre_key:** `minimal 3D render, two identical white matte stick figures with capsule limbs and round heads, black void with a glossy reflective floor, glowing warm emissive floor tiles, soft bloom, perfectly symmetrical side-by-side composition, locked camera, no background detail, no text in frame`
+- **Shot:** `{"camera":"locked wide two-shot, 35mm, slightly high, centred","action":"start: both figures stand with barbells -> end: both finish one synced squat; @STICK_B's legs are slightly thicker and his head glows brighter","light":"warm emissive tiles, faint bloom, black void"}`
+- **Sound:** music-led (a licensed CML track or an original for brands; a trending chart song only on personal accounts, in-app); a pop per counter tick; a whoosh on each prop swap; keyboard ticks on the typed punchline; no VO.
+- **Compliance:** this is a comparison format, so in SG health it is close to before/after. Show behaviours and inputs (breaks taken, protein added, tasks automated), not guaranteed body or pain outcomes. Label exaggeration as "dramatised illustration", use no patients and no "results" numbers. Counters and type are built in code so the numbers are exact and checkable.
+- **Preset:** stick-compare-loop; the counters, type and loop come from the tools/motion split-compare template (proposed). The figures come from code (three.js capsules) or Seedance start/end morphs.
+
+### 35. Petty victory sermon (`petty-sermon`) [measured: ref comedy1, research/refs-2026-10-25/comedy-clone.md]
+- **Why it works:** a small, real win (graduation, first pull-up, the clinic's first anniversary) is delivered with the cadence of a revival preacher at "that man in my family who said I'd fail". The joke is the mismatch of scale, and the defiance is relatable. It rides the trending sound/hashtag (#whoisthatmaninmyfamilythatsaidiwillfail) when one exists.
+- **Pacing map (25-40 s, ONE take, 0 cuts in the ref):**
+  - 0-3 s: the rhetorical question to the doubters, eyes off-camera;
+  - 3-20 s: escalating declarations, each one a short line with a pause, at a slow ~125 wpm;
+  - 20-30 s: the absurd physical button ("This is my tail. Touch it.");
+  - end on the biggest scripture-style line, then hold.
+- **Shot grammar:** locked mid-full shot of the hero at the victory location (the logo or sign in frame proves the win), a slight low angle, a slow push. Wardrobe sells it (gown, sunglasses, the medal).
+- **Look:** heavy dreamy haze and glow, warm washed-out grade, slow-motion feel. Captions: ONE big word at a time, white caps with a cyan outline, centred.
+- **genre_key:** `dreamy hazy glow, soft bloom, warm washed-out sepia tones, slow-motion stillness, hero standing proudly in a victory location, low angle, epic triumphant mood`
+- **Sound:** an epic or choir bed under the voice, a riser into the final line; no other SFX.
+- **Brand versions:** physio: "Who is that man at the office who said I'd never deadlift again?" Use only Klaus's or staff's OWN recovery; never a patient story in SG health (testimonial rule), never an outcome promise. Founder: "Who is that investor that said TITAN would fail?"
+- **Preset:** petty-sermon.
+
+### 36. Clone / character swap (`clone-character-swap.md`) [measured: refs clone1, hfclone]
+Full workflow, formats and hard rules are in clone-character-swap.md:
+- driver clip + original character sheet → Genjutsu / Seedance 2.5 / Wan 3.0 motion transfer;
+- formats: "this is me… and this is also me" match cuts, the A/B model test (editor B-roll `mode: side`), and one actor playing every role in a skit;
+- never a real-person lookalike, and always label it as AI.

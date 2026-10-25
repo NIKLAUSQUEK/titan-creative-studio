@@ -17,9 +17,9 @@ from .common import REPO, ffmpeg, log, rjson, wjson
 
 LIB = REPO / "assets" / "sfx"
 KINDS = {  # Openverse query words, wanted length range (s), earshot ids (first that renders wins), placement
-    "whoosh": {"q": ["whoosh", "swoosh", "swish"], "dur": (0.25, 1.4), "avoid": ["combat", "sword", "melee", "wind loop"], "earshot": ["whoosh_fast/crisp", "swish/bright", "whoosh_fast"], "align": "peak", "offset_ms": 37},
+    "whoosh": {"q": ["whoosh", "swoosh", "swish"], "dur": (0.25, 1.4), "avoid": ["combat", "sword", "melee", "wind loop"], "earshot": ["whoosh_fast/crisp", "swish/bright", "whoosh_fast"], "align": "peak", "offset_ms": 60},
     "impact": {"q": ["cinematic impact", "trailer hit boom", "deep impact boom"], "dur": (0.3, 3.0), "centroid_max": 2500,
-               "avoid": ["glass", "ice", "metal", "door", "car", "gun", "shot", "boxing", "punch"], "earshot": ["cut_hit/punch", "pro_impact", "impact"], "align": "onset", "offset_ms": -10},
+               "avoid": ["glass", "ice", "metal", "door", "car", "gun", "shot", "boxing", "punch"], "earshot": ["cut_hit/punch", "pro_impact", "impact"], "align": "onset", "offset_ms": -20},
     "pop": {"q": ["pop", "bubble pop", "ui pop"], "dur": (0.04, 0.6), "avoid": ["music", "song", "cork", "balloon"], "earshot": ["ui_pop/soft", "pro_pop", "pop"], "align": "onset", "offset_ms": -11},
     "ding": {"q": ["ding", "notification chime", "bell ding"], "dur": (0.2, 2.0), "earshot": ["notify/mid_tine", "pro_notify", "notify"], "align": "onset", "offset_ms": -11},
     "riser": {"q": ["riser", "tension riser", "rising swell"], "dur": (0.8, 4.0), "earshot": ["riser/dark", "pro_riser", "riser"], "align": "peak", "offset_ms": 0},
@@ -28,13 +28,19 @@ KINDS = {  # Openverse query words, wanted length range (s), earshot ids (first 
     "sting": {"q": ["suspense sting", "dramatic sting", "logo sting"], "avoid": ["baseball", "cartoon", "tabla", "ambience", "ambient", "loop"], "dur": (0.5, 4.0), "earshot": ["pro_logo_sting", "logo_sting"], "align": "onset", "offset_ms": -10},
     "scratch": {"q": ["record scratch", "vinyl scratch"], "dur": (0.15, 1.2), "earshot": ["pro_glitch", "glitch/burst"], "align": "onset", "offset_ms": -10},
     "shutter": {"q": ["camera shutter"], "dur": (0.08, 0.6), "earshot": ["shutter/snap", "shutter"], "align": "onset", "offset_ms": -11},
+    "swell": {"q": ["reverse cymbal", "cinematic swell", "reverse swell"], "dur": (0.4, 2.5), "earshot": ["reverse_swell/cymbal", "reverse_swell", "pro_whoosh_big"], "align": "peak", "offset_ms": 0},
+    "boom": {"q": ["cinematic boom", "low boom", "deep boom"], "dur": (0.6, 3.0), "centroid_max": 700, "avoid": ["music", "loop", "explosion"], "earshot": ["cut_hit/rumble", "pro_sub_drop", "sub_drop"], "align": "onset", "offset_ms": -10},
+    "tick": {"q": ["typewriter key", "tick", "clock tick"], "dur": (0.01, 0.25), "earshot": ["pro_hover_tick", "hover_tick", "typing_key"], "align": "onset", "offset_ms": -5},
+    "glitch": {"q": ["glitch", "digital glitch"], "dur": (0.1, 1.0), "avoid": ["loop", "music"], "earshot": ["glitch/burst", "pro_glitch", "glitch"], "align": "onset", "offset_ms": -20},
+    "paper": {"q": ["paper slap", "paper flip", "page turn"], "dur": (0.05, 0.8), "earshot": ["knock/desk"], "align": "onset", "offset_ms": -10},
     "drone": {"q": ["drone ambience dark", "dark ambience"], "dur": (8.0, 120.0), "earshot": [], "align": "onset", "offset_ms": 0},
 }
 PACK = re.compile(r"\b(pack|collection|set|kit|loop|stings|hits|impacts|whooshes|risers|x ?\d+|\d+ \w+s)\b", re.I)   # multi-sound files
 OV = "https://api.openverse.org/v1/audio/"
 DESCRIBE = {"whoosh": "a fast clean air whoosh passing by", "impact": "a deep cinematic impact hit with a low boom", "pop": "a short soft bubble pop",
             "ding": "a clean bright notification ding", "riser": "a tension riser building up", "click": "a short crisp interface click",
-            "bass": "a deep sub bass drop", "sting": "a short dramatic suspense sting", "scratch": "a vinyl record scratch",
+            "bass": "a deep sub bass drop", "swell": "a reverse cymbal swell rising into a hit", "boom": "a deep cinematic boom",
+            "tick": "a short dry typewriter tick", "glitch": "a short digital glitch burst", "paper": "a paper slap", "sting": "a short dramatic suspense sting", "scratch": "a vinyl record scratch",
             "shutter": "a camera shutter click", "drone": "a dark low ambient drone"}
 UA = {"User-Agent": "TITAN-editor/1.0 (local video editor; sfx fetch)"}
 
@@ -239,7 +245,7 @@ def cmd_sfx(a):
         return 0
     kinds = list(KINDS) if a.kind == "all" else [a.kind]
     for k in kinds:
-        if k == "drone" and a.kind == "all":
+        if k in ("drone", "shutter") and a.kind == "all":
             continue
         fetch(k, a.n, a.query, not a.cc0_only)
     return 0

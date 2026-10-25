@@ -1,0 +1,139 @@
+{
+  "name": "scrapbook-bobblehead",
+  "label": "Girly scrapbook + bobblehead mascot (Gen Z / divas)",
+  "kind": "style",
+  "description": "From ref ed03 ruth.the.crafter: music-led; a bobblehead mascot (face cut-out ~2x on a small body) hosts the intro then lives bottom-left as a persistent cut-out PIP; one-word captions whose look changes per scene (rounded sans, arched handwriting, white sticker labels); pastel pattern backgrounds (stripes/gingham/stars/plaid) swapping on the beat with a rounded card window cutting clips every ~0.8 s; yellow kinetic stat stack; pixel-cursor reveal and magic-wand wipe.",
+  "reference": "research/refs-2026-10-25/editors-A.md#ed03",
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.06,
+    "remove_fillers": "hard",
+    "max_shot_s": 0.9
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Fredoka",
+    "bold": true,
+    "size": 0.06,
+    "color": "#FFFFFF",
+    "highlight": "#9ACD32",
+    "outline": 0,
+    "shadow": 2,
+    "position_y": 0.16,
+    "max_words": 1,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": false,
+    "emoji": false,
+    "_needs_feature": {
+      "font": "rounded",
+      "styles_by_scene": [
+        "rounded",
+        "arc_hand",
+        "label_hand",
+        "display_lime"
+      ],
+      "label": {
+        "bg": "#FFFFFF",
+        "text": "#111111",
+        "tilt_deg": 4
+      },
+      "arc_deg": 40
+    }
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0.8,
+    "max_dur_s": 0.9,
+    "min_dur_s": 0.4,
+    "mode": "full",
+    "_needs_feature": {
+      "mode": "card_window"
+    }
+  },
+  "sfx": {
+    "density_per_10s": 4.0,
+    "db": -12,
+    "map": {
+      "hook": "pop",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    },
+    "_needs_feature": {
+      "map": {
+        "cursor": "click",
+        "transition": "sparkle",
+        "label": "pop"
+      }
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": true,
+    "_needs_feature": {
+      "beat_sync_cuts": true,
+      "genre_hint": "cute pop / hyperpop"
+    }
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.15,
+    "brightness": 0.02,
+    "warmth": 0.05
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "layout": {
+      "type": "card",
+      "rect": [
+        0.17,
+        0.12,
+        0.66,
+        0.76
+      ],
+      "radius": 0.04,
+      "shadow": true,
+      "bg_cycle_s": 2.5,
+      "patterns": [
+        "stripes_pink_cream",
+        "gingham_green",
+        "stars_pink",
+        "plaid_pink"
+      ]
+    },
+    "mascot": {
+      "type": "bobblehead",
+      "head_scale": 2.0,
+      "persistent_corner": "bottom_left",
+      "prop": "laptop"
+    },
+    "stat_stack": {
+      "num_color": "#F5F000",
+      "count_up": true
+    },
+    "transitions": [
+      {
+        "type": "pixelize",
+        "on": "intro"
+      },
+      {
+        "type": "wand",
+        "on": "intro_to_reel"
+      }
+    ]
+  }
+}

@@ -120,23 +120,78 @@ def build_items(beats, clips_by_id, style):
 
 
 def auto_sfx(r):
-    """Cues in priority order (hook > B-roll in > punch-ins), capped by the preset's density budget."""
+    """SFX cues by priority, spread over the edit, capped by the preset's density budget (editbymmh rulebook,
+    research/refs-2026-10-25/editbymmh-sound.md): hook > reveal stacks (riser peaking on the cut + impact + sub, with a bed dip)
+    > B-roll in > a share of cuts > titles/labels > punch-ins > the end. Gains vary +-2 dB so repeats don't sound stamped."""
     st = r["style"].get("sfx", {})
     mp, dens, db = st.get("map", {}), st.get("density_per_10s", 1.0), st.get("db", -12)
     total = sum((i["out"] - i["in"]) / i.get("speed", 1) for i in r["items"])
     budget = max(1, round(dens * total / 10)) if dens > 0 else 0
-    cands = []
+    starts, _ = item_starts(r)
+    jitter = lambda k: ((k * 7919) % 5) - 2                    # deterministic -2..+2 dB
+    pri = []                                                    # (priority, cue)
+
+    stacks = st.get("stacks", {})
+
+    def cue(kind, item, off, d, why, p):
+        """A kind that names a stack (preset sfx.stacks) fires every member: own dB, optional probability p, optional pre-lap."""
+        if kind in stacks:
+            for j, m in enumerate(stacks[kind]):
+                if m.get("p", 1) < 1 and ((len(pri) * 7 + j * 13) % 100) / 100 >= m["p"]:
+                    continue
+                pri.append((p, {"type": m["type"], "anchor": {"item": item, "offset": round(max(0.0, off + m.get("pre_lap_ms", 0) / 1000), 3)},
+                                "db": m.get("db", d), "why": f"{why} [{kind} stack]"}))
+            return
+        pri.append((p, {"type": kind, "anchor": {"item": item, "offset": round(max(0.0, off), 3)}, "db": d, "why": why}))
     if r["items"] and mp.get("hook"):
-        cands.append({"type": mp["hook"], "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "db": db + 2, "why": "hook"})
+        cue(mp["hook"], r["items"][0]["id"], 0.0, db + 2, "hook", 0)
+    r["audio"]["dips"] = []
+    every = st.get("reveal_every_s", 0)
+    if every:                                                   # reveal stacks on beat turns, at most one per `every` seconds
+        last, prev = -1e9, None
+        for it in r["items"]:
+            t = starts[it["id"]]
+            turn = prev is not None and it.get("beat") != prev.get("beat") and (r["beats"][it["beat"]].get("beat") in ("turn", "lesson", "payoff", "reveal", "proof", "cta")
+                                                                               if isinstance(it.get("beat"), int) and it["beat"] < len(r["beats"]) else True)
+            if turn and t - last >= every and t > 2.0:
+                if "reveal" in stacks:
+                    cue("reveal", it["id"], 0.0, db, "reveal", 1)
+                else:
+                    cue("riser", it["id"], 0.0, db - 3, "reveal: riser peaks on the cut", 1)
+                    cue("impact", it["id"], 0.0, db + 3, "reveal: impact", 1)
+                    cue("bass", it["id"], 0.0, db + 1, "reveal: sub", 1)
+                r["audio"]["dips"].append(round(t, 3)); last = t
+            prev = it
     for b in r["broll"]:
         if mp.get("broll"):
-            cands.append({"type": mp["broll"], "anchor": {"item": b["anchor"]["item"], "offset": max(0.0, b["anchor"]["offset"] - 0.08)}, "db": db, "why": "broll in"})
+            cue(mp["broll"], b["anchor"]["item"], b["anchor"]["offset"], db - 2, "broll in", 2)
+    cov = st.get("cut_coverage", 0)
+    if cov and mp.get("cut", mp.get("broll")):
+        cuts = [it for it in r["items"][1:]]
+        step = max(1, round(1 / cov))
+        for k, it in enumerate(cuts[::step]):
+            cue(mp.get("cut", mp.get("broll")), it["id"], 0.0, db - 4 + jitter(k), "cut", 3)
+    if mp.get("title"):
+        for k, t in enumerate(x for x in r["texts"] if x["type"] in ("title", "label")):
+            cue(mp["title"], t["anchor"]["item"], t["anchor"].get("offset", 0), db - 3 + jitter(k), "title", 4)
     if mp.get("zoom"):
-        snaps = [(it["id"], z["at"]) for it in r["items"] for z in it.get("zoom", []) if z["at"] > 0 and z.get("ease") != "linear"]
-        left = max(0, budget - len(cands))
-        step = max(1, len(snaps) // left) if left and snaps else 1
-        cands += [{"type": mp["zoom"], "anchor": {"item": i, "offset": max(0.0, at - 0.08)}, "db": db - 2, "why": "punch-in"} for i, at in snaps[::step][:left]]
-    return cands[:budget]
+        for k, (i, at) in enumerate((it["id"], z["at"]) for it in r["items"] for z in it.get("zoom", []) if z["at"] > 0 and z.get("ease") != "linear"):
+            cue(mp["zoom"], i, at, db - 2 + jitter(k), "punch-in", 5)
+    if mp.get("end") and r["items"]:
+        li = r["items"][-1]
+        cue(mp["end"], li["id"], (li["out"] - li["in"]) / li.get("speed", 1) - 0.02, db - 2, "end", 1)
+    # keep the best cues within budget, never two within min_gap of each other (stack members share a time on purpose)
+    gap = st.get("min_gap_s", 0.12)
+    chosen, times = [], []
+    for p, c in sorted(pri, key=lambda x: x[0]):
+        if len(chosen) >= budget:
+            break
+        t = starts.get(c["anchor"]["item"], 0) + c["anchor"]["offset"]
+        stack = c["why"].startswith("reveal") or "stack]" in c["why"]
+        if not stack and any(abs(t - u) < gap for u in times):
+            continue
+        chosen.append(c); times.append(t)
+    return sorted(chosen, key=lambda c: starts.get(c["anchor"]["item"], 0) + c["anchor"]["offset"])
 
 
 def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None, note="assembled from brief"):

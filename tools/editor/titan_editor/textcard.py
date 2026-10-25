@@ -51,6 +51,13 @@ def text_font(name, px, bold=True):
     if name and Path(name).suffix.lower() in (".ttf", ".otf"):
         files.append(name)
     fam = (name or "DejaVu Sans").lower()
+    key = fam.replace(" italic", "").replace(" ", "")
+    bundled = sorted((TOOL / "fonts").glob("*.ttf"))       # the style font pack (OFL/Apache, see fonts/FONTS.md)
+    own = [f for f in bundled if f.stem.lower().replace("-", "").startswith(key)]
+    if own:
+        pref = ("extrabold", "bold") if bold else ("regular", "")
+        own.sort(key=lambda f: (("italic" in f.stem.lower()) != ("italic" in fam), next((i for i, w in enumerate(pref) if w and w in f.stem.lower()), len(pref))))
+        files.append(own[0])
     if "serif" in fam and "sans" not in fam:
         files.append(TOOL / "fonts" / "DejaVuSerif.ttf")
     files += [TOOL / "fonts" / ("DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf")]

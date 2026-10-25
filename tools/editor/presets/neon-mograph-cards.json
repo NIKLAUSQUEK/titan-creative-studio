@@ -1,0 +1,112 @@
+{
+  "name": "neon-mograph-cards",
+  "label": "Neon mograph cards (CEO / agency talking head)",
+  "kind": "style",
+  "description": "From ref ed02 editvibez12: selfie talking head ~34% / designed cards ~66%; dark teal cards with cyan glow, depth text behind a cut-out of the speaker, type-on bullet list synced to the spoken list, phone mockup of the brand profile; captions = small white lead words + huge wide-black cyan glowing keyword; 2-4 frame glow-flash transitions.",
+  "reference": "research/refs-2026-10-25/editors-A.md#ed02",
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06,
+    "remove_fillers": "hard",
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Poppins",
+    "bold": true,
+    "size": 0.07,
+    "color": "#FFFFFF",
+    "highlight": "#00E0F0",
+    "outline": 0,
+    "shadow": 0,
+    "position_y": 0.69,
+    "max_words": 3,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": true,
+    "layout": "two_level",
+    "key_font": "Archivo Black",
+    "glow": "#00E0F0",
+    "small_scale": 0.43
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.3,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 3.0,
+    "db": -12,
+    "map": {
+      "hook": "bass",
+      "zoom": "impact",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    },
+    "_needs_feature": {
+      "map": {
+        "transition": "flash",
+        "bullet": "typewriter",
+        "element": "pop"
+      }
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.05,
+    "warmth": 0.0
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "scenes": {
+      "every_s": 3.5,
+      "palette": {
+        "bg": "#001020",
+        "accent": "#00E0F0"
+      },
+      "bg": "beam",
+      "layer_kinds": [
+        "condensed_headline_behind_subject",
+        "bullets_typewriter",
+        "device_iphone",
+        "mono_illustration"
+      ],
+      "corner_swoosh": true
+    },
+    "transitions": [
+      {
+        "type": "flash",
+        "color": "#9FF8FF",
+        "frames": 3,
+        "on": "segment_change"
+      }
+    ],
+    "cutout": true,
+    "fonts": {
+      "headline": "condensed",
+      "keyword": "wide_black",
+      "accent": "hand"
+    }
+  },
+  "transitions": {
+    "default": "flash",
+    "on": "beats",
+    "strength": 0.8
+  }
+}

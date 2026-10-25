@@ -60,6 +60,11 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
+## Styles, fonts and animated cards
+- 41 presets (`.\Run-Editor.ps1 -Presets`). Which one fits which creator: `.claude/skills/higgsfield-creative-director/references/style-archetypes.md`.
+- Fonts: `fonts\FONTS.md` (Poppins, Anton, Bebas Neue, Archivo Black, Space Grotesk, Instrument Serif, Fredoka, Caveat Brush, Permanent Marker).
+- Animated cards (step cards, stat counters, comparisons, kinetic quotes): run `.\Run-Editor.ps1 -Motion` once, then `editor.py motion --list`.
+
 ## Sound effects and voice
 ```powershell
 .\Run-Editor.ps1 -SfxFetch all                        # real sound effects (Openverse/Freesound, commercial licences) into assets\sfx

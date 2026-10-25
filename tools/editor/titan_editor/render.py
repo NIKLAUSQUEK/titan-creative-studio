@@ -23,6 +23,11 @@ SFX_SYNTH = {
     "bass": "aevalsrc='0.95*sin(2*PI*(55-25*t)*t)*exp(-2.2*t)':d=1.2",
     "sting": "aevalsrc='0.5*(sin(2*PI*311*t)+sin(2*PI*329.6*t)+sin(2*PI*466*t))*exp(-1.8*t)*min(1,t*40)':d=1.6",
     "scratch": "aevalsrc='0.6*sin(2*PI*(900-1700*t)*t)*(1-t/0.35)':d=0.35",
+    "swell": "anoisesrc=d=0.9:c=white:a=0.6,highpass=f=2500,afade=t=in:d=0.85:curve=exp,afade=t=out:st=0.86:d=0.04",
+    "boom": "aevalsrc='0.95*sin(2*PI*(48-20*t)*t)*exp(-1.6*t)':d=1.8",
+    "tick": "aevalsrc='0.6*sin(2*PI*3200*t)*exp(-260*t)+0.2*(random(0)-0.5)*exp(-400*t)':d=0.04",
+    "glitch": "aevalsrc='0.5*sin(2*PI*(400+3000*floor(mod(t*40,4)))*t)*lt(mod(t*25,1),0.6)':d=0.3",
+    "paper": "anoisesrc=d=0.12:c=pink:a=0.8,bandpass=f=2500:w=2000,afade=t=out:st=0.02:d=0.1",
     "drone": "aevalsrc='0.35*sin(2*PI*48*t)+0.2*sin(2*PI*72.3*t)*(0.6+0.4*sin(2*PI*0.2*t)):d=90",
 }
 
@@ -138,11 +143,14 @@ def venc(q):
 
 def render_broll(b, W, H, q, style, cache, lut):
     pip = b.get("mode") == "pip"
-    w, hh = (int(W * 0.42) // 2 * 2, int(H * 0.42) // 2 * 2) if pip else (W, H // 2 // 2 * 2) if b.get("mode") == "split" else (W, H)
-    key = h({"p": b["path"], "in": b["src_in"], "d": b["dur"], "W": w, "H": hh, "q": q, "g": style.get("grade"), "v": 3})
+    w, hh = (int(W * 0.42) // 2 * 2, int(H * 0.42) // 2 * 2) if pip else (W, H // 2 // 2 * 2) if b.get("mode") == "split" else (W // 2 // 2 * 2, H) if b.get("mode") == "side" else (W, H)
+    key = h({"p": b.get("path") or json.dumps([b.get("template"), b.get("data")], sort_keys=True), "in": b.get("src_in", 0), "d": b["dur"], "W": w, "H": hh, "q": q, "g": style.get("grade"), "v": 3})
     out = cache / f"broll_{key}.mkv"
     if out.exists():
         return out
+    if b.get("kind") == "motion":                      # code-made card (tools/motion), rendered at the window size
+        from .motion import cached
+        b = dict(b, path=str(cached(b, w, hh, FPS, cache)), src_in=0.0)
     if b.get("kind") == "image":
         args = ["-loop", "1", "-framerate", str(FPS), "-t", f"{b['dur']:.3f}", "-i", b["path"]]
         kb = f",zoompan=z='1+0.06*on/{int(b['dur'] * FPS)}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={w}x{hh}:fps={FPS}"  # slow Ken Burns
@@ -225,8 +233,10 @@ def pick_emphasis(g, explicit):
 
 
 def ass_style(name, font, px, color, outline_px, outline_color="#000000", bold=True, align=5, back="#000000", back_alpha=1.0, border_style=1, shadow=0):
+    italic = str(font).lower().endswith(" italic")
+    font = font[:-7] if italic else font                 # "Instrument Serif Italic" -> family + Italic flag (libass matches families)
     return (f"Style: {name},{font},{int(px)},{ass_color(color)},{ass_color(color)},{ass_color(outline_color)},{ass_color(back, back_alpha)},"
-            f"{-1 if bold else 0},0,0,0,100,100,0,0,{border_style},{outline_px},{shadow},{align},40,40,40,1")
+            f"{-1 if bold else 0},{-1 if italic else 0},0,0,100,100,0,0,{border_style},{outline_px},{shadow},{align},40,40,40,1")
 
 
 def t_ass(t):
@@ -244,6 +254,13 @@ def build_ass(r, clips, W, H, total, path):
               ass_style("Hook", ht.get("font", "DejaVu Sans"), ht.get("size", 0.05) * U, ht.get("color", "#FFFFFF"), max(1, round(ht.get("outline", 6) * k)), "#000000", ht.get("bold", True)),
               ass_style("Lower", lt.get("font", "DejaVu Sans"), lt.get("size", 0.028) * U, lt.get("color", "#FFFFFF"), max(2, round(10 * k)), lt.get("box", "#000000"),
                         True, 1, lt.get("box", "#000000"), 1 - lt.get("box_alpha", 0.55), 3)]
+    glow = c.get("glow", c.get("highlight", "#FFE14D"))
+    styles += [ass_style("Small", c.get("small_font", c.get("font", "DejaVu Sans")), cap_px * c.get("small_scale", 0.5), c.get("small_color", "#E8E8E8"),
+                         max(1, round(2 * k)), "#000000", False),
+               ass_style("Key", c.get("key_font", c.get("font", "DejaVu Sans")), cap_px * c.get("key_scale", 1.55), c.get("highlight", "#FFE14D"),
+                         max(1, round(2 * k)), glow, True),
+               ass_style("KeyGlow", c.get("key_font", c.get("font", "DejaVu Sans")), cap_px * c.get("key_scale", 1.55), glow,
+                         max(2, round(12 * k)), glow, True)]
     fonts = st.get("fonts", {})
     ec = st.get("end_card", {})
     styles.append(ass_style("EndTitle", ec.get("font") or fonts.get("display") or "DejaVu Sans", ec.get("title_size", 0.05) * U, ec.get("color") or st.get("colors", {}).get("text") or "#FFFFFF", 0, bold=False))
@@ -269,6 +286,18 @@ def build_ass(r, clips, W, H, total, path):
                 s = ass_escape(s)
                 return f"{{\\c{hl}}}{s}{{\\c{base}}}" if i == emph or active else s
             anim = c.get("animation", "pop")
+            if c.get("layout") == "two_level" and len(g) > 0:
+                ki = emph if emph is not None else max(range(len(g)), key=lambda i: len(g[i]["w"]))
+                small = " ".join(ass_escape(w["w"].lower() if c.get("small_lower", True) else w["w"]) for i, w in enumerate(g) if i != ki)
+                kw = g[ki]["w"].strip(".,!?;:\"'")
+                key = ass_escape(kw.upper() if c.get("uppercase", True) else kw)
+                ys, yk = y - int(cap_px * 0.95), y + int(cap_px * 0.35)
+                if small:
+                    ev.append(f"Dialogue: 0,{t_ass(t0)},{t_ass(t1)},Small,,0,0,0,,{{\\an5\\pos({cx},{ys})\\fad(90,60)}}{small}")
+                ga = g[ki]["t0"] if ki else t0
+                ev.append(f"Dialogue: 0,{t_ass(ga)},{t_ass(t1)},KeyGlow,,0,0,0,,{{\\an5\\pos({cx},{yk})\\blur14\\t(0,140,\\blur8)\\fad(60,60)}}{key}")
+                ev.append(f"Dialogue: 1,{t_ass(ga)},{t_ass(t1)},Key,,0,0,0,,{{\\an5\\pos({cx},{yk})\\blur10\\t(0,120,\\blur0)\\fscx92\\fscy92\\t(0,120,\\fscx100\\fscy100)\\fad(60,60)}}{key}")
+                continue
             if anim == "karaoke":
                 for i, w in enumerate(g):
                     a = w["t0"] if i else t0
@@ -383,6 +412,10 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
                 hh = H // 2 // 2 * 2
                 fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]crop={W}:{hh}:0:{(H - hh) // 2}[c{n}];[p{n}][c{n}]overlay=0:{H - hh}:{win}[s{n}];"
                           f"[s{n}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
+            elif b.get("mode") == "side":        # side-by-side A/B: speaker's centre column left, B-roll (e.g. the AI version) right
+                ww = W // 2 // 2 * 2
+                fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]crop={ww}:{H}:{(W - ww) // 2}:0[c{n}];[p{n}][c{n}]overlay=0:0:{win}[s{n}];"
+                          f"[s{n}][b{n}]overlay={W - ww}:0:eof_action=pass:{win}[o{n}]")
             elif b.get("mode") == "greenscreen":
                 fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]colorkey=0x00FF00:0.30:0.10[k{n}];[b{n}][k{n}]overlay=0:0[g{n}];[p{n}][g{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             else:
@@ -437,6 +470,22 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
                 inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{body:.3f}", "-i", "logo" + lp.suffix]
                 fc.append(f"[{n}:v]scale={lw}:-1,format=rgba,colorchannelmixer=aa={logo.get('opacity', 0.9)}[lg];[{last}][lg]overlay={pos}:eof_action=pass[o{n}]")
                 last, n = f"o{n}", n + 1
+        tr = r["style"].get("transitions", {}) or {}
+        kind = tr.get("default")
+        if kind in ("flash", "dip", "glow"):            # brightness pulse on beat changes (or every cut): white flash, dip to black, glow flash
+            cuts, prev = [], None
+            for it in r["items"]:
+                if prev is not None and (tr.get("on") == "cuts" or it.get("beat") != prev.get("beat")):
+                    cuts.append(starts[it["id"]])
+                prev = it
+            cuts = [c for c in cuts if 0.2 < c < body - 0.2][:60]
+            if cuts:
+                d = float(tr.get("dur_s", 0.12 if kind != "dip" else 0.2))
+                amp = {"flash": 0.55, "glow": 0.32, "dip": -0.6}[kind] * float(tr.get("strength", 1.0))
+                pulse = "+".join(f"between(t,{c - d / 2:.3f},{c + d / 2:.3f})*(1-abs(t-{c:.3f})/{d / 2:.3f})" for c in cuts)
+                sat = f":saturation='1+{0.6 if kind == 'glow' else 0}*({pulse})'" if kind == "glow" else ""
+                fc.append(f"[{last}]eq=brightness='{amp}*({pulse})'{sat}:eval=frame[tr]")
+                last = "tr"
         fc.append(f"[{last}]ass={tag}.ass:fontsdir=fonts[vout]" if n_ev else f"[{last}]null[vout]")
         # audio: voice + ducked music + sfx -> loudness
         ok, why = music_ok(r)
@@ -445,7 +494,9 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
         if ok:
             mp = Path(r["audio"]["music"]["path"]); mp = mp if mp.is_absolute() else REPO / mp
             inputs += ["-stream_loop", "-1", "-i", str(mp.resolve())]
-            mix.append(f"[{n}:a]atrim=0:{total:.3f},aresample=48000,aformat=channel_layouts=stereo,volume={r['audio']['music'].get('db', -19)}dB,"
+            dips = r["audio"].get("dips") or []          # bed holes before reveals (150-300 ms), editbymmh R5
+            dip = (",volume='1-0.85*(" + "+".join(f"between(t,{d - 0.28:.3f},{d:.3f})" for d in dips) + ")':eval=frame") if dips else ""
+            mix.append(f"[{n}:a]atrim=0:{total:.3f},aresample=48000,aformat=channel_layouts=stereo,volume={r['audio']['music'].get('db', -19)}dB{dip},"
                        f"afade=t=out:st={max(0, total - 1.2):.3f}:d=1.2[mus]")
             if r["audio"]["music"].get("duck", True):
                 mix.append("[mus][vsc]sidechaincompress=threshold=0.03:ratio=6:attack=15:release=350[duck]"); mix_in.append("[duck]")

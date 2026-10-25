@@ -33,7 +33,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "switch to <brand>" / "work on <brand>" | set `.studio/active_brand` (and `active_brain`), read that brand file, continue |
 | "make an ad / campaign / story for <client>", gives a brief | `/ad` → story-director: brief intake → 5 story directions → pick → second-by-second script → `/assets` (Asset Bible + visual approval) → `/plan` |
 | pastes an existing script / "make a skit about…" | `/brief` → script-interrogator agent → tappable questions → `/plan` (use `/ad` if he wants options) |
-| "edit like <creator>", "Jun Yuh vibe" | `/style <creator>` → pull StyleCard from Supabase `style_cards` |
+| "edit like <creator>", "Jun Yuh vibe" | `/style <creator>` → pull StyleCard from Supabase `style_cards` (or `editor.py study <links>`; archetypes in style-archetypes.md) |
 | "rewrite / punch up / alternate version" | script-doctor agent (keeps original as A) |
 | "go", "draft it" | `/draft` (cost-gated) |
 | "edit this footage", "cut my talking head", "make a UGC edit / unboxing / POV / day-in-the-life edit", "make 9:16 + 1:1 + 16:9 versions" | `/edit` → editor agent (references/editor.md, tools/editor): ingest → strategist edit brief → local B-roll match → edit.v1.json → lowest-quality draft → QC |
@@ -61,6 +61,11 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "edit like these videos <links>", "learn this style", "copy this creator's editing" | `editor.py study <3-5 links> --name <style> [--llm claude-cli]` → research/style-studies/<style>/STYLE_STUDY.md + preset `style-<style>` (measured cuts, words/min, loudness, sheets); refs are study-only, never cut into edits |
 | "better sound effects", "real SFX", "SFX don't match / land late", "get a sound kit" | `editor.py sfx fetch <kind|all>` (Openverse real recordings, CC0/CC BY, credits kept) + optional Earshot bank on the PC; the renderer aligns each SFX by role (hit before the cut, whoosh peak after, riser on it) and rotates takes |
 | "make my voice sound studio / clean up my audio", "Auphonic" | `editor.py enhance` (local ffmpeg chain, free) or `--engine auphonic` (AUPHONIC_API_KEY env var only; clips batched into one production, re-aligned to the timeline; consent for other voices, never patient audio) → re-render |
+| "clone me / turn me into a character / this is me and this is also me / lookalike", "which model is better" | clone-character-swap.md: driver clip → original character sheet (AI Influencer / Nano Banana, Gate 4) → Genjutsu / Seedance 2.5 / Wan 3.0 motion transfer (cheap draft first) → side/split edit; never a real-person lookalike, always labelled AI |
+| "ad strategy / what ads should we test / why isn't this ad working / iterate the winner / drama ad" | ad-strategist agent (marketing-engine references/ad-strategy.md): angle matrix, hook bank, drama-ad skeletons, testing round, metric diagnosis → `/ad` |
+| "thumbnail / cover / carousel / slide 1 / Explore hook" | thumbnail-designer agent (references/thumbnail-carousel-design.md): 3 cover concepts, slide plan, text-free prompts, Pillow type, QC |
+| "what style should this be / gen z girl style / founder style / comedy format" | style-archetypes.md (24 creator archetypes × 16 comedy formats → preset) + genre-playbooks.md |
+| "animated cards / stat counter / step cards / kinetic text / code animation" | tools/motion (HTML templates → frame-exact video; `editor.py motion`, or B-roll `kind: motion`) |
 | "make it look real / realistic" | realism.md checklist before prompting, then QC against it |
 | "clip this podcast / long video into shorts", "highlights" | clipping-podcast.md (faster-whisper + ffmpeg locally; Riverside for recorded podcasts) |
 | "motion graphics / trailer / product video / kinetic type" | motion-design.md; product-vfx.md for assembly/exploded-view reveals |

@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+:root{--bg:#0E0E10;--ink:#FFFFFF;--accent:#D7FF3A;--muted:#9a9aa3}
+#stage{background:var(--bg);font-family:Poppins;color:var(--ink)}
+.pre{position:absolute;left:90px;right:90px;top:520px;font-size:52px;font-weight:700;line-height:1.2}
+.num{position:absolute;left:80px;right:80px;top:700px;font-family:Anton;font-size:300px;line-height:1;color:var(--accent);letter-spacing:-4px}
+.post{position:absolute;left:90px;right:90px;top:1060px;font-size:48px;font-weight:400;line-height:1.3}
+.bar{position:absolute;left:90px;top:1000px;height:14px;background:var(--accent);border-radius:7px}
+.src{position:absolute;left:90px;right:90px;bottom:240px;font-size:28px;color:var(--muted);border-top:2px solid #ffffff22;padding-top:22px}
+</style></head><body><div id="stage" class="grain">
+<div class="pre" id="pre"></div><div class="num" id="num"></div><div class="bar" id="bar"></div><div class="post" id="post"></div><div class="src" id="src"></div>
+</div><script src="_base.js"></script><script>
+// DATA: {value:2315, prefix:"", suffix:"", decimals:0, pre:"Finnish men followed for", post:"...", source:"Laukkanen et al., JAMA Intern Med 2015", dur:4}
+const S = stage(); window.DURATION = D.dur || 4;
+document.getElementById('pre').textContent = D.pre || ''; document.getElementById('post').textContent = D.post || '';
+document.getElementById('src').textContent = D.source ? 'Source: ' + D.source : '';
+window.seek = function (t) {
+  const p = ease.out(seg(t, .3, D.count_s || 1.6)), v = (D.value || 0) * p;
+  document.getElementById('num').textContent = (D.prefix || '') + v.toLocaleString('en', {minimumFractionDigits: D.decimals || 0, maximumFractionDigits: D.decimals || 0}) + (D.suffix || '');
+  document.getElementById('bar').style.width = (900 * p) + 'px';
+  document.getElementById('pre').style.opacity = seg(t, 0, .3); document.getElementById('post').style.opacity = seg(t, 1.6, .4);
+  document.getElementById('src').style.opacity = seg(t, 2, .4);
+};
+</script></body></html>

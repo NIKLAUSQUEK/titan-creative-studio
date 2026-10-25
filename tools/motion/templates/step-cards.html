@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+:root{--bg:#EFE6D8;--ink:#141414;--accent:#E8572B;--card:#FFFFFF}
+#stage{background:var(--bg);font-family:Poppins}
+.kick{position:absolute;left:90px;top:470px;font-weight:800;font-size:76px;color:var(--ink)}
+.kick b{color:var(--accent)}
+.card{position:absolute;left:90px;right:90px;top:620px;background:var(--card);border-radius:48px;padding:64px 64px;box-shadow:0 30px 60px rgba(0,0,0,.12)}
+.icon{font-size:150px;line-height:1;margin-bottom:24px}
+.title{font-weight:800;font-size:86px;color:var(--ink);line-height:1.1;margin-bottom:30px}
+.b{font-weight:400;font-size:56px;color:#333;margin:18px 0;display:flex;gap:22px}
+.b i{font-style:normal;color:var(--accent);font-weight:800}
+.dots{position:absolute;left:0;right:0;bottom:300px;text-align:center}
+.dots span{display:inline-block;width:22px;height:22px;border-radius:11px;background:#0002;margin:0 10px}
+.dots span.on{background:var(--accent)}
+</style></head><body><div id="stage" class="grain">
+<div class="kick" id="k"></div><div class="card" id="c"><div class="icon" id="ic"></div><div class="title" id="ti"></div><div id="bl"></div></div><div class="dots" id="dots"></div>
+</div><script src="_base.js"></script><script>
+// DATA: {theme:{bg,ink,accent,card}, steps:[{label:"Step 1.", title:"Set it up", icon:"📁", bullets:["..",".."], dur:3.2}], typing:true}
+const S = stage(), steps = D.steps || [{label: "Step 1.", title: "Film your video", icon: "🎬", bullets: ["Phone, natural light", "One idea per clip"]}];
+const durs = steps.map(s => s.dur || Math.max(2.4, 1.2 + 0.8 * (s.bullets || []).length)); const starts = durs.map((_, i) => durs.slice(0, i).reduce((a, b) => a + b, 0));
+window.DURATION = durs.reduce((a, b) => a + b, 0);
+document.getElementById('dots').innerHTML = steps.map(() => '<span></span>').join('');
+window.seek = function (t) {
+  let i = starts.findLastIndex(s => s <= t); if (i < 0) i = 0; const st = steps[i], lt = t - starts[i];
+  const k = document.getElementById('k'); k.innerHTML = `<b>${st.label || 'Step ' + (i + 1) + '.'}</b> ${st.kicker || ''}`;
+  const c = document.getElementById('c'), e = ease.back(seg(lt, 0, .45)), out = seg(lt, durs[i] - .25, .25);
+  c.style.transform = `translateY(${(1 - e) * 140 - out * 60}px) scale(${.92 + .08 * e})`; c.style.opacity = Math.min(seg(lt, 0, .2), 1 - out);
+  document.getElementById('ic').textContent = st.icon || '';
+  document.getElementById('ti').textContent = st.title || '';
+  const bl = st.bullets || []; document.getElementById('bl').innerHTML = bl.map((b, j) => {
+    const a = .5 + j * Math.max(.45, (durs[i] - 1.2) / Math.max(1, bl.length)); const p = seg(lt, a, .5);
+    const txt = D.typing === false ? b : b.slice(0, Math.round(b.length * p));
+    return `<div class="b" style="opacity:${p > 0 ? 1 : 0}"><i>${j + 1}</i><span>${txt}</span></div>`; }).join('');
+  [...document.querySelectorAll('.dots span')].forEach((d, j) => d.className = j === i ? 'on' : '');
+};
+</script></body></html>

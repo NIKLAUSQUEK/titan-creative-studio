@@ -132,6 +132,26 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Beat sync:** `beat_sync` presets snap B-roll, labels and SFX to the music's onsets (detected locally).
 - **Precedence:** the brand's `edit-brand` hook placement still wins over the preset (e.g. Physio Spot hook at 61.5%).
 
+## 7f. Styles from the 2026-10-25 references (fonts, captions, layouts, motion, sound)
+- **Fonts:** tools/editor/fonts/FONTS.md, all open-licence. Name a family in any preset's `font` / `key_font` / `small_font`; add " Italic" for the italic face (e.g. "Instrument Serif Italic").
+- **Two-level captions:** `captions.layout: "two_level"` puts the setup words small above and the keyword big below with a glow and a blur-in. Keys: `key_font`, `key_scale` (1.55), `small_font`, `small_scale` (0.5), `glow`, `highlight`.
+- **Transitions:** `transitions: {"default": "flash"|"dip"|"glow", "on": "beats"|"cuts", "dur_s", "strength"}` is a brightness pulse on beat changes (or every cut). `flicker` stays the horror bulb flicker.
+- **Layouts:** B-roll `mode: side` puts the speaker's centre column on the left and the B-roll on the right (A/B tests, original vs AI); `split` stacks them top and bottom.
+- **Code motion:** B-roll `{"kind": "motion", "template": "step-cards|stat-counter|compare-loop|kinetic-quote", "data": {...}, "dur": 4}` is rendered by tools/motion (Node + Playwright Chromium) at the window size. Standalone: `editor.py motion <template> --data d.json --out x.mp4`.
+- **SFX design:**
+  - `sfx.stacks` (one cue fires several layers, each with its own dB, probability and pre-lap);
+  - `sfx.reveal_every_s` puts reveal stacks on beat turns, and the music bed dips 280 ms before them;
+  - `sfx.cut_coverage` gives a share of cuts a sound;
+  - `sfx.min_gap_s` sets the spacing; `map.title` and `map.end` now fire;
+  - new kinds: swell, boom, tick, glitch, paper. Whooshes peak +60 ms after the cut.
+- **New presets:**
+  - mograph-metaphor-interview, neon-mograph-cards, scrapbook-bobblehead, illustrated-explainer-noir (ed01-03, ed10);
+  - story-sfx-dense (editbymmh);
+  - absurd-howto-3d, code-motion-tutorial, stick-compare-loop (AI animation);
+  - petty-sermon (comedy).
+  - Keys marked `_needs_feature` are specs for features not built yet; the engine ignores them.
+- **Which style for whom:** style-archetypes.md.
+
 ## 7e. Sound: real SFX + voice enhancement
 - **SFX sources** per cue kind (whoosh, impact, pop, ding, riser, click, bass, sting, scratch, shutter, drone):
   1. `assets/sfx/<kind>/`: real recordings. Fill it with `editor.py sfx fetch <kind|all> [-n 6] [--query ...] [--cc0-only]`:

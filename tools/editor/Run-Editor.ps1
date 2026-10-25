@@ -61,6 +61,7 @@ param(
   [switch] $Web,                             # allow licensed web images (Openverse/Wikimedia) when footage has no match
   [switch] $Presets,
   [string] $SfxFetch = "",                   # "all" or "whoosh,pop,impact": real CC0/CC BY sound effects from Openverse into assets\sfx
+  [switch] $Motion,                          # one-time setup for code-motion cards (Node.js + Playwright Chromium in tools\motion)
   [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
   [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)
   [ValidateSet("light", "normal", "strong")] [string] $VoiceStrength = "normal",
@@ -126,6 +127,12 @@ try {
     if (-not $n) { $n = "me" }
     Ed @("people", "enroll", $n, $EnrollMe, "--consent", "self", "--index-dir", $IndexDir)
     Ed @("people", "scan", "--index-dir", $IndexDir); Ed @("people", "list", "--index-dir", $IndexDir); return
+  }
+  if ($Motion) {
+    if (-not (Have node)) { winget install -e --id OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements; Refresh-Path }
+    $m = Join-Path (Split-Path $here) "motion"
+    Push-Location $m; npm i playwright --no-audit --no-fund; npx playwright install chromium; Pop-Location
+    Ed @("motion", "--list"); Write-Host "`nCode-motion ready. Templates: tools\motion\templates" -ForegroundColor Green; return
   }
   if ($SfxFetch) {
     foreach ($k in ($SfxFetch -split ",")) { Ed @("sfx", "fetch", $k.Trim()) }
