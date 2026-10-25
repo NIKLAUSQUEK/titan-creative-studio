@@ -31,6 +31,12 @@ Manglish (lah/ma/meh, "can la", "alamak"), mamak stall at night (teh tarik pour)
 
 ## 🇻🇳 VIETNAM (HCMC)
 Motorbike sea at rush hour, alley (hẻm) cafés with tiny stools, Thao Dien villas/cafés, Ben Thanh-style market (generic), rooftop bars, rain + raincoats on bikes. Humour: motorbike chaos, cafe culture, family dinners, haggling. Language: Vietnamese with English subs; Saigon accent.
+**COMPLIANCE (VN, verify):** see compliance-packs.md "Vietnam detail".
+- Paid ads lead in Vietnamese, with any foreign language below it at no more than 3/4 size (Ad Law Art. 18).
+- Label sponsored posts (Law 75/2025).
+- Get image consent (Civil Code Art. 32) and blur faces and plates in street and scam content.
+- No politics or state topics.
+- Generic signage only: no real shop names in scam scenes.
 
 ## 🇹🇭 THAILAND
 Two ad schools: tear-jerker short film (slow, twist, brand last) and surreal absurdist comedy. Settings: soi street food, tuk-tuk, 7-Eleven-style convenience store (generic), temple steps (respectful), BTS skytrain. Respect: no feet toward Buddha images, no disrespect to monarchy (lèse-majesté).

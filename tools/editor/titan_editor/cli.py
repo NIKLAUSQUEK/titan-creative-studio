@@ -79,6 +79,9 @@ def main(argv=None):
     p.add_argument("-n", type=int, default=6); p.add_argument("--query"); p.add_argument("--cc0-only", action="store_true")
     p = sp.add_parser("enhance"); p.add_argument("--engine", choices=["local", "auphonic"], default="local"); p.add_argument("--clips")
     p.add_argument("--strength", choices=["light", "normal", "strong"], default="normal"); p.add_argument("--off", action="store_true")
+    p = sp.add_parser("voice"); p.add_argument("action", choices=["list", "enroll", "say", "forget"]); p.add_argument("name", nargs="?", default="piper")
+    p.add_argument("inputs", nargs="*"); p.add_argument("--consent"); p.add_argument("--who"); p.add_argument("--out")
+    p.add_argument("--exaggeration", type=float, default=0.5); p.add_argument("--cfg", type=float, default=0.5)
     p = sp.add_parser("motion"); p.add_argument("template", nargs="?"); p.add_argument("--data"); p.add_argument("--out"); p.add_argument("--list", action="store_true")
     p.add_argument("--w", type=int, default=1080); p.add_argument("--h", type=int, default=1920); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("study"); p.add_argument("refs", nargs="+"); p.add_argument("--name", required=True); add_llm(p, "none")
@@ -107,6 +110,9 @@ def main(argv=None):
     if a.cmd == "sfx":
         from .sfx import cmd_sfx
         return cmd_sfx(a)
+    if a.cmd == "voice":
+        from .voice import cmd_voice
+        return cmd_voice(a)
     if a.cmd == "motion":
         from .motion import cmd_motion
         return cmd_motion(a)

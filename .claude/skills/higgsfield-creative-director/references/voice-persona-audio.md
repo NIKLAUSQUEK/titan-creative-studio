@@ -53,6 +53,21 @@ Sources (in order): `assets/sfx/` curated royalty-free library (CC0/commercial-l
 3. Output an **SFX cue sheet** aligned to the script: `timestamp | beat | stim | source file | level`.
 Music is attached at TikTok publish time (tiktok_prepare_publish widget) or mixed in the edit for other platforms.
 
+## AI voices + consented voice clones (tools/editor `voice`, local, no API keys)
+Pick the route in this order:
+1. **Real recorded voice**, cleaned with `editor.py enhance`. This is always the first choice: real voices carry trust, and health and testimony-like content needs them.
+2. **Clone of a consenting person**: `editor.py voice enroll <name> <15-30 s+ of clean talking> --consent self|release:<signed release>`, then `editor.py voice say <name> "script" --out vo.wav`.
+   - Engine: Chatterbox (Resemble AI, MIT), local; GPU fast, CPU about 1-1.5 min per sentence. Outputs carry Resemble's PerTh watermark.
+   - Uses: pickups and fixes for a line Klaus fluffed, VO when he can't record, translated VO in his own voice (Chatterbox multilingual, verify quality per language), and client VO within their release's scope.
+   - Samples stay on the PC (`%LOCALAPPDATA%\TitanEditor\voices`). cast/registry.md lists only the name, person and consent.
+3. **Stock neural voice**: `editor.py voice say piper "..."` (Piper, local). For scratch VO, animatics and test footage. Never espeak/SAPI in front of Klaus (ledger 2026-10-25).
+4. **Premium cloud voices** (when local quality isn't enough): ElevenLabs (claude.ai connector: `creative_list_voices` / `creative_design_voice` / `creative_generate_speech`; spends the account's credits) or Higgsfield `create_voice` / `generate_audio`. Use designed or archetype voices only (the archetypes above).
+Hard rules:
+- Never clone public figures, celebrities or anyone without consent.
+- Label AI voice where the platform or market requires it (TikTok/IG/YouTube AI labels; VN and SG ad rules).
+- A cloned voice never voices a patient or customer experience (SG health: no testimonials).
+- `voice forget <name>` deletes the samples on request.
+
 ## Gate hooks
 - Gate 1 asks: commentary/voice persona (or none) · sound energy (stim-heavy / balanced / clean) · target community for humour.
 - Gate 3 script table gains a 4th column: **Audio stim / music cue**.

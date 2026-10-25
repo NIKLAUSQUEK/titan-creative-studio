@@ -60,6 +60,17 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
+## AI voices and voice clones
+```powershell
+.\Run-Editor.ps1 -Voice                                                        # once: installs the local cloning engine (Chatterbox)
+.\Run-Editor.ps1 -VoiceEnroll klaus -VoiceSamples "D:\Clips\me-talking" -Consent self
+.\Run-Editor.ps1 -Say "Stop stretching your back every morning." -VoiceName klaus
+.\Run-Editor.ps1 -Say script.txt -VoiceName piper                              # stock natural voice, no cloning
+```
+- Give it 15-30 s or more of you talking naturally in a quiet room (any phone clip works). It cleans and picks the best stretch itself.
+- A client's voice needs their signed release: `-Consent "release:D:\Releases\client.pdf"`.
+- Voice samples stay on your PC, never in git. Generated audio is AI: label it where platforms require it.
+
 ## Styles, fonts and animated cards
 - 41 presets (`.\Run-Editor.ps1 -Presets`). Which one fits which creator: `.claude/skills/higgsfield-creative-director/references/style-archetypes.md`.
 - Fonts: `fonts\FONTS.md` (Poppins, Anton, Bebas Neue, Archivo Black, Space Grotesk, Instrument Serif, Fredoka, Caveat Brush, Permanent Marker).

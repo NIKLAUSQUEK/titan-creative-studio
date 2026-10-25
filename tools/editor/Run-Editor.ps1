@@ -61,6 +61,12 @@ param(
   [switch] $Web,                             # allow licensed web images (Openverse/Wikimedia) when footage has no match
   [switch] $Presets,
   [string] $SfxFetch = "",                   # "all" or "whoosh,pop,impact": real CC0/CC BY sound effects from Openverse into assets\sfx
+  [switch] $Voice,                           # one-time setup for voice cloning (Chatterbox, MIT, local) in its own venv
+  [string] $VoiceEnroll = "",                # name for a new voice clone, e.g. "klaus" (needs -VoiceSamples + -Consent)
+  [string[]] $VoiceSamples = @(),            # 15-30 s+ of clean talking: audio or video files / a folder
+  [string] $Consent = "",                    # "self" for your own voice, or "release:C:\path\signed-release.pdf" for a client
+  [string] $Say = "",                        # text or a .txt script to speak with -VoiceName
+  [string] $VoiceName = "piper",             # an enrolled clone name, or "piper" (stock neural voice)
   [switch] $Motion,                          # one-time setup for code-motion cards (Node.js + Playwright Chromium in tools\motion)
   [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
   [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)
@@ -127,6 +133,21 @@ try {
     if (-not $n) { $n = "me" }
     Ed @("people", "enroll", $n, $EnrollMe, "--consent", "self", "--index-dir", $IndexDir)
     Ed @("people", "scan", "--index-dir", $IndexDir); Ed @("people", "list", "--index-dir", $IndexDir); return
+  }
+  if ($Voice) {
+    $vv = Join-Path $work "voice-venv"
+    if (-not (Test-Path $vv)) { if (Have "py") { py -3 -m venv $vv } else { python -m venv $vv } }
+    $vp = Join-Path $vv "Scripts\python.exe"
+    & $vp -m pip install --quiet --upgrade pip
+    $idx = if (Have nvidia-smi) { "https://download.pytorch.org/whl/cu124" } else { "https://download.pytorch.org/whl/cpu" }
+    & $vp -m pip install --quiet torch torchaudio --index-url $idx
+    & $vp -m pip install --quiet chatterbox-tts
+    Ed @("voice", "list"); Write-Host "`nVoice cloning ready. Enrol: -VoiceEnroll klaus -VoiceSamples D:\clips\me -Consent self" -ForegroundColor Green; return
+  }
+  if ($VoiceEnroll) { Ed (@("voice", "enroll", $VoiceEnroll) + $VoiceSamples + @("--consent", $Consent)); return }
+  if ($Say) {
+    $o = Join-Path (Get-Location) ("vo-" + (Get-Date -Format "HHmmss") + ".wav")
+    Ed @("voice", "say", $VoiceName, $Say, "--out", $o); Write-Host "`n-> $o" -ForegroundColor Green; return
   }
   if ($Motion) {
     if (-not (Have node)) { winget install -e --id OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements; Refresh-Path }

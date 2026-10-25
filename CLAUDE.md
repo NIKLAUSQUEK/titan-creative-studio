@@ -66,6 +66,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "thumbnail / cover / carousel / slide 1 / Explore hook" | thumbnail-designer agent (references/thumbnail-carousel-design.md): 3 cover concepts, slide plan, text-free prompts, Pillow type, QC |
 | "what style should this be / gen z girl style / founder style / comedy format" | style-archetypes.md (24 creator archetypes × 16 comedy formats → preset) + genre-playbooks.md |
 | "animated cards / stat counter / step cards / kinetic text / code animation" | tools/motion (HTML templates → frame-exact video; `editor.py motion`, or B-roll `kind: motion`) |
+| "clone my voice / client voice", "AI voiceover", "fix this line in my voice", "voice for this script" | voice-persona-audio.md § AI voices: real voice first (`enhance`); consented clone `editor.py voice enroll/say` (Chatterbox, local, consent record required, samples never in git); stock `voice say piper`; ElevenLabs/Higgsfield designed voices; never public figures; label AI |
 | "make it look real / realistic" | realism.md checklist before prompting, then QC against it |
 | "clip this podcast / long video into shorts", "highlights" | clipping-podcast.md (faster-whisper + ffmpeg locally; Riverside for recorded podcasts) |
 | "motion graphics / trailer / product video / kinetic type" | motion-design.md; product-vfx.md for assembly/exploded-view reveals |
