@@ -56,3 +56,42 @@ python tools\editor\editor.py immich consent "<name>" yes        # once for each
 python tools\editor\editor.py immich sync-library --brand titan-ai
 python tools\editor\editor.py immich pick "speaking on stage" --person klaus --out projects\test\picks
 ```
+
+---
+
+# Cowork prompt: download every Google Photos picture of me
+
+Use this when your photos live in Google Photos and you only want the ones Google has already grouped under your face. It's much smaller than a full Takeout, and nothing in Google Photos is changed.
+
+Before you start:
+1. In Chrome, go to Settings → Downloads.
+2. Set Location to a new folder, e.g. `C:\Photos\GooglePhotos-Klaus`, and turn **off** "Ask where to save each file".
+3. Sign in to photos.google.com yourself.
+
+```
+You are helping me (Niklaus "Klaus" Quek) download the photos and videos of me from my own Google Photos, in my Chrome browser. Read-only job: never delete, archive, edit, share, move to album, remove from face group, or change any setting in Google Photos. Only select and download.
+
+Step 1 - Open my face group
+Go to photos.google.com → Search (or Explore) → People. Open the face group that is me (it may already be labelled with my name; if not, show me the top face groups as screenshots and ask which one is me). Tell me how many items it shows if Google displays a count.
+
+Step 2 - Download in batches
+Large selections can fail as one download, so work in batches of roughly 200-300 items (rule of thumb):
+- In my face group, select items one date section at a time: hover a date heading and tick its checkbox (or click the first item, then Shift+click the last item of the batch).
+- Click the ⋮ (More options) menu → Download (or press Shift+D). Google prepares a .zip; wait until Chrome shows it finished before starting the next batch.
+- Clear the selection, then continue with the next date sections, oldest to newest or newest to oldest, until you reach the end of the group.
+- Keep a running log for me: batch number, date range covered, items selected, zip file name.
+
+Step 3 - Check
+At the end, open Chrome's Downloads page (chrome://downloads) and confirm every zip completed (none "Failed"). Retry any failed batch once. Give me the log and the total item count, and list any date range you couldn't download.
+
+Rules: if Google asks me to sign in or verify, stop and let me do it. Work in small steps with screenshots so I can follow.
+```
+
+## Afterwards (PowerShell)
+Unzip every batch into one folder, then point Immich at it. The zips are only deleted after you've checked the photos:
+```
+Get-ChildItem "C:\Photos\GooglePhotos-Klaus\*.zip" | ForEach-Object { Expand-Archive $_.FullName -DestinationPath "C:\Photos\GooglePhotos-Klaus\photos" -Force }
+(Get-ChildItem "C:\Photos\GooglePhotos-Klaus\photos" -Recurse -File).Count
+.\tools\immich\Setup-Immich.ps1 -Photos "C:\Photos\GooglePhotos-Klaus\photos" -Email <your email>
+```
+These are already your best "Klaus" reference photos, so naming your face in Immich becomes a 1-minute job.
