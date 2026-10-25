@@ -1,0 +1,79 @@
+{
+  "name": "class-two-wallets",
+  "label": "Class & status: same frame, two wallets (sequential A/B or two-hander)",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (C1, C2, C4): one room, one grade, class shown in props and lines. Persistent top header states the premise; small sentence subs; 1.0 s shot-reverse-shot for dialogue or two locked 5-7 s takes with a label word; no music under dialogue; silent reaction button at the end.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#8",
+  "structure": {
+    "name": "class-ab",
+    "target_s": [
+      10,
+      25
+    ],
+    "beats": [
+      "premise header 0-2.8s",
+      "volley / side A",
+      "side B or topper",
+      "silent reaction button"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.45,
+    "pad_s": 0.06,
+    "remove_fillers": "hard",
+    "max_shot_s": 7.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 8,
+    "animation": "fade",
+    "size": 0.03,
+    "position_y": 0.62,
+    "uppercase": false,
+    "keyword_caps": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": true,
+    "position_y": 0.16,
+    "size": 0.034,
+    "uppercase": false,
+    "max_words": 10
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "db": -16,
+    "map": {
+      "end": "boom"
+    }
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.03,
+    "saturation": 1.0,
+    "warmth": 0.0
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "split_compare_needs_feature": {
+    "mode": "side",
+    "same_timecode_both_halves": true,
+    "note": "optional ad A/B version: both lives play in sync, left/right; B-roll mode side exists but has no synced two-clip compare yet"
+  }
+}

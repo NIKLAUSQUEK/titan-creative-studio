@@ -2,36 +2,88 @@
   "name": "cautionary-ladder",
   "label": "Cautionary / decision ladder",
   "kind": "genre",
-  "description": "Numbered steps, same framing each step, slowly colder grade, tick bed and a low hit per step.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Corrected 2026-10-25 (K4-K6, C4): rungs shown by a repeated locked frame, shots accelerating 2-3 s -> 0.7 s, consequence HELD 4-30 s with no hits, then one sourced stat + one one-time action (efficacy). Grade cools per rung. Clock tick optional.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#12",
+  "structure": {
+    "name": "decision-ladder",
+    "target_s": [
+      25,
+      60
+    ],
+    "beats": [
+      "want + flash-forward 0-3s",
+      "rung 1",
+      "rungs 2-3 accelerating",
+      "consequence HELD",
+      "efficacy stat + action"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 0.5,
-    "pad_s": 0.1
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.12,
+    "remove_fillers": "hard",
+    "max_shot_s": 30.0
   },
   "captions": {
-    "max_words": 4
+    "enabled": true,
+    "max_words": 6,
+    "animation": "fade",
+    "size": 0.032,
+    "uppercase": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 7,
+    "uppercase": false,
+    "size": 0.04
   },
   "zoom": {
+    "mode": "smooth",
     "every_s": 0,
-    "on_hook": 1.08
+    "scale": 1.04,
+    "on_hook": 1.0,
+    "on_emphasis": false
   },
   "sfx": {
-    "density_per_10s": 1.2,
+    "density_per_10s": 0.6,
+    "db": -14,
     "map": {
-      "hook": "bass",
-      "zoom": "bass"
+      "hook": "boom",
+      "end": "swell"
     }
   },
   "music": {
     "energy": "low",
-    "db": -21
+    "db": -22,
+    "duck": true
   },
   "grade": {
     "contrast": 1.08,
-    "saturation": 0.88,
-    "warmth": -0.02
+    "saturation": 0.85,
+    "warmth": -0.05,
+    "vignette": true
   },
   "broll": {
     "every_s": 0
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 3.5
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.25,
+    "strength": 0.6
+  },
+  "grade_ramp_per_beat_needs_feature": {
+    "warmth_step": -0.02,
+    "brightness_step": -0.015,
+    "note": "cool/darken a little at each rung; today the grade is one value for the whole edit"
+  },
+  "hold_consequence_needs_feature": {
+    "beat_role": "consequence",
+    "min_hold_s": 4.0,
+    "mute_sfx": true
   }
 }

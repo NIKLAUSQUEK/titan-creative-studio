@@ -22,7 +22,8 @@ Overnight run on 2026-10-25. The goal was to ground, correct and extend three [d
 - **Caveats.**
   - Like counts are the uploader's own. Several reposts or personal accounts show "3 likes" against hundreds of comments, which means the like count is hidden. I treat those as unknown and use the comment count.
   - Loudness of about -14 LUFS is Instagram's normalisation, not the original mix.
-  - The machine was shared and overloaded (load average 11-13), so speech was transcribed only for the reels that needed it.
+  - The machine was shared and overloaded (load average 11-13). I transcribed speech only for the class reels (C1-C8).
+  - For the K and S reels, words/min was **not measured**. Their cut and loudness figures come from a pass without transcription.
 
 ## Measured reference table
 
@@ -354,7 +355,7 @@ Researched only:
   - No "replaces humans" fear angle; show augmentation.
   - Never borrow a competitor's mascots, end-card style, type or colours (OpenAI/Anthropic/Apple are references for grammar only).
   - Data and privacy claims need substantiation.
-- **Preset:** `scifi-tech` (corrected below: warm grade, sparse SFX, a chime map). New `tech-launch-human`? Not needed; the corrected `scifi-tech` covers spine A/B. New `ui-proof-launch` (16b).
+- **Preset:** `scifi-tech` (corrected below: warm grade, sparse SFX, a chime map). It covers spines A and B. Spine C uses it with `pacing.max_shot_s` 30. New: `ui-proof-launch` (16b).
 
 ```json
 {

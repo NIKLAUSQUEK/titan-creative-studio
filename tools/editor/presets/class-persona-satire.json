@@ -1,0 +1,68 @@
+{
+  "name": "class-persona-satire",
+  "label": "Class & status: in-character rich narrator over the evidence (side-by-side or green screen)",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (C6-C8, Shabaz Says; C7 Channel 4 collab 83K likes): creator speaks in character at 170-250 wpm from frame 0, evidence clip on the right half (side) or behind (greenscreen), lime sentence subs, catchphrase sting at the end. Brand accounts recreate the evidence with original actors.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#8",
+  "structure": {
+    "name": "persona-react",
+    "target_s": [
+      15,
+      60
+    ],
+    "beats": [
+      "catchphrase open 0-2s",
+      "evidence 1",
+      "evidence 2 (escalate)",
+      "the point (system / hypocrisy)",
+      "catchphrase sting"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.04,
+    "remove_fillers": "hard",
+    "max_shot_s": 11.0
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 6,
+    "animation": "fade",
+    "color": "#D7FF6B",
+    "highlight": "#FFFFFF",
+    "size": 0.03,
+    "position_y": 0.66,
+    "outline": 2
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 4.0,
+    "max_dur_s": 11.0,
+    "min_dur_s": 2.5,
+    "mode": "side"
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "db": -16,
+    "map": {
+      "end": "pop"
+    }
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.02,
+    "saturation": 1.0
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

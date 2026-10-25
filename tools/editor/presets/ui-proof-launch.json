@@ -1,0 +1,64 @@
+{
+  "name": "ui-proof-launch",
+  "label": "UI-proof launch (story bookends + floating UI cards + metric curves)",
+  "kind": "genre",
+  "description": "From Higgsfield Ad Multiplier (S5): story cold open, title card at ~1.7 s, input->result UI cards, motion metric curves on black in one neon accent, stat cards, story return, comment-to-DM CTA.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#16b",
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.06,
+    "max_shot_s": 8.0
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 4,
+    "animation": "pop",
+    "highlight": "#D4FF3A"
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "max_words": 4,
+    "dur_s": 1.8,
+    "size": 0.06
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 3.0,
+    "scale": 1.06
+  },
+  "broll": {
+    "every_s": 3.0,
+    "max_dur_s": 3.5,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "db": -14,
+    "map": {
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -18,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.04
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.5
+  },
+  "transitions": {
+    "default": "flash",
+    "on": "beats",
+    "dur_s": 0.12,
+    "strength": 0.5
+  }
+}

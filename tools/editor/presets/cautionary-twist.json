@@ -1,0 +1,51 @@
+{
+  "name": "cautionary-twist",
+  "label": "Cautionary: comedy-twist ladder (cross-cut call, reveal)",
+  "kind": "genre",
+  "description": "From ThaiHealth 'Phone' (K5): cross-cut protagonist/enabler, shots 2 s -> 0.7 s, dialogue only, one hit on the reveal, plain-rule tagline card.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#12b",
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.05,
+    "remove_fillers": "hard",
+    "max_shot_s": 5.0
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 7,
+    "animation": "fade",
+    "size": 0.028,
+    "position_y": 0.68
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 6,
+    "uppercase": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_emphasis": true,
+    "scale": 1.1
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "db": -10,
+    "map": {
+      "zoom": "impact",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 0.9,
+    "warmth": -0.03
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 3.0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "cautionary-ripple",
+  "label": "Cautionary: consequence ripple with an ironic song",
+  "kind": "genre",
+  "description": "From THINK! 2014 (K4): aftermath chain through responders and family, ~2.5 s shots after a slow open, upbeat licensed song against it, 13 s hold on the family beat, stat card + action.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#12a",
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 14.0
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 8,
+    "uppercase": false,
+    "size": 0.032,
+    "dur_s": 3.0
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.03
+  },
+  "sfx": {
+    "density_per_10s": 0.0
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.1,
+    "saturation": 0.8,
+    "warmth": -0.06
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 4.0
+  }
+}

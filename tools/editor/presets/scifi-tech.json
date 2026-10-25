@@ -1,42 +1,82 @@
 {
   "name": "scifi-tech",
-  "label": "Sci-fi / tech futurism",
+  "label": "Tech launch / futurism (human-first)",
   "kind": "genre",
-  "description": "Smooth deliberate pace, cool cyan grade, synth pads, glitch ticks on UI moments.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Corrected 2026-10-25 (S1-S5): warm real spaces, product on in-world screens, ~1.7-2.0 s shots evenly paced (or accelerating 2.9 -> 1.5 for a montage), one brand accent, soft chimes, brand card with one line. The cyan sci-fi look moved to sub-style 16c.",
+  "reference": "research/genre-research-2026-10/class-cautionary-scifi.md#16",
+  "structure": {
+    "name": "human-day-launch",
+    "target_s": [
+      30,
+      90
+    ],
+    "beats": [
+      "cold open in the world",
+      "the ask",
+      "product acts (screen <-> reaction)",
+      "scale up",
+      "brand card"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 0.4,
-    "pad_s": 0.1
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.12,
+    "remove_fillers": "hard",
+    "max_shot_s": 6.5
   },
   "captions": {
-    "max_words": 4,
+    "enabled": true,
+    "max_words": 6,
     "animation": "fade",
-    "highlight": "#29E3FF"
+    "size": 0.03,
+    "font": "Instrument Serif",
+    "highlight": "#FFFFFF",
+    "outline": 0,
+    "shadow": 2
+  },
+  "hook_text": {
+    "enabled": false
   },
   "zoom": {
-    "mode": "smooth",
-    "every_s": 4,
-    "scale": 1.05
+    "mode": "drift",
+    "every_s": 0,
+    "scale": 1.04
   },
   "sfx": {
-    "density_per_10s": 1,
+    "density_per_10s": 0.5,
+    "db": -18,
     "map": {
-      "hook": "riser",
-      "zoom": "click",
-      "broll": "whoosh"
+      "broll": "pop",
+      "end": "swell"
     }
   },
   "music": {
-    "energy": "mid",
-    "db": -19
+    "energy": "low",
+    "db": -20,
+    "duck": true
   },
   "grade": {
-    "contrast": 1.08,
-    "saturation": 0.95,
-    "warmth": -0.04
+    "contrast": 1.04,
+    "saturation": 0.97,
+    "warmth": 0.04
   },
   "broll": {
-    "every_s": 4,
-    "max_dur_s": 2.5
+    "every_s": 3.5,
+    "max_dur_s": 2.2,
+    "mode": "full"
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.2,
+    "strength": 0.4
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 3.5
+  },
+  "sfx_chime_kind_needs_feature": {
+    "kind": "chime",
+    "note": "soft UI chime for product moments; today map to pop at -18 dB"
   }
 }

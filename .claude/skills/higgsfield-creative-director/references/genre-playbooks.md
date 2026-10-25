@@ -17,15 +17,15 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 5 | POV / relatable | "POV: the friend who…", a recognisable type | recognition | 5-12 s per vignette | 3 vignettes, escalating; pause before the punch | phone-natural | dialogue-led (~200+ wpm), no bed | ugc-pov |
 | 6 | Absurdist / meme chaos | brand self-mockery, escalating nonsense, mascot lore | shock-laugh | 1.5-5 s (memes 5-16 s in total) | label escalation → hold the most absurd image | saturated, one consistent style | the sound/track is the rhythm, one hit at the end | meme-chaos-short (+ brand-meme-reply, lore-rollcall); genz-chaos for chaos talking-head edits |
 | 7 | Drama / conflict (villain) | bully, betrayal, side-picking | anger → justice | 2-4 s | build → confrontation → consequence | contrasty, warm/cold split | score swells, cold cruelty beats | drama-conflict |
-| 8 | Class & status | rich vs broke, same problem two wallets | recognition, both-sides | 2-3 s | split-screen rhythm | two grades | ironic music | talking-head-punchy |
+| 8 | Class & status | rich vs broke, same problem two wallets, out-of-touch rich persona | recognition, both-sides | **1.0 s dialogue volley, or two locked 5-7 s takes; persona 3 s** | premise header → volley/side A → side B/topper → silent reaction button | **one grade, class shown in props/wardrobe/vocabulary** | dialogue only (no bed) or a track-only A/B; persona VO 170-250 wpm | class-two-wallets (new) + class-persona-satire (new) |
 | 9 | Feel-good / emotional | kindness, family, small win | warmth, tears | 3-5 s | gentle rise → payoff | warm, soft | piano/strings, natural sound | feelgood-emotional |
 | 10 | Romance / aura / sensual (implied) | attraction, glow-up, confidence | longing | 3-6 s | slow, lingering | golden, soft contrast | ambient, breathy pads | aura-cinematic |
 | 11 | Founder / comeback / inspirational | origin, struggle → win | belief | 2-4 s | low → climb → peak | desaturated past → warm present | build-up score | founder-inspire |
-| 12 | Cautionary / decision ladder | bad choices escalate | "don't be him" | 2-3 s | step-down rhythm | slowly colder | tick, low hits | cautionary-ladder |
+| 12 | Cautionary / decision ladder | bad choices escalate; PSA; "one decision" | dread → "I'll do the right thing" | **rungs 2-3 s shrinking to 0.7 s; consequence held 4-30 s** | want + flash-forward → accelerating rungs → held consequence → stat + ONE action | colder and darker per rung, brand-warm at the end | dialogue only, an ironic licensed song, or a drone → silence | cautionary-ladder (corrected) + cautionary-ripple, cautionary-twist (new) |
 | 13 | Thriller / heist / suspense | plan, chase, ticking clock | tension, momentum | 1.5-3 s | accelerating cross-cuts | steel blue/orange | pulse, ticking | thriller-suspense |
 | 14 | Mystery / reveal | a question answered at the end | curiosity | 3-5 s | slow clues → twist | moody low-key | sparse piano, risers | mystery-reveal |
 | 15 | Action / sport hype | training, game day, transformation | adrenaline | 0.5-1.5 s | fast, speed ramps | high contrast, crushed | bass, whoosh, hits on beat | action-hype |
-| 16 | Sci-fi / tech futurism | AI, product-of-the-future (TITAN.AI) | awe | 2-4 s | smooth, deliberate | cool cyan + one accent | synth pads, glitch ticks | scifi-tech |
+| 16 | Sci-fi / tech launch (TITAN.AI) | AI / product launch, future-of-work | wonder → "I want that help" | **~1.7-2.0 s, even (montage accelerating 2.9 → 1.5); one-take product transformation 20-30 s** | cold open in a real place → ask → product acts in-world → scale → one-line brand card | **warm practicals + one saturated brand accent; cyan only for concept pieces** | airy score or room tone, soft UI chimes, swell on the card | scifi-tech (corrected) + ui-proof-launch (new) |
 | 17 | K-drama | rom-com mini-film, crush or confession, a romance played straight then punctured; PPL gags | tenderness → laugh | 1.5-2 s median; holds of 3-6 s only on the one romantic beat | premise header → attempts × 3 → the real moment (held) → twist → logo | warm low-contrast film, golden autumn or tungsten night (pastel optional) | real silences, OST only under the moment, hard stop on the twist | kdrama-soft (+ kdrama-fan-edit for beat-synced POV recuts of own footage) |
 | 18 | Anime-inspired | a product jingle, mascot chant, "<X> be like" trope parody, hype | intensity, delight | 0.5 s (chant CM) to 1.5 s (trope list); real OP 0.27 s | chant verse → proof card → chorus → packshot held 4 s; or setup card → one trope per shot → held tableau | flat 2D cel on pastel fields, saturated | the song is the ad (original chant 90-100 BPM); flash pairs optional | anime-energy (+ anime-op-parody) |
 | 19 | 3D Pixar / cartoon | mascots, kids-safe explainers | charm | 2-3 s | bouncy | bright, clean | playful foley | (see animation-3d-cartoon.md) |
@@ -505,13 +505,83 @@ Changes vs the current preset:
 ---
 - **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
-### 8. Class & status [draft; deeper: class-status.md]
-- **Pacing:** the same problem shown in two wallets, cutting between them every 2-3 s; split-screen at the punchline.
-- **Shot grammar:** mirrored framing for the two lives (same angle, different set); matching action cuts.
-- **Look:** two grades (rich: clean, cool, glossy; broke: warm, practical, cluttered), but equal dignity.
-- **genre_key (per side):** `same framing and action as counterpart shot; {rich: polished minimalist interior, soft cool daylight | broke: lived-in small flat, warm practical bulb}`
-- **Compliance:** sourced statistics only; punch at behaviours and systems, never at being poor.
-- **Preset:** talking-head-punchy, or genz-header-skit for the comedy version.
+### 8. Class & status [measured: C1 https://www.instagram.com/reel/DYMfm95SuTF/ , C2 https://www.instagram.com/reel/DWOhh_VCAb_/ , C3 https://www.instagram.com/reel/DXreK7vDSvH/ , C4 https://www.instagram.com/reel/DRphLICDPkq/ , C6 https://www.instagram.com/reel/ClEqw-1Arz6/ , C7 https://www.instagram.com/reel/Czds85lsTIq/ , C8 https://www.instagram.com/reel/CuDFV_UorJb/ ; deeper: class-status.md]
+- **What changed:**
+  - **No measured class reel uses split-screen or two colour grades.** The comparison lives in **wardrobe, props, vehicles and vocabulary inside one identical frame/room/light**.
+  - The draft's "cut between wallets every 2-3 s, split at the punchline" matches nothing measured. Split-screen is now an option only for simultaneous comparison (an ad A/B), not the default.
+  - The top performer (C7, 83 K likes, a Channel 4 brand collab) is a **persona satire**, not a two-wallet split.
+- **Four spines** (pick one):
+  - **A. Sequential A/B, "Arriving Rich: / Arriving Poor:"** (C1).
+    - Two locked takes of 5-7 s, the same spot and the same action, with a label word mid-frame.
+    - Punch in the last frame, where the two worlds meet in one shot.
+    - Best for 8-15 s loops.
+  - **B. Two-hander dialogue** (C2, 5.7 K likes).
+    - Shot-reverse-shot, a **1.0 s median** at 180 wpm.
+    - A persistent top header names the premise ("When a rich person…").
+    - The poorer or normal character is the audience's proxy. End on their silent reaction.
+  - **C. Persona satire / reaction** (C6-C8, the Shabaz Says model).
+    - The creator plays the out-of-touch rich narrator at 170-250 wpm over a side-by-side or green-screen of real conspicuous consumption.
+    - Close with the catchphrase sting.
+    - Punch up at the behaviour; the viewer is on the "poor" side.
+    - **Brands enter as the topic** (Channel 4 climate).
+  - **D. Wordless parable** (C4, 5.2 K likes).
+    - Two families or fathers make different choices in the same locked frame per step.
+    - Reaction close-ups, then the payoff held ~10 s.
+    - Under 10 words; the score carries it. Crosses into §12.
+- **Pacing map (20 s, spine B; scale for A/C):**
+
+| Beat | Time | Shot | What |
+|---|---|---|---|
+| Premise header | 0-2.8 s | the rich character's MCU, words from frame 0 | the header states the class premise; the first line is already absurd |
+| Volley | 2.8-15 s | shot-reverse-shot, 0.9-1.0 s shots | each rich line escalates (names, prices, staff); each reply is 1-3 words of confusion |
+| Topper | 15-19 s | MCU, a slightly longer hold (1.5-2.8 s) | the most absurd line, delivered casually |
+| Reaction button | last 1-2 s | the proxy's face, held, no line | silent horror or the eye-twitch; loop back |
+
+- **Shot grammar:**
+  - Spine A: a locked wide from an identical position and height for both takes; the same action beat; a hard cut.
+  - Spine B: matched MCU singles at the same lens and eye-line, both inside one real room.
+  - Spine C: a 50/50 vertical side layout (creator left, evidence right) or a green-screen with the evidence behind the creator.
+  - Spine D: one master framing repeated per step + close-up reaction inserts.
+  - Mirrored framing still matters; it is just done sequentially, not split.
+- **Look:**
+  - One honest grade for both sides (natural or practical light).
+  - Class shows in what is in the frame: the car, mugs, coats, the room's clutter, jewellery.
+  - Equal dignity: the "poor" side gets the clean, well-lit framing too.
+  - Spine D: a soft clay/3D style key.
+- **genre_key:** `same camera position, lens and light for both lives, class shown only through wardrobe, props and setting, natural practical light, honest everyday texture, equal dignity for both sides, no glamour grade, no poverty-porn squalor`
+- **Shot JSON (spine A):** `{"id":"S02","dur":6,"model":"seedance_2_5","mode":"omni_reference","camera":"locked wide, identical position and height to S01, 24mm","subject":"@DRIVER","action":"start: door opens -> end: steps out of the old saloon in the same slides as S01, nods to camera","environment":"the same hotel forecourt as S01, @LUXURY_CAR now parked beside","light":"identical to S01, night practicals","audio":"engine off, door creak, track continues","constraints":["frame must match S01 composition exactly","old car clean, not squalid"],"genre_key":"<§8 key>"}`
+- **Sound:**
+  - Spine A: a music track only (LRA 1.2), no VO.
+  - Spine B: dialogue only, no bed, one room tone. The silence on the reaction is the punch.
+  - Spine C: dense VO (170-250 wpm), with the evidence clip's audio ducked under it.
+  - Spine D: a swelling score (LRA ~11), almost no words.
+  - Accent stims are optional; ≤1 hit, on the reaction button.
+- **Compliance:**
+  - Punch at behaviour, systems and hypocrisy (C3's teacher, C7's carbon double standard), never at being poor.
+  - The "poor" or normal side is the audience proxy and wins the last look.
+  - Stats only from SOURCES.md.
+  - Spine C reacts to real people's posts. Use only commentary/fair-dealing-safe clips on personal accounts (Remix/Stitch or written permission, §31 clip-jack rule). For brand accounts, **recreate the evidence with original actors**. No AI likeness of real influencers.
+  - SG health brands: no testimonial framing; rich/poor jokes stay off patients and pricing inducements.
+- **Preset:** `class-two-wallets` (new; spines A, B, D). `class-persona-satire` (new; spine C). `genz-header-skit` remains the fallback for raw selfie versions.
+
+(preset `class-two-wallets`: tools/editor/presets/class-two-wallets.json)
+
+(preset `class-persona-satire`: tools/editor/presets/class-persona-satire.json)
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
+
+### 8a. Wordless class parable (`class-two-wallets` + score) [measured: C4 https://www.instagram.com/reel/DRphLICDPkq/]
+- **Use:** a values piece ("two fathers", "two habits") for a brand that wants to teach without lecturing. It crosses into §12.
+- **Pacing:**
+  - "Watch till the end" header;
+  - 4-6 steps of 4-6 s each in the **same locked master frame**;
+  - one close-up reaction per step;
+  - the payoff (the two outcomes in one frame) held for 8-10 s.
+- **Look:** soft clay/3D, a warm pastel sky, both families drawn with equal care.
+- **genre_key:** `soft clay 3D parable, identical locked master frame each step, two families side by side, warm pastel sky, gentle reaction close-ups, wordless, equal dignity`
+- **Compliance:** the moral must be about choices anyone can make (time, teaching, patience), never "poor people chose to be poor".
+
+---
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
 
 ### 9. Feel-good / emotional [measured: F1 https://www.instagram.com/reel/DWXnBo1DMbN/, F2 https://www.instagram.com/reel/DU2O_tWEZf8/, F3 https://www.instagram.com/reel/DSrCoZ4EYfo/]
 - **Why it works:**
@@ -684,13 +754,84 @@ Changes vs the current preset:
   - dense-SFX documentary retellings stay `story-sfx-dense`.
 - **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
-### 12. Cautionary / decision ladder [draft; deeper: mature-edge.md §1]
-- **Pacing:** each bad choice is a step of 3-5 s with an on-screen step number; things get slowly worse; the consequence; the "don't be him" wisdom.
-- **Shot grammar:** a repeated framing per step so the decay is visible (same angle, worse state).
-- **Look:** the grade cools a little each step.
-- **genre_key:** `consistent locked framing across steps, gradually colder and darker grade, realistic consequences, no glamorising`
-- **Sound:** a clock tick bed; a low hit on each step.
-- **Preset:** cautionary-ladder.
+### 12. Cautionary / decision ladder [measured: K4 https://www.instagram.com/reel/DR_0wyCjFbM/ , K5 https://www.instagram.com/reel/DY84J-VClM5/ , K6 https://www.instagram.com/reel/DaoKg6zS2K4/ , C4 https://www.instagram.com/reel/DRphLICDPkq/ ; researched: Tannenbaum et al. 2015 https://pubmed.ncbi.nlm.nih.gov/26501228/ ; deeper: mature-edge.md §1]
+- **What changed:**
+  1. **The rungs accelerate. They don't sit at an even 3-5 s.**
+     - K5: 1.98 → 0.76 s per shot as the instructions stack.
+     - K6: a 0.7-1 s burst while the friend talks him into it.
+     - The consequence is then **held long**: K6 holds 30 s, K4 holds 13.5 s, C4 holds 10 s.
+  2. **None of the measured pieces uses on-screen step numbers or a clock-tick bed.** Steps are shown by repetition (the same phone call, the same frame) or by a chain of responders. Numbers stay optional for creator "one bad decision a day" series only.
+  3. **The evidence says the ladder needs an efficacy rung.**
+     - Fear appeals work best with an efficacy statement and a one-time action (Tannenbaum 2015).
+     - The draft ended on "don't be him". Replace that with **one concrete, doable action** ("plan the ride", "get tested this week", "see a physio before week 3").
+  4. **Three proven endings:**
+     - the ironic ripple (K4, an upbeat song against the aftermath);
+     - the comedic catch (K5, a proportionate consequence: caught, embarrassed);
+     - the sober flash-forward (K6, a crash insert at 6 s, then a stat card).
+- **Pacing map (30 s ad):**
+
+| Beat | Time | Shot | What |
+|---|---|---|---|
+| Want + flash-forward | 0-3 s | an MCU of the protagonist; a 0.5-1 s insert of the consequence | the ordinary want + a glimpse of where this ends (K6 at 6 s; keep it ≤ 3 s in a reel) |
+| Rung 1 (shortcut) | 3-9 s | the master frame, a 2-3 s shot | the first tempting choice, visible as a fork |
+| Rungs 2-3 (escalate) | 9-20 s | the same frame or the same call, shots shrinking 1.5 → 0.7 s | each choice compounds; cross-cut the enabler (friend, group chat) |
+| Consequence | 20-26 s | one held shot, 4-6 s (organic cut up to 30 s) | a realistic, proportionate cost, held without music hits |
+| Efficacy + CTA | 26-30 s | a text card or the brand scene | one stat (sourced) + one one-time action; for brands, the calm brand space |
+
+- **Shot grammar:**
+  - Lock one master frame (the car seat, the phone screen, the pier) and return to it at every rung so the decay is visible.
+  - Cross-cut the enabler in matched singles (K5).
+  - Inserts for the props of each decision: keys, a phone, a glass.
+  - The consequence is a static wide or a slow push, never handheld chaos.
+- **Look:**
+  - Night practicals: K6 is cold blue, K5 sodium green.
+  - The grade cools and darkens across the rungs.
+  - The consequence is cold and clean (hospital white, a blue-hour wide).
+  - The efficacy end switches to the brand's warm, calm look.
+- **genre_key:** `consistent locked master framing across every decision, grade cooling and darkening each step, realistic proportionate consequences, night practical light, no glamorising, sober documentary realism`
+- **Shot JSON:** `{"id":"S05","dur":5,"camera":"locked wide from the car park lamp, same as S01","subject":"@DRIVER","action":"start: tail lights on -> end: the car pulls out of frame, empty bay remains","light":"blue hour, sodium practicals, cooler than S01","audio":"engine fades, wind; no music","constraints":["no crash shown in this shot","hold ≥4 s"],"genre_key":"<§12 key>"}`
+- **Sound:**
+  - Pick one bed:
+    - **dialogue only** (K5);
+    - **an ironic upbeat licensed song** sung or played against the aftermath (K4);
+    - **a low drone** that drops to silence on the consequence (K6, LRA 19.9).
+  - One low hit on the flash-forward insert only.
+  - A clock tick is optional, not default.
+- **Compliance:**
+  - Stats are sourced and localised. K6's "32 a day" is a US figure; SG needs SPF/LTA numbers.
+  - The consequence is proportionate, with no real victims.
+  - No crime how-to (mature-edge hard lines).
+  - In SG health: no fear-mongering diagnosis or outcome claims; the efficacy rung points to "see a professional", never a discount or free consult.
+  - Check the ASAS SCAP clause on fear appeals before paid use (to verify; not checked tonight).
+- **Preset:** `cautionary-ladder` (corrected below). Plus `cautionary-ripple` (12a) and `cautionary-twist` (12b).
+
+(preset `cautionary-ladder`: tools/editor/presets/cautionary-ladder.json)
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
+
+### 12a. Consequence ripple, ironic song (`cautionary-ripple`) [measured: K4 https://www.instagram.com/reel/DR_0wyCjFbM/]
+- **Spine:** one bad decision happens off-screen. Then the consequence travels outward through people, each a 2-3 s shot (crash → first responders → hospital → the knock at the door → family). An upbeat licensed song plays straight through, sung by the cast if possible. End on a stat card + one action.
+- **Pacing:** a slow open (6.8 s average in the first third), then 2.5 s through the chain, then a 13 s hold on the door/family.
+- **Look:** cold night blue → clinical white → a domestic doorway at dawn.
+- **genre_key:** `aftermath of one bad decision seen through responders and family, cold night blue to clinical white, restrained documentary realism, no gore`
+- **Sound:** the tonal clash IS the device. Brand use needs a licensed track (`/sound`); no trending chart songs on brand accounts.
+
+(preset `cautionary-ripple`: tools/editor/presets/cautionary-ripple.json)
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
+
+### 12b. Comedy-twist ladder (`cautionary-twist`) [measured: K5 https://www.instagram.com/reel/DY84J-VClM5/ (10.6 K likes)]
+- **Spine:** the rungs are a repeated exchange (a phone call, a group chat, a sat-nav). Each instruction pushes the protagonist one step further.
+  - Cross-cut protagonist ↔ enabler, with shots shrinking from 2 s to 0.7 s.
+  - The twist reveals that the enabler steered him into the consequence (caught, embarrassed, at the clinic door).
+  - The tagline states the rule plainly.
+- **Look:** the night in one practical colour; subtitles mid-frame.
+- **genre_key:** `night interior car and bedroom cross-cut, sodium green practical light, naturalistic comic performance, proportionate consequence`
+- **Sound:** dialogue only. One hit on the reveal.
+- **Fit:** Physio Spot or men's health ("asks the group chat instead of a professional"). Thai/SEA comedic register (localisation.md TH pack).
+
+(preset `cautionary-twist`: tools/editor/presets/cautionary-twist.json)
+
+---
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
 
 ### 13. Thriller / heist / suspense [measured: https://www.instagram.com/reel/DUJOUnrj2cU/ (Crime 101 promo), https://www.instagram.com/reel/Csyv74MAu-e/ (comedy heist), https://www.instagram.com/reel/DD5hcfgSTxB/ (AI chase); researched: "Screen Time" thriller, Pitch Black Heist / Rififi silence (reelscotland.substack.com)]
 - **Why it works:** a heist is a list of rules or steps the viewer can follow, so they become the crew.
@@ -845,14 +986,79 @@ Changes vs the current preset:
   - 15b `action-hype` (corrected, below).
 - **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
-### 16. Sci-fi / tech futurism (TITAN.AI) [draft]
-- **Pacing:** smooth 2-4 s shots; an interface or hologram reveal; "the future" line; product as the hero.
-- **Shot grammar:** symmetrical compositions, slow dolly, macro on light and interfaces, clean negative space.
-- **Look:** cool cyan with one warm accent; clean, glossy, volumetric light.
-- **genre_key:** `sleek near-future aesthetic, cool cyan volumetric light with one warm accent, symmetrical composition, slow dolly, clean minimal surfaces, subtle holographic UI`
-- **Sound:** synth pads, soft glitch ticks on UI events, a bass swell on the reveal.
-- **Compliance:** AI claims must be substantiable; no "replaces humans" fear angle.
-- **Preset:** scifi-tech.
+### 16. Sci-fi / tech futurism (TITAN.AI) [measured: S1 https://www.instagram.com/reel/Dd4RMfMJ7kO/ , S2 https://www.instagram.com/reel/DUXlgvHDeZD/ , S3 https://www.instagram.com/reel/DcvrOssO2nm/ , S4 https://www.instagram.com/reel/DYeJgJOzIQj/ , S5 https://www.instagram.com/reel/DeM8HKhCQjy/ ; negative controls S7 https://www.instagram.com/reel/DYHmsbehW3m/ , S8 https://www.instagram.com/reel/Deu3VZBlb2t/]
+- **What changed:**
+  - **The draft's "cool cyan volumetric + holographic UI" appears in none of the five strong launch films.**
+  - The best performer (S1, OpenAI, 50.6 K likes) uses warm wood rooms, practical lamps and real people, with the product as in-world screens and friendly mascots.
+  - Anthropic (S2) and World (S4) use golden-hour, film-grain human scenes and show the product late or never.
+  - Apple (S3) makes the product a playful character on a white void.
+  - Only the 1-like stock explainers (S7, S8) look like the draft.
+  - **Rule: futurism is shown through human benefit in a recognisable present, with one bold brand accent. The sci-fi look is now a sub-style (16c) for explicit concept pieces only.**
+- **Three spines** (pick one):
+  - **A. Human-day film** (S1). A person's ordinary day, helped; UI on real screens; median ~1.7 s, flat across thirds; the brand card at the end.
+  - **B. Humanity montage → problem → product** (S4). Accelerating 2.9 → 2.0 → 1.5 s; the product enters in the final third; a white end card with one line.
+  - **C. Product-as-character one-take** (S3). One continuous 20-30 s transformation, a 0.2 s burst, then the packshot. Also see the 16b UI-proof launch.
+- **Pacing map (45 s, spine A):**
+
+| Beat | Time | Shot | What |
+|---|---|---|---|
+| Cold open in the world | 0-3 s | a wide of a real space at dusk; the name card ≤1 s | no claim yet; a place and a person |
+| Ask | 3-12 s | MCU, 1.5-2 s shots | the person asks the product for something ordinary |
+| Product acts | 12-30 s | alternate screen inserts ↔ the human reaction, ~1.7 s | the product does the work in-world (screen, phone, a mascot); a reaction smile is the proof |
+| Scale up | 30-40 s | wider, new locations | the same help, now bigger (a team, a city) |
+| Brand card | last 3-5 s | a solid brand colour, logo + line | one line ("Keep thinking." / "be human."); no feature list |
+
+- **Shot grammar:**
+  - Eye-level 35-50 mm, gentle dolly or locked.
+  - Screens are diegetic: in the room, not floating.
+  - Shoot reactions in close-up.
+  - Use symmetry only for the end card.
+  - For spine C: a seamless white cyc, a slow orbit, transformations in one take.
+- **Look:**
+  - Warm practical light (wood, lamps, dusk windows) with natural skin.
+  - One saturated brand accent on the UI or mascot (S1 magenta/blue, S5 neon lime, S2 terracotta end card).
+  - Mild film grain; no cyan wash.
+- **genre_key:** `warm near-present realism, real lived-in spaces with practical lamps and dusk windows, technology shown only on in-world screens and devices, one saturated brand accent colour on the interface, natural skin, gentle dolly, soft film grain, no holograms, no cyan wash`
+- **Shot JSON:** `{"id":"S04","dur":2,"model":"seedance_2_5","mode":"omni_reference","camera":"50mm over-shoulder, slow push","subject":"@USER","action":"start: glances at the wall screen -> end: small surprised smile as @TITAN_MASCOT finishes the task on screen","environment":"warm wood studio office at dusk, lamps on","light":"warm practicals, cool dusk window fill","audio":"room tone, a soft UI chime","constraints":["UI shown on the physical screen only, no floating holograms","on-screen UI labelled simulated in post"],"genre_key":"<§16 key>"}`
+- **Sound:**
+  - An airy licensed score or near-silence with real room tone.
+  - Soft UI chimes on product moments (not glitch ticks).
+  - VO is optional and sparse. S4 and S3 are near-wordless; S2 is dialogue comedy.
+  - A bass swell on the brand card only.
+- **Compliance:**
+  - Every capability shown must be real or labelled "simulated / concept". The FTC's Operation AI Comply (2024) targets deceptive AI claims; see the flags below.
+  - No "replaces humans" fear angle; show augmentation.
+  - Never borrow a competitor's mascots, end-card style, type or colours (OpenAI/Anthropic/Apple are references for grammar only).
+  - Data and privacy claims need substantiation.
+- **Preset:** `scifi-tech` (corrected below: warm grade, sparse SFX, a chime map). It covers spines A and B. Spine C uses it with `pacing.max_shot_s` 30. New: `ui-proof-launch` (16b).
+
+(preset `scifi-tech`: tools/editor/presets/scifi-tech.json)
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
+
+### 16b. UI-proof launch (`ui-proof-launch`) [measured: S5 https://www.instagram.com/reel/DeM8HKhCQjy/ (2.9 K likes, 772 comments)]
+- **Use:** SaaS or AI-tool launches where the proof is a number (TITAN.AI tools, Higgsfield-style features).
+- **Spine:**
+  - a story cold open (1.5 s);
+  - a big title card at ~1.7 s;
+  - floating UI cards on a white void ("input → result");
+  - metric curves drawn on black in the brand accent (`tools/motion` stat-counter / compare-loop);
+  - stat cards;
+  - back to the story;
+  - a comment-to-DM CTA over the last shot.
+- **Pacing:** 1.7 s median; the story bookends allow long holds (max 21 s); a demo burst in the middle.
+- **genre_key (generated plates only):** `clean white seamless void, floating rounded UI cards with soft shadows, single neon brand accent, crisp product interface, studio daylight`
+- **Compliance:** the metric cards show real, dated campaign numbers or say "illustrative". Comment-to-DM is fine; no fake comment seeding.
+
+(preset `ui-proof-launch`: tools/editor/presets/ui-proof-launch.json)
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
+
+### 16c. Concept sci-fi (cyan look, opt-in) (`scifi-tech` + grade override) [researched: draft card; negative controls S7, S8]
+- **Use:** only when the brief is literally a future-world concept (a film trailer, a "TITAN 2040" vision piece), not a product launch.
+- **Look:** the old draft look (cool cyan volumetric, holographic UI, symmetry) with **one warm human anchor in every shot**.
+- **Pacing:** 2-4 s smooth shots.
+- **Rule:** stock-robot montages with stat captions (S7, S8: 1 like each) are not a format.
+- **genre_key:** `sleek near-future concept world, cool cyan volumetric light with one warm human accent in frame, symmetrical composition, slow dolly, clean minimal surfaces, subtle holographic interface`
+- **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
 
 ### 17. K-drama [measured: K1 https://www.instagram.com/reel/DSRr7PTkc3E/ , K2 https://www.instagram.com/reel/DTuIUuuiNF9/ , K3 https://www.instagram.com/reel/Ddo6qjHg2Fh/ , K4 https://www.instagram.com/reel/DW8SWRzjaRM/ , K5 https://www.instagram.com/reel/DYXvT8iNLjg/ ; researched: Colgate "The Purple Café" (contentgrip.com), The Venti × Park Ji-hoon 15 M (sports.khan.co.kr 2026-10-08)]
 - **What changed and why:**
