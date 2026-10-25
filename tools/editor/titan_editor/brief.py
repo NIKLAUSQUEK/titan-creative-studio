@@ -164,7 +164,9 @@ def heuristic_brief(a, edit_dir, brand):
         beats[0]["visual"] = {"type": "none"}
         if len(beats) > 2:
             beats[-1]["beat"] = beats[-1]["role"] = "cta"; beats[-1]["fixed"] = True
-            beats[-1]["visual"] = {"type": "none"}; beats[-1]["broll_query"] = None  # stay on the face for the ask
+            if re.search(r"\b(follow|comment|link|book|save|share|dm|subscribe|part \w+)\b", beats[-1]["line"] or "", re.I) and \
+                    len((beats[-1]["line"] or "").split()) <= 8:
+                beats[-1]["visual"] = {"type": "none"}; beats[-1]["broll_query"] = None  # stay on the face for a short ask
         beats[0]["broll_query"] = None  # never cut away from the face on the hook
     _, brand_text = brand_guide(brand)
     comp = [l.strip("- ").strip() for l in (brand_text or "").splitlines() if "COMPLIANCE" in l or l.strip().startswith("- Don't")]

@@ -10,10 +10,10 @@ from .common import REPO, TOOL, ffmpeg, have, log, probe, rjson
 from .ingest import load_clips
 
 SCRIPT = [("Um, so today I want to talk about back pain.", 1.6),
-          ("Stop stretching your back every morning.", 0.5),
+          ("Stop stretching your back every morning.", 1.0),
           ("Stop stretching your back every single morning. It is not the fix.", 0.9),
           ("Most people think pain means damage, but it usually does not.", 0.4),
-          ("Uh,", 0.5),
+          ("Uh,", 0.8),
           ("Here is what to do instead. Go for a walk for ten minutes after your coffee.", 1.2),
           ("Follow for part two.", 0.6)]
 BROLL = [("walking", "WALKING OUTDOORS", "0x2E7D32"), ("coffee", "COFFEE CUP", "0x6D4C41"), ("gym", "GYM DUMBBELLS", "0x37474F"),
