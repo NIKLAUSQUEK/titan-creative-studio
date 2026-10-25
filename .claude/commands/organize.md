@@ -21,7 +21,7 @@ His folders are mounted **read-only**, so nothing is ever moved, edited or delet
    - creates a read-scoped API key, saved in `%LOCALAPPDATA%\TitanEditor\immich.json` (never in the repo)
    - adds the read-only library
    - starts indexing
-3. **Name faces.** Next day, open http://localhost:2283 → Explore → People → name his face `klaus` and merge any strays. This is the only manual step.
+3. **Name faces.** Next day, either Klaus does it at http://localhost:2283 → Explore → People (name his face `Klaus`, merge strays), or he pastes `tools/immich/COWORK_PROMPT.md` into Claude Cowork with Claude in Chrome. Cowork then names him, asks before naming anyone else (with consent), builds the "Studio Picks" album and walks him through the Sensitive review albums. It never deletes anything.
 4. **Optional:** install the Immich phone app for automatic backup.
 
 ## Studio use
