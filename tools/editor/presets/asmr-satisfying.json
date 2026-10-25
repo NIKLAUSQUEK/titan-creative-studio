@@ -1,0 +1,41 @@
+{
+  "name": "asmr-satisfying",
+  "label": "ASMR / satisfying",
+  "kind": "genre",
+  "description": "No talking, rhythmic 2-4 s process shots, close foley up, no music, no captions.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 3,
+    "pad_s": 0.3,
+    "remove_fillers": "none",
+    "max_shot_s": 4
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "uppercase": false,
+    "size": 0.036
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.05
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

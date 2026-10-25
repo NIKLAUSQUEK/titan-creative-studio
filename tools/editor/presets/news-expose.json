@@ -1,0 +1,48 @@
+{
+  "name": "news-expose",
+  "label": "News / scam-expose",
+  "kind": "genre",
+  "description": "Kicker headline first, numbered steps, credible clean look, news sting and ticks. Pairs with the kicker text card and the carousel-text expander format.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08
+  },
+  "captions": {
+    "max_words": 5,
+    "keyword_caps": true,
+    "highlight": "#FFB300"
+  },
+  "hook_text": {
+    "renderer": "card",
+    "card_style": "kicker",
+    "position_y": 0.2,
+    "size": 0.04,
+    "uppercase": false,
+    "max_words": 12
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.05
+  },
+  "sfx": {
+    "density_per_10s": 0.8,
+    "map": {
+      "hook": "sting",
+      "zoom": "click",
+      "broll": "click"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 3
+  }
+}

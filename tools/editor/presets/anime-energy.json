@@ -1,0 +1,44 @@
+{
+  "name": "anime-energy",
+  "label": "Anime-inspired",
+  "kind": "genre",
+  "description": "Impact holds, crash zooms, saturated colour, whoosh and impact hits, 1-word caps captions.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.04,
+    "max_shot_s": 2
+  },
+  "captions": {
+    "max_words": 1,
+    "uppercase": true,
+    "size": 0.055,
+    "highlight": "#FF5FC8"
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 1.5,
+    "scale": 1.18
+  },
+  "sfx": {
+    "density_per_10s": 3.5,
+    "db": -10,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 1.25
+  },
+  "broll": {
+    "every_s": 3,
+    "max_dur_s": 1.2
+  }
+}

@@ -19,7 +19,7 @@ STOP = set("a an the and or but so to of in on at for with is are was were be be
            "just really very do does did not no yes can will would could should have has had from as by about what when how why "
            "there their them then than if because like um uh okay right gonna get got its it's i'm you're don't".split())
 SCHEMA = {
-    "goal": "|".join(GOALS), "audience": "who exactly, in one line", "platform": "|".join(PLATFORMS), "aspect": "9:16|1:1|16:9|4:5",
+    "goal": "|".join(GOALS), "genre": "primary genre module from the GENRE PICKER (+ optional accent), e.g. 'comedy skit' or 'horror-tension accent'", "audience": "who exactly, in one line", "platform": "|".join(PLATFORMS), "aspect": "9:16|1:1|16:9|4:5",
     "extra_aspects": ["other aspects to render from the same recipe"], "target_s": "seconds (number)", "preset": "one preset name from the menu",
     "trope_stance": "agree|challenge|subvert|flip|both + the trope, or null", "structure": "short|story-lesson|myth-buster|founder|long|parable|ugc-<type>",
     "hooks": [{"rank": 1, "text": "hook (<=12 words)", "formula": "contrarian|confession|cold-open|curiosity|outcome-twist|question|number|pattern-interrupt",
@@ -75,6 +75,15 @@ def compliance_text(brand_text):
     return "\n".join(dict.fromkeys(out))
 
 
+def genre_table():
+    t = _read(REPO / ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md")
+    m = re.search(r"## 0\. Genre picker.*?(?=\n\*\*Pairing rules)", t, re.S)
+    if not m:
+        return ""
+    rows = [l for l in m.group(0).splitlines() if l.startswith("| ") and not l.startswith("| #")]
+    return "\n".join("|".join(c.strip() for c in r.split("|")[2:4] + r.split("|")[9:10]) for r in rows)  # genre | use when | preset
+
+
 def course_brain(path=None):
     cands = [Path(p) for p in [path, os.environ.get("TITAN_COURSE_BRAIN")] if p] + list(REPO.glob("**/Course Brain"))
     for d in cands:
@@ -102,6 +111,7 @@ def context_pack(a, edit_dir):
         "COURSE BRAIN FRAMEWORKS": course_brain(getattr(a, "course_brain", None)),
         "PLATFORM DEFAULTS": json.dumps(PLATFORMS),
         "PRESET MENU": presets,
+        "GENRE PICKER (genre-playbooks.md §0: pick 1 primary; its preset is the default)": genre_table(),
         "FOOTAGE (ingest summary: kept lines with source timestamps, dropped retakes, hook shortlist)": _read(edit_dir / "ingest" / "summary.md", 14000),
     }
     return brand, who, "\n\n".join(f"=== {k} ===\n{v}" for k, v in parts.items() if v)

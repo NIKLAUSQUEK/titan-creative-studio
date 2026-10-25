@@ -1,0 +1,47 @@
+{
+  "name": "action-hype",
+  "label": "Action / sport hype",
+  "kind": "genre",
+  "description": "0.5-1.5 s cuts on the beat, punch-in every cut, bass hits and whooshes, crushed contrast with one accent colour.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.03,
+    "max_shot_s": 1.5
+  },
+  "captions": {
+    "max_words": 2,
+    "uppercase": true,
+    "size": 0.05
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 1.2,
+    "scale": 1.14
+  },
+  "sfx": {
+    "density_per_10s": 4,
+    "db": -10,
+    "map": {
+      "hook": "bass",
+      "zoom": "impact",
+      "broll": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -14,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.2,
+    "saturation": 0.85,
+    "vignette": true
+  },
+  "broll": {
+    "every_s": 2,
+    "max_dur_s": 1.2,
+    "min_dur_s": 0.6
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "drama-conflict",
+  "label": "Drama / conflict (villain)",
+  "kind": "genre",
+  "description": "Shot-reverse-shot tightening, holds on the target after cruelty, score drops out under cruelty and swells at the consequence. Warm/cold contrast.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.9,
+    "pad_s": 0.2,
+    "max_shot_s": 5
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 5,
+    "keyword_caps": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 5,
+    "scale": 1.06,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "map": {
+      "hook": "bass"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -21
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 0.92
+  },
+  "broll": {
+    "every_s": 0
+  }
+}

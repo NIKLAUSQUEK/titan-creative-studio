@@ -1,0 +1,42 @@
+{
+  "name": "thriller-suspense",
+  "label": "Thriller / heist / suspense",
+  "kind": "genre",
+  "description": "Accelerating cuts, inserts and timers, steel-blue shadows with warm practicals, pulse bed and hits on match cuts.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.05,
+    "max_shot_s": 2.5
+  },
+  "captions": {
+    "max_words": 3,
+    "uppercase": true
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 2.5,
+    "scale": 1.1
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "impact",
+      "zoom": "click",
+      "broll": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -17
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 0.9,
+    "teal": 0.04
+  },
+  "broll": {
+    "every_s": 3,
+    "max_dur_s": 1.5
+  }
+}

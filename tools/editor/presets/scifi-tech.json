@@ -1,0 +1,42 @@
+{
+  "name": "scifi-tech",
+  "label": "Sci-fi / tech futurism",
+  "kind": "genre",
+  "description": "Smooth deliberate pace, cool cyan grade, synth pads, glitch ticks on UI moments.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.1
+  },
+  "captions": {
+    "max_words": 4,
+    "animation": "fade",
+    "highlight": "#29E3FF"
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 4,
+    "scale": 1.05
+  },
+  "sfx": {
+    "density_per_10s": 1,
+    "map": {
+      "hook": "riser",
+      "zoom": "click",
+      "broll": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -19
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.95,
+    "warmth": -0.04
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 2.5
+  }
+}

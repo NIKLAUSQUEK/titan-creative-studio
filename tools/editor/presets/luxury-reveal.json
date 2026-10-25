@@ -1,0 +1,48 @@
+{
+  "name": "luxury-reveal",
+  "label": "Luxury / product reveal / new release",
+  "kind": "genre",
+  "description": "Withhold then reveal: fragments, light sweeps, silence or riser, hero on the bass drop; rich blacks.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 3
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 4,
+    "keyword_caps": false,
+    "font": "DejaVu Serif",
+    "bold": false,
+    "size": 0.034
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 3,
+    "scale": 1.06,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0.6,
+    "map": {
+      "hook": "riser",
+      "broll": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -17
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 0.95,
+    "brightness": -0.02,
+    "vignette": true
+  },
+  "broll": {
+    "every_s": 2.5,
+    "max_dur_s": 2.2
+  }
+}

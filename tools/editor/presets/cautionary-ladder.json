@@ -1,0 +1,37 @@
+{
+  "name": "cautionary-ladder",
+  "label": "Cautionary / decision ladder",
+  "kind": "genre",
+  "description": "Numbered steps, same framing each step, slowly colder grade, tick bed and a low hit per step.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.1
+  },
+  "captions": {
+    "max_words": 4
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_hook": 1.08
+  },
+  "sfx": {
+    "density_per_10s": 1.2,
+    "map": {
+      "hook": "bass",
+      "zoom": "bass"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -21
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.88,
+    "warmth": -0.02
+  },
+  "broll": {
+    "every_s": 0
+  }
+}

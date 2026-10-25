@@ -1,0 +1,40 @@
+{
+  "name": "feelgood-emotional",
+  "label": "Feel-good / emotional",
+  "kind": "genre",
+  "description": "Gentle pace, silence allowed to breathe, push-in on the emotional line, warm soft grade, no SFX.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 1.0,
+    "pad_s": 0.25,
+    "max_shot_s": 6
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 6,
+    "keyword_caps": false,
+    "size": 0.036
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 6,
+    "scale": 1.05,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0
+  },
+  "music": {
+    "energy": "low",
+    "db": -20
+  },
+  "grade": {
+    "contrast": 0.98,
+    "saturation": 1.0,
+    "warmth": 0.05
+  },
+  "broll": {
+    "every_s": 5,
+    "max_dur_s": 3
+  }
+}

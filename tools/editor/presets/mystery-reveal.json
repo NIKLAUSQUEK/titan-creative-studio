@@ -1,0 +1,44 @@
+{
+  "name": "mystery-reveal",
+  "label": "Mystery / reveal",
+  "kind": "genre",
+  "description": "Slow clue beats, riser into the reveal, a silence beat, low-key moody grade.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 1.0,
+    "pad_s": 0.25,
+    "max_shot_s": 6
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 5,
+    "keyword_caps": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 6,
+    "scale": 1.06,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": "riser",
+      "zoom": "riser"
+    }
+  },
+  "music": {
+    "energy": "drone",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.1,
+    "saturation": 0.85,
+    "brightness": -0.03,
+    "vignette": true
+  },
+  "broll": {
+    "every_s": 5,
+    "max_dur_s": 3
+  }
+}

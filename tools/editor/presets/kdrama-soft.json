@@ -1,0 +1,41 @@
+{
+  "name": "kdrama-soft",
+  "label": "K-drama",
+  "kind": "genre",
+  "description": "Held looks, soft pastel grade, fade captions, OST-style bed, slow pushes.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 1.0,
+    "pad_s": 0.25,
+    "max_shot_s": 6
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 6,
+    "keyword_caps": false,
+    "font": "DejaVu Serif",
+    "bold": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 6,
+    "scale": 1.04,
+    "on_hook": 1.0
+  },
+  "sfx": {
+    "density_per_10s": 0.1
+  },
+  "music": {
+    "energy": "low",
+    "db": -19
+  },
+  "grade": {
+    "contrast": 0.94,
+    "saturation": 0.92,
+    "brightness": 0.03,
+    "warmth": 0.02
+  },
+  "broll": {
+    "every_s": 0
+  }
+}

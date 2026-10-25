@@ -49,6 +49,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | genz-header-skit | raw selfie/travel/skit: persistent top header (emoji context line + 2-4 word CAPS reaction 😭💀), no subtitles, SFX hit per reaction (ref research/edit-references-2026-10.md #1) |
 | trend-beat-switch | 'My name is… but they call me…' intro in white rounded boxes, then clips switch ON the beat with one label word each; needs a music file (beat-synced) |
 | horror-tension | cold teal grade, crushed blacks, long holds, slow push, flicker on beat changes, drone bed + stings |
+| genre presets (drama-conflict, feelgood-emotional, founder-inspire, cautionary-ladder, thriller-suspense, mystery-reveal, action-hype, scifi-tech, kdrama-soft, anime-energy, news-expose, luxury-reveal, asmr-satisfying) | one per genre module in genre-playbooks.md §0; the brief picks the genre and its preset |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 
 - **Precedence:** ledger > brand file (the `edit-brand` block) > Klaus's script/brief > preset > defaults. The brand block wins on fonts, caption/hook placement, colours and the end card.

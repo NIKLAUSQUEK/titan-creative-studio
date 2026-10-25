@@ -76,14 +76,14 @@ def zoom_chain(keys, d, W, H):
     if len(keys) == 2 and keys[1].get("ease") == "linear":
         s0, s1 = keys[0]["scale"], keys[1]["scale"]
         expr = f"{s0}+({s1}-{s0})*t/{max(d, 0.1):.3f}"
-        return [(0, d, f"scale=w='trunc({W}*({expr})/2)*2':h=-2:eval=frame,crop={W}:{H}:(in_w-{W})/2:(in_h-{H})*0.4")]
+        return [(0, d, f"scale=w='trunc({W}*({expr})/2)*2':h=-2:eval=frame,crop={W}:{H}:(in_w-{W})/2:(in_h-{H})*0.4,setsar=1")]
     out = []
     for i, k in enumerate(keys):
         t0, t1 = k["at"], keys[i + 1]["at"] if i + 1 < len(keys) else d
         if t1 - t0 < 0.02:
             continue
         s = k["scale"]
-        f = "null" if abs(s - 1) < 1e-3 else f"scale={int(W * s) // 2 * 2}:-2,crop={W}:{H}:(in_w-{W})/2:(in_h-{H})*0.35"
+        f = "setsar=1" if abs(s - 1) < 1e-3 else f"scale={int(W * s) // 2 * 2}:-2,crop={W}:{H}:(in_w-{W})/2:(in_h-{H})*0.35,setsar=1"
         out.append((t0, min(t1, d), f))
     return out or [(0, d, "null")]
 
@@ -97,7 +97,7 @@ def render_item(it, clip, W, H, q, style, cache, lut):
     sp = it.get("speed", 1.0)
     d = (it["out"] - it["in"]) / sp
     key = h({"src": src, "in": it["in"], "out": it["out"], "sp": sp, "z": it.get("zoom"), "fx": it.get("focus_x"), "fit": it.get("fit"),
-             "W": W, "H": H, "q": q, "g": style.get("grade"), "fx": it.get("fx"), "v": 3})
+             "W": W, "H": H, "q": q, "g": style.get("grade"), "fx": it.get("fx"), "v": 4})
     out = cache / f"seg_{key}.mkv"
     if out.exists():
         return out, d

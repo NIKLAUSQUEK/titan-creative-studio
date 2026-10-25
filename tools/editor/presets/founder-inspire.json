@@ -1,0 +1,38 @@
+{
+  "name": "founder-inspire",
+  "label": "Founder / comeback / inspirational",
+  "kind": "genre",
+  "description": "Past cold and desaturated, present warm; build-up score; VO-led with B-roll of the grind.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.12
+  },
+  "captions": {
+    "max_words": 4,
+    "animation": "pop"
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 5,
+    "scale": 1.05
+  },
+  "sfx": {
+    "density_per_10s": 0.4,
+    "map": {
+      "hook": "riser"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -19
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 0.95
+  },
+  "broll": {
+    "every_s": 4,
+    "max_dur_s": 3
+  }
+}
