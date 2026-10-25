@@ -14,6 +14,7 @@
 Captions and hook placement follow ledger 2026-10-10 (hook text never covers faces; hook just above the 74% captions).
 ```edit-brand
 {
+  "language": "en",
   "colors": {"primary": "#EFE3D3", "accent": "#6B5544", "text": "#4E3B2E"},
   "fonts": {"display": "Playfair Display", "body": "Cormorant Garamond"},
   "captions": {"font": "DejaVu Sans", "bold": true, "size": 0.024, "color": "#FFFFFF", "outline": 4, "outline_color": "#000000", "position_y": 0.74, "highlight": "#EFE3D3"},

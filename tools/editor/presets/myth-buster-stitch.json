@@ -1,0 +1,88 @@
+{
+  "name": "myth-buster-stitch",
+  "label": "Myth-buster: claim -> look closely -> evidence with PiP -> face -> origin receipt",
+  "kind": "genre",
+  "description": "From E1 Dr Karan Rajan toilet-roll myth (75k likes): voice from 0.0 s at 230-240 wpm, the myth shown as its artefact, labelled evidence images with the expert as a PiP (or the editor's split layout), a layout change every 4-6 s, the origin post as the receipt, a one-line verdict.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md#21",
+  "structure": {
+    "name": "myth-buster",
+    "target_s": [
+      30,
+      70
+    ],
+    "beats": [
+      "myth artefact 0-4s",
+      "look closely",
+      "mechanism 1 (evidence)",
+      "mechanism 2 (evidence)",
+      "why it matters",
+      "origin receipt",
+      "verdict"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.04,
+    "remove_fillers": "hard",
+    "max_shot_s": 6.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 4,
+    "animation": "pop",
+    "size": 0.034,
+    "position_y": 0.5,
+    "uppercase": false,
+    "keyword_caps": false,
+    "outline": 0,
+    "shadow": 1,
+    "highlight": "#FFFFFF"
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 4.0,
+    "scale": 1.06,
+    "on_hook": 1.1,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 5.0,
+    "max_dur_s": 6.0,
+    "min_dur_s": 3.0,
+    "mode": "split"
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "db": -15,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "impact"
+    },
+    "min_gap_s": 0.3
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.04
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "broll.mode pip_corner": "expert PiP bottom-right at ~35% width over full-frame evidence (today: split top/bottom or pip default position)",
+    "annotate": "red circle / arrow on an evidence still at a given xy and time; sfx 'pop'",
+    "evidence_labels": "small label text placed on the evidence image (from beat.label)",
+    "myth_card": "the claim recreated as a social-post card (name masked) when the original can't be shown"
+  }
+}

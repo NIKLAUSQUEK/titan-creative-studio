@@ -6,7 +6,7 @@ Project level:   <edit>/ingest/index.json + summary.md (the compact text Claude 
 import difflib, json, re, shutil
 from pathlib import Path
 
-from .common import VIDEO, AUDIO, cb, ffmpeg, log, probe, rjson, run, slug, wjson
+from .common import studio, VIDEO, AUDIO, cb, ffmpeg, log, probe, rjson, run, slug, wjson
 
 HARD_FILLERS = {"um", "umm", "uh", "uhh", "erm", "er", "ah", "hmm", "mm", "eh"}
 SOFT_FILLERS = {"like", "basically", "actually", "literally", "so", "right", "okay", "lah", "leh", "lor"}
@@ -223,6 +223,16 @@ def ingest_clip(src, out_root, model, device, language, force=False):
     return cid
 
 
+def brand_language():
+    """Speech language from the active brand's edit-brand block ("language": "en"). Whisper auto-detect misreads
+    Singapore English as Malay (overnight genre research 2026-10-25), so brands pin it; None = auto-detect."""
+    try:
+        from .presets import brand_guide
+        return (brand_guide(studio("active_brand"))[0] or {}).get("language")
+    except Exception:
+        return None
+
+
 def cmd_ingest(a, edit_dir):
     root = edit_dir / "ingest"
     root.mkdir(parents=True, exist_ok=True)
@@ -238,7 +248,7 @@ def cmd_ingest(a, edit_dir):
     idx = rjson(root / "index.json", {"clips": []})
     known = {c["id"] for c in idx["clips"]}
     for f in files:
-        cid = ingest_clip(f, root, a.whisper_model, a.device, a.language, a.force)
+        cid = ingest_clip(f, root, a.whisper_model, a.device, a.language or brand_language(), a.force)
         if cid not in known:
             idx["clips"].append({"id": cid, "path": str(f.resolve())}); known.add(cid)
     wjson(root / "index.json", idx)

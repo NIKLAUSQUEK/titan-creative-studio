@@ -1,0 +1,82 @@
+{
+  "name": "scam-remix-onetake",
+  "label": "Trick-on-the-viewer remix (one take, trend parody)",
+  "kind": "genre",
+  "description": "From N1 Hougang NPC 'Singa(pore) Inferno' (370k likes, 5M+ views): one 15-25 s take, direct address from frame 0 at ~220 wpm, three 'you think X but Y' reveals, the lesson line, the final physical reveal (hand over lens / swap). Persistent parody title on top, 2-4 word serif captions beside the head with the punch word in the accent colour. No SFX, trend bed only.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md#22b",
+  "structure": {
+    "name": "remix-onetake",
+    "target_s": [
+      15,
+      25
+    ],
+    "beats": [
+      "direct address + mystery prop 0s",
+      "reveal 1",
+      "reveal 2",
+      "reveal 3",
+      "lesson line",
+      "final reveal"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 30.0,
+    "drop_retakes": true
+  },
+  "captions": {
+    "enabled": true,
+    "font": "Instrument Serif",
+    "bold": false,
+    "size": 0.034,
+    "max_words": 4,
+    "animation": "pop",
+    "position_y": 0.42,
+    "uppercase": false,
+    "keyword_caps": false,
+    "highlight": "#E0218A",
+    "outline": 0,
+    "shadow": 1
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "persistent": true,
+    "position_y": 0.06,
+    "size": 0.045,
+    "uppercase": true,
+    "max_words": 3
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0,
+    "map": {}
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.02
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "captions.beside_face": "place the caption block next to the head (face box from YuNet), alternating sides when the head moves",
+    "music.in_app_only": "personal accounts: trending sound added in-app, recorded in PUBLISH.md; brand accounts: original sound-alike only"
+  }
+}

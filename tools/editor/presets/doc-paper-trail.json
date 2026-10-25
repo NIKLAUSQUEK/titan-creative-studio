@@ -1,0 +1,97 @@
+{
+  "name": "doc-paper-trail",
+  "label": "Investigation / paper trail (Johnny Harris-style grammar)",
+  "kind": "style",
+  "description": "From D1 (5.3k likes): a near-wordless cold open of searching and dead links, the question, then printed documents with highlighter swipes, cut at a ~1.2 s median; small boxed caps captions; foley-led sound. Use for 'who paid for this', 'where did this come from'.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md#A2",
+  "structure": {
+    "name": "paper-trail",
+    "target_s": [
+      45,
+      90
+    ],
+    "beats": [
+      "silent search cold open",
+      "the find",
+      "the question",
+      "document 1",
+      "document 2",
+      "the name/turn",
+      "what it means"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.1,
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 6,
+    "animation": "static",
+    "uppercase": true,
+    "size": 0.022,
+    "position_y": 0.78,
+    "outline": 0
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 2.0,
+    "scale": 1.05,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 1.4,
+    "max_dur_s": 2.0,
+    "min_dur_s": 0.6,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 3.0,
+    "db": -16,
+    "map": {
+      "hook": "click",
+      "broll": "paper",
+      "title": "tick",
+      "end": "boom"
+    },
+    "cut_coverage": 0.4,
+    "min_gap_s": 0.2,
+    "reveal_every_s": 20,
+    "stacks": {
+      "reveal": [
+        {
+          "type": "swell",
+          "db": -15
+        },
+        {
+          "type": "impact",
+          "db": -10
+        }
+      ]
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 0.9,
+    "warmth": 0.04,
+    "vignette": true
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "captions.box": "black-box caps captions",
+    "highlighter_swipe": "see documentary",
+    "screen_capture_beat": "beat.visual.type 'screen' = a screen recording at 100% legibility with a cursor",
+    "cold_open_wordless": "allow the first 5-9 s with no captions and only foley + ambient"
+  }
+}

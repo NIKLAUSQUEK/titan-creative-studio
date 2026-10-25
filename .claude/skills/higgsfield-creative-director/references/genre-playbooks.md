@@ -876,35 +876,165 @@ Changes vs the current preset:
 
 ### 19. 3D Pixar / cartoon: see animation-3d-cartoon.md (style key, character sheet, consistency); pace as comedy or feel-good.
 
-### 20. Documentary / investigative [draft; deeper: documentary-3d.md, commentary-controversy.md]
-- **Pacing:** a cold open on the strongest fact → the question → evidence beats (3-6 s each, VO-led) → the turn → what it means.
-- **Shot grammar:** slow push on photos and documents, establishing wides, lower-thirds for names and sources, interview framing at 1/3.
-- **Look:** neutral, with an archival texture for the past.
-- **genre_key:** `documentary realism, natural available light, observational camera, archival texture for past events, sober composition`
-- **Sound:** VO first, a subtle bed at -21 dB, room tone.
-- **Compliance:** every fact goes in SOURCES.md.
-- **Preset:** documentary.
+### 20. Documentary / investigative [measured: D1 https://www.instagram.com/reel/DRfLDUfk4qJ/ , D2 https://www.instagram.com/reel/DZu1CrUEzge/ , D4 https://www.instagram.com/reel/Cy8Es70hHLw/ , D5 https://www.instagram.com/reel/DUN1lSyE5qJ/ , N3 https://www.instagram.com/reel/DbwveVREWRt/]
+- **Pacing map (60-90 s short; scale up for long form):**
+  - **0-9 s:** a cold open of *process*, not a talking head: the investigator searching, dead links, a document coming out of the printer. Near-wordless ambient + one line ("I've been looking for a video that has almost entirely disappeared from the internet").
+  - **9-15 s:** the question, said plainly ("So why did someone scrub it?").
+  - **15-70 s:** evidence beats of 6-10 s each, cut inside at a **1.2-2 s median** (measured 1.2-1.8 s on D1/D4/D5/N3). Each beat = a document or archive image + a source tag + one VO sentence.
+  - **~65 %:** the turn: the paper trail names the payer / the twist.
+  - **Last 5-10 s:** what it means + "full video" CTA.
+- **Shot grammar:**
+  - macro on paper with a highlighter swiping the key words (D1);
+  - screen captures of searches and dead pages;
+  - interview at 1/3 framing with name/role lower thirds in the first 3 s of each speaker;
+  - the reporter split (evidence top, presenter bottom) when the presenter explains numbers (D4).
+  - **Reconstructions are stylised** (2.5D photo-collage with parallax, neon place-date stamp "Miami, 1973" (D2), or labelled re-enactment "Dramatisation" (N3)), never photoreal AI of real people.
+- **Look:** neutral daylight grade for the present; archival texture (b/w, film grain) for the past. Caption: small CAPS white text in a black box at the lower third (D1), or sentence captions with yellow numbers (D4). Source tag top-right on every evidence shot.
+- **genre_key:** `documentary realism, natural available light, observational camera, macro detail on paper and screens, archival texture for past events, sober composition`
+- **Shot JSON:**
+  ```
+  {"camera":"overhead 50mm macro, slow 3% push","subject":"printed government filing on a desk","action":"start: page lands -> end: teal highlighter swipes across the key line","light":"warm desk lamp, soft falloff","constraints":"text added in post from the real document; no generated text","genre_key":"…"}
+  ```
+- **Sound:**
+  - VO first;
+  - a bed under everything at -20..-22 dB (time below -30 dBFS 12-18 % measured; the -66 % observational outlier D7 underperforms);
+  - paper/foley on documents (print, slap, highlighter squeak), a typing tick on the search screens;
+  - a swell → impact on the turn;
+  - -14 LUFS (never post a -19/-20 broadcast master; re-normalise).
+- **Compliance:**
+  - Every fact goes in SOURCES.md plus an on-screen source tag.
+  - Real people's names only from public records or reputable press.
+  - Archive clips: short, transformative, credited.
+  - Re-enactments are labelled "Dramatisation" and use actors or stylised collage (no AI likeness of real people; commentary-controversy.md).
+  - SG POFMA / defamation and VN Decree 15 apply as in card 22.
+- **Preset:** documentary (corrected below); `doc-paper-trail` (new) for investigation pieces.
+- **Research file:** research/genre-research-2026-10/news-doc-explainer.md
 
-### 21. Explainer / myth-buster [draft; story-engine.md myth-buster]
-- **Pacing:** the myth (hook) → why people believe it → the mechanism (graphic) → what to do → the callback; 2-3 s beats.
-- **Shot grammar:** talking head with punch-ins; a graphic or B-roll for each mechanism line.
-- **genre_key:** `bright clean educational look, clear subject, simple uncluttered background, diagram-friendly composition`
-- **Sound:** light whooshes on graphics only.
-- **Compliance:** claims must be sourced.
-- **Preset:** talking-head-punchy.
+### 21. Explainer / myth-buster [measured: E1 https://www.instagram.com/reel/CxkzKPFs6Dx/ , E2 https://www.instagram.com/reel/CRWkCiEoTIj/ , E4 https://www.instagram.com/reel/DbDwKfHCU7G/ , E5/D4 https://www.instagram.com/reel/Cy8Es70hHLw/ ; control E6]
+- **Pacing map (45-70 s):**
+  - **0-4 s:** the myth itself, shown as the artefact (a recreated viral post or clip, or the claim read in its own words), with a provocation ("If your toilet paper looks like this…, get out");
+  - **4-12 s:** "look closely": the claim's own evidence, zoomed;
+  - **12-35 s:** the mechanism, with labelled evidence images (microscope, diagram, chart) and the expert PiP in a corner pointing at it; the layout changes every 4-6 s;
+  - **35-55 s:** back to the face: why the myth is harmful or who it hurts;
+  - **55-65 s:** the origin receipt (where the myth started: the first post, dated) and a one-line verdict;
+  - voice from 0.0 s at 220-240 wpm, no pauses over 0.3 s.
+- **Shot grammar:**
+  - the expert in a real setting (bookcase, clinic) mid-shot;
+  - the green-screen or PiP expert in the bottom-right (about 35 % width) over evidence;
+  - evidence images labelled in small type on the image ("New needle", "Used 6 times"), with a red circle or arrow on the tell;
+  - 2-4 word captions centred mid-screen.
+  - Our version: the CNA reporter split (B-roll top, expert bottom) is the editor's ready-made layout (`mode: split`).
+  - **Alternative spine (E4), the physical-metaphor demo:** the presenter's hands act out each abstract step with tabletop props (dyes, cups, coins, a resistance band for a muscle). Cut on each clause at about a 2 s median, then one node diagram (tools/motion) for the summary. For Physio Spot this is the natural grammar: a band, a spine model, a sponge.
+- **Look:** bright and clean, real location rather than a seamless studio; the evidence images keep their own colour; one accent (red) for the circles and arrows.
+- **genre_key:** `bright clean educational look, real location background, clear subject, natural soft light, evidence-friendly composition with negative space for a PiP`
+- **Shot JSON:**
+  ```
+  {"camera":"locked 35mm mid-shot, subject right third, left two-thirds clear for evidence overlay","subject":"expert in work clothes","action":"start: squints at off-screen claim -> end: points down-left at where the evidence will appear","light":"soft window light","genre_key":"…"}
+  ```
+- **Sound:**
+  - voice-led with a low bed at -22 dB;
+  - a light whoosh on each layout change (evidence in / out);
+  - a "pop" on each label or arrow;
+  - one impact under the verdict line;
+  - -14 LUFS.
+- **Compliance:**
+  - Claims are sourced. Show the myth as a recreation or a quote card, not the original poster's face, unless it's a public figure or platform-native Stitch/Remix (personal accounts only).
+  - Mask private names on the origin screenshot (E1 does).
+  - Health brands in SG: no superlatives, no "cure", no patient stories; a myth-buster is education, not an inducement (compliance-sg.md).
+- **Preset:** `myth-buster-stitch` (new, replaces talking-head-punchy as the card's default); talking-head-punchy stays the fallback when there's no evidence footage.
 
-### 22. News / scam-expose (video + carousel) [draft until ref #2 arrives]
-- **Pacing:**
-  - kicker bar plus headline at 0 s ("⚠️ SCAM ALERT");
-  - "how it works" in 3-5 numbered steps;
-  - "how to protect yourself";
-  - the source line.
-- **Carousel:** slide 1 = kicker + 6-word claim over the evidence photo; slides 2-6 = numbered steps, one idea each; the last slide = what to do + who to contact.
-- **Look:** high clarity, credible, no meme fonts; a red or amber accent for the warning; the brand logo small.
-- **genre_key:** `credible photojournalistic style, clear evidence framing, neutral daylight, no dramatisation`
-- **Sound (video):** a news-style sting on the kicker, ticks on each step.
-- **Compliance:** never name or accuse individuals without proof; blur faces and plates of private people; state the source and date.
-- **Preset:** news-expose (expander: carousel-text with the kicker card).
+---
+- **Research file:** research/genre-research-2026-10/news-doc-explainer.md
+
+### 22. News / scam-expose (video + carousel) [measured: N1 https://www.instagram.com/reel/DWkv0WID7gG/ , N6 https://www.instagram.com/reel/DP3m-09jxKk/ , N7 https://www.instagram.com/reel/DdiccisGrWO/ , N8 https://www.instagram.com/reel/DUFJUMUluLA/ ; controls N2, N10]
+- **Pick the spine first.** There are three proven spines plus the advisory, which is the control and loses:
+  - (a) **face + persistent kicker header**: interview or vox pop. 4-6 s shots when interview-led, 1.7 s when vox-pop-led.
+  - (b) **silent case story**: text-on-stock, no VO, ONE stat counter.
+  - (c) **trick-on-the-viewer remix**: see 22b.
+  - Never lead with the advisory slate.
+- **Pacing map (30-60 s, voiced):**
+  - **0-1 s:** the kicker card ("⚠️ SCAM ALERT" / "CẢNH BÁO") with a 6-word claim over the evidence (fake SMS, fake page), and a voice from frame 0. Measured first word at 0.0 s on every reel above 2k likes; the advisories open on 7-10 s of slates.
+  - **1-8 s:** what the victim sees, the real artefact (screenshot, recreated call), labelled "Example" or "Dramatisation".
+  - **8-35 s:** "how it works" in 3-5 numbered beats, one idea each, 4-6 s per beat. B-roll or screenshot cuts every 1.7-2.5 s inside a beat.
+  - **35-45 s:** ONE number (stat counter) with its source line.
+  - **Last 5-8 s:** "what to do": 3-4 numbered actions plus the official helpline (SG ScamShield 1799; VN: the bank's hotline or local police). Then a 1-2 s logo.
+- **Pacing map (silent case story, 45-55 s):** a 1-line loss hook ("He lost $700 ordering toilet rolls") → 5-7 text-on-stock cards of 4-6 s each, one sentence per card → a stat counter → a "BUY AND PAY WISELY:" bold-verb checklist (Check / Verify / Use / Avoid) held 6-8 s → partner logos.
+- **Carousel (see 22c for the full card):**
+  - slide 1 = a CAPS 3-5-word "threat? command" title over the evidence image;
+  - slides 2-6 = numbered steps, one idea each;
+  - a stat slide with its source;
+  - the last slide = what to do + who to call + "save this".
+  - 7-10 slides.
+- **Shot grammar:**
+  - interview mid-shot at desk height with the name/rank lower third in the first 3 s;
+  - screenshots full-width on a blurred copy of themselves, with a red circle or arrow on the tell;
+  - B-roll of the scam surface (phone in hand, laptop), never a victim's face;
+  - vox pop: people who decline get a comic photo mask (Mothership's "Sorry I paiseh") or a blur, never shown.
+  - **VN variant:** a 1:1 or 4:5 stack, with the news segment on top and a persistent campaign title card below (Vietnamese CAPS headline). Close on a 3-verb slogan card. Vietnamese text comes first and is largest.
+- **Look:**
+  - high clarity, real daylight, the brand logo as a small pill top-right;
+  - ONE warning accent: red kicker bar, or yellow for numbers and the persistent question;
+  - captions as 3-5-word sentence chunks in a clean sans, white with a soft shadow;
+  - no meme fonts, no letterbox (letterboxed 16:9 = the losing advisory look).
+- **genre_key:** `credible photojournalistic style, real daylight, clear evidence framing, phone screens legible, neutral natural colour, no dramatisation, documentary handheld steadiness`
+- **Shot JSON:**
+  ```
+  {"camera":"locked 35mm desk-height mid-shot, subject 1/3 left, screen-safe headroom for kicker","subject":"spokesperson or presenter in work clothes","action":"start: looks at phone showing a fake message -> end: turns phone to lens, taps the tell","light":"soft daylight, clean office","constraints":"screen content added in post, not generated; no real logos generated","genre_key":"…"}
+  ```
+- **Sound:**
+  - a continuous low bed at -20..-22 dB under the voice (keep time below -30 dBFS ≤ 15 %);
+  - a news sting or impact on the kicker;
+  - a tick on each numbered step and on each screenshot slam;
+  - a swell + impact on the stat counter;
+  - silence only before the "what to do" turn (≤ 0.3 s);
+  - silent case story: music-only, mid-tempo, at -16..-18 dB (it IS the voice);
+  - -14 LUFS.
+- **Compliance:**
+  - Describe patterns, not people. Name or show a person or business only when an official source has, and link it (compliance-packs.md "Media, publishers").
+  - Blur faces, plates, phone numbers and account numbers; scam numbers stay partly masked (show the prefix only).
+  - Every fact carries a source + date line on screen (CNA-style tag) and in SOURCES.md.
+  - **SG:** POFMA can order a correction for a false statement of fact in the public interest ([POFMA Office](https://www.pofmaoffice.gov.sg/media-centre/); [Act](https://sso.agc.gov.sg/Act/POFMA2019)), so quote SPF/ScamShield wording for numbers and modus operandi and never round or extrapolate a statistic. Defamation risk is higher than in the US (commentary-controversy.md).
+  - Never imitate police/government branding, crests, uniforms or a ".gov" look on a brand account. Even a parody can read as impersonation, the very thing the scam does.
+  - **VN:** Vietnamese first, foreign text ≤ 3/4 size; Decree 15/2020 Art. 101 fines false or slanderous posts; phone-verified accounts only (Decree 147/2024); no political or state content.
+  - Paid: keep scam creative calm or run it organically (sensational crime creative gets rejected).
+- **Preset:** news-expose (corrected below); expander: carousel-text with the kicker card.
+- **Research file:** research/genre-research-2026-10/news-doc-explainer.md
+
+### 22b. Trick-on-the-viewer remix ("police-advisory remix") [measured: N1 https://www.instagram.com/reel/DWkv0WID7gG/ ; N4 https://www.instagram.com/reel/DejSVAmP2vV/ as the skit cousin] (NEW sub-style)
+- **Use when:** a brand or community page wants a warning to spread; the trick can be performed on the viewer (fake voice, lookalike, fake link, deepfake).
+- **Pacing map (15-25 s, one take):**
+  - **0 s:** a direct address, mid-action, with a mystery prop ("you must be wondering what I'm drinking");
+  - **2-12 s:** three "you think X, but Y" reveals, each 3-4 s, each breaking an assumption the viewer just made (the cup is empty → the hands are elsewhere → the voice is pre-recorded);
+  - **14-18 s:** the lesson line ("Don't believe everything online");
+  - **18-22 s:** the final reveal (lens covered, a swap to a different person: "is not even the real me");
+  - **end:** no CTA card; the caption carries the advice and the helpline.
+- **Shot grammar:** one locked or handheld take, waist-up, a plain bright location. The only "cut" is a physical wipe (a hand over the lens). Captions are 2-4 words in a serif beside the head (not under the chin), with the punch word in the accent colour. The parodied show's title type sits persistent at the top.
+- **Look:** bright, natural, flat office light; the show-parody title in the trend's own colour (pink here).
+- **genre_key:** `bright natural office daylight, flat even light, clean white walls, casual direct-to-camera, phone-shot realism`
+- **Sound:**
+  - the trend's dating-show-style bed (personal/creator accounts: in-app trending audio only; brand accounts: an original sound-alike, never the show's music);
+  - voice from frame 0 at 220 wpm;
+  - no SFX needed (measured 0 cuts, 14.5 onsets/10 s are all speech and bed);
+  - -14 LUFS.
+- **Compliance:**
+  - Only real staff, or a consenting creator, as "the lookalike". Never an AI likeness of a real officer or public figure.
+  - On brand accounts don't wear a uniform you are not entitled to.
+  - Health brands (SG): no patient, no outcome; the "reveal" can only be about the scam.
+- **Preset:** `scam-remix-onetake` (new, below).
+- **Research file:** research/genre-research-2026-10/news-doc-explainer.md
+
+### 22c. News-card carousel (`news-card-carousel`) [researched: Socialinsider benchmarks, Oct-2026 live scam carousels listed in A5] (NEW sub-style)
+- **Slides (8-10, 4:5):**
+  1. **Kicker** ("⚠️ SCAM ALERT", or "CẢNH BÁO" for VN) + a CAPS 3-5-word "THREAT? COMMAND" title + the evidence image, masked;
+  2. "What you see": the artefact with a red circle on the tell;
+  3-6. "How it works": numbered steps 1-4, one sentence each, one icon or crop each;
+  7. **The number**: one stat + "Source: SPF, mid-year 2026";
+  8. **What to do**: 3-4 bold-verb lines (Check / Verify / Call / Report);
+  9. **Who to call**: the helpline, plus "Save this · Send to your parents".
+- **Look:** a recurring series name in the top-left on every slide (it IS the brand), and the same colour bar on every slide. Slide 1 has the evidence photo full-bleed; slides 2-9 are clean off-white or dark cards. Type: one sans, the keyword in the accent colour.
+- **Compliance:** as in card 22. The source line on the stat slide is mandatory; never put a real scammer's full number or a victim's name on a slide.
+- **Preset:** the expander's `carousel-text` with `card_style: kicker`; slide-plan rules go to thumbnail-carousel-design.md (thumbnail-designer agent).
+- **Research file:** research/genre-research-2026-10/news-doc-explainer.md
 
 ### 23. Commentary / receipts: see commentary-controversy.md (steelman, receipts format, no AI likeness of real people).
 

@@ -1,31 +1,120 @@
 {
   "name": "documentary",
-  "label": "Documentary / explainer",
+  "label": "Documentary / investigative (short-form)",
   "kind": "style",
-  "description": "VO-led, B-roll heavy (every 4 s), lower-thirds for names/facts, sentence captions, clean cuts.",
+  "description": "Measured on Johnny Harris + CNA Insider + SPF doc reels: VO-led, cuts at a 1.2-2 s median inside 6-10 s evidence beats, a near-wordless process cold open, small boxed caps captions, source tag on every evidence shot, a continuous bed (time below -30 dBFS 12-18%), paper/foley SFX, swell+impact on the turn, -14 LUFS.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md#20",
+  "structure": {
+    "name": "doc-short",
+    "target_s": [
+      60,
+      100
+    ],
+    "beats": [
+      "process cold open 0-9s",
+      "the question",
+      "evidence 1",
+      "evidence 2",
+      "evidence 3",
+      "turn by ~65%",
+      "what it means",
+      "full-video CTA"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 0.45,
-    "pad_s": 0.12
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.1,
+    "remove_fillers": "hard",
+    "max_shot_s": 4.0
   },
   "captions": {
+    "enabled": true,
     "max_words": 6,
     "animation": "static",
     "keyword_caps": false,
-    "size": 0.036
+    "uppercase": true,
+    "size": 0.024,
+    "position_y": 0.76,
+    "outline": 0,
+    "shadow": 0,
+    "highlight": "#FFFFFF"
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "lower_third": {
+    "size": 0.026,
+    "box": "#000000",
+    "box_alpha": 0.7,
+    "position_y": 0.7
   },
   "zoom": {
-    "every_s": 0,
-    "on_hook": 1.0
+    "mode": "smooth",
+    "every_s": 3.0,
+    "scale": 1.04,
+    "on_hook": 1.0,
+    "on_emphasis": false
   },
   "broll": {
-    "every_s": 4,
-    "max_dur_s": 3.5
+    "every_s": 2.0,
+    "max_dur_s": 2.5,
+    "min_dur_s": 1.0,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 0.4
+    "density_per_10s": 2.0,
+    "db": -17,
+    "map": {
+      "hook": "riser",
+      "broll": "whoosh",
+      "title": "tick",
+      "end": "swell"
+    },
+    "stacks": {
+      "reveal": [
+        {
+          "type": "swell",
+          "db": -15
+        },
+        {
+          "type": "impact",
+          "db": -10
+        },
+        {
+          "type": "boom",
+          "db": -12
+        }
+      ]
+    },
+    "cut_coverage": 0.3,
+    "min_gap_s": 0.3,
+    "reveal_every_s": 25
   },
   "music": {
     "energy": "low",
-    "db": -21
+    "db": -21,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 0.95,
+    "warmth": 0.0,
+    "vignette": false
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "captions.box": "caps caption in a black box (box_alpha 0.75), lower third",
+    "source_tag": {
+      "position": "top_right",
+      "size": 0.018,
+      "text_from": "beat.source"
+    },
+    "highlighter_swipe": "animated highlighter stroke over a word region on a document still (teal #2EC4B6)",
+    "archival_texture": "per-B-roll b/w + grain when beat.era == 'past'",
+    "sfx kinds paper, print, typing": "foley kinds for documents and search screens",
+    "loudness_renormalise_inserts": "normalise broadcast inserts (-19..-21 LUFS) before the mix"
   }
 }

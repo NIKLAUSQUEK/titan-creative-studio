@@ -1,0 +1,91 @@
+{
+  "name": "news-silent-case",
+  "label": "Silent case story (text on stock, no VO)",
+  "kind": "genre",
+  "description": "From N8 (@straits_times x SPF, 3.9k likes): a one-line loss hook, 5-7 text-on-B-roll cards of 4-6 s with one sentence each, a stat counter, a bold-verb checklist held 6-8 s, partner logos. Music is the voice.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md#A1",
+  "structure": {
+    "name": "silent-case",
+    "target_s": [
+      40,
+      55
+    ],
+    "beats": [
+      "loss hook",
+      "who/what",
+      "what happened",
+      "the twist",
+      "the number",
+      "checklist",
+      "logos"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0,
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": false,
+    "position_y": 0.62,
+    "size": 0.03,
+    "uppercase": false,
+    "max_words": 18,
+    "dur_s": 5.0
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 5.0,
+    "scale": 1.05,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 5.0,
+    "max_dur_s": 6.0,
+    "min_dur_s": 4.0,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.6,
+    "db": -18,
+    "map": {
+      "hook": "riser",
+      "broll": "whoosh",
+      "title": "tick",
+      "end": "swell"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 0.9,
+    "warmth": -0.03,
+    "vignette": true
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "cuts",
+    "dur_s": 0.4,
+    "strength": 0.6
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.0
+  },
+  "_needs_feature": {
+    "text_per_broll": "a text card per B-roll item from beat.text (box style, bottom-left third), replacing captions",
+    "crossfade": "real dissolves between B-roll (dip is a brightness pulse, not a crossfade)",
+    "stat_counter_beat": "motion stat-counter in the accent colour (#FFD54F) with a one-line source",
+    "checklist_card": "a bold-verb list card (Check / Verify / Use / Avoid) held 6-8 s"
+  }
+}

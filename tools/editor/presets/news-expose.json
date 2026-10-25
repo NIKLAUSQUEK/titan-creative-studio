@@ -1,48 +1,133 @@
 {
   "name": "news-expose",
-  "label": "News / scam-expose",
+  "label": "News / scam-expose (face + kicker spine)",
   "kind": "genre",
-  "description": "Kicker headline first, numbered steps, credible clean look, news sting and ticks. Pairs with the kicker text card and the carousel-text expander format.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured on SPF/Mothership/Straits Times scam reels (research/genre-research-2026-10/news-doc-explainer.md A1). Voice from frame 0, persistent kicker header, 3-5 numbered steps of 4-6 s with cuts every ~1.7-2.5 s inside a step, one stat counter with source, numbered 'what to do' + helpline, logo. Continuous bed (time below -30 dBFS <= 15%), sting on the kicker, ticks on steps and screenshot slams.",
+  "reference": "research/genre-research-2026-10/news-doc-explainer.md",
+  "structure": {
+    "name": "news-short",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "kicker + claim 0-1s",
+      "what you see (artefact)",
+      "how it works 1",
+      "how it works 2",
+      "how it works 3",
+      "the number + source",
+      "what to do + helpline",
+      "logo"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 0.35,
-    "pad_s": 0.08
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06,
+    "remove_fillers": "hard",
+    "max_shot_s": 6.0,
+    "drop_retakes": true
   },
   "captions": {
+    "enabled": true,
     "max_words": 5,
-    "keyword_caps": true,
-    "highlight": "#FFB300"
+    "animation": "fade",
+    "size": 0.036,
+    "position_y": 0.72,
+    "uppercase": false,
+    "keyword_caps": false,
+    "highlight": "#FFC400",
+    "outline": 0,
+    "shadow": 1
   },
   "hook_text": {
+    "enabled": true,
     "renderer": "card",
     "card_style": "kicker",
-    "position_y": 0.2,
-    "size": 0.04,
+    "persistent": true,
+    "position_y": 0.16,
+    "size": 0.034,
     "uppercase": false,
-    "max_words": 12
+    "max_words": 10
+  },
+  "lower_third": {
+    "size": 0.026,
+    "box": "#C62828",
+    "box_alpha": 0.9,
+    "position_y": 0.62
   },
   "zoom": {
+    "mode": "snap",
     "every_s": 0,
-    "on_hook": 1.05
+    "scale": 1.06,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 2.5,
+    "max_dur_s": 2.5,
+    "min_dur_s": 1.2,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 0.8,
+    "density_per_10s": 2.5,
+    "db": -15,
     "map": {
       "hook": "sting",
       "zoom": "click",
-      "broll": "click"
-    }
+      "broll": "whoosh",
+      "title": "tick",
+      "end": "swell"
+    },
+    "stacks": {
+      "reveal": [
+        {
+          "type": "swell",
+          "db": -16
+        },
+        {
+          "type": "impact",
+          "db": -11
+        }
+      ]
+    },
+    "cut_coverage": 0.35,
+    "min_gap_s": 0.25,
+    "reveal_every_s": 0
   },
   "music": {
     "energy": "low",
-    "db": -22
+    "db": -21,
+    "duck": true
   },
   "grade": {
-    "contrast": 1.05,
-    "saturation": 1.0
+    "contrast": 1.04,
+    "saturation": 1.0,
+    "warmth": 0.0,
+    "vignette": false
   },
-  "broll": {
-    "every_s": 4,
-    "max_dur_s": 3
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.12,
+    "strength": 0.3
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "source_tag": {
+      "position": "top_right",
+      "size": 0.018,
+      "text_from": "beat.source",
+      "on": "every_broll_and_screenshot"
+    },
+    "stat_counter_beat": "beat role 'number' -> B-roll kind motion template stat-counter with a source line, plus the reveal stack",
+    "numbered_steps": "beat role 'step' auto-prefixes 1/2/3 on the hook/kicker card or a step-cards motion insert",
+    "screenshot_slam": "full-width screenshot on a blurred copy of itself with a red circle annotation; sfx 'paper'",
+    "redact": "auto-blur faces of unknown people, plates and phone/account digits in B-roll (QC already flags unknown faces)",
+    "helpline_card": "end card line from brand.compliance.helpline (SG ScamShield 1799)",
+    "logo_pill": "small brand pill top-right, persistent"
   }
 }
