@@ -46,6 +46,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | aura-cinematic | statement edits: slow pushes, minimal words, riser, crushed grade + vignette |
 | documentary | VO-led, B-roll every ~4 s, lower-thirds, sentence captions |
 | ugc-selfie-talking-head · ugc-unboxing · ugc-try-on-demo · ugc-reaction · ugc-pov · ugc-testimonial-style · ugc-day-in-the-life · ugc-green-screen | UGC formats; each preset carries its typical beat structure, pacing and caption style |
+| **30 researched styles** (retention-max, story-vlog, clean-explainer, luxury-broll, moral-skit, magic-transition, silent-deadpan, podcast-clip, street-interview, storytime-text, product-hero, manifesto-montage, map-explainer, motion-explainer, cinematic-vlog, doc-trailer, absurd-sketch, mascot-unhinged, clinic-trust, b2b-founder, myth-buster-expert, exercise-demo, doctor-reacts, raw-gym-vlog, aesthetic-lifestyle, fast-recipe, tech-review-premium, ugc-ad-hook-stack, sea-skit, sensitive-health-edu) | pick from `style-catalog.md` (use-for, brands, funnel, compliance locks); each carries a `sync` block (B-roll, fillers, music, emotion map) used by the story-sync skill |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 
 - **Precedence:** ledger > brand file (the `edit-brand` block) > Klaus's script/brief > preset > defaults. The brand block wins on fonts, caption/hook placement, colours and the end card.

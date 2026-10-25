@@ -1,0 +1,87 @@
+{
+  "name": "mascot-unhinged",
+  "label": "Unhinged mascot / brand-as-creator (Duolingo, Scrub Daddy)",
+  "kind": "pro",
+  "description": "Lo-fi phone skit timed to an audio drop, static meme caption at the top, self-aware brand humour, mascot or staff as recurring character.",
+  "structure": {
+    "name": "mascot-unhinged",
+    "target_s": [
+      7,
+      30
+    ],
+    "beats": [
+      "meme caption premise 0-2s",
+      "escalation",
+      "drop / punchline",
+      "loop or reply bait"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.08,
+    "max_shot_s": 2.5
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_emphasis": true,
+    "scale": 1.15,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 1.5
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "pop",
+      "zoom": "impact",
+      "broll": "pop",
+      "title": null,
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "none",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.05
+  },
+  "hook_text": {
+    "max_words": 10,
+    "position_y": 0.16,
+    "dur_s": 30,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "product glimpses (1-2 s) on the punchline; ~70:30",
+    "fillers": "meme-style cutaways, zoom on the mascot face, sound-only gag beats every 2-4 s",
+    "music": "the trend's audio carries the piece: brand accounts = TikTok CML / Meta Sound Collection track with the same beat map; personal accounts add the trending sound in-app",
+    "emotion_map": "confusion → amusement → ironic wink → laugh",
+    "transitions": "jump cuts on the beat"
+  },
+  "brands": [
+    "Power Protein",
+    "TITAN.AI",
+    "Klaus personal"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#duolingo",
+    "https://www.ypulse.com/newsfeed/2022/06/23/scrub-daddys-self-aware-tiktok-videos-are-continuing-their-appeal-to-gen-z-humor/"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "licensed audio on brand accounts",
+    "not for clinics (don't trivialise conditions)"
+  ]
+}

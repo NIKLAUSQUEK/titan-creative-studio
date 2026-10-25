@@ -1,0 +1,91 @@
+{
+  "name": "clinic-trust",
+  "label": "Clinic trust film (premium healthcare)",
+  "kind": "pro",
+  "description": "Calm clinician-led brand film: real staff, soft daylight, slow moves, dissolves, low music, factual supers. SG health-compliant by default.",
+  "structure": {
+    "name": "clinic-trust",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "everyday human moment 0-5s",
+      "meet clinicians / approach",
+      "care-process B-roll",
+      "reassurance line (clinician to camera)",
+      "logo + factual info"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.8,
+    "pad_s": 0.2,
+    "max_shot_s": 6.0,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "max_words": 6,
+    "position_y": 0.78,
+    "uppercase": false,
+    "highlight": "#5BA4A4",
+    "animation": "fade"
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.03,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 5.0,
+    "max_dur_s": 5.0
+  },
+  "sfx": {
+    "density_per_10s": 0,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": null,
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -23
+  },
+  "grade": {
+    "contrast": 0.95,
+    "saturation": 0.92,
+    "warmth": 0.05
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "aspect": "16:9 + 4:5 + 9:16",
+  "sync": {
+    "broll": "real clinic details: hands, equipment, space, process (never patients' faces/outcomes); 50-70%; 3-5 s holds",
+    "fillers": "slow push-ins and dissolves only",
+    "music": "felt piano / soft strings, consonant, no drops; ducked under the clinician",
+    "emotion_map": "recognition → reassurance → trust → calm agency",
+    "transitions": "soft dissolves, J-cuts into the clinician"
+  },
+  "brands": [
+    "Physio Spot",
+    "heal360"
+  ],
+  "funnel": [
+    "MOFU",
+    "BOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#clinic-films"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims"
+  ]
+}

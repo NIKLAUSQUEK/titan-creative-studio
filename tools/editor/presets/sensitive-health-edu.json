@@ -1,0 +1,99 @@
+{
+  "name": "sensitive-health-edu",
+  "label": "Sensitive health education (pelvic / men's health)",
+  "kind": "niche",
+  "description": "Calm, destigmatising clinician education: plain-language symptom question, normalise, mechanism on a model/diagram (never bodies), when to seek care. No humour SFX.",
+  "structure": {
+    "name": "sensitive-health-edu",
+    "target_s": [
+      30,
+      75
+    ],
+    "beats": [
+      "symptom question 0-3s",
+      "normalise (common, treatable)",
+      "mechanism with model/diagram",
+      "what helps / when to see a professional",
+      "gentle CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 7.0
+  },
+  "captions": {
+    "max_words": 7,
+    "position_y": 0.76,
+    "uppercase": false,
+    "highlight": "#7FB7BE",
+    "animation": "fade",
+    "emoji": false,
+    "keyword_caps": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.03,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 8,
+    "max_dur_s": 5.0,
+    "mode": "pip"
+  },
+  "sfx": {
+    "density_per_10s": 0,
+    "map": {
+      "hook": null,
+      "zoom": null,
+      "broll": null,
+      "title": null,
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 0.97,
+    "saturation": 0.95,
+    "warmth": 0.04
+  },
+  "hook_text": {
+    "max_words": 8,
+    "position_y": 0.18,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "anatomy model or animated diagram on mechanism words, 3-5 s; ~70:30; never explicit footage",
+    "fillers": "text cards for key terms only",
+    "music": "soft ambient at -24 dB or silence; no drops",
+    "emotion_map": "embarrassment acknowledged → relief → understanding → hope/agency",
+    "transitions": "soft cuts or gentle dissolves"
+  },
+  "brands": [
+    "heal360",
+    "Physio Spot men's health"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://buzzsprout.com/1009216/6716989"
+  ],
+  "evidence": "low (genre norms; clinic identity sourced)",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims",
+    "anatomical terms, no innuendo (platform ad policy)",
+    "diagrams, not bodies"
+  ]
+}

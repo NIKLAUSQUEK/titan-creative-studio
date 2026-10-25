@@ -1,0 +1,90 @@
+{
+  "name": "manifesto-montage",
+  "label": "Manifesto montage (Nike / Gymshark brand film)",
+  "kind": "pro",
+  "description": "VO manifesto over documentary/athlete montage, building from solo instrument to full, ending on a held thesis image and tagline card.",
+  "structure": {
+    "name": "manifesto-montage",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "provocation line + close-up 0-5s",
+      "everyday struggle montage",
+      "escalation montage",
+      "thesis (on camera or silence)",
+      "tagline card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.78,
+    "uppercase": true,
+    "highlight": "#FFFFFF",
+    "animation": "fade"
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.0,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 2.0,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 1,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "impact",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 0.85,
+    "warmth": 0.02,
+    "vignette": true
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "aspect": "16:9 hero, 9:16 + 4:5 cutdowns",
+  "sync": {
+    "broll": "metaphor and real-effort footage cut to the VO cadence; 60-90%",
+    "fillers": "match cuts, speed ramps on effort peaks (sparingly)",
+    "music": "solo instrument → full build; impacts on ≤ 3 key words; drop to silence before the final line",
+    "emotion_map": "defiance/recognition → struggle → rising pride → conviction (silence) → belonging (tagline)",
+    "transitions": "hard cuts on the beat, one held final image"
+  },
+  "brands": [
+    "PeachForm",
+    "Power Protein",
+    "TITAN.AI vision"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#nike",
+    "research/sources-style-library.md#gymshark"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "name": "clean-explainer",
+  "label": "Clean explainer (Ali Abdaal-style)",
+  "kind": "viral",
+  "description": "Calm curious talking head, kinetic text beside the speaker with yellow keywords, framework cards per point, paper transitions, low lo-fi bed.",
+  "structure": {
+    "name": "clean-explainer",
+    "target_s": [
+      40,
+      75
+    ],
+    "beats": [
+      "curiosity question / reframe 0-5s",
+      "promise 5-15s",
+      "3 points: card → example each",
+      "recap + soft CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.1,
+    "max_shot_s": 5.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.55,
+    "uppercase": false,
+    "highlight": "#F5C518",
+    "animation": "karaoke",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 10,
+    "scale": 1.06,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 10,
+    "max_dur_s": 3.0,
+    "mode": "pip"
+  },
+  "sfx": {
+    "density_per_10s": 0.8,
+    "map": {
+      "hook": "click",
+      "zoom": "pop",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -23
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 0.9
+  },
+  "hook_text": {
+    "max_words": 8,
+    "position_y": 0.2,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "screen recordings, book covers, simple diagrams on each named concept or number; ~65:35; mostly PiP beside the speaker, full-frame diagrams 2-4 s",
+    "fillers": "text card per framework point, push-in on the key line, paper transition between sections (every 30-60 s)",
+    "music": "one low lo-fi bed, ducked hard (-22..-24 dB), stops for emphasis lines; no beat-cutting",
+    "emotion_map": "curiosity → clarity → relatability → empowerment (music lifts slightly)",
+    "transitions": "hard cuts in sections, paper fold/tear between sections"
+  },
+  "brands": [
+    "Physio Spot",
+    "heal360",
+    "TITAN.AI",
+    "Klaus personal"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://www.choppity.com/tools/recreate-video-editing-style/ali-abdaal/",
+    "https://www.submagic.co/blog/make-captions-like-ali-abdaal"
+  ],
+  "evidence": "medium (several caption-tool breakdowns)",
+  "compliance_lock": [
+    "health: factual benefits only, no 'best/guaranteed', no patient quotes"
+  ]
+}

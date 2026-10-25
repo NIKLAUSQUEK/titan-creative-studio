@@ -33,5 +33,6 @@ Trending TikTok Commercial Music Library track (HF tiktok_music_trending - licen
 RULE: brand ads must use commercially licensed sounds. Personal-account trending sounds are added in-app at upload, never baked into a brand ad.
 
 ## Presets
+Menu of 44 ready presets (viral, pro, niche, house, UGC) with brand/funnel fit and compliance locks: `style-catalog.md`. Beat-by-beat B-roll / filler / music placement: the `story-sync` skill (Sync Map).
 A creator StyleCard (library/styles/<handle>.md) is a one-tap bundle of the above. Offer "Edit like <creator>" first, then let him override individual rows.
 For real footage, every FF row above is a parameter in the auto-editor (`tools/editor`, references/editor.md): `editor.py preset from-stylecard <creator>` turns a StyleCard into a `style-<creator>` preset, and the UGC formats (selfie talking head, unboxing, try-on/demo, reaction, POV, experience-style, day in the life, green screen) ship as presets.

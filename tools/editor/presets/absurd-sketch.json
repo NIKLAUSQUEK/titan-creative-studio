@@ -1,0 +1,85 @@
+{
+  "name": "absurd-sketch",
+  "label": "Absurd brand sketch (Liquid Death-style)",
+  "kind": "pro",
+  "description": "Straight-faced genre parody that escalates into absurdity, deadpan tag, heavy sting. Never for clinics.",
+  "structure": {
+    "name": "absurd-sketch",
+    "target_s": [
+      15,
+      45
+    ],
+    "beats": [
+      "straight set-up 0-4s",
+      "escalation",
+      "punchline (hold)",
+      "deadpan tag / loop"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.15,
+    "max_shot_s": 4.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "on_emphasis": true,
+    "scale": 1.15,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 0,
+    "max_dur_s": 1.5
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "pop",
+      "zoom": "impact",
+      "broll": "pop",
+      "title": "impact",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  },
+  "grade": {
+    "contrast": 1.18,
+    "saturation": 1.05
+  },
+  "hook_text": {
+    "max_words": 10,
+    "position_y": 0.18,
+    "dur_s": 3.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "genre-parody inserts played straight",
+    "fillers": "reaction holds, crash zoom on the absurd turn",
+    "music": "genre-pastiche score played straight, hard stop on the punchline, metal/brand sting on the tag",
+    "emotion_map": "familiarity → confusion → absurd delight → laugh",
+    "transitions": "hard cuts"
+  },
+  "brands": [
+    "Power Protein",
+    "TITAN.AI"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "research/sources-style-library.md#liquid-death"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "not for health/clinic brands"
+  ]
+}

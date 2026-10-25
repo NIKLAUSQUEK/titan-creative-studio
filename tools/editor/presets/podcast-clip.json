@@ -1,0 +1,95 @@
+{
+  "name": "podcast-clip",
+  "label": "Podcast clip (DOAC / clip-channel style)",
+  "kind": "viral",
+  "description": "Hook claim first (no welcome), speaker-fill ↔ stacked split switching, bold karaoke captions, host reaction cutaways, low tension bed, 30-90 s.",
+  "structure": {
+    "name": "podcast-clip",
+    "target_s": [
+      30,
+      90
+    ],
+    "beats": [
+      "strongest claim/question 0-3s",
+      "who/context 3-8s",
+      "argument/story with reaction cuts",
+      "punchline / resolution",
+      "loop or 'full episode' CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06,
+    "max_shot_s": 4.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.5,
+    "uppercase": true,
+    "highlight": "#39FF14",
+    "animation": "karaoke",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 7,
+    "scale": 1.15,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 20,
+    "max_dur_s": 1.5
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": "impact",
+      "zoom": "click",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 1.0,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 7,
+    "position_y": 0.12,
+    "dur_s": 3.0,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "sparse literal/archival insert on named people, places, stats; ~90:10; 1-2 s",
+    "fillers": "host reaction (split or 1 s insert) after big lines, 110-120% punch-in on emphasis, every 5-10 s",
+    "music": "low tension bed under the hook, cut on the punchline; voice ≥ 8 dB above",
+    "emotion_map": "provocation → curiosity → conviction → validation/laugh → reflection",
+    "transitions": "layout change (fill ↔ split) acts as the transition"
+  },
+  "brands": [
+    "TITAN.AI",
+    "Klaus personal",
+    "clinician interviews"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://www.bytecap.io/blog/how-to-turn-podcast-into-shorts-reels-tiktoks-2026",
+    "https://quso.ai/blog/how-to-edit-podcast-shorts-like-a-pro.html",
+    "https://www.opus.pro/de-de/blog/how-to-edit-podcast-shorts-like-a-pro-using-opus-clip-pc-mac"
+  ],
+  "evidence": "medium (tool guides agree)",
+  "compliance_lock": [
+    "keep qualifiers; cut context fairly",
+    "health: no patient-guest 'it cured me' clips, no outcome promises"
+  ]
+}

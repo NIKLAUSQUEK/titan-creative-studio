@@ -1,0 +1,98 @@
+{
+  "name": "doctor-reacts",
+  "label": "Clinician reacts to a viral claim",
+  "kind": "niche",
+  "description": "Recreated claim card or in-app stitch, freeze-frame verdict, diagram explanation, what's actually true, takeaway.",
+  "structure": {
+    "name": "doctor-reacts",
+    "target_s": [
+      30,
+      60
+    ],
+    "beats": [
+      "claim card / stitch 0-3s",
+      "freeze + reaction verdict",
+      "mechanism with diagram",
+      "what's actually true",
+      "takeaway"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.06,
+    "max_shot_s": 4.0
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.7,
+    "uppercase": true,
+    "highlight": "#FFD400",
+    "animation": "pop",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 5,
+    "scale": 1.15,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 8,
+    "max_dur_s": 5.0,
+    "mode": "pip"
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "map": {
+      "hook": "impact",
+      "zoom": "click",
+      "broll": "whoosh",
+      "title": "ding",
+      "end": "pop"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -22
+  },
+  "grade": {
+    "contrast": 1.06,
+    "saturation": 1.05,
+    "warmth": 0.03,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 5,
+    "position_y": 0.15,
+    "dur_s": 2.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "claim clip/card ~40%; anatomy/study graphics on 'here's what actually happens'",
+    "fillers": "freeze-frame + pause SFX on the claim, punch-in for the verdict, MYTH/FACT cards every 10-20 s",
+    "music": "upbeat intro → silence on the freeze/verdict → low bed under explanation → back at the outro",
+    "emotion_map": "disbelief → humour → curiosity → reassurance → trust",
+    "transitions": "freeze-frame as act break, whoosh into graphics"
+  },
+  "brands": [
+    "heal360",
+    "Physio Spot"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://www.ama-assn.org/delivering-care/patient-support-advocacy/dr-mike-using-social-media-combat-medical-misinformation",
+    "https://en.wikipedia.org/wiki/Doctor_Mike"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims",
+    "react to the claim, not the person; no likeness of real people without rights (commentary-controversy.md)"
+  ]
+}

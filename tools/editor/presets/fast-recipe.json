@@ -1,0 +1,94 @@
+{
+  "name": "fast-recipe",
+  "label": "Fast recipe ASMR (Nick DiGiovanni / Khairul Aming)",
+  "kind": "niche",
+  "description": "Hero shot + premise in 1 s, beat-cut ASMR step montage, plating, the bite in silence, verdict.",
+  "structure": {
+    "name": "fast-recipe",
+    "target_s": [
+      30,
+      45
+    ],
+    "beats": [
+      "hero shot + premise 0-1.5s",
+      "ingredients",
+      "steps montage",
+      "reveal / plating",
+      "bite in silence + verdict"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.04,
+    "max_shot_s": 1.8
+  },
+  "captions": {
+    "max_words": 3,
+    "position_y": 0.62,
+    "uppercase": true,
+    "highlight": "#FF5A36",
+    "animation": "pop",
+    "emoji": true
+  },
+  "zoom": {
+    "every_s": 3,
+    "scale": 1.1,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 1.5,
+    "max_dur_s": 1.8
+  },
+  "sfx": {
+    "density_per_10s": 3,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "pop",
+      "title": "ding",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -18
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 1.1,
+    "warmth": 0.06
+  },
+  "hook_text": {
+    "max_words": 5,
+    "position_y": 0.15,
+    "dur_s": 1.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "food macro IS the picture (~80%); talking head only at hook and taste",
+    "fillers": "snap zooms, sound-only crunch/sizzle beats, quick reaction cutaways every 2-4 s",
+    "music": "upbeat from frame 1, cut on every beat, drops out for the bite (silence + crunch), back for the verdict",
+    "emotion_map": "shock/curiosity → momentum → anticipation → payoff (bite in silence)",
+    "transitions": "hard beat cuts, whip/whoosh, match-on-action"
+  },
+  "brands": [
+    "Power Protein",
+    "PeachForm"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://www.tubefilter.com/2025/01/06/nicks-kitchen-nick-digiovanni/",
+    "https://www.bernama.com/en/general/news.php?id=2397703"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording",
+    "halal check before Ramadan tie-ins"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "myth-buster-expert",
+  "label": "Myth-buster expert (Adam Meakins / Dr Mike-style)",
+  "kind": "niche",
+  "description": "Clinician states a common myth, rejects it in 2 s, gives 1-2 evidence points and a 'do this instead' demo.",
+  "structure": {
+    "name": "myth-buster-expert",
+    "target_s": [
+      30,
+      50
+    ],
+    "beats": [
+      "myth 0-2.5s",
+      "verdict 2.5-5s",
+      "why / evidence",
+      "do-this-instead demo",
+      "soft CTA (save/follow)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08,
+    "max_shot_s": 5.0
+  },
+  "captions": {
+    "max_words": 5,
+    "position_y": 0.72,
+    "uppercase": false,
+    "highlight": "#FFD400",
+    "animation": "pop",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 6,
+    "scale": 1.12,
+    "mode": "snap"
+  },
+  "broll": {
+    "every_s": 10,
+    "max_dur_s": 4.0
+  },
+  "sfx": {
+    "density_per_10s": 1,
+    "map": {
+      "hook": "impact",
+      "zoom": "click",
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -24
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 6,
+    "position_y": 0.18,
+    "dur_s": 2.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "exercise demo or study screenshot on 'instead' / 'the evidence says'; 3-6 s; ~80:20",
+    "fillers": "punch-in on the verdict every 8-12 s, 'MYTH'/'FACT' text cards",
+    "music": "none or a flat low bed; silence lets the verdict land",
+    "emotion_map": "provocation → indignation → clarity → empowerment",
+    "transitions": "hard cuts"
+  },
+  "brands": [
+    "Physio Spot",
+    "heal360"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://www.physitrack.com/insights/top-physical-therapy-influencers-instagram",
+    "https://en.wikipedia.org/wiki/Doctor_Mike"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims",
+    "no profanity on brand accounts",
+    "never name or deride other providers"
+  ]
+}

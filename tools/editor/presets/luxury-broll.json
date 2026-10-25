@@ -1,0 +1,95 @@
+{
+  "name": "luxury-broll",
+  "label": "Luxury B-roll talking head (Iman Gadzhi-style)",
+  "kind": "viral",
+  "description": "Cinematic two-angle talking head over aspirational B-roll, accent-colour UI/graph pops, animation-dense intro (4-10 visuals/min) easing to ~2/min.",
+  "structure": {
+    "name": "luxury-broll",
+    "target_s": [
+      30,
+      90
+    ],
+    "beats": [
+      "proof/claim hook 0-3s",
+      "open loop, dense visuals 3-15s",
+      "chapters: claim → B-roll → graph card",
+      "flashback / vulnerability → lesson",
+      "CTA"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.1,
+    "max_shot_s": 3.5
+  },
+  "captions": {
+    "max_words": 3,
+    "position_y": 0.68,
+    "uppercase": false,
+    "highlight": "#C9A227",
+    "animation": "fade",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 6,
+    "scale": 1.08,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 5,
+    "max_dur_s": 2.5
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "map": {
+      "hook": "impact",
+      "zoom": "whoosh",
+      "broll": "whoosh",
+      "title": "riser",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 0.95,
+    "warmth": 0.04,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 6,
+    "position_y": 0.22,
+    "dur_s": 2.5,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "metaphor/aspirational B-roll on abstract nouns ('freedom', 'scale'), archival self-footage on story beats; ~50:50; full-frame 1.5-3 s",
+    "fillers": "reused chapter-card animation, UI/graph pops, angle switch on key phrases; every 4-8 s",
+    "music": "one moody bed per chapter, hits synced to chapter cards, B-roll montages on the beat, voice dominant",
+    "emotion_map": "aspiration → credibility → vulnerability (music thins) → resolve → desire",
+    "transitions": "cut on phrase, whoosh/blur into B-roll, light leaks"
+  },
+  "brands": [
+    "TITAN.AI",
+    "Klaus personal",
+    "Power Protein brand films (grade only)"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://sozai.app/transcript/ai-edit-iman-gadzhi-videos/index.md",
+    "https://www.opus.pro/de-de/blog/how-to-edit-instagram-reels-exactly-like-iman-ghadzi"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no income/lifestyle guarantees",
+    "not for health brands"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "name": "product-hero",
+  "label": "Product hero (Apple-style)",
+  "kind": "pro",
+  "description": "Premium reveal with no talking head: macro edge-light, kinetic claim type on the beat, silence before the hero hold, logo end card.",
+  "structure": {
+    "name": "product-hero",
+    "target_s": [
+      15,
+      30
+    ],
+    "beats": [
+      "macro tease 0-3s",
+      "claim type card 3-5s",
+      "3 feature beats (macro + type)",
+      "silence / hero hold",
+      "end card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.0,
+    "pad_s": 0.0,
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "enabled": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.0,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 1.5,
+    "max_dur_s": 2.5
+  },
+  "sfx": {
+    "density_per_10s": 2,
+    "map": {
+      "hook": "riser",
+      "zoom": "whoosh",
+      "broll": "click",
+      "title": "impact",
+      "end": "impact"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16
+  },
+  "grade": {
+    "contrast": 1.15,
+    "saturation": 0.95,
+    "vignette": true
+  },
+  "hook_text": {
+    "max_words": 4,
+    "position_y": 0.5,
+    "dur_s": 2.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16 (also 1:1, 16:9)",
+  "sync": {
+    "broll": "the product IS the picture: macro edges, materials, exploded/CG hybrid; 60-90% of the film",
+    "fillers": "kinetic type cards between macro beats; no memes",
+    "music": "beat-synced cuts on downbeats; drop to silence for the hero hold, then the sting",
+    "emotion_map": "intrigue → desire → confidence → awe (silence) → resolve (logo)",
+    "transitions": "motion-control moves, match cuts on shape"
+  },
+  "brands": [
+    "Power Protein",
+    "PeachForm merch",
+    "TITAN.AI UI"
+  ],
+  "funnel": [
+    "TOFU",
+    "launch"
+  ],
+  "references": [
+    "research/sources-style-library.md#apple"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references"
+}

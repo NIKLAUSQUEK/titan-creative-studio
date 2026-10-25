@@ -1,0 +1,100 @@
+{
+  "name": "exercise-demo",
+  "label": "Exercise demo education (Prehab Guys / Kayla Itsines)",
+  "kind": "niche",
+  "description": "The exercise is the A-roll: problem title over a moving demo, cue overlays, mistake vs correct, progression, save CTA + safety line.",
+  "structure": {
+    "name": "exercise-demo",
+    "target_s": [
+      20,
+      40
+    ],
+    "beats": [
+      "problem/target title over demo 0-2s",
+      "clean demo reps",
+      "cues + common mistake",
+      "progression / regression",
+      "save CTA + safety line"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.5,
+    "pad_s": 0.12,
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "max_words": 6,
+    "position_y": 0.2,
+    "uppercase": false,
+    "highlight": "#2EC4B6",
+    "animation": "fade",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 12,
+    "max_dur_s": 3.0,
+    "mode": "pip"
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": "pop",
+      "zoom": null,
+      "broll": "whoosh",
+      "title": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20
+  },
+  "grade": {
+    "contrast": 1.03,
+    "saturation": 1.02,
+    "warmth": -0.02
+  },
+  "hook_text": {
+    "max_words": 7,
+    "position_y": 0.16,
+    "dur_s": 2.0,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "anatomy/arrow overlay on 'this targets…' (PiP, 2-3 s); ~90:10",
+    "fillers": "cue text change every 3-5 s, red X / green check for mistake vs correct",
+    "music": "steady mid-tempo bed, cut loosely on the beat at angle/exercise changes, no drops",
+    "emotion_map": "recognition → confidence → 'aha' → motivation",
+    "transitions": "hard cuts, split-screen front/side or wrong/right"
+  },
+  "brands": [
+    "Physio Spot",
+    "heal360",
+    "PeachForm"
+  ],
+  "funnel": [
+    "MOFU"
+  ],
+  "references": [
+    "https://library.theprehabguys.com/enterprise/professional/",
+    "https://sweat.com/blogs/community/kayla-itsines-fitness-journey"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims",
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording",
+    "add 'general info - get assessed if pain persists'"
+  ]
+}

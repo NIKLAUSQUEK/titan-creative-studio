@@ -1,0 +1,95 @@
+{
+  "name": "aesthetic-lifestyle",
+  "label": "Aesthetic fitness lifestyle (Whitney Simmons-style)",
+  "kind": "niche",
+  "description": "Music-first, soft pastel grade, slow gimbal B-roll, diary VO, minimal lowercase text, sets × reps cards.",
+  "structure": {
+    "name": "aesthetic-lifestyle",
+    "target_s": [
+      20,
+      40
+    ],
+    "beats": [
+      "montage hook + VO line 0-4s",
+      "routine / lifestyle inserts",
+      "workout blocks with sets×reps cards",
+      "reflection line",
+      "outro montage"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 3.5
+  },
+  "captions": {
+    "max_words": 4,
+    "position_y": 0.5,
+    "uppercase": false,
+    "highlight": "#F4C7C3",
+    "animation": "fade",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 0,
+    "scale": 1.05,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 3,
+    "max_dur_s": 3.0
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "map": {
+      "hook": "riser",
+      "zoom": null,
+      "broll": "whoosh",
+      "title": "pop",
+      "end": null
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16
+  },
+  "grade": {
+    "contrast": 0.95,
+    "saturation": 0.92,
+    "warmth": 0.08
+  },
+  "hook_text": {
+    "max_words": 5,
+    "position_y": 0.45,
+    "dur_s": 2.5,
+    "uppercase": false,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "lifestyle/outfit/macro B-roll under VO at section openers; ~40:60 A:B",
+    "fillers": "slow-mo inserts, gentle speed ramps on reps, clean text cards",
+    "music": "music-first; track changes per section; montages on the beat; ducks to ~-24 dB under talk, up to ~-16 dB in montages",
+    "emotion_map": "calm aspiration → focus → intimacy → contentment",
+    "transitions": "soft dissolves, match cuts"
+  },
+  "brands": [
+    "PeachForm",
+    "Power Protein"
+  ],
+  "funnel": [
+    "TOFU",
+    "MOFU"
+  ],
+  "references": [
+    "https://vloggingpro.com/setups/whitney-simmons/",
+    "https://viralmango.com/blog/influencer-profile/whitneyysimmons/"
+  ],
+  "evidence": "low (no editing-specific sources)",
+  "compliance_lock": [
+    "no extreme diet/rapid weight-loss framing",
+    "no body shaming or before/after transformations",
+    "supplement claims only in label-approved wording",
+    "licensed music on brand accounts"
+  ]
+}

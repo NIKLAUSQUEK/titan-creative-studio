@@ -1,0 +1,100 @@
+{
+  "name": "moral-skit",
+  "label": "Moral-lesson skit (Dhar Mann-style)",
+  "kind": "viral",
+  "description": "Scripted archetype drama: injustice hook → escalating wrongs → reveal → consequence → moral stated to camera. Make 4-5 hook/ending variants.",
+  "structure": {
+    "name": "moral-skit",
+    "target_s": [
+      60,
+      180
+    ],
+    "beats": [
+      "injustice hook 0-5s",
+      "escalation (2-3 wrongs)",
+      "reveal / turn",
+      "consequence + apology",
+      "moral line + end card"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
+    "max_shot_s": 5.0,
+    "remove_fillers": "none"
+  },
+  "captions": {
+    "max_words": 7,
+    "position_y": 0.78,
+    "uppercase": false,
+    "highlight": "#FFFFFF",
+    "animation": "static",
+    "emoji": false
+  },
+  "zoom": {
+    "every_s": 15,
+    "scale": 1.05,
+    "mode": "smooth"
+  },
+  "broll": {
+    "every_s": 20,
+    "max_dur_s": 2.0
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "map": {
+      "hook": "riser",
+      "zoom": "whoosh",
+      "broll": "click",
+      "title": "impact",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -19
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.1,
+    "warmth": 0.03
+  },
+  "hook_text": {
+    "max_words": 8,
+    "position_y": 0.15,
+    "dur_s": 3.0,
+    "uppercase": true,
+    "enabled": true
+  },
+  "aspect": "9:16",
+  "sync": {
+    "broll": "establishing exteriors and prop inserts (letters, phones) on plot-critical lines; ~90:10",
+    "fillers": "reaction close-up after every key line, slow push-in on realisation, flashback cut",
+    "music": "score per act: sad/tense during wrongs → silence or sting at the reveal → uplifting swell at the consequence/moral",
+    "emotion_map": "indignation → rising anger → surprise (sting + silence) → catharsis (swell) → moral warmth",
+    "transitions": "hard cuts, dip-to-black / time-jump cards between acts"
+  },
+  "brands": [
+    "Physio Spot",
+    "heal360",
+    "PeachForm"
+  ],
+  "funnel": [
+    "TOFU"
+  ],
+  "references": [
+    "https://bdnews24.com/lifestyle/the-moral-philosopher-of-youtube",
+    "https://www.builtinla.com/job/head-shorts-testing/11337585",
+    "https://en.wikipedia.org/wiki/Dhar_Mann"
+  ],
+  "evidence": "est. from public sources; calibrate with measured references",
+  "compliance_lock": [
+    "no testimonials or patient results",
+    "no superlatives (best/No.1/leading)",
+    "no free-consult/discount inducements",
+    "general education only, no individual advice",
+    "no before/after outcome claims",
+    "fictional actors, 'dramatisation' tag, never posed as a patient",
+    "cruelty gets cold sound (ledger)"
+  ]
+}
