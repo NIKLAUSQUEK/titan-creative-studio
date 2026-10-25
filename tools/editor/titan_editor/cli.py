@@ -13,6 +13,7 @@
   editor.py qc      --project P [--final] [--llm claude-cli]
   editor.py run     --project P <footage...>                  ingest -> brief -> broll -> assemble -> draft -> qc
   editor.py chat    --project P                               revision loop: type a note, get a new draft
+  editor.py export  --project P [--version N] [--fps 30]      CMX3600 EDL of the cut (A-roll + B-roll on V2) for Premiere/Resolve finishing
   editor.py preset  list | show NAME | from-stylecard NAME [--file card.json]
   editor.py selftest                                          synthetic end-to-end test
 """
@@ -55,6 +56,7 @@ def main(argv=None):
     p = sp.add_parser("render"); p.add_argument("--version", default=None); p.add_argument("--final", action="store_true"); p.add_argument("--aspects"); p.add_argument("--force", action="store_true")
     p = sp.add_parser("qc"); p.add_argument("--version", default=None); p.add_argument("--final", action="store_true"); add_llm(p, "none")
     p = sp.add_parser("handoff"); p.add_argument("--version", default=None)
+    p = sp.add_parser("export"); p.add_argument("--version", default=None); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("run"); p.add_argument("footage", nargs="*"); add_llm(p)
     for k in ("goal", "platform", "aspect", "preset", "ask", "brand", "brain", "course-brain", "music", "music-licence", "aspects"):
         p.add_argument("--" + k, default=None)
@@ -115,6 +117,11 @@ def main(argv=None):
     if a.cmd == "qc":
         from .qc import cmd_qc
         return cmd_qc(a, ed)
+    if a.cmd == "export":
+        from .checks import export_edl
+        from .ingest import load_clips
+        r = recipe.load(ed, a.version)
+        return export_edl(r, {c["id"]: c for c in load_clips(ed)}, ed / f"edit_v{r['version']}.edl", a.fps)
     if a.cmd == "handoff":
         from .qc import handoff
         return handoff(ed, a.version)

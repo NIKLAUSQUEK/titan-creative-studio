@@ -8,6 +8,7 @@ from .common import REPO, claude, ffmpeg, log, parse_json, rjson, run, wjson
 from .ingest import load_clips
 from .recipe import at_of, item_starts, load
 from .render import caption_words
+from .checks import attribution_manifest, face_occlusion, repeated_runs, script_coverage, text_overlays
 
 FORBID_HEALTH = ["best", "no.1", "no. 1", "#1", "number one", "leading", "most trusted", "guarantee", "guaranteed", "cure", "cured", "cures",
                  "miracle", "free consult", "free consultation", "discount", "% off", "promo", "testimonial", "100%", "permanent fix"]
@@ -114,6 +115,19 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     hat = at_of(r, hook["anchor"], starts) if hook else None
     chk("hook lands in first 0.5 s (text overlay or spoken line)", (hat is not None and hat <= 0.3) or (first_word is not None and first_word <= 0.5),
         f"overlay '{hook['text']}' at {hat}" if hook else f"spoken hook, first word at {first_word}")
+    reps = repeated_runs(cw)
+    chk("no leaked retakes (no 6-word run spoken twice)", not reps, "; ".join(f"'{k}' at {a}s and {b}s" for k, a, b in reps[:3]))
+    script_lines = brief.get("script_lines") or []  # only an approved script is a hard spec; beat lines can be trimmed on purpose
+    if script_lines:
+        miss = script_coverage(script_lines, cw)
+        chk("every approved script/beat line is in the cut, in order", not miss, "; ".join(miss[:4]) or f"{len(script_lines)} lines found")
+    first = next((x for x in man if x["aspect"] == "9:16"), man[0])
+    fok, fdetail = face_occlusion(Path(first["path"]), first["W"], first["H"], text_overlays(r, starts, cw, total))
+    if fok is not None:
+        chk(f"[{first['aspect']}] no caption/hook text over a face", fok, fdetail)
+    unknown = attribution_manifest(r, qd / f"ATTRIBUTION_v{r['version']}.md")
+    if unknown:
+        log(f"attribution: no licence entry for {', '.join(unknown[:6])} (add rows to assets/licences.csv; own footage = original)")
     kw = (brief.get("search_keyword") or "").strip()
     if kw:
         said = keyword_spoken(kw, cw, until=3.0)
@@ -145,6 +159,9 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     verdict = "PASS" if not fails and (not review or review.get("verdict") == "PASS") else "FIX"
     L = [f"# QC v{r['version']} ({quality}) — {verdict}", "", f"Renders: " + ", ".join(f"{x['aspect']} {x['W']}x{x['H']} {x['duration']} s → `{x['path']}`" for x in man), "",
          "| check | ok | detail |", "|---|---|---|"] + [f"| {c['check']} | {'✅' if c['ok'] else '❌'} | {c['detail']} |" for c in checks]
+    attr_md = qd / ("ATTRIBUTION_v%d.md" % r["version"])
+    L += ["", "Attribution manifest (feeds /publish credits): `%s`" % attr_md + ((" — **no licence entry:** " + ", ".join(unknown[:8])) if unknown else ""),
+          "" if fok is not None else f"Face-occlusion QC {fdetail}."]
     L += ["", "**Contact sheets (look at them):**"] + [f"- `{s}`" for s in sheets]
     if review:
         L += ["", f"## Self-review: {review.get('verdict')} ({review.get('score')}/10)"] + [f"- {i}" for i in review.get("issues", [])]

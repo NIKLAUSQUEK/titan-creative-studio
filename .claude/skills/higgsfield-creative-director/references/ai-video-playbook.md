@@ -224,3 +224,64 @@ Append to every template: `{aspect}, {era/stock}, palette {hex×3-5}, light film
 | T8 | Drone establishing (5 s) | Slow forward glide + tilt-down from high over {SG location at dawn} to {target} centred; 24 mm, haze, warm first light on rooftops; realistic slow traffic; straight verticals; wind, city hum, rising pad |
 | T9 | Match-cut transition (4 s) | Start frame @frameA (circle) → end frame @frameB (matching circle); locked top-down slow push; alignment at 2 s holding exact size and position; constant speed; whoosh peaking at 2 s |
 | T10 | Kinetic-type background plate (4 s) | Background only: slow orbit around @product on a {brand hex} seamless, softbox key, rim light, empty right third; **no text, letters or logos**. Type and claims are added in post (human-set, compliance-checked) |
+
+## 10. Production tricks from reference workflows (Klaus's references, 2026-10-25)
+Source: `research/sources-reference-videos.md`. Most come from Higgsfield's own 3-step AI ad tutorial, which was filmed on Seedance 2.0. **Verify each trick once on Seedance 2.5 at 480p before treating it as a hard rule.**
+
+**Stage 1: build and test assets (images are cheap, videos aren't)**
+- **Product sheet.** Prompt: "Make a product sheet with front and 3/4 perspective views of the [product] from @image_1." One view isn't enough; the model invents the rest mid-shot.
+- **Hero sheets on a grey background.** Generate a wide batch and keep **2 candidates**, because a face that works as a still can fall apart in motion. Character sheet v2 is in `character-design.md`.
+- **Erase duplicate faces.** A sheet with two faces makes the video model drift. Use this edit: "Erase the face from the full-body shot on the right panel."
+- **Locations at a 3/4 angle.** This gives depth for camera moves. Then edit the still for staging needs: "clear the island, add a gas stove on the left counter, replace the TV with a door on the right wall, keep everything else the same."
+- **Motion-test before Gate 4 lock.** Run a 2×2 test at 480p: the same simple prompt, swapping one variable (2 heroes × 2 locations). Pick on performance, presence and fit. Props don't need motion tests.
+- **State-variant sheets.** When a character changes mid-scene (dry/wet, clean/dirty, injured/recovering), build a second locked sheet (`@hero_wet`). Don't ask the video model to change it with words, or "the face drops off". Name which variant each cut uses. In the Asset Bible this is the `variants[]` field on the card.
+- **Wardrobe.**
+  1. Ask Claude for 10 outfit prompts, render them all, and cherry-pick: "take the shirt from look 2, make it pink, keep the jeans from look 1".
+  2. **Composite-mask the result:** stack the original high-detail still over the edited version and mask in only the new clothes. Each edit softens skin toward a plastic look.
+- **Layout map (schematic).** Text can't pin a location; a map can. Use this when a location has recurring objects, direction-sensitive action or scale-critical props.
+  - Make the map: "Make a schematic of @[location]. Mark the [anchor] and lock the [object] to its [right], [N]× a person's height, on the same line."
+  - Make it a Gate 4 asset and attach it to every cut.
+  - Add a geographic anchor in the prompt ("hero stands under the tree on the left") and direction locks ("hero moves left→right; road on his left").
+
+**Stage 2: the shotlist as data (`scripts/compile_shots.py`)**
+- **`style_prefix`.** One block glued to every prompt (look, light, skin, acting, physics, composition, continuity, audio). Change it once and every prompt changes.
+- **`scene_overrides`.** Per-scene light or grade, e.g. harsh midday sun for the stadium scene only.
+- **Stable shot ids** (1a, 1b, 2a). Revisions address one prompt and everything else stays locked:
+  - "Edit prompt 1a only: …"
+  - "Change the style prefix for the whole shot list: … Apply to every prompt."
+  - Recompile one shot with `--shot 1a`.
+- **Element name = Asset Bible @HANDLE**, so pasted prompts auto-attach their references. Upload the locked assets as images; don't describe them.
+- **Shot anatomy additions:**
+  - Field of view in degrees per cut: 8° broadcast super-tele, 12° tele detail, 29° medium close, 47° front, 63° wide, 84–107° worm's-eye.
+  - Expression "held from the very first frame".
+  - "Every person moving from frame one".
+- **Focus line per shot type.**
+  - Drama: "Focus on natural facial expression and emotion."
+  - Action: "Focus on very natural, fast, unstiff movement with feature-film-level expression."
+- **Spell choreography out move by move; never write "he dances".** Example: "two crisp head nods on the beat; shoulders roll back one at a time; knee-dip step; finger snap; quarter-spin; ends on a tap of the ear cup." The compiler warns on vague verbs.
+- **Music as an input** for beat-locked movement: "Audio: @music_track — movement and energy locked to the rhythm of this track." The track must be licensed or original for brand work. Otherwise the prefix says "No music" and music is added in the edit.
+- **Match-cut contract.** "Open on a tap that matches the closing tap of 1c exactly: same hand, same motion, same pose." Cut on action across takes.
+
+**Stage 3: generate and edit for keeper seconds**
+- Batch each prompt at 480p and log the **usable second ranges per take**: spoon from take 1, flame from take 2, pour from take 3.
+  - Assemble from slices with cut-on-action.
+  - The quote must show **takes × prompts**. The reference ad used 9 generations for 3 prompts in one scene and "100 tries" overall.
+- **Extend recipe.** Attach the character sheet plus the previous clip as references with a "what happens next" continuation prompt. Trim the **first ~2 s** of each extension at the join.
+- **First/last-frame bridges.** In first/last-frame mode no character sheet attaches, so the end frame itself must carry identity (profile clearly readable).
+- **Lip-sync drift (trial).** When Seedance ad-libs lines from an MP3/WAV voiceover reference, wrap the voiceover in a black-screen MP4 and pass that as the audio reference. This is the creator's claim: A/B it once before adopting.
+- **Product-hero template.** A body-rig snorricam locked on the product (e.g. an ear cup), with the background in motion blur.
+
+**Faceless narrated explainers** (stickman, history, science; with `higgsfield-video-explainer` / `animation-3d-cartoon.md`)
+- A numbered asset manifest binds every scene to its character-sheet id (`img_005 → char1/sheet1`). Filenames in order are the edit contract.
+- When narration states a date, number, cause or definition, insert a diagram or whiteboard frame (story-sync rule).
+- Spend the motion budget on the **hook shots first**; keep the rest as stills with subtle push-ins.
+- Density default: about one visual per 3 s [RoT].
+- Before auto-assembly, the agent states its assumed order and waits for confirmation.
+
+**Rejected from the references** (they break studio rules or platform terms):
+- Farming free credits with extra Google accounts
+- A VPN to unlock region-locked voice cloning
+- Removing AI watermarks
+- Generating third-party IP (e.g. a game franchise)
+- Seeding character sheets from internet photos of real people
+- "Copyright-free internet" B-roll without a licence record

@@ -1,0 +1,23 @@
+{
+  "name": "quiz-reveal",
+  "label": "Quiz reveal (question card → countdown → answer)",
+  "kind": "viral",
+  "description": "Interview-puzzle / myth-quiz format: question card on screen, a short thinking countdown, then the reveal and the why. Built for comments ('what did you guess?') and rewatches. Health brands: questions are educational, never diagnostic.",
+  "structure": {"name": "quiz-reveal", "target_s": [15, 40], "beats": ["question card + spoken question 0-2s", "options or 'guess before the timer' 2-4s", "countdown 3-2-1 (3s)", "reveal + one-line why", "comment prompt: what did you guess?"]},
+  "pacing": {"remove_silence_over_s": 0.3, "pad_s": 0.06, "max_shot_s": 3.0},
+  "captions": {"max_words": 4, "position_y": 0.7, "uppercase": true, "highlight": "#FFD400", "animation": "pop", "emoji": false},
+  "zoom": {"every_s": 0, "on_emphasis": true, "scale": 1.12, "mode": "snap"},
+  "broll": {"every_s": 0, "max_dur_s": 2.0},
+  "sfx": {"density_per_10s": 2, "map": {"hook": "pop", "zoom": "click", "broll": "whoosh", "title": "click", "end": "ding"}},
+  "music": {"energy": "mid", "db": -20},
+  "grade": {"contrast": 1.05, "saturation": 1.05},
+  "hook_text": {"enabled": true, "max_words": 8, "position_y": 0.2, "dur_s": 4.0, "uppercase": true},
+  "aspect": "9:16",
+  "sync": {"broll": "answer illustration (diagram, demo, product) only after the reveal; ~85:15", "fillers": "ticking countdown card, freeze on the guess moment, punch-in on the reveal",
+           "music": "light bed under the question, ticking/riser through the countdown, cut to silence → ding on the reveal", "emotion_map": "curiosity → suspense (countdown) → surprise/validation → urge to comment",
+           "transitions": "hard cuts; countdown card as the bridge"},
+  "brands": ["Physio Spot (myth quiz)", "Power Protein", "PeachForm", "TITAN.AI"], "funnel": ["TOFU"],
+  "references": ["Aaghaz, 'Edit 10 Videos a Day With Claude' (2026-10-14): interview-puzzle format example"],
+  "compliance_lock": ["health: educational questions only, no self-diagnosis quizzes, no superlatives"],
+  "evidence": "format observed in a reference tutorial; values est."
+}

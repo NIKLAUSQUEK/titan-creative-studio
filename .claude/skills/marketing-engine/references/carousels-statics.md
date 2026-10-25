@@ -106,6 +106,17 @@ Put a smaller recap on the second-last slide. SG clinics: an informational CTA (
 - Alt text on at least slides 1–3.
 - LinkedIn: the post text carries the hook, and the PDF title reads like a headline.
 
+### Pre-validated teardown (before writing any carousel or post)
+Take 3–5 posts that over-performed in the niche and tear each down on three axes. **Adapt the structure to our ICP; never copy wording or visuals.**
+- **Hook:** what stops the scroll.
+- **Idea:** the core tension.
+- **Format:** the layout.
+
+Format bank to add to §3:
+- **Three-column comparison:** e.g. whey vs plant vs collagen, or ChatGPT vs Claude vs Gemini.
+- **Decision tree:** "Should I see a physio? Yes / no path", educational only.
+- **Expectation vs reality:** top/bottom split.
+
 ## 5. Visual system (1080×1350 canvas)
 **Grid**
 - Margins of 80–100 px.

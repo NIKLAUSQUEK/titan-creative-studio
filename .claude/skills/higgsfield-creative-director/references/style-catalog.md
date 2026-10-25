@@ -19,6 +19,7 @@ Every preset is a one-tap bundle for the auto-editor (`editor.py assemble --pres
 | `story-vlog` | Earnest serialized challenge diary: one-line rules, named recurring segments, running counter, a heart moment, cliffhanger to the next episode. | Klaus personal, TITAN.AI build-in-public, PeachForm/Power Protein creator challenges | TOFU, MOFU | 9:16 | no extreme diet/rapid weight-loss framing; no body shaming or before/after transformations; supplement claims only in label-approved wording; health brands: sta |
 | `storytime-text` | Original story (never scraped posts) told by VO over looping brand-owned satisfying B-roll, word-by-word captions on the seam, verdict question or Part 2 ending. | Klaus personal, PeachForm, Physio Spot (fictional parables) | TOFU | 9:16 | original scripts only (no Reddit/others' posts); label AI voice; health: fictional + educational, never first-person 'I was cured' |
 | `street-interview` | One fixed recurring question in 0-2 s, persistent top title bar with the question/take, natural ambience, answer as the payoff, host reaction. | TITAN.AI, Power Protein, PeachForm | TOFU | 9:16 | signed releases from everyone on camera; health: no patient vox pops about results |
+| `quiz-reveal` | Question card → countdown → reveal → "what did you guess?" (comments + rewatches). Health: educational questions only. | Physio Spot (myth quiz), Power Protein, PeachForm, TITAN.AI | TOFU | 9:16 | health: educational questions only, no self-diagnosis quizzes |
 
 ## Professional / cinematic / commercial
 

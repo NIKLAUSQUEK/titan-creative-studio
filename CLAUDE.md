@@ -72,7 +72,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "make it persuasive / ad copy / headline / offer / pricing" | buyer-psychology.md frameworks + checklist |
 | "carousel / static ad / infographic / thumbnail / cover" | carousels-statics.md (+ higgsfield-youtube-thumbnail for YT) |
 | "where should B-roll go / what music / sync to the beat / make it feel more <emotion> / edit feels flat" | `story-sync` skill → Sync Map → /edit recipe or Gate 3 script |
-| "show me edit styles / presets / edit like a <viral|pro|niche> style" | style-catalog.md (44 presets) → `editor.py assemble --preset <name>`; specific creator → `/style` |
+| "show me edit styles / presets / edit like a <viral|pro|niche> style" | style-catalog.md (45 presets) → `editor.py assemble --preset <name>`; specific creator → `/style` |
 | "package this for posting / captions / titles / hashtags" | `/publish` → distributor agent: per-platform package + checklist (never posts) |
 | "how did it perform / review", "what's working" | `/review` → analytics-loop.md (vidIQ + native exports) → `marketing/reviews/` → `/learn` |
 | "launch / campaign" | `marketing:campaign-plan` skill + strategist agent → production via `/ad` |

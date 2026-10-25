@@ -46,3 +46,6 @@ Trailer model: cold open → act 1 intro → act 2 escalation → act 3 climax �
 - **Ducking:** 6-12 dB reduction under voice, attack 30-80 ms, release 250-700 ms (0.5-1.5 s on continuous beds to avoid pumping). Studio mix: dialogue -14 LUFS integrated, ≤ -1 dBTP; bed 12-18 dB under voice; SFX 3-6 dB under voice peak; editor default `music.db -19` + sidechain duck.
 - **Editing music to length:** cut just before the "1" at a phrase end; phrases are 4/8 bars; loop whole/half phrases; listen for two downbeats landing together after a splice; short crossfades; use stems to drop melody under voice and keep drums.
 - **Generated music briefs:** genre + BPM + key/mode + instruments + mood arc + length + where the drop lands. Never "in the style of <artist/song>".
+
+## Music as a generation input
+For beat-locked movement (dance, montage, product rhythm), pass the chosen licensed or original track as the audio reference: "movement and energy locked to the rhythm of @music_track". The edit then cuts on those same beats. If the track isn't licensed for this brand, don't use it, not even as a reference input.

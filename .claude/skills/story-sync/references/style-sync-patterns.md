@@ -332,5 +332,14 @@ Native selfie UGC ad: emotion-first hook in 1.5 s, re-hook every 5-15 s, problem
 - **Beats:** hook (verbal + text + visual) 0-3s → problem 3-8s → product + demo → value props / proof → CTA
 - **Mix defaults:** music low @ -22 dB · SFX 1.5/10 s · zoom every 4 s
 
+## quiz-reveal — Quiz reveal (question card → countdown → answer)
+Interview-puzzle / myth-quiz format built for comments and rewatches.
+
+- **B-roll:** answer illustration only after the reveal; ~85:15
+- **Fillers:** ticking countdown card, freeze on the guess moment, punch-in on the reveal
+- **Music:** light bed under the question, ticking/riser through the countdown, cut to silence → ding on the reveal
+- **Emotion map:** curiosity → suspense → surprise/validation → urge to comment
+- **Transitions:** hard cuts; countdown card as the bridge
+
 ## Existing house presets (pre-2026-10-25)
 For talking-head-punchy, deadpan-comedy, premium-calm, genz-chaos, aura-cinematic, documentary and the ugc-* presets, use `editor.md` §3 and the structure rows in `structure-rhythm.md`.

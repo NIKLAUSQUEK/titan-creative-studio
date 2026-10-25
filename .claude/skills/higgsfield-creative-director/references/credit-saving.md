@@ -73,3 +73,12 @@ Source tags such as [HF-Blender] are explained in `research/sources-editing.md`.
 [ ] Draft settings: lowest res/quality, batch 1, shortest duration that covers the beat
 [ ] After draft QC: re-render ONLY PASS shots at 1080p highest quality; trim; then 4K upscale
 ```
+
+## 4. Additions from reference workflows (2026-10-25)
+- **Motion budget.** Animate the hook shots first; keep the rest as stills with subtle push-ins until retention data says otherwise.
+- **2×2 motion test at 480p** before Gate 4 lock: it costs about 4 cheap clips, and a face that fails in motion is caught before a final render.
+- **Keeper-seconds quote.** Iterative ads are assembled from the best seconds of several takes, so quote **prompts × expected takes** (3–4 for simple shots, 6–10 for performance or product interaction) at 480p.
+- **Free-tier animatic lane (optional, internal only).** Free consumer tiers (Google Flow/Vids, similar) can rough out an animatic for Klaus's approval before spending Higgsfield credits.
+  - Never deliver free-tier output to clients (commercial terms, watermarks, SynthID).
+  - One account per person: no credit farming.
+  - Keep AI labels intact.

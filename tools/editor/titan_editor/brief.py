@@ -21,6 +21,8 @@ STOP = set("a an the and or but so to of in on at for with is are was were be be
 SCHEMA = {
     "goal": "|".join(GOALS), "audience": "who exactly, in one line", "platform": "|".join(PLATFORMS), "aspect": "9:16|1:1|16:9|4:5",
     "extra_aspects": ["other aspects to render from the same recipe"], "target_s": "seconds (number)", "preset": "one preset name from the menu",
+    "critique": ["watch-it-all notes BEFORE cutting: what would make this footage better (weak hook, buried payoff, missing B-roll, energy dips), each with the fix"],
+    "script_lines": ["the approved script lines in order (if a script exists); QC checks each is in the cut once"],
     "search_keyword": "the phrase the audience would type in platform search (spoken in the first 3 s, on screen, caption line 1; platform-signals.md), or null",
     "trope_stance": "agree|challenge|subvert|flip|both + the trope, or null", "structure": "short|story-lesson|myth-buster|founder|long|parable|ugc-<type>",
     "hooks": [{"rank": 1, "text": "hook (<=12 words)", "formula": "contrarian|confession|cold-open|curiosity|outcome-twist|question|number|pattern-interrupt",
@@ -158,6 +160,8 @@ def render_md(b, brand):
     for h in b.get("hooks", []):
         src = f"{h.get('clip')} {h.get('t0')}-{h.get('t1')}" if h.get("source") == "footage" else h.get("source")
         L.append(f"{h.get('rank')}. \"{h.get('text')}\" — {h.get('formula')} [{src}] {h.get('why') or ''}")
+    if b.get("critique"):
+        L += ["", "## Critique before cutting"] + [f"- {c}" for c in b["critique"]]
     L += ["", "## Beats", "| # | beat | source | line | on-screen | B-roll | sfx |", "|---|---|---|---|---|---|---|"]
     for i, x in enumerate(b.get("beats", []), 1):
         L.append(f"| {i} | {x.get('beat')} | {x.get('clip')} {x.get('t0')}-{x.get('t1')} | {(x.get('line') or '')[:90]} | {x.get('on_screen_text') or ''} | {x.get('broll_query') or ''} | {x.get('sfx') or ''} |")

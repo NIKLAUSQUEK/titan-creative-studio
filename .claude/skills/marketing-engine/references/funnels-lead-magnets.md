@@ -309,3 +309,40 @@ Then `/review` → `/learn`.
   - D21 workshop
   - Score ≥70 → founder outreach within 1 hour.
 - **KPIs:** audit completions, MQL→SQL, discovery show rate, win rate, cycle days, ACV, CAC payback, pipeline coverage 3×, share of self-reported "dark social" attribution.
+
+## 8. Additions from reference videos (2026-10-25)
+- **Pre-call / pre-assessment confirmation page.** Shown after booking:
+  - who you'll meet (photo, credentials)
+  - the agenda ("first 10 min: … next 20 min: …")
+  - what to bring or wear
+  - location, parking and MRT
+  - reschedule link
+
+  Reduces no-shows (creator's rule of thumb; measure show rate). Clinic-safe: process facts only, no promises.
+- **Minimum viable nurture (floor for every magnet).**
+  - Email/WhatsApp 1, immediately: confirm what they signed up for, who you are, and what comes next.
+  - Message 2, next day: your most useful content on that topic.
+  - Everything else in §5 builds on this.
+- **Thank-you-page segmentation.** Ask 2–3 questions on *every* thank-you page, not only quizzes ("main goal?", "biggest roadblock?"). Each answer tags the lead and triggers a tailored next asset.
+  - Clinics: never diagnostic, minimal health data, PDPA consent.
+- **Lead magnets by awareness level.**
+
+  | Awareness | Magnet |
+  |---|---|
+  | Unaware | Starter pack / guide |
+  | Problem- or solution-aware | A tool (calculator, hook generator, audit) |
+  | Product-aware | Case study |
+
+  **SG clinics swap case studies for process explainers** (first-visit walkthrough, clinician credentials).
+- **Evergreen weekly webinar (AI agency, personal brand).** Every new lead is auto-invited. Segment and webinar answers route to a low, mid or high-ticket offer; not-ready leads return to the newsletter loop. Close by price: high-ticket = call; under ~S$50 = sell on the page.
+- **Setter / closer split (B2B).**
+  - The setter qualifies on WhatsApp or DM (fit, timeline, budget band) and books the call.
+  - The closer runs discovery and proposal.
+  - The creator's rule of thumb: offers above ~US$2k convert far better with a call.
+- **DM conversations.** Manual, one-to-one replies to people who commented or replied to a Story, about what they actually said. **Never automated or bulk DMs** (platform terms). Clinics: don't pitch health services off a public comment.
+- **Landing-page swipe file.**
+  1. Screenshot landing pages from ads you click.
+  2. Tear each down into its section order (title → subtitle → video → proof → FAQ…).
+  3. Rebuild with your own copy and proof.
+
+  Adapt the structure; never copy wording or visuals.

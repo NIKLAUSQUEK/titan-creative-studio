@@ -48,6 +48,9 @@ Swap/rename per brand; keep max 5.
 | Retention | keep patients/customers + referrals by word of mouth (organic, not incentivised) | newsletter, home-programme reminders, community Q&A, BTS | opens/clicks, replies, repeat bookings | reply / share with someone |
 Rule of thumb starting mix (adjust by review data): 60% awareness, 25% consideration, 10% conversion, 5% retention.
 
+### Funnel split default (rule of thumb)
+For founder-led LinkedIn and personal brands, start at about **40% reach / 40% ICP-pain depth / 20% conversion**, then tune with `/review` data. Clinic conversion posts are process and credential explainers, never case studies or testimonials.
+
 ## 5. Cadence: Hero → Hub → Help
 From Google/YouTube's "Hero, Hub, Hygiene/Help" content framework (YouTube Creator Playbook, 2014).
 - **Hero** (1/month or quarter): big piece - mini-doc, founder film, flagship ad, long podcast episode. Feeds the waterfall (repurpose-waterfall.md).

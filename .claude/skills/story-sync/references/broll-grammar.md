@@ -54,3 +54,8 @@ Too literal (picture mickey-mousing) · stock clichés · mismatched generic foo
 - Real clinic/staff/product B-roll beats generated; generated B-roll only for the impossible/expensive (ai-video: hybrid workflows).
 - Never B-roll that could read as a patient or a result (consent flags in the editor index; compliance-sg.md).
 - Editor mapping: `broll[]` anchors to the item + offset of the Sync Map word; `style.broll.every_s / max_dur_s / mode (full|pip|greenscreen)`.
+
+## Explainer insert rule (faceless and talking-head explainers)
+When the narration states a **date, number, cause, definition or step**, cut to a diagram, board or whiteboard frame that shows it. Design the board from the brand system, time it to the word, and keep it on screen long enough to read twice.
+
+To plan boards, ask of every line: "Is this understandable by listening alone, or does it need a visual layer?" If the answer is "needs a layer", that line gets a board.

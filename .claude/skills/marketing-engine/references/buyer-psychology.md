@@ -99,6 +99,14 @@ Applies to every script, caption, ad, landing page, email, WhatsApp message and 
   - Plain English matters more for SEA second-language readers.
 - **Microcopy.** Say why each field is needed. Error messages should explain how to fix it. Show total costs early: unexpected costs are Baymard's #1 abandonment reason, and drip pricing is illegal in the UK under DMCC.
 
+### Copy-angle triad (test on every landing page and ad)
+Write every offer three ways and test them against each other:
+1. **Human narrative:** a person's story.
+2. **Evidence:** data, mechanism, credentials.
+3. **Direct response:** the problem with real numbers attached, plus a clear action.
+
+SG health: the evidence angle uses guidelines and credentials, never outcomes or testimonials. (Source: orenmeetsworld, 2026-08-24; a creator heuristic.)
+
 ## 4. Offers
 - **Formula.** Core product + speed-to-value + effort reducers + risk reversal + a reason why the price is what it is + a real limit.
   - Name it: audience + outcome + timeframe + container. Example: "PeachForm Strong-Start 28: your first 4 weeks of confident lifting".

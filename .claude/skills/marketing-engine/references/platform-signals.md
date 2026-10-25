@@ -121,6 +121,19 @@ The only Eastern surface where friends' likes spread content. Overseas entities 
 **New account launch (RoT)**
 Bio = who it's for + what they'll get + one link; first 6-9 posts = one series on one pillar so the profile reads clearly; reply to every genuine comment in the first hour; Trial Reels (IG) to test hooks on non-followers without cluttering the grid.
 
+### LinkedIn profile spec (personal brands: Klaus, clinic directors, client founders)
+- **Headline:** one sentence on what you do and for whom.
+- **Clear photo.**
+- **Banner:** one CTA only (newsletter, magnet or booking).
+- **About:** conversational, written in the ICP's own words about their pains.
+- **Featured:** free resources (lead magnets).
+- **Positioning first** (ICP, unique value, differentiation; marketing-effectiveness.md), then post.
+- **Formats that repeat well:** three-column comparison, decision tree, expectation vs reality, problem→fix, story, belief challenge.
+- **Content mix:** about 40% reach / 40% ICP-pain depth / 20% conversion (case studies for B2B; clinics use process explainers instead). This is a creator heuristic, not a platform rule.
+- **No pods, engagement automation or bulk DMs** (LinkedIn User Agreement §8.2).
+
+(Source: Nader Alnajjar, 2026-09-24; income claims unverified.)
+
 ## 7. Platform tests we use instead of guessing
 - Instagram **Trial Reels**: 2 hooks on the same body, shown to non-followers; keep the winner (metrics after 24 h).
 - YouTube **Test & Compare**: 3 thumbnails (title tests where available); winner = watch-time share.

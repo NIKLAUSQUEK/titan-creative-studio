@@ -37,3 +37,6 @@ Clinic, health, luxury and B2B-trust pieces lose credibility with memes, glitche
 
 ## Editor mapping
 `style.zoom {every_s, scale, mode snap|smooth, on_emphasis}`, `texts[]` (title/lower_third cards), `audio.sfx[]` anchors, `pacing.max_shot_s`. Preset cadence per archetype: `style-sync-patterns.md`.
+
+## Transition contracts (generated footage)
+For AI shots, write the transition into both prompts. Example: "open on a tap that matches the closing tap of 1c exactly: same hand, same motion, same pose". The cut then lands as a clean match cut on action. Record the pair in the Sync Map's transition column.

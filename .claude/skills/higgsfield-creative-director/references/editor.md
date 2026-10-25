@@ -74,3 +74,20 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **SFX:** density and stim types follow the preset (see `voice-persona-audio.md` stim map).
 - **Compliance:** the QC word scan uses the brand's `compliance.forbid_words` plus the health pack list for health/clinic brands. It is a tripwire, not legal review: still run the compliance pack in `/publish`.
 - **B-roll consent:** clips flagged by path markers, `broll_flags.json` or Creator Brain sensitivity are never auto-picked.
+
+## 7. QC checks, staged passes and handoff (added 2026-10-25 from Klaus's reference videos)
+- **Critique before cutting.** The brief's `critique[]` holds "watch it all, tell me what would make it better" notes, each with its fix. It shows up in `EDIT_BRIEF.md`.
+- **Edit in staged passes, one recipe version per pass:** cut → captions → B-roll → style → graphics. Never ask for everything in one note.
+- **New `qc` checks:**
+  - **No leaked retakes.** Fails if any 6-word run is spoken twice in the cut.
+  - **Script coverage.** When `brief.script_lines` holds the approved script, every line must appear once, in order.
+  - **Face occlusion.** OpenCV face boxes are compared against the caption and hook-text boxes on the 9:16 render. Fails if text covers a face. Needs `opencv-python-headless<5` (installed by `Run-Editor.ps1`); otherwise the check is skipped and noted in the report.
+  - **Attribution manifest.** `qc/ATTRIBUTION_vN.md` lists every music, B-roll and SFX file with licence, scope, source and credit line, taken from `assets/licences.csv` (columns: path, source_url, licence, scope, attribution). Unknown licences are flagged; `/publish` copies the credit lines into the description. YouTube Audio Library or "free" stock assets need a row, with platform scope, before they go on brand accounts.
+- **Human-editor handoff.** `editor.py export [--version N]` writes `edit_vN.edl` (CMX3600: the A-roll cut plus B-roll on V2, with source file names) for finishing in Premiere or Resolve. Captions and graphics stay in the burned render.
+- **Quiz-reveal preset.** `quiz-reveal`: question card → countdown → reveal → "what did you guess?".
+- **Roadmap (not built yet; see `research/sources-reference-videos.md`):**
+  - a boards pipeline (per-line "needs a visual?" planner → HTML boards from the brand design system → word-timestamp sync → HyperFrames render → `boards` layer)
+  - human-edit diff learning (re-read the edited timeline and propose `/learn` rules)
+  - `decode-style <reference>` → preset JSON
+  - person-tagged B-roll library (cast photos → tags, action captions)
+  - an optional script-following teleprompter that logs takes (local speech recognition only, for client privacy)
