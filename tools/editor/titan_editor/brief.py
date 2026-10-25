@@ -21,6 +21,7 @@ STOP = set("a an the and or but so to of in on at for with is are was were be be
 SCHEMA = {
     "goal": "|".join(GOALS), "audience": "who exactly, in one line", "platform": "|".join(PLATFORMS), "aspect": "9:16|1:1|16:9|4:5",
     "extra_aspects": ["other aspects to render from the same recipe"], "target_s": "seconds (number)", "preset": "one preset name from the menu",
+    "search_keyword": "the phrase the audience would type in platform search (spoken in the first 3 s, on screen, caption line 1; platform-signals.md), or null",
     "trope_stance": "agree|challenge|subvert|flip|both + the trope, or null", "structure": "short|story-lesson|myth-buster|founder|long|parable|ugc-<type>",
     "hooks": [{"rank": 1, "text": "hook (<=12 words)", "formula": "contrarian|confession|cold-open|curiosity|outcome-twist|question|number|pattern-interrupt",
                "source": "footage (verbatim line) | text-overlay | new-vo", "clip": "clip id if footage", "t0": 0.0, "t1": 0.0, "why": ""}],
@@ -153,7 +154,7 @@ def render_md(b, brand):
     L = [f"# Edit brief — {brand}", "",
          f"**Goal:** {b.get('goal')}  ·  **Audience:** {b.get('audience')}  ·  **Platform/aspect:** {b.get('platform')} {b.get('aspect')} "
          f"(+ {', '.join(b.get('extra_aspects') or []) or 'none'})  ·  **Target:** {b.get('target_s')} s  ·  **Preset:** {b.get('preset')}",
-         f"**Structure:** {b.get('structure')}  ·  **Trope stance:** {b.get('trope_stance') or '—'}", "", "## Hooks (ranked)"]
+         f"**Structure:** {b.get('structure')}  ·  **Trope stance:** {b.get('trope_stance') or '—'}  ·  **Search keyword:** {b.get('search_keyword') or '—'}", "", "## Hooks (ranked)"]
     for h in b.get("hooks", []):
         src = f"{h.get('clip')} {h.get('t0')}-{h.get('t1')}" if h.get("source") == "footage" else h.get("source")
         L.append(f"{h.get('rank')}. \"{h.get('text')}\" — {h.get('formula')} [{src}] {h.get('why') or ''}")

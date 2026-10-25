@@ -41,6 +41,17 @@ def full_sheet(path, out, dur, n=16):
     return out if Path(out).exists() else None
 
 
+def keyword_spoken(kw, words, until=3.0):
+    """Start time of the first spoken occurrence of the phrase kw (all its tokens, in order) before `until`, else None."""
+    norm = lambda t: re.sub(r"[^\w]", "", t.lower())
+    toks = [norm(t) for t in kw.split() if norm(t)]
+    ws = [(norm(w["w"]), w["t0"]) for w in words if w["t0"] < until]
+    for i in range(len(ws) - len(toks) + 1):
+        if toks and all(ws[i + j][0] == toks[j] for j in range(len(toks))):
+            return round(ws[i][1], 2)
+    return None
+
+
 def compliance_scan(r, clips, brand_text):
     words = list((r["style"].get("compliance") or {}).get("forbid_words", []))
     if re.search(r"health|clinic|physio|medical", brand_text or "", re.I):
@@ -103,6 +114,10 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     hat = at_of(r, hook["anchor"], starts) if hook else None
     chk("hook lands in first 0.5 s (text overlay or spoken line)", (hat is not None and hat <= 0.3) or (first_word is not None and first_word <= 0.5),
         f"overlay '{hook['text']}' at {hat}" if hook else f"spoken hook, first word at {first_word}")
+    kw = (brief.get("search_keyword") or "").strip()
+    if kw:
+        said = keyword_spoken(kw, cw, until=3.0)
+        chk("search keyword spoken in first 3 s (speech is indexed for search)", said is not None, f"'{kw}' at {said} s" if said is not None else f"'{kw}' not heard before 3.0 s")
     sz = st.get("safe_zone", {})
     for nm, y in (("captions", st["captions"].get("position_y", 0.7)), ("hook text", st["hook_text"].get("position_y", 0.2))):
         chk(f"{nm} inside 9:16 safe zone", sz.get("top", 0.14) <= y <= 1 - sz.get("bottom", 0.2), f"y={y} (UI zones: top {sz.get('top')}, bottom {sz.get('bottom')})")
