@@ -97,3 +97,11 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu &
 python tools/editor/editor.py selftest          # needs espeak-ng for the synthetic voice
 python tools/editor/editor.py --project P run /path/to/footage --brand physio-spot --goal expert --platform tiktok
 ```
+
+## Organise your whole photo/video library (10k+ files)
+```
+.\Run-Editor.ps1 -Organize "G:\My Drive\Photos","D:\Phone backup"     # local + free; opens REVIEW.html and people_sheet.jpg
+.\Run-Editor.ps1 -NameFace 1,klaus                                     # name your face cluster once
+.\Run-Editor.ps1 -OrganizedTo "D:\Organised"                           # optional Category\Event copy/hardlink tree
+```
+The pipeline indexes everything with CLIP, reads dates (EXIF, then file names) and scores quality (sharp, exposed, resolution). It groups faces into people, sorts items into 16 categories, flags sensitive items (children, documents, patients) and splits events by time gaps. Each burst of near-duplicates gets one best pick. Add `-Llm claude-cli` to name events: one contact sheet per event. Originals are never moved. Best picks of you go to `assets/library/index.csv`, so carousels can use `"image": "lib:klaus speaking"`. Details: `.claude/commands/organize.md`.

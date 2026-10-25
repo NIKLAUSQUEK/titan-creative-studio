@@ -19,3 +19,18 @@ projects/*/autoedit/renders/
 projects/*/autoedit/qc/
 projects/*/autoedit/ingest/**/*.jpg
 projects/*/autoedit/broll_sheet.jpg
+
+# Media library: photos of people and machine-specific indexes stay on the PC (never commit faces)
+assets/models/
+assets/people/**/*.jpg
+assets/people/**/*.jpeg
+assets/people/**/*.png
+assets/people/**/*.heic
+assets/people/**/*.webp
+assets/people/**/*.mp4
+assets/people/**/*.mov
+assets/library/**/*.jpg
+assets/library/**/*.jpeg
+assets/library/**/*.png
+assets/library/**/*.webp
+assets/library/index.csv

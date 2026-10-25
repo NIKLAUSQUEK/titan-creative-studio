@@ -16,6 +16,8 @@
   editor.py export  --project P [--version N] [--fps 30]      CMX3600 EDL of the cut (A-roll + B-roll on V2) for Premiere/Resolve finishing
   editor.py boards  --project P [--mode panel|full --max N --dry-run]   plan explainer boards (numbers/dates/steps/definitions) -> new version
   editor.py cards   SPEC.json [--aspect 4:5|1:1|9:16|16:9 --brand B --look creator|editorial|brand-block --out DIR --no-pdf]   carousel PNGs + LinkedIn PDF + contact sheet
+  editor.py organize run <folders...> [--llm claude-cli]       AI-organise a whole photo/video library locally: categories, people, events, best picks, REVIEW.html
+  editor.py organize name <cluster#> <name> | apply --to DIR [--mode link|copy] | export-library [--person klaus]
   editor.py assets  scan | fetch "query" [-n 6] | find "tags" | cutout PATH   founder/brand image library, free-licensed downloads (Openverse), local background removal
   editor.py preset  list | show NAME | from-stylecard NAME [--file card.json]
   editor.py selftest                                          synthetic end-to-end test
@@ -67,6 +69,14 @@ def main(argv=None):
     p = sp.add_parser("assets"); p.add_argument("action", choices=["scan", "fetch", "find", "cutout"]); p.add_argument("query", nargs="?", default="")
     p.add_argument("--brand", default=None); p.add_argument("-n", type=int, default=6); p.add_argument("--model", default="isnet-general-use")
     p.add_argument("--allow-sa", action="store_true", help="also accept CC BY-SA (makes the slide ShareAlike)")
+    p = sp.add_parser("organize"); p.add_argument("action", choices=["run", "index", "analyse", "classify", "people", "name", "events", "report", "apply", "export-library"])
+    p.add_argument("roots", nargs="*", help="folders to organise (run/index), or <cluster#> <name> for `name`")
+    p.add_argument("--index-dir", default=str(default_index_dir())); p.add_argument("--limit", type=int, default=None); p.add_argument("--force", action="store_true")
+    p.add_argument("--llm", choices=["claude-cli", "none"], default="none", help="claude-cli: name each event from one contact sheet")
+    p.add_argument("--claude-model", default=None); p.add_argument("--max-events", type=int, default=None); p.add_argument("--out", default=None)
+    p.add_argument("--consent", default=None); p.add_argument("--to", default=None); p.add_argument("--mode", choices=["link", "copy"], default="link")
+    p.add_argument("--all", action="store_true", help="apply: include near-duplicates, not just best picks"); p.add_argument("--include-sensitive", action="store_true")
+    p.add_argument("--person", default=None); p.add_argument("--min-quality", type=float, default=0.55); p.add_argument("--categories", default=None); p.add_argument("--brand", default=None)
     p = sp.add_parser("export"); p.add_argument("--version", default=None); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("run"); p.add_argument("footage", nargs="*"); add_llm(p)
     for k in ("goal", "platform", "aspect", "preset", "ask", "brand", "brain", "course-brain", "music", "music-licence", "aspects"):
@@ -93,6 +103,9 @@ def main(argv=None):
     if a.cmd == "broll-search":
         from .broll import cmd_search
         return cmd_search(a)
+    if a.cmd == "organize":
+        from .organize import cmd_organize
+        return cmd_organize(a)
     if a.cmd == "assets":
         from .assets import cmd_assets
         return cmd_assets(a)

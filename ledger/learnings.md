@@ -1,4 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-25 - "10,000 photos and videos: can AI look and organise them?" (Klaus)
+- [library] Organise big personal libraries locally (`/organize`, Run-Editor.ps1 -Organize): categories, face groups (Klaus names himself once), events, best-of-burst, sensitive flags, REVIEW.html. Originals never moved; sensitive items (children, documents, patients) never exported or sent to Claude; other people need consent before use; only event contact sheets go to Claude, and only when asked. Best picks feed `lib:` cards, B-roll search and Creator Brain.
 ## 2026-10-25 - "make it more visual, founder-friendly with my own images" (Klaus)
 - [design] Carousels carry an image every 2-3 slides. Source order: Klaus's/brand's own photos and real screenshots (assets/people/<who>/, assets/library/<brand>/, `assets scan`, `lib:<tags>`) → free-licensed places/objects (`assets fetch`, CC0/PD/CC BY only, credits printed; never identifiable strangers) → AI concept frames (`gen:`, labelled, via normal gates). Founder covers use a real photo (`photo`) or his cutout (`cutout`); proof uses `screen` with the real dashboard; stories use `polaroid`.
 ## 2026-10-25 - "LinkedIn style lacks branding, looks too AI"; video not only Higgsfield (Klaus)
