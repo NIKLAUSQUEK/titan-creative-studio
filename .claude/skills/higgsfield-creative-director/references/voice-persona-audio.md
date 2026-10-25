@@ -60,6 +60,10 @@ Pick the route in this order:
    - Engine: Chatterbox (Resemble AI, MIT), local; GPU fast, CPU about 1-1.5 min per sentence. Outputs carry Resemble's PerTh watermark.
    - Uses: pickups and fixes for a line Klaus fluffed, VO when he can't record, translated VO in his own voice (Chatterbox multilingual, verify quality per language), and client VO within their release's scope.
    - Samples stay on the PC (`%LOCALAPPDATA%\TitanEditor\voices`). cast/registry.md lists only the name, person and consent.
+2b. **VoiceStudio** (github.com/debpalash/VoiceStudio, a free local desktop app; "the open-source ElevenLabs"): use it when Chatterbox isn't good enough, or for **dubbing a finished video into other languages** (646 languages, timed speech). Snap Saigon KR/CN/JP versions and Physio Spot Mandarin are the obvious uses.
+   - Clone or design the voice in the app (after the consent record exists here), then call it with `editor.py voice say <name> "..." --engine voicestudio --vs-voice <profile id>`. It uses the app's OpenAI-compatible local API on :3900.
+   - Licences: the app is AGPL-3.0. We only call it over its local API and never bundle or modify it. Each model (OmniVoice, VoxCPM2, CosyVoice, KittenTTS…) has its own weights licence: check the Model Manager notice before commercial or client work.
+   - It also has an MCP server for agents (docs: voicestudio.sh/docs/api-reference/mcp).
 3. **Stock neural voice**: `editor.py voice say piper "..."` (Piper, local). For scratch VO, animatics and test footage. Never espeak/SAPI in front of Klaus (ledger 2026-10-25).
 4. **Premium cloud voices** (when local quality isn't enough): ElevenLabs (claude.ai connector: `creative_list_voices` / `creative_design_voice` / `creative_generate_speech`; spends the account's credits) or Higgsfield `create_voice` / `generate_audio`. Use designed or archetype voices only (the archetypes above).
 Hard rules:

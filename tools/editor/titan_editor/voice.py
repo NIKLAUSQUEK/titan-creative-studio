@@ -9,6 +9,11 @@ editor.py voice forget <name>
 - clone (Chatterbox, Resemble AI, MIT licence): zero-shot cloning from 10-30 s of clean speech. Runs in its own venv
   (%LOCALAPPDATA%\\TitanEditor\\voice-venv; Run-Editor.ps1 -Voice installs it) because it pins its own torch.
   Outputs carry Resemble's inaudible PerTh watermark, which helps disclosure.
+- voicestudio (github.com/debpalash/VoiceStudio, AGPL-3.0 desktop app; we only call its LOCAL API, nothing is bundled): if the app is
+  running (http://localhost:3900), `voice say <name> ... --engine voicestudio` uses its OpenAI-compatible /v1/audio/speech with the
+  voice profile you created in the app (`--vs-voice <profile id>`, or the id saved at enroll). Also: 646-language dubbing, voice
+  design and demucs clean-up in the app. Model weights carry their OWN licences: check the app's Model Manager notice per engine
+  before commercial use.
 Rules (ledger 2026-10-20 voice + 2026-10-25 robotic voices):
 - Clone only Klaus, staff or clients who consent, with a consent record. Never public figures, celebrities or anyone without a release.
 - Voice samples stay on this PC (never in git); cast/registry.md lists the voice name, owner and consent only.
@@ -108,6 +113,47 @@ def cmd_enroll(name, sources, consent, who=None, strength="light"):
     return d
 
 
+VS = os.environ.get("VOICESTUDIO_URL", "http://localhost:3900")
+
+
+def voicestudio_up():
+    import urllib.request
+    try:
+        urllib.request.urlopen(VS + "/v1/audio/voices", timeout=3).read()
+        return True
+    except Exception:
+        return False
+
+
+def voicestudio_voices():
+    import urllib.request
+    return json.loads(urllib.request.urlopen(VS + "/v1/audio/voices", timeout=10).read().decode("utf-8"))
+
+
+def voicestudio_say(text, out, voice="default", model=None, speed=1.0, language=None):
+    """POST /v1/audio/speech (OpenAI-compatible). Returns the wav path."""
+    import base64, urllib.request
+    body = {"input": text[:4096], "voice": voice, "response_format": "wav", "speed": speed}
+    if model:
+        body["model"] = model
+    if language:
+        body["language"] = language
+    req = urllib.request.Request(VS + "/v1/audio/speech", data=json.dumps(body).encode(), headers={"Content-Type": "application/json"}, method="POST")
+    r = urllib.request.urlopen(req, timeout=1800)
+    data, ctype = r.read(), r.headers.get("Content-Type", "")
+    if "json" in ctype:                               # some builds return {"audio": base64} or {"url": ...}
+        j = json.loads(data.decode("utf-8"))
+        if j.get("audio"):
+            data = base64.b64decode(j["audio"])
+        elif j.get("url"):
+            u = j["url"] if j["url"].startswith("http") else VS + j["url"]
+            data = urllib.request.urlopen(u, timeout=600).read()
+        else:
+            raise SystemExit(f"VoiceStudio returned no audio: {str(j)[:200]}")
+    Path(out).write_bytes(data)
+    return Path(out)
+
+
 def chunks(text, max_chars=260):
     sents = re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", text.strip()))
     out, cur = [], ""
@@ -119,10 +165,21 @@ def chunks(text, max_chars=260):
     return out + ([cur] if cur else [])
 
 
-def cmd_say(name, text, out, exaggeration=0.5, cfg=0.5, gap=0.22):
+def cmd_say(name, text, out, exaggeration=0.5, cfg=0.5, gap=0.22, engine="auto", vs_voice=None, language=None):
     text = Path(text).read_text(encoding="utf-8") if Path(text).exists() else text
     out = Path(out)
-    if name.startswith("piper"):
+    d = VOICES / re.sub(r"[^a-z0-9_-]+", "-", name.lower())
+    meta = rjson(d / "voice.json") or {}
+    vs_voice = vs_voice or meta.get("voicestudio_profile")
+    if engine == "voicestudio" or (engine == "auto" and vs_voice and voicestudio_up()):
+        if not voicestudio_up():
+            raise SystemExit(f"VoiceStudio isn't running at {VS}: open the app (voicestudio.sh) first")
+        if name != "piper" and not meta:
+            raise SystemExit(f"no consent record for '{name}': enroll it here first (editor.py voice enroll ... --consent ...), even if the clone lives in VoiceStudio")
+        parts = []
+        for i, c in enumerate(chunks(text, 3500)):
+            parts.append(voicestudio_say(c, out.with_name(f"_{out.stem}_{i}.wav"), vs_voice or "default", language=language))
+    elif name.startswith("piper"):
         from .selftest import tts
         parts = []
         for i, c in enumerate(chunks(text)):
@@ -131,8 +188,6 @@ def cmd_say(name, text, out, exaggeration=0.5, cfg=0.5, gap=0.22):
                 raise SystemExit("piper not available: pip install piper-tts")
             parts.append(p)
     else:
-        d = VOICES / re.sub(r"[^a-z0-9_-]+", "-", name.lower())
-        meta = rjson(d / "voice.json")
         if not meta or not (d / "ref.wav").exists():
             raise SystemExit(f"no enrolled voice '{name}'. editor.py voice enroll {name} <samples> --consent self|release:<file>")
         py = voice_python()
@@ -156,7 +211,7 @@ def cmd_say(name, text, out, exaggeration=0.5, cfg=0.5, gap=0.22):
     ffmpeg(["-f", "concat", "-safe", "0", "-i", lst.name, "-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-ar", "48000", out.name], cwd=out.parent)
     for p in parts + norm + [gapf, lst]:
         Path(p).unlink(missing_ok=True)
-    wjson(out.with_suffix(".voice.json"), {"voice": name, "ai_generated": True, "label": "AI voice", "created": now(), "chars": len(text)})
+    wjson(out.with_suffix(".voice.json"), {"voice": name, "engine": engine if engine != "auto" else ("voicestudio" if vs_voice else "chatterbox/piper"), "ai_generated": True, "label": "AI voice", "created": now(), "chars": len(text)})
     log(f"voice -> {out} (AI-generated: label it where required)")
     return out
 
@@ -167,12 +222,24 @@ def cmd_voice(a):
         for d in sorted(VOICES.glob("*/voice.json")):
             m = rjson(d)
             print(f"{m['name']:16s} {m.get('who') or '?':16s} consent={m['consent']}  ref={m['ref_seconds']} s  enrolled {m['enrolled'][:10]}")
-        print("clone engine:", "ready" if voice_python() else "not installed (Run-Editor.ps1 -Voice)")
+        print("clone engine (chatterbox):", "ready" if voice_python() else "not installed (Run-Editor.ps1 -Voice)")
+        if voicestudio_up():
+            print("VoiceStudio app: running at", VS)
+            try:
+                for v in (voicestudio_voices().get("voices") or voicestudio_voices().get("data") or [])[:30]:
+                    print("   vs:", v.get("id") or v.get("voice_id"), v.get("name") or "")
+            except Exception as e:
+                print("   (couldn't list VoiceStudio voices:", str(e)[:80], ")")
+        else:
+            print("VoiceStudio app: not running (optional: voicestudio.sh)")
         return 0
     if a.action == "enroll":
-        cmd_enroll(a.name, a.inputs, a.consent, a.who); return 0
+        d = cmd_enroll(a.name, a.inputs, a.consent, a.who)
+        if a.vs_voice:
+            m = rjson(d / "voice.json"); m["voicestudio_profile"] = a.vs_voice; wjson(d / "voice.json", m)
+        return 0
     if a.action == "say":
-        cmd_say(a.name, " ".join(a.inputs), a.out or "vo.wav", a.exaggeration, a.cfg); return 0
+        cmd_say(a.name, " ".join(a.inputs), a.out or "vo.wav", a.exaggeration, a.cfg, engine=a.engine, vs_voice=a.vs_voice, language=a.language); return 0
     if a.action == "forget":
         d = VOICES / re.sub(r"[^a-z0-9_-]+", "-", a.name.lower())
         shutil.rmtree(d, ignore_errors=True)

@@ -67,6 +67,7 @@ param(
   [string] $Consent = "",                    # "self" for your own voice, or "release:C:\path\signed-release.pdf" for a client
   [string] $Say = "",                        # text or a .txt script to speak with -VoiceName
   [string] $VoiceName = "piper",             # an enrolled clone name, or "piper" (stock neural voice)
+  [string] $VsVoice = "",                    # VoiceStudio voice profile id (when the VoiceStudio app is open)
   [switch] $Motion,                          # one-time setup for code-motion cards (Node.js + Playwright Chromium in tools\motion)
   [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
   [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)
@@ -147,7 +148,8 @@ try {
   if ($VoiceEnroll) { Ed (@("voice", "enroll", $VoiceEnroll) + $VoiceSamples + @("--consent", $Consent)); return }
   if ($Say) {
     $o = Join-Path (Get-Location) ("vo-" + (Get-Date -Format "HHmmss") + ".wav")
-    Ed @("voice", "say", $VoiceName, $Say, "--out", $o); Write-Host "`n-> $o" -ForegroundColor Green; return
+    $va = @("voice", "say", $VoiceName, $Say, "--out", $o); if ($VsVoice) { $va += @("--engine", "voicestudio", "--vs-voice", $VsVoice) }
+    Ed $va; Write-Host "`n-> $o" -ForegroundColor Green; return
   }
   if ($Motion) {
     if (-not (Have node)) { winget install -e --id OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements; Refresh-Path }

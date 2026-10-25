@@ -69,6 +69,7 @@ The story stays intact: the hook stays first, the CTA stays last, the key turn o
 ```
 - Give it 15-30 s or more of you talking naturally in a quiet room (any phone clip works). It cleans and picks the best stretch itself.
 - A client's voice needs their signed release: `-Consent "release:D:\Releases\client.pdf"`.
+- **VoiceStudio** (free desktop app, voicestudio.sh): install and open it, clone or design the voice there, then add `-VsVoice <profile id>` to `-Say` (see `editor.py voice list` for ids). It also dubs whole videos into 646 languages from inside the app.
 - Voice samples stay on your PC, never in git. Generated audio is AI: label it where platforms require it.
 
 ## Styles, fonts and animated cards

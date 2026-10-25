@@ -82,6 +82,7 @@ def main(argv=None):
     p = sp.add_parser("voice"); p.add_argument("action", choices=["list", "enroll", "say", "forget"]); p.add_argument("name", nargs="?", default="piper")
     p.add_argument("inputs", nargs="*"); p.add_argument("--consent"); p.add_argument("--who"); p.add_argument("--out")
     p.add_argument("--exaggeration", type=float, default=0.5); p.add_argument("--cfg", type=float, default=0.5)
+    p.add_argument("--engine", choices=["auto", "chatterbox", "voicestudio", "piper"], default="auto"); p.add_argument("--vs-voice"); p.add_argument("--language")
     p = sp.add_parser("motion"); p.add_argument("template", nargs="?"); p.add_argument("--data"); p.add_argument("--out"); p.add_argument("--list", action="store_true")
     p.add_argument("--w", type=int, default=1080); p.add_argument("--h", type=int, default=1920); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("study"); p.add_argument("refs", nargs="+"); p.add_argument("--name", required=True); add_llm(p, "none")
