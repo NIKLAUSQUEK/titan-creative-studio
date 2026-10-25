@@ -1,0 +1,17 @@
+{
+  "name": "edu-song",
+  "label": "Edu-song / do-along / mnemonic (kids-TV grammar)",
+  "kind": "style",
+  "description": "Song-led teaching: a 2-4 s spoken hook, then the song carries the lesson. Bouncy karaoke captions (2 words, sung word highlighted), one visual per line, on-beat cuts, a big centred label per step, bright clean grade, a recap chorus before the CTA. Music = the song mix (original vocal over a public-domain or original melody), not ducked. See edu-songs-mnemonics.md.",
+  "reference": ".claude/skills/higgsfield-creative-director/references/edu-songs-mnemonics.md",
+  "beat_sync": true,
+  "pacing": {"remove_silence_over_s": 0.6, "pad_s": 0.1, "remove_fillers": "soft", "max_shot_s": 3.0},
+  "captions": {"enabled": true, "size": 0.05, "max_words": 2, "animation": "karaoke", "uppercase": true, "highlight": "#FFD23F", "outline": 6, "position_y": 0.66, "emoji": true},
+  "hook_text": {"enabled": true, "renderer": "card", "card_style": "box", "dur_s": 3.0, "position_y": 0.2, "size": 0.038, "uppercase": false, "max_words": 12},
+  "zoom": {"mode": "snap", "every_s": 2.0, "scale": 1.06, "on_hook": 1.1},
+  "broll": {"every_s": 2.5, "max_dur_s": 2.0, "min_dur_s": 1.0, "mode": "pip"},
+  "sfx": {"density_per_10s": 1.2, "db": -14, "map": {"hook": "ding", "zoom": "pop", "broll": "pop", "title": "pop", "end": "ding"}},
+  "music": {"energy": "high", "db": -6, "duck": false},
+  "grade": {"contrast": 1.06, "saturation": 1.18, "brightness": 0.02, "warmth": 0.04},
+  "end_card": {"enabled": true, "dur_s": 2.0}
+}

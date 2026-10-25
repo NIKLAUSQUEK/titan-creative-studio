@@ -179,7 +179,11 @@ def ass_escape(t):
 def caption_words(r, clips):
     starts, _ = item_starts(r)
     rep = {k.lower(): v for k, v in (r["captions"].get("replace") or {}).items()}
-    hide = r["captions"].get("hide") or []
+    hide = list(r["captions"].get("hide") or [])
+    for c in r.get("chats", []):                  # the chat card is the text; no subtitles on top (ref: MUSK doc reel)
+        a = at_of(r, c["anchor"], starts)
+        if a is not None and c.get("captions", "hide") == "hide":
+            hide.append((a, a + float(c.get("dur") or 6)))
     out = []
     for it in r["items"]:
         sp = it.get("speed", 1)
@@ -376,6 +380,22 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
             else:
                 fc.append(f"[{last}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             last, n = f"o{n}", n + 1
+        pops = []                                   # texting scenes: full-frame cutaway, a soft pop per message
+        for c in r.get("chats", []):
+            a = at_of(r, c["anchor"], starts)
+            if a is None or a >= body:
+                continue
+            key = h({"c": c, "W": W, "H": H, "v": 1})
+            f = cache / f"chat_{key}.mp4"
+            if not f.exists():
+                from .chatanim import render_chat
+                render_chat(c, W, H, FPS, f)
+            d = min(float(c.get("dur") or 0) or 99, body - a)
+            inputs += ["-i", f.name]
+            fc.append(f"[{n}:v]setpts=PTS-STARTPTS+{a:.3f}/TB[b{n}];[{last}][b{n}]overlay=0:0:eof_action=pass:enable='between(t,{a:.3f},{a + d:.3f})'[o{n}]")
+            last, n = f"o{n}", n + 1
+            if c.get("sfx", "pop"):
+                pops += [(a + float(m["at"]), c.get("sfx", "pop")) for m in c["messages"] if float(m["at"]) < d]
         from .textcard import card, needs_card
         st_ = r["style"]
         for t in r.get("texts", []):
@@ -433,6 +453,11 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
             inputs += ["-i", str(sfx_file(s.get("type", "whoosh"), cache).resolve())]
             ms = int(a * 1000)
             mix.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,volume={s.get('db', -12)}dB,adelay={ms}|{ms}[s{n}]"); mix_in.append(f"[s{n}]")
+            n += 1
+        for t_, kind in pops:
+            inputs += ["-i", str(sfx_file(kind, cache).resolve())]
+            ms = int(t_ * 1000)
+            mix.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=stereo,volume=-14dB,adelay={ms}|{ms}[s{n}]"); mix_in.append(f"[s{n}]")
             n += 1
         lufs = r["audio"].get("loudness", -14)
         mix.append("".join(mix_in) + (f"amix=inputs={len(mix_in)}:normalize=0:duration=first," if len(mix_in) > 1 else "anull,") +

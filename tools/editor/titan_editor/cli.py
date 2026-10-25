@@ -75,6 +75,8 @@ def main(argv=None):
     p = sp.add_parser("chat"); add_llm(p)
     p = sp.add_parser("preset"); p.add_argument("action", choices=["list", "show", "from-stylecard"]); p.add_argument("name", nargs="?")
     p.add_argument("--file"); p.add_argument("--base", default="talking-head-punchy")
+    p = sp.add_parser("song"); p.add_argument("--tune"); p.add_argument("--lyrics"); p.add_argument("--rap", action="store_true"); p.add_argument("--beat", action="store_true")
+    p.add_argument("--bpm", type=float); p.add_argument("--shift", type=int, default=0); p.add_argument("--out"); p.add_argument("--list", action="store_true")
     p = sp.add_parser("selftest"); p.add_argument("--keep", action="store_true"); p.add_argument("--whisper-model", default="tiny"); p.add_argument("--no-clip", action="store_true")
     a = ap.parse_args(argv)
     if getattr(a, "whisper_model", None) == "auto":
@@ -94,6 +96,9 @@ def main(argv=None):
     if a.cmd == "people":
         from .faces import cmd_people
         return cmd_people(a)
+    if a.cmd == "song" and (a.list or a.out):
+        from .melody import cmd_song
+        return cmd_song(a, None)
     if a.cmd == "selftest":
         from .selftest import selftest
         return selftest(a)
@@ -104,6 +109,9 @@ def main(argv=None):
     if a.cmd == "brief":
         from .brief import cmd_brief
         return cmd_brief(a, ed)
+    if a.cmd == "song":
+        from .melody import cmd_song
+        return cmd_song(a, ed)
     if a.cmd == "web-images":
         from .webimg import cmd_web
         return cmd_web(a, ed)

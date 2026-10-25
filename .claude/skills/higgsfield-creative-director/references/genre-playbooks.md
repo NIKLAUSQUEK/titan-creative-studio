@@ -38,6 +38,8 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 26 | Before / after transformation | change over time | proof | 1-2 s | snap switch | matched grades | whoosh on switch | ugc-try-on-demo |
 | 27 | ASMR / satisfying | process, pouring, unboxing, cleaning | calm, satisfaction | 2-4 s | rhythmic | clean, macro | close foley, no music | asmr-satisfying |
 | 28 | Event / retail / mall promo | openings, pop-ups, launches | FOMO, fun | 0.8-2 s | energetic, on beat | bright, saturated | upbeat licensed track | trend-beat-switch / action-hype |
+| 29 | Edu-song / mnemonic / musical explainer | teaching steps, routines, checklists, myths ("boring" health or how-to) | delight, "I can't unhear it" | 1-3 s, on the beat | spoken hook → song → recap chorus → CTA | bright, clean, saturated | the song IS the music (original or public-domain melody) + pops | edu-song |
+| 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
 
 **Pairing rules:**
 - Comedy can borrow any genre's grammar for a parody (horror parody, heist parody); hold the genre seriously until the reveal.
@@ -406,3 +408,35 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 - **Pacing:** a crowd or energy hook → 6-10 beat-cut highlights → the what, where and when card → CTA.
 - **Shot grammar:** gimbal walk-through, top-down crowd shots, product hero inserts, faces only with consent or as an unidentifiable crowd.
 - **Preset:** trend-beat-switch or action-hype.
+
+### 29. Edu-song / mnemonic / musical explainer (`edu-song`) [draft]
+Full guide: edu-songs-mnemonics.md (formats, kids-TV levers, copyright). Tool: `editor.py song`.
+- **Pacing map (30-45 s do-along):**
+  - 0-3 s: a spoken or on-screen hook that frames the gag ("Your pelvic floor routine, but it's a nursery rhyme");
+  - 3-5 s: count-in;
+  - 5-35 s: the song, one step per line, a cut or visual change on every line, with the exercise done on camera in real time;
+  - 35-42 s: the recap chorus, double speed or with all the moves in a row;
+  - last 3 s: the CTA (save this / follow for part 2).
+- **Shot grammar:** locked frontal medium (the host mirrors the viewer), big hand gestures, one prop or diagram per line, a cartoon mascot insert for the "dumb question" (animation-3d-cartoon.md), and karaoke words on screen.
+- **Look:** bright, high-key, saturated brand colours, clean background; kids-TV clarity, not kids-TV cheapness.
+- **genre_key:** `bright high-key studio, clean solid-colour backdrop, cheerful saturated palette, playful educational children's-show staging, crisp friendly lighting`
+- **Shot:** `{"camera":"locked frontal medium, eye level","action":"start: host counts on fingers -> end: host freezes in the stretch, grinning","light":"soft high-key, no shadows"}`
+- **Sound:** the vocal plus an original or public-domain backing, a pop or ding per step, a riser into the recap. No pop-song melodies on brand accounts.
+- **Compliance:** every lyric is a clinical claim; run the compliance pack line by line. No promised outcomes in SG health.
+- **Preset:** edu-song.
+
+### 30. Texting / receipts suspense (`texting-suspense`) [measured: ref #7]
+- **Pacing map (60-90 s):**
+  - 0-3 s: the most shocking text, shown alone and large, cold;
+  - 3-20 s: the interviewee or founder sets the stakes;
+  - each "they said / they texted" moment cuts to a full-black chat card, 4-7 s, with bubbles one by one and a typing dot before each reply;
+  - the turn: the punch message alone and large, then a beat of silence;
+  - the aftermath on the speaker's face, then the CTA or "watch the full story".
+- **Shot grammar:** a locked interview mid-shot with a warm practical light; archival or B-roll inserts; the chat cards are full-frame graphics (`chats[]`), never a filmed phone (unless it's a real phone in the scene).
+- **Look:** the warm interior vs pure-black cards; a small persistent title top-left; slightly desaturated.
+- **genre_key:** `intimate documentary interview, warm practical lamp light, shallow depth of field, muted desaturated palette, still locked camera, tense quiet atmosphere`
+- **Shot:** `{"camera":"locked 50mm interview mid-shot, slightly off-axis","action":"start: subject looks down at phone -> end: looks up to lens, says nothing","light":"single warm practical, deep falloff"}`
+- **Sound:** a low drone or pulse bed, a hit every 1-3 s, a soft tick on each bubble, and silence on the punch line.
+- **Compliance:** real messages need consent from both parties; recreations are labelled "dramatised" when they could be mistaken for real; health brands never show patient chats.
+- **Preset:** texting-suspense (brief beats carry `chat`; renders via tools/editor chatanim.py).
+

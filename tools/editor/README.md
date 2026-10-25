@@ -60,6 +60,16 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
+## Texting scenes and songs
+- **Texting scene:** when someone retells a text or DM, the brief can give that beat a `chat` (messages, who sent each, timing). The edit cuts to a black iMessage-style card: bubbles pop in one by one, "•••" shows before replies, and the key line appears alone and large. Captions hide while it's up. Preset `texting-suspense`.
+- **Songs / raps / jingles** (zero tokens):
+```powershell
+& "$env:LOCALAPPDATA\TitanEditor\venv\Scripts\python.exe" editor.py song --list                                   # public-domain tunes + syllables per line
+& "$env:LOCALAPPDATA\TitanEditor\venv\Scripts\python.exe" editor.py --project pf-song song --tune twinkle --lyrics lyrics.txt
+& "$env:LOCALAPPDATA\TitanEditor\venv\Scripts\python.exe" editor.py --project posture-rap song --rap --bpm 92 --lyrics rap.txt
+```
+  It writes `autoedit\song\LYRICS.md` (which lines don't fit the melody), `guide.wav` (count-in + melody or beat to sing over) and `lyrics.srt` (karaoke timings). Record over the guide, then assemble with `--preset edu-song --music mix.wav --music-licence original`. Rules and copyright: `.claude/skills/higgsfield-creative-director/references/edu-songs-mnemonics.md`.
+
 ## B-roll of you + licensed photos
 ```powershell
 .\Run-Editor.ps1 -EnrollMe "D:\Photos\me" -EnrollName klaus      # 5-20 clear photos of just you; local face recognition

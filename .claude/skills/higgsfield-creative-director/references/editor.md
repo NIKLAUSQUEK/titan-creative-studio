@@ -27,6 +27,8 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - `broll[]`: `{path, src_in, dur, anchor:{item, offset}, mode: full|pip|greenscreen, flag}`. Anchors follow trims.
 - `texts[]`: `{type: hook|title|lower_third, text, anchor, dur}`.
   - Hook text = what the viewer reads in the first second. Don't duplicate a spoken hook that is already captioned.
+- `chats[]`: `{anchor, dur, style: dark|light, size, sfx: pop, captions: hide, messages:[{side: me|them, name, text, at, typing, punch}]}`.
+  - A texting cutaway: bubbles pop in one by one, a "•••" typing bubble shows for `typing` s before a reply, the stack scrolls, and `punch` shows one line alone and large. Captions are hidden while it's up. A brief beat's `chat` field creates one (ref research/edit-references-2026-10.md #7).
 - `captions`: words come from ingest automatically.
   - Fix them with `replace` ({"heal": "heal360"}), force keywords with `emphasis`, and blank ranges with `hide` ([[t0, t1]] output time).
 - `audio`: `music {path, licence, db, duck}` + `sfx[] {type: whoosh|impact|pop|ding|riser|click, anchor, db}` + `loudness` (-14).
@@ -50,6 +52,8 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | trend-beat-switch | 'My name is… but they call me…' intro in white rounded boxes, then clips switch ON the beat with one label word each; needs a music file (beat-synced) |
 | horror-tension | cold teal grade, crushed blacks, long holds, slow push, flicker on beat changes, drone bed + stings |
 | genre presets (drama-conflict, feelgood-emotional, founder-inspire, cautionary-ladder, thriller-suspense, mystery-reveal, action-hype, scifi-tech, kdrama-soft, anime-energy, news-expose, luxury-reveal, asmr-satisfying) | one per genre module in genre-playbooks.md §0; the brief picks the genre and its preset |
+| texting-suspense | interview/talking-head spine + full-black iMessage cutaways (`chats[]`) when someone quotes a text; persistent small title, drone bed + hits (ref #7) |
+| edu-song | song-led teaching: spoken hook, then the song; bouncy karaoke captions, on-beat cuts, recap chorus; pair with `editor.py song` (edu-songs-mnemonics.md) |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 
 - **Precedence:** ledger > brand file (the `edit-brand` block) > Klaus's script/brief > preset > defaults. The brand block wins on fonts, caption/hook placement, colours and the end card.
@@ -127,6 +131,15 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Labels:** beat `label` puts one word on that beat's clip.
 - **Beat sync:** `beat_sync` presets snap B-roll, labels and SFX to the music's onsets (detected locally).
 - **Precedence:** the brand's `edit-brand` hook placement still wins over the preset (e.g. Physio Spot hook at 61.5%).
+
+## 7c. Songs, raps and jingles (`editor.py song`)
+- `editor.py song --list` shows the public-domain tunes and their syllables per line.
+- `editor.py song --tune twinkle --lyrics lyrics.txt` (or `--rap --bpm 92`, or `--beat` to add drums under a tune) writes `autoedit/song/`:
+  - `LYRICS.md`: a syllable-fit table, with rhyme and flow checks in rap mode;
+  - `guide.wav`: a one-bar count-in plus the synthesised melody or beat (original audio);
+  - `lyrics.srt` / `lyrics.json`: line and word timings for karaoke captions.
+- Zero tokens. Fix every non-ok line, record over the guide, then `assemble --preset edu-song --music mix.wav --music-licence original`.
+- The rules (formats, kids-TV levers, copyright) are in edu-songs-mnemonics.md.
 
 ## 8. Model routing (token saving)
 - `tools/editor/models.json` sets the Claude model per step: brief = sonnet, B-roll pick = haiku, free-text revision = sonnet, self-review = haiku. `--claude-model` overrides all of them.

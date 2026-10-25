@@ -27,6 +27,7 @@ SCHEMA = {
     "beats": [{"beat": "hook|context|turn|lesson|proof|cta|...", "purpose": "", "clip": "clip id", "t0": 0.0, "t1": 0.0,
                "line": "verbatim kept line(s) from the summary", "on_screen_text": "or null", "broll_query": "short visual description or null", "sfx": "or null",
                "label": "optional one-word on-screen label for montage beats (e.g. a name), else null",
+               "chat": "optional, only when someone quotes a text or DM: {\"messages\": [{\"side\": \"them|me\", \"name\": \"...\", \"text\": \"...\", \"at\": 0.0, \"typing\": 0.6, \"punch\": false}], \"dur\": 5} -> a texting cutaway; else omit",
                "role": "hook|context|body|example|proof|turn|lesson|payoff|cta (the expander only reorders/drops context/body/example/proof)", "fixed": "true if this beat must not move",
                "visual": {"type": "none|own_broll|me (the speaker in other footage)|person (an enrolled person)|web_image (licensed photo of a named thing/place/person)|text_card",
                           "query": "literal visual (3-8 concrete words)", "metaphor": "a visual metaphor for the idea, or null", "person": "enrolled name or null",

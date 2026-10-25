@@ -167,6 +167,24 @@ def selftest(a):
     vmd = (E / "variants" / "v3" / "VARIANTS.md").read_text(encoding="utf-8")
     ok("expand: every reel has its own opening (distinctness check)", "- ok: every reel has its own opening" in vmd)
     ok("expand: CTA stays last in every reel", all(v["beats"][-1] == reels[0]["beats"][-1] for v in reels if v["duration"] != "micro" or len(v["beats"]) > 2))
+    import copy
+    from .render import render
+    rc = copy.deepcopy(v3)
+    rc["chats"] = [{"id": "chat1", "anchor": {"item": rc["items"][0]["id"], "offset": 0.5}, "dur": 2.5,
+                    "messages": [{"side": "me", "name": "Ashley", "text": "Did you do the exercises? 👀", "at": 0.0},
+                                 {"side": "them", "text": "...define exercises", "at": 1.2, "typing": 0.5}]}]
+    _, cres = render(E, quality="draft", aspects=["9:16"], recipe=rc, out_dir=E / "renders" / "chat", name="chat")
+    fr = E / "renders" / "chat" / "chat_frame.png"
+    ffmpeg(["-ss", "2.4", "-i", cres[0]["path"], "-frames:v", "1", fr])
+    from PIL import Image
+    px_ = list(Image.open(fr).convert("RGB").getdata())
+    blue = sum(1 for p_ in px_ if p_[2] > 180 and p_[0] < 90)
+    dark = sum(1 for p_ in px_ if max(p_) < 30) / len(px_)
+    ok("texting scene: chat cutaway with bubbles renders", blue > 200 and dark > 0.5, f"blue px {blue}, dark {dark:.0%}")
+    from .melody import make_song
+    rows, tim = make_song("Squeeze and lift and hold for three\nNow relax and let it be", E / "song", "twinkle")
+    ok("song: syllable fit + guide track + karaoke timings", all(r["status"] == "ok" for r in rows) and (E / "song" / "guide.wav").exists()
+       and probe(E / "song" / "guide.wav").get("duration", 0) > 8 and tim[1]["start"] > tim[0]["start"], f"{[r['syllables'] for r in rows]}")
     from .textcard import card
     im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
     colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()

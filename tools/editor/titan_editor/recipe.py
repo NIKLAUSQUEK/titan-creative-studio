@@ -154,7 +154,7 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
     master = brief.get("aspect") or "9:16"
     outs = [master] + [x for x in (aspects or brief.get("extra_aspects") or []) if x != master]
     r = {"project": edit_dir.parent.name, "brand": brand, "preset": preset, "outputs": [{"aspect": a} for a in outs], "style": style,
-         "beats": beats, "items": items, "broll": [], "texts": [], "captions": {"enabled": style["captions"].get("enabled", True), "replace": {}, "emphasis": [], "hide": []},
+         "beats": beats, "items": items, "broll": [], "texts": [], "chats": [], "captions": {"enabled": style["captions"].get("enabled", True), "replace": {}, "emphasis": [], "hide": []},
          "audio": {"music": {"path": music, "licence": music_licence, "db": style["music"].get("db", -19), "duck": style["music"].get("duck", True)},
                    "sfx": [], "loudness": -14},
          "end_card": {"enabled": style.get("end_card", {}).get("enabled", True), "dur": style.get("end_card", {}).get("dur_s", 2.0),
@@ -179,6 +179,12 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
             if first:
                 r["texts"].append({"type": "label", "text": b["label"], "style": "label", "anchor": {"item": first["id"], "offset": 0.0},
                                    "dur": round(sum(it["out"] - it["in"] for it in items if it["beat"] == bi), 2)})
+    for bi, b in enumerate(brief.get("beats", [])):
+        ch = b.get("chat")                       # "what someone said" beat -> texting cutaway (chatanim.py)
+        first = next((it for it in items if it["beat"] == bi), None)
+        if ch and ch.get("messages") and first:
+            r["chats"].append({"id": f"chat{len(r['chats']) + 1}", "anchor": {"item": first["id"], "offset": float(ch.get("offset", 0.3))},
+                               "style": ch.get("style", "dark"), "dur": ch.get("dur"), "messages": ch["messages"]})
     for b in brief.get("beats", [])[1:]:
         if b.get("on_screen_text"):
             first = next((it for it in items if it["beat"] == brief["beats"].index(b)), None)
@@ -303,7 +309,7 @@ def validate(r, edit_dir):
     for o in r.get("outputs", []):
         if o.get("aspect") not in ASPECTS:
             errs.append(f"bad aspect {o.get('aspect')}")
-    for k in ("broll", "texts"):
+    for k in ("broll", "texts", "chats"):
         for x in r.get(k, []):
             a = x.get("anchor", {})
             if "at" not in a and a.get("item") not in ids:
@@ -317,8 +323,8 @@ def validate(r, edit_dir):
 
 def prune_anchors(r):
     ids = {it["id"] for it in r["items"]}
-    for k in ("broll", "texts"):
-        r[k] = [x for x in r[k] if "at" in x["anchor"] or x["anchor"].get("item") in ids]
+    for k in ("broll", "texts", "chats"):
+        r[k] = [x for x in r.get(k, []) if "at" in x["anchor"] or x["anchor"].get("item") in ids]
     r["audio"]["sfx"] = [x for x in r["audio"]["sfx"] if "at" in x["anchor"] or x["anchor"].get("item") in ids]
     return r
 
@@ -334,8 +340,8 @@ def trim_start(r, secs):
         else:
             cut = left * it.get("speed", 1)
             it["in"] = round(it["in"] + cut, 3)
-            for k in ("broll", "texts"):
-                for x in r[k]:
+            for k in ("broll", "texts", "chats"):
+                for x in r.get(k, []):
                     if x["anchor"].get("item") == it["id"]:
                         x["anchor"]["offset"] = round(max(0.0, x["anchor"]["offset"] - left), 3)
             for x in r["audio"]["sfx"]:

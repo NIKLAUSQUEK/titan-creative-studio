@@ -55,6 +55,8 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "make a documentary / 3D doc / explainer doc" | documentary-3d.md (research → narration → style key → shots → VO → music → edit); higgsfield-video-explainer for non-photoreal narrated pieces |
 | "short film / long video / movie / series" | filmmaking-longform.md: story bible, character + location locks, coverage, continuity, emotional-performance prompts |
 | "make it horror / thriller / tense / cinematic", any named genre for a film OR an ad | genre-playbooks.md: pick the genre module (pacing map, shot grammar, light/grade, sound plan, `genre_key` pasted last in every Higgsfield prompt, matching editor preset); ads keep the genre grammar until the turn, then the brand's own look |
+| "make it a song / rap / jingle / chant / nursery rhyme", "teach it like a kids' show", "parody <song>" | edu-songs-mnemonics.md (genre §29): pick a format, write lyrics to a public-domain tune or an original beat, `editor.py song` checks the syllable fit and makes the guide track + karaoke timings; brand accounts use original or public-domain melodies only |
+| "texting scene", "show what they texted / said", "receipts", "DM reveal" | genre §30 + editor `chats[]` (texting cutaway: bubbles, typing dots, punch line large) with the `texting-suspense` preset |
 | "make it look real / realistic" | realism.md checklist before prompting, then QC against it |
 | "clip this podcast / long video into shorts", "highlights" | clipping-podcast.md (faster-whisper + ffmpeg locally; Riverside for recorded podcasts) |
 | "motion graphics / trailer / product video / kinetic type" | motion-design.md; product-vfx.md for assembly/exploded-view reveals |
