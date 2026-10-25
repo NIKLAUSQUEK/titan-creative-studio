@@ -117,7 +117,7 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     kw = (brief.get("search_keyword") or "").strip()
     if kw:
         said = keyword_spoken(kw, cw, until=3.0)
-        chk("search keyword spoken in first 3 s (speech is indexed for search)", said is not None, f"'{kw}' at {said} s" if said is not None else f"'{kw}' not heard before 3.0 s")
+        chk("search keyword spoken in first 3 s (auto-captions + search; platform-signals.md §3)", said is not None, f"'{kw}' at {said} s" if said is not None else f"'{kw}' not heard before 3.0 s")
     sz = st.get("safe_zone", {})
     for nm, y in (("captions", st["captions"].get("position_y", 0.7)), ("hook text", st["hook_text"].get("position_y", 0.2))):
         chk(f"{nm} inside 9:16 safe zone", sz.get("top", 0.14) <= y <= 1 - sz.get("bottom", 0.2), f"y={y} (UI zones: top {sz.get('top')}, bottom {sz.get('bottom')})")

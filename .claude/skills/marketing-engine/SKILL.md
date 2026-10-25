@@ -17,6 +17,7 @@ ledger/learnings.md  ←  Review (marketing/reviews/)  ←  Distribute (/publish
 - `references/content-strategy.md` - positioning per brand, segments + pains, pillars, funnel + format mix, hero/hub/help cadence, calendar templates, series, founder vs brand split.
 - `references/repurpose-waterfall.md` - one hero piece → derivatives per platform, exact specs, ordered checklist, studio hand-offs.
 - `references/distribution.md` - per-platform playbook, caption formulas, YouTube SEO, LinkedIn/newsletter formats, posting + comment-reply checklists, cross-posting.
+- `references/platform-signals.md` - how each platform ranks (TikTok, IG, FB, YouTube, LinkedIn, X, Threads, Xiaohongshu, Douyin, WeChat), the Platform-Fit build spec every creative follows, originality ladder, Eastern-stack reality for SG brands, legitimate account/cross-border SOP, platform-fit gate, and the verdict on the "Algorithmic Arrest" masterplan. Sources: `research/sources-platform-algorithms.md`.
 - `references/analytics-loop.md` - metrics per platform → what they diagnose, how to pull them, decision rules, review template, ledger write-back.
 - `references/compliance-packs.md` - universal rules + industry packs (health, supplements, fitness, beauty, finance, alcohol/gambling, F&B, property, education, legal, dating, recruitment) × market table (SG, MY, ID/VN/TH, PH, AU, UK, EU, US, IN, NG). Every brand names its pack.
 - `references/compliance-sg.md` - deep-dive SG health-ad checklist + platform policy hot spots for sexual-health content.
@@ -50,4 +51,5 @@ ledger/learnings.md  ←  Review (marketing/reviews/)  ←  Distribute (/publish
 6. **Never post, schedule, reply or spend on Klaus's behalf** without his explicit go for that item. `/publish` produces a package + checklist; Klaus (or a scheduler he approves) posts.
 7. **vidIQ budget:** state the call, its credit cost and the week's remaining credits before any vidIQ call (ledger 2026-10-11 rule).
 8. **Close the loop:** every review ends with 1-3 testable rules via `/learn`; strategy/calendar read the ledger first.
-9. Brand facts marked CONFIRM in `brands/*.md` stay CONFIRM - ask once, don't guess. PeachForm has a draft kit (brands/peachform.md, built by /onboard from almost no public info): plan from it, but treat its [draft] lines as hypotheses.
+9. **Platform fit:** every script, edit and package meets `platform-signals.md` §3 and passes its §8 gate. No fake identities/locations, device or proxy tricks, "priming" routines, engagement pods, bought engagement, or hash-changing tweaks to pass off reposts as original.
+10. Brand facts marked CONFIRM in `brands/*.md` stay CONFIRM - ask once, don't guess. PeachForm has a draft kit (brands/peachform.md, built by /onboard from almost no public info): plan from it, but treat its [draft] lines as hypotheses.

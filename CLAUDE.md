@@ -24,6 +24,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 - Compliance: every brand file names its industry × market compliance pack (`.claude/skills/marketing-engine/references/compliance-packs.md`; SG health detail in compliance-sg.md). Apply it to every script, caption and ad. Example: SG health = no testimonials, paid reviews, superlatives or free-consult/discount inducements.
 - Every deliverable gets a market-localised sound plan (`/sound`: regional charts + TikTok-by-country licensed tracks + SFX cues) before /draft or /publish. Brand/ads use licensed or original audio only; trending chart songs go on personal/creator accounts in-app only.
 - No video renders until every @asset in the shot is visually approved (Gate 4, validator-enforced). Real photos of real staff/talent beat generated ones.
+- Platform fit: every creative and post follows `.claude/skills/marketing-engine/references/platform-signals.md` (§3 build spec at script/edit, §8 gate at /publish): frame-1 hook with the promise by 3 s, search keyword said/shown/written, send/save trigger, original content only, platform labels for AI and paid. Never fake identity or location (SIMs, proxies, burner accounts), never "prime" accounts or use pods/bought engagement, never tweak reposts to dodge originality detection.
 - Never put API keys in files or chat. Brand-safe, platform-safe wording in generation prompts; crude hooks/captions go in post only.
 
 ## Routing — what Klaus says → what you do
@@ -65,6 +66,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "strategy / pillars / positioning" | `/strategy <brand>` → strategist agent (marketing-engine skill) → `marketing/strategy/<brand>.md` |
 | "content calendar / what should I post" | `/calendar <yyyy-mm>` → strategist agent: strategy + brain story bank + trends → `marketing/calendar/` |
 | "repurpose this", "waterfall this" | `/repurpose <hero>` → repurpose-waterfall.md (+ clipping-podcast.md); cut before you generate |
+| "how does the algorithm work / optimise for <platform> / Xiaohongshu / Douyin / reach another country" | platform-signals.md (marketing-engine): platform signals, build spec, Eastern stack, legitimate cross-border SOP |
 | "package this for posting / captions / titles / hashtags" | `/publish` → distributor agent: per-platform package + checklist (never posts) |
 | "how did it perform / review", "what's working" | `/review` → analytics-loop.md (vidIQ + native exports) → `marketing/reviews/` → `/learn` |
 | "launch / campaign" | `marketing:campaign-plan` skill + strategist agent → production via `/ad` |

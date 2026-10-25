@@ -9,4 +9,5 @@ Follow `.claude/skills/marketing-engine/SKILL.md` with `references/content-strat
 3. Calendar: one row per slot (date | platform | brand/account | pillar | funnel | format | source/hero_id | hook draft | CTA | production route | status). Respect capacity (§6), batch filming days, 1 hero/month + its waterfall, founder vs brand split (§8), flag compliance-sensitive slots.
 4. Trends via WebSearch or the main session's vidIQ/Higgsfield calls (cite source + date); trending sounds only through `/sound` licensing rules.
 5. Apply the brand's compliance pack (brands/<brand>.md §2/§9 + compliance-packs.md) even at idea stage (e.g. SG health: no testimonial, superlative, free-consult/discount angles). Every stat sourced or cut.
+5b. Platform choices and launch plans follow `references/platform-signals.md` (what each platform rewards, Eastern-stack reality, legitimate cross-border reach); every slot names its search_keyword.
 6. End with: what changed, max 5 tappable questions for Klaus, and the next command (/story, /ad, /repurpose, /publish).

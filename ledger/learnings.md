@@ -1,4 +1,8 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-25 - platform optimisation directive (Klaus)
+- [platform] Every creative and post is built for how platforms actually rank (platform-signals.md): frame-1 hook + promise by 3 s, one search_keyword said in the first 3 s / on screen / caption line 1, a send-or-save trigger, payoff by ~60%, loop or CTA ending chosen on purpose, -14 LUFS with voice on top. /publish runs the platform-fit gate.
+- [platform] From the "Algorithmic Arrest" masterplan we keep the content engineering and the Xiaohongshu-as-search approach; we reject its account SOP (foreign SIMs, proxies, burner identities, priming, 12 h login gaps, device resets) and its hash-changing repost tweaks: they break Meta/TikTok/YouTube/LinkedIn/X/XHS rules and would get client accounts restricted.
+- [eastern] SG brands: TikTok, not Douyin; XHS for Chinese-speaking SG/MY with native copy and XHS-only lead tools (no WeChat/WhatsApp/QR anywhere); Douyin/WeChat Channels only via a licensed China partner.
 ## 2026-10-20 - draft vs final quality (Klaus)
 - [quality] Drafts always render at the LOWEST quality/resolution the model offers (cheapest tier, e.g. 480p/std/draft). Only after Klaus approves the draft, re-render at the HIGHEST quality at 1080p. Never render a draft at 1080p, never skip the draft.
 ## 2026-10-20 - villains & conflict (Klaus)

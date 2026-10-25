@@ -55,3 +55,14 @@ Let **R = post metric ÷ account median for that format** (views, or the metric 
 Each review ends with 1-3 rules via `/learn`, tagged `[growth]`, `[hook]`, `[platform]` or `[funnel]`, specific and testable, e.g.:
 - `[hook] Physio Spot myth-bust shorts: open on the myth as a question in on-screen text; statement openers held worse in W42-W44 reviews.`
 Only write a rule backed by ≥ 3 posts or one large outlier with a clear cause; otherwise log it as a hypothesis in the review file.
+
+## 6. Low-reach diagnosis (replaces "reset the device / new proxy / re-prime")
+Several posts far below the account median is a content or eligibility problem until proven otherwise. TikTok: low views don't "necessarily mean it broke a rule". New accounts, IPs or devices to escape a restriction = ban evasion on every platform (platform-signals.md §6).
+1. **Eligibility first:** Instagram/Facebook Account Status (recommendation eligibility, originality notices), TikTok Studio notifications / "ineligible for FYF" labels, YouTube Studio copyright/policy flags, XHS 创作中心 violation notices and credit level. If flagged: fix or remove the cause, appeal in-app, wait out the window (IG originality: most of the last 30 days must be original).
+2. **Originality:** any reposted, watermarked or near-duplicate pieces? Any already posted on the same platform? Replace with original/clean versions.
+3. **Category safety:** fitness/diet extremes, medical advice, suggestive thumbnails, regulated goods → reframe (platform-signals.md §3.18).
+4. **Hook:** 2-3 s hold / skip rate / "viewed vs swiped away" below median → new frame 1 + first line (Trial Reels for 2 variants).
+5. **Retention and send/save:** drop-off before payoff, few sends → tighten, move payoff earlier, add "send this to…".
+6. **Search/topic fit:** is the search_keyword something people type? Check autocomplete / vidIQ keyword research.
+7. **Audience match:** language and setting right for the market? (localisation pack; geo-targeted paid test if organic is unclear.)
+Change one variable per post; judge after ≥ 3 posts (§3).
