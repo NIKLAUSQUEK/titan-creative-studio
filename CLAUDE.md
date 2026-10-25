@@ -54,6 +54,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "narrate it like a nature doc / Bronx commentator…" | pick a persona archetype from voice-persona-audio.md (never clone a real person) |
 | "make a documentary / 3D doc / explainer doc" | documentary-3d.md (research → narration → style key → shots → VO → music → edit); higgsfield-video-explainer for non-photoreal narrated pieces |
 | "short film / long video / movie / series" | filmmaking-longform.md: story bible, character + location locks, coverage, continuity, emotional-performance prompts |
+| "make it horror / thriller / tense / cinematic", any named genre for a film OR an ad | genre-playbooks.md: pick the genre module (pacing map, shot grammar, light/grade, sound plan, `genre_key` pasted last in every Higgsfield prompt, matching editor preset); ads keep the genre grammar until the turn, then the brand's own look |
 | "make it look real / realistic" | realism.md checklist before prompting, then QC against it |
 | "clip this podcast / long video into shorts", "highlights" | clipping-podcast.md (faster-whisper + ffmpeg locally; Riverside for recorded podcasts) |
 | "motion graphics / trailer / product video / kinetic type" | motion-design.md; product-vfx.md for assembly/exploded-view reveals |

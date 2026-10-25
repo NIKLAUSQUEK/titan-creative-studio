@@ -22,6 +22,8 @@ First show a one-line **diversity matrix** so the 5 are genuinely different (var
 | # | Funnel | Angle | Vibe | Format | Segment |
 Axes (also: Decision-Ladder cautionary arc, raunch/innuendo, Japanese mode, rage-hook — see mature-edge.md): Funnel (TOFU hook/entertain · MOFU objection/demo/proof · BOFU offer/testimonial/urgency) · Angle (identity, convenience, budget, social proof, fear/objection, status, transformation, humour-relief) · Vibe (warm, dark, sad, humour, tense, aspirational, absurd, nostalgic) · Format (single speaker, duo dialogue, trio, skit, POV, UGC testimonial, founder-led, mini-film, montage) · Segment (sub-audience: first-timers, budget-conscious, luxury, diaspora, etc.)
 
+Genre axis: tag each direction with a genre module from genre-playbooks.md (e.g. horror-tension, genz-header-skit, trend-beat-switch); its pacing map drives the Gate 3 seconds, its `genre_key` goes last in every shot prompt, and its preset cuts the edit.
+
 Each direction card (all fields, in this order):
 1. **"Title"** (+ "— Recommended" on exactly one, with why)
 2. **Conversion angle**
