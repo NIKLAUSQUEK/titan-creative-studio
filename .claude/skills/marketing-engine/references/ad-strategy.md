@@ -172,6 +172,48 @@ Definitions: **hook rate** = 3-s video plays ÷ impressions (Motion: "20-40% is 
 7. New persona/issue or new offer/funnel (a congruent landing page counts as a test).
 Log every rung in the ad name (`_it<rung>`). Meta treats iteration and diversification as separate: keep ≥10-20% net-new concepts every round.
 
+### 10b. The 25-lever iteration map ("you found a winning ad: here are 25 iterations")
+Source: @gurnoorsinghofficial reel "Save this for your next winning ad" (IG, 2026-10, 27.9 s, 729 likes; research/refs-2026-10-25/ads-iterations.md). His list is the 25 levers; the columns below (what changes, rung, cost, what it tests) are ours.
+Rule: from a winner, change ONE lever per variant, keep everything else byte-identical, and name it `<winner>_it<rung>-<lever>`. Start at the cheapest levers and move down the table only when the cheap ones stop finding lift.
+
+| # | Lever | What you change (example for a scam-tips media brand) | Rung (§10) | Cost | What a win tells you |
+|---|---|---|---|---|---|
+| 1 | Avatar | tourists → expats → locals | 7 | high (new concept) | who the message works for |
+| 2 | Sub-avatar | first-time backpacker → family with kids → business traveller | 6-7 | mid | which slice converts cheapest |
+| 3 | Angle | "save money" → "stay safe" → "look like a local" | 6 | mid | the argument that sells |
+| 4 | Desire | stress-free trip / insider status / bragging rights | 6 | mid | the motivation behind the click |
+| 5 | Pain point | overcharged taxi / fake massage menu / stolen phone | 6 | mid | which fear or annoyance is sharpest |
+| 6 | Awareness stage | unaware ("this happens to 1 in 3…") ↔ problem-aware ↔ solution-aware ("our map shows…") | 5 | mid | how much setup the audience needs |
+| 7 | Unique mechanism | "the 3-question taxi test" / "the locals' price list" | 6 | mid | the believable "how" |
+| 8 | Core promise | "never get ripped off" (check compliance) → "know the fair price in 10 s" | 6 | mid | the result people want |
+| 9 | Emotion | anger (exposé) / relief / humour / pride | 4-6 | mid | the energy that stops the scroll |
+| 10 | Offer | free guide / app / tour / newsletter / sponsored partner deal | 7 | high | what they'll actually take |
+| 11 | Hook | first 1-3 s: line, visual, text (keep 3-5 per body) | 1 | ~0 | attention; read hook rate first |
+| 12 | Storyline | exposé → POV → mockumentary → texting receipts | 4 | mid | narrative fit |
+| 13 | Analogy | "a taxi meter that runs like a slot machine" | 2-4 | low | comprehension |
+| 14 | Curiosity gap | "the 3rd one got me too" / hide the answer to the end | 1-2 | low | hold rate |
+| 15 | Format | talking head / drama skit / street interview / carousel / static / texting scene | 4 | mid | the feed fit |
+| 16 | Creator | Vietnamese host / Western expat / duo / AI character (clone workflow, labelled) | 3 | mid | trust and identification |
+| 17 | Opening scene | the street, the receipt, the reaction face | 1 | low | the visual stop |
+| 18 | B-roll | real street footage vs graphics vs screen recordings | 2 | low | credibility, pace |
+| 19 | Editing style | style-archetypes.md preset swap (genz-header-skit ↔ news-expose ↔ texting-suspense) | 2 | ~0 (`/expand`) | the style that suits this audience |
+| 20 | Pacing | 0.8 s vs 2.5 s average shot | 2 | ~0 | drop-off curve |
+| 21 | Video length | 15 / 30 / 45 / 60 s | 2 | ~0 | the attention budget |
+| 22 | On-screen text | header copy, kicker, caption pack | 1-2 | ~0 | the silent-viewer hook |
+| 23 | Authority figure | a local guide / tour operator / police advisory quote / the founder | 3 | mid | believability |
+| 24 | Price framing | "free" / "less than a bánh mì" / per-day cost | 7 | low-mid | conversion friction (check compliance) |
+| 25 | CTA | save / follow / DM keyword / link / comment-to-get | 1-2 | ~0 | the action they'll take |
+
+Cheap-first order for a fresh winner:
+1. Hook ×5, on-screen text ×3 and CTA ×2. Ten variants, all from the editor, no new footage.
+2. Pacing, length and editing style through `/expand`.
+3. Creator / opening scene / B-roll: one re-shoot day.
+4. Storyline / format / emotion.
+5. Angle / pain point / desire / mechanism: new matrix rows.
+6. Avatar / sub-avatar / offer / price: new concepts.
+
+Read the diagnosis table (§9) first: a low hook rate means change levers 11, 14, 17 or 22; a good hook with a bad hold means 12-14 or 20; a good hold with a low CTR means 8, 10 or 25; clicks that don't convert mean 10, 24 or the landing page.
+
 ---
 ## 11. Compliance overlay per market (apply at the angle stage; details in compliance-packs.md, compliance-sg.md)
 | Market × industry | Angles/formats blocked or changed | Safe substitutes |
