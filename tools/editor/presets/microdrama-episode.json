@@ -1,0 +1,96 @@
+{
+  "name": "microdrama-episode",
+  "label": "Micro-drama episode (series)",
+  "kind": "genre",
+  "description": "One 60-90 s episode of a vertical series: cold open or 'previously' flash, one scene with shot-reverse-shot at ~1.5 s median, a turn, a freeze/black cliffhanger with 'Part N+1'. Measured on Dhar Mann Studios and FAME Ep 2 (IG, 2026); grounded in 'Screen Time' (TikTok/PineDrama, 26 M views on Ep 1) and Crocs x ReelShort.",
+  "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#7a",
+  "structure": {
+    "name": "episode",
+    "target_s": [
+      60,
+      120
+    ],
+    "beats": [
+      "previously/cold open 0-3s",
+      "scene objective",
+      "turn",
+      "cliffhanger freeze + Part N+1"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.4,
+    "pad_s": 0.08,
+    "remove_fillers": "hard",
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "font": "Anton",
+    "uppercase": true,
+    "max_words": 4,
+    "animation": "static",
+    "size": 0.038,
+    "outline": 4,
+    "position_y": 0.68
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "kicker",
+    "persistent": true,
+    "uppercase": false,
+    "position_y": 0.07,
+    "size": 0.026,
+    "max_words": 5
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.0,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.6,
+    "db": -14,
+    "map": {
+      "hook": "sting",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.95,
+    "warmth": 0.02
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "end_freeze": {
+      "dur_s": 1.5,
+      "zoom": 1.06,
+      "text": "PART {n+1}"
+    },
+    "episode_label": {
+      "text": "Episode {n} · {title}",
+      "position": "top-left",
+      "persistent": true
+    },
+    "previously_recap": {
+      "max_s": 3,
+      "source": "previous episode's turn"
+    },
+    "name_cards": {
+      "on_first_appearance": true,
+      "style": "[Name, role]"
+    }
+  }
+}

@@ -2,43 +2,102 @@
   "name": "mystery-reveal",
   "label": "Mystery / reveal",
   "kind": "genre",
-  "description": "Slow clue beats, riser into the reveal, a silence beat, low-key moody grade.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Specific question as the hook, 3 clue beats with one insert each, misdirect, 0.5-0.8 s silence, reveal hit, fast clue-rewind montage. Low-key grade that lifts at the reveal. Grounded 2026-10-25 in IG mystery micro-fiction and detective-puzzle reels plus information-gap theory (Loewenstein 1994).",
+  "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#14",
   "pacing": {
-    "remove_silence_over_s": 1.0,
-    "pad_s": 0.25,
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.15,
     "max_shot_s": 6
   },
   "captions": {
     "animation": "fade",
     "max_words": 5,
-    "keyword_caps": false
+    "keyword_caps": false,
+    "font": "Instrument Serif",
+    "bold": false,
+    "size": 0.034,
+    "position_y": 0.76
+  },
+  "hook_text": {
+    "enabled": true,
+    "uppercase": false,
+    "max_words": 8,
+    "position_y": 0.2,
+    "dur_s": 3.0,
+    "font": "Instrument Serif Italic"
   },
   "zoom": {
     "mode": "smooth",
     "every_s": 6,
-    "scale": 1.06,
-    "on_hook": 1.0
+    "scale": 1.05,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 5,
+    "max_dur_s": 3,
+    "min_dur_s": 1.5,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 0.5,
+    "density_per_10s": 0.8,
+    "db": -14,
+    "min_gap_s": 1.5,
     "map": {
       "hook": "riser",
-      "zoom": "riser"
-    }
+      "broll": "ding",
+      "title": "tick",
+      "end": "impact"
+    },
+    "stacks": {
+      "reveal": [
+        {
+          "type": "riser",
+          "db": -16
+        },
+        {
+          "type": "impact",
+          "db": -9
+        },
+        {
+          "type": "boom",
+          "db": -12
+        }
+      ]
+    },
+    "reveal_every_s": 0
   },
   "music": {
     "energy": "drone",
-    "db": -24
+    "db": -24,
+    "duck": true
   },
   "grade": {
     "contrast": 1.1,
     "saturation": 0.85,
-    "brightness": -0.03,
+    "brightness": -0.04,
     "vignette": true
   },
-  "broll": {
-    "every_s": 5,
-    "max_dur_s": 3
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.25,
+    "strength": 0.6
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "silence_before_reveal_s": 0.7,
+    "reveal_grade_lift": {
+      "brightness": 0.04,
+      "contrast": 1.0
+    },
+    "clue_rewind_montage": {
+      "per_clip_s": 0.4,
+      "reverse_whoosh": true,
+      "source": "beats with role 'clue'"
+    }
   }
 }

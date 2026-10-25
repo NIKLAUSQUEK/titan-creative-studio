@@ -1,0 +1,66 @@
+{
+  "name": "romance-texting",
+  "label": "Slow-burn texting romance (naturalistic)",
+  "kind": "genre",
+  "description": "From 'Scenes From a Love Story' Ep 2 (IG @molshriii, 1.26K likes): handheld daylight realism, small subtitles, message bubbles overlaid on the shot as plot beats, a ping per message, ends on a smile at the phone + 'Follow for Ep 3'.",
+  "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#10a",
+  "pacing": {
+    "remove_silence_over_s": 1.2,
+    "pad_s": 0.25,
+    "remove_fillers": "none",
+    "max_shot_s": 6.0
+  },
+  "captions": {
+    "font": "Poppins",
+    "bold": false,
+    "size": 0.026,
+    "color": "#FFE14D",
+    "outline": 2,
+    "max_words": 8,
+    "animation": "static",
+    "position_y": 0.8,
+    "uppercase": false,
+    "keyword_caps": false
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.0
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "db": -16,
+    "map": {
+      "broll": "pop",
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.0,
+    "saturation": 1.0,
+    "warmth": 0.03
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "chats.overlay_mode": {
+      "mode": "overlay",
+      "position_y": 0.22,
+      "hold_s": 2.5,
+      "why": "r4 shows one bubble over the live shot, not a full black chat card"
+    }
+  }
+}

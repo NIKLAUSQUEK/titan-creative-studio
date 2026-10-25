@@ -2,41 +2,91 @@
   "name": "thriller-suspense",
   "label": "Thriller / heist / suspense",
   "kind": "genre",
-  "description": "Accelerating cuts, inserts and timers, steel-blue shadows with warm practicals, pulse bed and hits on match cuts.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured 2026-10-25 on the Crime 101 'rules of the heist' promo (IG): median shot 0.83 s, 142 wpm, -14.1 LUFS, LRA 3.8, no silence until the designed hitch. Host-to-camera rules + big serif rule cards + 0.6-1.0 s inserts, pulse bed, click per insert, silence on the hitch, steel-blue/sodium-orange grade.",
+  "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#13",
   "pacing": {
     "remove_silence_over_s": 0.3,
     "pad_s": 0.05,
-    "max_shot_s": 2.5
+    "remove_fillers": "hard",
+    "max_shot_s": 2.0
   },
   "captions": {
     "max_words": 3,
-    "uppercase": true
+    "uppercase": true,
+    "font": "Bebas Neue",
+    "animation": "pop",
+    "size": 0.04,
+    "position_y": 0.72
+  },
+  "hook_text": {
+    "enabled": true,
+    "uppercase": true,
+    "font": "Archivo Black",
+    "max_words": 6,
+    "position_y": 0.4,
+    "dur_s": 1.6,
+    "color": "#F2D3A2"
   },
   "zoom": {
     "mode": "snap",
     "every_s": 2.5,
-    "scale": 1.1
+    "scale": 1.08,
+    "on_hook": 1.12
+  },
+  "broll": {
+    "every_s": 2.5,
+    "max_dur_s": 1.2,
+    "min_dur_s": 0.5,
+    "mode": "full"
   },
   "sfx": {
-    "density_per_10s": 2,
+    "density_per_10s": 2.5,
+    "db": -15,
+    "cut_coverage": 0.4,
+    "min_gap_s": 0.3,
     "map": {
       "hook": "impact",
-      "zoom": "click",
-      "broll": "whoosh"
+      "zoom": "tick",
+      "broll": "click",
+      "title": "whoosh",
+      "end": "bass"
     }
   },
   "music": {
     "energy": "high",
-    "db": -17
+    "db": -18,
+    "duck": true
   },
   "grade": {
-    "contrast": 1.15,
-    "saturation": 0.9,
-    "teal": 0.04
+    "contrast": 1.16,
+    "saturation": 0.88,
+    "teal": 0.05,
+    "warmth": 0.02
   },
-  "broll": {
-    "every_s": 3,
-    "max_dur_s": 1.5
+  "transitions": {
+    "default": "flash",
+    "on": "beats",
+    "dur_s": 0.12,
+    "strength": 0.5
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 1.5
+  },
+  "_needs_feature": {
+    "rule_cards": {
+      "style": "big serif cream on picture",
+      "font": "DM Serif Display",
+      "dur_s": 1.2,
+      "source": "beats with role 'rule'"
+    },
+    "music_cut_on_beat_role": {
+      "role": "hitch",
+      "silence_s": 1.0
+    },
+    "countdown_overlay": {
+      "from": "01:30",
+      "font": "Space Grotesk"
+    }
   }
 }

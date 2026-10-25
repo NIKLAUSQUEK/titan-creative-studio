@@ -399,24 +399,111 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 ---
 - **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
 
-### 7. Drama / conflict (villain) [draft; deeper: villains-conflict.md]
-- **Why it works:** the camera's allegiance stays with the target; cruelty gets cold sound; the consequence lands, and the viewer picks a side.
-- **Pacing (30-60 s):**
-  - 0-3 s: the cruel line or act as the hook;
-  - 3-15 s: the target's world;
-  - 15-25 s: the confrontation, with shot-reverse-shot tightening from medium to close-up;
-  - 25-28 s: the consequence;
-  - 28-30 s: a side-choosing question.
+### 7. Drama / conflict (villain) [measured: https://www.instagram.com/reel/Da9ltsbPQAf/, https://www.instagram.com/reel/DU7YHpGD2Rr/, https://www.instagram.com/reel/DVM_VTjlKMH/; deeper: villains-conflict.md]
+- **Why it works:** the conflict line starts at frame 1. The camera's allegiance stays with the target. Cuts accelerate into the cruelty, then sound drops out and one beat is held. The **evidence** reverses the scene (the receipts), the consequence lands, and the viewer is left with a real question.
+- **Pacing map (30 s ad; measured d6 scaled from 90 s, d3 for the escalation):**
+
+| Beat | 30 s | Shot length | Sound |
+|---|---|---|---|
+| Cold open mid-conflict: the cruel or accusing line, spoken from 0.0-0.2 s | 0-2 s | singles, 0.8-1.2 s | dialogue only, ≈ -14 LUFS |
+| Stakes: who is wronged, the target's side said in one line | 2-8 s | shot-reverse-shot, median ~1.5 s, MCU→CU | room tone + low bed |
+| Escalation: villain pushes, the target is cornered | 8-16 s | cuts tighten to ~1.0 s (d3: cuts per third 7 → 12 → 13) | bed swells; hits on the push lines |
+| The cruelty / hit | 16-18 s | the fastest cuts (0.3-0.8 s), then a **hard stop** | **0.8-1.3 s silence** right after (d3: 1.0 s + 1.3 s) |
+| Aftermath / evidence: the receipt (phone video, chat, document) | 18-25 s | ONE held shot or insert, 4-8 s (d6 holds ~30 s at 90 s length) | evidence audio up, music low |
+| Consequence + turn (ad: brand as the helper, never the villain) | 25-28 s | back to singles ~1.5 s | swell |
+| Open question / Part-2 tease (no vote-bait) | 28-30 s | CU of the target | bed out on the last word |
+
 - **Shot grammar:**
-  - the villain gets a slight low angle and colder light;
-  - the target gets eye level and warmer light;
-  - hold on the target's face after the cruelty (the aftermath).
-- **Look:** contrasty, with a warm/cold split by character.
-- **genre_key:** `grounded dramatic realism, motivated contrasty lighting, intimate close-ups, shallow depth of field, natural performances, no melodramatic overacting`
-- **Shot:** `{"camera":"MCU over-shoulder of @TARGET, 50mm","action":"start: @BULLY smirks and says the line -> end: @TARGET's jaw tightens, eyes drop"}`
-- **Sound:** the score drops out under cruelty (cold room tone), then swells at the consequence.
-- **Ad template:** the brand stands with the target, never mocks; adults only for anything sexual.
-- **Preset:** drama-conflict.
+  - singles for each speaker, mostly MCU/CU on 50-85 mm; d6 is almost all singles plus one wide establishing at 0 s.
+  - the villain gets a slight low angle and colder fill;
+  - the target gets eye level and warmer key;
+  - insert shots for the evidence (a hand holding the phone, a screen);
+  - one held wide two-shot for the aftermath;
+  - no handheld shake except during a physical fight (d3).
+- **Look:** contrasty and motivated. d6 uses a warm porch-light night exterior, then a neutral interior day for the evidence scene (a location change marks the reversal). There is a warm/cold split by character, inside a white or black 9:16 frame with a header line above the picture (format, see Preset).
+- **genre_key:** `grounded dramatic realism, motivated contrasty practical lighting, intimate singles in shot-reverse-shot, shallow depth of field, natural performances, villain lit slightly colder from a low angle, target lit warm at eye level, no melodramatic overacting`
+- **Shot JSON:**
+```json
+{"id":"S01","dur":2,"model":"seedance_2_5","mode":"omni_reference",
+ "camera":"locked MCU single on @VILLAIN, 50mm, slight low angle, porch light camera-left",
+ "subject":"@VILLAIN (identity from asset bible) in the doorway",
+ "action":"start: already mid-shout, finger pointing off-screen -> end: holds the glare",
+ "environment":"@SET_PORCH at night, house number on the wall, warm bulb",
+ "light":"single warm practical key, cold blue fill from the street",
+ "audio":"dialogue only, the accusing line from frame 1, no music",
+ "constraints":"line starts at 0.0 s, no establishing beat, same wardrobe as S02-S12",
+ "genre_key":"<drama genre key>"}
+```
+- **Sound:**
+  - dialogue-forward and compressed (target -14 LUFS, LRA ≈ 5);
+  - a low bed under the stakes;
+  - hits on escalation lines;
+  - **0.8-1.3 s true silence after the cruel beat**;
+  - a swell only at the consequence, and no hype stims on the villain.
+- **Ad template:** reuse D1-D10 in marketing-engine ad-strategy.md §5. D4 (One-Upper) and D9 (Receipts) map directly onto this pacing map. Add one rule: the **turn is an evidence insert**, never a speech.
+- **Compliance:**
+  - SG health: the evidence is a mechanism or guideline, never a patient record or a result;
+  - characters are fictional and labelled as a dramatisation where they could be mistaken for real;
+  - no vote-bait endings (Meta engagement-bait guideline);
+  - sexual shaming involves adults 25+ only (ledger).
+- **Preset:** drama-conflict (corrected below).
+
+(preset `drama-conflict`: tools/editor/presets/drama-conflict.json)
+Changes vs the current preset:
+- `max_shot_s` 5 → 2.5;
+- silence removal 0.9 → 0.35 (dialogue is tight; the one designed silence is placed, not left over);
+- captions fade → static caps condensed, as in d6;
+- smooth push every 5 s → no auto-zoom (d6 cuts, it doesn't push);
+- a persistent header added;
+- the end card off (episode feel).
+
+**3 core rules (§7):**
+1. **The conflict line is the hook, spoken from frame 1.** No establishing beat, no "so this happened".
+2. **Cut fast into the cruelty, then stop.** Median ~1.2 s, accelerating, then ≥ 0.8 s of true silence and a held face. The villain never gets music.
+3. **The turn is evidence, not a speech:** a phone video, chat, document or CCTV insert held 4-8 s. In ads it is the brand's mechanism, never a patient result.
+
+**Flags for Klaus (§7):**
+- Is the white-frame + header format wanted for brand accounts? It reads "Dhar Mann / repost page". It suits personal and organic accounts, maybe not Physio Spot ads.
+- The ledger asks for "side-choosing" endings. I propose rewording them to avoid explicit vote-bait ("Team A or B? comment"), which Meta demotes. Does he want to keep poll stickers on organic posts?
+- d3 is a clip account reposting a broadcast TV drama. I used it for rhythm only; it is not a format to copy (rights).
+
+---
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
+
+### 7a. Micro-drama episode (series) [measured: https://www.instagram.com/reel/Ddt9waGtvbS/, https://www.instagram.com/reel/Da9ltsbPQAf/; researched: "Screen Time" (nofilmschool.com/issa-rae-vertical), Crocs × ReelShort (marketingdive.com)]
+- **Why it works:** every episode is one scene with one turn, ending on a cliffhanger, so the binge runs on the open loop. "Screen Time" made 55 one-minute episodes with one setting and five actors: Ep 1 drew 26 M views, and late episodes still 2-3 M each. Brands (Crocs, General Mills, Marc Jacobs, JK Super Cement, RuPay) now pay to be *inside the plot* (R2).
+- **Pacing map (one 60-90 s episode):**
+  - 0-3 s: "Previously" flash, OR a cold open on the episode's hottest line;
+  - 3-50 s: one scene, one objective, shot-reverse-shot at a ~1.5 s median;
+  - 50-80 s: the turn (evidence / reveal / entrance);
+  - last 2-3 s: **cliffhanger line plus a freeze or a hard cut to black** with "Part N+1" (SocialPeta: the freeze-frame cliffhanger drives the next tap).
+- **Series bible:**
+  - 1 contained premise and 1-2 locations;
+  - 3-5 characters with locked identities (Gate 4 assets reused every episode);
+  - 8-12 episodes per season for a brand (Crocs ran 5 and 7). The 50-100-episode app seasons are not for brands.
+- **Shot grammar:** as §7, plus a persistent "Episode N · Title" label top-left (r1, d1). Name cards with role on first appearance: "[Cheng Junwen, CEO of Cheng Corporation]" (r1).
+- **Look:** consistent across episodes (same grade line, same frame). A fixed episode-number position.
+- **genre_key:** §7 key + `consistent series look across episodes, same sets and wardrobe per character, vertical 9:16 framing with faces in the upper-middle third`
+- **Shot JSON:** `{"id":"E03-S14","dur":3,"camera":"CU @LEAD, 85mm, eye level","action":"start: reads the message -> end: looks up to the door as it opens (freeze on this frame)","constraints":"last frame must be a clean freeze candidate: face + door both readable"}`
+- **Sound:**
+  - an original series theme sting of 2-3 s, the same every episode, on the title and on the cliffhanger;
+  - dialogue-forward, -14 LUFS;
+  - a riser into the freeze.
+- **Brand placement (R2 lesson):** the product is a *plot device* (Crocs' Jibbitz carry the flirtation), not an ad break. One episode in 5 may carry a direct CTA.
+- **Compliance:**
+  - label as fiction;
+  - no real patients;
+  - SG health: the education sits in the episode's turn and end card, never as a cure;
+  - minors never appear in romance or revenge plots.
+- **Preset:** microdrama-episode (new).
+
+(preset `microdrama-episode`: tools/editor/presets/microdrama-episode.json)
+**3 core rules (§7a):** (1) one scene and one turn per episode, ending on an unanswered line; (2) locked identities and sets across the whole season (Gate 4 assets reused, never re-generated per episode); (3) the brand is a plot device, not a mid-roll.
+
+**Flags:** brand seasons of 5-12 episodes vs the app-style 50+; whether to build `end_freeze` and `episode_label` into the editor (small features, high reuse); a weekly cadence needs ~1 episode per 2 days (Party of Two, Instagram's own 7-episode series, released every other day).
+
+---
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
 ### 8. Class & status [draft; deeper: class-status.md]
 - **Pacing:** the same problem shown in two wallets, cutting between them every 2-3 s; split-screen at the punchline.
@@ -476,17 +563,71 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 - **Preset:** `feelgood-emotional` (corrected, below); the cutdown uses the same preset with `target_s` [15, 30].
 - **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
-### 10. Romance / aura / sensual (implied) [draft; ledger: implied only, adults 25+]
-- **Pacing:** slow 3-6 s shots; a glance → a glance back → a near-touch → a cutaway (a metaphor); the aura statement line.
+### 10. Romance / aura / sensual (implied) [measured: https://www.instagram.com/reel/DewJSY9AquY/, https://www.instagram.com/reel/DZCnMOLjhWL/, https://www.instagram.com/reel/C8MfUipINoB/; researched: ReelShort billionaire-romance 419 M views, 75 % female audience; Meta/TikTok adult-content ad policies; ledger: implied only, adults 25+]
+- **What the evidence changed:** the draft mixed three formats. On Reels, romance that performs is **serial and dialogue-driven** (r1, r4, R3), not slow golden-hour montage. The "aura" edit is a statement/glow-up *style*, already covered by the `aura-cinematic` style preset. This card covers **romance-drama**; §10a covers the naturalistic texting romance.
+- **What the C-drama cold open does (r1, sheet viewed) vs what we do:**
+  - r1 opens on the most heated moment: a bed, a kiss, hands, rapid intercut. Then "one day earlier", name cards, and a document twist (a pregnancy scan) for the conflict.
+  - **We keep the structure (cold open on the peak, then flash back) but stop at the implied line:**
+    - the peak is a held near-kiss, foreheads or hands, then a cut-away (a door, a curtain, a phone lighting up);
+    - adults 25+, fully clothed;
+    - no bed framing in ads (Meta's ad standards flag "implied sexual activity"; the TikTok adult-content policy bars suggestive content for many categories).
+- **Pacing map (30 s ad / 60-90 s episode):**
+  - 0-3 s: the cold open on the charged moment (near-touch or loaded line) with a slow-mo of 1-2 shots;
+  - 3-5 s: "One day earlier" / "3 months earlier" card;
+  - 5-20 s: meet → friction; shot-reverse-shot at a **~2 s median** (r1 2.04 s, d7 2.0 s), music-forward with ≤ 60 wpm, and name cards on first appearance;
+  - 20-26 s: the obstacle / twist insert (a message, a ring, a document);
+  - 26-30 s: a glance back + cut-away + "Part 2" or the brand line.
 - **Shot grammar:**
-  - 85 mm close-ups, slow-motion hair or fabric;
+  - 85 mm CUs, glances held 1.5-3 s;
+  - hands and near-touch inserts;
   - silhouettes against windows;
-  - cut away at the peak (a door closing, a curtain).
-- **Look:** golden hour, bloom, soft highlights, rich skin tones rendered correctly.
-- **genre_key:** `cinematic romantic mood, golden hour backlight, soft bloom, slow motion, 85mm shallow focus, elegant tasteful framing, implied intimacy only, fully clothed adults`
-- **Sound:** ambient pads, breath, heartbeat-low bass.
-- **Ad template:** confidence and attraction (fragrance, fitness, men's health "feel like yourself"). No sexual claims; clinical wording for sexual-health brands.
-- **Preset:** aura-cinematic.
+  - cut away at the peak (door, curtain, phone light);
+  - **never** body-part framing (Meta ads policy) and never bed framing in paid placements.
+- **Look:** soft warm key, bloom, correct skin tones, low contrast. Night interiors in warm practicals; golden hour for exteriors only.
+- **genre_key:** `cinematic romantic drama, warm soft key light with gentle bloom, 85mm shallow focus close-ups, held glances, near-touch hands, elegant tasteful framing, implied intimacy only, fully clothed adults over 25, cut away before any kiss completes`
+- **Shot JSON:** `{"id":"S01","dur":3,"camera":"CU two-shot profile, 85mm, slow push 5%","subject":"@LEAD_A and @LEAD_B, both 30s, fully clothed","action":"start: foreheads almost touching -> end: @LEAD_B's phone lights up between them; both look down","light":"warm practical lamp behind, soft bloom","audio":"breath, low pad, phone buzz at the end","constraints":"no bed, no lying down, no body-part framing, cut before lips meet"}`
+- **Sound:**
+  - an OST-style piano or pad, music-forward (unlike drama);
+  - breath and room tone in the near-touch;
+  - a phone buzz or ding as the twist cue;
+  - a swell on the glance back.
+- **Ad template:** fragrance, fitness, men's health ("feel like yourself"): the brand enables confidence, never promises attraction or sexual results. Sexual-health brands use clinical wording only and no implied outcome (ledger; SG health pack).
+- **Compliance:**
+  - adults 25+, implied only;
+  - no bed or undress framing in paid ads;
+  - no "attract anyone" claims;
+  - Meta personal-attributes rule (no "your ED");
+  - dating-app-style ads: no suggestive copy (TikTok).
+- **Preset:** romance-drama (new) for the serial form; `aura-cinematic` stays for statement/glow-up edits.
+
+(preset `romance-drama`: tools/editor/presets/romance-drama.json)
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
+
+### 10a. NEW: Slow-burn texting romance (`romance-texting`) [measured: https://www.instagram.com/reel/C8MfUipINoB/]
+- **Why it works:** r4 ("Scenes From a Love Story", Mumbai, 1,260 likes, Ep 2) is handheld phone-real daylight with small subtitles.
+  - The plot moves through **message bubbles** ("Hi Sahir here, lmk if you need help with further life decisions") and a "*phone pings*" caption. It ends on the other lead smiling at his phone.
+  - It is relatable, cheap to make, and fits creators and real people. It reuses `chats[]` / chatanim.
+- **Pacing (60-90 s episode; r4 measured: median 3.3 s, 28 wpm, first line at 17 s, silences of 1.3 s and 1.55 s kept):**
+  - 0-5 s: a goodbye or a small moment (the picture carries it; words can come late);
+  - message bubble beats every 10-20 s, each held 2-3 s over the shot (not a full black card as in §30);
+  - the reply arrives on the other lead's face;
+  - the ending is a smile at the phone + "Follow for Ep 3".
+- **Shot grammar:** handheld eye-level, natural light, real homes and streets, mostly singles. A bubble overlay sits top-centre over the shot.
+- **genre_key:** `naturalistic handheld phone-shot realism, soft daylight and warm lamp interiors, real lived-in homes, candid small smiles, adults over 25, no glamour lighting`
+- **Sound:** live sound + a light acoustic bed, a "ping" per message, no hits.
+- **Compliance:** fictional; composite chats only (texting §30 rules); adults 25+.
+- **Preset:** romance-texting (new).
+
+(preset `romance-texting`: tools/editor/presets/romance-texting.json)
+**3 core rules (§10 + 10a):** (1) cold open on the charged moment, then jump back in time: structure from C-drama, explicitness from our ledger (implied only, clothed, adults 25+, cut away before the kiss completes); (2) the obstacle arrives as an object or message insert (phone, ring, document), and the reply lands on the other face; (3) end on a glance or smile and an open loop ("Part 2"), never on the payoff.
+
+**Flags for Klaus (§10):**
+- Split §10 into "romance-drama" (serial) and keep "aura" as a style (`aura-cinematic`)?
+- How far does "implied" go for organic vs paid? Proposal: organic may show a completed kiss between adults; paid stops at the near-kiss and never shows a bed.
+- C-drama-style cold opens (r1) are more explicit than our line. We copy the structure only.
+
+---
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
 ### 11. Founder / comeback (two modes) [measured: C1 https://www.instagram.com/reel/DC47FDWxlpv/, C2 https://www.instagram.com/reel/DRnBLsXDQE-/, C3 https://www.instagram.com/reel/DehjfyxRDu2/; researched: Dollar Shave Club 2012 https://echai.ventures/videos/dollar-shave-club-dollarshaveclub-com-our-blades-are-f-ing-great]
 - **Why it works:**
@@ -551,24 +692,90 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 - **Sound:** a clock tick bed; a low hit on each step.
 - **Preset:** cautionary-ladder.
 
-### 13. Thriller / heist / suspense [draft]
-- **Pacing:** the plan (fast cross-cuts, 1.5 s each) → the execution (cross-cut two lines of action, accelerating) → the hitch → a ticking resolution.
-- **Shot grammar:** inserts of hands, objects and timers; tracking shots; over-the-shoulder on screens; the cuts accelerate toward the climax.
-- **Look:** steel blue with orange practicals, high contrast.
-- **genre_key:** `taut thriller tone, cool steel-blue shadows with warm practical highlights, precise tracking camera, tight inserts, high contrast`
-- **Sound:** a pulse bed that rises in tempo; a ticking clock; hits on match cuts.
-- **Preset:** thriller-suspense.
-
-### 14. Mystery / reveal [draft]
-- **Pacing:** a question as the hook → 3 clues (each 3-5 s, revealed slowly) → a misdirect → the twist reveal (snap) → a "rewatch" callback.
+### 13. Thriller / heist / suspense [measured: https://www.instagram.com/reel/DUJOUnrj2cU/ (Crime 101 promo), https://www.instagram.com/reel/Csyv74MAu-e/ (comedy heist), https://www.instagram.com/reel/DD5hcfgSTxB/ (AI chase); researched: "Screen Time" thriller, Pitch Black Heist / Rififi silence (reelscotland.substack.com)]
+- **Why it works:** a heist is a list of rules or steps the viewer can follow, so they become the crew.
+  - The Crime 101 promo is built as **"THE RULES"**: the host states each rule to camera on a black void, a big serif rule card appears ("IF A JOB FEELS WRONG IT IS WRONG"), then 3-6 film inserts prove it. Measured: median shot **0.83 s**, 142 wpm, LRA 3.8.
+  - The thriller pull is the ticking clock plus the one hitch. Silence is the heist's sharpest tool (Pitch Black Heist and Rififi's silent half-hour robbery, where any sound sets off the alarm).
+- **Spine B, the flash-forward (t4, 3.4 K likes):** a cold open on the end-state (sirens, a mask, "Where are you?") → a title card → an "ONE HOUR BEFORE THE HEIST" time-jump card → the plan briefing at 150-230 wpm with a 1.5 s median → a payoff that calls back to the open. It shares the time-jump card with §10 romance.
+- **Pacing map (30 s ad, "the rules" spine):**
+  - 0-2 s: the stakes line to camera ("In and out in 90 seconds.");
+  - 2-4 s: the title card "THE RULES";
+  - 4-22 s: 3 rules × ~6 s, each rule = a card (1 s) + inserts at a **0.6-1.0 s median** (hands, tools, timers, screens);
+  - 22-25 s: the hitch: an alarm or a door, cuts stop, **1 s of silence**;
+  - 25-28 s: the clean escape / the reveal of the trick (the product is the "tool");
+  - 28-30 s: CTA as "Rule #4".
 - **Shot grammar:**
-  - partial framing (hands, backs, reflections);
-  - rack focus to the clue;
-  - the reveal is the first full, frontal, well-lit shot.
-- **Look:** moody low-key light with a pool of light on each clue.
-- **genre_key:** `mysterious low-key lighting, pools of light, partial framing, rack focus reveals, restrained camera`
-- **Sound:** sparse piano and a riser into the reveal, then a silence beat.
-- **Preset:** mystery-reveal.
+  - inserts of hands, tools and timers; over-the-shoulder on screens; tracking shots;
+  - a host or mastermind on a dark void or limbo set, MCU, centred;
+  - cuts accelerate to the hitch, then one held wide.
+- **Look:** steel blue/teal shadows, warm practicals (sodium street-light orange), high contrast, night aerials of the city. Title cards in a warm cream condensed serif or slab.
+- **genre_key:** `taut heist thriller, night city, cool steel-blue shadows with warm sodium practicals, precise tracking camera, tight inserts of hands and tools, high contrast, clean modern grade`
+- **Shot JSON:** `{"id":"S06","dur":1,"camera":"top-down insert, 50mm macro, locked","subject":"@CREW_HAND (gloved)","action":"start: thumb over the timer button -> end: presses, the display flips to 01:30","light":"single cold top light, warm LED reflection on the glove","audio":"one click, pulse bed continues"}`
+- **Sound:**
+  - a pulse/ostinato bed at 100-130 BPM, compressed (LRA ≈ 4, -14 LUFS, as t2);
+  - a click or tick per insert;
+  - a whoosh into each rule card;
+  - **the bed cuts out on the hitch (≥ 1 s silence)**;
+  - a bass hit on the escape.
+- **Ad template:** "The heist" (the viewer's problem is the vault; the brand's method is the crew's tool) or "The Rules of ___" (3 rules = 3 product truths). It pairs with ad-strategy.md D5 (Interview Panel) as the "plan" variant.
+- **Compliance:**
+  - no crime how-to detail (ledger hard line: no crime how-tos), so locks, alarms and tools stay generic and stylised;
+  - no real brands' vaults or logos;
+  - SG health: the "heist" is never against a competitor or a health system (no comparative claims).
+- **Preset:** thriller-suspense (corrected below).
+
+(preset `thriller-suspense`: tools/editor/presets/thriller-suspense.json)
+**3 core rules (§13):** (1) structure it as a plan the viewer can follow (rules or steps on cards), not as vibes; (2) inserts at a 0.6-1.0 s median with a click or tick per insert, accelerating to the hitch; (3) the hitch is the one silence, and the escape is the product's role, never a real crime method.
+
+**Flags:**
+- The Crime 101 promo has a movie star as the host. For brands, the host is the founder (Klaus) or an original character.
+- The t1 AI heist (3 likes, median 4.75 s, first word at 9.7 s) vs t2/t4/t3: a generic slow AI "cinematic heist" does not travel. Measured, but n=1 per side.
+- `rule_cards` could reuse `texts[]` type `title` today; a dedicated style would be nicer.
+
+---
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
+
+### 14. Mystery / reveal [measured: https://www.instagram.com/reel/Dc-RntLBfcK/ (narrated variant), https://www.instagram.com/reel/DbYOd-HD7E3/ (puzzle variant); researched: Loewenstein 1994 information-gap theory (cmu.edu Golman & Loewenstein), d6 evidence-reveal structure]
+- **Why it works:** curiosity is a *specific, closeable* gap (Loewenstein 1994; Golman & Loewenstein). The hook has to name the question precisely ("who was in the corridor?"), the clues have to look solvable, and the reveal has to re-read earlier frames (a rewatch).
+  - Puzzle mysteries ("can you spot the contradiction?") pull comments at ~1:1 with likes (m5: 81 likes, 78 comments), because the answer *is* the comment. That is an organic engagement driver, but on Meta the CTA "comment your answer" is phrased as a question, not as a bait instruction.
+- **Pacing map (30 s ad):**
+  - 0-2 s: the specific question as on-screen text plus the strangest frame;
+  - 2-20 s: 3 clues, each 3-6 s, each with ONE insert of the clue object (partial framing, rack focus);
+  - 20-24 s: a misdirect (the obvious suspect);
+  - 24-26 s: **silence 0.5-0.8 s, then the reveal** (the first full, frontal, well-lit shot);
+  - 26-30 s: a fast rewind montage of the clues (0.3-0.5 s each) re-read with the answer, then the CTA.
+- **Shot grammar:**
+  - clue inserts on a macro or 85 mm with a rack focus;
+  - suspects in partial framing (hands, backs, reflections) until the reveal;
+  - the reveal is the only symmetrical, frontal, evenly lit frame;
+  - the rewind montage reuses the clue shots exactly.
+- **Look:** low-key, a pool of light on each clue. The reveal brightens by 1 stop.
+- **genre_key:** `mysterious low-key lighting, pools of light on key objects, partial framing of people, rack focus to the clue, restrained locked camera, quiet tension`
+- **Shot JSON:** `{"id":"S03","dur":4,"camera":"macro insert, 100mm, rack focus from the cup rim to the sugar spoon","action":"start: steam over the cup -> end: focus lands on the dry spoon (the clue: nobody stirred)","light":"single pool of warm light, everything else falls to black","audio":"clock tick, a low pad, one soft ding as focus lands"}`
+- **Sound (replaces the edu-song text):**
+  - a sparse low pad or piano;
+  - a soft tick under the clue beats;
+  - one ding or click when each clue lands;
+  - a riser into **0.5-0.8 s of true silence**;
+  - the reveal hit (impact + sub);
+  - a reverse-whoosh on the rewind montage.
+- **Compliance (replaces the edu-song text):**
+  - the mystery must resolve to something true: no fake "what doctors don't want you to know" curiosity bait for health;
+  - SG health: the reveal is a mechanism or a common cause, never a cure or result;
+  - no real crimes or real victims as puzzles (ledger: real tragedies are not entertainment);
+  - a "comment your answer" CTA is phrased as a question, not a bait instruction.
+- **Ad template:** "Why does X keep happening?" → 3 everyday clues → the obvious wrong answer (the myth) → the real cause (the brand's mechanism) → the rewind showing the clues were the cause → CTA. This fits the D8 "Trial" and D6 skeletons.
+- **Preset:** mystery-reveal (corrected below).
+
+(preset `mystery-reveal`: tools/editor/presets/mystery-reveal.json)
+**Variant `mystery-narrated` (m2 measured: 246 wpm first-person VO, 1.13 s median, one orange caps keyword per cut, white frame + header, LRA 1.6).** The same preset with these overrides: `captions {max_words: 1, animation: pop, uppercase: true, font: Anton, color: #FF8A3D}`, `pacing {remove_silence_over_s: 0.25, max_shot_s: 2.0}`, `broll {every_s: 1.2, max_dur_s: 1.2}`, `music {energy: drone, db: -22}`. VO-led brand mysteries only; never recap someone else's film or series.
+
+**3 core rules (§14):** (1) the hook names ONE specific, closeable question, not "wait for the end"; (2) every clue gets its own insert and its own sound, and the rewind re-shows them after the reveal; (3) silence before the reveal, and the reveal is the first frontal, fully lit frame.
+
+**Flags:** the §14 card in genre-playbooks.md needs its Sound/Compliance/Preset lines fixed (copy-paste from §29). The mystery reels found on IG had weak engagement (3-352 likes). The strongest evidence for the reveal structure is d6's evidence turn (238 K) and the information-gap research, so Klaus may want to send 2-3 mystery references he rates.
+
+---
+- **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
 ### 15. Action / sport hype (two modes) [measured: A1 https://www.instagram.com/reel/Cy-JFIkyqgM/, A2 https://www.instagram.com/reel/C9po_ojpF6t/, A3 https://www.instagram.com/reel/Dd4VcGmoFYN/, A4 https://www.instagram.com/reel/Da2Tou0o9c5/, A5 https://www.instagram.com/reel/DbS6it8t1fj/, A6 https://www.instagram.com/reel/DZ7owTXN8Yp/]
 - **Why it works:**

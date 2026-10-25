@@ -1,0 +1,89 @@
+{
+  "name": "romance-drama",
+  "label": "Romance drama (implied, serial)",
+  "kind": "genre",
+  "description": "Cold open on the charged (implied, clothed) moment, 'one day earlier' card, dialogue shot-reverse-shot at ~1.5-2 s, name cards, a twist insert, a cut-away at the peak, 'Part 2'. From C-drama/ReelShort episodes on IG (iQIYI 'Irresistible Young Love' Ep 1, ReelShort EP 1) - structure kept, explicitness not (ledger: implied only, adults 25+).",
+  "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#10",
+  "pacing": {
+    "remove_silence_over_s": 0.8,
+    "pad_s": 0.2,
+    "remove_fillers": "hard",
+    "max_shot_s": 4.0
+  },
+  "captions": {
+    "font": "Instrument Serif",
+    "bold": false,
+    "uppercase": false,
+    "max_words": 6,
+    "animation": "fade",
+    "size": 0.032,
+    "position_y": 0.76,
+    "keyword_caps": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "kicker",
+    "persistent": true,
+    "uppercase": false,
+    "position_y": 0.07,
+    "size": 0.026,
+    "max_words": 5
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 4,
+    "scale": 1.05,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "db": -18,
+    "map": {
+      "hook": "swell",
+      "broll": "ding",
+      "end": "swell"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -18,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 0.96,
+    "saturation": 0.98,
+    "brightness": 0.02,
+    "warmth": 0.05,
+    "vignette": false
+  },
+  "transitions": {
+    "default": "glow",
+    "on": "beats",
+    "dur_s": 0.3,
+    "strength": 0.4
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": {
+    "slowmo_on_role": {
+      "role": "peak",
+      "speed": 0.6
+    },
+    "time_jump_card": {
+      "text": "One day earlier",
+      "style": "small serif centred",
+      "dur_s": 1.2
+    },
+    "name_cards": {
+      "on_first_appearance": true,
+      "style": "[Name, role]"
+    },
+    "bloom": 0.15
+  }
+}

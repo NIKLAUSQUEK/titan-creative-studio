@@ -70,7 +70,7 @@ Overnight run of 2026-10-25. It grounds, corrects and extends four [draft] modul
 ---
 
 ## §7 Drama / conflict (villain), corrected card
-### 7. Drama / conflict (villain) [measured: https://www.instagram.com/reel/Da9ltsbPQAf/, https://www.instagram.com/reel/DVM_VTjlKMH/; deeper: villains-conflict.md]
+### 7. Drama / conflict (villain) [measured: https://www.instagram.com/reel/Da9ltsbPQAf/, https://www.instagram.com/reel/DU7YHpGD2Rr/, https://www.instagram.com/reel/DVM_VTjlKMH/; deeper: villains-conflict.md]
 - **Why it works:** the conflict line starts at frame 1. The camera's allegiance stays with the target. Cuts accelerate into the cruelty, then sound drops out and one beat is held. The **evidence** reverses the scene (the receipts), the consequence lands, and the viewer is left with a real question.
 - **Pacing map (30 s ad; measured d6 scaled from 90 s, d3 for the escalation):**
 
@@ -226,7 +226,7 @@ Changes vs the current preset:
 ## §14 Mystery / reveal, corrected card
 **Draft bug found:** the current §14 card's **Sound / Compliance / Preset lines are copy-pasted from §29 edu-song** ("the vocal plus an original backing… every lyric is a clinical claim… Preset: edu-song"). They must be replaced. The corrected lines are below.
 
-### 14. Mystery / reveal [measured: https://www.instagram.com/reel/Dc-RntLBfcK/, https://www.instagram.com/reel/DbYOd-HD7E3/ (see late results); researched: Loewenstein 1994 information-gap theory (cmu.edu Golman & Loewenstein), d6 evidence-reveal structure]
+### 14. Mystery / reveal [measured: https://www.instagram.com/reel/Dc-RntLBfcK/ (narrated variant), https://www.instagram.com/reel/DbYOd-HD7E3/ (puzzle variant); researched: Loewenstein 1994 information-gap theory (cmu.edu Golman & Loewenstein), d6 evidence-reveal structure]
 - **Why it works:** curiosity is a *specific, closeable* gap (Loewenstein 1994; Golman & Loewenstein). The hook has to name the question precisely ("who was in the corridor?"), the clues have to look solvable, and the reveal has to re-read earlier frames (a rewatch).
   - Puzzle mysteries ("can you spot the contradiction?") pull comments at ~1:1 with likes (m5: 81 likes, 78 comments), because the answer *is* the comment. That is an organic engagement driver, but on Meta the CTA "comment your answer" is phrased as a question, not as a bait instruction.
 - **Pacing map (30 s ad):**
@@ -285,6 +285,8 @@ Changes vs the current preset:
   }
 }
 ```
+**Variant `mystery-narrated` (m2 measured: 246 wpm first-person VO, 1.13 s median, one orange caps keyword per cut, white frame + header, LRA 1.6).** The same preset with these overrides: `captions {max_words: 1, animation: pop, uppercase: true, font: Anton, color: #FF8A3D}`, `pacing {remove_silence_over_s: 0.25, max_shot_s: 2.0}`, `broll {every_s: 1.2, max_dur_s: 1.2}`, `music {energy: drone, db: -22}`. VO-led brand mysteries only; never recap someone else's film or series.
+
 **3 core rules (§14):** (1) the hook names ONE specific, closeable question, not "wait for the end"; (2) every clue gets its own insert and its own sound, and the rewind re-shows them after the reveal; (3) silence before the reveal, and the reveal is the first frontal, fully lit frame.
 
 **Flags:** the §14 card in genre-playbooks.md needs its Sound/Compliance/Preset lines fixed (copy-paste from §29). The mystery reels found on IG had weak engagement (3-352 likes). The strongest evidence for the reveal structure is d6's evidence turn (238 K) and the information-gap research, so Klaus may want to send 2-3 mystery references he rates.
@@ -292,10 +294,11 @@ Changes vs the current preset:
 ---
 
 ## §13 Thriller / heist / suspense, corrected card
-### 13. Thriller / heist / suspense [measured: https://www.instagram.com/reel/DUJOUnrj2cU/ (Crime 101 promo), https://www.instagram.com/reel/Csyv74MAu-e/, https://www.instagram.com/reel/DD5hcfgSTxB/ (see late results); researched: "Screen Time" thriller, Pitch Black Heist / Rififi silence (reelscotland.substack.com)]
+### 13. Thriller / heist / suspense [measured: https://www.instagram.com/reel/DUJOUnrj2cU/ (Crime 101 promo), https://www.instagram.com/reel/Csyv74MAu-e/ (comedy heist), https://www.instagram.com/reel/DD5hcfgSTxB/ (AI chase); researched: "Screen Time" thriller, Pitch Black Heist / Rififi silence (reelscotland.substack.com)]
 - **Why it works:** a heist is a list of rules or steps the viewer can follow, so they become the crew.
   - The Crime 101 promo is built as **"THE RULES"**: the host states each rule to camera on a black void, a big serif rule card appears ("IF A JOB FEELS WRONG IT IS WRONG"), then 3-6 film inserts prove it. Measured: median shot **0.83 s**, 142 wpm, LRA 3.8.
   - The thriller pull is the ticking clock plus the one hitch. Silence is the heist's sharpest tool (Pitch Black Heist and Rififi's silent half-hour robbery, where any sound sets off the alarm).
+- **Spine B, the flash-forward (t4, 3.4 K likes):** a cold open on the end-state (sirens, a mask, "Where are you?") → a title card → an "ONE HOUR BEFORE THE HEIST" time-jump card → the plan briefing at 150-230 wpm with a 1.5 s median → a payoff that calls back to the open. It shares the time-jump card with §10 romance.
 - **Pacing map (30 s ad, "the rules" spine):**
   - 0-2 s: the stakes line to camera ("In and out in 90 seconds.");
   - 2-4 s: the title card "THE RULES";
@@ -352,13 +355,13 @@ Changes vs the current preset:
 
 **Flags:**
 - The Crime 101 promo has a movie star as the host. For brands, the host is the founder (Klaus) or an original character.
-- The t1 AI heist (3 likes) suggests a generic AI "cinematic heist" without a character or rules does not travel. Confirm with the late measurements.
+- The t1 AI heist (3 likes, median 4.75 s, first word at 9.7 s) vs t2/t4/t3: a generic slow AI "cinematic heist" does not travel. Measured, but n=1 per side.
 - `rule_cards` could reuse `texts[]` type `title` today; a dedicated style would be nicer.
 
 ---
 
 ## §10 Romance / aura / sensual (implied), corrected card
-### 10. Romance / aura / sensual (implied) [measured: https://www.instagram.com/reel/DewJSY9AquY/ (sheet), https://www.instagram.com/reel/C8MfUipINoB/ (sheet; see late results); researched: ReelShort billionaire-romance 419 M views, 75 % female audience; Meta/TikTok adult-content ad policies; ledger: implied only, adults 25+]
+### 10. Romance / aura / sensual (implied) [measured: https://www.instagram.com/reel/DewJSY9AquY/, https://www.instagram.com/reel/DZCnMOLjhWL/, https://www.instagram.com/reel/C8MfUipINoB/; researched: ReelShort billionaire-romance 419 M views, 75 % female audience; Meta/TikTok adult-content ad policies; ledger: implied only, adults 25+]
 - **What the evidence changed:** the draft mixed three formats. On Reels, romance that performs is **serial and dialogue-driven** (r1, r4, R3), not slow golden-hour montage. The "aura" edit is a statement/glow-up *style*, already covered by the `aura-cinematic` style preset. This card covers **romance-drama**; §10a covers the naturalistic texting romance.
 - **What the C-drama cold open does (r1, sheet viewed) vs what we do:**
   - r1 opens on the most heated moment: a bed, a kiss, hands, rapid intercut. Then "one day earlier", name cards, and a document twist (a pregnancy scan) for the conflict.
@@ -369,7 +372,7 @@ Changes vs the current preset:
 - **Pacing map (30 s ad / 60-90 s episode):**
   - 0-3 s: the cold open on the charged moment (near-touch or loaded line) with a slow-mo of 1-2 shots;
   - 3-5 s: "One day earlier" / "3 months earlier" card;
-  - 5-20 s: meet → friction, dialogue shot-reverse-shot ~1.5-2 s, name cards on first appearance;
+  - 5-20 s: meet → friction; shot-reverse-shot at a **~2 s median** (r1 2.04 s, d7 2.0 s), music-forward with ≤ 60 wpm, and name cards on first appearance;
   - 20-26 s: the obstacle / twist insert (a message, a ring, a document);
   - 26-30 s: a glance back + cut-away + "Part 2" or the brand line.
 - **Shot grammar:**
@@ -402,7 +405,7 @@ Changes vs the current preset:
   "kind": "genre",
   "description": "Cold open on the charged (implied, clothed) moment, 'one day earlier' card, dialogue shot-reverse-shot at ~1.5-2 s, name cards, a twist insert, a cut-away at the peak, 'Part 2'. From C-drama/ReelShort episodes on IG (iQIYI 'Irresistible Young Love' Ep 1, ReelShort EP 1) - structure kept, explicitness not (ledger: implied only, adults 25+).",
   "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#10",
-  "pacing": {"remove_silence_over_s": 0.6, "pad_s": 0.15, "remove_fillers": "hard", "max_shot_s": 4.0},
+  "pacing": {"remove_silence_over_s": 0.8, "pad_s": 0.2, "remove_fillers": "hard", "max_shot_s": 4.0},
   "captions": {"font": "Instrument Serif", "bold": false, "uppercase": false, "max_words": 6, "animation": "fade", "size": 0.032, "position_y": 0.76, "keyword_caps": false},
   "hook_text": {"enabled": true, "renderer": "card", "card_style": "kicker", "persistent": true, "uppercase": false, "position_y": 0.07, "size": 0.026, "max_words": 5},
   "zoom": {"mode": "smooth", "every_s": 4, "scale": 1.05, "on_hook": 1.0, "on_emphasis": false},
@@ -421,12 +424,12 @@ Changes vs the current preset:
 }
 ```
 
-### 10a. NEW: Slow-burn texting romance (`romance-texting`) [measured: https://www.instagram.com/reel/C8MfUipINoB/ (sheet; see late results)]
+### 10a. NEW: Slow-burn texting romance (`romance-texting`) [measured: https://www.instagram.com/reel/C8MfUipINoB/]
 - **Why it works:** r4 ("Scenes From a Love Story", Mumbai, 1,260 likes, Ep 2) is handheld phone-real daylight with small subtitles.
   - The plot moves through **message bubbles** ("Hi Sahir here, lmk if you need help with further life decisions") and a "*phone pings*" caption. It ends on the other lead smiling at his phone.
   - It is relatable, cheap to make, and fits creators and real people. It reuses `chats[]` / chatanim.
-- **Pacing (60-90 s episode):**
-  - 0-5 s: a goodbye or a small moment;
+- **Pacing (60-90 s episode; r4 measured: median 3.3 s, 28 wpm, first line at 17 s, silences of 1.3 s and 1.55 s kept):**
+  - 0-5 s: a goodbye or a small moment (the picture carries it; words can come late);
   - message bubble beats every 10-20 s, each held 2-3 s over the shot (not a full black card as in §30);
   - the reply arrives on the other lead's face;
   - the ending is a smile at the phone + "Follow for Ep 3".
@@ -443,7 +446,7 @@ Changes vs the current preset:
   "kind": "genre",
   "description": "From 'Scenes From a Love Story' Ep 2 (IG @molshriii, 1.26K likes): handheld daylight realism, small subtitles, message bubbles overlaid on the shot as plot beats, a ping per message, ends on a smile at the phone + 'Follow for Ep 3'.",
   "reference": "research/genre-research-2026-10/drama-mystery-thriller-romance.md#10a",
-  "pacing": {"remove_silence_over_s": 0.7, "pad_s": 0.2, "remove_fillers": "none", "max_shot_s": 5.0},
+  "pacing": {"remove_silence_over_s": 1.2, "pad_s": 0.25, "remove_fillers": "none", "max_shot_s": 6.0},
   "captions": {"font": "Poppins", "bold": false, "size": 0.026, "color": "#FFE14D", "outline": 2, "max_words": 8, "animation": "static", "position_y": 0.8, "uppercase": false, "keyword_caps": false},
   "hook_text": {"enabled": false},
   "zoom": {"mode": "smooth", "every_s": 0, "scale": 1.0},
@@ -467,9 +470,43 @@ Changes vs the current preset:
 ---
 
 ## Late results (measurements that finished after the cards were drafted)
-(The table below is filled in by the run; values supersede "see late results" above.)
+(Values here supersede "see late results" in the evidence table.)
 
-LATE_RESULTS_PLACEHOLDER
+| ID | Module | Cuts · avg / median shot | Thirds (cuts) | First word · wpm | Loudness | Silence ≥ 0.5 s | What the sheet shows |
+|---|---|---|---|---|---|---|---|
+| r4 Scenes From a Love Story Ep 2 (1,260 likes) | §10a | 19 · 3.81 / **3.27 s** (max 11.7) | 10 / 4 / 5 | **17.0 s** · **28 wpm** (Hindi, sparse) | -14.1 LUFS, LRA **11.5** | **1.3 s, 1.55 s** | handheld daylight, small yellow subtitles, white chat bubbles over the shot, "*phone pings*" caption, ends on the other lead smiling at his phone |
+| r1 iQIYI Irresistible Young Love Ep 1 (1,534 likes) | §10 | 43 in 120 s · 2.73 / **2.04 s** | 12 / 10 / **21** | 3.4 s · **6 wpm** (music-led montage) | -13.2, LRA 5.8 | none | implied/clothed bed + wall kiss montage cold open (more explicit than our line), vertical name cards, "Episode 1" label top-left, document twist (scan), "one day earlier" flashback |
+| d7 ReelShort "Your Love Broke My Heart" (2,239 likes) | §10 / §7a | 18 · 2.31 / **2.0 s** | 4 / 8 / 6 | 0.0 s · 59 wpm | -15.1, LRA 6.2 | none | trailer-style clip: a man teaches her to shoot ("don't anticipate… remember this feeling"), romance + revenge set-up |
+| d2 amandalpaca "reacting to low budget short form dramas pt 15" (**10,169 likes**) | §7a parody signal | 41 in 120 s · 2.86 / 1.77 s | 11 / 19 / 11 | 0.0 s · 199 wpm (zh/en) | -14.1, LRA 9.0 | none | 2 reactors over a PIP of micro-drama clips (fake-doctor tropes); the audience knows the tropes well enough to laugh at them |
+| m2 "The Lampshade Evidence" (352 likes) | §14 | **71** in 99 s · 1.37 / **1.13 s** | 20 / 29 / 22 | 0.0 s · **246 wpm** first-person VO | -14.1, **LRA 1.6** | none | **first-person "movie story" recap** of what looks like a European crime series: one orange caps word per cut, white frame + header "Tell a movie story from the first person perspective…", evidence = phone → TV autoplay → the killer is the detective |
+| t4 alloramomo "The heist (short film)" (3,442 likes) | §13 | 26 · 2.22 / **1.53 s** | 7 / 12 / 7 | 0.0 s · **228 wpm** | -16.0, LRA 7.1 | none | **flash-forward cold open** (balaclava, sirens, "Where are you?") → "The Heist" title over a bank → "One hour before the heist" card → the plan meeting derails into a comic argument → callback to the late getaway driver; phone-shot, serif subtitles |
+
+| d4 Dhar Mann "Model Fired For Being Too Short" (3,316 likes) | §7 | 60 in 92.6 s · 1.52 / **1.42 s**, **max 2.71 s** (metronomic) | 23 / 18 / 19 | **0.0 s** · 129 wpm | -14.1, LRA 8.6 | none | opens on the insult ("You would never make it as a model… with a walk like that"); white frame + header; class/looks villain |
+| r6 ReelShort "Summer Situationship" EP 1 (661 likes) | §10 / §7a | 44 in 98 s · 2.18 / **2.13 s** | 14 / 14 / 16 | 0.9 s · 111 wpm | -14.7, LRA 13.1 | 1.0 s at the very start | **flash-forward cold open** on the fight + VO thesis ("If someone makes you crazy, you're either hopelessly in love with them or you hate their guts"), "A FEW MONTHS LATER" card, **name cards with relation** ("Emmett, Jules's Ex-Boyfriend"), class humiliation (she is the maid for her ex-best friend) |
+| d1 FAME Ep 2 (3,366 likes, 78 comments) | §7a | 9 in 120 s · median **4.48 s** (long takes, max 52 s) | 5 / 1 / 3 | 3.5 s · 79 wpm | -13.4, LRA 13.6 | none | indie long-take micro-drama (music/fan scene); proof that an engaged community series survives slow cutting, but it is the exception |
+| t3 Jason Zada "The Heist" (all text-to-video, 430 likes) | §13 | 56 in 116 s · 2.04 / **1.62 s** | 21 / 21 / 14 | **no dialogue** | -14.1, LRA 6.0 | none | 16:9 posted as-is; 70s NYC getaway chase: title on the bank façade, wheel/pedal inserts, driver CU, windscreen POV, cop car; **one hero object (the green car) locked across shots** |
+| t1 AI heist (38 s, **3 likes**) | §13 control | 5 cuts · median **4.75 s** | 0 / 4 / 1 | 9.7 s (pt) · 41 wpm | -14.1, LRA 3.9 | 0.7 s | slow, generic "cinematic AI heist" with no rules, no character hook, first word at ~10 s: the counter-example |
+| m5 "man found dead… can you spot the contradiction" (81 likes, **78 comments**) | §14 puzzle | **0 cuts** (one illustrated board, typewriter text) | n/a | 0.0 s · **206 wpm** | -14.7, LRA 2.3 | none | challenge hook "If you can solve this case, you're in the top 2% of logical thinkers"; 5 suspects × 1 alibi each, one with a contradiction; ends "comment your answer and tag someone…" (tag-bait: Meta demotes it) |
+
+Not measured (time): m1, m3, m4 (3-10 likes, low signal), r2, r3, r5 (AI romance edits, ≤ 31 likes), d5 (fan repost).
+
+**What these change:**
+- **Dhar Mann is metronomic.** d4 never holds a shot longer than 2.71 s (median 1.42 s) and starts on the insult at 0.0 s. Two official Dhar Mann reels now agree: §7's `max_shot_s: 2.5` is right.
+- **"Time-jump + name card" appears three times** (r1, r6, t4). The relation-labelled name card ("Emmett, Jules's Ex-Boyfriend") lets a 90 s episode skip all exposition. Promote `name_cards` and `time_jump_card` in priority.
+- **AI heist counter-example:** t1 (slow, generic, 3 likes) vs t2/t4 (fast, rules or a characterful plan, 641-3,442 likes) vs t3 (fast wordless chase, 430 likes). A **fast cut plus a character or a rule spine** is what travels, not "cinematic AI".
+- **Puzzle mysteries can be zero-cut** (m5): one board, a typewriter reveal, 206 wpm VO, and the comment count ≈ the like count. A cheap evergreen format for any brand ("spot the posture mistake").
+- **Romance is slower and music-led.** Medians run 2.0-2.04 s for the serial/C-drama form and 3.3 s for the naturalistic form, with very few words (6-59 wpm). The naturalistic form is the only measured genre here with real silences (1.3-1.55 s). Updates:
+  - §10 dialogue shot-reverse-shot becomes **~2 s median, music-forward, ≤ 60 wpm**;
+  - §10a holds **3-4 s median, first line can come late (the picture carries it), keep 1-1.5 s silences**;
+  - `romance-texting` should use `remove_silence_over_s` ≥ 1.2 (raised from 0.7).
+- **The time-jump card is shared by heist (t4: "One hour before the heist") and romance (r1: "one day earlier").** Flash-forward cold open → time-jump card → the build → payoff that calls back to the open. Add it to §13's pacing map as an alternative spine to "the rules", and keep `time_jump_card` as one shared `_needs_feature`.
+- **Heist dialogue is FAST:** 228 wpm (t4) and 142 wpm (t2). The plan briefing is the content, so §13 captions stay at 3 words and silence removal stays tight.
+- **Mystery has two speeds:**
+  - (a) the **narrated recap** (m2): 246 wpm VO, 1.1 s median, one keyword per cut, LRA 1.6 (wall-to-wall);
+  - (b) the staged slow-clue reveal in the card above.
+
+  The draft only knew (b). Add a `mystery-narrated` variant: VO-led, caption one word per cut, `max_words: 1`, `animation: pop`, `remove_silence_over_s: 0.25`, B-roll every 1.2 s. **Do not copy m2's source** (it recaps someone else's series). Use it for brand-made narrated mysteries ("I found the reason my back hurt every morning…").
+- **The white frame + one-line header container shows up again** (m2), after d6. It is the dominant "story page" container on IG drama, mystery and recap reels. That raises the priority of `layout.frame`.
 
 ---
 
