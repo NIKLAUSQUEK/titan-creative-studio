@@ -24,7 +24,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
   - `in`/`out` are **source** seconds within the ingest clip. Order in the list = playback order.
   - Snap zoom = a key at `at` with `scale` (e.g. 1.08). Smooth push = two keys, the second with `"ease": "linear"`.
   - `fit` is `auto|cover|blur` (`blur` pads vertical footage into 16:9).
-- `broll[]`: `{path, src_in, dur, anchor:{item, offset}, mode: full|pip|greenscreen, flag}`. Anchors follow trims.
+- `broll[]`: `{path, src_in, dur, anchor:{item, offset}, mode: full|pip|split|greenscreen, flag}`. Anchors follow trims. `split` = B-roll on the top half, the speaker's centre band on the bottom half (ref #8/#9 layout).
 - `texts[]`: `{type: hook|title|lower_third, text, anchor, dur}`.
   - Hook text = what the viewer reads in the first second. Don't duplicate a spoken hook that is already captioned.
 - `chats[]`: `{anchor, dur, style: dark|light, size, sfx: pop, captions: hide, messages:[{side: me|them, name, text, at, typing, punch}]}`.
@@ -131,6 +131,14 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Labels:** beat `label` puts one word on that beat's clip.
 - **Beat sync:** `beat_sync` presets snap B-roll, labels and SFX to the music's onsets (detected locally).
 - **Precedence:** the brand's `edit-brand` hook placement still wins over the preset (e.g. Physio Spot hook at 61.5%).
+
+## 7d. Learn a style from links (`editor.py study`)
+- `editor.py study <3-5 links or files> --name "<style>" [--llm claude-cli]`:
+  1. downloads the refs with yt-dlp (study only, git-ignored);
+  2. measures cuts, median shot, words/min, first word, speech share and LUFS, and makes 1 fps + hook frame sheets;
+  3. writes `research/style-studies/<style>/STYLE_STUDY.md` and the preset `style-<style>`.
+- With `--llm claude-cli`, one Claude call (sonnet) looks at the sheets and describes captions, header, layout, graphics, grade, sound and "steal / avoid" lists. Without it: zero tokens, numbers only.
+- LOOK at the sheets before using the preset. The brand's edit-brand block and the ledger still win.
 
 ## 7c. Songs, raps and jingles (`editor.py song`)
 - `editor.py song --list` shows the public-domain tunes and their syllables per line.

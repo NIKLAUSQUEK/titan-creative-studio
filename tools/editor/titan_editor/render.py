@@ -130,8 +130,8 @@ def venc(q):
 
 def render_broll(b, W, H, q, style, cache, lut):
     pip = b.get("mode") == "pip"
-    w, hh = (int(W * 0.42) // 2 * 2, int(H * 0.42) // 2 * 2) if pip else (W, H)
-    key = h({"p": b["path"], "in": b["src_in"], "d": b["dur"], "W": w, "H": hh, "q": q, "g": style.get("grade"), "v": 2})
+    w, hh = (int(W * 0.42) // 2 * 2, int(H * 0.42) // 2 * 2) if pip else (W, H // 2 // 2 * 2) if b.get("mode") == "split" else (W, H)
+    key = h({"p": b["path"], "in": b["src_in"], "d": b["dur"], "W": w, "H": hh, "q": q, "g": style.get("grade"), "v": 3})
     out = cache / f"broll_{key}.mkv"
     if out.exists():
         return out
@@ -375,6 +375,10 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
             win = f"enable='between(t,{a:.3f},{a + d:.3f})'"
             if b.get("mode") == "pip":
                 fc.append(f"[{last}][b{n}]overlay=x=W-w-{int(W * 0.04)}:y={int(H * 0.15)}:eof_action=pass:{win}[o{n}]")
+            elif b.get("mode") == "split":       # B-roll on top half, speaker's centre band on the bottom half (refs #8, #9)
+                hh = H // 2 // 2 * 2
+                fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]crop={W}:{hh}:0:{(H - hh) // 2}[c{n}];[p{n}][c{n}]overlay=0:{H - hh}:{win}[s{n}];"
+                          f"[s{n}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             elif b.get("mode") == "greenscreen":
                 fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]colorkey=0x00FF00:0.30:0.10[k{n}];[b{n}][k{n}]overlay=0:0[g{n}];[p{n}][g{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             else:

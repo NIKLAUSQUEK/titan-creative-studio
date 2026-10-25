@@ -19,3 +19,5 @@ projects/*/autoedit/renders/
 projects/*/autoedit/qc/
 projects/*/autoedit/ingest/**/*.jpg
 projects/*/autoedit/broll_sheet.jpg
+research/style-studies/*/videos/
+research/style-studies/*/*.jpg

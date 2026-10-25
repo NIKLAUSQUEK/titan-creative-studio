@@ -60,6 +60,12 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
+## Learn a style from 3-5 links
+```powershell
+& "$env:LOCALAPPDATA\TitanEditor\venv\Scripts\python.exe" editor.py study https://www.instagram.com/reel/AAA https://www.instagram.com/reel/BBB --name "clean educator" --llm claude-cli
+```
+It writes `research\style-studies\clean-educator\STYLE_STUDY.md` (measured cuts, words/min, loudness, frame sheets + Claude's read of captions, layout and graphics) and the preset `style-clean-educator`. Then: `assemble --preset style-clean-educator`. The downloaded refs are for study only.
+
 ## Texting scenes and songs
 - **Texting scene:** when someone retells a text or DM, the brief can give that beat a `chat` (messages, who sent each, timing). The edit cuts to a black iMessage-style card: bubbles pop in one by one, "•••" shows before replies, and the key line appears alone and large. Captions hide while it's up. Preset `texting-suspense`.
 - **Songs / raps / jingles** (zero tokens):

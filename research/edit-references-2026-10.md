@@ -37,6 +37,30 @@ These Facebook references were studied for technique only; their content is neve
 - **Strategy:** a person retells what someone said, and the receipts appear as the texts, so the viewer reads ahead of the voice and gets the payoff twice (read + heard). This works for any "they told me…" story: patient-safe for health brands only when the texts are the founder's own or clearly a dramatised recreation (compliance pack: no patient testimonials).
 - **Built:** `recipe.chats[]` (tools/editor/titan_editor/chatanim.py) renders this exact grammar as a cutaway with a pop per message and captions hidden; a brief beat's `chat` field creates it; preset `texting-suspense`; genre module §30.
 
+## 8. Borrowed viral cold open → bait-and-switch: Omegle "ex-lovers" clip → "3 steps to scaling" (Instagram, Vaughn Major / Major Design)
+- **Stats:** 40.9 s; 1.3K likes, 41 comments. One cut that matters, at 16.3 s.
+- **Structure:**
+  - 0-16 s: an already-viral Omegle clip (watermark @romannadolfo) inside an Omegle UI frame, split top/bottom. A girl says "I kinda look like my ex… he even did little beats like that", then "Lizzie?" / "Daniel?": the ex-lovers reunion the audience already knows and loves;
+  - 16.3 s: the top window "skips" to the creator himself, who delivers "If you just started a business, here's a 3-step scaling roadmap" (referrals → online presence → paid ads and content), with a growing numbered list top-left and one big CAPS word per beat;
+  - the bottom window keeps the original guy's face, now reading as bored or thinking: an accidental reaction track and the joke of the edit.
+- **Why it works:** the borrowed clip buys the first 3-16 s of attention for free (recognition + curiosity), and the format switch is the pattern-interrupt. The lesson then rides on the leftover goodwill. Caption: "Lock in 🤦🏽‍♂️… Here's how to grow".
+- **Rights:** the footage is someone else's (the original creator, plus two private people on a video-chat). See genre-playbooks.md §31 for the safe ways to use this: format-jack (recreate), native Remix/Stitch on personal accounts, or licensed with written permission. Brand and clinic accounts never reuse the footage.
+
+## 9. "Build your own AI video editor with Claude Code" (Instagram, millee.md)
+- **Stats:** 76.9 s, 18.3K likes, 10.2K comments (a comment-to-get CTA: "comment MOTION").
+- **Measured:** 16 cuts, median shot 2.7 s, 256 words/min (very fast talker).
+- **Edit:**
+  - split layout: animated explainer panels on a beige paper background in the top half, the talking head in the bottom half;
+  - the hook is a collage of other creators' AI-edited reels;
+  - step headers ("Step 1. Set it up") in an orange + black serif-ish sans;
+  - one bold white CAPS word per caption at mid-frame;
+  - the panels are motion graphics (folders opening, connector lines, a colour-fan icon, prompt cards).
+- **The workflow it teaches:** Claude Code desktop plus Remotion, HyperFrames (motion graphics), FFmpeg, Whisper and yt-dlp, then:
+  - study 3-5 reference links into a "brand sheet";
+  - drop raw footage in;
+  - Claude cuts pauses over ~0.1 s, adds captions, music and motion graphics, shows a storyboard, and revises on notes.
+- **Vs our editor:** same core (FFmpeg + Whisper + Claude revisions + style from references), and ours adds the strategist brief, compliance, B-roll matching, face recognition, variants, chats and songs. Their one real edge is designed motion-graphic panels. Built in response: `editor.py study` (refs → measured style + preset) and the `split` B-roll layout.
+
 ## Not yet studied (Facebook needs a login for these)
 - 2 (carousel/static with legitimacy, news/scam-expose vibe like SnapSaigon), 3 (new release / mall / product creative) and 4 (minimal-edit reaction) could not be opened.
 - **To share them:** send screenshots of each slide, or download them on the PC with Style Lab using your own logged-in browser (`Run-StyleLab.ps1 -Browser chrome`).

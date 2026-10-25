@@ -40,6 +40,7 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 28 | Event / retail / mall promo | openings, pop-ups, launches | FOMO, fun | 0.8-2 s | energetic, on beat | bright, saturated | upbeat licensed track | trend-beat-switch / action-hype |
 | 29 | Edu-song / mnemonic / musical explainer | teaching steps, routines, checklists, myths ("boring" health or how-to) | delight, "I can't unhear it" | 1-3 s, on the beat | spoken hook → song → recap chorus → CTA | bright, clean, saturated | the song IS the music (original or public-domain melody) + pops | edu-song |
 | 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
+| 31 | Borrowed cold open / bait-and-switch | a lesson that needs a scroll-stopper; riding a moment everyone recognises | recognition → surprise | the borrowed clip 3-16 s, then the creator's normal pace | familiar viral moment → "skip" → your lesson | match the borrowed clip, then your own look | the original's audio, a skip/whoosh on the switch, then yours | split layout + trend-beat-switch or talking-head-punchy |
 
 **Pairing rules:**
 - Comedy can borrow any genre's grammar for a parody (horror parody, heist parody); hold the genre seriously until the reveal.
@@ -439,4 +440,29 @@ Full guide: edu-songs-mnemonics.md (formats, kids-TV levers, copyright). Tool: `
 - **Sound:** a low drone or pulse bed, a hit every 1-3 s, a soft tick on each bubble, and silence on the punch line.
 - **Compliance:** real messages need consent from both parties; recreations are labelled "dramatised" when they could be mistaken for real; health brands never show patient chats.
 - **Preset:** texting-suspense (brief beats carry `chat`; renders via tools/editor chatanim.py).
+
+### 31. Borrowed cold open / bait-and-switch (hook-jacking) [measured: ref #8]
+The idea: open on something the audience already knows and loves (a viral clip, meme moment, famous scene or trending audio), then "skip" or "switch" into your lesson. The recognition stops the scroll; the switch is the pattern-interrupt.
+- **Pacing map:**
+  - 0-3 s: the most recognisable moment of the borrowed clip (no intro);
+  - up to ~15 s: let it run only while it's still delivering;
+  - the switch: a UI "skip" (Omegle next, FaceTime swap, TV channel change, "wait…" record scratch) into you, keeping the same frame or layout so it feels like the same video;
+  - the lesson in 3 numbered steps with a growing list on screen;
+  - leave a reaction element running (the other window's face) for comedy;
+  - CTA.
+- **Variants:**
+  - **Format-jack:** recreate the viral moment with your own people ("Omegle but it's a physio"). Fully owned.
+  - **Moment-jack:** reference a trend everyone knows (a meme line, a viral sound) and act it out yourself.
+  - **Clip-jack:** the actual third-party footage. Only under the rights rules below.
+  - **Scene parody:** a famous film or TV scene restaged with the brand's twist (see filmmaking-longform.md for staging; no lookalikes of real actors).
+- **Layout:** the editor's `split` B-roll mode (top = the borrowed or recreated window, bottom = the speaker), or full frame with a UI frame graphic.
+- **Rights (hard rules):**
+  - **Brand, clinic and ad accounts:** format-jack or moment-jack only. Never third-party footage, and never real private people from viral clips (likeness + privacy). In SG health, also no implied endorsements.
+  - **Personal or creator accounts, clip-jack allowed only via:**
+    - the platform's own Remix / Stitch / Duet, where the original creator enabled it (platform licence, auto-credit); or
+    - written permission from the rights holder (DM screenshot saved to the project), credited on screen.
+    - Commentary or reaction on the clip itself is a judgement call per market, and never for a sales post.
+  - Never download and re-upload someone else's viral clip as your own opener without one of the above. It is copyright infringement, is often muted or removed, and the people in it never agreed.
+- **Compliance:** the switch must not misrepresent (no fake "news" or fake "patient" footage).
+- **Preset:** talking-head-punchy or genz-header-skit, plus B-roll `mode: split` for the opener; trend-beat-switch if music-led.
 

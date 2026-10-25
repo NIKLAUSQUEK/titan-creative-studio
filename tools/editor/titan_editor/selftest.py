@@ -173,6 +173,8 @@ def selftest(a):
     rc["chats"] = [{"id": "chat1", "anchor": {"item": rc["items"][0]["id"], "offset": 0.5}, "dur": 2.5,
                     "messages": [{"side": "me", "name": "Ashley", "text": "Did you do the exercises? 👀", "at": 0.0},
                                  {"side": "them", "text": "...define exercises", "at": 1.2, "typing": 0.5}]}]
+    for b_ in rc["broll"]:
+        b_["mode"] = "split"                  # also exercises the split-screen layout (B-roll top, speaker bottom)
     _, cres = render(E, quality="draft", aspects=["9:16"], recipe=rc, out_dir=E / "renders" / "chat", name="chat")
     fr = E / "renders" / "chat" / "chat_frame.png"
     ffmpeg(["-ss", "2.4", "-i", cres[0]["path"], "-frames:v", "1", fr])
@@ -180,7 +182,7 @@ def selftest(a):
     px_ = list(Image.open(fr).convert("RGB").getdata())
     blue = sum(1 for p_ in px_ if p_[2] > 180 and p_[0] < 90)
     dark = sum(1 for p_ in px_ if max(p_) < 30) / len(px_)
-    ok("texting scene: chat cutaway with bubbles renders", blue > 200 and dark > 0.5, f"blue px {blue}, dark {dark:.0%}")
+    ok("texting scene + split-screen B-roll render", blue > 200 and dark > 0.5, f"blue px {blue}, dark {dark:.0%}")
     from .melody import make_song
     rows, tim = make_song("Squeeze and lift and hold for three\nNow relax and let it be", E / "song", "twinkle")
     ok("song: syllable fit + guide track + karaoke timings", all(r["status"] == "ok" for r in rows) and (E / "song" / "guide.wav").exists()

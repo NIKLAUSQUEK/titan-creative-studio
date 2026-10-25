@@ -75,6 +75,8 @@ def main(argv=None):
     p = sp.add_parser("chat"); add_llm(p)
     p = sp.add_parser("preset"); p.add_argument("action", choices=["list", "show", "from-stylecard"]); p.add_argument("name", nargs="?")
     p.add_argument("--file"); p.add_argument("--base", default="talking-head-punchy")
+    p = sp.add_parser("study"); p.add_argument("refs", nargs="+"); p.add_argument("--name", required=True); add_llm(p, "none")
+    p.add_argument("--whisper-model", default="auto")
     p = sp.add_parser("song"); p.add_argument("--tune"); p.add_argument("--lyrics"); p.add_argument("--rap", action="store_true"); p.add_argument("--beat", action="store_true")
     p.add_argument("--bpm", type=float); p.add_argument("--shift", type=int, default=0); p.add_argument("--out"); p.add_argument("--list", action="store_true")
     p = sp.add_parser("selftest"); p.add_argument("--keep", action="store_true"); p.add_argument("--whisper-model", default="tiny"); p.add_argument("--no-clip", action="store_true")
@@ -96,6 +98,9 @@ def main(argv=None):
     if a.cmd == "people":
         from .faces import cmd_people
         return cmd_people(a)
+    if a.cmd == "study":
+        from .study import cmd_study
+        return cmd_study(a)
     if a.cmd == "song" and (a.list or a.out):
         from .melody import cmd_song
         return cmd_song(a, None)
