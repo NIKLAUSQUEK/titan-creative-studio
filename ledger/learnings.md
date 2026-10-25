@@ -1,4 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-25 - robotic voices (Klaus)
+- [voice] Robotic TTS (espeak/SAPI-style) never appears in anything Klaus sees as a sample or deliverable: "sounds so robotic… this would never work". Real recorded voices first (enhanced with `editor.py enhance`), then natural neural voices for test/demo footage (Piper locally) and premium licensed AI voices (ElevenLabs/Higgsfield archetypes, never cloning real people) only when a voice must be generated. When showing a test render, say what the voice is.
 ## 2026-10-20 - draft vs final quality (Klaus)
 - [quality] Drafts always render at the LOWEST quality/resolution the model offers (cheapest tier, e.g. 480p/std/draft). Only after Klaus approves the draft, re-render at the HIGHEST quality at 1080p. Never render a draft at 1080p, never skip the draft.
 ## 2026-10-20 - villains & conflict (Klaus)

@@ -95,7 +95,7 @@ try {
   $stamp = Join-Path $work "deps.ok"
   if (-not $SkipInstall -and -not (Test-Path $stamp)) {
     & $vpy -m pip install --quiet --upgrade pip
-    & $vpy -m pip install --quiet faster-whisper pillow numpy yt-dlp
+    & $vpy -m pip install --quiet faster-whisper pillow numpy yt-dlp piper-tts
     # torch + torchvision from the same index first, so open_clip doesn't pull a mismatched torchvision
     $idx = if (Have "nvidia-smi") { "https://download.pytorch.org/whl/cu124" } else { "https://download.pytorch.org/whl/cpu" }
     Write-Host "Installing PyTorch ($idx) + open_clip (one-time, ~1-3 GB)..." -ForegroundColor Cyan

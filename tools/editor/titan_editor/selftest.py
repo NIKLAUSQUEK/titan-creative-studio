@@ -20,7 +20,44 @@ BROLL = [("walking", "WALKING OUTDOORS", "0x2E7D32"), ("coffee", "COFFEE CUP", "
          ("office", "OFFICE DESK LAPTOP", "0x1565C0"), ("ocean", "OCEAN BEACH WAVES", "0x0277BD")]
 
 
+PIPER_VOICE = "en_US-ryan-high"     # neural, natural male voice (rhasspy/piper-voices, MIT code / voice per its model card)
+
+
+def piper_voice():
+    """Download the Piper voice once into the local cache; None if offline or piper isn't installed."""
+    try:
+        import piper  # noqa: F401
+    except Exception:
+        return None
+    import os, urllib.request
+    base = Path(os.environ.get("LOCALAPPDATA") or Path.home() / ".cache") / "TitanEditor" / "voices"
+    base.mkdir(parents=True, exist_ok=True)
+    lang, name, q = PIPER_VOICE.split("-")
+    url = f"https://huggingface.co/rhasspy/piper-voices/resolve/main/{lang.split('_')[0]}/{lang}/{name}/{q}/{PIPER_VOICE}"
+    try:
+        for ext in (".onnx", ".onnx.json"):
+            f = base / (PIPER_VOICE + ext)
+            if not f.exists():
+                urllib.request.urlretrieve(url + ext, f)
+        return base / (PIPER_VOICE + ".onnx")
+    except Exception as e:
+        log(f"piper voice download failed ({str(e)[:80]}); falling back to a robotic test voice")
+        return None
+
+
 def tts(text, out):
+    """Test speaker for synthetic footage. Klaus 2026-10-25: espeak sounds robotic, so a neural voice (Piper) is used when available.
+    Synthetic speech is ONLY for testing the cutting logic; real edits use real recorded voices."""
+    v = piper_voice()
+    if v:
+        import wave as _w
+        from piper import PiperVoice
+        global _PV
+        if "_PV" not in globals():
+            _PV = PiperVoice.load(str(v))
+        with _w.open(str(out), "wb") as f:
+            _PV.synthesize_wav(text, f) if hasattr(_PV, "synthesize_wav") else _PV.synthesize(text, f)
+        return True
     if have("espeak-ng") or have("espeak"):
         subprocess.run([shutil.which("espeak-ng") or shutil.which("espeak"), "-s", "155", "-w", str(out), text], check=True, capture_output=True)
         return True

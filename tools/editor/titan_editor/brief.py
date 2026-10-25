@@ -15,6 +15,10 @@ from .presets import brand_guide, list_presets
 PLATFORMS = {"tiktok": ("9:16", [15, 60]), "reels": ("9:16", [15, 60]), "shorts": ("9:16", [15, 58]), "youtube": ("16:9", [240, 900]),
              "linkedin": ("1:1", [30, 90]), "feed": ("4:5", [15, 60]), "facebook": ("4:5", [15, 60]), "x": ("16:9", [15, 140])}
 GOALS = ["wise", "expert", "trust", "sell", "founder", "entertain"]
+ABSTRACT = set("here there what instead think thing things people most usually really actually just very every single also even still "
+               "means mean fix part follow know want need make made way much many more less lot something anything nothing "
+               "today right now then when why how because about would could should will can not don't does doesn't it's that's "
+               "good bad best better worst same different first last next".split())
 STOP = set("a an the and or but so to of in on at for with is are was were be been it this that i you we he she they my your our me "
            "just really very do does did not no yes can will would could should have has had from as by about what when how why "
            "there their them then than if because like um uh okay right gonna get got its it's i'm you're don't".split())
@@ -145,7 +149,8 @@ def heuristic_brief(a, edit_dir, brand):
                 words = [w for w in re.findall(r"[a-zA-Z']+", s["text"].lower()) if w not in STOP and len(w) > 2]
                 entity = next((m for m in re.findall(r"(?<=\s)([A-Z][a-zA-Z0-9]+(?:\s[A-Z][a-zA-Z0-9]+)*)", s["text"]) if m not in ("I", "I'm", "OK")), None)
                 personal = bool(re.search(r"\b(I|I'm|I've|my|me)\b", s["text"]))
-                q = " ".join(words[:5]) or None
+                concrete = [w for w in words if w not in ABSTRACT]            # visual nouns first ("coffee", "walk"), not "instead"/"think"
+                q = " ".join((concrete + [w for w in words if w in ABSTRACT])[:5]) if concrete else None
                 beats.append({"beat": "body", "purpose": "", "clip": c["id"], "t0": s["t0"], "t1": s["t1"], "line": s["text"],
                               "on_screen_text": None, "broll_query": q, "sfx": None, "role": "body", "fixed": False,
                               "visual": {"type": ("me" if personal else "own_broll") if q else "none", "query": q, "metaphor": None, "person": None,
