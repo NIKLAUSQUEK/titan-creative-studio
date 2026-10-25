@@ -1,572 +1,572 @@
 {
- "ov_deep_whoosh_1_eab8a6e2.wav": {
-  "title": "Deep Whoosh #1",
-  "creator": "Kinoton",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/Kinoton/sounds/351256",
-  "kind": "whoosh",
-  "attribution": "\"Deep Whoosh #1\" by Kinoton is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 1.4,
-   "onset_s": 0.033,
-   "peak_s": 0.248,
-   "end_s": 1.38,
-   "attack_ms": 215,
-   "centroid_hz": 951,
-   "peak_dbfs": -6.6
+  "ov_deep_whoosh_1_eab8a6e2.wav": {
+    "title": "Deep Whoosh #1",
+    "creator": "Kinoton",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/Kinoton/sounds/351256",
+    "kind": "whoosh",
+    "attribution": "\"Deep Whoosh #1\" by Kinoton is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 1.4,
+      "onset_s": 0.033,
+      "peak_s": 0.248,
+      "end_s": 1.38,
+      "attack_ms": 215,
+      "centroid_hz": 951,
+      "peak_dbfs": -6.6
+    }
+  },
+  "ov_swosh_swoosh_whoosh_air_sound_free_high__f1dc6045.wav": {
+    "title": "Swosh swoosh whoosh air sound, free, high quality",
+    "creator": "qubodup",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/qubodup/sounds/60026",
+    "kind": "whoosh",
+    "attribution": "\"Swosh swoosh whoosh air sound, free, high quality\" by qubodup is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 0.49,
+      "onset_s": 0.011,
+      "peak_s": 0.068,
+      "end_s": 0.489,
+      "attack_ms": 57,
+      "centroid_hz": 2299,
+      "peak_dbfs": -5.0
+    }
+  },
+  "ov_swipe_whoosh_b7ae7822.wav": {
+    "title": "Swipe Whoosh",
+    "creator": "qubodup",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/qubodup/sounds/60007",
+    "kind": "whoosh",
+    "attribution": "\"Swipe Whoosh\" by qubodup is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 0.448,
+      "onset_s": 0.028,
+      "peak_s": 0.058,
+      "end_s": 0.417,
+      "attack_ms": 30,
+      "centroid_hz": 1858,
+      "peak_dbfs": -1.7
+    }
+  },
+  "ov_pop_high_a_h1_wav_130a70f2.wav": {
+    "title": "Pop, High, A (H1).wav",
+    "creator": "InspectorJ",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/InspectorJ/sounds/411642",
+    "kind": "pop",
+    "attribution": "\"Pop, High, A (H1).wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.393,
+      "onset_s": 0.005,
+      "peak_s": 0.008,
+      "end_s": 0.276,
+      "attack_ms": 3,
+      "centroid_hz": 2783,
+      "peak_dbfs": -2.9
+    }
+  },
+  "ov_pop_low_a_h1_wav_86a83b0f.wav": {
+    "title": "Pop, Low, A (H1).wav",
+    "creator": "InspectorJ",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/InspectorJ/sounds/411639",
+    "kind": "pop",
+    "attribution": "\"Pop, Low, A (H1).wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.445,
+      "onset_s": 0.005,
+      "peak_s": 0.008,
+      "end_s": 0.197,
+      "attack_ms": 3,
+      "centroid_hz": 2837,
+      "peak_dbfs": -3.0
+    }
+  },
+  "ov_pop_2_7b1f829e.wav": {
+    "title": "Pop 2",
+    "creator": "greenvwbeetle",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/greenvwbeetle/sounds/244654",
+    "kind": "pop",
+    "attribution": "\"Pop 2\" by greenvwbeetle is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 0.129,
+      "onset_s": 0.018,
+      "peak_s": 0.03,
+      "end_s": 0.126,
+      "attack_ms": 12,
+      "centroid_hz": 1166,
+      "peak_dbfs": -4.0
+    }
+  },
+  "ov_deep_cinematic_impact_4eefa3d1.wav": {
+    "title": "Deep Cinematic Impact",
+    "creator": "MeijstroAudio",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/MeijstroAudio/sounds/377303",
+    "kind": "impact",
+    "attribution": "\"Deep Cinematic Impact\" by MeijstroAudio is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 1.998,
+      "onset_s": 0.007,
+      "peak_s": 0.029,
+      "end_s": 1.802,
+      "attack_ms": 22,
+      "centroid_hz": 243,
+      "peak_dbfs": -1.5,
+      "events": 1
+    }
+  },
+  "ov_ding_60bb1b2f.wav": {
+    "title": "Ding",
+    "creator": "Aiwha",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/Aiwha/sounds/196106",
+    "kind": "ding",
+    "attribution": "\"Ding\" by Aiwha is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 2.0,
+      "onset_s": 0.015,
+      "peak_s": 0.024,
+      "end_s": 1.989,
+      "attack_ms": 9,
+      "centroid_hz": 786,
+      "peak_dbfs": -4.1
+    }
+  },
+  "ov_the_ding_410d3671.wav": {
+    "title": "The ding",
+    "creator": "suzenako",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/suzenako/sounds/320905",
+    "kind": "ding",
+    "attribution": "\"The ding\" by suzenako is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 1.517,
+      "onset_s": 0.004,
+      "peak_s": 0.007,
+      "end_s": 1.371,
+      "attack_ms": 3,
+      "centroid_hz": 3670,
+      "peak_dbfs": -1.3
+    }
+  },
+  "ov_bell_ding_58ab7974.wav": {
+    "title": "Bell Ding",
+    "creator": "Natty23",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/Natty23/sounds/411749",
+    "kind": "ding",
+    "attribution": "\"Bell Ding\" by Natty23 is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.882,
+      "onset_s": 0.004,
+      "peak_s": 0.019,
+      "end_s": 0.551,
+      "attack_ms": 15,
+      "centroid_hz": 6381,
+      "peak_dbfs": -4.1
+    }
+  },
+  "ov_click_1_d_wav_c81f28e2.wav": {
+    "title": "click 1 d.wav",
+    "creator": "TicTacShutUp",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/TicTacShutUp/sounds/406",
+    "kind": "click",
+    "attribution": "\"click 1 d.wav\" by TicTacShutUp is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.3,
+      "onset_s": 0.0,
+      "peak_s": 0.007,
+      "end_s": 0.276,
+      "attack_ms": 7,
+      "centroid_hz": 4149,
+      "peak_dbfs": -2.4
+    }
+  },
+  "ov__perc_short_click_snap_perc_efcb9f41.wav": {
+    "title": "[Perc] Short Click/Snap Perc",
+    "creator": "waveplaySFX",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/waveplaySFX/sounds/399934",
+    "kind": "click",
+    "attribution": "\"[Perc] Short Click/Snap Perc\" by waveplaySFX is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 0.3,
+      "onset_s": 0.0,
+      "peak_s": 0.011,
+      "end_s": 0.033,
+      "attack_ms": 11,
+      "centroid_hz": 1681,
+      "peak_dbfs": -1.1
+    }
+  },
+  "ov_click_cf20940e.wav": {
+    "title": "Click",
+    "creator": "complex_waveform",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/complex_waveform/sounds/213148",
+    "kind": "click",
+    "attribution": "\"Click\" by complex_waveform is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.21,
+      "onset_s": 0.0,
+      "peak_s": 0.002,
+      "end_s": 0.096,
+      "attack_ms": 2,
+      "centroid_hz": 4198,
+      "peak_dbfs": -4.7
+    }
+  },
+  "ov_sub_oceano_c_wav_aa4e0e1d.wav": {
+    "title": "SUB OCEANO C.wav",
+    "creator": "uzerx",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/uzerx/sounds/81147",
+    "kind": "bass",
+    "attribution": "\"SUB OCEANO C.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 2.292,
+      "onset_s": 0.005,
+      "peak_s": 0.03,
+      "end_s": 2.271,
+      "attack_ms": 25,
+      "centroid_hz": 98,
+      "peak_dbfs": -8.3
+    }
+  },
+  "ov_sub_oceano_d_wav_76aa1231.wav": {
+    "title": "SUB OCEANO D.wav",
+    "creator": "uzerx",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/uzerx/sounds/81148",
+    "kind": "bass",
+    "attribution": "\"SUB OCEANO D.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 2.044,
+      "onset_s": 0.005,
+      "peak_s": 0.028,
+      "end_s": 2.026,
+      "attack_ms": 23,
+      "centroid_hz": 92,
+      "peak_dbfs": -8.4
+    }
+  },
+  "ov_sub_oceano_a_sharp_wav_2eadbca9.wav": {
+    "title": "SUB OCEANO A sharp.wav",
+    "creator": "uzerx",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/uzerx/sounds/81144",
+    "kind": "bass",
+    "attribution": "\"SUB OCEANO A sharp.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 2.57,
+      "onset_s": 0.005,
+      "peak_s": 0.024,
+      "end_s": 2.547,
+      "attack_ms": 19,
+      "centroid_hz": 127,
+      "peak_dbfs": -9.1
+    }
+  },
+  "ov_record_scratch_4_4a313d5d.wav": {
+    "title": "Record Scratch #4",
+    "creator": "musicvision31",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/musicvision31/sounds/431777",
+    "kind": "scratch",
+    "attribution": "\"Record Scratch #4\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 1.2,
+      "onset_s": 0.348,
+      "peak_s": 0.379,
+      "end_s": 1.034,
+      "attack_ms": 31,
+      "centroid_hz": 2860,
+      "peak_dbfs": -7.1
+    }
+  },
+  "ov_record_scratch_2_74af6cc9.wav": {
+    "title": "Record Scratch #2",
+    "creator": "musicvision31",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/musicvision31/sounds/431773",
+    "kind": "scratch",
+    "attribution": "\"Record Scratch #2\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 1.2,
+      "onset_s": 0.005,
+      "peak_s": 0.01,
+      "end_s": 1.019,
+      "attack_ms": 5,
+      "centroid_hz": 1745,
+      "peak_dbfs": -5.6
+    }
+  },
+  "ov_record_scratch_3_f4d70427.wav": {
+    "title": "Record Scratch #3",
+    "creator": "musicvision31",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/musicvision31/sounds/431778",
+    "kind": "scratch",
+    "attribution": "\"Record Scratch #3\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 1.2,
+      "onset_s": 0.008,
+      "peak_s": 0.128,
+      "end_s": 0.935,
+      "attack_ms": 120,
+      "centroid_hz": 2791,
+      "peak_dbfs": -9.6
+    }
+  },
+  "ov_metal_spring_pluck_horror_suspense_sting_1e79fc92.wav": {
+    "title": "Metal Spring Pluck (Horror/Suspense Sting)",
+    "creator": "Za-Games",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/Za-Games/sounds/540213",
+    "kind": "sting",
+    "attribution": "\"Metal Spring Pluck (Horror/Suspense Sting)\" by Za-Games is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 4.0,
+      "onset_s": 0.001,
+      "peak_s": 0.043,
+      "end_s": 3.99,
+      "attack_ms": 42,
+      "centroid_hz": 2213,
+      "peak_dbfs": -4.0,
+      "events": 1
+    }
+  },
+  "ov_spooky_02_mp3_43dd23cf.wav": {
+    "title": "spooky 02.mp3",
+    "creator": "nomiqbomi",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/nomiqbomi/sounds/651025",
+    "kind": "sting",
+    "attribution": "\"spooky 02.mp3\" by nomiqbomi is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 4.0,
+      "onset_s": 0.004,
+      "peak_s": 0.012,
+      "end_s": 3.178,
+      "attack_ms": 8,
+      "centroid_hz": 4217,
+      "peak_dbfs": -1.0,
+      "events": 1
+    }
+  },
+  "ov_riser_96a9062b.wav": {
+    "title": "Riser",
+    "creator": "Rizzard",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/Rizzard/sounds/561207",
+    "kind": "riser",
+    "attribution": "\"Riser\" by Rizzard is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 1.786,
+      "onset_s": 0.245,
+      "peak_s": 1.765,
+      "end_s": 1.784,
+      "attack_ms": 1520,
+      "centroid_hz": 861,
+      "peak_dbfs": -6.3,
+      "events": 1
+    }
+  },
+  "ov_reversed_riser_wav_707a3106.wav": {
+    "title": "reversed riser .wav",
+    "creator": "NOTOTO84",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/NOTOTO84/sounds/275512",
+    "kind": "riser",
+    "attribution": "\"reversed riser .wav\" by NOTOTO84 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 4.0,
+      "onset_s": 0.0,
+      "peak_s": 3.682,
+      "end_s": 3.999,
+      "attack_ms": 3682,
+      "centroid_hz": 1599,
+      "peak_dbfs": -4.4,
+      "events": 1
+    }
+  },
+  "ov_riser_neutral_2e3b8ea3.wav": {
+    "title": "Riser neutral",
+    "creator": "xkeril",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/xkeril/sounds/609768",
+    "kind": "riser",
+    "attribution": "\"Riser neutral\" by xkeril is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 4.0,
+      "onset_s": 0.027,
+      "peak_s": 3.464,
+      "end_s": 3.999,
+      "attack_ms": 3437,
+      "centroid_hz": 769,
+      "peak_dbfs": -7.3,
+      "events": 1
+    }
+  },
+  "ov_cinematic_boom_130730_06_wav_83623c61.wav": {
+    "title": "cinematic boom 130730_06.wav",
+    "creator": "klankbeeld",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/klankbeeld/sounds/195790",
+    "kind": "impact",
+    "attribution": "\"cinematic boom 130730_06.wav\" by klankbeeld is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 3.0,
+      "onset_s": 0.002,
+      "peak_s": 0.109,
+      "end_s": 2.984,
+      "attack_ms": 107,
+      "centroid_hz": 188,
+      "peak_dbfs": -3.7,
+      "events": 1
+    }
+  },
+  "ov_horror_sting_apollyon_1_23d4122c.wav": {
+    "title": "Horror Sting (Apollyon) 1",
+    "creator": "SilverIllusionist",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/SilverIllusionist/sounds/676323",
+    "kind": "sting",
+    "attribution": "\"Horror Sting (Apollyon) 1\" by SilverIllusionist is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 4.0,
+      "onset_s": 0.001,
+      "peak_s": 0.318,
+      "end_s": 3.995,
+      "attack_ms": 317,
+      "centroid_hz": 1166,
+      "peak_dbfs": -3.8,
+      "events": 1
+    }
+  },
+  "ov_camera_shutter_4a97b3f1.wav": {
+    "title": "Camera Shutter",
+    "creator": "ThompsonMan",
+    "licence": "by",
+    "licence_version": "4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/ThompsonMan/sounds/166500",
+    "kind": "shutter",
+    "attribution": "\"Camera Shutter\" by ThompsonMan is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
+    "measured": {
+      "dur_s": 0.374,
+      "onset_s": 0.004,
+      "peak_s": 0.158,
+      "end_s": 0.23,
+      "attack_ms": 154,
+      "centroid_hz": 5800,
+      "peak_dbfs": -4.3,
+      "events": 1
+    }
+  },
+  "ov_1_100_second_camera_shutter_a5cb320c.wav": {
+    "title": "1/100 second camera shutter",
+    "creator": "FenrirFangs",
+    "licence": "cc0",
+    "licence_version": "1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "freesound",
+    "page": "https://freesound.org/people/FenrirFangs/sounds/213180",
+    "kind": "shutter",
+    "attribution": "\"1/100 second camera shutter\" by FenrirFangs is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "measured": {
+      "dur_s": 0.513,
+      "onset_s": 0.005,
+      "peak_s": 0.153,
+      "end_s": 0.237,
+      "attack_ms": 148,
+      "centroid_hz": 5862,
+      "peak_dbfs": -3.1,
+      "events": 1
+    }
   }
- },
- "ov_swosh_swoosh_whoosh_air_sound_free_high__f1dc6045.wav": {
-  "title": "Swosh swoosh whoosh air sound, free, high quality",
-  "creator": "qubodup",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/qubodup/sounds/60026",
-  "kind": "whoosh",
-  "attribution": "\"Swosh swoosh whoosh air sound, free, high quality\" by qubodup is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 0.49,
-   "onset_s": 0.011,
-   "peak_s": 0.068,
-   "end_s": 0.489,
-   "attack_ms": 57,
-   "centroid_hz": 2299,
-   "peak_dbfs": -5.0
-  }
- },
- "ov_swipe_whoosh_b7ae7822.wav": {
-  "title": "Swipe Whoosh",
-  "creator": "qubodup",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/qubodup/sounds/60007",
-  "kind": "whoosh",
-  "attribution": "\"Swipe Whoosh\" by qubodup is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 0.448,
-   "onset_s": 0.028,
-   "peak_s": 0.058,
-   "end_s": 0.417,
-   "attack_ms": 30,
-   "centroid_hz": 1858,
-   "peak_dbfs": -1.7
-  }
- },
- "ov_pop_high_a_h1_wav_130a70f2.wav": {
-  "title": "Pop, High, A (H1).wav",
-  "creator": "InspectorJ",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/InspectorJ/sounds/411642",
-  "kind": "pop",
-  "attribution": "\"Pop, High, A (H1).wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.393,
-   "onset_s": 0.005,
-   "peak_s": 0.008,
-   "end_s": 0.276,
-   "attack_ms": 3,
-   "centroid_hz": 2783,
-   "peak_dbfs": -2.9
-  }
- },
- "ov_pop_low_a_h1_wav_86a83b0f.wav": {
-  "title": "Pop, Low, A (H1).wav",
-  "creator": "InspectorJ",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/InspectorJ/sounds/411639",
-  "kind": "pop",
-  "attribution": "\"Pop, Low, A (H1).wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.445,
-   "onset_s": 0.005,
-   "peak_s": 0.008,
-   "end_s": 0.197,
-   "attack_ms": 3,
-   "centroid_hz": 2837,
-   "peak_dbfs": -3.0
-  }
- },
- "ov_pop_2_7b1f829e.wav": {
-  "title": "Pop 2",
-  "creator": "greenvwbeetle",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/greenvwbeetle/sounds/244654",
-  "kind": "pop",
-  "attribution": "\"Pop 2\" by greenvwbeetle is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 0.129,
-   "onset_s": 0.018,
-   "peak_s": 0.03,
-   "end_s": 0.126,
-   "attack_ms": 12,
-   "centroid_hz": 1166,
-   "peak_dbfs": -4.0
-  }
- },
- "ov_deep_cinematic_impact_4eefa3d1.wav": {
-  "title": "Deep Cinematic Impact",
-  "creator": "MeijstroAudio",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/MeijstroAudio/sounds/377303",
-  "kind": "impact",
-  "attribution": "\"Deep Cinematic Impact\" by MeijstroAudio is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 1.998,
-   "onset_s": 0.007,
-   "peak_s": 0.029,
-   "end_s": 1.802,
-   "attack_ms": 22,
-   "centroid_hz": 243,
-   "peak_dbfs": -1.5,
-   "events": 1
-  }
- },
- "ov_ding_60bb1b2f.wav": {
-  "title": "Ding",
-  "creator": "Aiwha",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/Aiwha/sounds/196106",
-  "kind": "ding",
-  "attribution": "\"Ding\" by Aiwha is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 2.0,
-   "onset_s": 0.015,
-   "peak_s": 0.024,
-   "end_s": 1.989,
-   "attack_ms": 9,
-   "centroid_hz": 786,
-   "peak_dbfs": -4.1
-  }
- },
- "ov_the_ding_410d3671.wav": {
-  "title": "The ding",
-  "creator": "suzenako",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/suzenako/sounds/320905",
-  "kind": "ding",
-  "attribution": "\"The ding\" by suzenako is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 1.517,
-   "onset_s": 0.004,
-   "peak_s": 0.007,
-   "end_s": 1.371,
-   "attack_ms": 3,
-   "centroid_hz": 3670,
-   "peak_dbfs": -1.3
-  }
- },
- "ov_bell_ding_58ab7974.wav": {
-  "title": "Bell Ding",
-  "creator": "Natty23",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/Natty23/sounds/411749",
-  "kind": "ding",
-  "attribution": "\"Bell Ding\" by Natty23 is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.882,
-   "onset_s": 0.004,
-   "peak_s": 0.019,
-   "end_s": 0.551,
-   "attack_ms": 15,
-   "centroid_hz": 6381,
-   "peak_dbfs": -4.1
-  }
- },
- "ov_click_1_d_wav_c81f28e2.wav": {
-  "title": "click 1 d.wav",
-  "creator": "TicTacShutUp",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/TicTacShutUp/sounds/406",
-  "kind": "click",
-  "attribution": "\"click 1 d.wav\" by TicTacShutUp is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.3,
-   "onset_s": 0.0,
-   "peak_s": 0.007,
-   "end_s": 0.276,
-   "attack_ms": 7,
-   "centroid_hz": 4149,
-   "peak_dbfs": -2.4
-  }
- },
- "ov__perc_short_click_snap_perc_efcb9f41.wav": {
-  "title": "[Perc] Short Click/Snap Perc",
-  "creator": "waveplaySFX",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/waveplaySFX/sounds/399934",
-  "kind": "click",
-  "attribution": "\"[Perc] Short Click/Snap Perc\" by waveplaySFX is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 0.3,
-   "onset_s": 0.0,
-   "peak_s": 0.011,
-   "end_s": 0.033,
-   "attack_ms": 11,
-   "centroid_hz": 1681,
-   "peak_dbfs": -1.1
-  }
- },
- "ov_click_cf20940e.wav": {
-  "title": "Click",
-  "creator": "complex_waveform",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/complex_waveform/sounds/213148",
-  "kind": "click",
-  "attribution": "\"Click\" by complex_waveform is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.21,
-   "onset_s": 0.0,
-   "peak_s": 0.002,
-   "end_s": 0.096,
-   "attack_ms": 2,
-   "centroid_hz": 4198,
-   "peak_dbfs": -4.7
-  }
- },
- "ov_sub_oceano_c_wav_aa4e0e1d.wav": {
-  "title": "SUB OCEANO C.wav",
-  "creator": "uzerx",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/uzerx/sounds/81147",
-  "kind": "bass",
-  "attribution": "\"SUB OCEANO C.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 2.292,
-   "onset_s": 0.005,
-   "peak_s": 0.03,
-   "end_s": 2.271,
-   "attack_ms": 25,
-   "centroid_hz": 98,
-   "peak_dbfs": -8.3
-  }
- },
- "ov_sub_oceano_d_wav_76aa1231.wav": {
-  "title": "SUB OCEANO D.wav",
-  "creator": "uzerx",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/uzerx/sounds/81148",
-  "kind": "bass",
-  "attribution": "\"SUB OCEANO D.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 2.044,
-   "onset_s": 0.005,
-   "peak_s": 0.028,
-   "end_s": 2.026,
-   "attack_ms": 23,
-   "centroid_hz": 92,
-   "peak_dbfs": -8.4
-  }
- },
- "ov_sub_oceano_a_sharp_wav_2eadbca9.wav": {
-  "title": "SUB OCEANO A sharp.wav",
-  "creator": "uzerx",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/uzerx/sounds/81144",
-  "kind": "bass",
-  "attribution": "\"SUB OCEANO A sharp.wav\" by uzerx is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 2.57,
-   "onset_s": 0.005,
-   "peak_s": 0.024,
-   "end_s": 2.547,
-   "attack_ms": 19,
-   "centroid_hz": 127,
-   "peak_dbfs": -9.1
-  }
- },
- "ov_record_scratch_4_4a313d5d.wav": {
-  "title": "Record Scratch #4",
-  "creator": "musicvision31",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/musicvision31/sounds/431777",
-  "kind": "scratch",
-  "attribution": "\"Record Scratch #4\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 1.2,
-   "onset_s": 0.348,
-   "peak_s": 0.379,
-   "end_s": 1.034,
-   "attack_ms": 31,
-   "centroid_hz": 2860,
-   "peak_dbfs": -7.1
-  }
- },
- "ov_record_scratch_2_74af6cc9.wav": {
-  "title": "Record Scratch #2",
-  "creator": "musicvision31",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/musicvision31/sounds/431773",
-  "kind": "scratch",
-  "attribution": "\"Record Scratch #2\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 1.2,
-   "onset_s": 0.005,
-   "peak_s": 0.01,
-   "end_s": 1.019,
-   "attack_ms": 5,
-   "centroid_hz": 1745,
-   "peak_dbfs": -5.6
-  }
- },
- "ov_record_scratch_3_f4d70427.wav": {
-  "title": "Record Scratch #3",
-  "creator": "musicvision31",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/musicvision31/sounds/431778",
-  "kind": "scratch",
-  "attribution": "\"Record Scratch #3\" by musicvision31 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 1.2,
-   "onset_s": 0.008,
-   "peak_s": 0.128,
-   "end_s": 0.935,
-   "attack_ms": 120,
-   "centroid_hz": 2791,
-   "peak_dbfs": -9.6
-  }
- },
- "ov_metal_spring_pluck_horror_suspense_sting_1e79fc92.wav": {
-  "title": "Metal Spring Pluck (Horror/Suspense Sting)",
-  "creator": "Za-Games",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/Za-Games/sounds/540213",
-  "kind": "sting",
-  "attribution": "\"Metal Spring Pluck (Horror/Suspense Sting)\" by Za-Games is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 4.0,
-   "onset_s": 0.001,
-   "peak_s": 0.043,
-   "end_s": 3.99,
-   "attack_ms": 42,
-   "centroid_hz": 2213,
-   "peak_dbfs": -4.0,
-   "events": 1
-  }
- },
- "ov_spooky_02_mp3_43dd23cf.wav": {
-  "title": "spooky 02.mp3",
-  "creator": "nomiqbomi",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/nomiqbomi/sounds/651025",
-  "kind": "sting",
-  "attribution": "\"spooky 02.mp3\" by nomiqbomi is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 4.0,
-   "onset_s": 0.004,
-   "peak_s": 0.012,
-   "end_s": 3.178,
-   "attack_ms": 8,
-   "centroid_hz": 4217,
-   "peak_dbfs": -1.0,
-   "events": 1
-  }
- },
- "ov_riser_96a9062b.wav": {
-  "title": "Riser",
-  "creator": "Rizzard",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/Rizzard/sounds/561207",
-  "kind": "riser",
-  "attribution": "\"Riser\" by Rizzard is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 1.786,
-   "onset_s": 0.245,
-   "peak_s": 1.765,
-   "end_s": 1.784,
-   "attack_ms": 1520,
-   "centroid_hz": 861,
-   "peak_dbfs": -6.3,
-   "events": 1
-  }
- },
- "ov_reversed_riser_wav_707a3106.wav": {
-  "title": "reversed riser .wav",
-  "creator": "NOTOTO84",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/NOTOTO84/sounds/275512",
-  "kind": "riser",
-  "attribution": "\"reversed riser .wav\" by NOTOTO84 is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 4.0,
-   "onset_s": 0.0,
-   "peak_s": 3.682,
-   "end_s": 3.999,
-   "attack_ms": 3682,
-   "centroid_hz": 1599,
-   "peak_dbfs": -4.4,
-   "events": 1
-  }
- },
- "ov_riser_neutral_2e3b8ea3.wav": {
-  "title": "Riser neutral",
-  "creator": "xkeril",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/xkeril/sounds/609768",
-  "kind": "riser",
-  "attribution": "\"Riser neutral\" by xkeril is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 4.0,
-   "onset_s": 0.027,
-   "peak_s": 3.464,
-   "end_s": 3.999,
-   "attack_ms": 3437,
-   "centroid_hz": 769,
-   "peak_dbfs": -7.3,
-   "events": 1
-  }
- },
- "ov_cinematic_boom_130730_06_wav_83623c61.wav": {
-  "title": "cinematic boom 130730_06.wav",
-  "creator": "klankbeeld",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/klankbeeld/sounds/195790",
-  "kind": "impact",
-  "attribution": "\"cinematic boom 130730_06.wav\" by klankbeeld is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 3.0,
-   "onset_s": 0.002,
-   "peak_s": 0.109,
-   "end_s": 2.984,
-   "attack_ms": 107,
-   "centroid_hz": 188,
-   "peak_dbfs": -3.7,
-   "events": 1
-  }
- },
- "ov_horror_sting_apollyon_1_23d4122c.wav": {
-  "title": "Horror Sting (Apollyon) 1",
-  "creator": "SilverIllusionist",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/SilverIllusionist/sounds/676323",
-  "kind": "sting",
-  "attribution": "\"Horror Sting (Apollyon) 1\" by SilverIllusionist is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 4.0,
-   "onset_s": 0.001,
-   "peak_s": 0.318,
-   "end_s": 3.995,
-   "attack_ms": 317,
-   "centroid_hz": 1166,
-   "peak_dbfs": -3.8,
-   "events": 1
-  }
- },
- "ov_camera_shutter_4a97b3f1.wav": {
-  "title": "Camera Shutter",
-  "creator": "ThompsonMan",
-  "licence": "by",
-  "licence_version": "4.0",
-  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/ThompsonMan/sounds/166500",
-  "kind": "shutter",
-  "attribution": "\"Camera Shutter\" by ThompsonMan is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/.",
-  "measured": {
-   "dur_s": 0.374,
-   "onset_s": 0.004,
-   "peak_s": 0.158,
-   "end_s": 0.23,
-   "attack_ms": 154,
-   "centroid_hz": 5800,
-   "peak_dbfs": -4.3,
-   "events": 1
-  }
- },
- "ov_1_100_second_camera_shutter_a5cb320c.wav": {
-  "title": "1/100 second camera shutter",
-  "creator": "FenrirFangs",
-  "licence": "cc0",
-  "licence_version": "1.0",
-  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "source": "freesound",
-  "page": "https://freesound.org/people/FenrirFangs/sounds/213180",
-  "kind": "shutter",
-  "attribution": "\"1/100 second camera shutter\" by FenrirFangs is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
-  "measured": {
-   "dur_s": 0.513,
-   "onset_s": 0.005,
-   "peak_s": 0.153,
-   "end_s": 0.237,
-   "attack_ms": 148,
-   "centroid_hz": 5862,
-   "peak_dbfs": -3.1,
-   "events": 1
-  }
- }
 }
