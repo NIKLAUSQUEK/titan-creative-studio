@@ -436,7 +436,7 @@ def claude_revise(r, instruction, edit_dir, model=None):
     slim["style_summary"] = {k: r["style"].get(k) for k in ("captions", "hook_text", "zoom", "sfx", "music", "grade", "pacing", "broll")}
     prompt = REVISE.format(doc=__doc__.split("Recipe keys")[1], instruction=instruction, lines=footage_lines(edit_dir, r), v=r["version"], recipe=json.dumps(slim, ensure_ascii=False))
     for attempt in range(2):
-        new = parse_json(claude(prompt, model=model))
+        new = parse_json(claude(prompt, model=model, step="revise"))
         if "style_summary" in new:
             st = copy.deepcopy(r["style"])
             for k, v in new.pop("style_summary").items():

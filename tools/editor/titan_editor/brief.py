@@ -208,7 +208,7 @@ def cmd_brief(a, edit_dir):
         b = rjson(a.from_json)
     elif a.llm == "claude-cli":
         log(f"strategist: one claude -p call (~{len(ctx) // 4} input tokens)")
-        b = parse_json(claude(PROMPT.format(schema=json.dumps(SCHEMA, indent=1), context=ctx), model=a.claude_model))
+        b = parse_json(claude(PROMPT.format(schema=json.dumps(SCHEMA, indent=1), context=ctx), model=a.claude_model, step="brief"))
     else:
         b = heuristic_brief(a, edit_dir, brand)
     for k in ("platform", "aspect", "preset", "goal", "target_s"):

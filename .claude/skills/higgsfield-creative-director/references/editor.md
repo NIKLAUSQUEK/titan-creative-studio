@@ -102,10 +102,20 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
   - Beats marked `fixed` never move.
   - A line starting with so/and/but/because/that's why/this/which/then/it never swaps.
   - So: give beats roles in the brief.
+- **Real differences, not disguise:**
+  - Each variant rotates to other acceptable B-roll picks for the same beats.
+  - About 1 in 3 reels opens on a 1.2 s cutaway (a cold open) instead of the face.
+  - Every reel has a unique opening: no two share the same first line plus header text.
+  - A distinctness check compares the opening frames (structure and colour) and the first 3 s of words, and flags look-alike pairs in VARIANTS.md.
+  - The tool does not add noise, pitch shifts or metadata tricks to dodge platform duplicate detection. That breaks platform rules and risks the account; the variety has to be real.
 - **Cost:** zero Claude tokens. About 3-5 s per draft reel variant on a CPU.
 - **Honest note:**
   - Platforms fingerprint audio and video, so speed or crop tweaks alone don't make a repost "new". The hook, structure and format changes are what make a fresh test.
   - One variant per test slot, own caption, never cross-posting duplicates from several accounts.
+
+## 8. Model routing (token saving)
+- `tools/editor/models.json` sets the Claude model per step: brief = sonnet, B-roll pick = haiku, free-text revision = sonnet, self-review = haiku. `--claude-model` overrides all of them.
+- Search, face recognition, web-image ranking, cutting, rendering and variants never call Claude.
 
 ## 6. Sound and compliance hooks
 - **Sound:** `/sound` decides the track. Brand accounts get `audio.music.licence` = `original` or `licensed:<source>`; the renderer refuses unlicensed music for brand accounts. Trending sounds on personal accounts are `in-app`: never baked into the file, and recorded in `PUBLISH.md`.

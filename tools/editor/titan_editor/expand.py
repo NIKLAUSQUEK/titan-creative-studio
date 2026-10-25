@@ -103,8 +103,50 @@ def plan_order(rows, hook_i=None, swap=False, duration="full", rng=None):
 
 
 # ---------------- reel variant recipe ----------------
-def reel_recipe(base, rows, v, brief, hooks):
+def broll_alternates(edit_dir):
+    """{query: [usable candidates in score order]} from broll_candidates.json, for rotating B-roll between variants."""
+    bc = rjson(Path(edit_dir) / "broll_candidates.json", {"beats": []})
+    out = {}
+    for b in bc["beats"]:
+        cs = [c for c in b.get("candidates", []) if not c.get("flag") and not c.get("real_person")]
+        if cs:
+            top = cs[0]["score"] or 0
+            out[b["query"]] = [c for c in cs if (c["score"] or 0) >= 0.75 * top]
+    return out
+
+
+def rotate_broll(r, alts, k):
+    """Variant k uses the k-th acceptable alternative for each B-roll slot (wraps), so variants don't share every cutaway."""
+    for b in r["broll"]:
+        cs = alts.get(b.get("query"))
+        if not cs or len(cs) < 2:
+            continue
+        c = cs[k % len(cs)]
+        if c["path"] != b["path"]:
+            b.update({"path": c["path"], "kind": c.get("kind", "video"), "src_in": max(0.0, min((c.get("best_t") or 0) - b["dur"] / 2, (c.get("duration") or 0) - b["dur"]))
+                      if c.get("kind") != "image" else 0.0, "people": list(c.get("people") or {}), "unknown_faces": c.get("unknown_faces") or 0,
+                      "credit": c.get("credit"), "licence": c.get("licence")})
+    return r
+
+
+def cold_open(r, alts):
+    """Open on a cutaway instead of the face for the first ~1.2 s (voice continues underneath): a different first frame."""
+    if not r["items"]:
+        return False
+    pool = [c for cs in alts.values() for c in cs if c.get("kind") == "video" and (c.get("duration") or 0) >= 1.3]
+    if not pool:
+        return False
+    c = pool[0]
+    r["broll"] = [b for b in r["broll"] if not (b["anchor"].get("item") == r["items"][0]["id"] and b["anchor"].get("offset", 0) < 1.2)]
+    r["broll"].insert(0, {"id": "b00", "path": c["path"], "kind": "video", "src_in": max(0.0, (c.get("best_t") or 0) - 0.6), "dur": 1.2,
+                          "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "mode": "full", "flag": None, "query": "cold open",
+                          "people": list(c.get("people") or {}), "unknown_faces": c.get("unknown_faces") or 0})
+    return True
+
+
+def reel_recipe(base, rows, v, brief, hooks, alts=None, k=0):
     r = copy.deepcopy(base)
+    rotate_broll(r, alts or {}, k)
     order, swapped = plan_order(rows, v["hook_i"], v["swap"], v["duration"], v["rng"])
     v["swap"] = swapped
     groups = {}
@@ -132,6 +174,7 @@ def reel_recipe(base, rows, v, brief, hooks):
         r["texts"].insert(0, {"type": "header" if v["header"] == "persistent" else "hook", "text": v["header_text"],
                               "anchor": {"item": r["items"][0]["id"], "offset": 0.0}, "dur": round(dur, 2),
                               **({"position_y": max(sz.get("top", 0.14) + 0.04, 0.19)} if v["header"] == "persistent" else {})})
+    v["cold_open"] = bool(v.get("cold_open")) and cold_open(r, alts or {})
     prune_anchors(r)
     r["audio"]["sfx"] = auto_sfx(r)
     r["outputs"] = [{"aspect": a} for a in v["aspects"]]
@@ -302,7 +345,18 @@ def build_matrix(n, rows, brief, base, speeds, reels_only, seed):
         hi_ = dict(hook_opts)[hk]
         out.append({"id": f"V{k + 1:02d}", "format": "reel", "hook": hk, "hook_i": hi_, "header": hdr, "header_text": texts[k % len(texts)],
                     "duration": dur, "speed": s, "captions": cap, "swap": swp, "punch": round(1 + 0.015 * (k % 4), 3),
-                    "shift": [0, 0.04, -0.04, 0.02][k % 4], "sat": [0, 0.04, -0.03, 0.02][k % 4], "rng": random.Random(seed + k)})
+                    "shift": [0, 0.04, -0.04, 0.02][k % 4], "sat": [0, 0.04, -0.03, 0.02][k % 4], "rng": random.Random(seed + k),
+                    "cold_open": k % 3 == 1})
+    seen = set()  # every reel gets its own opening: (first line, header text) is unique; a cold open alone isn't enough
+    for v in out:
+        for step in range(len(texts) + 1):
+            key = (v["hook"], v["header_text"] if v["header"] != "none" else "")
+            if key not in seen:
+                break
+            if v["header"] == "none":
+                v["header"] = "intro"
+            v["header_text"] = texts[(texts.index(v["header_text"]) + 1) % len(texts)] if v["header_text"] in texts else texts[0]
+        seen.add((v["hook"], v["header_text"] if v["header"] != "none" else ""))
     for j, fmt in enumerate(stills[:n_stills]):
         out.append({"id": f"V{len(out) + 1:02d}", "format": fmt, "hook": "header", "hook_i": None, "header": "-", "header_text": texts[(j + 1) % len(texts)],
                     "duration": "-", "speed": "-", "captions": "-", "swap": False, "punch": "-", "shift": 0, "sat": 0, "rng": random.Random(seed + 100 + j)})
@@ -334,10 +388,11 @@ def expand(edit_dir, count=12, version=None, quality="draft", speeds=(1.0, 1.4),
         shutil.rmtree(run_dir)
     tmp = run_dir / "_frames"; tmp.mkdir(parents=True)
     res = []
-    for v in matrix:
+    alts = broll_alternates(edit_dir)
+    for k, v in enumerate(matrix):
         v["aspects"] = master
         if v["format"] == "reel":
-            r, order = reel_recipe(base, rows, v, brief, None)
+            r, order = reel_recipe(base, rows, v, brief, None, alts, k)
             r["approved"] = base.get("approved")
             vd = run_dir / v["id"]
             wjson(vd / "edit.json", r)
@@ -349,24 +404,29 @@ def expand(edit_dir, count=12, version=None, quality="draft", speeds=(1.0, 1.4),
                 total = out[0]["duration"]
             from .render import caption_words
             strings = [t["text"] for t in r["texts"]] + [" ".join(w["w"] for w in caption_words(r, clips))]
-            res.append({**{k: v[k] for k in ("id", "format", "hook", "header", "header_text", "duration", "speed", "captions", "swap", "punch")},
-                        "beats": [x["i"] for x in order], "seconds": round(total, 1), "files": files, "compliance": compliance_hits(strings, base, base.get("brand"))})
+            res.append({**{q: v[q] for q in ("id", "format", "hook", "header", "header_text", "duration", "speed", "captions", "swap", "punch")},
+                        "cold_open": v["cold_open"], "broll": sorted(Path(b["path"]).name for b in r["broll"]),
+                        "beats": [x["i"] for x in order], "seconds": round(total, 1), "files": files, "compliance": compliance_hits(strings, base, base.get("brand")),
+                        "opening_words": " ".join(w["w"] for w in caption_words(r, clips) if w["t0"] < 3.0)[:80]})
         else:
             W, H = (540, 675) if quality == "draft" else (1080, 1350)
             if v["format"].startswith("single") and v["format"].endswith("poster"):
                 W, H = (540, 960) if quality == "draft" else (1080, 1920)
             files, strings = stills_variant(base, rows, v, brief, clips, run_dir / v["id"], W, H, tmp) if render_files else ([], [])
-            res.append({**{k: v[k] for k in ("id", "format", "hook", "header", "header_text", "duration", "speed", "captions", "swap", "punch")},
-                        "beats": [], "seconds": "-", "files": files, "compliance": compliance_hits(strings, base, base.get("brand"))})
+            res.append({**{q: v[q] for q in ("id", "format", "hook", "header", "header_text", "duration", "speed", "captions", "swap", "punch")},
+                        "cold_open": False, "broll": [], "beats": [], "seconds": "-", "files": files, "compliance": compliance_hits(strings, base, base.get("brand"))})
         log(f"{v['id']} {v['format']:15} {v['hook']:11} hdr={v['header']:10} {v['duration']:5} x{v['speed']} {v['captions']}")
     shutil.rmtree(tmp, ignore_errors=True)
+    dup = distinctness(res, tmp) if render_files else []
     wjson(run_dir / "variants.json", {"base_version": base["version"], "quality": quality, "variants": res})
     L = [f"# Variants of v{base['version']} ({quality})", "",
-         "| id | format | hook | header | header text | length | speed | captions | reordered | s | compliance | file |", "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+         "| id | format | hook | header | header text | length | speed | captions | reordered | cold open | s | compliance | file |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for x in res:
         f = Path(x["files"][0]).relative_to(edit_dir) if x["files"] else "-"
         L.append(f"| {x['id']} | {x['format']} | {x['hook']} | {x['header']} | {x['header_text']} | {x['duration']} | {x['speed']} | {x['captions']} | "
-                 f"{'yes' if x['swap'] else 'no'} | {x['seconds']} | {', '.join(x['compliance']) or 'ok'} | `{f}`{' +' + str(len(x['files']) - 1) if len(x['files']) > 1 else ''} |")
+                 f"{'yes' if x['swap'] else 'no'} | {'yes' if x.get('cold_open') else 'no'} | {x['seconds']} | {', '.join(x['compliance']) or 'ok'} | `{f}`{' +' + str(len(x['files']) - 1) if len(x['files']) > 1 else ''} |")
+    L += ["", "## Distinctness check (are the tests different enough to learn from?)"]
+    L += [f"- ⚠ {a} and {b}: {why}" for a, b, why in dup] or ["- ok: every reel has its own opening (first frames + first 3 s of words) and a different mix of changes"]
     L += ["", "How to use: post one variant per slot as an IG Trial Reel / TikTok test with its own caption (run /publish per variant), keep the "
           "winner's hook + header + caption style, and log the result with /review → /learn. Change one thing you can learn from per test.",
           "Note: platforms fingerprint audio and video, so speed or crop tweaks alone don't make a repost 'new'; the hook, structure and format "
@@ -374,6 +434,49 @@ def expand(edit_dir, count=12, version=None, quality="draft", speeds=(1.0, 1.4),
     (run_dir / "VARIANTS.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     log(f"{len(res)} variants -> {run_dir / 'VARIANTS.md'}")
     return run_dir, res
+
+
+def look(img_path, n=8):
+    """(structure hash bits, 12x12 colour thumbnail): two frames look alike only if both are close."""
+    from PIL import Image
+    im = Image.open(img_path).convert("RGB")
+    g = im.convert("L").resize((n + 1, n))
+    px = list(g.getdata())
+    bits = [px[r * (n + 1) + c] > px[r * (n + 1) + c + 1] for r in range(n) for c in range(n)]
+    return bits, list(im.resize((12, 12)).getdata())
+
+
+def look_diff(a, b):
+    bits = sum(p != q for p, q in zip(a[0], b[0]))
+    col = sum(abs(x - y) for p, q in zip(a[1], b[1]) for x, y in zip(p, q)) / (len(a[1]) * 3)
+    return bits, col
+
+
+def distinctness(res, tmp):
+    """Pairs of reels whose openings look and read the same (first 2.5 s frames + first 3 s of words)."""
+    tmp.mkdir(parents=True, exist_ok=True)
+    sig = {}
+    for x in res:
+        if x["format"] != "reel" or not x["files"]:
+            continue
+        hs = []
+        for t in (0.3, 1.2, 2.4):
+            o = tmp / f"{x['id']}_{t}.jpg"
+            ffmpeg(["-ss", t, "-i", x["files"][0], "-frames:v", 1, "-vf", "scale=72:-2", o], check=False)
+            if o.exists():
+                hs.append(look(o))
+        sig[x["id"]] = (hs, set(x["opening_words"].lower().split()), x)
+    out, ids = [], list(sig)
+    for i, a in enumerate(ids):
+        for b in ids[i + 1:]:
+            ha, wa, xa = sig[a]; hb, wb, xb = sig[b]
+            ds = [look_diff(h1, h2) for h1, h2 in zip(ha, hb)]
+            same_look = sum(1 for bits, col in ds if bits < 14 and col < 14)  # frames (of 3) that look alike
+            words = len(wa & wb) / max(1, len(wa | wb))
+            if same_look >= 2 and words > 0.8 and xa["header_text"] == xb["header_text"]:
+                out.append((a, b, f"same opening: {same_look}/3 opening frames look alike, {words:.0%} same first words, same header; change one's hook or header"))
+    shutil.rmtree(tmp, ignore_errors=True)
+    return out
 
 
 def cmd_expand(a, edit_dir):

@@ -164,6 +164,8 @@ def selftest(a):
     reels = [v for v in vs if v["format"] == "reel"]
     ok("expand: reels differ on >= 2 axes", all(sum(a[k] != b[k] for k in ("hook", "header", "duration", "speed", "captions", "swap")) >= 2
                                               for i, a in enumerate(reels) for b in reels[i + 1:]))
+    vmd = (E / "variants" / "v3" / "VARIANTS.md").read_text(encoding="utf-8")
+    ok("expand: every reel has its own opening (distinctness check)", "- ok: every reel has its own opening" in vmd)
     ok("expand: CTA stays last in every reel", all(v["beats"][-1] == reels[0]["beats"][-1] for v in reels if v["duration"] != "micro" or len(v["beats"]) > 2))
     from .presets import stylecard_to_preset
     p = stylecard_to_preset({"creator": {"name": "Test Creator"}, "dna": {"energy": 5, "avg_shot_s": 1.1, "captions": "word-by-word pop, yellow highlight, all caps, centre",

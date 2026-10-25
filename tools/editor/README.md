@@ -18,7 +18,7 @@ Everything runs on your PC. The heavy work (transcription, B-roll search, render
 cd C:\path\to\titan-creative-studio\tools\editor
 .\Run-Editor.ps1 -SelfTest
 ```
-It ends with `SELFTEST 29/29 passed`. It uses Windows' built-in voice to make a test clip.
+It ends with `SELFTEST 30/30 passed`. It uses Windows' built-in voice to make a test clip.
 
 ## Daily use
 ```powershell
@@ -47,7 +47,7 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 | `-Aspects` | brief's platform + others | e.g. `"9:16,1:1,16:9"`; all come from the same recipe |
 | `-Music` / `-MusicLicence` | none | brand accounts: `original` or `licensed:<source>` only; `in-app` sounds are never baked in (see `/sound`) |
 | `-Llm none` | `claude-cli` | zero-token heuristics (best takes in order, top hook first); good for testing |
-| `-ClaudeModel sonnet` | your default | Sonnet is cheaper and plenty for briefs and revisions |
+| `-ClaudeModel sonnet` | per step, from `models.json` | `models.json` routes each step: brief = sonnet, B-roll pick = haiku, revision = sonnet, review = haiku. This flag overrides all of them |
 | `-WhisperModel` | `large-v3` with a GPU, else `small` | use `medium` for Singlish/Chinese on a fast CPU |
 | `-IndexDir` | `%LOCALAPPDATA%\TitanEditor` | where the B-roll index (`broll.sqlite`) lives |
 
@@ -57,6 +57,7 @@ Outputs go to `projects\<p>\autoedit\`: `EDIT_BRIEF.md`, `edit.vN.json`, `render
 .\Run-Editor.ps1 -Project back-pain-myth -Expand 12 -Speeds "1.0,1.2" -Final   # finals, only from an approved base
 ```
 `projects\<p>\autoedit\variants\v<N>\VARIANTS.md` lists every variant. Each one differs on the hook (another strong line moved first), the header text and its style (intro or persistent), the length (full, about 60%, or micro), the speed, the caption style (7 packs), a safe reorder of two body beats, and the punch-in and crop. About 4 variants are carousels (text-heavy and image-heavy) or single images (a quote card or a poster).
+Variants also rotate to other good B-roll picks, about 1 in 3 opens on a short cutaway, and no two reels share an opening (the same first line plus header). A distinctness check in VARIANTS.md flags any pair whose first seconds look and read alike. The tool makes real differences; it does not add tricks such as noise, pitch shifts or metadata changes to hide reposts from platforms.
 The story stays intact: the hook stays first, the CTA stays last, the key turn or lesson is never cut, and a line that leans on the one before it ("so", "but", "that's why") is never moved. Expanding costs no Claude tokens and takes about 1 minute for 12 drafts.
 
 ## B-roll of you + licensed photos

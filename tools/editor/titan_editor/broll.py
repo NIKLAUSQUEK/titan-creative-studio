@@ -360,7 +360,7 @@ def cmd_match(a, edit_dir):
                          f"line=\"{(b['line'] or '')[:120]}\" query=\"{b['query']}\" | " +
                          " | ".join(f"{chr(65 + j)}: {desc(c)}" for j, c in enumerate(b["candidates"][:3])) for b in beats if b["candidates"])
         log("broll: one claude -p call to choose among top-3 per beat")
-        res = parse_json(claude(CHOOSE.format(sheet=sheet, brand=brief.get("brand"), goal=brief.get("goal"), rows=rows), image_dir=edit_dir, model=a.claude_model))
+        res = parse_json(claude(CHOOSE.format(sheet=sheet, brand=brief.get("brand"), goal=brief.get("goal"), rows=rows), image_dir=edit_dir, model=a.claude_model, step="broll"))
         picks = {p["beat_i"]: p for p in res.get("picks", [])}
     for b in beats:
         p = picks.get(b["beat_i"])

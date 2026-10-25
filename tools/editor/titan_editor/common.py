@@ -79,9 +79,15 @@ def have(cmd):
     return shutil.which(cmd) is not None
 
 
-def claude(prompt, image_dir=None, model=None, claude_bin=None):
+def step_model(step):
+    """Per-step model routing from tools/editor/models.json (cheap models for easy picks); --claude-model overrides it."""
+    return (rjson(TOOL / "models.json", {}) or {}).get(step)
+
+
+def claude(prompt, image_dir=None, model=None, claude_bin=None, step=None):
     """One `claude -p` call on Klaus's Claude Code login (no API key). Returns the text result."""
     import argparse
+    model = model or (step_model(step) if step else None)
     ns = argparse.Namespace(llm="claude-cli", model=model, claude_bin=claude_bin or shutil.which("claude") or "claude")
     sheet = None
     if image_dir:

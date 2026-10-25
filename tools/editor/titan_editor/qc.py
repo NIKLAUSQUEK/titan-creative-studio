@@ -130,7 +130,7 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
                   f"Preset: {r['preset']} ({st.get('description', '')}). Measured checks: {json.dumps(checks)}\n"
                   "Return ONLY JSON: {\"verdict\": \"PASS|FIX\", \"score\": 0-10, \"issues\": [\"...\"], \"revisions\": [\"plain-English revision instructions the editor can apply, e.g. 'cut first 1.5 s', 'punchier captions'\"]}")
         try:
-            review = parse_json(claude(prompt, image_dir=qd, model=claude_model))
+            review = parse_json(claude(prompt, image_dir=qd, model=claude_model, step="review"))
         except Exception as e:
             review = {"verdict": "n/a", "issues": [f"self-review failed: {str(e)[:200]}"]}
     fails = [c for c in checks if not c["ok"]]

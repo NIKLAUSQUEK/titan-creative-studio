@@ -1,0 +1,7 @@
+{
+  "_note": "Which Claude model each editor step uses via `claude -p` (aliases: haiku | sonnet | opus). Cheap models for easy picks; --claude-model overrides all.",
+  "brief": "sonnet",
+  "broll": "haiku",
+  "revise": "sonnet",
+  "review": "haiku"
+}
