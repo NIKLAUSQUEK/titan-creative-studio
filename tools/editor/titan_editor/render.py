@@ -20,6 +20,10 @@ SFX_SYNTH = {
     "ding": "aevalsrc='0.45*sin(2*PI*1320*t)*exp(-5*t)+0.25*sin(2*PI*2640*t)*exp(-7*t)':d=1.0",
     "riser": "aevalsrc='0.35*sin(2*PI*(180+500*t*t)*t)*(t/1.6)':d=1.6,afade=t=out:st=1.5:d=0.1",
     "click": "aevalsrc='0.7*sin(2*PI*2000*t)*exp(-120*t)':d=0.05",
+    "bass": "aevalsrc='0.95*sin(2*PI*(55-25*t)*t)*exp(-2.2*t)':d=1.2",
+    "sting": "aevalsrc='0.5*(sin(2*PI*311*t)+sin(2*PI*329.6*t)+sin(2*PI*466*t))*exp(-1.8*t)*min(1,t*40)':d=1.6",
+    "scratch": "aevalsrc='0.6*sin(2*PI*(900-1700*t)*t)*(1-t/0.35)':d=0.35",
+    "drone": "aevalsrc='0.35*sin(2*PI*48*t)+0.2*sin(2*PI*72.3*t)*(0.6+0.4*sin(2*PI*0.2*t)):d=90",
 }
 
 
@@ -44,6 +48,9 @@ def grade_filter(g, lut_name=None):
     w = g.get("warmth", 0) or 0
     if w:
         f.append(f"colorbalance=rm={w:.3f}:bm={-w:.3f}:rh={w / 2:.3f}:bh={-w / 2:.3f}")
+    tt = g.get("teal", 0) or 0          # horror/thriller: cold teal shadows, slightly green mids
+    if tt:
+        f.append(f"colorbalance=rs={-tt:.3f}:gs={tt * 0.4:.3f}:bs={tt:.3f}:gm={tt * 0.3:.3f}")
     if lut_name:
         f.append(f"lut3d={lut_name}")
     if g.get("vignette"):
@@ -90,12 +97,13 @@ def render_item(it, clip, W, H, q, style, cache, lut):
     sp = it.get("speed", 1.0)
     d = (it["out"] - it["in"]) / sp
     key = h({"src": src, "in": it["in"], "out": it["out"], "sp": sp, "z": it.get("zoom"), "fx": it.get("focus_x"), "fit": it.get("fit"),
-             "W": W, "H": H, "q": q, "g": style.get("grade"), "v": 3})
+             "W": W, "H": H, "q": q, "g": style.get("grade"), "fx": it.get("fx"), "v": 3})
     out = cache / f"seg_{key}.mkv"
     if out.exists():
         return out, d
     fit = fit_filter(meta.get("width"), meta.get("height"), W, H, it.get("fit", "auto"), it.get("focus_x", 0.5))
-    pre = ",".join([f"setpts=(PTS-STARTPTS)/{sp}" if sp != 1 else "setpts=PTS-STARTPTS"] + grade_filter(style.get("grade", {}), lut) + [f"fps={FPS}", "format=yuv420p", "setsar=1"])
+    fx = ["eq=brightness='-0.55*lt(t,0.45)*gt(mod(t*14,2),1)':eval=frame"] if "flicker" in (it.get("fx") or []) else []  # bulb flicker in
+    pre = ",".join([f"setpts=(PTS-STARTPTS)/{sp}" if sp != 1 else "setpts=PTS-STARTPTS"] + grade_filter(style.get("grade", {}), lut) + fx + [f"fps={FPS}", "format=yuv420p", "setsar=1"])
     parts = zoom_chain(it.get("zoom"), d, W, H)
     fc = f"[0:v]{fit}[fit];[fit]{pre}[g]"
     if len(parts) == 1:
@@ -261,10 +269,11 @@ def build_ass(r, clips, W, H, total, path):
                 continue
             tag = {"pop": "\\fscx82\\fscy82\\t(0,90,\\fscx100\\fscy100)", "fade": "\\fad(110,70)"}.get(anim, "")
             ev.append(f"Dialogue: 0,{t_ass(t0)},{t_ass(t1)},Cap,,0,0,0,,{{\\an5\\pos({cx},{y}){tag}}}" + " ".join(word(i, w) for i, w in enumerate(g)))
+    from .textcard import needs_card
     for t in r.get("texts", []):
         a = at_of(r, t["anchor"], starts)
-        if a is None:
-            continue
+        if a is None or needs_card(t, st):
+            continue  # emoji / box / label texts are drawn as PNG cards in render()
         b = min(a + float(t.get("dur", 2.5)), body)
         txt = ass_escape(t["text"])
         if t["type"] in ("hook", "title", "header"):
@@ -366,6 +375,28 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
                 fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]colorkey=0x00FF00:0.30:0.10[k{n}];[b{n}][k{n}]overlay=0:0[g{n}];[p{n}][g{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             else:
                 fc.append(f"[{last}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
+            last, n = f"o{n}", n + 1
+        from .textcard import card, needs_card
+        st_ = r["style"]
+        for t in r.get("texts", []):
+            if not needs_card(t, st_):
+                continue
+            a = at_of(r, t["anchor"], starts)
+            if a is None or a >= body:
+                continue
+            d = min(float(t.get("dur", 2.5)), body - a)
+            ht = st_.get("hook_text", {})
+            kind = t.get("style") or ht.get("card_style") or ("outline" if t["type"] in ("hook", "header", "title") else "label")
+            y = t.get("position_y", ht.get("position_y", 0.2) if t["type"] in ("hook", "header") else 0.5 if kind == "label" else 0.32)
+            size = t.get("size", ht.get("size", 0.05) if kind != "label" else 0.045)
+            up = t.get("uppercase", ht.get("uppercase", True) if kind == "outline" else False)
+            key = h({"t": t["text"], "k": kind, "y": y, "s": size, "u": up, "W": W, "H": H, "f": ht.get("font"), "c": ht.get("color"), "v": 1})
+            png = cache / f"card_{key}.png"
+            if not png.exists():
+                card(t["text"], W, H, kind, y, size, ht.get("font"), ht.get("color", "#FFFFFF"), ht.get("box", "#FFFFFF"), ht.get("box_text", "#111111"),
+                     st_.get("colors", {}).get("accent", "#E53935"), up, out=png)
+            inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{d:.3f}", "-i", png.name]
+            fc.append(f"[{n}:v]format=rgba,setpts=PTS-STARTPTS+{a:.3f}/TB[k{n}];[{last}][k{n}]overlay=0:0:eof_action=pass[o{n}]")
             last, n = f"o{n}", n + 1
         logo = r["style"].get("logo")
         if logo and logo.get("path"):

@@ -1,0 +1,56 @@
+{
+  "name": "genz-header-skit",
+  "label": "Gen Z header skit / travel reaction",
+  "kind": "style",
+  "description": "From ref 'Who upset lil bro' (5.7M views): raw selfie footage, long takes (~5 s), a PERSISTENT top header = context emoji/flag line + 2-4 word caps reaction with 😭💀, no subtitles; the header frames the joke, the footage pays it off. SFX hits on each reaction beat.",
+  "reference": "research/edit-references-2026-10.md#1",
+  "pacing": {
+    "remove_silence_over_s": 0.6,
+    "pad_s": 0.12,
+    "remove_fillers": "none",
+    "max_shot_s": 6
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "persistent": true,
+    "position_y": 0.17,
+    "size": 0.042,
+    "uppercase": true,
+    "max_words": 12
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "scale": 1.15,
+    "on_hook": 1.0,
+    "on_emphasis": true
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 2.5,
+    "db": -10,
+    "map": {
+      "hook": "bass",
+      "zoom": "impact",
+      "broll": "whoosh",
+      "title": "pop"
+    }
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.03,
+    "saturation": 1.05
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

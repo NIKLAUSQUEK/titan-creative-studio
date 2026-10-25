@@ -41,6 +41,8 @@ CTA_LIKE = re.compile(r"\b(follow|subscribe|link in (my )?bio|comment|dm me|book
 
 def headline(text, max_words=11):
     """Header text: whole hook if short, else cut at a clause boundary, never mid-phrase."""
+    if "\n" in str(text):  # multi-line headers (emoji context line + reaction) are written to be used as-is
+        return str(text).strip()
     t = clean(text)
     w = t.split()
     if len(w) <= max_words:

@@ -18,7 +18,7 @@ Everything runs on your PC. The heavy work (transcription, B-roll search, render
 cd C:\path\to\titan-creative-studio\tools\editor
 .\Run-Editor.ps1 -SelfTest
 ```
-It ends with `SELFTEST 30/30 passed`. It uses Windows' built-in voice to make a test clip.
+It ends with `SELFTEST 31/31 passed`. It uses Windows' built-in voice to make a test clip.
 
 ## Daily use
 ```powershell

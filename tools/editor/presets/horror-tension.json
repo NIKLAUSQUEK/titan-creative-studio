@@ -1,0 +1,68 @@
+{
+  "name": "horror-tension",
+  "label": "Horror / thriller tension",
+  "kind": "style",
+  "description": "From ref horror short (bathroom scare): cold teal/green grade, crushed blacks, low saturation, long held shots (~10 s), slow push-ins, lights flicker on scene changes, silence + low drone bed, sting hits spaced ~1-2 s apart building to the scare. Minimal captions, small and low. Works for skits that parody horror (e.g. the 'leak' reveal) too.",
+  "reference": "research/edit-references-2026-10.md#5",
+  "pacing": {
+    "remove_silence_over_s": 1.6,
+    "pad_s": 0.35,
+    "remove_fillers": "hard",
+    "max_shot_s": 12
+  },
+  "captions": {
+    "animation": "fade",
+    "max_words": 6,
+    "size": 0.03,
+    "position_y": 0.78,
+    "keyword_caps": false,
+    "uppercase": false,
+    "font": "DejaVu Serif",
+    "bold": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "uppercase": false,
+    "size": 0.04,
+    "position_y": 0.5,
+    "dur_s": 2.2
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 8,
+    "scale": 1.07,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "transitions": {
+    "default": "flicker"
+  },
+  "sfx": {
+    "density_per_10s": 1.2,
+    "db": -9,
+    "map": {
+      "hook": "sting",
+      "zoom": "sting",
+      "broll": "impact",
+      "end": "riser"
+    }
+  },
+  "music": {
+    "energy": "drone",
+    "db": -24,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.14,
+    "saturation": 0.72,
+    "brightness": -0.05,
+    "gamma": 0.92,
+    "teal": 0.06,
+    "vignette": true
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

@@ -26,10 +26,12 @@ SCHEMA = {
                "source": "footage (verbatim line) | text-overlay | new-vo", "clip": "clip id if footage", "t0": 0.0, "t1": 0.0, "why": ""}],
     "beats": [{"beat": "hook|context|turn|lesson|proof|cta|...", "purpose": "", "clip": "clip id", "t0": 0.0, "t1": 0.0,
                "line": "verbatim kept line(s) from the summary", "on_screen_text": "or null", "broll_query": "short visual description or null", "sfx": "or null",
+               "label": "optional one-word on-screen label for montage beats (e.g. a name), else null",
                "role": "hook|context|body|example|proof|turn|lesson|payoff|cta (the expander only reorders/drops context/body/example/proof)", "fixed": "true if this beat must not move",
                "visual": {"type": "none|own_broll|me (the speaker in other footage)|person (an enrolled person)|web_image (licensed photo of a named thing/place/person)|text_card",
                           "query": "literal visual (3-8 concrete words)", "metaphor": "a visual metaphor for the idea, or null", "person": "enrolled name or null",
                           "entity": "named product/place/person to fetch if own footage lacks it, or null", "real_person": "true if entity is a real person (editorial only)"}}],
+    "headers": ["5 on-screen header options in the preset's text style (Gen Z: emoji/flag context line + '\\n' + 2-4 word caps reaction with 1-2 emoji, e.g. '🇵🇰\\nNAHHH BRO 😭💀'; box style: setup line + '\\n' + 'but …' teaser; news: '⚠️ SCAM ALERT\\n<claim in 6 words>')"],
     "cta": {"spoken": "", "on_screen": "", "end_card": ""}, "compliance": ["rule that bites + how this edit obeys it"],
     "sound": {"vibe": "", "energy": "none|low|mid|high", "licence_rule": "brand=licensed/original only; personal=trending in-app"},
     "assumptions": ["anything you assumed"]}

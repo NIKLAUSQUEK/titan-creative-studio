@@ -46,6 +46,9 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | aura-cinematic | statement edits: slow pushes, minimal words, riser, crushed grade + vignette |
 | documentary | VO-led, B-roll every ~4 s, lower-thirds, sentence captions |
 | ugc-selfie-talking-head · ugc-unboxing · ugc-try-on-demo · ugc-reaction · ugc-pov · ugc-testimonial-style · ugc-day-in-the-life · ugc-green-screen | UGC formats; each preset carries its typical beat structure, pacing and caption style |
+| genz-header-skit | raw selfie/travel/skit: persistent top header (emoji context line + 2-4 word CAPS reaction 😭💀), no subtitles, SFX hit per reaction (ref research/edit-references-2026-10.md #1) |
+| trend-beat-switch | 'My name is… but they call me…' intro in white rounded boxes, then clips switch ON the beat with one label word each; needs a music file (beat-synced) |
+| horror-tension | cold teal grade, crushed blacks, long holds, slow push, flicker on beat changes, drone bed + stings |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 
 - **Precedence:** ledger > brand file (the `edit-brand` block) > Klaus's script/brief > preset > defaults. The brand block wins on fonts, caption/hook placement, colours and the end card.
@@ -112,6 +115,17 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Honest note:**
   - Platforms fingerprint audio and video, so speed or crop tweaks alone don't make a repost "new". The hook, structure and format changes are what make a fresh test.
   - One variant per test slot, own caption, never cross-posting duplicates from several accounts.
+
+## 7b. On-screen text cards (emoji, boxes, labels)
+- **Card styles:** `hook_text.renderer: "card"` or any text containing emoji renders as a PNG card (Pillow + colour emoji font). Card styles:
+  - `outline`: Gen Z header
+  - `box`: white rounded TikTok boxes
+  - `label`: one word per montage clip
+  - `kicker`: news tag bar plus headline
+- **Header copy:** the brief returns `headers[]` written in the preset's style. Use "\n" for a context line (e.g. "🇵🇰\nNAHHH BRO 😭💀"). The expander rotates them across variants.
+- **Labels:** beat `label` puts one word on that beat's clip.
+- **Beat sync:** `beat_sync` presets snap B-roll, labels and SFX to the music's onsets (detected locally).
+- **Precedence:** the brand's `edit-brand` hook placement still wins over the preset (e.g. Physio Spot hook at 61.5%).
 
 ## 8. Model routing (token saving)
 - `tools/editor/models.json` sets the Claude model per step: brief = sonnet, B-roll pick = haiku, free-text revision = sonnet, self-review = haiku. `--claude-model` overrides all of them.

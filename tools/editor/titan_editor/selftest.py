@@ -167,6 +167,10 @@ def selftest(a):
     vmd = (E / "variants" / "v3" / "VARIANTS.md").read_text(encoding="utf-8")
     ok("expand: every reel has its own opening (distinctness check)", "- ok: every reel has its own opening" in vmd)
     ok("expand: CTA stays last in every reel", all(v["beats"][-1] == reels[0]["beats"][-1] for v in reels if v["duration"] != "micro" or len(v["beats"]) > 2))
+    from .textcard import card
+    im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
+    colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()
+    ok("text card: emoji header renders in colour", len(colours) > 20, f"{len(colours)} distinct colours")
     from .presets import stylecard_to_preset
     p = stylecard_to_preset({"creator": {"name": "Test Creator"}, "dna": {"energy": 5, "avg_shot_s": 1.1, "captions": "word-by-word pop, yellow highlight, all caps, centre",
                                                                          "sound": "whooshes and bass drops", "lighting": "high contrast, warm"}})

@@ -162,13 +162,23 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
     hook = next((h for h in brief.get("hooks", []) if h.get("rank") == 1), None)
     ht = style.get("hook_text", {})
     if items and ht.get("enabled"):
-        text = (brief.get("beats") or [{}])[0].get("on_screen_text")
+        text = (brief.get("headers") or [None])[0] or (brief.get("beats") or [{}])[0].get("on_screen_text")
         if not text and hook and hook.get("source") != "footage":
             text = hook.get("text")  # text-overlay / new-vo hooks go on screen; a spoken footage hook is already captioned
         if text:
-            words = text.split()
-            text = " ".join(words[: ht.get("max_words", 7)]) + ("…" if len(words) > ht.get("max_words", 7) else "")
-            r["texts"].append({"type": "hook", "text": text, "anchor": {"item": items[0]["id"], "offset": 0.0}, "dur": ht.get("dur_s", 2.6)})
+            if "\n" not in text:
+                words = text.split()
+                text = " ".join(words[: ht.get("max_words", 7)]) + ("…" if len(words) > ht.get("max_words", 7) else "")
+            _, body0 = item_starts({"items": items})
+            persistent = ht.get("persistent")
+            r["texts"].append({"type": "header" if persistent else "hook", "text": text, "anchor": {"item": items[0]["id"], "offset": 0.0},
+                               "dur": round(body0, 2) if persistent else ht.get("dur_s", 2.6)})
+    for bi, b in enumerate(brief.get("beats", [])):
+        if b.get("label"):
+            first = next((it for it in items if it["beat"] == bi), None)
+            if first:
+                r["texts"].append({"type": "label", "text": b["label"], "style": "label", "anchor": {"item": first["id"], "offset": 0.0},
+                                   "dur": round(sum(it["out"] - it["in"] for it in items if it["beat"] == bi), 2)})
     for b in brief.get("beats", [])[1:]:
         if b.get("on_screen_text"):
             first = next((it for it in items if it["beat"] == brief["beats"].index(b)), None)
@@ -202,10 +212,58 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
             web_used.append(c)
         last_at = start
     r["audio"]["sfx"] = auto_sfx(r)
+    if style.get("transitions", {}).get("default") == "flicker":
+        seen_b = set()
+        for it in r["items"]:
+            if it["beat"] not in seen_b:
+                seen_b.add(it["beat"]); it["fx"] = ["flicker"]
+    if style.get("music", {}).get("energy") == "drone" and not music:
+        r["audio"]["sfx"].insert(0, {"type": "drone", "anchor": {"at": 0.0}, "db": -24, "why": "tension bed (synth, original)"})
+    if style.get("beat_sync") and music:
+        beat_sync(r, music)
     if web_used:
         from .webimg import attribution
         log(f"image credits -> {attribution(edit_dir, web_used)} (add to the caption)")
     return save_new(edit_dir, r, note, parent=None)
+
+
+def music_onsets(path, min_gap=0.25):
+    """Beat/onset times (s) of a music file: positive jumps in short-time energy, peak-picked. Local, no libraries beyond numpy."""
+    import numpy as np
+    from pathlib import Path as P
+    from .ingest import load_audio
+    a = load_audio(str(path), P(path).parent)
+    if a is None or not len(a):
+        return []
+    hop = 160  # 10 ms at 16 kHz
+    fr = a[: len(a) // hop * hop].reshape(-1, hop)
+    e = np.log10((fr ** 2).mean(1) + 1e-9)
+    flux = np.maximum(0, np.diff(e, prepend=e[0]))
+    thr = flux.mean() + 1.5 * flux.std()
+    out = []
+    for i in range(1, len(flux) - 1):
+        if flux[i] > thr and flux[i] >= flux[i - 1] and flux[i] >= flux[i + 1] and (not out or i * 0.01 - out[-1] >= min_gap):
+            out.append(round(i * 0.01, 3))
+    return out
+
+
+def beat_sync(r, music, window=0.3):
+    """Snap B-roll starts, label texts and SFX to the nearest music onset (beat-switch edits). Stores the onsets in the recipe."""
+    onsets = music_onsets(music)
+    r["audio"]["onsets"] = onsets[:400]
+    if not onsets:
+        return r
+    starts, _ = item_starts(r)
+    for coll in (r["broll"], [t for t in r["texts"] if t["type"] in ("label", "title")], r["audio"]["sfx"]):
+        for x in coll:
+            a = x["anchor"]
+            if "item" not in a or a["item"] not in starts:
+                continue
+            t = starts[a["item"]] + a.get("offset", 0)
+            near = min(onsets, key=lambda o: abs(o - t))
+            if abs(near - t) <= window:
+                a["offset"] = round(max(0.0, a.get("offset", 0) + near - t), 3)
+    return r
 
 
 # ---------------- timeline maths (shared with render) ----------------

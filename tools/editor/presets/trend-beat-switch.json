@@ -1,0 +1,53 @@
+{
+  "name": "trend-beat-switch",
+  "label": "Trend audio / beat-switch montage",
+  "kind": "style",
+  "description": "From ref 'My name is … but they call me…' (4.9M views): 3-4 s intro to camera with 2 white rounded caption boxes (setup + teaser), then the beat drops and every clip/image switches ON the beat (~1.5-2 s each) with ONE centred label word. Music-led (licensed/original for brands; trending sound in-app for personal), no subtitles.",
+  "reference": "research/edit-references-2026-10.md#6",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 0.3,
+    "pad_s": 0.05,
+    "max_shot_s": 2.2
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": false,
+    "dur_s": 3.8,
+    "position_y": 0.28,
+    "size": 0.034,
+    "uppercase": false,
+    "max_words": 14
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_hook": 1.0
+  },
+  "broll": {
+    "every_s": 1.6,
+    "max_dur_s": 2.0,
+    "min_dur_s": 1.2,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 0.5,
+    "db": -14,
+    "map": {
+      "hook": "riser"
+    }
+  },
+  "music": {
+    "energy": "high",
+    "db": -10,
+    "duck": false
+  },
+  "end_card": {
+    "enabled": false
+  }
+}
