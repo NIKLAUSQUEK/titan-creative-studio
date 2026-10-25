@@ -25,6 +25,7 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 - Every deliverable gets a market-localised sound plan (`/sound`: regional charts + TikTok-by-country licensed tracks + SFX cues) before /draft or /publish. Brand/ads use licensed or original audio only; trending chart songs go on personal/creator accounts in-app only.
 - No video renders until every @asset in the shot is visually approved (Gate 4, validator-enforced). Real photos of real staff/talent beat generated ones.
 - Platform fit: every creative and post follows `.claude/skills/marketing-engine/references/platform-signals.md` (§3 build spec at script/edit, §8 gate at /publish): frame-1 hook with the promise by 3 s, search keyword said/shown/written, send/save trigger, original content only, platform labels for AI and paid. Never fake identity or location (SIMs, proxies, burner accounts), never "prime" accounts or use pods/bought engagement, never tweak reposts to dodge originality detection.
+- Craft standard (full-suite agency): strategy = `marketing-engine/references/marketing-effectiveness.md`; copy/offers = `buyer-psychology.md` (25-point checklist); funnels/lead magnets/landing pages/nurture = `funnels-lead-magnets.md`; carousels/statics/covers = `carousels-statics.md`; stories = `creator-brain/references/storytelling-playbook.md` (diagnosis gate); AI video = `higgsfield-creative-director/references/ai-video-playbook.md`; edit rhythm, B-roll, music = `story-sync` skill. Evidence over folklore: no invented stats, label rules of thumb.
 - Never put API keys in files or chat. Brand-safe, platform-safe wording in generation prompts; crude hooks/captions go in post only.
 
 ## Routing — what Klaus says → what you do
@@ -67,6 +68,11 @@ Ads, skits, UGC, documentaries (incl. 3D docs), short films and long-form/movies
 | "content calendar / what should I post" | `/calendar <yyyy-mm>` → strategist agent: strategy + brain story bank + trends → `marketing/calendar/` |
 | "repurpose this", "waterfall this" | `/repurpose <hero>` → repurpose-waterfall.md (+ clipping-podcast.md); cut before you generate |
 | "how does the algorithm work / optimise for <platform> / Xiaohongshu / Douyin / reach another country" | platform-signals.md (marketing-engine): platform signals, build spec, Eastern stack, legitimate cross-border SOP |
+| "funnel / lead magnet / landing page / WhatsApp or email nurture / quiz" | funnels-lead-magnets.md (+ buyer-psychology.md) → strategist for the plan, story-writer for copy |
+| "make it persuasive / ad copy / headline / offer / pricing" | buyer-psychology.md frameworks + checklist |
+| "carousel / static ad / infographic / thumbnail / cover" | carousels-statics.md (+ higgsfield-youtube-thumbnail for YT) |
+| "where should B-roll go / what music / sync to the beat / make it feel more <emotion> / edit feels flat" | `story-sync` skill → Sync Map → /edit recipe or Gate 3 script |
+| "show me edit styles / presets / edit like a <viral|pro|niche> style" | style-catalog.md (44 presets) → `editor.py assemble --preset <name>`; specific creator → `/style` |
 | "package this for posting / captions / titles / hashtags" | `/publish` → distributor agent: per-platform package + checklist (never posts) |
 | "how did it perform / review", "what's working" | `/review` → analytics-loop.md (vidIQ + native exports) → `marketing/reviews/` → `/learn` |
 | "launch / campaign" | `marketing:campaign-plan` skill + strategist agent → production via `/ad` |
@@ -80,7 +86,8 @@ Cinematic/realism: Seedance 2.5 omni_reference (draft 480p → 1080p, bitrate hi
 - Style library: Supabase project `titan-os` (ref qdikcsxinpyfnljszvay) tables `style_cards`, `style_creators`, `style_run_log` (filled free on Klaus's PC by `tools/creator-brain/Run-StyleLab.ps1`, or by the vidIQ-based Railway `style-runner`, 8:01pm SGT)
 - Generation log: `registry/generations.csv` (written by hook) · Projects: `projects/<name>/` (BRIEF.md, spec.json, outputs/, feedback.md)
 - Skill: `.claude/skills/higgsfield-creative-director/` (workflow, model routing, prompt patterns, QC rubric, edit taxonomy, plus format guides in references/: documentary, filmmaking, realism, clipping, motion, animation, photo effects, product VFX, Claude editing, credit saving)
-- Research notes + source takeaways: `research/`
+- Research notes + source takeaways: `research/` (platform algorithms, style library, story-sync, agency playbooks)
+- Style presets catalog: `.claude/skills/higgsfield-creative-director/references/style-catalog.md` · edit-rhythm skill: `.claude/skills/story-sync/`
 - Creator Brain (identity, timeline, journal, story cards, storyboard): `brains/<who>/` (`<who>` = `.studio/active_brain`) · skill: `.claude/skills/creator-brain/` · writing corpus: Supabase `titan_corpus` (5,472 tagged passages)
 - Marketing (strategy, calendar, reviews): `marketing/` · skill: `.claude/skills/marketing-engine/` (strategy, repurpose waterfall, distribution, analytics loop, compliance packs)
 - Active project: `.studio/active_project` (one line, folder name)
