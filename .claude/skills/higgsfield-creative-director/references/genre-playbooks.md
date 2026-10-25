@@ -33,11 +33,11 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 21 | Explainer / myth-buster | expert education | "I finally get it" | 2-3 s | brisk | clean, bright | light whooshes on graphics | talking-head-punchy |
 | 22 | News / scam-expose | warnings, tips, "don't fall for this" | alarm → protected | 1.5-3 s / slides | headline-first | high clarity | news stings, ticks | news-expose |
 | 23 | Commentary / receipts | real controversy | judgement | 2-3 s | evidence beats | neutral | minimal | documentary (see commentary-controversy.md) |
-| 24 | Luxury / product reveal / new release | launches, premium products, malls | desire | 1-3 s | tease → reveal → hero | rich blacks, specular | bass swell, shimmer | luxury-reveal |
+| 24 | Luxury / product reveal / new release | launches, premium products | desire | **narrative film 0.8-1.1 s median; object film 2.6-3.3 s; FOOH one take 7-8 s** | **brand flash ≤1.5 s → story or tease → hero packshot held 2-4 s at the end** | rich blacks, one brand colour | score/whoosh-led, sub hit on the packshot | luxury-reveal (+ new luxury-object-calm, fooh-oneshot) |
 | 25 | UGC demo / experience-style | creator uses the product | trust | 1.5-3 s | problem → use → result | phone-natural | voice, light music | ugc-* presets |
-| 26 | Before / after transformation | change over time | proof | 1-2 s | snap switch | matched grades | whoosh on switch | ugc-try-on-demo |
-| 27 | ASMR / satisfying | process, pouring, unboxing, cleaning | calm, satisfaction | 2-4 s | rhythmic | clean, macro | close foley, no music | asmr-satisfying |
-| 28 | Event / retail / mall promo | openings, pop-ups, launches | FOMO, fun | 0.8-2 s | energetic, on beat | bright, saturated | upbeat licensed track | trend-beat-switch / action-hype |
+| 26 | Before / after transformation | change over time (home, car, hair, product) | proof, "wait for it" | **process 0.6 s median (detailing) or locked one-take time-lapse 7+ s (rug); reveal held to the last 3-5 s** | before shown at 0 s → process → split/wipe reveal at the end (or "part 2") | matched light, locked camera | real process foley, no VO; a whoosh/ding on the reveal | before-after-process (new) |
+| 27 | ASMR / satisfying | process, pouring, building, cleaning | calm, completion | **top performer: one locked take (11-20 s) → completed state held 2-3 s; brand reels cut 0.7-1.5 s** | one continuous action → finished object → loop | clean, bright, macro | loud close foley (onsets 15-54 per 10 s), no music, no VO | asmr-satisfying (one-take default) + asmr-product-cut (new) |
+| 28 | Event / retail / mall promo | openings, pop-ups, launches, mall events | FOMO, fun | **0.8-1.0 s median (music-only); 1.5 s when there is a VO** | storefront at 0 s → 1 s hero/product/activation inserts → bag-out or what-where-when | bright, natural store light | licensed upbeat track; ~140 wpm VO with dates for events | event-retail-promo (new) |
 | 29 | Edu-song / mnemonic / musical explainer | teaching steps, routines, checklists, myths ("boring" health or how-to) | delight, "I can't unhear it" | 1-3 s, on the beat | spoken hook → song → recap chorus → CTA | bright, clean, saturated | the song IS the music (original or public-domain melody) + pops | edu-song |
 | 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
 | 31 | Borrowed cold open / bait-and-switch | a lesson that needs a scroll-stopper; riding a moment everyone recognises | recognition → surprise | the borrowed clip 3-16 s, then the creator's normal pace | familiar viral moment → "skip" → your lesson | match the borrowed clip, then your own look | the original's audio, a skip/whoosh on the switch, then yours | split layout + trend-beat-switch or talking-head-punchy |
@@ -570,42 +570,102 @@ Rights: the opening clip comes in only through the platform's Stitch/Remix, or w
 
 ### 23. Commentary / receipts: see commentary-controversy.md (steelman, receipts format, no AI likeness of real people).
 
-### 24. Luxury / product reveal / new release / mall [draft until ref #3 arrives]
-- **Why it works:** withholding (fragments, silhouettes, light sweeps), then a full hero reveal on the drop.
-- **Pacing:**
-  - 0-3 s: macro fragments;
-  - 3-10 s: light sweeps over form, rotating details;
-  - 10-12 s: silence or a riser;
-  - 12-15 s: the hero reveal on the bass drop;
-  - 15-25 s: the use or lifestyle context;
-  - 25-30 s: name, date and place, plus the CTA.
-- **Shot grammar:** macro slider, turntable orbit, specular light sweep, slow dolly-in to a centred hero, negative space for the title.
-- **Look:** rich blacks, controlled specular highlights, one brand colour.
-- **genre_key:** `premium product commercial, macro detail, controlled specular highlights, light sweep across surface, rich deep blacks, slow orbit, centred hero composition`
-- **Shot:** `{"camera":"macro slider, 100mm, slow left-to-right","action":"start: darkness -> end: a thin light sweep reveals the bottle's engraved edge","light":"single strip softbox sweeping"}`
-- **Sound:** sub swell, shimmer, a bass drop on the reveal.
-- **Compliance:** real prices, dates and terms; no fake scarcity.
-- **Preset:** luxury-reveal (also product-vfx.md for exploded views).
+### 24. Luxury / product reveal / new release [measured: DY42Z6-ScTk, DdBMVnJze7j, DLN027ntJJV, CqqN8w6K3rL]
+- **Why it works:** a desire loop. A brand flash tells you whose world this is, the story makes you want to be in it, and the held packshot is the object you take away. Spectacle (FOOH) works when the product is impossible in a real place.
+- **Pacing (30 s, narrative):**
+  - 0-1.6 s: a brand flash (bottle or object, 0.5-1 s), then cut to the face/world;
+  - 1.6-26 s: the story, median 0.85 s cuts, 3-4 s holds on the emotional peaks, ~50% of cuts on music onsets;
+  - 26-30 s: a hero packshot held 2-4 s plus the name.
+- **Pacing (30 s, object):** 8-10 shots of 2.5-3.5 s (macro detail → light sweep → wrist/hand → packshot); no cut under 2.5 s.
+- **Pacing (FOOH, 6-10 s):** one take, the object visible from 0 s, the scale reveal at 60-85% of the runtime (a pass-by or camera move), no cut, no text until the final second.
+- **Shot grammar:** a macro slider or a specular light sweep for the object; tight faces and hands for the narrative; a centred packshot with negative space; FOOH = handheld phone height in a real landmark street.
+- **Look:** rich blacks (narrative) or neutral daylight (FOOH); one brand colour carried through wardrobe, light or set.
+- **genre_key (narrative/object):** `premium fragrance commercial, cinematic shallow depth, rich deep blacks, controlled specular highlights on glass, one brand colour accent, slow deliberate camera, centred hero packshot`
+- **genre_key (FOOH):** `handheld phone video on a real city street, natural daylight, photoreal CGI oversized product integrated with correct shadows and reflections, documentary realism, no text`
+- **Shot JSON:**
+  - `{"id":"s01","dur":0.8,"camera":"locked, 85mm, centred","subject":"@product bottle","action":"start: bottle in darkness -> end: a thin light sweep catches the cap","light":"single strip softbox","genre_key":"…"}`
+  - FOOH: `{"id":"f01","dur":8,"camera":"handheld 24mm at chest height, slow pan right","action":"start: real street, the oversized @product drives in from the back -> end: it passes the lens and fills the frame","constraints":"one take, no cuts, real traffic sound"}`
+- **Sound:** score- or whoosh-led; the whoosh peak on each fast cut; a sub/boom on the end packshot; no VO, or one whispered line. FOOH = real street ambience plus one musical sting.
+- **Compliance:**
+  - real prices, dates and terms; no fake scarcity (SG CCS enforcement, 18 May 2026);
+  - FOOH must not be passed off as a real stunt in a factual claim. Caption "CGI" or "concept" and don't tag a transit operator or landmark as a partner without permission (The Drum, 2023-07-14, on the Maybelline backlash);
+  - AI-made: label it AI per studio rules.
+- **Preset:** luxury-reveal (narrative), luxury-object-calm (new), fooh-oneshot (new).
+- **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
 ### 25. UGC demo / experience-style: the editor's ugc-* presets (selfie, unboxing, try-on, reaction, POV, experience-style, day in the life, green screen). Real people beat generated ones; experience-style is never posed as customer testimony in regulated markets.
 
-### 26. Before / after transformation [draft]
-- **Pacing:** "before" hook (1-2 s) → the snap switch on the beat → "after" hold → the how (process).
-- **Shot grammar:** an identical framing, light and pose locked for both; a match cut.
-- **Compliance:** often restricted (health, fitness, beauty ads on Meta/TikTok; SG health bans implying guaranteed results). Use process, not outcome claims.
-- **Preset:** ugc-try-on-demo.
+### 26. Before / after transformation [measured: DR4YtfODqnh, DMz7w4FykvS, DZ6xdQMvo1q, DaqIzskRjC1]
+- **Why it works:** the before shown at 0 s opens a loop ("can they fix THAT?"). The process is satisfying on its own, and the side-by-side at the end closes the loop as proof.
+- **Pacing (organic, 30-180 s):**
+  - 0-1 s: the worst view of the "before" + a title card ("This rug was dumped");
+  - process: locked one-take with speed ramps (median 7 s+) OR 0.6 s detail cuts on the steps;
+  - last 3-5 s: return to the exact before framing → cross-fade or wipe to after → split BEFORE | AFTER card held at least 2 s.
+- **Pacing (ad, 15-30 s):** before 0-1.5 s → 3-5 process beats → split card from ~70% → product/CTA.
+- **Shot grammar:**
+  - the before and after frames are locked identical (tripod mark, same lens, light and time of day);
+  - overhead for flat objects, three-quarter for cars and rooms;
+  - hands-only process;
+  - no filter on the after only.
+- **genre_key:** `locked overhead tripod, identical framing before and after, bright even studio light, real dirt and real result, satisfying cleaning process, no filters`
+- **Shot JSON:** `{"id":"b05","dur":3,"camera":"locked overhead, 24mm, same mark as b01","subject":"@object","action":"start: grey matted pile -> end: squeegee pass reveals pink pile in one stripe","light":"same softbox as b01","constraints":"camera must not move between b01 and b05"}`
+- **Sound:** real process foley up (brush, water, squeegee, vacuum). No VO for object restoration; a talk-led consult only for hair/people. A whoosh on the wipe and a ding/pop on the BEFORE | AFTER card.
+- **Compliance:**
+  - **SG healthcare: no before/after or after-only of people in any ad or social post.** Use process, object metaphors or space/tool upgrades only;
+  - Meta: cosmetic before/after OK at 18+; no pinch-fat, no inferiority wording, no timeframe promises;
+  - TikTok: no exaggerated or body-shaming before/after; weight claims 18+ via a healthy lifestyle;
+  - every brand: an unedited after, and the same light. If the result took several sessions, say so.
+- **Preset:** before-after-process (new; replaces ugc-try-on-demo for this genre), before-after-fast (car-style cuts).
+- **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
-### 27. ASMR / satisfying [draft]
-- **Pacing:** rhythmic 2-4 s shots, each completing one action (pour, cut, peel, click); no talking; a loopable ending.
-- **Shot grammar:** macro top-down, locked tripod, perfect symmetry, clean surfaces.
-- **genre_key:** `satisfying macro process shot, top-down locked camera, clean minimal surface, crisp detail, soft even light`
-- **Sound:** close-mic foley up front, no music (or a very soft bed); never mask the satisfying sound.
-- **Preset:** asmr-satisfying.
+### 27. ASMR / satisfying [measured: DaQQ9EuuNu4, DePW2v6KrRO, C8xWr4mp4mL, DZujP64IbuB]
+- **Why it works:** the viewer wants to see the action complete, and dense close sound triggers the tingle. Both break the moment you cut away or go quiet.
+- **Pacing:**
+  - one-take (default, 12-25 s): the action starts by 0.5 s → continuous build in one locked shot → the finished object held 2-3 s → loops cleanly;
+  - product-cut (ads, 10-20 s): 0.7-1.5 s shots, each completing one sound (pour, crack, click, peel), with about half the cuts on the sound's onset; the last shot holds 2 s on the product.
+- **Shot grammar:** locked tripod, macro or tight top-down or side-on; a clean seamless background; one action per shot; hands only; symmetrical containers (glass shows the layers).
+- **Look:** clean, bright, high-key, saturated product colours; no grade tricks.
+- **genre_key:** `oddly satisfying macro process, locked tripod, seamless clean background, crisp texture detail, soft even high-key light, one continuous action, no text`
+- **Shot JSON:** `{"id":"a01","dur":18,"camera":"locked side-on, 50mm macro, transparent cone centred","subject":"@product","action":"start: empty clear cone -> end: four coloured layers dropped, pressed and topped into a finished cone","audio":"close-mic granular foley only","constraints":"one take, no cut, no music"}`
+- **Sound:**
+  - close-mic foley at -16 to -18 LUFS integrated, dense (15-55 onsets/10 s);
+  - no music, or a bed under -30 dB;
+  - no VO;
+  - never compress the transients away;
+  - generated video needs a real foley pass (record the real product).
+- **Compliance:** food: no health claims hidden in captions. Kids' products: no "buy now" pressure (child-directed advertising rules). AI-made textures: label AI.
+- **Preset:** asmr-satisfying (one-take default) and asmr-product-cut (new).
+- **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
-### 28. Event / retail / mall promo [draft until ref #3]
-- **Pacing:** a crowd or energy hook → 6-10 beat-cut highlights → the what, where and when card → CTA.
-- **Shot grammar:** gimbal walk-through, top-down crowd shots, product hero inserts, faces only with consent or as an unidentifiable crowd.
-- **Preset:** trend-beat-switch or action-hype.
+### 28. Event / retail / mall promo [measured: DQxooZQEaIl, DbjPtUuyQyu, DLG_uWwh0qs, C70QWlrSzmX]
+- **Why it works:** a 10-25 s virtual walk-in. Seeing the door, touching the things and leaving with the bag lets the viewer rehearse the visit.
+- **Pacing (15-25 s):**
+  - 0-1 s: the storefront, logo or anchor product (no logo animation, no countdown);
+  - 1-18 s: 1 s inserts on the beat in a fixed order: hero product → hands using the activation → freebie or photo moment → shelf walk-through;
+  - the last 2-3 s: a bag-out or a what-where-when card (date, level/unit, hours), held at least 2 s.
+- **Shot grammar:**
+  - gimbal or handheld walk-in at eye level;
+  - hands-only interaction close-ups;
+  - product heroes centred;
+  - crowds wide and unidentifiable;
+  - faces only with consent (staff or creators).
+- **Look:** natural store light, bright and saturated, white balance matched across clips.
+- **genre_key:** `bright retail store opening, eye-level gimbal walk-in, hands interacting with product displays, clean saturated store lighting, shoppers unidentifiable, energetic`
+- **Shot JSON:** `{"id":"r03","dur":1.0,"camera":"handheld close, 35mm, slight push","subject":"hands","action":"start: hand reaches into ice trough -> end: lifts @product bottle to lens","light":"store practicals"}`
+- **Sound:**
+  - a licensed upbeat track (brand accounts never use trending chart audio baked in);
+  - cuts on the beat (~50% of cuts on onsets in the best one);
+  - optional fast VO (~140 wpm) that states the dates within the first 3 s;
+  - a pop on the what-where-when card.
+- **Compliance:**
+  - real dates, hours and unit numbers;
+  - "while stocks last" only when stock is genuinely limited;
+  - no fake countdowns, rotating "flash sales" or random "almost sold out" (CCS Singapore, 18 May 2026; SCAP bait-advertising clauses);
+  - show the terms of a free gift;
+  - crowd faces need consent or must stay unidentifiable;
+  - mall property filming needs management permission.
+- **Preset:** event-retail-promo (music-only) or event-guide-vo (with VO).
+- **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
 ### 29. Edu-song / mnemonic / musical explainer (`edu-song`) [draft]
 Full guide: edu-songs-mnemonics.md (formats, kids-TV levers, copyright). Tool: `editor.py song`.

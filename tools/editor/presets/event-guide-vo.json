@@ -1,0 +1,54 @@
+{
+  "name": "event-guide-vo",
+  "label": "Event guide with VO (dates + free entry)",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Switch 2 Experience @ Jewel, SG events guide): VO ~140 wpm starting by 1.4 s and naming the dates in the first sentence, ~1.5 s cuts, sentence captions.",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#28",
+  "beat_sync": false,
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05,
+    "remove_fillers": "hard",
+    "max_shot_s": 2.4
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 5,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": true
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 6,
+    "uppercase": true
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0.6,
+    "map": {
+      "title": "pop"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "saturation": 1.1
+  },
+  "broll": {
+    "every_s": 1.5,
+    "max_dur_s": 2.0,
+    "min_dur_s": 1.0,
+    "mode": "full"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "asmr-product-cut",
+  "label": "ASMR product ad: one sound per cut",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Bello Water concept, Lush @ Westquay): 0.7-1.5 s shots each completing one sound, ~50% of cuts on the sound onset, product hold 2 s at the end, no VO. The first frame must already make the sound (Jackpot reel opened on a billboard and lost the ASMR promise).",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#27",
+  "beat_sync": false,
+  "pacing": {
+    "remove_silence_over_s": 2,
+    "pad_s": 0.05,
+    "remove_fillers": "none",
+    "max_shot_s": 2.0
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "uppercase": false,
+    "size": 0.03,
+    "max_words": 5,
+    "dur_s": 2.0
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 0
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.05,
+    "saturation": 1.1,
+    "brightness": 0.02
+  },
+  "broll": {
+    "every_s": 1.0,
+    "max_dur_s": 1.5,
+    "min_dur_s": 0.6,
+    "mode": "full"
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "cut_on_onset": {
+    "source": "clip_audio",
+    "_needs_feature": "snap cuts to onsets in the clip's own foley (beat_sync only reads the music track today)"
+  }
+}

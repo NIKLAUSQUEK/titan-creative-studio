@@ -1,26 +1,40 @@
 {
   "name": "asmr-satisfying",
-  "label": "ASMR / satisfying",
+  "label": "ASMR / satisfying: one continuous take",
   "kind": "genre",
-  "description": "No talking, rhythmic 2-4 s process shots, close foley up, no music, no captions.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured 2026-10-25 (@sand.tagious 44.7K likes: one 19.7 s locked take + 2.2 s finished hold, -17.9 LUFS, 53 onsets/10 s; vs official brand reel at -45.9 LUFS, 66 likes). No talking, no captions, no music, loud dense foley, loop ending.",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#27",
+  "structure": {
+    "name": "one-take",
+    "target_s": [
+      12,
+      25
+    ],
+    "beats": [
+      "action starts by 0.5s",
+      "continuous build",
+      "finished object hold 2-3s",
+      "loop"
+    ]
+  },
   "pacing": {
-    "remove_silence_over_s": 3,
-    "pad_s": 0.3,
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
     "remove_fillers": "none",
-    "max_shot_s": 4
+    "max_shot_s": 25,
+    "drop_retakes": false
   },
   "captions": {
     "enabled": false
   },
   "hook_text": {
-    "enabled": true,
-    "uppercase": false,
-    "size": 0.036
+    "enabled": false
   },
   "zoom": {
+    "mode": "snap",
     "every_s": 0,
-    "on_hook": 1.0
+    "on_hook": 1.0,
+    "on_emphasis": false
   },
   "sfx": {
     "density_per_10s": 0
@@ -30,12 +44,21 @@
   },
   "grade": {
     "contrast": 1.04,
-    "saturation": 1.05
+    "saturation": 1.08,
+    "brightness": 0.02
   },
   "broll": {
     "every_s": 0
   },
   "end_card": {
     "enabled": false
+  },
+  "audio_qc": {
+    "min_lufs": -24,
+    "min_onsets_per_10s": 10,
+    "_needs_feature": "QC fail when the foley track is quieter or sparser than these"
+  },
+  "loop": {
+    "_needs_feature": "loop seam finder (shared with silent-loop-reaction)"
   }
 }

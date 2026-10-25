@@ -1,0 +1,95 @@
+{
+  "name": "before-after-process",
+  "label": "Before / after: locked process + split reveal",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Mountain Rug Cleaning 18.8K likes; Meutrux car): before at 0 s, satisfying process (locked one-take with speed ramps, or 0.6 s detail cuts), last 3-5 s return to identical framing -> wipe to after -> BEFORE | AFTER split card held 2 s+. No VO, process foley up. Health brands in SG: NEVER on people (HCSA reg 5(1)(d)).",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#26",
+  "structure": {
+    "name": "before-after",
+    "target_s": [
+      20,
+      180
+    ],
+    "beats": [
+      "before 0-1s + title",
+      "process step 1",
+      "process step 2",
+      "process step 3",
+      "return to before framing",
+      "wipe to after",
+      "split card 2s+",
+      "CTA (ads only)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0.0,
+    "remove_fillers": "none",
+    "max_shot_s": 50,
+    "drop_retakes": false
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "box",
+    "persistent": false,
+    "dur_s": 2.5,
+    "position_y": 0.2,
+    "uppercase": false,
+    "max_words": 8
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_hook": 1.0
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.3,
+    "strength": 0.3
+  },
+  "sfx": {
+    "density_per_10s": 0.2,
+    "db": -14,
+    "map": {
+      "end": "ding",
+      "title": "whoosh"
+    }
+  },
+  "music": {
+    "energy": "none"
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.04
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "reveal": {
+    "type": "wipe_split",
+    "labels": [
+      "BEFORE",
+      "AFTER"
+    ],
+    "label_style": "yellow italic outline",
+    "hold_s": 2.5,
+    "_needs_feature": "before/after reveal: same-frame wipe + split card from two tagged frames (items with beat 'before' and 'after')"
+  },
+  "speed_ramp": {
+    "_needs_feature": "per-item speed curve (items[].speed is constant today); needed for one-take time-lapse process"
+  },
+  "compliance": {
+    "block_if_brand_industry": [
+      "health-sg"
+    ],
+    "_needs_feature": "QC block when a health-SG brand uses this preset on a person"
+  }
+}

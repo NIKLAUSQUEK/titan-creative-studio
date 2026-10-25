@@ -1,0 +1,62 @@
+{
+  "name": "fooh-oneshot",
+  "label": "FOOH / one-take product spectacle",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Jacquemus bags, 7.9 s, 0 cuts): one handheld street take, impossible-scale product visible from 0 s, pass-by reveal at 60-85%, loud real ambience, no text until the last second. Label CGI/AI in the caption.",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#24",
+  "structure": {
+    "name": "fooh",
+    "target_s": [
+      6,
+      12
+    ],
+    "beats": [
+      "object in real street 0s",
+      "approach",
+      "scale reveal 60-85%",
+      "brand mark last 1s"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 99,
+    "pad_s": 0,
+    "remove_fillers": "none",
+    "max_shot_s": 15,
+    "drop_retakes": false
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "sfx": {
+    "density_per_10s": 0.2,
+    "db": -14,
+    "map": {
+      "end": "boom"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -16,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.04,
+    "saturation": 1.04
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "end_card": {
+    "enabled": false
+  },
+  "_needs_feature": "loop seam check (shared with silent-loop-reaction) so the 8 s take replays cleanly"
+}

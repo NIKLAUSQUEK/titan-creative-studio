@@ -1,48 +1,78 @@
 {
   "name": "luxury-reveal",
-  "label": "Luxury / product reveal / new release",
+  "label": "Luxury narrative film (fragrance / fashion)",
   "kind": "genre",
-  "description": "Withhold then reveal: fragments, light sweeps, silence or riser, hero on the bass drop; rich blacks.",
-  "reference": ".claude/skills/higgsfield-creative-director/references/genre-playbooks.md",
+  "description": "Measured 2026-10-25 (Bleu de Chanel, Miss Dior reels): brand flash <=1.6 s, story at ~0.85 s median cuts with 3-4 s peak holds, ~50% of cuts on music onsets, hero packshot held 2-4 s at the end. No talking, no subtitles.",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#24",
   "beat_sync": true,
+  "structure": {
+    "name": "lux-narrative",
+    "target_s": [
+      15,
+      30
+    ],
+    "beats": [
+      "brand flash 0-1.6s",
+      "world/story",
+      "peak hold",
+      "story",
+      "packshot hold 2-4s"
+    ]
+  },
   "pacing": {
     "remove_silence_over_s": 0.6,
-    "pad_s": 0.15,
-    "max_shot_s": 3
+    "pad_s": 0.1,
+    "remove_fillers": "none",
+    "max_shot_s": 4.3
   },
   "captions": {
-    "animation": "fade",
-    "max_words": 4,
-    "keyword_caps": false,
-    "font": "DejaVu Serif",
-    "bold": false,
-    "size": 0.034
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": false
   },
   "zoom": {
     "mode": "smooth",
-    "every_s": 3,
-    "scale": 1.06,
+    "every_s": 0,
+    "scale": 1.04,
     "on_hook": 1.0
   },
+  "transitions": {
+    "default": "dip",
+    "on": "beats",
+    "dur_s": 0.12,
+    "strength": 0.4
+  },
   "sfx": {
-    "density_per_10s": 0.6,
+    "density_per_10s": 0.8,
+    "db": -16,
+    "cut_coverage": 0.3,
+    "min_gap_s": 1.5,
     "map": {
-      "hook": "riser",
-      "broll": "whoosh"
+      "broll": "whoosh",
+      "end": "boom"
     }
   },
   "music": {
     "energy": "mid",
-    "db": -17
+    "db": -12,
+    "duck": false
   },
   "grade": {
-    "contrast": 1.12,
-    "saturation": 0.95,
-    "brightness": -0.02,
+    "contrast": 1.14,
+    "saturation": 0.92,
+    "brightness": -0.03,
     "vignette": true
   },
   "broll": {
-    "every_s": 2.5,
-    "max_dur_s": 2.2
+    "every_s": 0.9,
+    "max_dur_s": 4.3,
+    "min_dur_s": 0.35,
+    "mode": "full"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 2.5,
+    "_needs_feature": "end_card.style 'packshot': hold the last product shot with the name centred instead of the text card"
   }
 }

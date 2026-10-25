@@ -1,0 +1,59 @@
+{
+  "name": "luxury-object-calm",
+  "label": "Luxury object film (watch / jewellery / premium device)",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Chanel J12 film): 8-10 shots, median 3.1 s, never under 2.5 s; macro, light sweep, wrist, packshot; music only.",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#24",
+  "beat_sync": true,
+  "pacing": {
+    "remove_silence_over_s": 1.0,
+    "pad_s": 0.2,
+    "remove_fillers": "none",
+    "max_shot_s": 5.5
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": false
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 3,
+    "scale": 1.05,
+    "on_hook": 1.0
+  },
+  "transitions": {
+    "default": "dip",
+    "on": "cuts",
+    "dur_s": 0.2,
+    "strength": 0.5
+  },
+  "sfx": {
+    "density_per_10s": 0.3,
+    "db": -18,
+    "map": {
+      "end": "swell"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -13,
+    "duck": false
+  },
+  "grade": {
+    "contrast": 1.12,
+    "saturation": 0.9,
+    "vignette": true
+  },
+  "broll": {
+    "every_s": 3.0,
+    "max_dur_s": 5.5,
+    "min_dur_s": 2.5,
+    "mode": "full"
+  },
+  "end_card": {
+    "enabled": true,
+    "dur_s": 3.0
+  }
+}

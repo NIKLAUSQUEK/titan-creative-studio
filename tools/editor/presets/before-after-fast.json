@@ -1,0 +1,49 @@
+{
+  "name": "before-after-fast",
+  "label": "Before / after: rapid detail cuts (car / room restore)",
+  "kind": "genre",
+  "description": "Measured 2026-10-25 (Meutrux car, 187 cuts / 181 s, median 0.63 s): before at 0 s, rapid 0.4-1 s process cuts each completing one action, reassembled reveal in the last 5 s. Optional post-frame layout (fake social post header on black).",
+  "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#26",
+  "pacing": {
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.02,
+    "remove_fillers": "none",
+    "max_shot_s": 1.2
+  },
+  "captions": {
+    "enabled": false
+  },
+  "hook_text": {
+    "enabled": true,
+    "persistent": true,
+    "renderer": "card",
+    "card_style": "outline",
+    "uppercase": false,
+    "max_words": 8,
+    "position_y": 0.12
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 0
+  },
+  "sfx": {
+    "density_per_10s": 1.0,
+    "db": -16,
+    "cut_coverage": 0.15,
+    "map": {
+      "end": "ding"
+    }
+  },
+  "music": {
+    "energy": "low",
+    "db": -22,
+    "duck": false
+  },
+  "broll": {
+    "every_s": 0
+  },
+  "layout": {
+    "type": "post_frame",
+    "_needs_feature": "post_frame layout: video inset under a fake-post header (avatar, handle, title) on black"
+  }
+}
