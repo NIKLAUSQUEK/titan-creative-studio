@@ -275,8 +275,7 @@ def assemble(edit_dir, preset=None, aspects=None, music=None, music_licence=None
                            "anchor": {"item": its[0]["id"], "offset": off}, "mode": br.get("mode", "full"), "flag": c.get("flag"), "query": b["query"],
                            "people": list(c.get("people") or {}), "unknown_faces": c.get("unknown_faces") or 0,
                            "credit": c.get("credit"), "licence": c.get("licence"), "real_person": bool(c.get("real_person"))})
-        if c.get("credit") and not str(c.get("licence", "")).lower().startswith(("cc0", "public")):
-            r["texts"].append({"type": "credit", "text": c["credit"], "anchor": {"item": its[0]["id"], "offset": off}, "dur": dur})
+        # no on-screen credit text (ledger [credits]): CC BY attributions go in the caption via the credits list below
         if c.get("credit"):
             web_used.append(c)
         last_at = start
