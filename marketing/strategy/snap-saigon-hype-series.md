@@ -1,11 +1,28 @@
-# Snap Saigon: "SAIGON IS ABOUT TO GO CRAZY" (monthly hype series) [draft]
+# Snap Saigon: monthly "talk of the town" hype series ("SAIGON IS ABOUT TO GO CRAZY") [draft]
 
 Klaus, 2026-10-28: "the saigon travel content should also include festivities, wild expat parties, amazing and big celebrations, historic events that might happen (Vietnam U23 wins final, streets riot…) → do fun trailer and upcoming posts and events and comment tag your friend to get them ready or DM this if they should know why the streets will be crazy… needs a wild, fun, exciting, TOFU, event sharing, interest grabbing post monthly."
+
+Klaus, 2026-10-28 (follow-up): "can be event, can be food, can be whatever gets people talking, sharing and sparking interest."
+
+## 0. Topic radar: anything people will talk about and send to a friend
+Each month, pick the ONE topic with the most talk potential. Events are only one lane:
+| Lane | Examples | Format twist |
+|---|---|---|
+| Events & celebrations | festivals, countdowns, Tết, "if Vietnam wins" street nights, expat/rooftop parties | trailer + date cards (§2) |
+| Food | a viral dish or stall everyone's queueing for, a new night market, "the 15k vs 1.5M bowl of phở", weird foods tourists dare each other to try, a famous spot closing | "Saigon is about to queue for THIS" / taste-test reaction; the address on the last card |
+| New & changing city | a new metro line or station, a new rooftop or mall opening, a street being pedestrianised, an iconic place disappearing | "Saigon in 2016 vs now" / "last chance to see" |
+| Only-in-Saigon moments | rainy-season flooding chaos, motorbike moving-day loads, Bui Vien at 3am, the sudden-downpour poncho sea | "POV: your first day in Saigon" / relatable humour (§5, §6) |
+| Prices & money | what $10 / 100k VND gets you, tourist vs local price, the cheapest rooftop | stat cards, side-by-side |
+| Viral local stories | a stall owner gone viral, a street performer, a wholesome stranger moment (non-political) | repost the creator's clip, credited (`collab add`) |
+| Hidden spots | secret cafés in old apartment blocks, hẻm food alleys, sunset spots | "save this" carousel; often a Snap Saigon photo spot |
+
+**Talkability score (pick the highest):** 1 point each for: people will tag or send it to someone · there's a "wait, really?" surprise · it has a date or deadline (urgency) · locals AND tourists care · great real footage exists to repost · it ties to a Snap Saigon photo spot. Score ≥4 = hero; 2-3 = support post.
+The trailer format (§2) works for any lane: open on the most surprising real clip, build with cards (dates, prices, addresses), end on the tag/send CTA.
 
 ## 1. What the series is
 - **Job:** top of funnel. Reach, shares and follows from tourists, expats and young locals. It sells nothing directly; the end card plants "get snapped at it" (snapsaigon.com).
 - **Cadence:** one **hero trailer reel** per month (posted ~7-10 days before the month's biggest moment), plus support posts around it (§4).
-- **Promise to the viewer:** "Here's why Saigon is about to go crazy this month, and where to be." Every post is a date-and-place guide disguised as a movie trailer.
+- **Promise to the viewer:** "Here's what all of Saigon will be talking about this month, and where to go for it." Every post is a guide (date, place, price) disguised as a movie trailer.
 - **Accounts:** Snap Saigon IG/TikTok/FB page (handles: CONFIRM). English-first, with a Vietnamese line on every slide and caption.
 
 ## 2. The hero trailer format (20-35 s, 9:16)
