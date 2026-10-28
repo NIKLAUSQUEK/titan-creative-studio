@@ -1,5 +1,8 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
 ## 2026-10-28 - genre card review (Klaus)
+- [clips] Claude collects the clips (not the VA): search the web, check with `collab scout`, commit the shortlist; Klaus's PC downloads it with `collab add-list`.
+- [analytics] Every post is logged (lane, hook ladder, CTA, format, giveaway) and a winners report over the last 2-3 months (`tools/analytics/winners.py`) must justify next month's content: do more of what scored above the median on shares/sends/comments, drop what scored below.
+- [giveaways] Giveaways and contests are part of the mix: random draws, funny caption winners, lucky commenter + reposter, "if Vietnam win / if <player> scores" prize drops; prizes like 50 USD, an iPhone, steakhouse dinners, free hotel stays, free shoots (giveaways-contests.md; fair draw with pick_winner.py).
 - [hooks] Hook LADDERS, not single hooks: every line opens a new loop that pays off the last one and raises the stakes, so attention grows line by line. Pattern: tease ("next week something is happening in HCMC") → twist ("or should I say, happening AWAY from HCMC") → reveal ("expect a ghost town") → why ("everyone's fleeing home for the long Tết break") → stakes ("these services are hit hardest") → proof (stats, facts, hours) → things to note → end. Exaggerate and paint the hook; write 3-5 different hook variations per post.
 - [credits] No on-screen credit text on reused clips, ever. Tag in the caption only.
 - [retention] Mystery/curiosity content exists to hold retention: a strong, provocative, thought-provoking curiosity hook, then a light (but true) payoff. "Always be provocative."

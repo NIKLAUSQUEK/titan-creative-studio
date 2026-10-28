@@ -37,7 +37,7 @@ Genre grammar: §15 action/sport **anthem** (accelerating cuts) + §28 event pro
 | 22-28 s | The biggest moment last: "AND IF VIETNAM WINS…" + the craziest street clip, then cut to black | drop to silence 0.5 s → full crowd |
 | 28-32 s | CTA card: **"Tag who's coming 👇"** / **"Send this to the friend who doesn't know why the streets will be crazy"** + small "get snapped there → snapsaigon.com" | music out on a hit |
 
-- **Footage:** real people's clips from creators and locals, brought in with `editor.py collab add <url> --creator @h --use repost`. **No credit text on screen** (Klaus: it looks ugly); the creator is tagged in the caption. The VA finds the original creator of reposted clips and tags them, then sends `collab dm @h --ask shoutout`. Our own snappers film the live moments for the recap (§4).
+- **Footage: Claude collects the clips.** Each month I search the web for the best public clips (last year's same event, creators' reels and reposts), check them with `editor.py collab scout <urls> --out marketing/collabs/clips-<topic>.csv` and commit the shortlist. Klaus's PC downloads the whole list with `editor.py collab add-list marketing/collabs/clips-<topic>.csv --browser firefox`. **No credit text on screen** (Klaus: it looks ugly); the creator is tagged in the caption. The shortlist names the creator of each clip for the caption tag and the shoutout DM (`collab dm @h --ask shoutout`). Our own snappers film the live moments for the recap (§4).
 - **Editor:** `.\Run-Editor.ps1 -Project saigon-hype-<yyyy-mm> -Preset sport-anthem` with the date cards as `stat-counter`/`kinetic-quote` motion cards (`editor.py motion`). Vertical first, then 4:5 for the FB feed.
 - **Type:** big condensed caps for date cards (Anton/Bebas), one accent colour per month. Vietnamese line under each card at ≤3/4 size.
 - **Sound:** original or licensed trailer drums for the brand account (CLAUDE.md audio rule). Trending audio only in-app on personal/creator accounts. Real crowd and fireworks sound from the clips carries the energy.
@@ -90,9 +90,9 @@ Never one hook. Write a **ladder**: every line pays off the one before AND opens
 | **11, 15, 20 Jan 2027** | **AFC Asian Cup**: Vietnam vs UAE, **vs South Korea**, vs Yemen (Group E) | a win sends Saigon "đi bão": the whole city on motorbikes with flags, like after the AFF Cup win in Aug 2026 | **January hero** | [ESPN draw](https://www.espn.com/soccer/story/_/id/48727844/afc-asian-cup-draw-japan-face-qatar-south-korea-play-vietnam-socceroos-play-iraq), [VietnamNet](https://vietnamnet.vn/en/afc-confirms-asian-cup-2027-schedule-amid-postponement-rumors-2567011.html); kick-off times in VN time to verify |
 | early Feb 2027 | Nguyen Hue Tết flower street opens | the most photographed week of the year | February hero | recurring (dates announced in January) |
 | **Sat 6 Feb 2027** | **Tết** (Year of the Goat): Tết Eve fireworks, then the city empties | fireworks + the eerie empty-Saigon contrast | **February hero** | [Jungle Boss](https://junglebosstours.com/explorer/tourism-blog/vietnam-tet-2027), [Office Holidays](https://www.officeholidays.com/holidays/vietnam/tet-nguyen-dan) |
-| ongoing | Expat parties: rooftop and Thao Dien parties, Bui Vien weekends, festival launches | the "wild expat parties" pillar | slot into any month | venue pages + expat FB groups (the VA collects) |
+| ongoing | Expat parties: rooftop and Thao Dien parties, Bui Vien weekends, festival launches | the "wild expat parties" pillar | slot into any month | venue pages + expat groups (Claude collects) |
 
-No confirmed December 2026 music festival turned up in search (8Wonder Winter ran in Dec 2024 and may return). The VA checks venue pages around the 20th of each month.
+No confirmed December 2026 music festival turned up in search (8Wonder Winter ran in Dec 2024 and may return). I check venue pages and event listings around the 20th of each month.
 
 ## 6. First posts (drafts): each with 3-5 hook ladders
 Clips in every post: real people's footage via `collab add`, creators tagged in the caption only. Each post = pick one ladder (A/B/C…) for the reel; the others become trial-reel variants.
@@ -114,8 +114,8 @@ Clips in every post: real people's footage via `collab add`, creators tagged in 
 - Ladder 3: "Christmas in a country where most people aren't Christian looks like… THIS." → the D1 crowd at the cathedral → lights on Nguyen Hue → countdown teaser → "Save this for 24.12 and 31.12."
 
 **D. January: the Asian Cup and the motorbike streets ("đi bão") (post ~8 Jan)**
-The hero is the street celebration itself, not the match: the whole city on motorbikes, flags, horns, people standing on seats, strangers high-fiving, after ANY big Vietnam win (AFF Cup Aug 2026, U23 runs, SEA Games golds). The VA collects the best clips from all of them.
-- Ladder 1: "If Vietnam win on 15 January, Saigon will not sleep." → "Not a party. Not a parade." → "the ENTIRE city gets on a motorbike." → wall of flags and horns → "This is called 'đi bão' (going storming)." → the fixtures: 11.01 vs UAE · 15.01 vs SOUTH KOREA · 20.01 vs YEMEN → where to watch (big screens, D1/Thao Dien bars: VA confirms) → "Send this to the friend who doesn't know why the streets will be crazy on the 15th."
+The hero is the street celebration itself, not the match: the whole city on motorbikes, flags, horns, people standing on seats, strangers high-fiving, after ANY big Vietnam win (AFF Cup Aug 2026, U23 runs, SEA Games golds). I collect the best clips from all of them (first shortlist: `marketing/collabs/clips-dibao-streets.csv`).
+- Ladder 1: "If Vietnam win on 15 January, Saigon will not sleep." → "Not a party. Not a parade." → "the ENTIRE city gets on a motorbike." → wall of flags and horns → "This is called 'đi bão' (going storming)." → the fixtures: 11.01 vs UAE · 15.01 vs SOUTH KOREA · 20.01 vs YEMEN → where to watch (big screens, D1/Thao Dien bars: Claude confirms) → "Send this to the friend who doesn't know why the streets will be crazy on the 15th."
 - Ladder 2: "Imagine an entire city honking at the same time." → "it happens every time Vietnam win something big" → montage → "next chance: 15 January vs South Korea" → CTA.
 - Ladder 3: "Tourists in Saigon on the 15th have no idea what's about to hit them." → street chaos → "what to do if you're caught in it: stand back, wave a flag, enjoy it" → CTA "Tag the friend landing that week."
 - Ladder 4: "Vietnam vs South Korea. The match is in Riyadh. The real show is in Saigon." → crowds → CTA.
@@ -129,9 +129,24 @@ The hero is the street celebration itself, not the match: the whole city on moto
 - **Proof and things to note** (verify all the week we post):
   - Tết (Mùng 1) = Sat 6 Feb 2027. The official public-holiday dates are proposed at about 7 days (e.g. 5-11 Feb); confirm the final Ministry of Home Affairs notice ([CafeF](https://cafef.vn/bo-noi-vu-thong-bao-lich-nghi-tet-nguyen-dan-dinh-mui-2027-188261010092338947.chn), [LSVN](https://lsvn.vn/hai-bo-dong-y-nghi-7-ngay-tet-dinh-mui-4-ngay-van-hoa-a177252.html)).
   - Last Tết, Tan Son Nhat handled 170,000+ passengers in a single day, a record in over a decade ([Tuoi Tre](https://news.tuoitre.vn/highways-congested-as-millions-return-to-ho-chi-minh-city-after-tet-holiday-103260223101257738.htm)); train tickets out of HCMC sold out on the peak days ([DTiNews](https://dtinews.dantri.com.vn/print/20260122085104992.htm)).
-  - What's hit hardest (VA verifies for 2027): street-food stalls and family restaurants (mostly closed Mùng 1-3), local markets, banks and government offices, many small shops; Grab/taxi surge pricing and fewer drivers; flights and buses out of the city sold out the days before.
+  - What's hit hardest (Claude verifies for 2027 the week we post): street-food stalls and family restaurants (mostly closed Mùng 1-3), local markets, banks and government offices, many small shops; Grab/taxi surge pricing and fewer drivers; flights and buses out of the city sold out the days before.
   - What stays open: big malls, chain cafés and convenience stores, hotel restaurants, Nguyen Hue flower street and the fireworks on Tết Eve.
   - Photo angle: empty landmark streets for a few days = Snap Saigon's rarest shots ("book an empty-Saigon shoot").
+
+## 6b. Giveaways and "if Vietnam win" prize drops
+Full playbook: marketing-engine `giveaways-contests.md`. 1-2 a month, built into the hero post as a rung of the hook ladder.
+- **January (Asian Cup):** "If Vietnam beat Korea on the 15th… one lucky commenter AND one lucky reposter win a weekend at <partner hotel> / 50 USD / dinner for two at <steakhouse>." Plus a prediction contest: "Comment the final score, closest guess wins." On Facebook: comment-to-enter only.
+- **"If <player> scores" mini-drop** on the same post: 50 USD to one commenter.
+- **Funny caption contest** (any month): the craziest motorbike-load or Tết-traffic photo: "Best caption wins a free Snap Saigon shoot."
+- **Tết ghost-town post:** "Tag who you're spending Tết with: one pair wins a free empty-Saigon photo shoot."
+- **Prizes:** cash (50 USD), an iPhone for the biggest moment of the year, partner prizes (hotel stays, steakhouse dinners, rooftop packages) and free Snap Saigon shoots.
+- Draw with `tools/analytics/pick_winner.py` (published seed), announce in a follow-up post, deliver, log in posts.csv (`giveaway=yes`).
+
+## 6c. Analytics: winners decide next month
+- Every published post gets one row in `marketing/analytics/snap-saigon/posts.csv`: url, date, platform, lane, hook, hook_ladder (which ladder variant), cta, format, giveaway.
+- Platform exports (IG/FB Insights, TikTok Studio, Metricool…) go into `marketing/analytics/snap-saigon/exports/` monthly.
+- `python tools/analytics/winners.py --brand snap-saigon --days 90` writes `marketing/reviews/snap-saigon-<yyyy-mm>-winners.md`: talk score per post (shares/sends weigh most), winners and losers, and **do more / do less / test again** calls by lane, hook ladder, CTA, format and giveaway over the last 2-3 months.
+- The monthly run reads the latest report first and justifies its hero pick with it ("events + tease-twist ladders + send CTAs averaged 1.6x the median over 90 days, so…").
 
 ## 7. Guardrails (market law: Vietnam pack in compliance-packs.md + brand file §2)
 - **"Streets will go crazy" = celebrations.** Show flags, horns, crowds, fireworks. Don't show fights, police clashes or property damage, and no political or protest content: the page is not the press (brand file §2 rule 5).
@@ -141,7 +156,7 @@ The hero is the street celebration itself, not the match: the whole city on moto
 - **Dates:** every date card verified against an official or news source the week we post; unconfirmed items say "TBC".
 
 ## 8. Monthly routine
-- **~20th of each month:** refresh §5 for the next month (search + VA's venue/expat-group check), pick the hero moment, draft the trailer + carousel scripts (a monthly scheduled task does this and pings Klaus).
-- **VA:** collects 15-30 candidate clips per month (last year's same event, creators' reposts), finds the original creators and runs `collab add`; logs everything in `marketing/collabs/snap-saigon.csv`.
+- **~20th of each month:** refresh §5 for the next month (web search: listings, venues, expat groups, news), pick the hero moment, draft the trailer + carousel scripts (a monthly scheduled task does this and pings Klaus).
+- **Claude:** collects 15-30 candidate clips per month with `collab scout` and commits the shortlist (creator, length, views, why). Klaus's PC runs `collab add-list` once to download them.
 - **Klaus:** approves the script, then `/edit` cuts it from the collab clips (no generation credits needed).
 - **After posting:** `/review` reads shares, sends, saves and tags per post; the best CTA wording becomes the default.
