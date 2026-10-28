@@ -163,6 +163,23 @@ def cmd_index(a):
 _CACHE = {}
 
 
+def rights_sidecar(c):
+    """A creator's clip used with permission sits next to `<clip>.rights.json` (editor.py collab add writes it):
+    {"creator": "@handle", "credit": "via @handle", "licence": "creator-permission", "source": url, "ads": false}.
+    The credit is burned on screen; faces count as consenting; ads only when the creator granted paid use."""
+    p = Path(c["path"])
+    sc = p.with_name(p.name + ".rights.json")
+    if not sc.exists():
+        return
+    try:
+        r = json.loads(sc.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    c.update({k: r[k] for k in ("creator", "credit", "licence", "source") if r.get(k)})
+    c["unknown_faces"] = 0
+    c["real_person"] = not r.get("ads")
+
+
 def load_index(index_dir):
     import numpy as np
     key = str(index_dir)
@@ -179,6 +196,8 @@ def load_index(index_dir):
                     clips[cid]["people"], clips[cid]["unknown_faces"] = v["people"], v["unknown"]
         except Exception:
             pass
+        for c in clips.values():
+            rights_sidecar(c)
         _CACHE[key] = (clips, [(r[0], r[1], r[2]) for r in rows], E)
     return _CACHE[key]
 

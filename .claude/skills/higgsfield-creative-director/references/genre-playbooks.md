@@ -634,6 +634,9 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/action-feelgood-founder.md (also: 9c festive-film sub-card, new ad formats N1-N3, 3 core rules + flags per module)
 
 ### 10. Romance / aura / sensual (implied) [measured: https://www.instagram.com/reel/DewJSY9AquY/, https://www.instagram.com/reel/DZCnMOLjhWL/, https://www.instagram.com/reel/C8MfUipINoB/; researched: ReelShort billionaire-romance 419 M views, 75 % female audience; Meta/TikTok adult-content ad policies; ledger: implied only, adults 25+]
+- **Klaus's line (2026-10-28, overrides "implied only" below for organic posts):** anything goes except showing private parts. Organic posts may show completed kisses, making out, bed scenes, lingerie, shirtless and bare-back shots, and implied sex (cut away or under covers). Never shown: genitals, female nipples, explicit sex acts or porn-style framing. Still always: adults 25+, original characters (never a real person sexualised, never a lookalike).
+  - **Paid ads stay tighter** because Meta and TikTok reject sexual content in ads: no bed scenes or implied sex, no lingerie close-ups, no body-part framing; stop at the kiss. Make a paid cut and an organic cut of the same episode.
+  - Generation models refuse anything past their own limits; prompts stay platform-safe and the edit carries the rest (ledger hard lines).
 - **What the evidence changed:** the draft mixed three formats. On Reels, romance that performs is **serial and dialogue-driven** (r1, r4, R3), not slow golden-hour montage. The "aura" edit is a statement/glow-up *style*, already covered by the `aura-cinematic` style preset. This card covers **romance-drama**; §10a covers the naturalistic texting romance.
 - **What the C-drama cold open does (r1, sheet viewed) vs what we do:**
   - r1 opens on the most heated moment: a bed, a kiss, hands, rapid intercut. Then "one day earlier", name cards, and a document twist (a pregnancy scan) for the conflict.
@@ -693,7 +696,7 @@ Changes vs the current preset:
 
 **Flags for Klaus (§10):**
 - Split §10 into "romance-drama" (serial) and keep "aura" as a style (`aura-cinematic`)?
-- How far does "implied" go for organic vs paid? Proposal: organic may show a completed kiss between adults; paid stops at the near-kiss and never shows a bed.
+- Answered 2026-10-28: organic = anything except private parts; paid = stops at the kiss (see the top of §10).
 - C-drama-style cold opens (r1) are more explicit than our line. We copy the structure only.
 
 ---

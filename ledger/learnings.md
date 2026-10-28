@@ -5,7 +5,8 @@
 - [before-after] Reveal placement is flexible (snap first, mid-way or last); make variants and test. SG health: still no people before/after.
 - [retail] A real discount can open a retail ad when it makes people want the product (product first, real terms shown). Never for SG health brands.
 - [ai-labels] No AI/CGI label on screen or in captions; use the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
-- [clips] Brand accounts may Remix/Stitch/Duet other people's posts in-app without asking; downloading and re-editing their clip into a brand post or ad still needs permission.
+- [clips] More real people's clips: they make branded footage feel real and every one is a collab lead. In-app Remix/Stitch/Duet needs no ask; a downloaded clip in our edit needs the creator's yes (DM is enough); paid use needs paid-use permission (Partnership/Spark). Always credit on screen + tag + outreach (`editor.py collab`, marketing-engine creator-collabs.md).
+- [romance] Organic romance/sensual: anything goes except showing private parts (no genitals, female nipples, explicit sex acts); kisses, making out, bed scenes, lingerie and implied sex are fine. Paid ads stop at the kiss (Meta/TikTok ad rules). Adults 25+, original characters only.
 - [skits] Crash zooms on Klaus's own skits = proposal B; side-choosing endings stay.
 ## 2026-10-25 - robotic voices (Klaus)
 - [voice] Robotic TTS (espeak/SAPI-style) never appears in anything Klaus sees as a sample or deliverable: "sounds so robotic… this would never work". Real recorded voices first (enhanced with `editor.py enhance`), then natural neural voices for test/demo footage (Piper locally) and premium licensed AI voices (ElevenLabs/Higgsfield archetypes, never cloning real people) only when a voice must be generated. When showing a test render, say what the voice is.
@@ -25,7 +26,7 @@
 ## 2026-10-20 - commentary & social justice (Klaus)
 - [commentary] Real-figure/controversy content (OnlyFans economy, manosphere, influencer controversies, tech billionaires): receipts format, web-sourced claims in SOURCES.md, opinion labelled, steelman first, never fabricated quotes, never AI likeness/voice of real people.
 - [justice] Race and social issues = shining a light on real experiences: community voices, credible data, dignity not trauma porn, a path to action. (Klaus clarified: no racist punchlines intended.)
-- [implicit] Sensual = implied via expressions, cut-aways, metaphors; no nudity/sex acts; adults 25+.
+- [implicit] (Updated 2026-10-28, see [romance] above.) Sensual = expressions, cut-aways, metaphors; no private parts or explicit sex acts; adults 25+.
 ## 2026-10-20 - mature/edge (Klaus)
 - [edge] Adult (18+) edge is welcome: Decision-Ladder cautionary stories, raunchy innuendo for sexual-health/adult brands, dark & absurd comedy, rage-hook writing, Japanese modes, profanity dial 0-3 per placement. Plan ad-safe vs organic vs age-gated cuts.
 - [hard-line] Never: explicit/porn, bypassing moderation, anything sexual near minors (students = clearly 25+, non-school), sexualising real people, real tragedies as entertainment, group-degrading punchlines, fake engagement, crime how-tos.
