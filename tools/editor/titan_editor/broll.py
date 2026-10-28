@@ -164,9 +164,9 @@ _CACHE = {}
 
 
 def rights_sidecar(c):
-    """A creator's clip used with permission sits next to `<clip>.rights.json` (editor.py collab add writes it):
-    {"creator": "@handle", "credit": "via @handle", "licence": "creator-permission", "source": url, "ads": false}.
-    The credit is burned on screen; faces count as consenting; ads only when the creator granted paid use."""
+    """A reused creator clip sits next to `<clip>.rights.json` (editor.py collab add writes it):
+    {"creator": "@handle", "credit": "via @handle", "licence": "creator-clip", "source": url, "ads": true}.
+    The credit is burned on screen; Klaus handles rights, so the clip is usable in posts and ads."""
     p = Path(c["path"])
     sc = p.with_name(p.name + ".rights.json")
     if not sc.exists():
@@ -177,7 +177,7 @@ def rights_sidecar(c):
         return
     c.update({k: r[k] for k in ("creator", "credit", "licence", "source") if r.get(k)})
     c["unknown_faces"] = 0
-    c["real_person"] = not r.get("ads")
+    c["real_person"] = not r.get("ads", True)
 
 
 def load_index(index_dir):

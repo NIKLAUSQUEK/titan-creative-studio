@@ -173,6 +173,7 @@ Mark every line `[confirmed]` (from the client/their materials) or `[draft]` (in
 | TikTok | CONFIRM | Reach with tourists pre-trip | unknown | 5 [draft] |
 | Website | snapsaigon.com | Bookings | live, launch stage | n/a |
 | WhatsApp | CONFIRM (site number looks like a placeholder) | Custom/B2B leads | n/a | n/a |
+- **Monthly hype series (Klaus, 2026-10-28):** "SAIGON IS ABOUT TO GO CRAZY": one wild, fun, event-sharing TOFU trailer per month (festivities, expat parties, big celebrations, "if Vietnam wins" street nights) with tag/send CTAs, plus a calendar carousel, countdown Stories and a recap. Plan, event radar and first drafts: `marketing/strategy/snap-saigon-hype-series.md`.
 - Capacity: unknown. CONFIRM the shoot crew and the monthly ad budget. The jobs page says a social media assistant is being hired. Statics and carousels cost 0 credits through the editor's carousel path; generated video only after the §9 gates.
 
 ## 8. Goals & KPIs

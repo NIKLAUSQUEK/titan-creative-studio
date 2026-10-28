@@ -3,7 +3,7 @@
   editor.py check
   editor.py ingest  --project P <files/folders...>            word timestamps, silences, fillers, scenes, best takes, hooks, sheets
   editor.py brief   --project P [--goal sell --platform tiktok --ask "..."] [--llm claude-cli|none] [--pack-only]
-  editor.py collab dm|add|remix|list                          real creators' clips with credit + permission + outreach (collab.py)
+  editor.py collab dm|add|remix|list                          reposts/remix/stitch/duet/reused clips: credit, tag, outreach, tracker (collab.py)
   editor.py broll-index <roots...>                            local open_clip index (G:\\My Drive\\... works), incremental
   editor.py broll-search "query"                              zero-token text -> top-k
   editor.py broll-match --project P [--llm claude-cli|none]   per beat top-k; Claude only picks among top 3
@@ -89,9 +89,9 @@ def main(argv=None):
     p = sp.add_parser("study"); p.add_argument("refs", nargs="+"); p.add_argument("--name", required=True); add_llm(p, "none")
     p.add_argument("--browser", help="chrome | edge | firefox | brave, or a cookies.txt path: use your own login for Facebook/Instagram links (stays on this PC)")
     p.add_argument("--whisper-model", default="auto")
-    p = sp.add_parser("collab"); p.add_argument("action", choices=["add", "remix", "dm", "list"]); p.add_argument("target", nargs="?")
-    p.add_argument("--creator"); p.add_argument("--permission"); p.add_argument("--ads", action="store_true"); p.add_argument("--brand")
-    p.add_argument("--ask", choices=["feature", "ads", "collab"], default="feature"); p.add_argument("--clip"); p.add_argument("--weeks", type=int, default=4)
+    p = sp.add_parser("collab"); p.add_argument("action", choices=["add", "dm", "list"]); p.add_argument("target", nargs="?")
+    p.add_argument("--creator"); p.add_argument("--use", choices=["clip", "repost", "remix", "stitch", "duet"], default="clip"); p.add_argument("--brand")
+    p.add_argument("--ask", choices=["shoutout", "ads", "collab"], default="shoutout"); p.add_argument("--clip"); p.add_argument("--weeks", type=int, default=4)
     p.add_argument("--browser"); p.add_argument("--root"); p.add_argument("--index-dir")
     p = sp.add_parser("song"); p.add_argument("--tune"); p.add_argument("--lyrics"); p.add_argument("--rap", action="store_true"); p.add_argument("--beat", action="store_true")
     p.add_argument("--bpm", type=float); p.add_argument("--shift", type=int, default=0); p.add_argument("--out"); p.add_argument("--list", action="store_true")

@@ -5,7 +5,7 @@
 - [before-after] Reveal placement is flexible (snap first, mid-way or last); make variants and test. SG health: still no people before/after.
 - [retail] A real discount can open a retail ad when it makes people want the product (product first, real terms shown). Never for SG health brands.
 - [ai-labels] No AI/CGI label on screen or in captions; use the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
-- [clips] More real people's clips: they make branded footage feel real and every one is a collab lead. In-app Remix/Stitch/Duet needs no ask; a downloaded clip in our edit needs the creator's yes (DM is enough); paid use needs paid-use permission (Partnership/Spark). Always credit on screen + tag + outreach (`editor.py collab`, marketing-engine creator-collabs.md).
+- [clips] More real people's clips: reposts, Remix, Stitch, Duet and reused clips are ONE workflow (`editor.py collab add`); Klaus/his VA handle backend and copyright, so no permission gates in the studio. Always credit the original creator on screen ("via @handle") + tag + outreach (shoutout/collab DM) + tracker.
 - [romance] Organic romance/sensual: anything goes except showing private parts (no genitals, female nipples, explicit sex acts); kisses, making out, bed scenes, lingerie and implied sex are fine. Paid ads stop at the kiss (Meta/TikTok ad rules). Adults 25+, original characters only.
 - [skits] Crash zooms on Klaus's own skits = proposal B; side-choosing endings stay.
 ## 2026-10-25 - robotic voices (Klaus)

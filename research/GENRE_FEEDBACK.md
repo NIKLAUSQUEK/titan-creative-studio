@@ -43,7 +43,7 @@ Every module below was re-grounded on real reels measured locally: scene cuts, s
 6. Frame container: build it (engine feature queued).
 7. AI/CGI labels: none on screen or in captions (applied to §24, §27). Platform AI-disclosure toggles stay on for photorealistic AI, since TikTok/Meta require them.
 8. Physio do-along song: A/B against a study song first.
-9. Real people's clips on brand accounts: Klaus wants more of them, for branded footage, collabs, tagging and outreach (new `editor.py collab` + creator-collabs.md). Applied as: in-app Remix/Stitch/Duet on brand accounts without asking (the platform licence covers it); downloading and re-editing someone's clip into a brand post or ad still needs their permission (copyright).
+9. Real people's clips: reposts, Remix, Stitch, Duet and reuse are one workflow on every account; Klaus handles rights. Studio credits, tags, does outreach and tracks (`editor.py collab`, creator-collabs.md).
 10. ASAS fear clause: Klaus gets it checked.
 11. FTC AI-claims check: not needed (Klaus). The basic rule stays: never show a capability the product doesn't have.
 12. Thin-evidence references: skipped for now.
