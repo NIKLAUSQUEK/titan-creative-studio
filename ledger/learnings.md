@@ -1,4 +1,12 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-28 - genre card review (Klaus)
+- [retention] Mystery/curiosity content exists to hold retention: a strong, provocative, thought-provoking curiosity hook, then a light (but true) payoff. "Always be provocative."
+- [variety] Never run one format every post: rotate spines/styles per account (no spine twice in a row; the trick-on-the-viewer scam remix at most ~1 in 5, a new trick each time).
+- [before-after] Reveal placement is flexible (snap first, mid-way or last); make variants and test. SG health: still no people before/after.
+- [retail] A real discount can open a retail ad when it makes people want the product (product first, real terms shown). Never for SG health brands.
+- [ai-labels] No AI/CGI label on screen or in captions; use the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
+- [clips] Brand accounts may Remix/Stitch/Duet other people's posts in-app without asking; downloading and re-editing their clip into a brand post or ad still needs permission.
+- [skits] Crash zooms on Klaus's own skits = proposal B; side-choosing endings stay.
 ## 2026-10-25 - robotic voices (Klaus)
 - [voice] Robotic TTS (espeak/SAPI-style) never appears in anything Klaus sees as a sample or deliverable: "sounds so robotic… this would never work". Real recorded voices first (enhanced with `editor.py enhance`), then natural neural voices for test/demo footage (Piper locally) and premium licensed AI voices (ElevenLabs/Higgsfield archetypes, never cloning real people) only when a voice must be generated. When showing a test render, say what the voice is.
 ## 2026-10-20 - draft vs final quality (Klaus)

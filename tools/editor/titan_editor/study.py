@@ -104,15 +104,25 @@ def to_dna(ms, look=None):
 def study(srcs, name, llm="none", whisper_model="small", model=None, browser=None):
     d = STUDY_ROOT / slug(name)
     vids = d / "videos"
-    ms = []
+    ms, failed = [], []
     for s in srcs:
         log(f"study: {s}")
-        f = fetch(s, vids, browser)
+        try:
+            f = fetch(s, vids, browser)
+        except Exception as e:  # one bad link (login wall, image-only post, cookie error) must not sink the rest
+            msg = str(e).splitlines()[-1]
+            if re.search(r"DPAPI|decrypt|cookie", msg, re.I):
+                msg += "  -> Chrome/Edge lock their cookies; log into the site in Firefox and use -Browser firefox, or pass a cookies.txt path"
+            log(f"study: SKIPPED {s}: {msg}")
+            failed.append(s)
+            continue
         x = measure(f, d, whisper_model)
         meta = vids / f"{f.stem}.meta.json"
         if meta.exists():
             x["source"] = json.loads(meta.read_text(encoding="utf-8"))
         ms.append(x)
+    if not ms:
+        raise SystemExit("study: no reference could be downloaded (see SKIPPED lines above)")
     look = None
     if llm == "claude-cli":
         out = claude(LOOK.format(d=d, m=json.dumps(ms)), image_dir=d, model=model, step="study")

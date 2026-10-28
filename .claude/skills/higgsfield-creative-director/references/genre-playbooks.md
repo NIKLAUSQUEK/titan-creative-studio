@@ -159,7 +159,7 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 - **Shot grammar:**
   - A static, locked wide (full body or 3/4) at eye level; the performer occupies the centre third.
   - Cut only between "their way" and "our way", never inside the deadpan answer.
-  - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Keep at most one snap zoom ×1.1 for a brand ad if Klaus wants it (a proposal B).
+  - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Klaus decided (2026-10-28): his crash zooms stay as **proposal B** on his own skits; version A follows the measured no-zoom grammar.
   - Hide the gag until the reveal (hard_rules).
 - **Look:** phone-natural, flat daylight or office fluorescent, no grade tricks. The comedy comes from staging and the header.
 - **Header type:** quote header in a white rounded box, sentence case, centred at y ≈ 0.07-0.10, two lines max, plus a short label line ("The culture:") in a second box (corp1). The Khaby format has no text at all.
@@ -877,6 +877,7 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
 ### 14. Mystery / reveal [measured: https://www.instagram.com/reel/Dc-RntLBfcK/ (narrated variant), https://www.instagram.com/reel/DbYOd-HD7E3/ (puzzle variant); researched: Loewenstein 1994 information-gap theory (cmu.edu Golman & Loewenstein), d6 evidence-reveal structure]
+- **Klaus's correction (2026-10-28, overrides the rules below where they clash):** the goal is retention. Open on a strong curiosity hook that is also provocative and makes the viewer think ("always be provocative"), keep them dragging forward, and pay off lightly: one satisfying piece of the answer is enough, it does not have to close everything. The payoff must still be true (no fake "doctors hate this" bait).
 - **Why it works:** curiosity is a *specific, closeable* gap (Loewenstein 1994; Golman & Loewenstein). The hook has to name the question precisely ("who was in the corridor?"), the clues have to look solvable, and the reveal has to re-read earlier frames (a rewatch).
   - Puzzle mysteries ("can you spot the contradiction?") pull comments at ~1:1 with likes (m5: 81 likes, 78 comments), because the answer *is* the comment. That is an organic engagement driver, but on Meta the CTA "comment your answer" is phrased as a question, not as a bait instruction.
 - **Pacing map (30 s ad):**
@@ -919,6 +920,7 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
 
 ### 15. Action / sport hype (two modes) [measured: A1 https://www.instagram.com/reel/Cy-JFIkyqgM/, A2 https://www.instagram.com/reel/C9po_ojpF6t/, A3 https://www.instagram.com/reel/Dd4VcGmoFYN/, A4 https://www.instagram.com/reel/Da2Tou0o9c5/, A5 https://www.instagram.com/reel/DbS6it8t1fj/, A6 https://www.instagram.com/reel/DZ7owTXN8Yp/]
+- **Klaus (2026-10-28):** both modes work; pick by mood (anthem for story and pride, gym hype for energy).
 - **Why it works:**
   - The anthem mode makes a provocation (a question or a "we will…" vow) and then proves it with faces and effort.
   - The edit speeds up as the argument builds, so the viewer's pulse follows the cut rate.
@@ -1267,6 +1269,7 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/news-doc-explainer.md
 
 ### 22. News / scam-expose (video + carousel) [measured: N1 https://www.instagram.com/reel/DWkv0WID7gG/ , N6 https://www.instagram.com/reel/DP3m-09jxKk/ , N7 https://www.instagram.com/reel/DdiccisGrWO/ , N8 https://www.instagram.com/reel/DUFJUMUluLA/ ; controls N2, N10]
+- **Klaus's correction (2026-10-28): rotate, never repeat.** Viewers tire of one format. On any account, no single spine (a/b/c, or the 22c carousel) runs twice in a row; the trick-on-the-viewer remix (22b) is at most about 1 post in 5, and each time it plays a different trick. The content calendar tracks which spine ran last.
 - **Pick the spine first.** There are three proven spines plus the advisory, which is the control and loses:
   - (a) **face + persistent kicker header**: interview or vox pop. 4-6 s shots when interview-led, 1.7 s when vox-pop-led.
   - (b) **silent case story**: text-on-stock, no VO, ONE stat counter.
@@ -1321,7 +1324,7 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/news-doc-explainer.md
 
 ### 22b. Trick-on-the-viewer remix ("police-advisory remix") [measured: N1 https://www.instagram.com/reel/DWkv0WID7gG/ ; N4 https://www.instagram.com/reel/DejSVAmP2vV/ as the skit cousin] (NEW sub-style)
-- **Use when:** a brand or community page wants a warning to spread; the trick can be performed on the viewer (fake voice, lookalike, fake link, deepfake).
+- **Use when:** a brand, health brand or community page wants a warning to spread; the trick can be performed on the viewer (fake voice, lookalike, fake link, deepfake). Klaus approved brand and health accounts (2026-10-28); rotate it per §22.
 - **Pacing map (15-25 s, one take):**
   - **0 s:** a direct address, mid-action, with a mystery prop ("you must be wondering what I'm drinking");
   - **2-12 s:** three "you think X, but Y" reveals, each 3-4 s, each breaking an assumption the viewer just made (the cup is empty → the hands are elsewhere → the voice is pre-recorded);
@@ -1377,13 +1380,18 @@ Changes vs the current preset:
 - **Compliance:**
   - real prices, dates and terms; no fake scarcity (SG CCS enforcement, 18 May 2026);
   - FOOH must not be passed off as a real stunt in a factual claim. Caption "CGI" or "concept" and don't tag a transit operator or landmark as a partner without permission (The Drum, 2023-07-14, on the Maybelline backlash);
-  - AI-made: label it AI per studio rules.
+  - AI-made: no AI/CGI label on screen or in the caption (Klaus, 2026-10-28); for photorealistic AI shots, switch on the platform's own AI-content disclosure at upload, which TikTok and Meta require.
 - **Preset:** luxury-reveal (narrative), luxury-object-calm (new), fooh-oneshot (new).
 - **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
 ### 25. UGC demo / experience-style: the editor's ugc-* presets (selfie, unboxing, try-on, reaction, POV, experience-style, day in the life, green screen). Real people beat generated ones; experience-style is never posed as customer testimony in regulated markets.
 
 ### 26. Before / after transformation [measured: DR4YtfODqnh, DMz7w4FykvS, DZ6xdQMvo1q, DaqIzskRjC1]
+- **Klaus's correction (2026-10-28): the reveal can sit anywhere; make variants.** Build at least 2 of these and test them (`/expand`):
+  - **Snap first:** a beat-snap before → after in the first 1-2 s, then the process, then the after again;
+  - **Reveal last:** before at 0 s, process, reveal in the last 3-5 s (the measured default below);
+  - **Reveal mid-way:** before, half the process, a split BEFORE | AFTER flash, then how it was done.
+  The SG healthcare ban on people before/after still applies to every variant.
 - **Why it works:** the before shown at 0 s opens a loop ("can they fix THAT?"). The process is satisfying on its own, and the side-by-side at the end closes the loop as proof.
 - **Pacing (organic, 30-180 s):**
   - 0-1 s: the worst view of the "before" + a title card ("This rug was dumped");
@@ -1421,14 +1429,15 @@ Changes vs the current preset:
   - no VO;
   - never compress the transients away;
   - generated video needs a real foley pass (record the real product).
-- **Compliance:** food: no health claims hidden in captions. Kids' products: no "buy now" pressure (child-directed advertising rules). AI-made textures: label AI.
+- **Compliance:** food: no health claims hidden in captions. Kids' products: no "buy now" pressure (child-directed advertising rules). AI-made textures: no AI/CGI label on screen or in the caption (Klaus, 2026-10-28); for photorealistic AI shots, switch on the platform's own AI-content disclosure at upload, which TikTok and Meta require.
 - **Preset:** asmr-satisfying (one-take default) and asmr-product-cut (new).
 - **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
 
 ### 28. Event / retail / mall promo [measured: DQxooZQEaIl, DbjPtUuyQyu, DLG_uWwh0qs, C70QWlrSzmX]
+- **Klaus's correction (2026-10-28): a discount opener is fine sometimes, when it makes people want the thing.** Lead with the product looking its best and the real offer on it ("50% off the 1L, this weekend, Level 2"), not a bare price slide. The offer must be real, with terms shown; no fake countdowns (Compliance below). Never for SG health brands (ledger: no discount inducements).
 - **Why it works:** a 10-25 s virtual walk-in. Seeing the door, touching the things and leaving with the bag lets the viewer rehearse the visit.
 - **Pacing (15-25 s):**
-  - 0-1 s: the storefront, logo or anchor product (no logo animation, no countdown);
+  - 0-1 s: the storefront, logo or anchor product, or the real offer on the product (no logo animation, no countdown);
   - 1-18 s: 1 s inserts on the beat in a fixed order: hero product → hands using the activation → freebie or photo moment → shelf walk-through;
   - the last 2-3 s: a bag-out or a what-where-when card (date, level/unit, hours), held at least 2 s.
 - **Shot grammar:**
