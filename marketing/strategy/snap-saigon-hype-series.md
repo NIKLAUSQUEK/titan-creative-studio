@@ -175,6 +175,29 @@ Storytelling posts about the bars, restaurants, cafés and buildings people alre
 
 **Guardrails for history:** French colonial history (exploitation, prisons, plantations, opium) is fine to tell in depth and with feeling. Wartime and post-1945 stories stay factual and sourced, use the official terms (e.g. Reunification Day, 30/4), never glorify any side, never criticise the current state, and never make victims the joke (brand file §2 rule 5; ledger [sensitive], [commentary]). Every fact carries a source in the plan; the caption names it when a fact is surprising.
 
+## 6e. Yearly remembrance specials (Klaus, 2026-10-28)
+The big war dates, remembrance days and the victims of the French and American wars get one special each, every year. These are **remembrance, not hype**: a different tone from the rest of the series.
+
+| Date | What it marks | Special idea | Status |
+|---|---|---|---|
+| ~30-31 Jan (Tết Mậu Thân anniversary) | The 1968 Tết Offensive, including the fighting in Saigon | "The night Tết became a battlefield": the Saigon places it reached, then vs now | ⚠️ verify the places and dates |
+| 16 Mar | Mỹ Lai, 1968 | The victims' names and the village today; no reconstruction of the killing | ⚠️ verify |
+| **30 Apr** | **Reunification Day** (Ngày Giải phóng miền Nam, thống nhất đất nước), 1975: the tank through the Independence Palace gate | The biggest special: the city that day vs today (Independence Palace, the streets), the parades and fireworks now | official public holiday; check the anniversary number each year (2027 = 52nd) |
+| 7 May | Điện Biên Phủ, 1954: the end of French rule | Ties to the colonial stories in §6d ("how the French era ended") | ⚠️ verify |
+| **27 Jul** | **War Invalids and Martyrs' Day** (Ngày Thương binh – Liệt sĩ) | Remembering the fallen: candle-lighting at the Saigon martyrs' cemetery, families, veterans in their own words | official commemoration day; verify local events each year |
+| **10 Aug** | **Day for Vietnamese Victims of Agent Orange/dioxin**, the date US aerial spraying began in 1961 | The families living with it today, with dignity; where to donate or volunteer (e.g. the Victims of Agent Orange association); 4.8 million people exposed, 3 million victims by the association's count | ✅ [Hanoi Times](https://hanoitimes.vn/august-10-day-for-vietnamese-victims-of-agent-orange.590417.html), [Vietnam News](https://vietnamnews.vn/society/381653/walk-marks-day-for-agent-orange-dioxin-victims.html), [Lawnet](https://lawnet.vn/giao-duc/en/what-is-august-10-in-vietnam-what-does-it-signify-4657.html) |
+| **2 Sep** | **National Day**, 1945 | Saigon's celebrations and fireworks; a then-vs-now of the city | official public holiday |
+| any month | Places that hold the war's memory: War Remnants Museum, Củ Chi tunnels, Independence Palace | Saigon Stories (§6d) told with the remembrance rules below | ⚠️ verify each |
+
+**Format:** 60-120 s narrated piece in the documentary grammar (genre §20), slow cuts, archival vs today, real voices (veterans, families, historians) where they agree to speak, a sombre original or licensed score. A carousel with dates, places and one fact per slide.
+
+**Rules for these specials (stricter than the rest of the series):**
+- **Hooks stay true and quiet:** still a hook ladder, but no exaggeration, no "ghost town"-style paint, no jokes, no trending audio, no giveaways or contests, and no booking CTA. The CTA is "remember / share / visit the museum / donate".
+- **Victims with dignity:** no graphic suffering for shock, no reconstruction of atrocities, no AI likeness of real victims or real historical figures; families and survivors only with their consent (ledger [sensitive], [justice]).
+- **Archival photos:** many famous war photos are copyrighted (news agencies and photographers). Use public-domain government archives or licensed images, credited in the caption.
+- **Politics (Vietnam law):** official terms (Reunification Day, the American war / kháng chiến chống Mỹ), state-sourced facts and dates, no glorifying any side, no criticism of the state or its leaders, nothing that relitigates the war. Avoid leader-birthday and party-anniversary content. When unsure, skip (brand file §2 rule 5).
+- **Verify every fact** with a solid source the week of posting and keep the sources in the plan.
+
 ## 7. Guardrails (market law: Vietnam pack in compliance-packs.md + brand file §2)
 - **"Streets will go crazy" = celebrations.** Show flags, horns, crowds, fireworks. Don't show fights, police clashes or property damage, and no political or protest content: the page is not the press (brand file §2 rule 5).
 - **Parties:** no drug references; alcohol shows as atmosphere, never as an offer. Never promote spirits of 15% ABV or more (VN alcohol-advertising law); a paid venue partner gets labelled as sponsored (Law 75/2025).

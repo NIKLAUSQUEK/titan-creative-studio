@@ -1,10 +1,10 @@
 # Creator clips, reposts and outreach
 
 Klaus, 2026-10-28: "needs more real people's clips to get branded footage and collab potential plus creator tagging or outreach… treat remix, stitch, duet and reusing as the same workflow, I will take care of backend and copyright."
-Real creators' footage makes brand posts feel real, and every clip we use is a creator we can tag and pitch. Klaus (or his VA) handles rights; the studio credits, tags and tracks.
+Real creators' footage makes brand posts feel real, and every clip we use is a creator we can tag and pitch. Klaus handles rights; the studio (Claude) collects, tags and tracks.
 
 ## One workflow for every reuse (repost, Remix, Stitch, Duet, clip in our edit)
-1. **Find:** creators in the brand's niche and market (IG/TikTok search, vidIQ outliers, our tagged mentions, customers who posted us). Many viral clips are reposts: credit the **original** creator when the VA can find them.
+1. **Find:** creators in the brand's niche and market (IG/TikTok search, vidIQ outliers, our tagged mentions, customers who posted us). Many viral clips are reposts: credit the **original** creator (Claude finds them when collecting clips).
 2. **Use:** `editor.py collab add <url> --creator @h --use repost|remix|stitch|duet|clip [--browser firefox]`.
    - The clip lands in the collab B-roll folder with `<clip>.rights.json`, and is indexed so `broll-match` can use it in posts and ads.
    - **Nothing is written on screen** (Klaus, 2026-10-28: on-screen credits make the content ugly). Credit lives in the caption tag only. With no `--creator`, the tracker says "find the original creator".

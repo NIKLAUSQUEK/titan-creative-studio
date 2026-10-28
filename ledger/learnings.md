@@ -1,5 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
 ## 2026-10-28 - genre card review (Klaus)
+- [remembrance] Big war dates, remembrance days and victims (French and American wars: Reunification Day 30/4, Martyrs' Day 27/7, Agent Orange day 10/8, National Day 2/9, Điện Biên Phủ 7/5, Tết Offensive, Mỹ Lai) get a yearly special each: remembrance tone, true quiet hooks, no hype, giveaways or booking CTAs, victims with dignity, official terms, no politics.
 - [stories] Travel/city brands also tell the stories behind places: bars, restaurants, cafés, buildings, and the deep, dark colonial and city history behind them (narrated mini-docs with hook ladders, archival vs today, every fact sourced; war/post-1945 stays factual and official-term).
 - [clips] Claude collects the clips (not the VA): search the web, check with `collab scout`, commit the shortlist; Klaus's PC downloads it with `collab add-list`.
 - [analytics] Every post is logged (lane, hook ladder, CTA, format, giveaway) and a winners report over the last 2-3 months (`tools/analytics/winners.py`) must justify next month's content: do more of what scored above the median on shares/sends/comments, drop what scored below.
