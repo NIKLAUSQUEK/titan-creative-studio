@@ -165,8 +165,8 @@ _CACHE = {}
 
 def rights_sidecar(c):
     """A reused creator clip sits next to `<clip>.rights.json` (editor.py collab add writes it):
-    {"creator": "@handle", "credit": "via @handle", "licence": "creator-clip", "source": url, "ads": true}.
-    The credit is burned on screen; Klaus handles rights, so the clip is usable in posts and ads."""
+    {"creator": "@handle", "licence": "creator-clip", "source": url, "ads": true}.
+    Nothing is burned on screen (Klaus: on-screen credits look ugly); the creator is tagged in the caption. Klaus handles rights."""
     p = Path(c["path"])
     sc = p.with_name(p.name + ".rights.json")
     if not sc.exists():
@@ -175,7 +175,8 @@ def rights_sidecar(c):
         r = json.loads(sc.read_text(encoding="utf-8"))
     except Exception:
         return
-    c.update({k: r[k] for k in ("creator", "credit", "licence", "source") if r.get(k)})
+    c.update({k: r[k] for k in ("creator", "licence", "source") if r.get(k)})
+    c.pop("credit", None)
     c["unknown_faces"] = 0
     c["real_person"] = not r.get("ads", True)
 

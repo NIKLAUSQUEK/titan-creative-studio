@@ -386,7 +386,7 @@ Changes vs the current preset:
 - **Format:** platform Stitch/Remix of a customer or trend clip (≤ 3.5 s) → the brand mascot/face replies in-character (one word per caption beat) → a 1 s fake-card or product punch. 5-8 s in total.
 - **Researched:** Ryanair reports 111 M organic impressions in a month from low-fi memes and reactive posts (podcast summary via WebSearch; unverified). The team posts within days of a trend, and speed beats polish.
 (preset `brand-meme-reply`: tools/editor/presets/brand-meme-reply.json)
-Rights: (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`, credit "via @handle", tag and reach out: marketing-engine creator-collabs.md.)
+Rights: (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`; no on-screen credit, tag in the caption and reach out: marketing-engine creator-collabs.md.)
 - **Research file:** research/genre-research-2026-10/comedy-pov-absurd.md
 
 ### 6b. NEW sub-style: Lore roll-call / character parade (`lore-rollcall`) [measured: brain1]
@@ -560,7 +560,7 @@ Changes vs the current preset:
   - Punch at behaviour, systems and hypocrisy (C3's teacher, C7's carbon double standard), never at being poor.
   - The "poor" or normal side is the audience proxy and wins the last look.
   - Stats only from SOURCES.md.
-  - Spine C reacts to real people's posts, on any account (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`, credit "via @handle", tag and reach out: marketing-engine creator-collabs.md.) No AI likeness of real influencers.
+  - Spine C reacts to real people's posts, on any account (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`; no on-screen credit, tag in the caption and reach out: marketing-engine creator-collabs.md.) No AI likeness of real influencers.
   - SG health brands: no testimonial framing; rich/poor jokes stay off patients and pricing inducements.
 - **Preset:** `class-two-wallets` (new; spines A, B, D). `class-persona-satire` (new; spine C). `genz-header-skit` remains the fallback for raw selfie versions.
 
@@ -1263,7 +1263,7 @@ Changes vs the current preset:
   - one impact under the verdict line;
   - -14 LUFS.
 - **Compliance:**
-  - Claims are sourced. Show the myth as a recreation or a quote card, not the original poster's face, unless it's a public figure or a credited creator clip (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`, credit "via @handle", tag and reach out: marketing-engine creator-collabs.md.)
+  - Claims are sourced. Show the myth as a recreation or a quote card, not the original poster's face, unless it's a public figure or a tagged creator clip (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`; no on-screen credit, tag in the caption and reach out: marketing-engine creator-collabs.md.)
   - Mask private names on the origin screenshot (E1 does).
   - Health brands in SG: no superlatives, no "cure", no patient stories; a myth-buster is education, not an inducement (compliance-sg.md).
 - **Preset:** `myth-buster-stitch` (new, replaces talking-head-punchy as the card's default); talking-head-punchy stays the fallback when there's no evidence footage.
@@ -1564,10 +1564,10 @@ The idea: open on something the audience already knows and loves (a viral clip, 
 - **Variants:**
   - **Format-jack:** recreate the viral moment with your own people ("Omegle but it's a physio"). Fully owned.
   - **Moment-jack:** reference a trend everyone knows (a meme line, a viral sound) and act it out yourself.
-  - **Clip-jack:** the actual third-party footage, credited (rights below).
+  - **Clip-jack:** the actual third-party footage, creator tagged in the caption (rights below).
   - **Scene parody:** a famous film or TV scene restaged with the brand's twist (see filmmaking-longform.md for staging; no lookalikes of real actors).
 - **Layout:** the editor's `split` B-roll mode (top = the borrowed or recreated window, bottom = the speaker), or full frame with a UI frame graphic.
-- **Rights:** (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`, credit "via @handle", tag and reach out: marketing-engine creator-collabs.md.)
+- **Rights:** (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are one workflow on every account; he handles rights. Bring clips in with `editor.py collab add`; no on-screen credit, tag in the caption and reach out: marketing-engine creator-collabs.md.)
   - SG health: the borrowed clip never implies an endorsement or a patient result.
 - **Compliance:** the switch must not misrepresent (no fake "news" or fake "patient" footage).
 - **Preset:** talking-head-punchy or genz-header-skit, plus B-roll `mode: split` for the opener; trend-beat-switch if music-led.

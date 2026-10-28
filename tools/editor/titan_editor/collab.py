@@ -2,7 +2,7 @@
 Klaus handles the backend and copyright (2026-10-28); this tool only credits, tags and tracks.
 
   editor.py collab add URL|FILE [--creator @handle] [--use clip|repost|remix|stitch|duet] [--browser firefox]
-      downloads the clip into the collab B-roll folder, writes <clip>.rights.json (credit burned on screen as "via @handle"),
+      downloads the clip into the collab B-roll folder, writes <clip>.rights.json (who to tag; nothing is burned on screen),
       logs it in marketing/collabs/<brand>.csv and indexes it so broll-match can use it
   editor.py collab dm @handle --ask shoutout|ads|collab [--clip URL]   outreach text after we use their clip
   editor.py collab list
@@ -73,13 +73,13 @@ def cmd_collab(a):
     else:
         from .study import fetch
         f = fetch(a.target, d, a.browser)
-    rights = {"creator": h, "credit": f"via {h}" if h else "", "licence": "creator-clip", "use": a.use,
+    rights = {"creator": h, "credit": "", "licence": "creator-clip", "use": a.use,
               "source": a.target if not src.exists() else "", "ads": True, "date": today}
     wjson(f.with_name(f.name + ".rights.json"), rights)
     nxt = f"tag {h} in the caption + invite as Collab; then `collab dm {h} --ask shoutout`" if h else "find the original creator, then re-run with --creator"
     p = log_row(brand, {"date": today, "brand": brand, "creator": h, "source": a.target, "use": a.use, "file": str(f),
                         "status": "in library", "next_step": nxt})
-    log(f"saved {f} (+ rights.json{', credit on screen: via ' + h if h else ', no credit yet'}); logged in {p}")
+    log(f"saved {f} (+ rights.json; tag {h or 'the original creator'} in the caption, nothing on screen); logged in {p}")
     cmd_index(SimpleNamespace(roots=[str(root)], index_dir=a.index_dir or str(default_index_dir()), frames=4, min_dur=0.8,
                               images=False, creator_brain_work=None, no_faces=False))
     return 0

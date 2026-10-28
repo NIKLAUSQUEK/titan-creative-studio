@@ -1,11 +1,13 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
 ## 2026-10-28 - genre card review (Klaus)
+- [hooks] Hook LADDERS, not single hooks: every line opens a new loop that pays off the last one and raises the stakes, so attention grows line by line. Pattern: tease ("next week something is happening in HCMC") → twist ("or should I say, happening AWAY from HCMC") → reveal ("expect a ghost town") → why ("everyone's fleeing home for the long Tết break") → stakes ("these services are hit hardest") → proof (stats, facts, hours) → things to note → end. Exaggerate and paint the hook; write 3-5 different hook variations per post.
+- [credits] No on-screen credit text on reused clips, ever. Tag in the caption only.
 - [retention] Mystery/curiosity content exists to hold retention: a strong, provocative, thought-provoking curiosity hook, then a light (but true) payoff. "Always be provocative."
 - [variety] Never run one format every post: rotate spines/styles per account (no spine twice in a row; the trick-on-the-viewer scam remix at most ~1 in 5, a new trick each time).
 - [before-after] Reveal placement is flexible (snap first, mid-way or last); make variants and test. SG health: still no people before/after.
 - [retail] A real discount can open a retail ad when it makes people want the product (product first, real terms shown). Never for SG health brands.
 - [ai-labels] No AI/CGI label on screen or in captions; use the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
-- [clips] More real people's clips: reposts, Remix, Stitch, Duet and reused clips are ONE workflow (`editor.py collab add`); Klaus/his VA handle backend and copyright, so no permission gates in the studio. Always credit the original creator on screen ("via @handle") + tag + outreach (shoutout/collab DM) + tracker.
+- [clips] More real people's clips: reposts, Remix, Stitch, Duet and reused clips are ONE workflow (`editor.py collab add`); Klaus/his VA handle backend and copyright, so no permission gates in the studio. Never burn credits on screen ("via @handle" looks ugly and stupid, Klaus); tag the original creator in the caption + outreach (shoutout/collab DM) + tracker.
 - [romance] Organic romance/sensual: anything goes except showing private parts (no genitals, female nipples, explicit sex acts); kisses, making out, bed scenes, lingerie and implied sex are fine. Paid ads stop at the kiss (Meta/TikTok ad rules). Adults 25+, original characters only.
 - [skits] Crash zooms on Klaus's own skits = proposal B; side-choosing endings stay.
 ## 2026-10-25 - robotic voices (Klaus)
