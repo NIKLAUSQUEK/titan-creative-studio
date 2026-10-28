@@ -72,7 +72,7 @@ param(
   [string] $VsVoice = "",                    # VoiceStudio voice profile id (when the VoiceStudio app is open)
   [string[]] $Study = @(),                   # 1-5 reference links (FB/IG/TikTok/YouTube) to measure as a style
   [string] $StudyName = "",                  # name for the style, e.g. "snap-scam-carousel"
-  [ValidateSet("", "chrome", "edge", "firefox", "brave")] [string] $Browser = "",   # use your logged-in browser for login-only links
+  [string] $Browser = "",                    # chrome | edge | firefox | brave, or a cookies.txt path: your own login for login-only links
   [switch] $Motion,                          # one-time setup for code-motion cards (Node.js + Playwright Chromium in tools\motion)
   [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
   [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)

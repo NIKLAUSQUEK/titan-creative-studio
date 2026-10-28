@@ -40,7 +40,9 @@ def fetch(src, d, browser=None):
     import yt_dlp
     d.mkdir(parents=True, exist_ok=True)
     opts = {"outtmpl": str(d / "%(id)s.%(ext)s"), "format": "mp4/bestvideo*+bestaudio/best", "quiet": True, "noprogress": True, "merge_output_format": "mp4"}
-    if browser:
+    if browser and Path(browser).is_file():
+        opts["cookiefile"] = str(browser)          # a cookies.txt you exported yourself
+    elif browser:
         opts["cookiesfrombrowser"] = (browser,)
     with yt_dlp.YoutubeDL(opts) as y:
         info = y.extract_info(src, download=True)
