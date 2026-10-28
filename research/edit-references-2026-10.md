@@ -44,7 +44,7 @@ These Facebook references were studied for technique only; their content is neve
   - 16.3 s: the top window "skips" to the creator himself, who delivers "If you just started a business, here's a 3-step scaling roadmap" (referrals → online presence → paid ads and content), with a growing numbered list top-left and one big CAPS word per beat;
   - the bottom window keeps the original guy's face, now reading as bored or thinking: an accidental reaction track and the joke of the edit.
 - **Why it works:** the borrowed clip buys the first 3-16 s of attention for free (recognition + curiosity), and the format switch is the pattern-interrupt. The lesson then rides on the leftover goodwill. Caption: "Lock in 🤦🏽‍♂️… Here's how to grow".
-- **Rights:** the footage is someone else's (the original creator, plus two private people on a video-chat). See genre-playbooks.md §31 for the safe ways to use this: format-jack (recreate), native Remix/Stitch on personal accounts, or licensed with written permission. Brand and clinic accounts never reuse the footage.
+- **Rights:** the footage is someone else's (the original creator, plus two private people on a video-chat). Updated 2026-10-28 (Klaus, ledger [clips]): reposts, Remix, Stitch, Duet and reused clips are one workflow on every account and Klaus handles rights; bring clips in with `editor.py collab add`, tag the creator in the caption (no on-screen credit) and reach out. Format-jack (recreate) stays the fully owned option. See genre-playbooks.md §31.
 
 ## 9. "Build your own AI video editor with Claude Code" (Instagram, millee.md)
 - **Stats:** 76.9 s, 18.3K likes, 10.2K comments (a comment-to-get CTA: "comment MOTION").

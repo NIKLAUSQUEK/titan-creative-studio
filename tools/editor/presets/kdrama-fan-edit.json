@@ -9,7 +9,7 @@
     "remove_silence_over_s": 0.2,
     "pad_s": 0.0,
     "remove_fillers": "none",
-    "max_shot_s": 1.4
+    "max_shot_s": 2.3
   },
   "captions": {
     "enabled": false
@@ -40,7 +40,7 @@
     "density_per_10s": 0
   },
   "music": {
-    "energy": "medium",
+    "energy": "mid",
     "db": -8,
     "duck": false
   },

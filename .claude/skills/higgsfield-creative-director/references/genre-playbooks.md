@@ -1,5 +1,7 @@
 # Genre playbooks: the same genre language for generation (Higgsfield) and the edit (tools/editor)
 
+**Start with [genre-quickstart.md](genre-quickstart.md)**: the plain-English beats, the best measured reel and a worked, second-by-second example script for every genre. This file stays the deep reference.
+
 Pick a genre module in Gate 2 (story directions) for ads too, not just films. The module sets:
 - pacing, shot grammar, camera, light/grade and the sound plan;
 - the prompt block pasted into every shot (`genre_key` in spec.json);
@@ -16,26 +18,26 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 4 | Trend beat-switch montage | a list, roles, "they call me…" | delight, recognition | 1.2-2 s | intro → drop → on beat | punchy | music-led | trend-beat-switch |
 | 5 | POV / relatable | "POV: the friend who…", a recognisable type | recognition | 5-12 s per vignette | 3 vignettes, escalating; pause before the punch | phone-natural | dialogue-led (~200+ wpm), no bed | ugc-pov |
 | 6 | Absurdist / meme chaos | brand self-mockery, escalating nonsense, mascot lore | shock-laugh | 1.5-5 s (memes 5-16 s in total) | label escalation → hold the most absurd image | saturated, one consistent style | the sound/track is the rhythm, one hit at the end | meme-chaos-short (+ brand-meme-reply, lore-rollcall); genz-chaos for chaos talking-head edits |
-| 7 | Drama / conflict (villain) | bully, betrayal, side-picking | anger → justice | 2-4 s | build → confrontation → consequence | contrasty, warm/cold split | score swells, cold cruelty beats | drama-conflict |
+| 7 | Drama / conflict (villain) | bully, betrayal, side-picking | anger → justice | ~1.5 s median, tightening to ~1.0 s; one 4-8 s evidence hold | build → confrontation → consequence | contrasty, warm/cold split | score swells, cold cruelty beats | drama-conflict |
 | 8 | Class & status | rich vs broke, same problem two wallets, out-of-touch rich persona | recognition, both-sides | **1.0 s dialogue volley, or two locked 5-7 s takes; persona 3 s** | premise header → volley/side A → side B/topper → silent reaction button | **one grade, class shown in props/wardrobe/vocabulary** | dialogue only (no bed) or a track-only A/B; persona VO 170-250 wpm | class-two-wallets (new) + class-persona-satire (new) |
-| 9 | Feel-good / emotional | kindness, family, small win | warmth, tears | 3-5 s | gentle rise → payoff | warm, soft | piano/strings, natural sound | feelgood-emotional |
-| 10 | Romance / aura / sensual (implied) | attraction, glow-up, confidence | longing | 3-6 s | slow, lingering | golden, soft contrast | ambient, breathy pads | aura-cinematic |
-| 11 | Founder / comeback / inspirational | origin, struggle → win | belief | 2-4 s | low → climb → peak | desaturated past → warm present | build-up score | founder-inspire |
+| 9 | Feel-good / emotional | kindness, family, small win | warmth, tears | 2-3 s; the reveal held 8-11 s (4-5 s in a 30 s cut) | gentle rise → payoff | warm, soft | piano/strings, natural sound | feelgood-emotional |
+| 10 | Romance / aura / sensual (implied) | attraction, glow-up, confidence | longing | ~2 s median; glances held 1.5-3 s | cold open on the peak → time jump → meet/friction → obstacle insert → glance + "Part 2" | warm soft key, bloom, low contrast | OST piano/pad, music-forward | romance-drama (+ romance-texting); aura-cinematic for glow-up edits |
+| 11 | Founder / comeback / inspirational | origin, struggle → win | belief | clip: close ↔ wide every 3-5 s; film: 2-4 s | header + cold start → scene → the ask → the turn → lesson | real room, natural light (film: desaturated past → warm present) | voice only, low or no bed (film: build-up score) | founder-clip (default) + founder-inspire (film) |
 | 12 | Cautionary / decision ladder | bad choices escalate; PSA; "one decision" | dread → "I'll do the right thing" | **rungs 2-3 s shrinking to 0.7 s; consequence held 4-30 s** | want + flash-forward → accelerating rungs → held consequence → stat + ONE action | colder and darker per rung, brand-warm at the end | dialogue only, an ironic licensed song, or a drone → silence | cautionary-ladder (corrected) + cautionary-ripple, cautionary-twist (new) |
-| 13 | Thriller / heist / suspense | plan, chase, ticking clock | tension, momentum | 1.5-3 s | accelerating cross-cuts | steel blue/orange | pulse, ticking | thriller-suspense |
+| 13 | Thriller / heist / suspense | plan, chase, ticking clock | tension, momentum | inserts 0.6-1.0 s median (Crime 101: 0.83 s); briefing 1.5 s | accelerating cross-cuts | steel blue/orange | pulse, ticking | thriller-suspense |
 | 14 | Mystery / reveal | a question answered at the end | curiosity | 3-5 s | slow clues → twist | moody low-key | sparse piano, risers | mystery-reveal |
-| 15 | Action / sport hype | training, game day, transformation | adrenaline | 0.5-1.5 s | fast, speed ramps | high contrast, crushed | bass, whoosh, hits on beat | action-hype |
+| 15 | Action / sport hype | training, game day, transformation | adrenaline | 0.5-1.5 s | fast, speed ramps | high contrast, crushed | bass, whoosh, hits on beat | action-hype (gym/event) + sport-anthem (anthem) |
 | 16 | Sci-fi / tech launch (TITAN.AI) | AI / product launch, future-of-work | wonder → "I want that help" | **~1.7-2.0 s, even (montage accelerating 2.9 → 1.5); one-take product transformation 20-30 s** | cold open in a real place → ask → product acts in-world → scale → one-line brand card | **warm practicals + one saturated brand accent; cyan only for concept pieces** | airy score or room tone, soft UI chimes, swell on the card | scifi-tech (corrected) + ui-proof-launch (new) |
 | 17 | K-drama | rom-com mini-film, crush or confession, a romance played straight then punctured; PPL gags | tenderness → laugh | 1.5-2 s median; holds of 3-6 s only on the one romantic beat | premise header → attempts × 3 → the real moment (held) → twist → logo | warm low-contrast film, golden autumn or tungsten night (pastel optional) | real silences, OST only under the moment, hard stop on the twist | kdrama-soft (+ kdrama-fan-edit for beat-synced POV recuts of own footage) |
 | 18 | Anime-inspired | a product jingle, mascot chant, "<X> be like" trope parody, hype | intensity, delight | 0.5 s (chant CM) to 1.5 s (trope list); real OP 0.27 s | chant verse → proof card → chorus → packshot held 4 s; or setup card → one trope per shot → held tableau | flat 2D cel on pastel fields, saturated | the song is the ad (original chant 90-100 BPM); flash pairs optional | anime-energy (+ anime-op-parody) |
 | 19 | 3D Pixar / cartoon | mascots, kids-safe explainers | charm | 2-3 s | bouncy | bright, clean | playful foley | (see animation-3d-cartoon.md) |
-| 20 | Documentary / investigative | real story, research, recon | trust, revelation | 3-6 s | measured, VO-led | neutral, archival | VO + subtle bed | documentary |
-| 21 | Explainer / myth-buster | expert education | "I finally get it" | 2-3 s | brisk | clean, bright | light whooshes on graphics | talking-head-punchy |
-| 22 | News / scam-expose | warnings, tips, "don't fall for this" | alarm → protected | 1.5-3 s / slides | headline-first | high clarity | news stings, ticks | news-expose |
+| 20 | Documentary / investigative | real story, research, recon | trust, revelation | 1.2-2 s median inside 6-10 s evidence beats | measured, VO-led | neutral, archival | VO + subtle bed | documentary (+ doc-paper-trail) |
+| 21 | Explainer / myth-buster | expert education | "I finally get it" | 2-3 s; layout changes every 4-6 s | brisk, voice 220-240 wpm | clean, bright | light whooshes on graphics | myth-buster-stitch (fallback talking-head-punchy) |
+| 22 | News / scam-expose | warnings, tips, "don't fall for this" | alarm → protected | 1.7-2.5 s / slides | headline-first | high clarity | news stings, ticks | news-expose (+ news-silent-case, scam-remix-onetake) |
 | 23 | Commentary / receipts | real controversy | judgement | 2-3 s | evidence beats | neutral | minimal | documentary (see commentary-controversy.md) |
 | 24 | Luxury / product reveal / new release | launches, premium products | desire | **narrative film 0.8-1.1 s median; object film 2.6-3.3 s; FOOH one take 7-8 s** | **brand flash ≤1.5 s → story or tease → hero packshot held 2-4 s at the end** | rich blacks, one brand colour | score/whoosh-led, sub hit on the packshot | luxury-reveal (+ new luxury-object-calm, fooh-oneshot) |
 | 25 | UGC demo / experience-style | creator uses the product | trust | 1.5-3 s | problem → use → result | phone-natural | voice, light music | ugc-* presets |
-| 26 | Before / after transformation | change over time (home, car, hair, product) | proof, "wait for it" | **process 0.6 s median (detailing) or locked one-take time-lapse 7+ s (rug); reveal held to the last 3-5 s** | before shown at 0 s → process → split/wipe reveal at the end (or "part 2") | matched light, locked camera | real process foley, no VO; a whoosh/ding on the reveal | before-after-process (new) |
+| 26 | Before / after transformation | change over time (home, car, hair, product) | proof, "wait for it" | **process 0.6 s median (detailing) or locked one-take time-lapse 7+ s (rug); reveal held to the last 3-5 s** | before shown at 0 s → process → split/wipe reveal at the end (or "part 2") | matched light, locked camera | real process foley, no VO; a whoosh/ding on the reveal | before-after-process (new) + before-after-fast |
 | 27 | ASMR / satisfying | process, pouring, building, cleaning | calm, completion | **top performer: one locked take (11-20 s) → completed state held 2-3 s; brand reels cut 0.7-1.5 s** | one continuous action → finished object → loop | clean, bright, macro | loud close foley (onsets 15-54 per 10 s), no music, no VO | asmr-satisfying (one-take default) + asmr-product-cut (new) |
 | 28 | Event / retail / mall promo | openings, pop-ups, launches, mall events | FOMO, fun | **0.8-1.0 s median (music-only); 1.5 s when there is a VO** | storefront at 0 s → 1 s hero/product/activation inserts → bag-out or what-where-when | bright, natural store light | licensed upbeat track; ~140 wpm VO with dates for events | event-retail-promo (new) |
 | 29 | Edu-song / mnemonic / musical explainer | anatomy, steps, checklists, red flags; study content; PSA songs | "I can't unhear it", save-for-later | the diagram changes every 1-2 s inside one take | song + header at 0 s → labelled sections → recap/count line; CTA in the caption | whatever the screen shows, plus bold labels; 3D mascot on black | the original song, not ducked, -11 to -14 LUFS; adults 3.0-3.4 syll/s | edu-song (+ edu-song-screen) |
@@ -184,7 +186,7 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 - **Ad template:** quote header with the industry's cliché ("'Just stretch it out,' they said") / "The reality:" → one take of the deadpan truth → hard cut to the brand world.
 - **Compliance:**
   - Dramatised skits never pose as patient testimony (SG health).
-  - The "their way vs our way" structure must not disparage a named competitor or real person; Khaby-style trigger clips are **third-party footage**, so brand accounts recreate the trigger (format-jack, genre §31).
+  - The "their way vs our way" structure must not disparage a named competitor or real person. Khaby-style trigger clips are third-party footage: reuse them through `editor.py collab add` (Klaus handles rights; tag in the caption, no on-screen credit), or recreate the trigger (format-jack, genre §31) when the joke mocks the method.
 - **Preset:** deadpan-comedy (corrected below); new sub-presets deadpan-silent-rebuttal and quote-reality-oneshot.
 
 (preset `deadpan-comedy`: tools/editor/presets/deadpan-comedy.json)
@@ -411,7 +413,7 @@ Rights: (Klaus, 2026-10-28: reposts, Remix, Stitch, Duet and reused clips are on
 | The cruelty / hit | 16-18 s | the fastest cuts (0.3-0.8 s), then a **hard stop** | **0.8-1.3 s silence** right after (d3: 1.0 s + 1.3 s) |
 | Aftermath / evidence: the receipt (phone video, chat, document) | 18-25 s | ONE held shot or insert, 4-8 s (d6 holds ~30 s at 90 s length) | evidence audio up, music low |
 | Consequence + turn (ad: brand as the helper, never the villain) | 25-28 s | back to singles ~1.5 s | swell |
-| Open question / Part-2 tease (no vote-bait) | 28-30 s | CU of the target | bed out on the last word |
+| Side-choosing question or Part-2 tease (ledger: side-choosing endings stay; phrase it as a real question, not "comment A or B") | 28-30 s | CU of the target | bed out on the last word |
 
 - **Shot grammar:**
   - singles for each speaker, mostly MCU/CU on 50-85 mm; d6 is almost all singles plus one wide establishing at 0 s.
@@ -464,7 +466,7 @@ Changes vs the current preset:
 
 **Flags for Klaus (§7):**
 - Is the white-frame + header format wanted for brand accounts? It reads "Dhar Mann / repost page". It suits personal and organic accounts, maybe not Physio Spot ads.
-- The ledger asks for "side-choosing" endings. I propose rewording them to avoid explicit vote-bait ("Team A or B? comment"), which Meta demotes. Does he want to keep poll stickers on organic posts?
+- Answered 2026-10-28: side-choosing endings stay (ledger [skits]). Phrase them as a real question ("Would you give her the number?"), not an explicit vote instruction, which Meta demotes.
 - d3 is a clip account reposting a broadcast TV drama. I used it for rhythm only; it is not a format to copy (rights).
 
 ---
@@ -692,7 +694,7 @@ Changes vs the current preset:
 - **Preset:** romance-texting (new).
 
 (preset `romance-texting`: tools/editor/presets/romance-texting.json)
-**3 core rules (§10 + 10a):** (1) cold open on the charged moment, then jump back in time: structure from C-drama, explicitness from our ledger (implied only, clothed, adults 25+, cut away before the kiss completes); (2) the obstacle arrives as an object or message insert (phone, ring, document), and the reply lands on the other face; (3) end on a glance or smile and an open loop ("Part 2"), never on the payoff.
+**3 core rules (§10 + 10a):** (1) cold open on the charged moment, then jump back in time: structure from C-drama, explicitness from our ledger (organic: anything except private parts; paid: stop at the kiss; adults 25+, original characters; generation prompts stay platform-safe, the edit carries the rest); (2) the obstacle arrives as an object or message insert (phone, ring, document), and the reply lands on the other face; (3) end on a glance or smile and an open loop ("Part 2"), never on the payoff.
 
 **Flags for Klaus (§10):**
 - Split §10 into "romance-drama" (serial) and keep "aura" as a style (`aura-cinematic`)?
@@ -897,14 +899,14 @@ Changes vs the current preset:
 - **Look:** low-key, a pool of light on each clue. The reveal brightens by 1 stop.
 - **genre_key:** `mysterious low-key lighting, pools of light on key objects, partial framing of people, rack focus to the clue, restrained locked camera, quiet tension`
 - **Shot JSON:** `{"id":"S03","dur":4,"camera":"macro insert, 100mm, rack focus from the cup rim to the sugar spoon","action":"start: steam over the cup -> end: focus lands on the dry spoon (the clue: nobody stirred)","light":"single pool of warm light, everything else falls to black","audio":"clock tick, a low pad, one soft ding as focus lands"}`
-- **Sound (replaces the edu-song text):**
+- **Sound:**
   - a sparse low pad or piano;
   - a soft tick under the clue beats;
   - one ding or click when each clue lands;
   - a riser into **0.5-0.8 s of true silence**;
   - the reveal hit (impact + sub);
   - a reverse-whoosh on the rewind montage.
-- **Compliance (replaces the edu-song text):**
+- **Compliance:**
   - the mystery must resolve to something true: no fake "what doctors don't want you to know" curiosity bait for health;
   - SG health: the reveal is a mechanism or a common cause, never a cure or result;
   - no real crimes or real victims as puzzles (ledger: real tragedies are not entertainment);
@@ -917,7 +919,7 @@ Changes vs the current preset:
 
 **3 core rules (§14):** (1) the hook names ONE specific, closeable question, not "wait for the end"; (2) every clue gets its own insert and its own sound, and the rewind re-shows them after the reveal; (3) silence before the reveal, and the reveal is the first frontal, fully lit frame.
 
-**Flags:** the §14 card in genre-playbooks.md needs its Sound/Compliance/Preset lines fixed (copy-paste from §29). The mystery reels found on IG had weak engagement (3-352 likes). The strongest evidence for the reveal structure is d6's evidence turn (238 K) and the information-gap research, so Klaus may want to send 2-3 mystery references he rates.
+**Flags:** the mystery reels found on IG had weak engagement (3-352 likes). The strongest evidence for the reveal structure is d6's evidence turn (238 K) and the information-gap research, so Klaus may want to send 2-3 mystery references he rates.
 
 ---
 - **Research file:** research/genre-research-2026-10/drama-mystery-thriller-romance.md
@@ -1382,7 +1384,7 @@ Changes vs the current preset:
 - **Sound:** score- or whoosh-led; the whoosh peak on each fast cut; a sub/boom on the end packshot; no VO, or one whispered line. FOOH = real street ambience plus one musical sting.
 - **Compliance:**
   - real prices, dates and terms; no fake scarcity (SG CCS enforcement, 18 May 2026);
-  - FOOH must not be passed off as a real stunt in a factual claim. Caption "CGI" or "concept" and don't tag a transit operator or landmark as a partner without permission (The Drum, 2023-07-14, on the Maybelline backlash);
+  - FOOH must not be passed off as a real stunt in a factual claim: never say or caption that it really happened, and don't tag a transit operator or landmark as a partner without permission (The Drum, 2023-07-14, on the Maybelline backlash);
   - AI-made: no AI/CGI label on screen or in the caption (Klaus, 2026-10-28); for photorealistic AI shots, switch on the platform's own AI-content disclosure at upload, which TikTok and Meta require.
 - **Preset:** luxury-reveal (narrative), luxury-object-calm (new), fooh-oneshot (new).
 - **Research file:** research/genre-research-2026-10/luxury-retail-transform-asmr.md
@@ -1586,7 +1588,7 @@ The idea: open on something the audience already knows and loves (a viral clip, 
 - **Shot:** `{"camera":"high three-quarter overhead, 35mm, locked, slight push-in","action":"start: @CAVEMAN packs rock salt around the leg -> end: only the bone end pokes out of a smooth white mound","light":"soft overhead key, contact shadows, cold blue bounce"}`
 - **Sound:** a deadpan VO at ~200-210 wpm (~7-8 words per shot); one-word captions; foley on every process verb (crunch, sizzle, crack); a low bed at -24 dB; one impact on the twist; no meme sounds on brand accounts.
 - **Compliance:** for a health brand, the "recipe" must be safe technique or education, with no outcome or cure claims, no testimonials and no superlatives. The twist can be slapstick but never a medical injury scare. Food or supplement versions make no nutrition claims beyond the label.
-- **Preset:** absurd-howto-3d (JSON in research/refs-2026-10-25/ai-animation.md).
+- **Preset:** absurd-howto-3d (tools/editor/presets/absurd-howto-3d.json; measurements in research/refs-2026-10-25/ai-animation.md).
 
 ### 33. Code-made motion + screen tutorial (`code-motion-tutorial`) [draft; measured: ref anim2]
 - **Why it works:** the contrast hook ("slop vs this"), then proof (a 10-15 s burst of code-rendered cards), then a calm, doable how-to. The series tag and comment-keyword CTA drive comments and follows.
@@ -1639,4 +1641,4 @@ The idea: open on something the audience already knows and loves (a viral clip, 
 Full workflow, formats and hard rules are in clone-character-swap.md:
 - driver clip + original character sheet → Genjutsu / Seedance 2.5 / Wan 3.0 motion transfer;
 - formats: "this is me… and this is also me" match cuts, the A/B model test (editor B-roll `mode: side`), and one actor playing every role in a skit;
-- never a real-person lookalike, and always label it as AI.
+- never a real-person lookalike. No AI label on screen or in the caption (ledger [ai-labels]); switch on the platform's own AI-disclosure toggle at upload.

@@ -2,7 +2,7 @@
   "name": "fooh-oneshot",
   "label": "FOOH / one-take product spectacle",
   "kind": "genre",
-  "description": "Measured 2026-10-25 (Jacquemus bags, 7.9 s, 0 cuts): one handheld street take, impossible-scale product visible from 0 s, pass-by reveal at 60-85%, loud real ambience, no text until the last second. Label CGI/AI in the caption.",
+  "description": "Measured 2026-10-25 (Jacquemus bags, 7.9 s, 0 cuts): one handheld street take, impossible-scale product visible from 0 s, pass-by reveal at 60-85%, loud real ambience, no text until the last second. No AI/CGI label on screen or in the caption (ledger [ai-labels]); use the platform AI-disclosure toggle.",
   "reference": "research/genre-research-2026-10/luxury-retail-transform-asmr.md#24",
   "structure": {
     "name": "fooh",

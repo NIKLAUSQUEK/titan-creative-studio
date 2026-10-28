@@ -74,3 +74,32 @@ Ordered by how many modules need them:
 - freeze-frame and episode labels;
 - speed ramps;
 - a clue-rewind montage.
+
+## Consistency check (2026-10-28)
+Done while writing `.claude/skills/higgsfield-creative-director/references/genre-quickstart.md` (plain-English beats + a worked script per genre). Cards compared with each other, with `tools/editor/presets/*.json` and with `ledger/learnings.md`.
+
+**Fixed (small, clearly wrong):**
+1. §0 picker was never updated after the corrections: preset column now matches the cards (§10 romance-drama, §11 founder-clip default, §15 + sport-anthem, §20 + doc-paper-trail, §21 myth-buster-stitch, §22 + news-silent-case / scam-remix-onetake, §26 + before-after-fast). "Avg shot" now uses the measured numbers (§7 ~1.5 → 1.0 s, not 2-4 s; §9 2-3 s + reveal hold; §10 ~2 s, not 3-6 s; §13 inserts 0.6-1.0 s, not 1.5-3 s; §20 1.2-2 s, not 3-6 s; §22 1.7-2.5 s).
+2. §7 still proposed dropping side-choosing endings ("no vote-bait"); Klaus kept them (decision 2, ledger [skits]). Pacing row and flag now say: keep them, phrased as a real question.
+3. §10's 3 core rules still said "implied only … cut away before the kiss completes", against ledger [romance] (organic: anything but private parts; paid: stop at the kiss). Rule (1) updated.
+4. §14 carried a stale flag ("needs its Sound/Compliance/Preset lines fixed, copy-paste from §29") and "(replaces the edu-song text)" labels after the fix was already made. Removed.
+5. §24 FOOH said 'Caption "CGI" or "concept"', two lines above the card's own "no AI/CGI label" rule (ledger [ai-labels], decision 7). Now: never claim it really happened. Same leftover fixed in `fooh-oneshot.json` ("Label CGI/AI in the caption").
+6. §36 said "always label it as AI" (ledger [ai-labels] says no label on screen/caption, platform toggle only). Fixed.
+7. §2 said brand accounts must recreate Khaby-style trigger clips (pre-decision-9 rights rule). Now: reuse via `collab add` or recreate when the joke mocks the method. Same stale line fixed in `research/edit-references-2026-10.md` ref #8 ("brand and clinic accounts never reuse the footage").
+8. §32 pointed to "JSON in research/refs-2026-10-25/ai-animation.md"; the preset file exists (`tools/editor/presets/absurd-howto-3d.json`).
+9. `kdrama-fan-edit.json`: `music.energy` "medium" is not a valid value (none|low|mid|high) → "mid"; `max_shot_s` 1.4 → 2.3 (the card measures max 2.3 s and holds the opening shot ~1.5 s, which 1.4 would chop).
+10. `genz-header-skit.json`: `sfx.density_per_10s` 2.5 → 5.0. The density is a budget cap (recipe.auto_sfx); ref #1 measured hits at 0.5, 1.95, 3.35, 5.35, 8.55 s (one per reaction, every 1.5-2 s ≈ 5-6 per 10 s), and 2.5 capped it at one per 4 s.
+Selftest after the preset edits: 41/41.
+
+**Open (needs a decision or engine work, not changed):**
+1. `CLAUDE.md` routing row for clones still says "always labelled AI", as does clone-character-swap.md, against ledger [ai-labels]. The ledger wins; the row and the guide need the same wording as §36.
+2. `recipe.py` (line ~278) adds an on-screen `credit` text for CC BY web images. Ledger [credits] bans on-screen credit text for reused clips, and Klaus called on-screen credits "ugly". CC BY attribution can live in the caption (`webimg.attribution` already writes it). Decide: caption-only credit for web images too?
+3. Decision 9 above says "Studio credits, tags…": "credits" here means the caption tag, not on-screen text. Worth rewording to avoid a future agent burning a credit on screen.
+4. §16 still asks for "on-screen UI labelled simulated in post" and cites the FTC check that Klaus waived (decision 11). Keep the basic rule (never show a capability the product doesn't have); drop the on-screen "simulated" label?
+5. §22c is titled with a preset name (`news-card-carousel`) that doesn't exist; it really uses the expander's `carousel-text` + `card_style: kicker`.
+6. §5 still says Stitch replies need "the original enabled (§31 rights rules)"; §31 rights are now the one-workflow rule. Platform-native Stitch still needs the original's setting, so only the cross-reference is stale.
+7. §29 says "no pop-song melodies on brand accounts (§5 copyright …)": that §5 is edu-songs-mnemonics.md §5, not genre §5 POV. Ambiguous reference.
+8. Presets whose hard caps fight a card's long hold (no feature yet to exempt one beat): `class-two-wallets` max_shot 7 vs the §8a payoff held 8-10 s; `ui-proof-launch` max_shot 8 vs "story bookends up to 21 s"; `anime-energy` max_shot 1.2 vs the ~2.5 s proof card. Needs a per-beat `hold` override (the `_needs_feature` "uncut money holds" item).
+9. `deadpan-silent-rebuttal` plays a mid music bed until `music.stop_at_beat` is built, so today the silent take gets music under it (§2: no music under the take).
+10. `texting-suspense` (1.5 per 10 s) and `horror-tension` (1.2 per 10 s) SFX budgets are below the "a hit every 1-3 s" / "sting every 1-2 s" in the refs. Probably right if the pulse lives in the drone bed; confirm by measuring a test render before raising them.
+11. Physio Spot's brand file names "crash zoom + impact" as the ad formula, while §2's default has no crash zoom (proposal B). Not a contradiction for the existing v4 cut (master spec = version A), but new Physio Spot skits need a one-line rule: brand formula or genre default?

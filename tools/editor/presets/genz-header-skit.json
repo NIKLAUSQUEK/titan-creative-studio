@@ -34,7 +34,7 @@
     "every_s": 0
   },
   "sfx": {
-    "density_per_10s": 2.5,
+    "density_per_10s": 5.0,
     "db": -10,
     "map": {
       "hook": "bass",
