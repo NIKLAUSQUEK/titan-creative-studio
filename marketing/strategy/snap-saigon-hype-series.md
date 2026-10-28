@@ -15,6 +15,7 @@ Each month, pick the ONE topic with the most talk potential. Events are only one
 | Prices & money | what $10 / 100k VND gets you, tourist vs local price, the cheapest rooftop | stat cards, side-by-side |
 | Viral local stories | a stall owner gone viral, a street performer, a wholesome stranger moment (non-political) | repost the creator's clip, credited (`collab add`) |
 | Hidden spots | secret cafés in old apartment blocks, hẻm food alleys, sunset spots | "save this" carousel; often a Snap Saigon photo spot |
+| **Saigon Stories** (history behind places) | the bars, restaurants, cafés and buildings people walk past every day, and the deep and dark colonial and city history behind them (§6d) | 45-90 s narrated mini-doc with a hook ladder: "you've walked past this building 100 times…" |
 
 **Talkability score (pick the highest):** 1 point each for: people will tag or send it to someone · there's a "wait, really?" surprise · it has a date or deadline (urgency) · locals AND tourists care · great real footage exists to repost · it ties to a Snap Saigon photo spot. Score ≥4 = hero; 2-3 = support post.
 The trailer format (§2) works for any lane: open on the most surprising real clip, build with cards (dates, prices, addresses), end on the tag/send CTA.
@@ -23,6 +24,7 @@ The trailer format (§2) works for any lane: open on the most surprising real cl
 - **Job:** top of funnel. Reach, shares and follows from tourists, expats and young locals. It sells nothing directly; the end card plants "get snapped at it" (snapsaigon.com).
 - **Cadence:** one **hero trailer reel** per month (posted ~7-10 days before the month's biggest moment), plus support posts around it (§4).
 - **Hooks:** always a hook ladder (§2b), 3-5 versions per post.
+- **Mix per month:** 1 hero hype post + 1-2 Saigon Stories (§6d) + support posts, chosen by the winners report (§6c).
 - **Promise to the viewer:** "Here's what all of Saigon will be talking about this month, and where to go for it." Every post is a guide (date, place, price) disguised as a movie trailer.
 - **Accounts:** Snap Saigon IG/TikTok/FB page (handles: CONFIRM). English-first, with a Vietnamese line on every slide and caption.
 
@@ -147,6 +149,31 @@ Full playbook: marketing-engine `giveaways-contests.md`. 1-2 a month, built into
 - Platform exports (IG/FB Insights, TikTok Studio, Metricool…) go into `marketing/analytics/snap-saigon/exports/` monthly.
 - `python tools/analytics/winners.py --brand snap-saigon --days 90` writes `marketing/reviews/snap-saigon-<yyyy-mm>-winners.md`: talk score per post (shares/sends weigh most), winners and losers, and **do more / do less / test again** calls by lane, hook ladder, CTA, format and giveaway over the last 2-3 months.
 - The monthly run reads the latest report first and justifies its hero pick with it ("events + tease-twist ladders + send CTAs averaged 1.6x the median over 90 days, so…").
+
+## 6d. Saigon Stories: the history behind the places (Klaus, 2026-10-28)
+Storytelling posts about the bars, restaurants, cafés and buildings people already know, and the deep, dark colonial and city history behind them. They earn saves and sends ("I never knew that"), give tourists a reason to visit, and most of them are Snap Saigon photo spots.
+- **Format:** 45-90 s narrated mini-doc (genre §20 `doc-paper-trail` / §21 myth-buster), one place per post, plus a carousel version. Hook ladder as always: "You've walked past this building 100 times." → "Everyone says ___ built it." → "They're wrong." → the real story → the dark part → "and you can still have a drink/coffee/photo there today" → CTA "Send this to the friend who thinks they know Saigon."
+- **Visuals:** today's footage of the place (our snappers, creator clips via `collab scout`) cut against archival photos and maps. Pre-1950 French-era photos are often public domain: find them with the editor's `web-images` (Openverse/Wikimedia, licence kept) and "then vs now" same-angle matches.
+- **Voice:** a real narrator (Klaus or a local guide) cleaned with `editor.py enhance`, or a licensed AI voice; never a robotic one (ledger).
+- **Series names:** "Saigon Stories", "The building you walk past every day", "Saigon's dark history in 60 seconds".
+
+**Story bank** (✅ sourced · ⚠️ verify before scripting):
+| # | Place | The hook | Status |
+|---|---|---|---|
+| 1 | Central Post Office (1891) | "Everyone says Gustave Eiffel built it. He didn't." French newspaper accounts from 1888 and 1891 credit the architect Alfred Foulhoux. | ✅ [Historic Vietnam](https://www.historicvietnam.com/debunking-the-eiffel-myth/), [Wikipedia](https://en.wikipedia.org/wiki/Saigon_Central_Post_Office) (some sources credit Vildieu with Foulhoux) |
+| 2 | Notre-Dame Cathedral | "Every stone in this church crossed an ocean": stone shipped from Marseille, stained glass from Chartres. | ✅ [Outlook Traveller](https://www.outlooktraveller.com/destinations/international/journey-through-time-colonial-architecture-in-ho-chi-minh-city) (verify against a second source) |
+| 3 | Hotel Continental (1880) | "Saigon's first hotel, where a British spy-novelist wrote the book that predicted a war": Graham Greene lived here writing *The Quiet American* (room 210 or 214: sources disagree, say "a corner room"). | ✅ [Anne Harrison](https://www.anne-harrison.com/blog/saigon-in-the-footsteps-of-graham-greene), [Travel Thru History](https://travelthruhistory.com/graham-greene-saigon/) |
+| 4 | Rex Hotel rooftop | "This rooftop bar was a car showroom. Then it became the place where the war was spun every afternoon": built 1927 as a two-storey showroom for a French businessman; the daily US military briefings became "the Five O'Clock Follies"; the rooftop bar was full of journalists, spies and brass. | ✅ [Wikipedia](https://en.wikipedia.org/wiki/Rex_Hotel), [Rex history](https://www.rexhotelsaigon.com/rex-history/), [Rusty Compass](https://www.rustycompass.com/vietnam-travel-guide-233/ho-chi-minh-city-4/hotels-15/rex-hotel-saigon-244) |
+| 5 | Phú Riềng rubber (Michelin), 1930 | Dark colonial: "The tyres were French. The blood was Vietnamese." 1,300 plantation workers, poor peasants from the north and centre, struck against brutal conditions on 4 Feb 1930. | ✅ [Wikipedia: Phú Riềng Đỏ](https://en.wikipedia.org/wiki/Ph%C3%BA_Ri%E1%BB%81ng_%C4%90%E1%BB%8F) |
+| 6 | The colonial opium monopoly | "The French ran an opium factory in the middle of Saigon." | ⚠️ verify the building and dates |
+| 7 | Côn Đảo prison ("tiger cages") | The island prison the French opened in the 1860s, a short flight from Saigon. | ⚠️ verify |
+| 8 | Ben Thanh Market clock tower (1914) | "The clock everyone meets under is over 100 years old." | ⚠️ verify |
+| 9 | Cholon and Binh Tay Market | Saigon's Chinatown and the trader who built the market. | ⚠️ verify |
+| 10 | The Café Apartment, 42 Nguyen Hue | "An old apartment block where every floor is now a café." | ⚠️ verify the history |
+| 11 | Old cafés (Givral, Brodard…) and legendary bars | the people who drank there and what they talked about | ⚠️ verify each |
+| 12 | Saigon Opera House (1900) | "Built so French colonists didn't have to miss Paris." | ⚠️ verify |
+
+**Guardrails for history:** French colonial history (exploitation, prisons, plantations, opium) is fine to tell in depth and with feeling. Wartime and post-1945 stories stay factual and sourced, use the official terms (e.g. Reunification Day, 30/4), never glorify any side, never criticise the current state, and never make victims the joke (brand file §2 rule 5; ledger [sensitive], [commentary]). Every fact carries a source in the plan; the caption names it when a fact is surprising.
 
 ## 7. Guardrails (market law: Vietnam pack in compliance-packs.md + brand file §2)
 - **"Streets will go crazy" = celebrations.** Show flags, horns, crowds, fireworks. Don't show fights, police clashes or property damage, and no political or protest content: the page is not the press (brand file §2 rule 5).
