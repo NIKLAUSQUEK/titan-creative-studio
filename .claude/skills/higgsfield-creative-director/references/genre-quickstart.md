@@ -1100,6 +1100,34 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 
 ---
 
+## 37. Lead magnet / comment-to-DM
+- **What it is:** give away one useful thing (map, checklist, prompt pack) and ask people to comment one word to get it.
+- **Use it when:** you want comments, DMs and leads; any brand with something genuinely useful to hand over.
+- **The 5 beats (25-30 s):**
+  1. 0-3 s: name the thing + one reason to believe it. First word on frame 1.
+  2. 3-6 s: what it is in one line ("It's one map with…"); show it by 3-5 s.
+  3. 6-20 s: three quick proofs (a number, examples, it working), a new screen every 1.5-2.5 s.
+  4. 20-24 s: how you use it, one line.
+  5. Last 3-5 s: say the ask out loud: reason → keyword → "I'll send it". Keyword big on screen in quotes; caption line 1 = the same ask.
+- **Real example:** @nick_saraev "prompts.chat" https://www.instagram.com/reel/Dc6IUUVvmUE/ (6,993 likes, 12,717 comments): ask spoken at 86 % of the video. Reels that only asked in the caption got 2-37 comments per 100 likes; spoken asks got 106-182.
+- **Example script (Snap Saigon, keyword MAP):**
+
+| Time | On screen | Said / sound |
+|---|---|---|
+| 0-3 s | Tourists all shooting the same Notre-Dame angle · "SAIGON PHOTO SPOT MAP" | "Every tourist takes this exact photo. Here's my map of where we shoot instead." |
+| 3-6 s | Phone: a map with 6 pins | "One map, every spot we use, each with the best time of day." |
+| 6-16 s | Landmark 81 at sunset → Thao Dien café street → Nguyen Hue, City Hall end | "Riverside at sunset. Thao Dien for the café look. Nguyen Hue from the City Hall end, crowd behind you." · whoosh per spot |
+| 16-20 s | Screen recording: tap a pin, the note opens | "Tap a pin, walk there, the angle's in the note." |
+| 20-25 s | To camera, map thumbnail · **Comment "MAP"** 👇 | "Want the map? Comment MAP and I'll send it to you." · pop |
+| Caption | "Comment MAP and I'll send you our Saigon photo spot map 📍 6 spots, best time, exact angle." | |
+
+- **Why it works (logic chain):**
+  - The hook names a concrete thing, so the viewer knows what they could get in 3 seconds.
+  - Three proofs make it feel valuable, so wanting it is the viewer's own idea by the time we ask.
+  - The ask is spoken, shown and captioned with one word that is the thing's name, so commenting takes zero thought.
+- **Don't:** ask only in the caption; use two keywords or a phrase ("MOBILITY PROGRAM").
+- **Preset:** `lead-magnet` · deep card (with Physio Spot DESK and TITAN.AI PROMPT scripts): genre-playbooks.md §37
+
 ## Universal rules (every genre)
 1. **Hook ladders, not single hooks** (ledger [hooks]): each line opens a new loop that pays off the last and raises the stakes: tease → twist → reveal → why → stakes → proof → things to note → end. Write 3-5 hook variations per post. Wordless formats do the same with the picture and the header.
 2. **Start at 0.0 s.** First word, first action or first chant at frame 1; no slates, logos, intros or count-ins (every measured winner in news, edu-song, drama and ASMR does this; the losers open on 4-10 s of nothing).
