@@ -1,0 +1,43 @@
+{
+  "name": "style-leadmagnet-mixed",
+  "label": "Edit like leadmagnet-mixed",
+  "kind": "stylecard",
+  "base": "talking-head-punchy",
+  "description": "",
+  "source": {
+    "study": "research/style-studies/leadmagnet-mixed",
+    "refs": [
+      "https://www.instagram.com/reel/Dc_kH6Phgwz/",
+      "https://www.instagram.com/reel/DWJikSmyVQg/",
+      "https://www.instagram.com/reel/DQtSCx1lR0s/",
+      "https://www.instagram.com/reel/DVhQkseDnOd/",
+      "https://www.instagram.com/reel/DRs7PU5D3fl/",
+      "https://www.instagram.com/reel/Db3t0t5RJsk/"
+    ]
+  },
+  "pacing": {
+    "max_shot_s": 7.2,
+    "remove_silence_over_s": 0.7,
+    "pad_s": 0.18,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "animation": "pop"
+  },
+  "zoom": {
+    "every_s": 5.6,
+    "scale": 1.115,
+    "mode": "snap"
+  },
+  "sfx": {
+    "density_per_10s": 1.25
+  },
+  "music": {
+    "energy": "mid",
+    "db": -19
+  },
+  "grade": {},
+  "broll": {
+    "every_s": 12.0
+  }
+}

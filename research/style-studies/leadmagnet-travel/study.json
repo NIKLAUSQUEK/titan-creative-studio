@@ -1,0 +1,67 @@
+{
+  "measured": [
+    {
+      "file": "DGixNzBx9lm.mp4",
+      "duration_s": 16.9,
+      "width": 720,
+      "height": 1280,
+      "cuts": 19,
+      "cuts_per_min": 67.5,
+      "avg_shot_s": 0.84,
+      "median_shot_s": 0.7,
+      "first_cut_s": 0.3,
+      "words_per_min": 199,
+      "speech_share": 0.81,
+      "first_word_s": 0.0,
+      "pauses_over_0_5s": 0,
+      "lufs": -14.5,
+      "opening_words": "After traveling to every country in the world, this is my",
+      "source": {
+        "id": "DGixNzBx9lm",
+        "title": "Video by lexielimitless",
+        "channel": "lexielimitless",
+        "uploader": "Lexie Alford",
+        "like_count": 10900,
+        "comment_count": 12656,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DGixNzBx9lm/"
+      }
+    },
+    {
+      "file": "DSSdzvmiGj_.mp4",
+      "duration_s": 25.8,
+      "width": 720,
+      "height": 1280,
+      "cuts": 36,
+      "cuts_per_min": 83.7,
+      "avg_shot_s": 0.7,
+      "median_shot_s": 0.6,
+      "first_cut_s": 2.03,
+      "words_per_min": 0,
+      "speech_share": 0.0,
+      "first_word_s": null,
+      "pauses_over_0_5s": 0,
+      "lufs": -14.0,
+      "opening_words": "",
+      "source": {
+        "id": "DSSdzvmiGj_",
+        "title": "Video by vh_travelwithme",
+        "channel": "vh_travelwithme",
+        "uploader": "Henriett✨ | travel, nature & road trips",
+        "like_count": 53984,
+        "comment_count": 1381,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DSSdzvmiGj_/"
+      }
+    }
+  ],
+  "look": null,
+  "dna": {
+    "avg_shot_s": 0.7,
+    "energy": 5,
+    "pacing": "very fast, tight jump cuts"
+  },
+  "preset": "style-leadmagnet-travel"
+}

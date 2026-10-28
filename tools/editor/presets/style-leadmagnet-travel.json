@@ -1,0 +1,39 @@
+{
+  "name": "style-leadmagnet-travel",
+  "label": "Edit like leadmagnet-travel",
+  "kind": "stylecard",
+  "base": "talking-head-punchy",
+  "description": "",
+  "source": {
+    "study": "research/style-studies/leadmagnet-travel",
+    "refs": [
+      "https://www.instagram.com/reel/DGixNzBx9lm/",
+      "https://www.instagram.com/reel/DSSdzvmiGj_/"
+    ]
+  },
+  "pacing": {
+    "max_shot_s": 1.26,
+    "remove_silence_over_s": 0.2,
+    "pad_s": 0.04,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "animation": "pop"
+  },
+  "zoom": {
+    "every_s": 1.2,
+    "scale": 1.165,
+    "mode": "snap"
+  },
+  "sfx": {
+    "density_per_10s": 2.43
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  },
+  "grade": {},
+  "broll": {
+    "every_s": 2.5
+  }
+}

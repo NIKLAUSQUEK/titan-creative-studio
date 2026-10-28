@@ -1,0 +1,39 @@
+{
+  "name": "style-leadmagnet-health-biz",
+  "label": "Edit like leadmagnet-health-biz",
+  "kind": "stylecard",
+  "base": "talking-head-punchy",
+  "description": "",
+  "source": {
+    "study": "research/style-studies/leadmagnet-health-biz",
+    "refs": [
+      "https://www.instagram.com/reel/DHQrSmGtJxy/",
+      "https://www.instagram.com/reel/C8rvB2vsJvt/"
+    ]
+  },
+  "pacing": {
+    "max_shot_s": 106.92,
+    "remove_silence_over_s": 0.7,
+    "pad_s": 0.18,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "animation": "pop"
+  },
+  "zoom": {
+    "every_s": 83.16,
+    "scale": 1.09,
+    "mode": "snap"
+  },
+  "sfx": {
+    "density_per_10s": 0.74
+  },
+  "music": {
+    "energy": "low",
+    "db": -21
+  },
+  "grade": {},
+  "broll": {
+    "every_s": 178.2
+  }
+}

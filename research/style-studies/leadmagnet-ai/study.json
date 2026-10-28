@@ -1,0 +1,123 @@
+{
+  "measured": [
+    {
+      "file": "Dc6IUUVvmUE.mp4",
+      "duration_s": 28.6,
+      "width": 720,
+      "height": 1280,
+      "cuts": 14,
+      "cuts_per_min": 29.4,
+      "avg_shot_s": 1.91,
+      "median_shot_s": 2.1,
+      "first_cut_s": 2.2,
+      "words_per_min": 245,
+      "speech_share": 0.9,
+      "first_word_s": 0.0,
+      "pauses_over_0_5s": 0,
+      "lufs": -14.3,
+      "opening_words": "Someone just built the world's biggest prompt library and made it completely free",
+      "source": {
+        "id": "Dc6IUUVvmUE",
+        "title": "Video by nick_saraev",
+        "channel": "nick_saraev",
+        "uploader": "Nick Saraev",
+        "like_count": 6993,
+        "comment_count": 12717,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/Dc6IUUVvmUE/"
+      }
+    },
+    {
+      "file": "DbLpxfKPKoN.mp4",
+      "duration_s": 28.2,
+      "width": 720,
+      "height": 1280,
+      "cuts": 20,
+      "cuts_per_min": 42.6,
+      "avg_shot_s": 1.34,
+      "median_shot_s": 1.57,
+      "first_cut_s": 1.77,
+      "words_per_min": 230,
+      "speech_share": 0.83,
+      "first_word_s": 0.0,
+      "pauses_over_0_5s": 0,
+      "lufs": -14.3,
+      "opening_words": "This website is basically Pinterest, but for AI prompts.",
+      "source": {
+        "id": "DbLpxfKPKoN",
+        "title": "Video by nick_saraev",
+        "channel": "nick_saraev",
+        "uploader": "Nick Saraev",
+        "like_count": 4632,
+        "comment_count": 5955,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DbLpxfKPKoN/"
+      }
+    },
+    {
+      "file": "DTvM3ZvDegP.mp4",
+      "duration_s": 79.8,
+      "width": 720,
+      "height": 1280,
+      "cuts": 12,
+      "cuts_per_min": 9.0,
+      "avg_shot_s": 6.14,
+      "median_shot_s": 1.67,
+      "first_cut_s": 5.97,
+      "words_per_min": 217,
+      "speech_share": 0.89,
+      "first_word_s": 0.0,
+      "pauses_over_0_5s": 1,
+      "lufs": -14.5,
+      "opening_words": "You should never, ever, ever post on Instagram",
+      "source": {
+        "id": "DTvM3ZvDegP",
+        "title": "Video by devinjatho",
+        "channel": "devinjatho",
+        "uploader": "Devin Jatho",
+        "like_count": 5628,
+        "comment_count": 2350,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DTvM3ZvDegP/"
+      }
+    },
+    {
+      "file": "DV8k1RDD06K.mp4",
+      "duration_s": 33.3,
+      "width": 720,
+      "height": 1280,
+      "cuts": 11,
+      "cuts_per_min": 19.8,
+      "avg_shot_s": 2.77,
+      "median_shot_s": 2.54,
+      "first_cut_s": 2.54,
+      "words_per_min": 231,
+      "speech_share": 0.83,
+      "first_word_s": 0.0,
+      "pauses_over_0_5s": 1,
+      "lufs": -14.1,
+      "opening_words": "I gained over 400 ,000 followers in the last 12 months, and this one",
+      "source": {
+        "id": "DV8k1RDD06K",
+        "title": "Video by nick_saraev",
+        "channel": "nick_saraev",
+        "uploader": "Nick Saraev",
+        "like_count": 1927,
+        "comment_count": 2033,
+        "view_count": null,
+        "duration": null,
+        "webpage_url": "https://www.instagram.com/reel/DV8k1RDD06K/"
+      }
+    }
+  ],
+  "look": null,
+  "dna": {
+    "avg_shot_s": 2.1,
+    "energy": 5,
+    "pacing": "fast, tight jump cuts"
+  },
+  "preset": "style-leadmagnet-ai"
+}

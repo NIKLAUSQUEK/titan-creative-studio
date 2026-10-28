@@ -48,6 +48,7 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 34 | Stick / minimal compare loop | "same X, only one added Y", compounding habits | recognition → "do it" | one shot, ticker every ~1.5 s | identical start → divergence → typed verdict → loop | black, white figures, one accent | trending/licensed track only | stick-compare-loop (tools/motion compare-loop) |
 | 35 | Petty victory sermon (hype-preacher comedy) | a small win delivered like scripture at the doubters | laugh at the mismatch | one long take | slow-mo stance → rising sermon → "touch it" button | dreamy haze, warm, washed | epic/choir bed, a riser into the last line | petty-sermon |
 | 36 | Clone / character swap ("this is also me") | one person becomes many characters, A/B model tests, one actor plays every role | "how??" | match cut every 1.5-2.5 s | me → also me ×4-6 → how-to → CTA | match the driver clip | walk/beat-synced cuts, whoosh on each swap | side/split B-roll + genz-header-skit (clone-character-swap.md) |
+| 37 | Lead magnet / comment-to-DM | you give away a guide, map, checklist, template or prompt and want comments / DMs | "I want that" | **1.5-2.5 s** (travel montage 0.7-1.3 s) | hook names the thing at 0 s → what it is by 3-6 s → 3 quick proofs → the ask in the last 3-5 s | brand / natural | voice-led ~230 wpm, soft licensed bed, pop on the ask card | lead-magnet (new) |
 
 **Pairing rules:**
 - Comedy can borrow any genre's grammar for a parody (horror parody, heist parody); hold the genre seriously until the reveal.
@@ -1642,3 +1643,76 @@ Full workflow, formats and hard rules are in clone-character-swap.md:
 - driver clip + original character sheet → Genjutsu / Seedance 2.5 / Wan 3.0 motion transfer;
 - formats: "this is me… and this is also me" match cuts, the A/B model test (editor B-roll `mode: side`), and one actor playing every role in a skit;
 - never a real-person lookalike. No AI label on screen or in the caption (ledger [ai-labels]); switch on the platform's own AI-disclosure toggle at upload.
+
+### 37. Lead magnet / comment-to-DM (`lead-magnet`) [measured: L1 https://www.instagram.com/reel/Dc6IUUVvmUE/ , L2 https://www.instagram.com/reel/DbLpxfKPKoN/ , L3 https://www.instagram.com/reel/DGixNzBx9lm/ , L4 https://www.instagram.com/reel/DV8k1RDD06K/ , L6 https://www.instagram.com/reel/C8rvB2vsJvt/ , L7 https://www.instagram.com/reel/DTvM3ZvDegP/ ; controls L8-L14 in research/genre-research-2026-10/lead-magnets.md]
+
+**In plain words**
+- You give away one useful thing (a map, checklist, template, prompt pack) and ask people to comment one word to get it.
+- The video is a 20-30 s trailer for that thing: name it, show it working 3 times, then ask.
+- Say the ask out loud AND put it on screen. Reels that asked only in the caption got 2-37 comments per 100 likes; reels that asked out loud got 106-182.
+
+**The structure (measured on the best reels, 25-30 s; scale for shorter)**
+1. **0-3 s · Hook = the thing + one reason to believe it.** First word on frame 1 (all 11 voiced reels start at 0.0 s). "After traveling to every country in the world, this is my treasure map."
+2. **3-6 s · What it is, in one line.** "It's called …" / "I put every … into one …". The thing is on screen by 3-5 s.
+3. **6-20 s · Three quick proofs.** A number (10,000+ prompts, 150+ spots), three examples, one screen of it working. New screen or B-roll every 1.5-2.5 s.
+4. **20-24 s · How you use it, one line.** "So instead of guessing, just copy it, change one word, done."
+5. **Last 3-5 s (86-88 % of the runtime) · The ask, one sentence:** reason → keyword → promise. "So if you want it, comment MAP and I'll send it to you." The keyword sits on screen in quotes, big, in the highlight colour, from the moment it's said to the end.
+6. **Caption line 1 = the ask, word for word.** Then 2-3 short lines on what's inside.
+- **Longer (60 s+) variant:** ask once at ~35 % ("First, let me give you the template: comment BUILD"), then keep teaching (L7), or put the ask card up from ~2/3 to the end (L6).
+- **Pace:** ~230 words a minute; talking head + screens 1.5-2.5 s per shot; travel montage 0.7-1.3 s; a single selfie take is fine if the words carry it.
+- **Keyword rule:** one short word that IS the thing's name (MAP, PROMPT, DESK). Never two keywords, never a phrase ("MOBILITY PROGRAM").
+
+**Example A · Snap Saigon (photo service, Ho Chi Minh City) · keyword MAP · 25 s · organic, English with Vietnamese subtitles (paid version: Vietnamese line first + "Quảng cáo")**
+| Time | Picture | Spoken (snapper to camera, walking) | On screen |
+|---|---|---|---|
+| 0.0-2.8 | Snapper at Notre-Dame, crowd of tourists all shooting the same angle | "Every tourist takes this exact photo. Here's my map of where we shoot instead." | SAIGON PHOTO SPOT MAP |
+| 2.8-5.5 | Phone screen: a Google My Maps with 6 pins | "It's one map with every spot we use, each pinned with the time of day." | 6 SPOTS · BEST TIME · EXACT ANGLE |
+| 5.5-9.0 | Golden-hour shot by the river, Landmark 81 behind | "Landmark 81 riverside park, right at sunset." | 📍 Landmark 81 park · sunset |
+| 9.0-12.5 | Café-street portrait, Thao Dien | "Xuan Thuy street in Thao Dien for the café look." | 📍 Thao Dien · morning |
+| 12.5-16.0 | Nguyen Hue, City Hall end, crowd behind the subject | "Nguyen Hue from the City Hall end, so the crowd is behind you, not in front." | 📍 Nguyen Hue · City Hall end |
+| 16.0-20.0 | Screen recording: tap a pin, the note opens | "Tap a pin, walk there. The angle is written in the note." | TAP · WALK · SHOOT |
+| 20.0-25.0 | Snapper to camera, map thumbnail pops in | "Want the map? Comment MAP and I'll send it to you." | Comment **"MAP"** 👇 |
+- **Caption:** "Comment MAP and I'll send you our Saigon photo spot map 📍 6 spots, the time of day for each, and the exact angle we use. (Tết version coming: comment TET for the Tết survival guide.)" + Vietnamese line. Only spots and times we have checked; no "secret" claim unless it's true.
+- **Sound:** original or licensed bed at -22 dB under the voice; a whoosh on each new spot; a pop on the ask card.
+
+**Example B · Physio Spot (Singapore men's health physio) · keyword DESK · 27 s · SG health rules: no testimonials, no outcome promises, no superlatives, no discount or free-consult offer; the resource is education only**
+| Time | Picture | Spoken (Nik, navy scrubs, beige room, at a desk) | On screen |
+|---|---|---|---|
+| 0.0-3.0 | Nik sitting at a desk, laptop open | "You sit 8 hours a day. Your hips and pelvic floor sit with you." | 8 HOURS SITTING? |
+| 3.0-6.0 | The checklist on screen next to Nik | "So I made a 5-move desk checklist you can do in your chair." | 5-MOVE DESK CHECKLIST |
+| 6.0-10.0 | Nik demonstrates: seated hip-flexor stretch | "Move one: scoot to the edge, one leg back, hold 30 seconds." | 1 · SEATED HIP STRETCH · 30 s |
+| 10.0-14.0 | Belly-breath, hand on stomach | "Move two: slow belly breaths. Let the stomach and pelvic floor relax." | 2 · BELLY BREATH · 5 breaths |
+| 14.0-18.0 | Stands up, glute squeeze, sits | "Move three: stand up, squeeze, sit down. Once an hour." | 3 · STAND + SQUEEZE · hourly |
+| 18.0-22.0 | Phone reminder pops up "Move" | "Set one reminder an hour. Pick one move. That's it." | 1 REMINDER · 1 MOVE |
+| 22.0-27.0 | Nik to camera; checklist thumbnail; beige end card | "Comment DESK and I'll send you the checklist." | Comment **"DESK"** 👇 · Physio Spot |
+- **Caption:** "Comment DESK and I'll send you the 5-move desk checklist. General education, not a diagnosis. If you have pain or symptoms, see a registered physiotherapist." No "best", no "fix", no "pain-free", no patient stories, no "free assessment" or price offer.
+- **Sound:** original or licensed calm bed, room tone, a soft pop on each move number.
+
+**Example C · TITAN.AI (AI / creator tools) · keyword PROMPT · 26 s**
+| Time | Picture | Spoken (founder to camera, then screens) | On screen |
+|---|---|---|---|
+| 0.0-3.0 | Founder holds up phone playing a voice note | "This prompt pack turns one voice note into a week of posts." | 1 VOICE NOTE → 7 POSTS |
+| 3.0-6.0 | Screen: the prompt pack doc, scrolled | "It's [N] prompts we use for every client. Copy, paste, done." | THE TITAN PROMPT PACK |
+| 6.0-10.0 | Screen: voice-note transcript → 5 hooks appear | "Prompt one pulls five hooks out of anything you say." | 1 · 5 HOOKS |
+| 10.0-14.0 | Screen: hooks → carousel slide text | "Prompt two turns the best hook into a carousel." | 2 · CAROUSEL |
+| 14.0-18.0 | Screen: caption written in the brand's voice | "Prompt three writes the caption in your voice, not robot voice." | 3 · YOUR VOICE |
+| 18.0-21.0 | Founder to camera | "So instead of a blank page, you paste one prompt and edit." | NO BLANK PAGE |
+| 21.0-26.0 | Founder to camera; pack thumbnail pops in | "Want the pack? Comment PROMPT and I'll send it to you." | Comment **"PROMPT"** 👇 |
+- **Caption:** "Comment PROMPT and I'll send you the prompt pack: hooks, carousel and caption prompts we use every week." [N] = the real count; never inflate it. Every result shown on screen must be a real output.
+- **Sound:** original or licensed bed, soft UI clicks on each screen, a pop on the ask.
+
+**Logic check: why each beat earns the next**
+- Hook → what it is: the hook makes a promise ("my treasure map"), so the viewer's next question is "what is it?", and we answer it right away.
+- What it is → proofs: a name alone is a claim; three quick proofs make it believable.
+- Proofs → how to use it: once they believe it, they picture using it; one line makes that easy.
+- How to use → the ask: now they want it, so asking feels like help, not a sales pitch.
+- The ask → caption: people who scroll past the end read the caption, so it repeats the ask word for word.
+
+**The 3 most common mistakes**
+1. **Asking only in the caption** (or ending on "save this"). Measured: 2-5 comments per 100 likes instead of 100+.
+2. **Starting slow.** A logo, "Hi, I'm…" or 15 s of scenery before the thing appears. Name the thing in the first sentence.
+3. **A keyword that doesn't match the thing** (or two keywords, or a long phrase). Use the thing's own one-word name, and say it in the hook too if you can.
+- (SG health only) promising a result ("your pain is gone", "10 best exercises"): cut it; describe the moves, not the outcome.
+
+**Editor preset:** `lead-magnet` (tools/editor/presets/lead-magnet.json): silence cut at 0.25 s, max shot 3 s, 2-word pop captions with the keyword highlighted, a hook title for 2.5 s, B-roll/screens every 2 s, a whoosh per screen, soft ducked bed at -22 dB, no end card by default (Physio Spot's edit-brand end card still applies). Travel montages: `style-leadmagnet-travel`.
+- **Research file:** research/genre-research-2026-10/lead-magnets.md

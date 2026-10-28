@@ -1,0 +1,68 @@
+{
+  "name": "lead-magnet",
+  "label": "Lead magnet / comment-to-DM (talking head + proof screens, keyword CTA)",
+  "kind": "genre",
+  "description": "Measured 2026-10-28 on comment-keyword reels (nick_saraev PROMPT x2 + BUILD, devinjatho LAMP, lexielimitless MAP, jennlashley_ FIX IT): first word at 0.0 s, ~230 wpm, the thing is named by ~3 s, a proof screen or B-roll every ~1.5-2.5 s, word-by-word captions with the keyword in quotes and a highlight colour, spoken + on-screen CTA in the last 10-15 % (or once at ~35 % on 60 s+ videos), caption line 1 = the CTA.",
+  "reference": "research/genre-research-2026-10/lead-magnets.md",
+  "structure": {
+    "name": "lead-magnet",
+    "target_s": [
+      17,
+      35
+    ],
+    "beats": [
+      "hook names the thing + proof number 0-3s",
+      "what it is 3-6s",
+      "3 quick value points / proof screens 6-22s",
+      "how you use it 1 line",
+      "CTA: comment KEYWORD and I'll send it (last 3-5 s)"
+    ]
+  },
+  "pacing": {
+    "remove_silence_over_s": 0.25,
+    "pad_s": 0.05,
+    "remove_fillers": "hard",
+    "max_shot_s": 3.0
+  },
+  "captions": {
+    "enabled": true,
+    "max_words": 2,
+    "animation": "pop",
+    "uppercase": false,
+    "keyword_caps": true,
+    "highlight": "#5CF2E0"
+  },
+  "hook_text": {
+    "enabled": true,
+    "max_words": 7,
+    "dur_s": 2.5,
+    "uppercase": true
+  },
+  "zoom": {
+    "mode": "snap",
+    "every_s": 2.5,
+    "scale": 1.06
+  },
+  "broll": {
+    "every_s": 2.0,
+    "max_dur_s": 2.5,
+    "min_dur_s": 0.8,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.0,
+    "db": -14,
+    "map": {
+      "broll": "whoosh",
+      "title": "pop"
+    }
+  },
+  "music": {
+    "energy": "mid",
+    "db": -22,
+    "duck": true
+  },
+  "end_card": {
+    "enabled": false
+  }
+}

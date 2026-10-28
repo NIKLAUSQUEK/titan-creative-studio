@@ -1,0 +1,41 @@
+{
+  "name": "style-leadmagnet-ai",
+  "label": "Edit like leadmagnet-ai",
+  "kind": "stylecard",
+  "base": "talking-head-punchy",
+  "description": "",
+  "source": {
+    "study": "research/style-studies/leadmagnet-ai",
+    "refs": [
+      "https://www.instagram.com/reel/Dc6IUUVvmUE/",
+      "https://www.instagram.com/reel/DbLpxfKPKoN/",
+      "https://www.instagram.com/reel/DTvM3ZvDegP/",
+      "https://www.instagram.com/reel/DV8k1RDD06K/"
+    ]
+  },
+  "pacing": {
+    "max_shot_s": 3.78,
+    "remove_silence_over_s": 0.35,
+    "pad_s": 0.08,
+    "remove_fillers": "hard"
+  },
+  "captions": {
+    "animation": "pop"
+  },
+  "zoom": {
+    "every_s": 2.94,
+    "scale": 1.165,
+    "mode": "snap"
+  },
+  "sfx": {
+    "density_per_10s": 2.43
+  },
+  "music": {
+    "energy": "high",
+    "db": -16
+  },
+  "grade": {},
+  "broll": {
+    "every_s": 6.3
+  }
+}
