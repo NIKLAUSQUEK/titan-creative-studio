@@ -86,6 +86,7 @@ def main(argv=None):
     p = sp.add_parser("motion"); p.add_argument("template", nargs="?"); p.add_argument("--data"); p.add_argument("--out"); p.add_argument("--list", action="store_true")
     p.add_argument("--w", type=int, default=1080); p.add_argument("--h", type=int, default=1920); p.add_argument("--fps", type=int, default=30)
     p = sp.add_parser("study"); p.add_argument("refs", nargs="+"); p.add_argument("--name", required=True); add_llm(p, "none")
+    p.add_argument("--browser", choices=["chrome", "edge", "firefox", "brave"], help="use your logged-in browser for Facebook/Instagram links (cookies stay on this PC)")
     p.add_argument("--whisper-model", default="auto")
     p = sp.add_parser("song"); p.add_argument("--tune"); p.add_argument("--lyrics"); p.add_argument("--rap", action="store_true"); p.add_argument("--beat", action="store_true")
     p.add_argument("--bpm", type=float); p.add_argument("--shift", type=int, default=0); p.add_argument("--out"); p.add_argument("--list", action="store_true")

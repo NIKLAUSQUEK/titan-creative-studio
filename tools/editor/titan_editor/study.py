@@ -31,13 +31,17 @@ hook_*.jpg = 4 frames/s over the first 3 s) and the measured numbers below. Retu
 Measured: {m}"""
 
 
-def fetch(src, d):
+def fetch(src, d, browser=None):
+    """browser: read the cookies of YOUR logged-in browser on this PC (chrome/edge/firefox/brave) so login-only
+    Facebook posts and rate-limited Instagram reels download as you. Cookies stay on this PC and are never saved."""
     p = Path(src)
     if p.exists():
         return p
     import yt_dlp
     d.mkdir(parents=True, exist_ok=True)
     opts = {"outtmpl": str(d / "%(id)s.%(ext)s"), "format": "mp4/bestvideo*+bestaudio/best", "quiet": True, "noprogress": True, "merge_output_format": "mp4"}
+    if browser:
+        opts["cookiesfrombrowser"] = (browser,)
     with yt_dlp.YoutubeDL(opts) as y:
         info = y.extract_info(src, download=True)
     f = Path(y.prepare_filename(info)).with_suffix(".mp4")
@@ -95,13 +99,13 @@ def to_dna(ms, look=None):
     return dna
 
 
-def study(srcs, name, llm="none", whisper_model="small", model=None):
+def study(srcs, name, llm="none", whisper_model="small", model=None, browser=None):
     d = STUDY_ROOT / slug(name)
     vids = d / "videos"
     ms = []
     for s in srcs:
         log(f"study: {s}")
-        f = fetch(s, vids)
+        f = fetch(s, vids, browser)
         x = measure(f, d, whisper_model)
         meta = vids / f"{f.stem}.meta.json"
         if meta.exists():
@@ -147,6 +151,6 @@ Sheets: sheet_*.jpg (1 frame/s), hook_*.jpg (first 3 s). The downloaded videos a
 
 
 def cmd_study(a):
-    d, p = study(a.refs, a.name, a.llm, a.whisper_model, a.claude_model)
+    d, p = study(a.refs, a.name, a.llm, a.whisper_model, a.claude_model, getattr(a, "browser", None))
     print((d / "STYLE_STUDY.md").read_text(encoding="utf-8"))
     return 0

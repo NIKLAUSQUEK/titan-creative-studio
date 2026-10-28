@@ -24,6 +24,8 @@
   .\Run-Editor.ps1 -Project back-pain-myth -Footage "D:\Shoots\2026-10-24" -Brand physio-spot -Goal expert -Platform tiktok -Ask "myth-bust for men 30-45"
 
 .EXAMPLE
+  .\Run-Editor.ps1 -Study "https://www.facebook.com/share/p/14yiiHPkd3U/","https://www.facebook.com/share/p/18XN3qxiz1/" -StudyName fb-refs -Browser chrome
+  (measure login-only Facebook/Instagram references with YOUR logged-in Chrome; close Chrome first; cookies never leave the PC)
   .\Run-Editor.ps1 -SfxFetch all                                     (real sound effects for every cue kind, licences + credits kept)
   .\Run-Editor.ps1 -Project back-pain-myth -Enhance                  (studio-style voice clean-up, free and local)
   $env:AUPHONIC_API_KEY = "<from auphonic.com/accounts/settings>"; .\Run-Editor.ps1 -Project back-pain-myth -Enhance -VoiceEngine auphonic
@@ -68,6 +70,9 @@ param(
   [string] $Say = "",                        # text or a .txt script to speak with -VoiceName
   [string] $VoiceName = "piper",             # an enrolled clone name, or "piper" (stock neural voice)
   [string] $VsVoice = "",                    # VoiceStudio voice profile id (when the VoiceStudio app is open)
+  [string[]] $Study = @(),                   # 1-5 reference links (FB/IG/TikTok/YouTube) to measure as a style
+  [string] $StudyName = "",                  # name for the style, e.g. "snap-scam-carousel"
+  [ValidateSet("", "chrome", "edge", "firefox", "brave")] [string] $Browser = "",   # use your logged-in browser for login-only links
   [switch] $Motion,                          # one-time setup for code-motion cards (Node.js + Playwright Chromium in tools\motion)
   [switch] $Enhance,                         # clean up the recorded voice, then re-render the draft
   [ValidateSet("local", "auphonic")] [string] $VoiceEngine = "local",   # auphonic needs $env:AUPHONIC_API_KEY (free: 2 h/month)
@@ -156,6 +161,11 @@ try {
     $m = Join-Path (Split-Path $here) "motion"
     Push-Location $m; npm i playwright --no-audit --no-fund; npx playwright install chromium; Pop-Location
     Ed @("motion", "--list"); Write-Host "`nCode-motion ready. Templates: tools\motion\templates" -ForegroundColor Green; return
+  }
+  if ($Study.Count) {
+    if (-not $StudyName) { throw "Pass -StudyName <style-name>." }
+    $sa = @("study") + $Study + @("--name", $StudyName) + $llmArgs; if ($Browser) { $sa += @("--browser", $Browser) }
+    Ed $sa; Write-Host "`nStudy: research\style-studies\$StudyName\STYLE_STUDY.md + preset style-$StudyName. Commit and push so Claude can read it." -ForegroundColor Green; return
   }
   if ($SfxFetch) {
     foreach ($k in ($SfxFetch -split ",")) { Ed @("sfx", "fetch", $k.Trim()) }
