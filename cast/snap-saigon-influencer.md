@@ -123,3 +123,11 @@ The cast is now a **duo**: a Gen Z local snapper (the hero who knows everything)
 4. Lookalike QC: if she reads as any real person, regenerate with 2 features changed.
 5. Voice: design the character's original voice (ElevenLabs/Higgsfield voice design), save its ID in `cast/registry.md`.
 6. First test: 3 real Saigon clips from `marketing/collabs/clips-*.csv` → Genjutsu draft at the lowest resolution → QC the face at start/middle/end → Klaus approves → 1080p.
+
+## Voices (Klaus, 29 Oct 2026)
+Higgsfield `text2speech_v2` with variant `elevenlabs`, preset voices:
+- **Jake:** Harrison `573e5163-59b3-4926-aab1-951ef2985f81`
+- **Hân:** Gia `530df032-c311-483b-a750-cb3c9e1bcdfd`
+- **Trâm:** Nora `d081b915-6623-4a44-bacf-80d0f1c90a03`. For angry lines use `elevenlabs_v4` with a "[furious, shouting]" tag and stability 0.15.
+
+Never use the seed_audio presets: Klaus heard them as juvenile.
