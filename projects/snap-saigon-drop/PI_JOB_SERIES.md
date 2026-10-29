@@ -10,7 +10,7 @@ Honesty line on every part (end card, small): *"snap saigon shoots photos, not P
 **Cast:**
 - **Hân** (our snapper, the narrator)
 - **Trâm** (the customer, 26, Saigon office girl)
-- **Jake** (Trâm's boyfriend of 3 months, 32, Australian, charming, always on his phone)
+- **Jake** (Trâm's boyfriend of 3 months, 32, American, a loud eagle-and-flag tee, forward and handsy, always on his phone)
 
 **Hook variations:**
 - "my customer's boyfriend cheated on her… with me"
