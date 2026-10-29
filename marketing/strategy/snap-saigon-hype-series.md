@@ -232,6 +232,15 @@ A long, cinematic, animated cold open builds tension. At its peak, hard cut to o
 3. **The drop (6-8 s):** a bass hit on the cut. 8-12 shots of 0.4-0.6 s each, crash zoom in, then the real BTS of the snapper at work, then 2-3 finished photos as polaroid freeze frames. One word per cut: "don't / stress / we / shoot / you / just / enjoy".
 4. **Payoff (3 s):** "40 photos + 3 clips, same day · snapsaigon.com", and comment or DM bait.
 
+**What @vi_skh actually does** (vidIQ breakdown, 29 Oct 2026; e.g. "Taken for Granted", 10.4M plays):
+- **Format:** a numbered AI-animated episode series (EP 1-6), 80-110 s each.
+- **Opener:** a script-font title plus one relatable line ("the one who's always there is the first one you stop noticing").
+- **Shots:** almost all static close-ups of 1-2 s (hands, faces, phone inserts). Slow push-ins only on the wide shots.
+- **Dialogue and music:** 3-6 words per subtitle. An acoustic cover song under it all.
+- **Turning points:** a hard sound marks each one (phone chime, suitcase snap, door click).
+- **Peaks:** micro-reactions build to the peak; the payoff mirrors the first shot.
+- **Ours, draft v2** (`projects/snap-saigon-drop/drop_draft_v2.mp4`): EP 1 "Photos of Us", the same shot grammar, then the Ben cut and the drop. Ends "follow for EP 2", so it's a series.
+
 **Three scripts:**
 - **A, "Who are you texting?"** (the phone fight): an animated couple at the departure gate. "You've been on your phone the WHOLE trip planning." She goes quiet; he asks "Who are you even texting?!" → CUT: Ben bolts up in his hostel bunk: "I'M GOING TO HO CHI MINH, B*TCH!" → drop → the reveal: she was booking a snapper so they'd finally have photos together.
 - **B, "Mum says no":** a video call. Ben's mum: "Vietnam? The traffic. The scams. You'll get lost." A long pause, close-up on Ben's face → CUT: Ben, backpack on, at the arrivals hall: "Mum. I'm going to Ho Chi Minh, b*tch." → drop → Hân meets him, the street-crossing BTS, his photos. "Send this to the friend whose mum still says no."
