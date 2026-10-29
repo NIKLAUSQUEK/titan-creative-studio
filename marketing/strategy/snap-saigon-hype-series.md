@@ -223,6 +223,28 @@ Basic needed posts (best gyms, best hotels) are fine, but wrap them in a story h
 - The "places you never want to visit" post is serious and helpful: the real cons and how to get through, no jokes about officers, police or prison. Drugs get a straight fact: Vietnam's penalties go up to the death penalty for trafficking.
 - "Best" is fine in organic listicle titles (it's our opinion); it never describes Snap Saigon itself in ads.
 
+## 6g. Cliffhanger to "snap drop" (Klaus, 2026-10-29; reference @vi_skh)
+A long, cinematic, animated cold open builds tension. At its peak, hard cut to one of our AI characters with an outburst line. Then the beat drops: crash-zoom cuts of the shoot behind the scenes and the finished photos, with "don't stress, we shoot, you enjoy". The twist cut is the one place a hard contrast cut belongs (ledger [edit]).
+
+**Beat map (15-25 s):**
+1. **0-6 s, cold open:** an animated scene (Pixar-style or cinematic 2.39 look, the same style key every time), slow push-in, music thins out, subtitled dialogue. End on an open question: the cliffhanger.
+2. **The hard cut (1-2 s):** Ben, Hân or Khang, in a bright yellow frame, delivers the outburst line punch-in. 0.2 s of silence before it. The swear is bleeped on brand posts; there's an uncensored cut for organic.
+3. **The drop (6-8 s):** a bass hit on the cut. 8-12 shots of 0.4-0.6 s each, crash zoom in, then the real BTS of the snapper at work, then 2-3 finished photos as polaroid freeze frames. One word per cut: "don't / stress / we / shoot / you / just / enjoy".
+4. **Payoff (3 s):** "40 photos + 3 clips, same day · snapsaigon.com", and comment or DM bait.
+
+**Three scripts:**
+- **A, "Who are you texting?"** (the phone fight): an animated couple at the departure gate. "You've been on your phone the WHOLE trip planning." She goes quiet; he asks "Who are you even texting?!" → CUT: Ben bolts up in his hostel bunk: "I'M GOING TO HO CHI MINH, B*TCH!" → drop → the reveal: she was booking a snapper so they'd finally have photos together.
+- **B, "Mum says no":** a video call. Ben's mum: "Vietnam? The traffic. The scams. You'll get lost." A long pause, close-up on Ben's face → CUT: Ben, backpack on, at the arrivals hall: "Mum. I'm going to Ho Chi Minh, b*tch." → drop → Hân meets him, the street-crossing BTS, his photos. "Send this to the friend whose mum still says no."
+- **C, "The missed flight"** (thriller): Hân is running through the airport, gate closing, a ticking clock → she slides to the gate, it shuts → CUT: Khang at the counter, waving two tickets: "Relax. We're going to Ho Chi Minh, b*tch!" → drop → the trip montage, the photos.
+
+**Production:**
+- **Cold open:** Higgsfield animation (character sheet → style key → Seedance 2.5, lowest-quality draft first).
+- **AI characters:** come from the locked cast sheets (Gate 4).
+- **BTS and photos:** real snap saigon shoots, with consent.
+- **Swear word:** never goes in a generation prompt; it's added in the edit (on-screen text and bleep) and in post.
+- **Audio:** licensed or original music only, with a drop on the cut.
+- **Placeholder draft:** `projects/snap-saigon-drop/drop_draft_v1.mp4` uses stock Saigon B-roll and placeholder cards for the animation and Ben.
+
 ## 7. Guardrails (market law: Vietnam pack in compliance-packs.md + brand file §2)
 - **"Streets will go crazy" = celebrations.** Show flags, horns, crowds, fireworks. Don't show fights, police clashes or property damage, and no political or protest content: the page is not the press (brand file §2 rule 5).
 - **Parties:** no drug references; alcohol shows as atmosphere, never as an offer. Never promote spirits of 15% ABV or more (VN alcohol-advertising law); a paid venue partner gets labelled as sponsored (Law 75/2025).

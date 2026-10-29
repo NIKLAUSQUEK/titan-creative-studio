@@ -1,5 +1,6 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
 ## 2026-10-29 - styles and AI influencer (Klaus)
+- [hooks] Cliffhanger to snap drop (ref @vi_skh): a long cinematic or animated tension cold open with an open question → hard cut, at peak tension, to an AI character outburst ("I'm going to Ho Chi Minh, b*tch!"; bleeped on brand posts, swear added in post, never in prompts) → beat drop of crash-zoom cuts into real BTS and finished photos with a "don't stress" line → offer card.
 - [review] Make the content FIRST (rendered drafts: carousel slides, reels, images), then ask Klaus to review the actual outputs. Don't send plans or scripts alone for approval.
 - [workaround] When an idea hits a legal or platform line, don't just say no: find the legal, honest route that keeps the hook and the truth (e.g. streets not shops, real ratings quoted exactly, police/press-sourced names, suggestive hook over a clean list). Say in one line what changed and why, then deliver it.
 - [edit] Never cut abruptly from real footage to a blank text page for "our take": it feels weird and off-putting. Put commentary as text over the footage. Hard contrast cuts are a deliberate tool ONLY for twists and shocking turns (e.g. the twist in a scam story): cut to an AI character image (Hân/Khang/Ben) with on-screen text showing their reaction and personality.
