@@ -34,7 +34,7 @@ Genre grammar: §15 action/sport **anthem** (accelerating cuts) + §28 event pro
 | Time | What's on screen | Sound |
 |---|---|---|
 | 0-2 s | **The wildest real clip from last time**: the streets after a Vietnam win, a Bui Vien Halloween crowd, Nguyen Hue fireworks. Header: "Saigon in 12 days:" | crowd roar up front, no music yet |
-| 2-4 s | Black card, trailer type: "THIS NOVEMBER" / "THIS DECEMBER" | sub-boom on the card |
+| 2-4 s | Trailer type "THIS NOVEMBER" / "THIS DECEMBER" over the next real clip (never a blank page, ledger [edit]) | sub-boom on the title |
 | 4-22 s | 3-5 events, each = 1 hype clip + a **date card** (event · date · place) held ≥2 s. Cuts speed up from ~3.5 s to ~1 s per shot as it builds | trailer drum build, a hit on every date card, riser into the last event |
 | 22-28 s | The biggest moment last: "AND IF VIETNAM WINS…" + the craziest street clip, then cut to black | drop to silence 0.5 s → full crowd |
 | 28-32 s | CTA card: **"Tag who's coming 👇"** / **"Send this to the friend who doesn't know why the streets will be crazy"** + small "get snapped there → snapsaigon.com" | music out on a hit |
