@@ -27,7 +27,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - `broll[]`: `{path, src_in, dur, anchor:{item, offset}, mode: full|pip|split|greenscreen, flag}`. Anchors follow trims. `split` = B-roll on the top half, the speaker's centre band on the bottom half (ref #8/#9 layout).
 - `texts[]`: `{type: hook|title|lower_third, text, anchor, dur}`.
   - Hook text = what the viewer reads in the first second. Don't duplicate a spoken hook that is already captioned.
-- `chats[]`: `{anchor, dur, style: dark|light, size, sfx: pop, captions: hide, messages:[{side: me|them, name, text, at, typing, punch}]}`.
+- `chats[]`: `{anchor, dur, layout: overlay|card, style: dark|light, size, sfx: pop, captions: hide, messages:[{side: me|them, name, text, at, typing, punch}]}`. `layout: overlay` (default) puts the bubbles over the same shot, dimmed and blurred; `card` is the old full-frame solid card, kept as a variation.
   - A texting cutaway: bubbles pop in one by one, a "•••" typing bubble shows for `typing` s before a reply, the stack scrolls, and `punch` shows one line alone and large. Captions are hidden while it's up. A brief beat's `chat` field creates one (ref research/edit-references-2026-10.md #7).
 - `captions`: words come from ingest automatically.
   - Fix them with `replace` ({"heal": "heal360"}), force keywords with `emphasis`, and blank ranges with `hide` ([[t0, t1]] output time).
@@ -52,7 +52,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 | trend-beat-switch | 'My name is… but they call me…' intro in white rounded boxes, then clips switch ON the beat with one label word each; needs a music file (beat-synced) |
 | horror-tension | cold teal grade, crushed blacks, long holds, slow push, flicker on beat changes, drone bed + stings |
 | genre presets (drama-conflict, feelgood-emotional, founder-inspire, cautionary-ladder, thriller-suspense, mystery-reveal, action-hype, scifi-tech, kdrama-soft, anime-energy, news-expose, luxury-reveal, asmr-satisfying) | one per genre module in genre-playbooks.md §0; the brief picks the genre and its preset |
-| texting-suspense | interview/talking-head spine + full-black iMessage cutaways (`chats[]`) when someone quotes a text; persistent small title, drone bed + hits (ref #7) |
+| texting-suspense | interview/talking-head spine + iMessage bubbles over the dimmed shot (`chats[]`, full-black card as a variation) when someone quotes a text; persistent small title, drone bed + hits (ref #7) |
 | edu-song | song-led teaching: spoken hook, then the song; bouncy karaoke captions, on-beat cuts, recap chorus; pair with `editor.py song` (edu-songs-mnemonics.md) |
 | style-<creator> | made by `editor.py preset from-stylecard <name>` from Supabase `style_cards` (or `/style <creator>`) |
 

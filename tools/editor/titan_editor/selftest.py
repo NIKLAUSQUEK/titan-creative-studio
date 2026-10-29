@@ -222,7 +222,8 @@ def selftest(a):
     px_ = list(Image.open(fr).convert("RGB").getdata())
     blue = sum(1 for p_ in px_ if p_[2] > 180 and p_[0] < 90)
     dark = sum(1 for p_ in px_ if max(p_) < 30) / len(px_)
-    ok("texting scene + split-screen B-roll render", blue > 200 and dark > 0.5, f"blue px {blue}, dark {dark:.0%}")
+    # default layout = bubbles over the dimmed, blurred shot (ledger [edit]: no blank pages), so the frame is NOT mostly black
+    ok("texting scene (bubbles over the shot) + split-screen B-roll render", blue > 200 and dark < 0.8, f"blue px {blue}, dark {dark:.0%}")
     from .melody import make_song
     rows, tim = make_song("Squeeze and lift and hold for three\nNow relax and let it be", E / "song", "twinkle")
     ok("song: syllable fit + guide track + karaoke timings", all(r["status"] == "ok" for r in rows) and (E / "song" / "guide.wav").exists()

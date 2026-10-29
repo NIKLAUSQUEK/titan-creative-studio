@@ -54,10 +54,10 @@ def typing_bubble(px, st, phase):
     return b
 
 
-def frame(state, W, H, st, px, pop=None, typing=None):
+def frame(state, W, H, st, px, pop=None, typing=None, clear=False):
     """state: shown messages (oldest first). Newest sits at ~62% height; older ones stack upward and scroll off the top."""
     from PIL import Image, ImageDraw
-    im = Image.new("RGBA", (W, H), st["bg"] + (255,))
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0) if clear else st["bg"] + (255,))
     d = ImageDraw.Draw(im)
     nf = text_font(None, int(px * 0.62), False)
     if state and state[-1].get("punch"):            # the punch line, alone and large
@@ -68,7 +68,7 @@ def frame(state, W, H, st, px, pop=None, typing=None):
         if m.get("name"):
             d.text((x + int(px * 0.3), y - int(px * 0.95)), m["name"], font=nf, fill=st["name"])
         im.alpha_composite(b, (x, y))
-        return im.convert("RGB")
+        return im if clear else im.convert("RGB")
     items = [("msg", m) for m in state] + ([("typing", typing)] if typing is not None else [])
     # sender name sits above the first bubble of each run from the same side
     show = [kind == "msg" and m.get("name") and (i == 0 or items[i - 1][0] != "msg" or items[i - 1][1]["side"] != m["side"])
@@ -89,11 +89,14 @@ def frame(state, W, H, st, px, pop=None, typing=None):
             y -= int(px * 0.85)
             d.text((x + int(px * 0.3), y), m["name"], font=nf, fill=st["name"])
         y -= int(px * 0.55)
-    return im.convert("RGB")
+    return im if clear else im.convert("RGB")
 
 
 def render_chat(chat, W, H, fps, out):
-    """Keyframe PNGs + ffconcat durations -> silent video clip of chat['dur'] seconds."""
+    """Keyframe PNGs + ffconcat durations -> silent video clip of chat['dur'] seconds.
+    layout "overlay" (default, ledger [edit]): transparent background (.mov with alpha), laid over the dimmed, blurred shot.
+    layout "card": the old full-frame solid card (a variation)."""
+    clear = chat.get("layout", "overlay") == "overlay"
     st = STYLES.get(chat.get("style", "dark"), STYLES["dark"])
     px = int(float(chat.get("size", 0.028)) * 1920 * min(W, H) / 1080)
     msgs = sorted(chat["messages"], key=lambda m: m["at"])
@@ -124,10 +127,11 @@ def render_chat(chat, W, H, fps, out):
             if nxt - t <= 1e-4:
                 continue
             p = Path(td) / f"f{i:04d}.png"
-            frame(state, W, H, st, px, pop, typ).save(p)
+            frame(state, W, H, st, px, pop, typ, clear).save(p)
             lines += [f"file '{p.name}'", f"duration {nxt - t:.4f}"]
         lines.append(f"file '{p.name}'")
         (Path(td) / "list.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
-        ffmpeg(["-f", "concat", "-safe", "0", "-i", "list.txt", "-vf", f"fps={fps},format=yuv420p", "-t", f"{dur:.3f}", "-c:v", "libx264",
-                "-preset", "veryfast", "-crf", "20", str(Path(out).resolve())], cwd=td)
+        enc = (["-vf", f"fps={fps},format=argb", "-c:v", "qtrle"] if clear else
+               ["-vf", f"fps={fps},format=yuv420p", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20"])
+        ffmpeg(["-f", "concat", "-safe", "0", "-i", "list.txt", "-t", f"{dur:.3f}"] + enc + [str(Path(out).resolve())], cwd=td)
     return out, dur, [m["at"] for m in msgs]

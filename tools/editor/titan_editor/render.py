@@ -433,14 +433,21 @@ def render(edit_dir, version=None, quality="draft", aspects=None, force=False, r
             a = at_of(r, c["anchor"], starts)
             if a is None or a >= body:
                 continue
-            key = h({"c": c, "W": W, "H": H, "v": 1})
-            f = cache / f"chat_{key}.mp4"
+            over = c.get("layout", "overlay") == "overlay"
+            key = h({"c": c, "W": W, "H": H, "v": 2})
+            f = cache / f"chat_{key}.{'mov' if over else 'mp4'}"
             if not f.exists():
                 from .chatanim import render_chat
                 render_chat(c, W, H, FPS, f)
             d = min(float(c.get("dur") or 0) or 99, body - a)
             inputs += ["-i", f.name]
-            fc.append(f"[{n}:v]setpts=PTS-STARTPTS+{a:.3f}/TB[b{n}];[{last}][b{n}]overlay=0:0:eof_action=pass:enable='between(t,{a:.3f},{a + d:.3f})'[o{n}]")
+            win = f"enable='between(t,{a:.3f},{a + d:.3f})'"
+            if over:   # bubbles over the same shot, dimmed + blurred (ledger [edit]: no blank pages)
+                fc.append(f"[{last}]split[p{n}][q{n}];[q{n}]gblur=sigma=14,eq=brightness=-0.18:saturation=0.8[d{n}];"
+                          f"[p{n}][d{n}]overlay=0:0:{win}[m{n}];[{n}:v]format=rgba,setpts=PTS-STARTPTS+{a:.3f}/TB[b{n}];"
+                          f"[m{n}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
+            else:
+                fc.append(f"[{n}:v]setpts=PTS-STARTPTS+{a:.3f}/TB[b{n}];[{last}][b{n}]overlay=0:0:eof_action=pass:{win}[o{n}]")
             last, n = f"o{n}", n + 1
             if c.get("sfx", "pop"):
                 pops += [(a + float(m["at"]), c.get("sfx", "pop")) for m in c["messages"] if float(m["at"]) < d]

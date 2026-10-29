@@ -2,15 +2,68 @@
   "name": "texting-suspense",
   "label": "Texting / receipts suspense (doc-promo grammar)",
   "kind": "style",
-  "description": "From ref MUSK doc reel (Instagram, 93.6K likes, measured 2026-10-25): a talking-head/interview spine at ~6 s average shots, cut to full-black iMessage-style chat recreations (recipe.chats) when someone quotes what was said. Bubbles pop in one by one with a typing indicator, the stack scrolls up, and the line the story turns on is shown alone and large. A persistent small title top-left, low warm interview grade, tension bed with a hit every 1-3 s, no captions over the chat cards.",
+  "description": "From ref MUSK doc reel (Instagram, 93.6K likes, measured 2026-10-25): a talking-head/interview spine at ~6 s average shots, cut to full-black iMessage-style chat recreations (recipe.chats) when someone quotes what was said. Bubbles pop in one by one with a typing indicator, the stack scrolls up, and the line the story turns on is shown alone and large. A persistent small title top-left, low warm interview grade, tension bed with a hit every 1-3 s, no captions over the chat cards. Default since 2026-10-29: the chat bubbles sit over the same shot, dimmed and blurred (chats[].layout 'overlay'); the full-black card is a variation (layout 'card').",
   "reference": "research/edit-references-2026-10.md#7",
-  "pacing": {"remove_silence_over_s": 0.45, "pad_s": 0.12, "remove_fillers": "hard", "max_shot_s": 7.0},
-  "captions": {"enabled": true, "size": 0.034, "max_words": 5, "animation": "fade", "uppercase": false, "outline": 3, "position_y": 0.78},
-  "hook_text": {"enabled": true, "renderer": "card", "card_style": "kicker", "persistent": true, "position_y": 0.07, "size": 0.026, "uppercase": true, "max_words": 4},
-  "zoom": {"mode": "smooth", "every_s": 0, "scale": 1.04, "on_hook": 1.0, "on_emphasis": false},
-  "broll": {"every_s": 9.0, "max_dur_s": 3.5, "min_dur_s": 1.5, "mode": "full"},
-  "sfx": {"density_per_10s": 1.5, "db": -15, "map": {"hook": "sting", "broll": "bass", "title": "click", "end": "sting"}},
-  "music": {"energy": "drone", "db": -20, "duck": true},
-  "grade": {"contrast": 1.08, "saturation": 0.92, "warmth": 0.06, "vignette": true},
-  "end_card": {"enabled": false}
+  "pacing": {
+    "remove_silence_over_s": 0.45,
+    "pad_s": 0.12,
+    "remove_fillers": "hard",
+    "max_shot_s": 7.0
+  },
+  "captions": {
+    "enabled": true,
+    "size": 0.034,
+    "max_words": 5,
+    "animation": "fade",
+    "uppercase": false,
+    "outline": 3,
+    "position_y": 0.78
+  },
+  "hook_text": {
+    "enabled": true,
+    "renderer": "card",
+    "card_style": "kicker",
+    "persistent": true,
+    "position_y": 0.07,
+    "size": 0.026,
+    "uppercase": true,
+    "max_words": 4
+  },
+  "zoom": {
+    "mode": "smooth",
+    "every_s": 0,
+    "scale": 1.04,
+    "on_hook": 1.0,
+    "on_emphasis": false
+  },
+  "broll": {
+    "every_s": 9.0,
+    "max_dur_s": 3.5,
+    "min_dur_s": 1.5,
+    "mode": "full"
+  },
+  "sfx": {
+    "density_per_10s": 1.5,
+    "db": -15,
+    "map": {
+      "hook": "sting",
+      "broll": "bass",
+      "title": "click",
+      "end": "sting"
+    }
+  },
+  "music": {
+    "energy": "drone",
+    "db": -20,
+    "duck": true
+  },
+  "grade": {
+    "contrast": 1.08,
+    "saturation": 0.92,
+    "warmth": 0.06,
+    "vignette": true
+  },
+  "end_card": {
+    "enabled": false
+  }
 }
