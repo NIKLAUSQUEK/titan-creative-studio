@@ -128,7 +128,7 @@ Mark every line `[confirmed]` (from the client/their materials) or `[draft]` (in
   - "pay online, no cash"
 - **We never say:**
   - "scammer" about a named private person or business;
-  - "best", "#1", "safest", "guaranteed";
+  - "best", "#1", "safest", "guaranteed" about Snap Saigon itself or in paid ads ("best gyms" style organic listicle titles are fine, Klaus 2026-10-29);
   - "tour" (unless licensed);
   - "official";
   - "free" (unless it is truly free).

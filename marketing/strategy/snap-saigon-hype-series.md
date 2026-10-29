@@ -198,6 +198,29 @@ The big war dates, remembrance days and the victims of the French and American w
 - **Politics (Vietnam law):** official terms (Reunification Day, the American war / kháng chiến chống Mỹ), state-sourced facts and dates, no glorifying any side, no criticism of the state or its leaders, nothing that relitigates the war. Avoid leader-birthday and party-anniversary content. When unsure, skip (brand file §2 rule 5).
 - **Verify every fact** with a solid source the week of posting and keep the sources in the plan.
 
+## 6f. Fun listicles, guides and "open secrets" (Klaus, 2026-10-29)
+Basic needed posts (best gyms, best hotels) are fine, but wrap them in a story hook. The trick: **the title promises one thing and the list delivers a useful, legit list with a twist.** Carousel first (slide 1 = the hook + a character reaction), then a reel version.
+
+**Story-hook listicles (the hook → what the list really is):**
+| Hook | The list | Character beat |
+|---|---|---|
+| "Where to take her if she's fancy" | 5 hotel bars + restaurants for a big date | Khang checks his wallet, faints |
+| "The perfect date night for $30" | a route: street food → rooftop at golden hour → dessert → walk on Nguyen Hue, with prices | Hân: "receipts or it didn't happen" |
+| "Where to go after a breakup" | 5 gyms with strong communities | Ben crying into a bánh mì → Ben deadlifting |
+| "Where to go before your date" | spas, salons, barbers, a tailor | Khang glow-up montage |
+| "Where to find hot girls / hot guys in Saigon" | gyms, run clubs, pilates studios, rooftop pools, padel courts (bait-and-switch: the honest answer is "places where people take care of themselves") | Hân rolls her eyes at Khang |
+| "Places people seem to hate in Saigon" | real public ratings quoted exactly ("rated 2.1 on Google, 340 reviews") with the funniest real complaints; no accusations | Ben reading reviews out loud, horrified |
+| "If you're a tourist, I hope you never visit these places" | immigration office (lost passport / visa extension), police station (reporting theft), hospital ER: each with how to get in and out fast | Ben's worst day, told as a comedy; the joke is on the tourist's bad luck, never on the officers or the institution |
+| "Open secret: the 5-star massage place that isn't a massage place" | how to spot fake-review spas: red flags (all 5-star reviews in one week, no photos of the rooms, touts outside), and how to find a legit spa | Ben almost walks in; Hân pulls him out by the backpack |
+
+**Helpful guides (save + send magnets, great as "comment GUIDE" lead magnets, §37):** lost passport step by step, visa extension, how to bargain (with phrases), Grab vs taxi, SIM/eSIM, getting money out, what to do if your phone is snatched, hospital/insurance basics, Tết survival. Every step and fee is verified against an official or reliable source the week we post.
+
+**Lines we don't cross (they would get the page fined, sued or banned):**
+- **No naming real businesses as "dirty", "scam" or sex venues,** and no "where to get sex" lists: prostitution is illegal in Vietnam, platforms ban solicitation, and calling a named business dirty without an official source is slander under Decree 15 (brand file §2 rule 3). The "open secret" posts teach the pattern, with no names.
+- **"Hated places" quote real public ratings exactly** and joke about the experience, never invent claims or accuse an owner.
+- **No jokes about prison abuse or anything sexual about detention,** and no mocking police or officials (VN rules on criticising the authorities). Drugs get a straight fact instead: Vietnam's penalties are severe, up to the death penalty for trafficking.
+- "Best" is fine in organic listicle titles (it's our opinion); it never describes Snap Saigon itself in ads.
+
 ## 7. Guardrails (market law: Vietnam pack in compliance-packs.md + brand file §2)
 - **"Streets will go crazy" = celebrations.** Show flags, horns, crowds, fireworks. Don't show fights, police clashes or property damage, and no political or protest content: the page is not the press (brand file §2 rule 5).
 - **Parties:** no drug references; alcohol shows as atmosphere, never as an offer. Never promote spirits of 15% ABV or more (VN alcohol-advertising law); a paid venue partner gets labelled as sponsored (Law 75/2025).
