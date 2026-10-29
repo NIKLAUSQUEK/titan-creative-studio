@@ -101,9 +101,10 @@
 ## Part 6, "Three's a Crowd" (≈35 s)
 **Hook:** *"then his girlfriend walked in."*
 
-1. **SPLASH.** Cold water explodes across the frame. Freeze-frame: Jake still puckered, his face soaked, ice cubes mid-air. Droplets also hit Hân.
-2. Hân looks down at her lap in horror. Thought bubble: *"WAIT. WAS THAT ME?? 😳"* She checks: no. She looks up.
-3. Reveal: Trâm, standing at the table with an empty glass, still in her office clothes. "CLIENT MEETING, JAKE?!"
+1. **SPLASH.** Cold water explodes across the frame. Freeze-frame: Jake still puckered, his face soaked, ice cubes mid-air.
+2. Cut to Hân: the spilled water has landed right across her lap and soaked the jeans dark. She looks down, frozen. Thought bubble, huge: *"WAIT. DID I JUST… 😳"* Second bubble: *"he said 'I know you want it' and my body BETRAYED ME??"*
+3. She slowly lifts her eyes… and sees the empty glass in Trâm's hand. Thought bubble: *"…oh thank god. it was HER."* A big relieved exhale.
+3b. Trâm, standing at the table: "CLIENT MEETING, JAKE?!"
 4. Trâm, to Hân: "Oh my god, sorry, that one wasn't for you." She hands her a napkin.
 5. Jake, dripping, ice cube on his head, tries to stand, sit and wave all at once: "Babe! This is… my… accountant?"
 6. Hân slowly raises her digicam. Click. Thought bubble: *"the money shot 📸"*
@@ -111,11 +112,11 @@
 8. Trâm points at the roses: "Are those MY roses?" Jake: "…they're… community roses?"
 9. Jake, sweating and soaked: "I can explain—" → "Part 7"
 
-**Production note:** the "was that me??" joke lives in the thought bubble added in the edit. The generation prompt only says "Hân looks down at her own lap, confused", because wet-lap wording trips the moderation filter (ledger).
+**Production note:** the "did I just…" joke lives in the thought bubble added in the edit. The generation prompt only says "Hân looks down at her own lap, confused", because wet-lap wording trips the moderation filter (ledger).
 
 **Thumbnail and cover hooks (Part 5-6):**
 - Frame: Jake in the eagle tee leaning in with his hand on the back of her chair; Hân leaning away at 45°, eyes wide.
-- Text options: "he said 'I know you want it'… then his girlfriend threw water 💦" / "he got handsy… then his girlfriend walked in 😳" / "POV: the guy you're spying on asks you out" / "rule #1 of PI work: don't date the target"
+- Text options: "he said 'I know you want it'… then my pants got wet 😳" / "he said 'I know you want it'… then his girlfriend threw water 💦" / "he got handsy… then his girlfriend walked in 😳" / "POV: the guy you're spying on asks you out" / "rule #1 of PI work: don't date the target"
 
 **Tone guardrail:** Hân never wants the kiss, and she moves his hand away every time. She's shy and too polite to reject him aggressively, so she just leans away. The joke is her awkward politeness and his smoothness backfiring, never the kiss itself. Trâm's entrance is her rescue.
 
