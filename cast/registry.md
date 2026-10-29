@@ -6,3 +6,6 @@
 | Buff guy (Physio Spot skit) | dark skin, black stringer, grey shorts, DRY matte skin | keyframes from 10 Oct run | Kling native deep voice | The one who leaks |
 | Lifter A (char sheet) | original AI | image job 3d8fba9a-c37b-4ba2-ba37-ad5d8ab97c6d | — | 20 Oct sheet |
 | Spotter B (char sheet) | original AI | image job 1e336ee0-7e06-4596-acc1-e9300c675d3e | — | 20 Oct sheet |
+| Hân (Snap Saigon) | Gen Z local snapper, hero of Snap Saigon AI influencer content | pending (Gate 4) | pending (original designed voice) | cast/snap-saigon-influencer.md; original character, never a lookalike |
+| Khang (Snap Saigon) | Gen Z snapper boy, chaos partner, match nights | pending (Gate 4) | pending | cast/snap-saigon-influencer.md |
+| Ben (Snap Saigon) | British backpacker, unsure tourist in skits | pending (Gate 4) | pending | cast/snap-saigon-influencer.md |

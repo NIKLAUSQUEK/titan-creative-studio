@@ -2,6 +2,17 @@
 
 Klaus, 2026-10-29: "we want to make a Snap Saigon Genjutsu AI influencer like others are doing now by feeding it real people clips… we need to brainstorm the look."
 
+## LOCKED CAST (Klaus, 2026-10-29)
+| Character | Role | Look (short) | Line |
+|---|---|---|---|
+| **Hân** (G1) | Gen Z local snapper, the hero | 22, butterfly cut with a honey streak, baby tee + baggy jeans, platforms, pocket digicam, yellow beaded phone strap, pastel scooter | "wait, film this." |
+| **Khang** (G3) | Gen Z snapper boy, her chaotic partner | 23, bleached hair, hoop earring, oversized graphic tee, backwards yellow cap, film camera, beat-up Cub | "trust me bro." |
+| **Ben** (T1) | British backpacker, the unsure tourist in skits | 25, ginger-blond, sunburnt, too-big backpack, paper map he can't fold | "sorry, is this… normal?" |
+
+- **Dynamic:** Hân knows everything and films everything; Khang turns it into chaos; Ben panics. The tourist panics → the locals fix it → Snap Saigon is the answer.
+- **Who fronts what:** Hân = hype trailers, hidden spots, MAP lead magnets, giveaways. Khang = football/đi bão nights, Bui Vien, memes, caption contests. Ben = skits, first-day POV, scam tips, the Tết ghost-town post. Saigon Stories can use Hân as host; remembrance specials use a real narrator.
+- **Next:** 3 versions each with the Higgsfield AI Influencer builder (cheapest settings, quote first) + a 3-view character sheet → Klaus approves (Gate 4) → Elements + original voices registered in cast/registry.md → first Genjutsu test on 3 clips from marketing/collabs. Needs the Higgsfield connector signed in.
+
 ## How it works (one paragraph)
 We design ONE original character (a face and style that belong only to Snap Saigon). Then every week we take real clips of people living Saigon (creator clips from `editor.py collab scout`, plus our snappers filming at the spots) and use Genjutsu motion transfer: the character performs the real person's movement at the real place. The output keeps only the motion. The face is always our character, and the voice is always the character's own voice. No AI label in the video or caption (ledger [ai-labels]); the platform's AI toggle is switched on where required.
 
@@ -16,7 +27,7 @@ We design ONE original character (a face and style that belong only to Snap Saig
 The cast is now a **duo**: a Gen Z local snapper (the hero who knows everything) and a white tourist (the one who knows nothing). Most skits write themselves: the tourist panics, the local fixes it, the brand is the answer. Jokes punch at the situation (traffic, prices, heat), never at Vietnamese people or at a nationality as a whole.
 
 ### Gen Z hero options
-**G1. "Vy": Y2K digicam girl**
+**G1. "Hân": Y2K digicam girl** (renamed from Vy, 2026-10-29)
 - 22, Saigon-born. Butterfly-cut hair with one honey-brown streak, glossy lip, tiny face gems on photo days.
 - Baby tee, low-rise baggy jeans or a cargo mini, chunky platform sneakers, a yellow beaded phone strap.
 - A pocket digicam (no logo) on a charm and a phone on a mini tripod; a pastel scooter.
@@ -48,7 +59,7 @@ The cast is now a **duo**: a Gen Z local snapper (the hero who knows everything)
 - 30s, zip-off trousers, fanny pack, a huge camera he never uses, haggles badly and proudly.
 - Line: "I have a very good deal." (He does not.)
 
-**Recommended duo:** Vy (G1) + Ben (T1). Gen Z energy for reach, and Ben's polite panic is the most relatable tourist for the English-speaking audience.
+**Was recommended:** G1 + Ben (T1). Gen Z energy for reach, and Ben's polite panic is the most relatable tourist for the English-speaking audience.
 
 ## Round 1 looks (kept for reference)
 
