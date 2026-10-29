@@ -1,0 +1,10 @@
+{
+  "project": "snap-saigon-drop",
+  "episode": "EP1 Photos of Us",
+  "approved": true,
+  "approval_note": "Klaus, 2026-10-29: 'signed in, make the videos in stages now'. Covers lowest-quality DRAFTS only (480p Seedance drafts, 1k stills). 1080p/final needs a new approval.",
+  "cost_quote": {"sheets": 4.5, "stills": 10.5, "video_drafts": "7 x 12 = 84 (seedance_2_5, 4 s, 480p draft)", "total_credits": 99},
+  "style_key": "stylised 3D feature-animation render, soft subsurface skin, slightly oversized eyes, painterly knit and linen textures, warm lamp light with cool window rim light, gentle bloom, shallow depth of field, muted warm palette #F3E6D8 #C9A27E #3B3552, accent #FFC727",
+  "cast": {"mia_sheet": "4e658cad-7fed-4795-864a-8c3887db6d25", "jay_sheet": "4fcb1460-84bb-4f39-9c6f-0ed8bda3be73", "ben_sheet": "651e708e-9b55-43bd-9147-0eacea05f991"},
+  "hard_rules": ["swear word only added in edit, never in prompts", "no real-person lookalikes", "static close-ups, one motion idea per shot"]
+}
