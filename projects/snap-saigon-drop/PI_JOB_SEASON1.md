@@ -1,0 +1,91 @@
+# The PI Job, Season 1 (v2, Klaus, 29 Oct 2026)
+
+**Locked choices:**
+- **Jake** is a charmer who gets humiliated in a funny way, never a dark one.
+- **Hân** is chaotic and excited, living her detective dream. Her intrusive thoughts keep spinning cheating theories, and she flirts with her Tinder date "J" the whole way through.
+- **The twist:** J's (Jake's) perfect texts come from an AI agent. We never see him typing or wooing her; his phone does it all while he eats. When Hân finds out, she's furious.
+- **Trâm** is not a recurring character.
+- **Language:** English master. The variation adds Vietnamese lines with subtitles.
+
+**Device:** Hân's intrusive thoughts appear as pop-up thought bubbles in her own handwriting (yellow #FFC727), with a "ding!" each time. They should be funnier than the dialogue.
+
+**Fine print on every part:** "snap saigon shoots photos, not PI work (this one's a story)"
+
+## Arc
+| Part | Title | Beat | Cliffhanger |
+|---|---|---|---|
+| 1 | The Booking | Trâm's 11 pm request. Hân is far TOO excited. Meanwhile she's matching with "J". | "…send the address 🕵️‍♀️" |
+| 2 | The Tail | Hân tails Jake badly, with terrible disguises. J's flirty texts arrive at oddly perfect moments. | Jake buys roses. Thought bubble: "for the OTHER WOMAN 😤" |
+| 3 | Overtime | The shift ends, Trâm pays for 2 more hours. J: "near Bitexco too 😂" | Jake's in the café window. Phone buzz: "in the corner 😉" |
+| 4 | The Corner | Hân realises Jake = J. Intrusive-thought meltdown. | "my customer's boyfriend… was my date." |
+| 5 | The Date | Hân sits down and plays along. Jake is charming in person but barely talks, and he's eating, phone face-up on the table. | Hân's phone buzzes with a sweet text… while Jake's mouth is full of noodles. |
+| 6 | The Bot | Hân grabs his phone. An AI agent called "RizzGPT" is running three chats: hers, Trâm's, and one more. | Hân, eye twitching: "…you outsourced me?" |
+| 7 | The Reckoning | Trâm arrives. The two women grill Jake while his phone keeps auto-replying "you up? 😘". Hân shoots the whole humiliation. | They leave him with the bill and the roses. |
+| 8 | The Shoot | A rooftop glow-up shoot with Trâm (a one-off, then she's gone). The AI keeps texting Jake's empty table: "miss u." | End card: "real feelings. real photos. snap saigon." |
+
+---
+
+## Part 1, "The Booking" (≈35 s)
+**Hook (0-2 s):** black, then a WhatsApp ding. Text: *"the weirdest booking I've ever taken"*
+
+**Scene 1, Hân's room, 11:04 pm (2-9 s)**
+- Hân in bed with a face mask on, swiping on Tinder: "no… no… ew… OH." A match: **J**, a blurred profile pic and a perfect bio.
+- **J** (arrives instantly): "you look like trouble 😏"
+- Thought bubble: *"he types FAST. a man of action."*
+- WhatsApp ding.
+
+**Scene 2, the request (9-20 s)**
+- Split screen with Trâm cross-legged on her bed, typing hard, a couple photo face-down on the nightstand.
+  - **Trâm:** "hi is this snap saigon? weird request…"
+  - **Trâm:** "my bf has a 'late client meeting' tomorrow. won't say where. ALWAYS on his phone 😒"
+  - **Trâm:** "can you follow him and take photos?"
+- Hân sits bolt upright and the mask flies off. Thought bubbles fire one after another:
+  - *"PI ERA."*
+  - *"he's 100% cheating."*
+  - *"secret wife? secret TWO wives??"*
+
+**Scene 3, the deal (20-30 s)**
+- **Hân** (typing): "I'm a wedding photographer…" She deletes it. Types: "ok but why me" and deletes that too.
+- **Trâm:** "I'll pay double."
+- **Hân** (instantly): "SEND THE ADDRESS 🕵️‍♀️"
+- Back in Tinder, **J:** "so what are you up to tomorrow? 😉"
+- **Hân:** "can't say. classified 🤫"
+- Thought bubble: *"I am SO mysterious."*
+
+**Button (30-35 s):** hard cut to morning. Hân in a trench coat (in 34 °C heat), sunglasses, fake moustache, digicam. Text: *"Day 1."* → "Part 2"
+
+## Part 2, "The Tail" (≈40 s)
+**Hook:** *"I followed a stranger for 6 hours. here's what I found"*
+
+1. Hân behind a bánh mì cart, sweating in the trench coat. The vendor stares at her. Hân: "…one bánh mì please." (She's buying cover.)
+2. Jake leaves his office tower, phone in hand, smiling at it. Thought bubble: *"smiling at his phone = 100% another woman."*
+3. Her phone buzzes. **J:** "thinking about you at work 🥲" Hân swoons, then trips over a stool.
+4. Jake grabs a Grab bike. Hân flags a xe ôm: "follow that bike!" The driver looks at her. "…please?"
+5. Montage of bad disguises: behind a newspaper, a tree (thin), a cardboard box, a nón lá. Jake never notices because he's on his phone the whole time.
+6. **J:** "you're gonna make me fall for you 😮‍💨" Thought bubble: *"wow, he's so thoughtful, unlike THIS cheater"* (she's glaring at Jake).
+7. **Cliffhanger:** Jake stops at a flower stall and buys a big bouquet of roses. Hân zooms in. Click. Thought bubble: *"ROSES. for the OTHER WOMAN. Trâm deserves better 😤"* → "Part 3"
+
+## Part 3, "Overtime" (≈40 s)
+**Hook:** *"my shift ended. this is when it got weird"*
+
+1. 6 pm. Hân, exhausted, the trench coat now tied round her waist. She texts Trâm: "shift's over! I have a date tonight 💅"
+2. **Trâm:** "PLEASE. booking 2 more hours on the website now 🙏" → the "Booking confirmed · +2 hours" notification.
+3. Hân, to the sky: "the hustle never stops." Then to J: "running late, work thing 😩"
+4. **J:** "no stress. I'll wait for you, always 🥺" Thought bubble: *"a GREEN FLAG?? in this economy??"*
+5. Jake walks towards Bitexco. Hân follows and texts J: "where are we meeting? I'm near Bitexco"
+6. **J:** "omg me too 😂 I'm at the café right under the tower"
+7. Thought bubble: *"fate. it's fate. 🥹"* She's still tailing Jake… towards the same café.
+8. Jake sits down in the corner by the window and puts the roses on the table. Hân, across the street, lifts the digicam.
+9. **Her phone buzzes. J: "just got here, I'm in the corner 😉"**
+10. Hân looks at the phone. At the window. At the phone. At the window. The music stops. → "Part 4"
+
+## Variation: Vietnamese lines (subtitled)
+- Hân, at the request: "Trời ơi, PI hả?!" (*Oh my god, a PI job?!*)
+- The vendor in Part 2: "Mua hay núp vậy em?" (*Buying or hiding, sweetie?*)
+- The xe ôm driver: "Chạy theo ai? Bồ hả?" (*Following who? Your boyfriend?*)
+- Hân at the reveal: "Ơ… ơ kìa…" (*Wait… what…*)
+
+## Production notes
+- **New frames needed:** Hân in a face mask in bed; Hân in the trench coat + fake moustache; the disguise montage; Jake buying roses; Jake eating with his phone face-up auto-replying (Part 5); the "RizzGPT" phone screen (Part 6; built as a mock UI in the edit, not generated).
+- **Reuse:** the Part 1-4 key frames already made (`pi_job/frames/`).
+- **Estimate:** at 480p draft quality, Part 1 is ~6 shots ≈ 80 credits; all 8 parts ≈ 600. Animate Parts 1-3 first, test, then the rest.
