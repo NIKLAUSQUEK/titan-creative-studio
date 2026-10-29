@@ -12,7 +12,45 @@ We design ONE original character (a face and style that belong only to Snap Saig
 - **Lowercase brand voice:** street-smart, warm, matter-of-fact (brand file §5). Never "best", "#1", "guaranteed".
 - **Adult, original, not a lookalike** of any real person (character-design.md composite method + lookalike QC).
 
-## Five looks to choose from
+## Round 2 (Klaus, 2026-10-29: "needs more Gen Z. Also needs a white Caucasian tourist counterpart to play the unsure tourist in skits")
+The cast is now a **duo**: a Gen Z local snapper (the hero who knows everything) and a white tourist (the one who knows nothing). Most skits write themselves: the tourist panics, the local fixes it, the brand is the answer. Jokes punch at the situation (traffic, prices, heat), never at Vietnamese people or at a nationality as a whole.
+
+### Gen Z hero options
+**G1. "Vy": Y2K digicam girl**
+- 22, Saigon-born. Butterfly-cut hair with one honey-brown streak, glossy lip, tiny face gems on photo days.
+- Baby tee, low-rise baggy jeans or a cargo mini, chunky platform sneakers, a yellow beaded phone strap.
+- A pocket digicam (no logo) on a charm and a phone on a mini tripod; a pastel scooter.
+- Talks in fast TikTok English mixed with Vietnamese slang ("xịn", "chill đi"), films everything, does the trend dances.
+- Line: "wait, film this."
+
+**G2. "Linh 2.0": áo dài streetwear**
+- 23, wolf-cut bob with curtain bangs, silver ear cuffs, beauty mark under the left eye.
+- Remixed áo dài: the top over baggy jeans and white sneakers (the look young Saigon actually wears), oversized yellow bomber on cool nights.
+- Film camera + phone, a mint Honda Cub with stickers.
+- Dry, cheeky humour, deadpan to camera. Line: "ok, follow me."
+
+**G3. "Khang": Gen Z snapper boy**
+- 23, bleached buzz cut or messy dyed hair, small hoop earring, thin moustache attempt.
+- Oversized graphic tee, wide shorts, crew socks, yellow cap backwards.
+- A film camera and a gimbal; rides a beat-up Cub.
+- Chaotic, loud, loves memes. Line: "trust me bro."
+
+### Tourist counterpart options (white, unsure, lovable)
+**T1. "Ben": the British backpacker**
+- 25, ginger-blond, sunburnt nose, a too-big backpack, sweat patches, a paper map he can't fold.
+- Polite panic: "sorry, is this… normal?" Crossing the street is his final boss.
+
+**T2. "Hannah": the over-planner**
+- 24, North American, blonde ponytail, a colour-coded itinerary on her phone, money belt, fan in hand.
+- Has read every blog and is still wrong about everything. Line: "the blog said 10 minutes?"
+
+**T3. "Lukas": the dad-energy German**
+- 30s, zip-off trousers, fanny pack, a huge camera he never uses, haggles badly and proudly.
+- Line: "I have a very good deal." (He does not.)
+
+**Recommended duo:** Vy (G1) + Ben (T1). Gen Z energy for reach, and Ben's polite panic is the most relatable tourist for the English-speaking audience.
+
+## Round 1 looks (kept for reference)
 
 ### A. "Linh": the Saigon it-girl snapper (recommended hero)
 - **Who:** 26, Vietnamese (Saigon-born), the cool local friend every tourist wishes they had.
