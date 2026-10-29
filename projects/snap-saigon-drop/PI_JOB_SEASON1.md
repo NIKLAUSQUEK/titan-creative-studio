@@ -88,25 +88,34 @@
 4. Jake slides the roses over: "For you 🌹". Hân: "These are… for me?" Thought bubble: *"wait, they were for ME??"*
 5. Montage of the date going well, too well, with Jake getting forward and handsy: he laughs at her jokes, tucks her hair behind her ear, his hand lands on her knee and she shifts it off, his arm stretches along the back of her seat. Each time Hân scoots away a little; each time he scoots closer. Her thought bubbles get smaller and quieter: *"just say no… just say no… say it NICELY though…"*
 6. Close-up: her phone buzzes face-down on the table. She doesn't notice.
-7. Jake leans in slowly, for a kiss. The music swells.
-8. Close-up of Hân: wide eyes, flustered, shy. She doesn't want to be rude. She doesn't want to kiss him. She's too polite to push him away, so she leans back… a little… a little more… her chair creaks. Thought bubble, tiny and panicked: *"how do I say no NICELY??"*
-9. He's 5 cm away. → "Part 6"
+7. Jake turns up the cheese, forward and cheeky. Pick 2-3 per cut:
+   - "So… is it hot in Saigon, or is it just you? 😏"
+   - "You've been staring at my eagle all night. It's okay. Everyone does."
+   - "My hotel has a rooftop pool. Just saying. For… photos."
+   - "Relax. I don't bite. Unless you ask nicely."
+   - "Come on… I know you want it 😏" (the last line, as he leans in)
+8. Jake leans in slowly, for a kiss, lips puckered. The music swells.
+9. Close-up of Hân: wide eyes, flustered, shy. She doesn't want this. She doesn't want to be rude either. She leans back… a little… a little more… her chair creaks. Thought bubble, tiny and panicked: *"how do I say no NICELY??"*
+10. He's 5 cm away. → "Part 6"
 
 ## Part 6, "Three's a Crowd" (≈35 s)
 **Hook:** *"then his girlfriend walked in."*
 
-1. The café door SLAMS open. A bell jingles. The whole café turns. Trâm stands in the doorway, still in her office clothes, phone in hand.
-2. Freeze-frame on Jake: lips puckered, eyes closed. Freeze-frame on Hân: leaning back at a 45° angle, relief all over her face. Text on screen: *"saved."*
-3. Trâm: "CLIENT MEETING, JAKE?!"
-4. Jake jumps, knocks over the cà phê sữa đá, and tries to stand, sit and wave all at once: "Babe! This is… my… accountant?"
-5. Hân slowly raises her digicam. Click. Thought bubble: *"the money shot 📸"*
-6. The whole café watches. An auntie at the next table quietly takes out her phone to film too.
-7. Trâm points at the roses: "Are those MY roses?" Jake: "…they're… community roses?"
-8. Jake, sweating: "I can explain—" → "Part 7"
+1. **SPLASH.** Cold water explodes across the frame. Freeze-frame: Jake still puckered, his face soaked, ice cubes mid-air. Droplets also hit Hân.
+2. Hân looks down at her lap in horror. Thought bubble: *"WAIT. WAS THAT ME?? 😳"* She checks: no. She looks up.
+3. Reveal: Trâm, standing at the table with an empty glass, still in her office clothes. "CLIENT MEETING, JAKE?!"
+4. Trâm, to Hân: "Oh my god, sorry, that one wasn't for you." She hands her a napkin.
+5. Jake, dripping, ice cube on his head, tries to stand, sit and wave all at once: "Babe! This is… my… accountant?"
+6. Hân slowly raises her digicam. Click. Thought bubble: *"the money shot 📸"*
+7. The whole café watches. An auntie at the next table quietly takes out her phone to film too.
+8. Trâm points at the roses: "Are those MY roses?" Jake: "…they're… community roses?"
+9. Jake, sweating and soaked: "I can explain—" → "Part 7"
+
+**Production note:** the "was that me??" joke lives in the thought bubble added in the edit. The generation prompt only says "Hân looks down at her own lap, confused", because wet-lap wording trips the moderation filter (ledger).
 
 **Thumbnail and cover hooks (Part 5-6):**
 - Frame: Jake in the eagle tee leaning in with his hand on the back of her chair; Hân leaning away at 45°, eyes wide.
-- Text options: "he got handsy… then his girlfriend walked in 😳" / "POV: the guy you're spying on asks you out" / "rule #1 of PI work: don't date the target"
+- Text options: "he said 'I know you want it'… then his girlfriend threw water 💦" / "he got handsy… then his girlfriend walked in 😳" / "POV: the guy you're spying on asks you out" / "rule #1 of PI work: don't date the target"
 
 **Tone guardrail:** Hân never wants the kiss, and she moves his hand away every time. She's shy and too polite to reject him aggressively, so she just leans away. The joke is her awkward politeness and his smoothness backfiring, never the kiss itself. Trâm's entrance is her rescue.
 
