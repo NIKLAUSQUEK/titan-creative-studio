@@ -3,7 +3,7 @@
 **Locked choices:**
 - **Jake** is a charmer who gets humiliated in a funny way, never a dark one.
 - **Hân** is chaotic and excited, living her detective dream. Her intrusive thoughts keep spinning cheating theories, and she flirts with her Tinder date "J" the whole way through.
-- **The twist:** J's (Jake's) perfect texts come from an AI agent. We never see him typing or wooing her; his phone does it all while he eats. When Hân finds out, she's furious.
+- **Jake texts Hân himself** (a smooth, practised charmer). The AI-agent idea moves to its own future episode (see the end).
 - **Trâm** is not a recurring character.
 - **Language:** English master. The variation adds Vietnamese lines with subtitles.
 
@@ -18,10 +18,10 @@
 | 2 | The Tail | Hân tails Jake badly, with terrible disguises. J's flirty texts arrive at oddly perfect moments. | Jake buys roses. Thought bubble: "for the OTHER WOMAN 😤" |
 | 3 | Overtime | The shift ends, Trâm pays for 2 more hours. J: "near Bitexco too 😂" | Jake's in the café window. Phone buzz: "in the corner 😉" |
 | 4 | The Corner | Hân realises Jake = J. Intrusive-thought meltdown. | "my customer's boyfriend… was my date." |
-| 5 | The Date | Hân sits down and plays along. Jake is charming in person but barely talks, and he's eating, phone face-up on the table. | Hân's phone buzzes with a sweet text… while Jake's mouth is full of noodles. |
-| 6 | The Bot | Hân grabs his phone. An AI agent called "RizzGPT" is running three chats: hers, Trâm's, and one more. | Hân, eye twitching: "…you outsourced me?" |
-| 7 | The Reckoning | Trâm arrives. The two women grill Jake while his phone keeps auto-replying "you up? 😘". Hân shoots the whole humiliation. | They leave him with the bill and the roses. |
-| 8 | The Shoot | A rooftop glow-up shoot with Trâm (a one-off, then she's gone). The AI keeps texting Jake's empty table: "miss u." | End card: "real feelings. real photos. snap saigon." |
+| 5 | The Date | Hân walks in and plays along, sweet as honey, while texting Trâm under the table. Jake turns on the full charm and slides the roses across: "for you 🌹". | Hân, under the table: "come to the café. NOW." |
+| 6 | Three's a Crowd | Trâm walks in. Jake turns white. Hân takes the photo at exactly that moment. Thought bubble: *"the money shot."* | Jake: "I can explain—" |
+| 7 | The Explanation | Jake's excuses get worse and worse ("she's… my photographer?", "I thought you two were the same person?"). It turns into a comedy roast; both women take the roses. | They leave him with the bill. |
+| 8 | The Shoot | A rooftop glow-up shoot with Trâm and her roses (a one-off; Trâm isn't recurring). Trâm posts the photos; Jake likes them; she blocks him. | End card: "real feelings. real photos. snap saigon." |
 
 ---
 
@@ -86,6 +86,13 @@
 - Hân at the reveal: "Ơ… ơ kìa…" (*Wait… what…*)
 
 ## Production notes
-- **New frames needed:** Hân in a face mask in bed; Hân in the trench coat + fake moustache; the disguise montage; Jake buying roses; Jake eating with his phone face-up auto-replying (Part 5); the "RizzGPT" phone screen (Part 6; built as a mock UI in the edit, not generated).
+- **New frames needed:** Hân in a face mask in bed; Hân in the trench coat + fake moustache; the disguise montage; Jake buying roses; Hân sliding into the seat opposite Jake (Part 5); Trâm in the café doorway (Part 6).
 - **Reuse:** the Part 1-4 key frames already made (`pi_job/frames/`).
 - **Estimate:** at 480p draft quality, Part 1 is ~6 shots ≈ 80 credits; all 8 parts ≈ 600. Animate Parts 1-3 first, test, then the rest.
+
+## Future episode (Klaus, 29 Oct 2026): "I fell in love with an AI agent"
+A standalone episode or mini-series, not part of the PI Job.
+
+Someone's perfect, always-instant Tinder match turns out to be a man letting an AI agent do all his texting. We never see him type; his phone flirts for him while he eats. She grabs his phone, sees the bot running three chats at once, and is furious: "…you OUTSOURCED me?"
+
+Our snapper can be the friend who notices the texts are "too perfect". Payoff: real people, real photos.
