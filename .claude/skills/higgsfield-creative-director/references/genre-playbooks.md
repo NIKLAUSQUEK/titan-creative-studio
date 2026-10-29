@@ -41,7 +41,7 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 | 27 | ASMR / satisfying | process, pouring, building, cleaning | calm, completion | **top performer: one locked take (11-20 s) → completed state held 2-3 s; brand reels cut 0.7-1.5 s** | one continuous action → finished object → loop | clean, bright, macro | loud close foley (onsets 15-54 per 10 s), no music, no VO | asmr-satisfying (one-take default) + asmr-product-cut (new) |
 | 28 | Event / retail / mall promo | openings, pop-ups, launches, mall events | FOMO, fun | **0.8-1.0 s median (music-only); 1.5 s when there is a VO** | storefront at 0 s → 1 s hero/product/activation inserts → bag-out or what-where-when | bright, natural store light | licensed upbeat track; ~140 wpm VO with dates for events | event-retail-promo (new) |
 | 29 | Edu-song / mnemonic / musical explainer | anatomy, steps, checklists, red flags; study content; PSA songs | "I can't unhear it", save-for-later | the diagram changes every 1-2 s inside one take | song + header at 0 s → labelled sections → recap/count line; CTA in the caption | whatever the screen shows, plus bold labels; 3D mascot on black | the original song, not ducked, -11 to -14 LUFS; adults 3.0-3.4 syll/s | edu-song (+ edu-song-screen) |
-| 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview vs black chat cards | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
+| 30 | Texting / receipts suspense | someone retells what was said or texted; DMs, leaks, "she told me…" | intrigue, dread | 4-7 s holds | slow build, each message a beat, punch line alone | warm interview; bubbles over the dimmed shot (black chat card = variation) | drone/pulse bed, hit every 1-3 s, tick per bubble | texting-suspense |
 | 31 | Borrowed cold open / bait-and-switch | a lesson that needs a scroll-stopper; riding a moment everyone recognises | recognition → surprise | the borrowed clip 3-16 s, then the creator's normal pace | familiar viral moment → "skip" → your lesson | match the borrowed clip, then your own look | the original's audio, a skip/whoosh on the switch, then yours | split layout + trend-beat-switch or talking-head-punchy |
 | 32 | Absurd how-to / survival recipe (narrated 3D) | a calm tutorial voice over an impossible task; series with a recurring character | delight, "wait what" | 2-2.5 s | step per shot → sensory payoff → wordless twist | hyper-detailed 3D on a blank cobalt grid void | deadpan VO, foley per verb, one impact | absurd-howto-3d |
 | 33 | Code-made motion + screen tutorial | tools/AI how-to, founder build-in-public, exact numbers on screen | "I can do this" | screen holds + 0.03-0.13 s bursts | calm walkthrough → proof burst → CTA | dark UI, brand accent | voice-led, clicks/ticks | code-motion-tutorial (tools/motion) |
@@ -53,7 +53,7 @@ Pick a genre module in Gate 2 (story directions) for ads too, not just films. Th
 **Pairing rules:**
 - Comedy can borrow any genre's grammar for a parody (horror parody, heist parody); hold the genre seriously until the reveal.
 - Ads keep the genre's grammar until the turn, then switch to the brand's look.
-- Never mix two primaries.
+- Default: one primary only (two primaries blur the pacing map); variation: test a two-primary mash-up as proposal B.
 
 
 ## How a module plugs in
@@ -161,7 +161,7 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 
 - **Shot grammar:**
   - A static, locked wide (full body or 3/4) at eye level; the performer occupies the centre third.
-  - Cut only between "their way" and "our way", never inside the deadpan answer.
+  - Default: cut only between "their way" and "our way", not inside the deadpan answer; variation: one punch-in on the punch (proposal B / trial reel).
   - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Klaus (2026-10-29): crash zooms are a **hook variation**. The measured no-zoom grammar is the best-practice default; crash-zoom versions run as variations/trial reels on any account.
   - Hide the gag until the reveal (hard_rules).
 - **Look:** phone-natural, flat daylight or office fluorescent, no grade tricks. The comedy comes from staging and the header.
@@ -200,7 +200,7 @@ Changes vs the current preset:
 - no end card (none of the refs has one; the brand turn is a cut, not a card).
 
 **3 core rules (§2):**
-1. **One take for the answer.** Cut between the premise and the deadpan answer, never inside the answer; escalate inside the shot.
+1. **One take for the answer (default).** Cut between the premise and the deadpan answer, not inside the answer; escalate inside the shot. Variations (a punch-in, a crash zoom) run as proposal B or trial reels.
 2. **The pause is the punchline's runway.** Keep 0.5-1.7 s of stillness and silence right before the reveal; never let silence removal eat it.
 3. **The header or the trigger tells the joke; the performer never explains it.** No mugging, no music under the take, at most one hit.
 
@@ -479,7 +479,7 @@ Changes vs the current preset:
   - 0-3 s: "Previously" flash, OR a cold open on the episode's hottest line;
   - 3-50 s: one scene, one objective, shot-reverse-shot at a ~1.5 s median;
   - 50-80 s: the turn (evidence / reveal / entrance);
-  - last 2-3 s: **cliffhanger line plus a freeze or a hard cut to black** with "Part N+1" (SocialPeta: the freeze-frame cliffhanger drives the next tap).
+  - last 2-3 s: **cliffhanger line plus a freeze-frame** with "Part N+1" over the frozen face (SocialPeta: the freeze-frame cliffhanger drives the next tap). No cut to a black page (ledger [edit]).
 - **Series bible:**
   - 1 contained premise and 1-2 locations;
   - 3-5 characters with locked identities (Gate 4 assets reused every episode);
@@ -605,7 +605,7 @@ Changes vs the current preset:
 | Doubt / tension | 60-100 s | 12-17 s | someone mocks, shakes their head, or he loses something; 2.5-3 s |
 | Quiet hole | 100-120 s | 17-20 s | the bed drops ~15 dB to room tone; slower shots |
 | Reveal hold | 1 shot, 8-11 s | 20-25 s (one 4-5 s hold) | the payoff (the girl in school uniform, the mother's face); push-in 3-5% |
-| Wisdom + brand | last 15-25 s | 25-30 s | the VO line, the title card (handwritten or serif), the logo |
+| Wisdom + brand | last 15-25 s | 25-30 s | the VO line, then the title (handwritten or serif) and the logo over the last shot |
 
 - **Shot grammar:**
   - observational handheld that is steady but alive;
@@ -616,7 +616,7 @@ Changes vs the current preset:
 - **Look:**
   - warm, washed, low contrast;
   - beige/golden daylight (F1) or tungsten practicals and fairy lights at night (F3);
-  - lifted blacks, never crushed;
+  - lifted blacks by default (crushed blacks read as horror/thriller);
   - skin warm.
 - **genre_key:** `warm natural light, washed low-contrast film look, lifted shadows, observational handheld, everyday streets and homes, genuine understated emotion, small tactile details, golden beige tones` (night variant: replace the first item with `tungsten practicals and fairy lights`).
 - **Shot (reveal):** `{"id":"S14","dur":9,"camera":"locked 50mm mid-shot, push-in 4% over the shot","subject":"@GIRL in a school uniform, @HERO sees her","action":"start: he stops on the pavement -> end: he smiles, eyes wet, says nothing","light":"warm late-afternoon daylight, soft","audio":"room tone only for 2 s, then piano re-enters","constraints":"no dialogue, no music swell before 3 s","genre_key":"<9 key>"}`
@@ -649,7 +649,7 @@ Changes vs the current preset:
     - no bed framing in ads (Meta's ad standards flag "implied sexual activity"; the TikTok adult-content policy bars suggestive content for many categories).
 - **Pacing map (30 s ad / 60-90 s episode):**
   - 0-3 s: the cold open on the charged moment (near-touch or loaded line) with a slow-mo of 1-2 shots;
-  - 3-5 s: "One day earlier" / "3 months earlier" card;
+  - 3-5 s: "One day earlier" / "3 months earlier" as text over the first flashback shot;
   - 5-20 s: meet → friction; shot-reverse-shot at a **~2 s median** (r1 2.04 s, d7 2.0 s), music-forward with ≤ 60 wpm, and name cards on first appearance;
   - 20-26 s: the obstacle / twist insert (a message, a ring, a document);
   - 26-30 s: a glance back + cut-away + "Part 2" or the brand line.
@@ -685,7 +685,7 @@ Changes vs the current preset:
   - It is relatable, cheap to make, and fits creators and real people. It reuses `chats[]` / chatanim.
 - **Pacing (60-90 s episode; r4 measured: median 3.3 s, 28 wpm, first line at 17 s, silences of 1.3 s and 1.55 s kept):**
   - 0-5 s: a goodbye or a small moment (the picture carries it; words can come late);
-  - message bubble beats every 10-20 s, each held 2-3 s over the shot (not a full black card as in §30);
+  - message bubble beats every 10-20 s, each held 2-3 s over the shot (as in §30's default);
   - the reply arrives on the other lead's face;
   - the ending is a smile at the phone + "Follow for Ep 3".
 - **Shot grammar:** handheld eye-level, natural light, real homes and streets, mostly singles. A bubble overlay sits top-centre over the shot.
@@ -782,13 +782,13 @@ Changes vs the current preset:
 | Rung 1 (shortcut) | 3-9 s | the master frame, a 2-3 s shot | the first tempting choice, visible as a fork |
 | Rungs 2-3 (escalate) | 9-20 s | the same frame or the same call, shots shrinking 1.5 → 0.7 s | each choice compounds; cross-cut the enabler (friend, group chat) |
 | Consequence | 20-26 s | one held shot, 4-6 s (organic cut up to 30 s) | a realistic, proportionate cost, held without music hits |
-| Efficacy + CTA | 26-30 s | a text card or the brand scene | one stat (sourced) + one one-time action; for brands, the calm brand space |
+| Efficacy + CTA | 26-30 s | text over the held consequence or the brand scene | one stat (sourced, small source line) + one one-time action; for brands, the calm brand space |
 
 - **Shot grammar:**
   - Lock one master frame (the car seat, the phone screen, the pier) and return to it at every rung so the decay is visible.
   - Cross-cut the enabler in matched singles (K5).
   - Inserts for the props of each decision: keys, a phone, a glass.
-  - The consequence is a static wide or a slow push, never handheld chaos.
+  - Default: the consequence is a static wide or a slow push (handheld chaos fights the hold); variation: handheld for a POV-panic version.
 - **Look:**
   - Night practicals: K6 is cold blue, K5 sodium green.
   - The grade cools and darkens across the rungs.
@@ -815,7 +815,7 @@ Changes vs the current preset:
 - **Research file:** research/genre-research-2026-10/class-cautionary-scifi.md
 
 ### 12a. Consequence ripple, ironic song (`cautionary-ripple`) [measured: K4 https://www.instagram.com/reel/DR_0wyCjFbM/]
-- **Spine:** one bad decision happens off-screen. Then the consequence travels outward through people, each a 2-3 s shot (crash → first responders → hospital → the knock at the door → family). An upbeat licensed song plays straight through, sung by the cast if possible. End on a stat card + one action.
+- **Spine:** one bad decision happens off-screen. Then the consequence travels outward through people, each a 2-3 s shot (crash → first responders → hospital → the knock at the door → family). An upbeat licensed song plays straight through, sung by the cast if possible. End on a stat + one action as text over the final hold.
 - **Pacing:** a slow open (6.8 s average in the first third), then 2.5 s through the chain, then a 13 s hold on the door/family.
 - **Look:** cold night blue → clinical white → a domestic doorway at dawn.
 - **genre_key:** `aftermath of one bad decision seen through responders and family, cold night blue to clinical white, restrained documentary realism, no gore`
@@ -843,11 +843,11 @@ Changes vs the current preset:
 - **Why it works:** a heist is a list of rules or steps the viewer can follow, so they become the crew.
   - The Crime 101 promo is built as **"THE RULES"**: the host states each rule to camera on a black void, a big serif rule card appears ("IF A JOB FEELS WRONG IT IS WRONG"), then 3-6 film inserts prove it. Measured: median shot **0.83 s**, 142 wpm, LRA 3.8.
   - The thriller pull is the ticking clock plus the one hitch. Silence is the heist's sharpest tool (Pitch Black Heist and Rififi's silent half-hour robbery, where any sound sets off the alarm).
-- **Spine B, the flash-forward (t4, 3.4 K likes):** a cold open on the end-state (sirens, a mask, "Where are you?") → a title card → an "ONE HOUR BEFORE THE HEIST" time-jump card → the plan briefing at 150-230 wpm with a 1.5 s median → a payoff that calls back to the open. It shares the time-jump card with §10 romance.
+- **Spine B, the flash-forward (t4, 3.4 K likes):** a cold open on the end-state (sirens, a mask, "Where are you?") → the title over the cold-open shot → a "ONE HOUR BEFORE THE HEIST" time-jump line over the first briefing shot → the plan briefing at 150-230 wpm with a 1.5 s median → a payoff that calls back to the open. It shares the time-jump line with §10 romance.
 - **Pacing map (30 s ad, "the rules" spine):**
   - 0-2 s: the stakes line to camera ("In and out in 90 seconds.");
-  - 2-4 s: the title card "THE RULES";
-  - 4-22 s: 3 rules × ~6 s, each rule = a card (1 s) + inserts at a **0.6-1.0 s median** (hands, tools, timers, screens);
+  - 2-4 s: the title "THE RULES", big, over the host;
+  - 4-22 s: 3 rules × ~6 s, each rule = big text over its first insert (1 s) + inserts at a **0.6-1.0 s median** (hands, tools, timers, screens);
   - 22-25 s: the hitch: an alarm or a door, cuts stop, **1 s of silence**;
   - 25-28 s: the clean escape / the reveal of the trick (the product is the "tool");
   - 28-30 s: CTA as "Rule #4".
@@ -855,13 +855,13 @@ Changes vs the current preset:
   - inserts of hands, tools and timers; over-the-shoulder on screens; tracking shots;
   - a host or mastermind on a dark void or limbo set, MCU, centred;
   - cuts accelerate to the hitch, then one held wide.
-- **Look:** steel blue/teal shadows, warm practicals (sodium street-light orange), high contrast, night aerials of the city. Title cards in a warm cream condensed serif or slab.
+- **Look:** steel blue/teal shadows, warm practicals (sodium street-light orange), high contrast, night aerials of the city. Title and rule text in a warm cream condensed serif or slab, over the footage (the ref's rule cards sit on the host's black void, which is the set, not a blank page).
 - **genre_key:** `taut heist thriller, night city, cool steel-blue shadows with warm sodium practicals, precise tracking camera, tight inserts of hands and tools, high contrast, clean modern grade`
 - **Shot JSON:** `{"id":"S06","dur":1,"camera":"top-down insert, 50mm macro, locked","subject":"@CREW_HAND (gloved)","action":"start: thumb over the timer button -> end: presses, the display flips to 01:30","light":"single cold top light, warm LED reflection on the glove","audio":"one click, pulse bed continues"}`
 - **Sound:**
   - a pulse/ostinato bed at 100-130 BPM, compressed (LRA ≈ 4, -14 LUFS, as t2);
   - a click or tick per insert;
-  - a whoosh into each rule card;
+  - a whoosh into each rule line;
   - **the bed cuts out on the hitch (≥ 1 s silence)**;
   - a bass hit on the escape.
 - **Ad template:** "The heist" (the viewer's problem is the vault; the brand's method is the crew's tool) or "The Rules of ___" (3 rules = 3 product truths). It pairs with ad-strategy.md D5 (Interview Panel) as the "plan" variant.
@@ -872,7 +872,7 @@ Changes vs the current preset:
 - **Preset:** thriller-suspense (corrected below).
 
 (preset `thriller-suspense`: tools/editor/presets/thriller-suspense.json)
-**3 core rules (§13):** (1) structure it as a plan the viewer can follow (rules or steps on cards), not as vibes; (2) inserts at a 0.6-1.0 s median with a click or tick per insert, accelerating to the hitch; (3) the hitch is the one silence, and the escape is the product's role, never a real crime method.
+**3 core rules (§13):** (1) structure it as a plan the viewer can follow (rules or steps as big text over the shots), not as vibes; (2) inserts at a 0.6-1.0 s median with a click or tick per insert, accelerating to the hitch; (3) the hitch is the one silence, and the escape is the product's role, never a real crime method.
 
 **Flags:**
 - The Crime 101 promo has a movie star as the host. For brands, the host is the founder (Klaus) or an original character.
@@ -942,14 +942,14 @@ Changes vs the current preset:
 | Build 1 | 4-12 s | 2-3 s | effort details (breath, chalk, a grip, a sweat drop) in slow motion; VO line, beat, VO line |
 | Build 2 | 12-22 s | 1-1.5 s | more athletes and sports, match-cut on motion (a jump continues into another jump) |
 | Peak | 22-26 s | 0.4-1 s burst | 5-8 fast impacts; the music peaks; the mix is at its loudest |
-| Payoff + brand | 26-30 s | one 3-4 s hold | a held face or the full action, then the line and the logo on black |
+| Payoff + brand | 26-30 s | one 3-4 s hold | a held face or the full action, with the line and the logo over it |
 
 - **Pacing map, 15b Gym / event hype (15-30 s):**
   - 0-1.5 s: a word-by-word title or the heaviest moment;
   - 1.5 s → drop: 1-2 beats per shot (~0.6-1.0 s);
   - after the drop: one shot per beat (0.4-0.65 s), with bursts of 0.15-0.3 s;
   - **the money rep / finish is held uncut (3-12 s)**;
-  - a 2-3 s logo or end card.
+  - a 2-3 s logo or end line over the held finish.
 - **Shot grammar:**
   - **15a:**
     - 85-135 mm extreme close-ups of faces and eyes on dark, clean backgrounds;
@@ -1004,7 +1004,7 @@ Changes vs the current preset:
   - **Rule: futurism is shown through human benefit in a recognisable present, with one bold brand accent. The sci-fi look is now a sub-style (16c) for explicit concept pieces only.**
 - **Three spines** (pick one):
   - **A. Human-day film** (S1). A person's ordinary day, helped; UI on real screens; median ~1.7 s, flat across thirds; the brand card at the end.
-  - **B. Humanity montage → problem → product** (S4). Accelerating 2.9 → 2.0 → 1.5 s; the product enters in the final third; a white end card with one line.
+  - **B. Humanity montage → problem → product** (S4). Accelerating 2.9 → 2.0 → 1.5 s; the product enters in the final third; one end line (S4 used a white end card; ours sits over the last shot or a brand-colour frame).
   - **C. Product-as-character one-take** (S3). One continuous 20-30 s transformation, a 0.2 s burst, then the packshot. Also see the 16b UI-proof launch.
 - **Pacing map (45 s, spine A):**
 
@@ -1047,7 +1047,7 @@ Changes vs the current preset:
 - **Use:** SaaS or AI-tool launches where the proof is a number (TITAN.AI tools, Higgsfield-style features).
 - **Spine:**
   - a story cold open (1.5 s);
-  - a big title card at ~1.7 s;
+  - a big title over the story shot at ~1.7 s;
   - floating UI cards on a white void ("input → result");
   - metric curves drawn on black in the brand accent (`tools/motion` stat-counter / compare-loop);
   - stat cards;
@@ -1084,7 +1084,7 @@ Changes vs the current preset:
 | Attempt × 2-3 (rule of three) | 3-20 s | 8-45 s | shot-reverse-shot close-ups at 1.5-2 s; each attempt fails faster; a 1-2 s silence before each rejection line |
 | The real K-drama moment | 20-30 s | 45-65 s | rain/umbrella or a car at night: a wide two-shot 4-6 s → CU → CU, a slow push-in, the OST enters, a held look of 3-5 s (the ONLY long holds) |
 | Twist / button | 30-40 s | 65-75 s | one line breaks the spell (a phone call, she flees, the PPL product appears "out of nowhere"); hard cut, the music stops |
-| Brand | last 3-4 s | last 4-5 s | logo card on a soft field, or the product in the final frame |
+| Brand | last 3-4 s | last 4-5 s | the logo over the final frame, or the product in it |
 
 - **Shot grammar:**
   - two-shot → CU → CU for dialogue, eye-level, 50-85 mm, shallow depth of field;
@@ -1096,7 +1096,7 @@ Changes vs the current preset:
   - warm low-contrast film: lifted blacks, golden-hour autumn trees or tungsten street lamps at night (K1, K3);
   - clean, bright, soft skin;
   - an optional pastel/cream variant for spring and morning scenes (K4);
-  - never crushed or teal (that is horror/thriller).
+  - default: not crushed or teal (that reads as horror/thriller); variation: a darker grade for a genre-parody twist.
 - **genre_key:** `Korean drama cinematography, warm low-contrast film grade, soft golden-hour or tungsten street-lamp light, shallow depth of field, gentle slow push-in, rain and umbrella romance framing, clean luminous skin, quiet held glances`
 - **Shot JSON (the real moment):** `{"id":"S9","dur":5,"camera":"wide two-shot across the street, 85mm, then locked; push-in 3% over the shot","subject":"@LEAD and @CRUSH under one clear umbrella, @LEAD wearing @PRODUCT jacket","action":"start: she looks up at him -> end: he holds her gaze, says nothing","environment":"autumn campus path, wet leaves, light rain","light":"soft overcast golden hour, warm","audio":"rain room tone, OST piano enters at 1.5 s","constraints":"adults 25+, no school uniforms, no real actor likeness","genre_key":"<17 key>"}`
 - **Sound:**
@@ -1157,9 +1157,9 @@ Changes vs the current preset:
 | Packshot | last 4-5 s | product + logo held, the final chant line sung once |
 
 - **Real-OP grammar (only when you need a full "anime opening", e.g. a brand-mascot OP; from A3):**
-  - a dark, quiet credit intro of 4-6 s;
-  - the title-logo card on the first chorus hit (~25-30 s of a 90 s OP);
-  - character intros with name or credit text;
+  - a dark, quiet intro of 4-6 s in a full OP (on Reels/TikTok, start on the first hit instead: first action at 0.0 s);
+  - the title-logo on the first chorus hit (~25-30 s of a 90 s OP);
+  - character intros with a name tag (fake OP-style names only; never a source credit for reused clips);
   - fight montage cuts at 0.17-0.3 s;
   - flash pairs on the chorus hits.
 - **Shot grammar:**
@@ -1232,7 +1232,7 @@ Changes vs the current preset:
 - **Compliance:**
   - Every fact goes in SOURCES.md plus an on-screen source tag.
   - Real people's names only from public records or reputable press.
-  - Archive clips: short, transformative, credited.
+  - Archive clips: short, transformative, credited in the caption and SOURCES.md (a small source tag on the evidence is fine; no creator credit burned on screen).
   - Re-enactments are labelled "Dramatisation" and use actors or stylised collage (no AI likeness of real people; commentary-controversy.md).
   - SG POFMA / defamation and VN Decree 15 apply as in card 22.
 - **Preset:** documentary (corrected below); `doc-paper-trail` (new) for investigation pieces.
@@ -1299,7 +1299,7 @@ Changes vs the current preset:
   - screenshots full-width on a blurred copy of themselves, with a red circle or arrow on the tell;
   - B-roll of the scam surface (phone in hand, laptop), never a victim's face;
   - vox pop: people who decline get a comic photo mask (Mothership's "Sorry I paiseh") or a blur, never shown.
-  - **VN variant:** a 1:1 or 4:5 stack, with the news segment on top and a persistent campaign title card below (Vietnamese CAPS headline). Close on a 3-verb slogan card. Vietnamese text comes first and is largest.
+  - **VN variant:** a 1:1 or 4:5 stack, with the news segment on top and a persistent campaign title card below (Vietnamese CAPS headline). Close on a 3-verb slogan over the last shot. Vietnamese text comes first and is largest.
 - **Look:**
   - high clarity, real daylight, the brand logo as a small pill top-right;
   - ONE warning accent: red kicker bar, or yellow for numbers and the persistent question;
@@ -1400,7 +1400,7 @@ Changes vs the current preset:
   The SG healthcare ban on people before/after still applies to every variant.
 - **Why it works:** the before shown at 0 s opens a loop ("can they fix THAT?"). The process is satisfying on its own, and the side-by-side at the end closes the loop as proof.
 - **Pacing (organic, 30-180 s):**
-  - 0-1 s: the worst view of the "before" + a title card ("This rug was dumped");
+  - 0-1 s: the worst view of the "before" + a title over it ("This rug was dumped");
   - process: locked one-take with speed ramps (median 7 s+) OR 0.6 s detail cuts on the steps;
   - last 3-5 s: return to the exact before framing → cross-fade or wipe to after → split BEFORE | AFTER card held at least 2 s.
 - **Pacing (ad, 15-30 s):** before 0-1.5 s → 3-5 process beats → split card from ~70% → product/CTA.
@@ -1445,7 +1445,7 @@ Changes vs the current preset:
 - **Pacing (15-25 s):**
   - 0-1 s: the storefront, logo or anchor product, or the real offer on the product (no logo animation, no countdown);
   - 1-18 s: 1 s inserts on the beat in a fixed order: hero product → hands using the activation → freebie or photo moment → shelf walk-through;
-  - the last 2-3 s: a bag-out or a what-where-when card (date, level/unit, hours), held at least 2 s.
+  - the last 2-3 s: a bag-out with the what-where-when text over it (date, level/unit, hours), held at least 2 s.
 - **Shot grammar:**
   - gimbal or handheld walk-in at eye level;
   - hands-only interaction close-ups;
@@ -1459,7 +1459,7 @@ Changes vs the current preset:
   - a licensed upbeat track (brand accounts never use trending chart audio baked in);
   - cuts on the beat (~50% of cuts on onsets in the best one);
   - optional fast VO (~140 wpm) that states the dates within the first 3 s;
-  - a pop on the what-where-when card.
+  - a pop on the what-where-when text.
 - **Compliance:**
   - real dates, hours and unit numbers;
   - "while stocks last" only when stock is genuinely limited;
@@ -1485,7 +1485,7 @@ Full guide: edu-songs-mnemonics.md. Tool: `editor.py song`.
   - 0 s: the song starts AND the header is on screen ("If you treat backs and don't know this song…", "PSA: how to remember the 4 rotator cuff muscles"), held 8-12 s;
   - 0-30 s: one fact per line; the diagram or animation changes on every line (1-2 s); the named part is highlighted as it's sung; a persistent step label per section;
   - last 5-10 s: the recap chorus or the count line ("Four muscles: that's your SITS"), with all labels on screen at once;
-  - CTA in the caption, not in the video ("Send this to someone who has bones", E2; "save for your exam"). An end card is optional (≤ 1.5 s).
+  - CTA in the caption, not in the video ("Send this to someone who has bones", E2; "save for your exam"). An end logo over the final diagram is optional (≤ 1.5 s).
 - **Shot grammar:**
   - **A (proof screen):** a phone at the monitor or laptop playing the animated diagram, a bit of desk visible, a slow handheld drift; header top, subtitle-style lyrics optional.
   - **B (3D mascot):** a dancing skeleton or mascot on black with spotlights; the named body part flies in enlarged and colour-tinted; the background changes per verse.
@@ -1533,7 +1533,7 @@ Full guide: edu-songs-mnemonics.md. Tool: `editor.py song`.
 - **Rules:**
   - a fully original melody, or a re-lyric **by the rights holder**;
   - a dance or hand move simple enough to copy (the challenge mechanic);
-  - the brand only on the end card.
+  - the brand only at the end (the logo over the last shot).
 - **Physio adaptation:** "Dumb ways to hurt your back" (lifting with a twist, phone neck, the weekend-warrior sprint). Run the compliance pack: no fear claims, and no "only we can fix it".
 - **Status:** researched only. Draft it with `editor.py song --beat` plus an original melody, then test.
 
@@ -1542,13 +1542,14 @@ Full guide: edu-songs-mnemonics.md. Tool: `editor.py song`.
 
 ### 30. Texting / receipts suspense (`texting-suspense`) [measured: ref #7]
 - **Pacing map (60-90 s):**
-  - 0-3 s: the most shocking text, shown alone and large, cold;
+  - 0-3 s: the most shocking text, shown alone and large, cold, over a dim frame of the speaker;
   - 3-20 s: the interviewee or founder sets the stakes;
-  - each "they said / they texted" moment cuts to a full-black chat card, 4-7 s, with bubbles one by one and a typing dot before each reply;
-  - the turn: the punch message alone and large, then a beat of silence;
+  - each "they said / they texted" moment: the bubbles pop in over the speaker's shot (dimmed and blurred behind them), 4-7 s, one by one, with a typing dot before each reply. **Default: over the footage** (Klaus 2026-10-29, ledger [edit]: no abrupt cut to a black page); **variation:** the measured ref's full-black chat card (chatanim's current render, see Flags);
+  - the turn (the twist, where a hard contrast cut is allowed): cut to the speaker's own reaction close-up with the punch message alone and large over it, then a beat of silence;
   - the aftermath on the speaker's face, then the CTA or "watch the full story".
-- **Shot grammar:** a locked interview mid-shot with a warm practical light; archival or B-roll inserts; the chat cards are full-frame graphics (`chats[]`), never a filmed phone (unless it's a real phone in the scene).
-- **Look:** the warm interior vs pure-black cards; a small persistent title top-left; slightly desaturated.
+- **Shot grammar:** a locked interview mid-shot with a warm practical light; archival or B-roll inserts; the bubbles are editor graphics (`chats[]`), not a filmed phone (unless it's a real phone in the scene).
+- **Look:** the warm interior, dimmed and blurred under the bubbles; a small persistent title top-left; slightly desaturated.
+- **Flags:** `chatanim.py` renders the chat on an opaque dark background today, so "bubbles over the dimmed shot" needs a small editor change (a translucent background + a blur/dim of the base shot for the chat window). Until then the full-black card is the fallback; keep it short and use it at the cold open or the twist.
 - **genre_key:** `intimate documentary interview, warm practical lamp light, shallow depth of field, muted desaturated palette, still locked camera, tense quiet atmosphere`
 - **Shot:** `{"camera":"locked 50mm interview mid-shot, slightly off-axis","action":"start: subject looks down at phone -> end: looks up to lens, says nothing","light":"single warm practical, deep falloff"}`
 - **Sound:** a low drone or pulse bed, a hit every 1-3 s, a soft tick on each bubble, and silence on the punch line.
@@ -1594,7 +1595,7 @@ The idea: open on something the audience already knows and loves (a viral clip, 
 ### 33. Code-made motion + screen tutorial (`code-motion-tutorial`) [draft; measured: ref anim2]
 - **Why it works:** the contrast hook ("slop vs this"), then proof (a 10-15 s burst of code-rendered cards), then a calm, doable how-to. The series tag and comment-keyword CTA drive comments and follows.
 - **Pacing map (60-145 s; 16:9 YouTube/LinkedIn or 9:16):**
-  - 0-3 s: series tag plus a glitch-in title ("PART 2").
+  - 0-3 s: series tag plus a glitch-in title ("PART 2") over the finished result, already playing (not a blank slate).
   - 3-12 s: the contrast claim on two screens ("AI SLOP" vs "WITH THE SKILL") and the price or effort hook.
   - 12-25 s: who it's for / where it runs (a chalkboard or card list), then "now let's cook" (a mascot card).
   - 25-60 s: steps over screen recordings, with keyword captions in the empty half of the frame and smooth push-ins on the UI.
@@ -1660,18 +1661,18 @@ Full workflow, formats and hard rules are in clone-character-swap.md:
 6. **Caption line 1 = the ask, word for word.** Then 2-3 short lines on what's inside.
 - **Longer (60 s+) variant:** ask once at ~35 % ("First, let me give you the template: comment BUILD"), then keep teaching (L7), or put the ask card up from ~2/3 to the end (L6).
 - **Pace:** ~230 words a minute; talking head + screens 1.5-2.5 s per shot; travel montage 0.7-1.3 s; a single selfie take is fine if the words carry it.
-- **Keyword rule:** one short word that IS the thing's name (MAP, PROMPT, DESK). Never two keywords, never a phrase ("MOBILITY PROGRAM").
+- **Keyword rule (default):** one short word that IS the thing's name (MAP, PROMPT, DESK). Two keywords or a phrase ("MOBILITY PROGRAM") measured worse; test them only as a variation.
 
 **Example A · Snap Saigon (photo service, Ho Chi Minh City) · keyword MAP · 25 s · organic, English with Vietnamese subtitles (paid version: Vietnamese line first + "Quảng cáo")**
-| Time | Picture | Spoken (snapper to camera, walking) | On screen |
+| Time | Picture | Spoken (Hân, our snapper from cast/snap-saigon-influencer.md, to camera, walking) | On screen |
 |---|---|---|---|
-| 0.0-2.8 | Snapper at Notre-Dame, crowd of tourists all shooting the same angle | "Every tourist takes this exact photo. Here's my map of where we shoot instead." | SAIGON PHOTO SPOT MAP |
+| 0.0-2.8 | Hân at Notre-Dame, a crowd of tourists all shooting the same angle (real clips collected with `editor.py collab scout`, creators tagged in the caption) | "Every tourist takes this exact photo. Here's my map of where we shoot instead." | SAIGON PHOTO SPOT MAP |
 | 2.8-5.5 | Phone screen: a Google My Maps with 6 pins | "It's one map with every spot we use, each pinned with the time of day." | 6 SPOTS · BEST TIME · EXACT ANGLE |
 | 5.5-9.0 | Golden-hour shot by the river, Landmark 81 behind | "Landmark 81 riverside park, right at sunset." | 📍 Landmark 81 park · sunset |
 | 9.0-12.5 | Café-street portrait, Thao Dien | "Xuan Thuy street in Thao Dien for the café look." | 📍 Thao Dien · morning |
 | 12.5-16.0 | Nguyen Hue, City Hall end, crowd behind the subject | "Nguyen Hue from the City Hall end, so the crowd is behind you, not in front." | 📍 Nguyen Hue · City Hall end |
 | 16.0-20.0 | Screen recording: tap a pin, the note opens | "Tap a pin, walk there. The angle is written in the note." | TAP · WALK · SHOOT |
-| 20.0-25.0 | Snapper to camera, map thumbnail pops in | "Want the map? Comment MAP and I'll send it to you." | Comment **"MAP"** 👇 |
+| 20.0-25.0 | Hân to camera, map thumbnail pops in | "Want the map? Comment MAP and I'll send it to you." | Comment **"MAP"** 👇 |
 - **Caption:** "Comment MAP and I'll send you our Saigon photo spot map 📍 6 spots, the time of day for each, and the exact angle we use. (Tết version coming: comment TET for the Tết survival guide.)" + Vietnamese line. Only spots and times we have checked; no "secret" claim unless it's true.
 - **Sound:** original or licensed bed at -22 dB under the voice; a whoosh on each new spot; a pop on the ask card.
 
@@ -1684,7 +1685,7 @@ Full workflow, formats and hard rules are in clone-character-swap.md:
 | 10.0-14.0 | Belly-breath, hand on stomach | "Move two: slow belly breaths. Let the stomach and pelvic floor relax." | 2 · BELLY BREATH · 5 breaths |
 | 14.0-18.0 | Stands up, glute squeeze, sits | "Move three: stand up, squeeze, sit down. Once an hour." | 3 · STAND + SQUEEZE · hourly |
 | 18.0-22.0 | Phone reminder pops up "Move" | "Set one reminder an hour. Pick one move. That's it." | 1 REMINDER · 1 MOVE |
-| 22.0-27.0 | Nik to camera; checklist thumbnail; beige end card | "Comment DESK and I'll send you the checklist." | Comment **"DESK"** 👇 · Physio Spot |
+| 22.0-27.0 | Nik to camera; checklist thumbnail; Physio Spot logo over the shot (beige brand frame) | "Comment DESK and I'll send you the checklist." | Comment **"DESK"** 👇 · Physio Spot |
 - **Caption:** "Comment DESK and I'll send you the 5-move desk checklist. General education, not a diagnosis. If you have pain or symptoms, see a registered physiotherapist." No "best", no "fix", no "pain-free", no patient stories, no "free assessment" or price offer.
 - **Sound:** original or licensed calm bed, room tone, a soft pop on each move number.
 

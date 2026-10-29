@@ -13,6 +13,8 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 8. Lines in [square brackets] are facts to fill or verify before filming. Never invent them.
 9. Klaus's own script or final cut always wins (version A). These scripts are starting points, not replacements.
 10. Rules at the bottom ("Universal rules") apply to every genre.
+11. Shot words: WS = wide shot, MS = mid shot (waist up), MCU = medium close-up (chest up), CU = close-up, insert = a close shot of an object or hand, PiP = picture-in-picture (a small video in a corner), VO = voice-over.
+12. "Over the shot" means the text sits on top of the footage. We don't cut to a plain black or white text page in the middle of a video (ledger [edit]).
 
 ## Quick picker: goal → genre
 | You want… | Use | Brand fit |
@@ -54,7 +56,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 20-21 s | Hold on her face, eyes closing | total silence (1 s) |
 | 21-23 s | Crash zoom: her forehead hits the keyboard; the doc fills with "jjjjjjjjjjjj" | impact + bass drop |
 | 23-26 s | Black. Then warm café light: a Power Protein box slides onto her desk. | silence → warm room tone |
-| 26-30 s | She opens it, sits up, keeps typing. Card: "Power Protein · Thao Dien" | VO: "3 pm doesn't have to win. Order from the link in bio." |
+| 26-30 s | She opens it, sits up, keeps typing. Over the shot: "Power Protein · Thao Dien" | VO: "3 pm doesn't have to win. Order from the link in bio." |
 
 - **Why it works (logic chain):**
   - Beat 1 makes the viewer name the fear ("3 pm"), so beat 2 can stretch time without losing them.
@@ -84,7 +86,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 19-20.5 s | He just looks at the lens. Nothing moves. | silence (1.5 s) |
 | 20.5-25 s | Punch: he scrolls; 30 more captions are already scheduled, a whole month. | one soft "ding" |
 | 25-27 s | Button: both palms open to the lens, "that's it". | silence |
-| 27-30 s | Brand card | VO: "One brief. A month of posts. TITAN.AI. Link in bio." |
+| 27-30 s | Logo + line over the same wide (Klaus still in frame) | VO: "One brief. A month of posts. TITAN.AI. Link in bio." |
 
 - **Why it works (logic chain):**
   - Beat 1 makes the viewer feel the waste, so beat 2 can stay silent and still be funny.
@@ -111,18 +113,18 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | Time | On screen | Said / sound |
 |---|---|---|
 | 0-20 s | Header: "🇻🇳 first time in Saigon" / "NAHHH BRO 😭💀" | — |
-| 0-4 s | Selfie walk: snapper Minh walking backwards, visitor Sam behind him at the Bui Vien corner | Minh: "Okay Sam, rule one: just keep walking." · hit at 0.5 s |
-| 4-9 s | A motorbike passes carrying a full-size fridge. Sam freezes, mouth open. | hit on the freeze · Sam: "Is that a FRIDGE?" |
-| 9-14 s | Whip to a second bike: a family of four plus a dog. Sam grabs Minh's arm. | hit · hit |
-| 14-17 s | Minh turns his camera round: the shot he just took, Sam mid-scream with the fridge bike behind | Minh: "Best photo of your trip." |
-| 17-20 s | Punch-in on Sam's face, laughing | hit |
+| 0-4 s | Selfie walk: Khang (our snapper, cast/snap-saigon-influencer.md) walking backwards, Ben the backpacker behind him at the Bui Vien corner | Khang: "Okay Ben, rule one: just keep walking." · hit at 0.5 s |
+| 4-9 s | A motorbike passes carrying a full-size fridge. Ben freezes, mouth open. | hit on the freeze · Ben: "Is that a FRIDGE?" |
+| 9-14 s | Whip to a second bike: a family of four plus a dog. Ben grabs Khang's arm. | hit · Ben: "Sorry, is this… normal?" · hit |
+| 14-17 s | Khang turns his camera round: the shot he just took, Ben mid-scream with the fridge bike behind | Khang: "Trust me bro. Photo of the trip." |
+| 17-20 s | Punch-in on Ben's face, laughing | hit |
 | Caption | "Who warned him?? 😭 Book a local snapper (link in bio) 🇻🇳 #saigon #hochiminhcity #vietnamtravel" | |
 
 - **Why it works (logic chain):**
   - The header makes the viewer expect chaos, so the slow 4-6 s takes feel like waiting for it.
   - Each hit marks a reaction, so the viewer laughs on cue and stays for the next one.
   - The payoff is the photo, so the caption's CTA ("book a snapper") follows from what they just saw.
-- **Don't:** jump-cut it into a frenzy (the ref has 3 cuts in 21 s); write the header as a title ("Saigon traffic") instead of a reaction.
+- **Don't:** jump-cut it into a frenzy (the ref has 3 cuts in 21 s); write the header as a title ("Saigon traffic") instead of a reaction. Brand copy never says "best" (Snap Saigon forbid-words).
 - **Preset:** `genz-header-skit` · deep card: genre-playbooks.md §3
 
 ## 4. Trend beat-switch montage
@@ -284,7 +286,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   2. 3-12 s: the same act on different days: hands, details, 2-2.5 s shots.
   3. 12-17 s: doubt: someone mocks or shakes their head (2.5-3 s shots).
   4. 17-25 s: a quiet hole (music drops to room tone), then the reveal, held 4-5 s (8-11 s in the full film); music swells 2-3 s into the hold, not on the cut.
-  5. 25-30 s: one slow wisdom line (≤ 60 wpm), title card, logo.
+  5. 25-30 s: one slow wisdom line (≤ 60 wpm), then the title and logo over the last shot.
 - **Real example:** Thai Life Insurance "Unsung Hero" https://www.instagram.com/reel/DWXnBo1DMbN/ (6 M views in its first week, 117 M+ on the original upload). The payoff hold is long enough to cry in.
 - **Example script (Snap Saigon, real people with consent):**
 
@@ -295,7 +297,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 12-17 s | A fellow snapper laughs at him and taps his watch; Bao runs late to a booking | colleague: "She never buys anything, you know." |
 | 17-20 s | Bao at a print shop, a stack of photos coming out | music drops to room tone |
 | 20-25 s | He hands Bà Lan an album: 100 mornings of her. She turns the pages slowly, then looks up at him, eyes wet. (held 5 s) | 2 s of room tone, then the guitar returns |
-| 25-30 s | Title card, handwritten | VO (slow): "Everyone in this city is in someone's photo. Few get one of their own." · card: "Snap Saigon · Saigon, through a local lens" |
+| 25-30 s | Bà Lan still turning the pages; handwritten title over the shot | VO (slow): "Everyone in this city is in someone's photo. Few get one of their own." · text over the shot: "Snap Saigon · Saigon, through a local lens" |
 
 - **Why it works (logic chain):**
   - The header asks a question, so the repetition in beat 2 feels like clues, not filler.
@@ -309,7 +311,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 - **Use it when:** serial organic content or a light brand story; the product can be the thing they keep reaching for.
 - **The 5 beats (30 s):**
   1. 0-3 s: cold open on the charged moment (a near-touch or loaded line), 1-2 slow-motion shots.
-  2. 3-5 s: a time-jump card ("One week earlier").
+  2. 3-5 s: a time-jump line ("One week earlier") over the first flashback shot.
   3. 5-20 s: meet → friction; shot-reverse-shot at a ~2 s typical shot, glances held 1.5-3 s, music-forward, few words (≤ 60 wpm), name cards on first appearance.
   4. 20-26 s: the obstacle arrives as an object insert (a message, a ring, a ticket).
   5. 26-30 s: back to the cold-open moment, a glance back, a cut-away, "Part 2".
@@ -319,12 +321,12 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | Time | On screen | Said / sound |
 |---|---|---|
 | 0-3 s | Slow motion: two hands reach for the last protein bar on the counter at the same time; fingers almost touch | breath, low piano pad |
-| 3-5 s | Card: "One week earlier" | pad continues |
+| 3-5 s | Empty café at dawn, chairs still up. Text over the shot: "One week earlier" | pad continues |
 | 5-11 s | 6:10 am, Power Protein. Name cards: "An, 31 · runs at 6 am" / "Kai, 33 · runs at 6:05". He takes her usual window seat. She stares. | piano melody enters |
 | 11-17 s | Next mornings: same order, same minute. She leaves him a note on the box: "my seat." He leaves one back: "my bar." Glances held 2 s. | piano; one small laugh |
 | 17-20 s | She almost smiles. He almost speaks. | music lifts |
 | 20-26 s | Insert: An's phone lights up on the counter: "Flight SGN → LHR · tomorrow 07:05". Both see it. | phone buzz; music thins |
-| 26-30 s | Back to the hands: she lets go and slides the bar to him, walks out. He looks at the door. Card: "Part 2" | pad holds, cut on the door |
+| 26-30 s | Back to the hands: she lets go and slides the bar to him, walks out. He looks at the door. Text over the shot: "Part 2" | pad holds, cut on the door |
 
 - **Why it works (logic chain):**
   - The cold open makes the viewer ask "how did they get here?", so the quiet morning routine plays like a countdown.
@@ -400,8 +402,8 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 - **Use it when:** "The rules of ___" (3 rules = 3 product truths) or "the heist" (the viewer's problem is the vault, the brand is the tool).
 - **The 5 beats (30 s, "The rules"):**
   1. 0-2 s: the stakes line to camera ("In and out in 90 seconds.").
-  2. 2-4 s: title card "THE RULES".
-  3. 4-22 s: 3 rules × ~6 s: a rule card (1 s) + inserts at a 0.6-1.0 s typical shot (hands, timers, screens), a click per insert.
+  2. 2-4 s: the title "THE RULES", big, over the host.
+  3. 4-22 s: 3 rules × ~6 s: the rule as big text over its first insert (1 s) + inserts at a 0.6-1.0 s typical shot (hands, timers, screens), a click per insert.
   4. 22-25 s: the hitch: cuts stop, the music cuts out for ≥ 1 s.
   5. 25-30 s: the clean escape (the product's role), then the CTA as "Rule #4".
 - **Real example:** Crime 101 "the rules of the heist" https://www.instagram.com/reel/DUJOUnrj2cU/ : host to camera on a black void, big serif rule cards, inserts at a 0.83 s median, 142 wpm (the spine below). The strongest in the set is the comedy heist https://www.instagram.com/reel/Csyv74MAu-e/ (3.4 K likes; flash-forward spine).
@@ -410,13 +412,13 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | Time | On screen | Said / sound |
 |---|---|---|
 | 0-2 s | Klaus MCU on a black void | "One brief in. A month of posts out. Ninety seconds." · pulse bed 120 BPM |
-| 2-4 s | Cream serif card: "THE RULES" | whoosh |
-| 4-10 s | Card "RULE 1: NEVER START FROM A BLANK PAGE" → inserts: hands paste a brief · timer 01:30 starts · cursor blinks (0.8 s each) | click per insert |
-| 10-16 s | Card "RULE 2: ONE IDEA, THIRTY CUTS" → inserts: a hook list scrolls · a calendar fills · 30 thumbnails tile in | clicks speed up |
-| 16-22 s | Card "RULE 3: A HUMAN SIGNS OFF" → Klaus reads, crosses one line out, approves | click, click |
+| 2-4 s | Klaus holds on the void; cream serif "THE RULES" slams in over him | whoosh |
+| 4-10 s | "RULE 1: NEVER START FROM A BLANK PAGE" over the first insert → inserts: hands paste a brief · timer 01:30 starts · cursor blinks (0.8 s each) | click per insert |
+| 10-16 s | "RULE 2: ONE IDEA, THIRTY CUTS" over the first insert → inserts: a hook list scrolls · a calendar fills · 30 thumbnails tile in | clicks speed up |
+| 16-22 s | "RULE 3: A HUMAN SIGNS OFF" over the shot → Klaus reads, crosses one line out, approves | click, click |
 | 22-25 s | A message slides in: "Client: can we have it by today?" Cuts stop. Klaus looks at the lens. | bed cuts out: 1.2 s silence |
 | 25-28 s | He turns the laptop: every post already scheduled. Timer stops at 00:04. | bass hit |
-| 28-30 s | Card: "RULE 4: SEND US THE BRIEF" | VO: "Link in bio." |
+| 28-30 s | "RULE 4: SEND US THE BRIEF" over the scheduled screen | VO: "Link in bio." |
 
 - **Why it works (logic chain):**
   - The stakes line sets a clock, so every insert feels like time running out.
@@ -439,7 +441,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 
 | Time | On screen | Said / sound |
 |---|---|---|
-| 0-2 s | The post office's iron arches from below, half in shadow. Text: "Everyone says Eiffel built this. Did he?" | VO: "Every tour guide in Saigon tells you Gustave Eiffel built this post office." · low pad |
+| 0-2 s | The post office's iron arches from below, half in shadow. Text: "Everyone says Eiffel built this. Did he?" | VO (Hân, our host): "Every tour guide in Saigon tells you Gustave Eiffel built this post office." · low pad |
 | 2-8 s | Clue 1 insert: rack focus to the iron roof trusses | VO: "Look up. Iron arches, like his tower." · tick, ding |
 | 8-14 s | Clue 2 insert: the date on the façade, [1891] | VO: "The building opened in [1891], two years after his tower." · ding |
 | 14-20 s | Clue 3 insert: [an archival record naming the architect], name out of focus | VO: "And the records name the architect. Not him." · ding |
@@ -462,7 +464,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   2. 1.5 s → the drop: 1-2 beats per shot (~0.6-1.0 s).
   3. After the drop: one shot per beat (0.4-0.65 s), with bursts of 0.15-0.3 s.
   4. The money rep / finish: held uncut, 3-12 s.
-  5. A 2-3 s end card.
+  5. A 2-3 s end line over the finished lift.
 - **Real example:** Nike "You Can't Stop Us" https://www.instagram.com/reel/Cy-JFIkyqgM/ (~60 M YouTube views, Cannes Lions 2021): match-cuts on motion across sports, the cut rate rising with the argument. For 15b, the 300 kg lift https://www.instagram.com/reel/DZ7owTXN8Yp/ holds the money rep 12.5 s uncut.
 - **Example script (Klaus personal, PR day):**
 
@@ -472,7 +474,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 1.5-6 s | 0.6-1.0 s shots: chalk clap · belt cinched · plates slid on · Klaus's eyes · his mate (the "spotter") filming | cuts on onsets |
 | 6-10 s | Drop: 0.4-0.6 s shots + a 0.2 s burst: grip, breath, feet, crowd of three regulars | impacts on the beat |
 | 10-17 s | The full lift, low side angle, ONE uncut take: setup, pull, lockout, plates settle | music under; real grunt and the bar's clang kept |
-| 17-20 s | End card: "[real weight] KG · DONE" · @handle | crowd yell |
+| 17-20 s | The lockout frame, held; over it: "[real weight] KG · DONE" · @handle | crowd yell |
 
 - **Why it works (logic chain):**
   - The "PR?" title makes the viewer wait for one outcome, so every fast cut is build-up, not noise.
@@ -508,7 +510,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   - Scaling to other shops says "this is for you too", so the one-line card closes the story instead of selling features.
 - **Don't:** use the cyan-hologram look (it appears only in 1-like stock explainers); show a capability the product doesn't have.
 - **Preset:** `scifi-tech` · deep card: genre-playbooks.md §16
-- **Sub-styles:** **16b UI-proof launch** (`ui-proof-launch`): story cold open → title card at ~1.7 s → floating "input → result" UI cards → metric curves → stat cards (real, dated numbers) → story return → comment-to-DM CTA (Higgsfield S5: 2.9 K likes, 772 comments). **16c Concept sci-fi**: the cyan/holographic look only for literal future-world concepts, always with one warm human in frame.
+- **Sub-styles:** **16b UI-proof launch** (`ui-proof-launch`): story cold open → a big title over the story shot at ~1.7 s → floating "input → result" UI cards → metric curves → stat cards (real, dated numbers) → story return → comment-to-DM CTA (Higgsfield S5: 2.9 K likes, 772 comments). **16c Concept sci-fi**: the cyan/holographic look only for literal future-world concepts, always with one warm human in frame.
 
 ## 17. K-drama
 - **What it is:** a sincere Korean-drama romance played straight, then popped by a comic twist.
@@ -530,8 +532,8 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 13-20 s | Attempt 3: phone on a timer on a bench; a scooter drives through the frame. She just walks off. | scooter horn · no line |
 | 20-26 s | Light rain. He runs after her with one clear umbrella. Wide two-shot from across the street, held 5 s. | rain; OST piano enters at 1.5 s |
 | 26-30 s | CU her, looking up · CU him, holding her gaze (held 4 s) | piano |
-| 30-37 s | CLICK. Snapper Minh leans out from behind a pillar, camera up. "Got it. One more?" Both stare at the lens. | music stops dead; one comic sting |
-| 37-40 s | Logo + the shot Minh took | card: "Snap Saigon · your local snapper in Saigon" |
+| 30-37 s | CLICK. Khang (our snapper) leans out from behind a pillar, camera up. "Got it. Trust me bro, one more?" Both stare at the lens. | music stops dead; one comic sting |
+| 37-40 s | The shot Khang took, with the logo over it | text: "Snap Saigon · your local snapper in Saigon" |
 
 - **Why it works (logic chain):**
   - The header admits a fear everyone has, so each failed attempt is a laugh of recognition.
@@ -589,7 +591,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 6-8 s | The fantasy pops like a bubble | pop |
 | 8-14 s | A calm physio character (original, navy scrubs) sits at eye level with a notepad | Physio: "First we just talk. I explain everything before we do anything, and you can say no to any part." |
 | 14-18 s | Bao un-hides, sits down, exhales; a tiny dance in the chair | Bao: "Oh. That's… normal." · soft chime |
-| 18-20 s | Card: "Questions? WhatsApp Physio Spot." + logo | warm room tone |
+| 18-20 s | Bao sitting calmly in the chair; over the shot: "Questions? WhatsApp Physio Spot." + logo | warm room tone |
 
 - **Why it works (logic chain):**
   - The panicking bean names the real fear (embarrassment), so the viewer laughs at a feeling they actually have.
@@ -613,10 +615,10 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | Time | On screen | Said / sound |
 |---|---|---|
 | 0-6 s | Hands unfold an old city map on a café table; a magnifier slides over the riverbank | paper rustle, low bed (-22 dB) |
-| 6-9 s | Today's Ben Thanh clock tower, wide | VO: "This isn't where Ben Thanh Market started." |
+| 6-9 s | Today's Ben Thanh clock tower, wide | VO (Hân, our host): "This isn't where Ben Thanh Market started." |
 | 9-15 s | Map close-up, a red circle near the river | VO: "So where did it start, and why does it keep the name?" |
 | 15-25 s | Archive postcard of [the old riverside market] (source tag top-right) · 1.5 s cuts on details | VO: "[The first market stood by the river, near the old citadel.]" · paper slap on each image |
-| 25-35 s | Dictionary card: "Bến = wharf · Thành = citadel" [verify] | VO: "The name means [the wharf by the citadel]." |
+| 25-35 s | The map close-up again, the riverbank in focus; over it: "Bến = wharf · Thành = citadel" [verify] | VO: "The name means [the wharf by the citadel]." |
 | 35-45 s | Archive photo of construction, date stamp "[1912-1914]" | VO: "[After the old market was lost], the city built this one, inland, [in 1912-14]." |
 | 45-52 s | The turn: split, today's south gate vs the riverbank now | VO: "The wharf is gone. The citadel is gone. The name walked inland and stayed." · swell → impact |
 | 52-60 s | Snapper's shot of a visitor at the south gate | VO: "Stand at the south gate and you're standing in a name that moved." · text: "Full story + sources in the caption. Photos here? Link in bio." |
@@ -649,7 +651,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 28-35 s | Same band, a second label: "sexual function" | "It's part of sexual function too. That's anatomy, not a promise." |
 | 35-50 s | Klaus to camera, mid-shot in the clinic | "So when men only hear 'that's for women', many never ask about pain or leaks. They sit on it for years." |
 | 50-58 s | Receipt: [a dated search-results screenshot, private names masked] | "Most of what you've scrolled past was written for women. Fair. Just not complete." |
-| 58-62 s | Verdict card | "Verdict: men have one. A physio can assess it. Questions? WhatsApp Physio Spot." · one impact |
+| 58-62 s | Klaus to camera; the verdict line over the shot | "Verdict: men have one. A physio can assess it. Questions? WhatsApp Physio Spot." · one impact |
 
 - **Why it works (logic chain):**
   - The myth is shown exactly as viewers have seen it, so they feel personally addressed in the first second.
@@ -673,13 +675,13 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | Time | On screen | Said / sound |
 |---|---|---|
 | 0-1 s | Red kicker bar: "⚠️ CẢNH BÁO / SCAM ALERT" · "Đồng hồ taxi chạy nhanh hơn bạn / This meter runs faster than you" | news sting · VO: "Your Saigon trip can cost double." |
-| 1-4 s | Dramatisation: a visitor gets into an unmarked taxi at the airport (label "Dramatisation") | VO: "Not at the hotel. In the taxi." |
+| 1-4 s | Dramatisation: Ben the backpacker (our cast) gets into an unmarked taxi at the airport (label "Dramatisation") | VO: "Not at the hotel. In the taxi." |
 | 4-8 s | Close-up of a meter jumping (plates blurred) | VO: "Here's how the rigged meter works." |
 | 8-14 s | "1" · the driver waves off the app: "no app, cheaper" | VO: "One: they skip the app 'to save you money'." · tick |
 | 14-20 s | "2" · the meter digits jump faster than the street signs pass | VO: "Two: the meter runs fast, or 'breaks'." · tick |
 | 20-26 s | "3" · drop-off, the driver shrugs: "no change" | VO: "Three: at drop-off, there's 'no change'." · tick |
-| 26-30 s | Counter: "[one official figure]" · source line "[source, date]" | swell + impact |
-| 30-37 s | "What to do": 1 Use a ride-hailing app with the price fixed upfront · 2 Photo the taxi number · 3 Pay in small notes · 4 Report: [police 113 / official tourist hotline, verify] | VO reads the four lines · tick per line |
+| 26-30 s | Over the meter close-up: counter "[one official figure]" · small source line "[source, date]" | swell + impact |
+| 30-37 s | Over Ben paying in an app car, the price on his phone: "What to do": 1 Use a ride-hailing app with the price fixed upfront · 2 Photo the taxi number · 3 Pay in small notes · 4 Report: [police 113 / official tourist hotline, verify] | VO reads the four lines · tick per line |
 | 37-40 s | Logo pill | "Save this. Send it to whoever's visiting." |
 
 - **Why it works (logic chain):**
@@ -707,10 +709,10 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 0-3 s | Quote card of the viral claim (handle masked unless public figure; tag in caption) | Klaus: "This post says AI replaces every marketer by 2027. I run an AI agency. Let's check." |
 | 3-10 s | The post itself, zoomed on the claim and its likes | "[N] likes. No source. Just vibes and a robot emoji." |
 | 10-18 s | Klaus to camera, softer | "To be fair: AI already writes first drafts faster than any of us. That part is real." |
-| 18-25 s | Data card 1: "[sourced figure on marketing job postings, year]" | "But here's [source]: [what it shows]." · pop |
-| 25-32 s | Data card 2: a screen of TITAN.AI drafts with Klaus's edits in red | "And in our own work, every AI draft still gets a human edit before it ships." |
+| 18-25 s | Over B-roll of a job-board scroll: "[sourced figure on marketing job postings, year]" (small source line) | "But here's [source]: [what it shows]." · pop |
+| 25-32 s | Screen recording: TITAN.AI drafts with Klaus's edits in red | "And in our own work, every AI draft still gets a human edit before it ships." |
 | 32-38 s | Label "OPINION" top-left; Klaus to camera | "My take: AI replaces tasks first. The marketer using it replaces the one who doesn't." |
-| 38-40 s | Text: "Agree or nah?" | (caption tags the original post's creator) |
+| 38-40 s | Klaus to camera; text over the shot: "Agree or nah?" | (caption tags the original post's creator) |
 
 - **Why it works (logic chain):**
   - The stance plus "let's check" makes the viewer expect a verdict, so the receipt is the first payoff.
@@ -842,7 +844,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   2. 1-3 s: the dates said in the first 3 s (VO ~140 wpm).
   3. 3-10 s: 1 s inserts on the beat: hero product → hands using the activation.
   4. 10-17 s: the freebie or photo moment → a walk-through.
-  5. Last 2-3 s: a bag-out or the what-where-when card, held ≥ 2 s.
+  5. Last 2-3 s: a bag-out with the what-where-when text over it, held ≥ 2 s.
 - **Real example:** POP MART opening, Mall of America https://www.instagram.com/reel/DQxooZQEaIl/ (627 likes on a mall account): 10.7 s, median 1.03 s, storefront at 0 s → 7 hero inserts → a shopper walks out with the bag. (Mall reels get hundreds of likes; the pacing is solid, the reach comes from the anchor product.)
 - **Example script (Power Protein's birthday weekend; offer and dates are placeholders):**
 
@@ -854,12 +856,12 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 7-10 s | Hands at a "build your own bowl" station | VO: "Build your own bowl." |
 | 10-14 s | Photo wall moment (staff and consenting creators only) · free tasting cups [with terms] | VO: "Free tastings, [hours]." |
 | 14-17 s | Walk-through past the shelves, ending at the door | track |
-| 17-20 s | What-where-when card held 3 s: "[Date] · [hours] · [address], Thao Dien · terms in caption" | pop |
+| 17-20 s | A customer walks out of the door with the bag; over it, held 3 s: "[Date] · [hours] · [address], Thao Dien · terms in caption" | pop |
 
 - **Why it works (logic chain):**
   - The offer on the product makes it worth stopping for, so the dates in the first 3 s are heard.
   - The hands-on inserts let the viewer rehearse the visit, so they picture themselves there.
-  - The card repeats when and where, so the viewer leaves with everything they need to come.
+  - The closing text repeats when and where, so the viewer leaves with everything they need to come.
 - **Don't:** open on a bare price slide or a fake countdown ("10 % off every $88" was the 3-like low performer); film identifiable shoppers without consent.
 - **Preset:** `event-guide-vo` (with VO) · `event-retail-promo` (music only, 0.8-1.0 s median) · deep card: genre-playbooks.md §28
 
@@ -871,7 +873,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   2. 0-10 s: section 1: one fact per line; the diagram changes every 1-2 s; the named part lights up as it's sung.
   3. 10-20 s: section 2, with a new persistent step label.
   4. 20-25 s: the recap/count line with every label on screen at once.
-  5. 25-30 s: end (optional 1.5 s card); the CTA lives in the caption ("save for your exam").
+  5. 25-30 s: end (optional 1.5 s logo over the diagram); the CTA lives in the caption ("save for your exam").
 - **Real example:** AsapSCIENCE mitosis song, filmed off a monitor https://www.instagram.com/reel/C6LnMbiiLuT/ (302 K likes): singing at 0.0 s, header "If you study biology and you don't know this song…", a step label per phase, one phone take. Adult study songs run at 3.0-3.4 syllables per second (close to rap); slow kids' songs got no saves.
 - **Example script (Physio Spot, proof-screen song, original beat at 92 BPM):**
 
@@ -893,32 +895,32 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 - **Sub-style 29b Brand PSA song:** an original melody, one cute character per verse doing a "dumb" thing, the message as the chorus, a dance simple enough to copy (Dumb Ways to Die: 50 M views in ~7 months). Researched, not measured.
 
 ## 30. Texting / receipts suspense
-- **What it is:** someone retells what was said, and the actual texts appear as black chat cards, bubble by bubble, until the line the story turns on.
+- **What it is:** someone retells what was said, and the actual texts appear as chat bubbles over their shot (dimmed and blurred behind the bubbles), bubble by bubble, until the line the story turns on.
 - **Use it when:** "they told me…" stories; real messages need both people's consent, recreations say "dramatised"; never patient chats.
 - **The 5 beats (45-90 s):**
-  1. 0-3 s: the most shocking text, alone and large.
+  1. 0-3 s: the most shocking text, alone and large, over a dim frame of the speaker.
   2. 3-20 s: the speaker sets the stakes (locked interview shot, warm light).
-  3. Each "they texted" moment: a full-black chat card, 4-7 s, bubbles one by one with a typing dot before each reply.
-  4. The turn: the punch message alone and large, then a beat of silence.
+  3. Each "they texted" moment: the bubbles pop in over the speaker's shot (dimmed, 4-7 s), one by one, with a typing dot before each reply. Default: over the footage; variation: the full-black chat card of the measured ref.
+  4. The turn (the twist): a hard cut to the speaker's own reaction close-up, with the punch message large over it, then a beat of silence.
   5. The aftermath on the speaker's face, then the CTA or "full story".
 - **Real example:** the "MUSK" documentary reel (@muskdoc, ref #7): 91.2 s, 93.6 K likes, average shot 6.1 s, a hit or pulse every 1-3 s, the turning line shown alone ("I have over 10 thousand lasers in space right now.").
 - **Example script (Klaus personal; dramatised recreation, details to confirm):**
 
 | Time | On screen | Said / sound |
 |---|---|---|
-| 0-3 s | Black card, one large bubble: "Can you make it go viral by Friday?" | drone bed; one hit |
+| 0-3 s | Klaus's lamp-lit desk, dimmed and blurred; one large bubble over it: "Can you make it go viral by Friday?" | drone bed; one hit |
 | 3-12 s | Klaus, locked mid-shot, lamp light | "A client sent me that at 11:48 pm. It was Wednesday." |
-| 12-19 s | Chat card: me "Viral isn't a deadline." · typing… · them "My competitor did it. 2 million views." · me "Send me the link." | tick per bubble |
+| 12-19 s | Bubbles over Klaus's shot (dimmed): me "Viral isn't a deadline." · typing… · them "My competitor did it. 2 million views." · me "Send me the link." | tick per bubble |
 | 19-26 s | Klaus | "So I opened the link. And I recognised the edit. Same hook ladder, same captions. Then I saw who made it." |
-| 26-30 s | The punch, alone and large: "That's ours. We made it." | silence (1 s) |
-| 30-36 s | Chat card: them, typing… stops… typing… "Can I book the same team?" | ticks, then a soft laugh from Klaus off-card |
+| 26-30 s | The twist: hard cut to Klaus's CU, frozen mid-blink; the punch large over it: "That's ours. We made it." | silence (1 s) |
+| 30-36 s | Bubbles over Klaus's shot (dimmed): them, typing… stops… typing… "Can I book the same team?" | ticks, then a soft laugh from Klaus under the bubbles |
 | 36-45 s | Klaus's face, then a small smile | "Viral isn't a deadline. It's a habit. We post the boring version every day until one isn't boring." · text: "Full story on the channel" |
 
 - **Why it works (logic chain):**
   - The opening text is an impossible ask, so the viewer wants to know how he answers.
   - The bubbles let the viewer read ahead of the voice, so they guess the turn and get it twice (read + heard).
   - The punch flips who has the power, so the lesson ("a habit, not a deadline") lands as earned, and "full story" promises more.
-- **Don't:** put captions over the chat cards (the voice runs underneath; the bubbles are the text); show a real person's private messages without consent.
+- **Don't:** put captions over the bubbles (the voice runs underneath; the bubbles are the text); cut to a plain black page for commentary or titles; show a real person's private messages without consent.
 - **Preset:** `texting-suspense` (beats carry `chat`, rendered by chatanim) · deep card: genre-playbooks.md §30
 
 ## 31. Borrowed cold open / bait-and-switch
@@ -959,7 +961,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
   2. 2.5-5 s: an open-loop aside ("This is our last recipe…").
   3. 5-30 s: one step per shot, 2-2.5 s each, an imperative verb on every cut (~200-210 wpm).
   4. 30-34 s: the sensory payoff, the longest hold (3.5-4.5 s).
-  5. 34-38 s: the wordless twist, then a series card.
+  5. 34-38 s: the wordless twist, then the series name over the last shot.
 - **Real example:** @storygoaten "How to Cook a Carnotaurus Leg" (ref anim1, 140 K likes, 1,773 comments): 38.7 s, a caveman on a cobalt grid void, one step per 2-2.5 s shot, foley on every verb, a callback twist.
 - **Example script (Snap Saigon, "How to cross a Saigon street, Stone Age edition"):**
 
@@ -973,7 +975,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 20-25 s | A bánh mì cart glides past his face | VO: "Ignore the bánh mì. It's a trap." · sizzle |
 | 25-30 s | Last lane | VO: "Keep the same speed. They're reading you." |
 | 30-34 s | He reaches the far kerb; a cold coffee is waiting; long slurp (held 4 s) | ice clink, slurp |
-| 34-38 s | Wordless: he turns; a Snap Saigon snapper behind him is already showing him the photo of every step. He stares. Card: "CAVEMAN IN SAIGON · EP 1" | one impact |
+| 34-38 s | Wordless: he turns; Hân, our snapper, is behind him, already showing him the photo of every step. He stares. Over the shot: "CAVEMAN IN SAIGON · EP 1" | one impact |
 
 - **Why it works (logic chain):**
   - An impossible task in a calm tutorial voice makes the viewer laugh and listen at the same time.
@@ -986,7 +988,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 - **What it is:** a calm walkthrough of how you make something, with a burst of code-rendered proof cards in the middle.
 - **Use it when:** tools/AI how-tos and build-in-public; a comment-keyword CTA drives comments and follows.
 - **The 5 beats (60 s short cut of a 60-145 s tutorial):**
-  1. 0-3 s: series tag + a glitch-in title ("PART 1").
+  1. 0-3 s: series tag + a glitch-in title ("PART 1") over the finished result, already playing.
   2. 3-12 s: the contrast claim on two screens ("before" vs "with this") + the effort hook.
   3. 12-35 s: the steps over real screen recordings, keyword captions in the empty half of the frame (VO ~120 wpm, 5-10 word sentences).
   4. 35-48 s: the proof burst: code-rendered cards at 0.03-0.6 s, one idea per card, cut to a beat.
@@ -996,7 +998,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 
 | Time | On screen | Said / sound |
 |---|---|---|
-| 0-3 s | Tag "BUILD IN PUBLIC" + glitch title "PART 1: STAT CARDS" | glitch hit |
+| 0-3 s | The finished animated counter already playing; over it: tag "BUILD IN PUBLIC" + glitch title "PART 1: STAT CARDS" | glitch hit |
 | 3-12 s | Two screens: left, a wobbly stat in a template app; right, a frame-exact animated counter | VO: "Left: twenty minutes dragging boxes. Right: one command. Same number." |
 | 12-20 s | Screen recording: a JSON with the number and its source line | VO: "Step one. Write the number and where it came from. Always the source." |
 | 20-28 s | Terminal: `editor.py motion` with the stat-counter template | VO: "Step two. Pick the template. Stat counter." |
@@ -1089,7 +1091,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 | 8-10 s | Cut: an original rich uncle with a golf umbrella | whoosh |
 | 10-12 s | Back to Klaus, to camera | "Yes, it's all one clip. Here's how." |
 | 12-25 s | Screen: 1 film your walk · 2 build an original character sheet · 3 motion transfer onto it (cheap draft first) | "Film one walk. Build a character, not a lookalike. Transfer the movement." |
-| 25-30 s | Text "Comment CLONE" | "Comment CLONE for the steps." |
+| 25-30 s | Klaus to camera; over the shot: "Comment CLONE" | "Comment CLONE for the steps." |
 
 - **Why it works (logic chain):**
   - The same walk in every shot makes the swap obvious, so the viewer's "how??" fires within seconds.
@@ -1114,11 +1116,11 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 
 | Time | On screen | Said / sound |
 |---|---|---|
-| 0-3 s | Tourists all shooting the same Notre-Dame angle · "SAIGON PHOTO SPOT MAP" | "Every tourist takes this exact photo. Here's my map of where we shoot instead." |
+| 0-3 s | Hân (our snapper) walks into frame past tourists all shooting the same Notre-Dame angle (real clips via `editor.py collab scout`, creators tagged in the caption) · "SAIGON PHOTO SPOT MAP" | Hân: "Every tourist takes this exact photo. Here's my map of where we shoot instead." |
 | 3-6 s | Phone: a map with 6 pins | "One map, every spot we use, each with the best time of day." |
 | 6-16 s | Landmark 81 at sunset → Thao Dien café street → Nguyen Hue, City Hall end | "Riverside at sunset. Thao Dien for the café look. Nguyen Hue from the City Hall end, crowd behind you." · whoosh per spot |
 | 16-20 s | Screen recording: tap a pin, the note opens | "Tap a pin, walk there, the angle's in the note." |
-| 20-25 s | To camera, map thumbnail · **Comment "MAP"** 👇 | "Want the map? Comment MAP and I'll send it to you." · pop |
+| 20-25 s | Hân to camera, map thumbnail · **Comment "MAP"** 👇 | "Want the map? Comment MAP and I'll send it to you." · pop |
 | Caption | "Comment MAP and I'll send you our Saigon photo spot map 📍 6 spots, best time, exact angle." | |
 
 - **Why it works (logic chain):**

@@ -12,10 +12,10 @@ Hook rate and "tested in" stay empty until `/review` has data. Baseline TBD.
 | H03 | A1 | problem | conflict line | friend hands her a 3rd phone | "One more! Okay, now one on my phone." | Thêm tấm nữa! Giờ chụp bằng máy mình nhé. | one more! okay, now one on my phone. | [draft] | yes | C01 | - | untested |
 | H04 | A1 | problem | visual-only | close-up: one hand holding 3 phones, a 4th slid on top | none (shutter-click stack) | (no text for 1.5 s, then H01) | | [draft] | yes | C01 | - | untested |
 | H05 | A1 | problem | statement | the friend, deadpan, to lens, phones in hand | "I've been to 6 countries. I'm in zero of the photos." | Đi 6 nước. Không có mặt trong tấm nào. | 6 countries. in zero of the photos. | [draft] | yes, but the character is fictional: label it | C01 alt | - | untested |
-| H06 | A1 | problem | texting reveal | black chat card: "Jess you're on photo duty again 😂" | none | Jess ơi, lại tới lượt bạn cầm máy rồi 😂 | jess you're on photo duty again 😂 | [draft] | yes + "Minh hoạ" | C05 | - | untested |
+| H06 | A1 | problem | texting reveal | chat bubble over a dimmed hotel-room frame: "Jess you're on photo duty again 😂" | none | Jess ơi, lại tới lượt bạn cầm máy rồi 😂 | jess you're on photo duty again 😂 | [draft] | yes + "Minh hoạ" | C05 | - | untested |
 | H07 | A1 | problem | texting punch | bubble alone, large: "I have 0 photos of me from Bangkok" | none | Mình không có tấm nào ở Bangkok luôn. | i have 0 photos of me from bangkok. | [draft] | yes | C05 alt | - | untested |
 | H08 | A1 | problem | question | group selfie, the friend's arm stretched across half the frame | none | Ảnh nhóm mà ai cũng thấy… cánh tay bạn? | group photo, starring… your arm? | [draft] | yes | C01 alt, C04 alt | - | untested |
-| H09 | A5 | problem | split / text-over-action | left: arm's-length selfie with the Notre-Dame towers cut off; right: blank | "My selfie. Now watch what a snapper does in 60 seconds." | Ảnh selfie của mình vs. 60 giây với snapper | my selfie vs 60 seconds with a snapper | [draft] | yes, real photos, same person/day/spot | C04 | - | untested |
+| H09 | A5 | problem | split / text-over-action | left: arm's-length selfie with the Notre-Dame towers cut off; right: the same spot, blurred | "My selfie. Now watch what a snapper does in 60 seconds." | Ảnh selfie của mình vs. 60 giây với snapper | my selfie vs 60 seconds with a snapper | [draft] | yes, real photos, same person/day/spot | C04 | - | untested |
 | H10 | A5 | problem | statement | the snapper's hand moving the subject one step left | "Step one: get out of the crowd line." | Bước 1: ra khỏi dòng người. | step 1: get out of the crowd line. | [draft] | yes, bystanders blurred | C04 alt | - | untested |
 | H11 | A5 | problem | question | subject stiff, arms straight down, at Nguyen Hue | none | Không biết tạo dáng? Không sao. | don't know how to pose? good. | [draft] | yes | C04 alt, C03 alt | - | untested |
 | H12 | A5 | problem | visual-only | snapper lying on the pavement, shooting up at the cathedral | shutter click | (text at 1.2 s) Snapper lo góc chụp. | your snapper finds the angles. | site line [web 2026-10-25] | yes | C04 alt | - | untested |
@@ -44,8 +44,17 @@ Hook rate and "tested in" stay empty until `/review` has data. Baseline TBD.
 | H35 | A1 | problem | ZH variant (round 2) | same as H01 | none | Chuyến đi nào bạn cũng là người chụp cho cả nhóm? | 每次旅行都是你帮大家拍照？[draft ZH-S, native check] | [draft] | VN first, ZH ≤3/4 | round 2 | - | parked |
 | H36 | A1 | problem | JA variant (round 2) | same as H01 | none | Chuyến đi nào bạn cũng là người chụp cho cả nhóm? | 旅行でいつも撮る側なのは、あなた？[draft JA, native check] | [draft] | VN first, JA ≤3/4 | round 2 | - | parked |
 
+## Hook ladders (ledger [hooks]: each line opens a new loop and raises the stakes)
+Use these where the ad has room (C01, C04, C02). One line per beat: tease → twist → reveal → why → stakes → proof → things to note → end. The tease is painted big; every fact stays true. EN shown; the VN line goes first on paid frames and needs drafting + a native check [CONFIRM].
+
+| Ladder | Tease (0.0 s) | Twist | Reveal | Why | Stakes | Proof | Things to note | End |
+|---|---|---|---|---|---|---|---|---|
+| L1 · A1 (C01, C05) | "214 photos from saigon." | "she's in zero of them." | "she's always the one holding the phone." | "every group has one." | "this is her only trip this year." | "1 h · 40 edited photos + 3 vertical clips · same day" (Postcard) | "from USD 27.69 per group of up to 6 · pay online · no refunds, postponement only" | "book at snapsaigon.com" |
+| L2 · A5 (C04) | "this is my selfie at notre-dame." | "the towers didn't make it." | "a snapper fixed it in 60 seconds, with 4 moves." | "it's the angle, not your face." | "you get one morning at this cathedral." | "real photos · same person · same day · same spot" | "edit = colour + crop only" | "your snapper finds the angles: snapsaigon.com" |
+| L3 · A3 (C02, organic) | "3 tricks on visitors in HCMC this year." | "police flagged every one." | "one starts with a stranger asking for a donation." | "they work the spots visitors go first (Ben Thanh, booking sites)." | "one tap on a fake booking page and the money's gone." | the source line on each slide (Tuổi Trẻ 2026-08-08, 2026-08-20; VietnamPlus 2026-07) | "police: 113" | "save this for your trip" |
+
 ## Hook rules for this brand
-- The first frame and first line name the problem by second 1-3. Never open on a logo-only frame (studio default).
+- The first word or action lands at 0.0 s (no lead-in), and the first frame and first line name the problem by second 1-3. Never open on a logo-only frame (studio default).
 - Faces in hook frames belong to consenting talent or staff. Blur bystanders. Hook text never covers a face (ledger 2026-10-10).
 - Crude or edgy hooks don't fit this brand: the humour dial is 1.
 - Every VN line must say the same as its EN partner. No claim may exist in only one language.

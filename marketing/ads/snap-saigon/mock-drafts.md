@@ -10,7 +10,7 @@ Built from matrix.md (angles A1-A8), hooks.md (H01-H36) and round-1.md. Next ste
 - Font: Inter Bold. Colours: edit-brand draft (#111111 / #FFC727 / #FFFFFF; #E63946 only for the ⚠️ kicker).
 - VN copy is a studio draft and needs a native check [CONFIRM].
 
-**[EC-PC] end card, Saigon Postcard** (2.0 s, from edit-brand `end_card`)
+**[EC-PC] end card, Saigon Postcard** (2.0 s, from edit-brand `end_card`; the lines sit over the final shot, darkened for legibility, never on a sudden blank page)
 | VN (first, larger) | EN (below, ≤3/4) |
 |---|---|
 | Saigon Postcard · 1 giờ · 40 ảnh đã chỉnh + 3 clip dọc · nhận trong ngày | saigon postcard · 1 h · 40 edited photos + 3 vertical clips · same day |
@@ -38,7 +38,9 @@ Built from matrix.md (angles A1-A8), hooks.md (H01-H36) and round-1.md. Next ste
 - Street ambience is recorded on the shoot day.
 - Shutter click on each photo reveal.
 
-**Footage:** real snapper footage is the default. Generated plates are a last resort, labelled "Minh hoạ", and run through realism.md. Never generate an AI likeness of a real snapper.
+**Footage:** real snapper footage is the default. Generated plates are a last resort and run through realism.md; a staged or generated scene carries the same "Minh hoạ / Dramatisation" label as any staged scene (a VN dramatisation label, not an AI label). No AI label in the video or caption; switch on the platform's AI-disclosure toggle for photoreal AI shots (ledger [ai-labels]). Never generate an AI likeness of a real snapper.
+
+**Cast:** organic skits use the locked cast (Hân, Khang, Ben: cast/snap-saigon-influencer.md). These paid drafts default to real snappers and released actors (real people beat generated ones); a cast variant sits in iterations.md (C01 lever 16 d). Reused real clips come from `editor.py collab scout` (Claude collects; creators tagged in the caption, no on-screen credit).
 
 ---
 ## C01: "The Designated Photographer" (drama skit)
@@ -172,7 +174,7 @@ Built from matrix.md (angles A1-A8), hooks.md (H01-H36) and round-1.md. Next ste
 
 | s | Visual | Spoken / SFX | On-screen VN | On-screen EN |
 |---|---|---|---|---|
-| 0-2 | Split: left, the talent's real arm-length selfie at Notre-Dame park side (towers cropped); right, black | none | [PAID] · Ảnh selfie của mình vs. 60 giây với snapper | my selfie vs 60 seconds with a snapper |
+| 0-2 | Split: left, the talent's real arm-length selfie at Notre-Dame park side (towers cropped); right, the same spot, blurred (the snapper's frame fills it at 19 s) | none | [PAID] · Ảnh selfie của mình vs. 60 giây với snapper | my selfie vs 60 seconds with a snapper |
 | 2-6 | Step 1: the snapper's hand guides the talent one step out of the tourist line (bystanders blurred) | tick; SNAPPER: "Out of the crowd line." | Bước 1: ra khỏi dòng người | step 1: out of the crowd line |
 | 6-10 | Step 2: the snapper turns the talent 30° toward the light | tick; "Face the light." | Bước 2: quay về phía ánh sáng | step 2: face the light |
 | 10-14 | Step 3: the snapper drops to the pavement so the towers fit | tick; shutter | Bước 3: hạ thấp máy để vừa cả hai tháp | step 3: get low so both towers fit |
@@ -204,16 +206,16 @@ Built from matrix.md (angles A1-A8), hooks.md (H01-H36) and round-1.md. Next ste
 
 | s | Visual | Chat bubbles (VN / EN) | SFX |
 |---|---|---|---|
-| 0-3 | Black chat card, group "Saigon trip 🇻🇳", one bubble alone and large | SAM: "Jess ơi, lại tới lượt bạn cầm máy rồi 😂" / "jess you're on photo duty again 😂" | cold open, low pulse |
+| 0-3 | Jess's hotel-room shot, dimmed and blurred; over it the group chat "Saigon trip 🇻🇳", one bubble alone and large | SAM: "Jess ơi, lại tới lượt bạn cầm máy rồi 😂" / "jess you're on photo duty again 😂" | cold open, low pulse |
 | 3-6 | Locked MS: Jess on a hotel bed, lamp light, looking at her phone (the actor; [PAID] label + "Minh hoạ") | (none) | pulse |
-| 6-11 | Chat card | ANA: "Ai mang máy xịn vậy?" / "who's bringing the good camera?" · KIM: "Jess chứ ai 😂" / "jess obviously 😂" · typing dots (Jess) | tick per bubble |
-| 11-14 | **PUNCH**: Jess's bubble alone, large, then 0.8 s of silence | JESS: "Mình không có tấm nào ở Bangkok luôn." / "i have 0 photos of me from bangkok." | silence |
+| 6-11 | Bubbles over Jess's shot (dimmed) | ANA: "Ai mang máy xịn vậy?" / "who's bringing the good camera?" · KIM: "Jess chứ ai 😂" / "jess obviously 😂" · typing dots (Jess) | tick per bubble |
+| 11-14 | **PUNCH** (the twist): hard cut to Jess's CU, frozen; her bubble large over it, then 0.8 s of silence | JESS: "Mình không có tấm nào ở Bangkok luôn." / "i have 0 photos of me from bangkok." | silence |
 | 14-16 | Jess looks up to the lens, says nothing | (none) | soft hit |
-| 16-21 | Chat card | JESS: "Mình đặt snapper rồi. 1 tiếng, Nguyễn Huệ, từ USD 27.69 cho cả nhóm." / "booked us a snapper. 1 h, nguyen hue, from USD 27.69 for all of us." · SAM: "Cả nhóm luôn hả?" / "wait, the whole group?" · JESS: "Tối đa 6 người. Trả online. Có ảnh trong ngày." / "up to 6. paid online. photos same day." | tick per bubble |
+| 16-21 | Bubbles over Jess's shot (dimmed), her small smile behind them | JESS: "Mình đặt snapper rồi. 1 tiếng, Nguyễn Huệ, từ USD 27.69 cho cả nhóm." / "booked us a snapper. 1 h, nguyen hue, from USD 27.69 for all of us." · SAM: "Cả nhóm luôn hả?" / "wait, the whole group?" · JESS: "Tối đa 6 người. Trả online. Có ảnh trong ngày." / "up to 6. paid online. photos same day." | tick per bubble |
 | 21-23 | Real snapper photo from the shoot: Jess in the centre of the group | KIM: "Jess cuối cùng cũng có mặt trong ảnh 😭" / "jess finally in the photos 😭" | shutter + release chord |
 | 23-25 | [EC-PC] | | bed resolves |
 
-- **Shot list:** 2 locked set-ups of the actor (bed MS, look-up CU) + 1 group photo from the C01 shoot. The chats are editor graphics (0 credits).
+- **Shot list:** 2 locked set-ups of the actor (bed MS, look-up CU) + 1 group photo from the C01 shoot. The chats are editor graphics (0 credits), laid over the dimmed bed shot (genre §30 default; until the editor's chat overlay mode exists, the full-black chat card is the fallback).
 - **Sound:** [SND]. Licensed low pulse bed, a tick per bubble, silence on the punch, a release chord on the group photo.
 - **CTA:** [EC-PC] + "Book now". Proposal B: a final bubble from Jess, "link: snapsaigon.com".
 - **Compliance:** [PAID] [CMP].
@@ -347,7 +349,7 @@ Built from matrix.md (angles A1-A8), hooks.md (H01-H36) and round-1.md. Next ste
 - **Compliance:** [PAID] [CMP].
   - "Free" → "no extra cost" (the edit-brand forbids "free").
   - Don't promise "same time", a named venue or "rain-proof" results [CONFIRM what the rain plan is: a location swap or a reschedule?].
-  - The rain footage is real, or generated and labelled "Minh hoạ".
+  - The rain footage is real; a generated plate is the last resort and carries the usual "Minh hoạ / Dramatisation" staged-scene label (no AI label).
 
 ---
 ## C10: "Know the price before you go" (static retargeting)

@@ -46,7 +46,7 @@ At launch there are no winners, so 100% of spend is testing: 3-5 concepts × 2-3
 | Spent ~3x target CPA (≈USD 42 at the placeholder), 0 bookings, frequency not low | Kill | [LM]; USD figure [studio] |
 | Hook rate in the bottom third of R1's ads after ≥1,000 impressions, while CTR among viewers is fine | Keep the body, test new hooks (§10 rung 1, levers 11/14/17/22) | [studio] |
 | Hook OK, hold low | Recut the first 10 s, add a stim every 1.5-3 s (levers 12-14, 20) | [studio], ledger |
-| Hold OK, CTR low | Put a spoken CTA naming snapsaigon.com earlier and add a price card (levers 8, 10, 25) | §9 |
+| Hold OK, CTR low | Put a spoken CTA naming snapsaigon.com earlier and add the price as text over the footage (levers 8, 10, 25) | §9 |
 | CTR high, bookings ≈0 | Landing-page congruence: deep-link to the package (C03/C04 → Postcard, C08 → /photo-spots, C09 → rain FAQ). Check placements and age (levers 10, 24) | [LM ≈2:17] |
 | CPA ≤ target with ≥5 bookings | Provisional winner: run the iterations.md SOP and graduate it to a scaling ad set | [studio threshold] |
 | Meta "creative limited" / "creative fatigue" | Queue iterations / replace | [P via Jon Loomer] |
