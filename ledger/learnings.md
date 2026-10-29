@@ -1,4 +1,7 @@
 # Learnings ledger (append-only; newest at top). Each entry = a standing rule.
+## 2026-10-29 - styles and AI influencer (Klaus)
+- [styles] Measured cards = best-practice DEFAULTS, not hard yes/no rules. Older settings and styles (e.g. crash zooms, earlier presets) stay available as variations: hook variations, trial reels, proposal B. Never refuse a style because a card's default differs.
+- [ai-influencer] Brand AI influencers (e.g. Snap Saigon) are original characters animated by Genjutsu motion transfer from real people's clips (Klaus handles rights). The output never keeps the driver's face or voice: original face, original voice.
 ## 2026-10-28 - genre card review (Klaus)
 - [remembrance] Big war dates, remembrance days and victims (French and American wars: Reunification Day 30/4, Martyrs' Day 27/7, Agent Orange day 10/8, National Day 2/9, Điện Biên Phủ 7/5, Tết Offensive, Mỹ Lai) get a yearly special each: remembrance tone, true quiet hooks, no hype, giveaways or booking CTAs, victims with dignity, official terms, no politics.
 - [stories] Travel/city brands also tell the stories behind places: bars, restaurants, cafés, buildings, and the deep, dark colonial and city history behind them (narrated mini-docs with hook ladders, archival vs today, every fact sourced; war/post-1945 stays factual and official-term).
@@ -11,7 +14,7 @@
 - [variety] Never run one format every post: rotate spines/styles per account (no spine twice in a row; the trick-on-the-viewer scam remix at most ~1 in 5, a new trick each time).
 - [before-after] Reveal placement is flexible (snap first, mid-way or last); make variants and test. SG health: still no people before/after.
 - [retail] A real discount can open a retail ad when it makes people want the product (product first, real terms shown). Never for SG health brands.
-- [ai-labels] No AI/CGI label on screen or in captions; use the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
+- [ai-labels] No AI label anywhere in the video or caption, including clones, AI influencers and AI voices ("takes away from the video", Klaus 2026-10-29). Only the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
 - [clips] More real people's clips: reposts, Remix, Stitch, Duet and reused clips are ONE workflow (`editor.py collab add`); Klaus/his VA handle backend and copyright, so no permission gates in the studio. Never burn credits on screen ("via @handle" looks ugly and stupid, Klaus); tag the original creator in the caption + outreach (shoutout/collab DM) + tracker.
 - [romance] Organic romance/sensual: anything goes except showing private parts (no genitals, female nipples, explicit sex acts); kisses, making out, bed scenes, lingerie and implied sex are fine. Paid ads stop at the kiss (Meta/TikTok ad rules). Adults 25+, original characters only.
 - [skits] Crash zooms on Klaus's own skits = proposal B; side-choosing endings stay.

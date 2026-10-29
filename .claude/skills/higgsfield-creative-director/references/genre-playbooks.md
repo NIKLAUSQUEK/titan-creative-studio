@@ -162,7 +162,7 @@ Shot JSON keys are the same as in §1 (id, dur, model, mode, camera, subject, ac
 - **Shot grammar:**
   - A static, locked wide (full body or 3/4) at eye level; the performer occupies the centre third.
   - Cut only between "their way" and "our way", never inside the deadpan answer.
-  - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Klaus decided (2026-10-28): his crash zooms stay as **proposal B** on his own skits; version A follows the measured no-zoom grammar.
+  - **No crash zoom by default:** none of the measured deadpan reels uses a zoom; the current card's "crash zoom + 0.5 s freeze" belongs to the absurdist §6, not to deadpan. Klaus (2026-10-29): crash zooms are a **hook variation**. The measured no-zoom grammar is the best-practice default; crash-zoom versions run as variations/trial reels on any account.
   - Hide the gag until the reveal (hard_rules).
 - **Look:** phone-natural, flat daylight or office fluorescent, no grade tricks. The comedy comes from staging and the header.
 - **Header type:** quote header in a white rounded box, sentence case, centred at y ≈ 0.07-0.10, two lines max, plus a short label line ("The culture:") in a second box (corp1). The Khaby format has no text at all.

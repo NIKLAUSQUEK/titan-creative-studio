@@ -52,9 +52,9 @@ It is motion transfer / video-to-video with a character reference. It is not a f
 - **Brand mascot with a human performance:** the founder or physio performs; the mascot character (animation-3d-cartoon.md) delivers it. Keeps real staff off camera when they prefer.
 
 ## Hard rules (non-negotiable)
-- **Drivers:** only footage of Klaus, consenting team or hired talent with a signed release that covers AI transformation.
+- **Drivers:** footage of Klaus, the team, hired talent, or real people's clips brought in through the collab workflow (Klaus handles rights, 2026-10-29). The output keeps only the motion: never the driver's face or voice (replace the audio with the character's own voice).
 - **Characters:** original only (character-design.md composite method). Never a celebrity, influencer, politician or private person lookalike, never "make me look like <real name>", never a real person's voice. That is impersonation / deepfake territory and is refused even "as a joke".
-- **Disclose:** label AI-generated or altered content as each platform requires (TikTok/IG/YouTube AI labels), and say "AI" in the caption when the swap is the point.
+- **No AI label** in the video or caption (Klaus, 2026-10-29: it takes away from the video). Switch on the platform's own AI-disclosure toggle where TikTok/Meta require it for photorealistic AI.
 - **Health brands (SG pack):** a transformed character never poses as a patient, doctor or customer giving an experience (no testimonials, no implied results). Fine for skits, explainers and clearly fictional characters.
 - **Comment-to-get CTAs** ("comment AI") are fine on personal accounts. On brand accounts, give the value in the post instead of gating it.
 

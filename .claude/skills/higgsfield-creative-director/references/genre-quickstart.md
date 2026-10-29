@@ -1129,6 +1129,7 @@ The deep reference is [genre-playbooks.md](genre-playbooks.md) (prompt keys, sho
 - **Preset:** `lead-magnet` · deep card (with Physio Spot DESK and TITAN.AI PROMPT scripts): genre-playbooks.md §37
 
 ## Universal rules (every genre)
+- **Defaults, not laws (Klaus, 2026-10-29):** every card here is the measured best practice for version A. Older styles and settings (crash zooms, earlier presets) are fine as variations: hook variations, trial reels, proposal B.
 1. **Hook ladders, not single hooks** (ledger [hooks]): each line opens a new loop that pays off the last and raises the stakes: tease → twist → reveal → why → stakes → proof → things to note → end. Write 3-5 hook variations per post. Wordless formats do the same with the picture and the header.
 2. **Start at 0.0 s.** First word, first action or first chant at frame 1; no slates, logos, intros or count-ins (every measured winner in news, edu-song, drama and ASMR does this; the losers open on 4-10 s of nothing).
 3. **Protect the pause.** The 0.5-1.7 s of silence before a punch, scare or reveal is the most valuable second in the video; never let silence removal eat it.
