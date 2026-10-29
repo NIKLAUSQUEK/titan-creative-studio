@@ -18,8 +18,8 @@
 | 2 | The Tail | Hân tails Jake badly, with terrible disguises. J's flirty texts arrive at oddly perfect moments. | Jake buys roses. Thought bubble: "for the OTHER WOMAN 😤" |
 | 3 | Overtime | The shift ends, Trâm pays for 2 more hours. J: "near Bitexco too 😂" | Jake's in the café window. Phone buzz: "in the corner 😉" |
 | 4 | The Corner | Hân realises Jake = J. Intrusive-thought meltdown. | "my customer's boyfriend… was my date." |
-| 5 | The Date | Hân walks in and plays along, sweet as honey, while texting Trâm under the table. Jake turns on the full charm and slides the roses across: "for you 🌹". | Hân, under the table: "come to the café. NOW." |
-| 6 | Three's a Crowd | Trâm walks in. Jake turns white. Hân takes the photo at exactly that moment. Thought bubble: *"the money shot."* | Jake: "I can explain—" |
+| 5 | The Date | Hân sits down to "play along" and get proof. But Jake is GOOD: the eye contact, the roses, the soft voice. She texts Trâm under the table, then forgets she did. | Jake leans in for a kiss. Hân is frozen, shy, too nice to shove him away, slowly leaning back… |
+| 6 | Three's a Crowd | Trâm BURSTS in and causes a scene. It rescues Hân, who exhales. Hân takes the photo at exactly that moment. | Jake: "I can explain—" |
 | 7 | The Explanation | Jake's excuses get worse and worse ("she's… my photographer?", "I thought you two were the same person?"). It turns into a comedy roast; both women take the roses. | They leave him with the bill. |
 | 8 | The Shoot | A rooftop glow-up shoot with Trâm and her roses (a one-off; Trâm isn't recurring). Trâm posts the photos; Jake likes them; she blocks him. | End card: "real feelings. real photos. snap saigon." |
 
@@ -78,6 +78,33 @@
 8. Jake sits down in the corner by the window and puts the roses on the table. Hân, across the street, lifts the digicam.
 9. **Her phone buzzes. J: "just got here, I'm in the corner 😉"**
 10. Hân looks at the phone. At the window. At the phone. At the window. The music stops. → "Part 4"
+
+## Part 5, "The Date" (≈40 s)
+**Hook:** *"I was supposed to get proof. not… this."*
+
+1. Hân slides into the seat opposite Jake, too casual: "Hi… J?" Thought bubble: *"stay professional. you are a PI. you are a ROCK."*
+2. Jake smiles slowly, the full charm: "You're even prettier than your photos." Thought bubble: *"…the rock is melting."*
+3. Under the table, Hân texts Trâm: "he's here. come to the café under Bitexco." She puts the phone face-down.
+4. Jake slides the roses over: "For you 🌹". Hân: "These are… for me?" Thought bubble: *"wait, they were for ME??"*
+5. Montage of the date going well, too well: he laughs at her jokes, tucks her hair behind her ear, they share a cà phê sữa đá. Her thought bubbles get smaller and quieter: *"proof… proof… what was I doing…"*
+6. Close-up: her phone buzzes face-down on the table. She doesn't notice.
+7. Jake leans in slowly, for a kiss. The music swells.
+8. Close-up of Hân: wide eyes, flustered, shy. She doesn't want to be rude. She doesn't want to kiss him. She's too polite to push him away, so she leans back… a little… a little more… her chair creaks. Thought bubble, tiny and panicked: *"how do I say no NICELY??"*
+9. He's 5 cm away. → "Part 6"
+
+## Part 6, "Three's a Crowd" (≈35 s)
+**Hook:** *"then his girlfriend walked in."*
+
+1. The café door SLAMS open. A bell jingles. The whole café turns. Trâm stands in the doorway, still in her office clothes, phone in hand.
+2. Freeze-frame on Jake: lips puckered, eyes closed. Freeze-frame on Hân: leaning back at a 45° angle, relief all over her face. Text on screen: *"saved."*
+3. Trâm: "CLIENT MEETING, JAKE?!"
+4. Jake jumps, knocks over the cà phê sữa đá, and tries to stand, sit and wave all at once: "Babe! This is… my… accountant?"
+5. Hân slowly raises her digicam. Click. Thought bubble: *"the money shot 📸"*
+6. The whole café watches. An auntie at the next table quietly takes out her phone to film too.
+7. Trâm points at the roses: "Are those MY roses?" Jake: "…they're… community roses?"
+8. Jake, sweating: "I can explain—" → "Part 7"
+
+**Tone guardrail:** Hân never wants the kiss. She's shy and too polite to reject him aggressively, so she just leans away. The joke is her awkward politeness and his smoothness backfiring, never the kiss itself. Trâm's entrance is her rescue.
 
 ## Variation: Vietnamese lines (subtitled)
 - Hân, at the request: "Trời ơi, PI hả?!" (*Oh my god, a PI job?!*)
