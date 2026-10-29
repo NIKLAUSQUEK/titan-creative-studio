@@ -102,7 +102,7 @@
 **Hook:** *"then his girlfriend walked in."*
 
 1. **SPLASH.** Cold water explodes across the frame. Freeze-frame: Jake still puckered, his face soaked, ice cubes mid-air.
-2. Cut to Hân: the spilled water has landed right across her lap and soaked the jeans dark. She looks down, frozen. Thought bubble, huge: *"WAIT. DID I JUST… 😳"* Second bubble: *"he said 'I know you want it' and my body BETRAYED ME??"*
+2. Cut to Hân: a little spilled water has landed on her lap: just a small damp patch on her jeans, no ice. She looks down, frozen. Thought bubble, huge: *"WAIT. DID I JUST… 😳"* Second bubble: *"he said 'I know you want it' and my body BETRAYED ME??"*
 3. She slowly lifts her eyes… and sees the empty glass in Trâm's hand. Thought bubble: *"…oh thank god. it was HER."* A big relieved exhale.
 3b. Trâm, standing at the table: "CLIENT MEETING, JAKE?!"
 4. Trâm, to Hân: "Oh my god, sorry, that one wasn't for you." She hands her a napkin.
