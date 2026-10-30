@@ -276,6 +276,24 @@ def selftest(a):
     im = card("🇵🇰\nNAHHH BRO 😭💀", 360, 640, "outline", 0.2, 0.05, uppercase=True)
     colours = {px[:3] for px in im.crop(im.getbbox()).getdata() if px[3] > 200} if im.getbbox() else set()
     ok("text card: emoji header renders in colour", len(colours) > 20, f"{len(colours)} distinct colours")
+    from .qc import credit_checks
+    from .webimg import attribution
+    rw = copy.deepcopy(load(E, 3))
+    img = E / "web" / "cc_by_test.jpg"; img.parent.mkdir(exist_ok=True)
+    Image.new("RGB", (640, 480), (200, 120, 40)).save(img)
+    web = {"path": str(img), "kind": "image", "title": "Test sunset", "creator": "Jane Tester", "licence": "CC BY 4.0",
+           "licence_url": "https://creativecommons.org/licenses/by/4.0/", "source": "openverse", "page": "", "credit": "Photo: Jane Tester / CC BY 4.0"}
+    rw["broll"] = [{"id": "b01", "path": str(img), "kind": "image", "src_in": 0.0, "dur": 1.5, "anchor": {"item": rw["items"][1]["id"], "offset": 0.2},
+                    "mode": "full", "credit": web["credit"], "licence": web["licence"]}]
+    rw["texts"].append({"type": "credit", "text": web["credit"], "anchor": {"item": rw["items"][1]["id"], "offset": 0.2}, "dur": 1.5})  # legacy recipe
+    attribution(E, [web])
+    _, wres = render(E, quality="draft", aspects=["9:16"], recipe=rw, out_dir=E / "renders" / "credit", name="credit")
+    ass = (E / "renders" / "cache" / "credit_9x16_draft.ass").read_text(encoding="utf-8")
+    cc = dict((n, (c_, d_)) for n, c_, d_ in credit_checks(rw, E))
+    ok("CC BY web image: no credit on screen, listed in ATTRIBUTION.md (QC flags legacy credit texts)",
+       "Jane Tester" not in ass and "Jane Tester, CC BY 4.0" in (E / "web" / "ATTRIBUTION.md").read_text(encoding="utf-8")
+       and probe(wres[0]["path"]).get("duration", 0) > 5 and all(c_ for c_, _ in [v for k_, v in cc.items() if "ATTRIBUTION" in k_])
+       and not cc["no on-screen credit text (caption only)"][0], json.dumps(cc))
     from .presets import stylecard_to_preset
     p = stylecard_to_preset({"creator": {"name": "Test Creator"}, "dna": {"energy": 5, "avg_shot_s": 1.1, "captions": "word-by-word pop, yellow highlight, all caps, centre",
                                                                          "sound": "whooshes and bass drops", "lighting": "high contrast, warm"}})

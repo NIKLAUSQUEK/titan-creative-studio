@@ -3,7 +3,7 @@
 Sources: Openverse (api.openverse.org: CC + public-domain images incl. Wikimedia/Flickr) and Wikimedia Commons.
 Not Google Images: it returns no licence data and its terms forbid automated scraping, so nothing found there is safe to post.
 Only commercial-use licences are kept (CC0, Public Domain, CC BY, CC BY-SA; never NC/ND). Each image keeps its credit;
-CC BY/BY-SA images get an on-screen credit and a line in web/ATTRIBUTION.md for the caption.
+Nothing is drawn on screen (ledger [credits]); CC BY/BY-SA credits go in web/ATTRIBUTION.md for the caption.
 Real people: allowed only as editorial/commentary context with credit, never in ads or anything implying endorsement (QC flags it).
 """
 import hashlib, html, json, re, urllib.parse, urllib.request

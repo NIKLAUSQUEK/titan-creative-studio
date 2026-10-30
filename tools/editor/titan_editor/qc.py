@@ -58,6 +58,17 @@ def compliance_scan(r, clips, brand_text):
     return sorted(set(hits))
 
 
+def credit_checks(r, edit_dir):
+    """Licensed B-roll is credited in web/ATTRIBUTION.md (-> caption), never on screen (ledger [credits])."""
+    att = Path(edit_dir) / "web" / "ATTRIBUTION.md"
+    att_text = att.read_text(encoding="utf-8") if att.exists() else ""
+    lic = [b for b in r["broll"] if b.get("licence")]
+    missing = [Path(b["path"]).name for b in lic if not b.get("credit") or f"{b['credit'].split(': ', 1)[-1].rsplit(' / ', 1)[0]}, {b['licence']}" not in att_text]
+    on_screen = [t["text"] for t in r.get("texts", []) if t["type"] == "credit"]
+    return [("web images credited in web/ATTRIBUTION.md (-> caption)", not missing, ", ".join(missing) or "ok"),
+            ("no on-screen credit text (caption only)", not on_screen, "; ".join(on_screen) + " (skipped by the renderer; remove from the recipe)" if on_screen else "ok")]
+
+
 def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=None):
     r = load(edit_dir, version)
     man = [x for x in rjson(edit_dir / "renders" / "renders.json", []) if x["version"] == r["version"] and x["quality"] == quality]
@@ -113,8 +124,8 @@ def run_qc(edit_dir, version=None, quality="draft", llm="none", claude_model=Non
     chk("B-roll faces: only enrolled/consenting people (strict for sell pieces)", not (sell and strangers), "unrecognised faces in: " + ", ".join(strangers) if strangers else "ok")
     realp = [Path(b["path"]).name for b in r["broll"] if b.get("real_person")]
     chk("no real-person web photos in ads (editorial/commentary only, credited)", not (sell and realp), ", ".join(realp) if realp else "none")
-    uncredited = [Path(b["path"]).name for b in r["broll"] if b.get("licence") and not b.get("credit")]
-    chk("web images credited (web/ATTRIBUTION.md -> caption)", not uncredited, ", ".join(uncredited) or "ok")
+    for name, ok, detail in credit_checks(r, edit_dir):
+        chk(name, ok, detail)
     from .render import music_ok
     ok, why = music_ok(r)
     chk("music licence OK for this account (or no music)", ok or not r["audio"]["music"].get("path"), why)

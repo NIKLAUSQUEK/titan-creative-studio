@@ -271,7 +271,6 @@ def build_ass(r, clips, W, H, total, path):
     fonts = st.get("fonts", {})
     ec = st.get("end_card", {})
     styles.append(ass_style("EndTitle", ec.get("font") or fonts.get("display") or "DejaVu Sans", ec.get("title_size", 0.05) * U, ec.get("color") or st.get("colors", {}).get("text") or "#FFFFFF", 0, bold=False))
-    styles.append(ass_style("Credit", "DejaVu Sans", 0.014 * U, "#FFFFFF", max(1, round(2 * k)), "#000000", False))
     styles.append(ass_style("EndSub", ec.get("sub_font") or fonts.get("body") or "DejaVu Sans", ec.get("sub_size", 0.03) * U, ec.get("sub_color") or ec.get("color") or "#FFFFFF", 0, bold=False))
     ev = []
     cx = W // 2
@@ -315,6 +314,8 @@ def build_ass(r, clips, W, H, total, path):
             ev.append(f"Dialogue: 0,{t_ass(t0)},{t_ass(t1)},Cap,,0,0,0,,{{\\an5\\pos({cx},{y}){tag}}}" + " ".join(word(i, w) for i, w in enumerate(g)))
     from .textcard import needs_card
     for t in r.get("texts", []):
+        if t["type"] == "credit":
+            continue  # never drawn (ledger [credits]): older recipes may still carry credit texts; the credit lives in web/ATTRIBUTION.md -> caption
         a = at_of(r, t["anchor"], starts)
         if a is None or needs_card(t, st):
             continue  # emoji / box / label texts are drawn as PNG cards in render()
@@ -325,8 +326,6 @@ def build_ass(r, clips, W, H, total, path):
                 txt = txt.upper()
             y = int(H * t.get("position_y", ht.get("position_y", 0.2) if t["type"] in ("hook", "header") else 0.32))
             ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Hook,,0,0,0,,{{\\an5\\pos({cx},{y})\\fscx90\\fscy90\\t(0,120,\\fscx100\\fscy100)\\fad(0,120)}}{txt}")
-        elif t["type"] == "credit":
-            ev.append(f"Dialogue: 1,{t_ass(a)},{t_ass(b)},Credit,,0,0,0,,{{\\an1\\pos({int(W * 0.04)},{int(H * (0.13 if H > W else 0.95))})}}{txt}")
         elif t["type"] == "lower_third":
             ly, cy = lt.get("position_y", 0.8), c.get("position_y", 0.7)
             if abs(ly - cy) < 0.09:  # never sit on the caption band

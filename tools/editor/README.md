@@ -113,7 +113,7 @@ It writes `research\style-studies\clean-educator\STYLE_STUDY.md` (measured cuts,
 ```
 - **Face recognition** runs on your PC with OpenCV models (no cloud). Only enrol people who agreed to it.
 - **"Me" shots:** the brief can ask for a "me" shot ("when I started lifting" → a clip where you're recognised).
-- **Web photos** come from Openverse and Wikimedia Commons, with commercial-use licences only. Credits go on screen and into `web\ATTRIBUTION.md` for your caption.
+- **Web photos** come from Openverse and Wikimedia Commons, with commercial-use licences only. Credits never go on screen; they go into `web\ATTRIBUTION.md` for your caption (QC checks every licensed image is listed).
 - **No Google Images:** they come with no licence data, so nothing found there is safe to post.
 
 ## Revision phrases that cost zero tokens
