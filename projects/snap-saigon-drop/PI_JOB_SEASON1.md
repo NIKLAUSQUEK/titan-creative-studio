@@ -14,7 +14,7 @@
 ## Arc
 | Part | Title | Beat | Cliffhanger |
 |---|---|---|---|
-| 1 | The Booking | Trâm's 11 pm request. Hân is far TOO excited. Meanwhile she's matching with "J". | "…send the address 🕵️‍♀️" |
+| 1 | The Booking | Trâm's 11 pm request, framed as a candid shoot of her camera-shy "model" at a co-working space, with 2 rules (don't talk to him, only talk to me). The cheating stays hidden. Hân thinks it's sus but says yes for good customer service. Meanwhile she's matching with "J". | "Perfect. Remember… only talk to me." |
 | 2 | The Tail | Hân tails Jake badly, with terrible disguises. J's flirty texts arrive at oddly perfect moments. | Jake buys roses. Thought bubble: "for the OTHER WOMAN 😤" |
 | 3 | Overtime | The shift ends, Trâm pays for 2 more hours. J: "near Bitexco too 😂" | Jake's in the café window. Phone buzz: "in the corner 😉" |
 | 4 | The Corner | Hân realises Jake = J. Intrusive-thought meltdown. | "my customer's boyfriend… was my date." |
@@ -24,6 +24,20 @@
 | 8 | The Shoot | A rooftop glow-up shoot with Trâm and her roses (a one-off; Trâm isn't recurring). Trâm posts the photos; Jake likes them; she blocks him. | End card: "real feelings. real photos. snap saigon." |
 
 ---
+
+### Part 1 v2: Klaus's storyboard notes (30 Oct 2026, master spec)
+Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (14 panels, about 22 s).
+- **Cold open:** freeze-frame on Hân in the trench coat and moustache. VO: "You might be wondering how I got here…". The on-screen hook changes per post (hook bank on the board).
+- **Trâm's brief hides the cheating:**
+  - "I need shots of my model tomorrow, from afar. He's very camera shy, so don't let him notice. He'll be at a co-working space, just looking busy. I've paid your entry. A few natural shots every hour. I'll send the address."
+  - Then: "Just 2 rules: 1) don't talk to him, 2) only talk to me. Got it?"
+  - Her tone is breezy ("it's nothing major"). The couple photo turned face-down is the only clue, and only the audience sees it.
+- **Hân's thoughts are "sus", not "cheating":** "a camera-shy… model?" / "don't TALK to him??" / "this is so sus."
+- **She agrees to be accommodating (good customer service), not for money:** "Sure, we can do this!" Trâm: "Perfect. Remember… only talk to me."
+- **Knock-on (to confirm with Klaus):** the reason behind the job now has to surface later.
+  - Proposal: in Part 2, Hân notices the "model" never models. He texts and smiles at his phone, buys roses, and Trâm keeps asking "is he with anyone?". Hân pieces it together: "…this isn't a photoshoot. this is a stakeout."
+  - Part 3 ("my customer's boyfriend… was my date") then lands harder.
+
 
 ## Part 1, "The Booking" (≈35 s)
 **Hook (0-2 s):** black, then a WhatsApp ding. Text: *"the weirdest booking I've ever taken"*

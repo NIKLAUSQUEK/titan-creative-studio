@@ -36,18 +36,18 @@ phone((255,255,255),"tinder",(255,90,110),"p03",tinder,base="raw/f04.png")
 def wa(d,x,y,w):
   d.text((x+16,y-4),"Today",font=F(14,False),fill=(120,120,120))
   yy=y+26
-  for t in["hi is this snap saigon? weird request…","my bf has a 'late client meeting' tomorrow. won't say where. ALWAYS on his phone","can you follow him and take photos? 👀".replace(" 👀","")]:
+  for t in["hi! I need shots of my model tomorrow, from afar. he's very camera shy so don't let him notice","he'll be at a co-working space, just looking busy. I've paid your entry already","a few natural shots every hour. I'll send the address"]:
     yy=bub(d,x,yy,w,t,False)
   d.text((x+16,yy+6),"Trâm is typing…",font=F(15,False),fill=(37,160,90))
 phone((236,229,221),"+84 90 ••• ••• (Trâm)",(7,94,84),"p05",wa,base="raw/f02.png")
 # 09 typing + delete
 def typ(d,x,y,w):
   yy=y+26
-  for t in["hi is this snap saigon? weird request…","…can you follow him and take photos?"]:yy=bub(d,x,yy,w,t,False)
+  for t in["just 2 rules:","1) don't talk to him","2) only talk to me. got it?"]:yy=bub(d,x,yy,w,t,False)
   d.rounded_rectangle((x+12,y+560,x+w-12,y+612),26,fill="white")
-  d.text((x+30,y+574),"I'm a wedding photographer|",font=F(19,False),fill=(20,20,20))
+  d.text((x+30,y+574),"why can't I talk to h|",font=F(19,False),fill=(20,20,20))
   d.line((x+30,y+586,x+300,y+586),fill=(230,60,60),width=3)
-  d.text((x+30,y+622),"✕ deleted → \"ok but why me|\" ✕ deleted".replace("✕","x"),font=F(15,False),fill=(160,60,60))
+  d.text((x+30,y+622),"x deleted → \"is this legal\" x deleted",font=F(15,False),fill=(160,60,60))
   for r in range(3):
     for c in range(10):d.rounded_rectangle((x+14+c*37,y+660+r*46,x+46+c*37,y+698+r*46),6,fill=(250,250,250))
 phone((236,229,221),"Trâm",(7,94,84),"p09",typ,base="raw/f07.png")
@@ -62,8 +62,18 @@ def tchat(d,x,y,w):
 phone((255,255,255),"J",(255,90,110),"p12",tchat,base="raw/f11.png")
 # 08 thought-burst over f07
 im=Image.open("img/f07.jpg");d=ImageDraw.Draw(im)
-for i,(t,y) in enumerate([("PI ERA.",120),("he's 100% cheating.",230),("secret TWO wives??",340)]):
+for i,(t,y) in enumerate([("a camera-shy… model?",120),("don't TALK to him??",230),("this is so sus.",340)]):
   f=F(30);w=d.textlength(t,font=f)+40;x=40+i*40
   d.rounded_rectangle((x,y,x+w,y+70),22,fill=(255,199,39));d.text((x+20,y+17),t,font=f,fill=(30,22,84))
 im.save("img/p08.jpg",quality=86)
 print("ok")
+# p07r: the 2 rules land (no typing yet)
+def rules(d,x,y,w):
+  yy=y+26
+  for t in["a few natural shots every hour. I'll send the address","just 2 rules:","1) don't talk to him","2) only talk to me. got it?"]:yy=bub(d,x,yy,w,t,False)
+phone((236,229,221),"Trâm",(7,94,84),"p07r",rules,base="raw/f06.png")
+# p11 thought over customer-service smile
+im=Image.open("img/f10b.jpg");d=ImageDraw.Draw(im)
+f=F(30);t="good customer service. 5 stars."
+w_=d.textlength(t,font=f)+40;d.rounded_rectangle((40,120,40+w_,190),22,fill=(255,199,39));d.text((60,137),t,font=f,fill=(30,22,84))
+im.save("img/p11.jpg",quality=86)
