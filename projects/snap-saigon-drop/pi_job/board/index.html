@@ -61,6 +61,9 @@ textarea{width:100%;min-height:110px;resize:vertical;font:14px/1.45 var(--f-body
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .box ul{margin:8px 0 0;padding-left:18px} .box li{margin:4px 0}
 .hooks{margin:10px 0 0;padding-left:22px;display:grid;gap:6px;font:600 15px var(--f-body)}
+.setgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:10px}.setgrid figure{margin:0}.setgrid img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block}.setgrid figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
+.prompt{white-space:pre-wrap;font:500 12.5px/1.5 var(--f-mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:10px 0 0;overflow-x:auto}
+@media (max-width:560px){.setgrid{grid-template-columns:1fr}}
 .summary{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:14px}
 .pill{font:600 12px var(--f-mono);padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
 @media (max-width:860px){.panel{grid-template-columns:150px minmax(0,1fr)}.notes{grid-column:1/-1}.cols{grid-template-columns:1fr}}
@@ -70,19 +73,19 @@ textarea{width:100%;min-height:110px;resize:vertical;font:14px/1.45 var(--f-body
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Snap Saigon · The PI Job · Part 1 "The Booking" · storyboard v3 · clearer plot · 30 Oct 2026</div>
-    <h1>Part 1 v3: one story thread at a time, so you always know what's going on</h1>
-    <p class="lede">You said the draft was confusing, and you were right. Fix: <b>two clearly separate threads</b> (dating in pink, work in green), a <b>rude interruption</b> between them, and a new row on every panel: <b>what the viewer understands at that moment</b>. Please check those rows first. If a row is wrong, the scene will be wrong.</p>
+    <div class="eyebrow">Snap Saigon · The PI Job · Part 1 "The Booking" · storyboard v4 · one room, one scene · 30 Oct 2026</div>
+    <h1>Part 1 v4: one room, one outfit, one scene, so it plays like a film</h1>
+    <p class="lede">You were right: the scenes connected on paper but looked like <b>different films</b> once cut together. I checked why. Every shot had been generated separately, so each one had a different bedroom, different pyjamas and a different lens. This version builds <b>one fixed room</b> first and generates every shot from it. The work thread is now a <b>video call</b>, so Hân and Trâm talk face to face instead of cutting to text mock-ups. Nothing is animated yet.</p>
   </header>
 
 
   <section class="box">
     <div class="eyebrow">Plot map: how the viewer follows it</div>
     <div class="lanes">
-      <div class="lane a"><b>Thread A · Dating (pink)</b><span>Hân's free time. Bored → swipes ew-ew-ew → J's blurry body pics → match → flirting.</span></div>
-      <div class="lane x"><b>Hard interruption</b><span>A rude green WhatsApp banner cuts her thought mid-word. Different app, different sound. She is annoyed, not typing to J.</span></div>
-      <div class="lane b"><b>Thread B · Work (green)</b><span>New client Trâm → camera-shy "model" → 2 rules → booking approved → Hân says yes.</span></div>
-      <div class="lane a"><b>Back to A · the payoff</b><span>J asks about tomorrow → "classified" → "I'll reveal everything tomorrow, including my face" → she realises she's never seen it.</span></div>
+      <div class="lane a"><b>Hân's bedroom, 11:04 pm · dating (pink)</b><span>Swipes ew-ew-ew → J's blurry body-only photos → match → "he types fast. a man of ac—"</span></div>
+      <div class="lane x"><b>Interruption</b><span>An incoming VIDEO CALL (unknown number) drops over her face mid-thought. She's annoyed, and she accepts.</span></div>
+      <div class="lane b"><b>The call · Trâm's room (green)</b><span>Shot/reverse-shot, faces only: brief → "Sure!" + booking banner → 2 rules → mask flies → "this is so sus" → "Perfect. Remember, only talk to me."</span></div>
+      <div class="lane a"><b>Back to the phone: the face joke</b><span>J: "I'll reveal everything tomorrow, including my face" → three torsos, "face: not found" → Day 1.</span></div>
     </div>
   </section>
   <section class="box">
@@ -91,6 +94,43 @@ textarea{width:100%;min-height:110px;resize:vertical;font:14px/1.45 var(--f-body
     <div class="legend" style="margin-top:10px"><span><b>Shape:</b> fast 1 s hook → slow, cosy room (1.8 s) → speeds up as the texts arrive → 0.4 s bursts on the joke → long hold on the punchline loop</span></div>
   </section>
 
+
+  <section class="box">
+    <h2>The fixed set (what was missing before)</h2>
+    <div class="setgrid">
+      <figure><img src="img/plate_han.jpg" alt="Hân's bedroom master plate"><figcaption><b>Hân's room</b> (master plate). Bed LEFT, lamp LEFT (warm), window RIGHT (cool city), ring light RIGHT. Hân always sits LEFT and faces RIGHT. Navy satin pyjamas in every frame.</figcaption></figure>
+      <figure><img src="img/plate_tram.jpg" alt="Trâm's bedroom master plate"><figcaption><b>Trâm's room</b> (master plate). One camera: a phone propped on the bed. Nightstand RIGHT with the face-down couple photo, window LEFT. Grey tee in every frame.</figcaption></figure>
+    </div>
+    <p class="lede">Every shot is generated <b>from</b> its plate, never from scratch. Two cameras in Hân's room (W wide, M medium/close, 35mm) and one in Trâm's. No "varying the angle for variety".</p>
+  </section>
+
+  <section class="box">
+    <h2>The prompts, as I'll actually use them</h2>
+    <p class="lede" style="margin-top:4px">You asked what prompts I'm using. Before, one line each: <i>"static camera, she speaks the line, push-in."</i> That's where the dead, floaty look came from. Now each shot gets camera, timed performance, and what must not move:</p>
+    <pre class="prompt">TÂM-1 (brief, 4 s, lip-sync to reference audio)
+Locked-off video-call camera, 28mm, 2% slow push-in. Trâm looks into the lens and speaks the exact line from the audio
+reference, lips in sync. Beat 1 (0-1.5 s): breezy smile, light head tilt on "Hi!". Beat 2 (1.5-3 s): small hand
+gesture as she says "from afar". Beat 3 (3-4 s): lowers her voice and eyes slightly on "don't let him notice".
+The room, lamp, window and her grey tee do NOT change. No camera shake. Same 3D animated style, same face.</pre>
+    <pre class="prompt">HÂN-ANSWER (1.8 s, no audio)
+Medium shot from the window side, 35mm, slow 2% push-in. Hân looks down at the phone propped on her knees, lets out a
+tiny sigh, pushes her mask up higher on her forehead with one finger, then puts on a bright polite smile as the call
+connects. Warm lamp stays at the left of frame. The room does NOT change.</pre>
+    <pre class="prompt">HÂN-BOLT (0.9 s)
+Same medium framing. Hân jolts upright, hands thrown up, the white sheet mask flies off her forehead and sails to
+frame-left, the phone drops into her lap. One quick motion, then freeze on her wide eyes. Everything else stays put.</pre>
+    <p class="lede">Every clip is then cut on <b>one</b> timeline with the room tone running underneath, voices EQ'd to the room, and no overlay on any shot that doesn't need one.</p>
+  </section>
+
+  <section class="box">
+    <h2>The gate before you see any video</h2>
+    <ul>
+      <li><b>One look test first:</b> animate only <b>Trâm-1</b> and <b>Hân-answer</b> (about 24 credits) and check the room, faces, mouths and voice before rendering the rest.</li>
+      <li><b>I check each clip against the set bible</b> (layout, pyjamas, lamp side, lens) before it goes in a cut.</li>
+      <li><b>Measured against your references:</b> a single visual language, cuts on action or eyeline, voices overlapping the cuts, continuous room sound.</li>
+      <li><b>One honest limit:</b> I can't promise "creator quality" from stills. The look test is how we find out cheaply.</li>
+    </ul>
+  </section>
 
   <section class="box">
     <h2>Hook bank: a different on-screen hook for each post</h2>
@@ -136,68 +176,56 @@ textarea{width:100%;min-height:110px;resize:vertical;font:14px/1.45 var(--f-body
 
 <script>
 const PANELS=[
- {id:"v3-01",th:"H",tag:"HOOK",img:"img/f13b.jpg",s:1.6,title:"Cold open: the weirdest detective in Saigon",shot:"FULL · low angle · freeze-frame on the record scratch",
+ {id:"v4-01",th:"H",tag:"HOOK",img:"img/f13b.jpg",s:1.6,title:"Cold open: freeze on the detective",shot:"FULL · low angle · freeze on record scratch",
   hear:"Street chaos → RECORD SCRATCH. Hân VO: \u201cYou might be wondering how I got here…\u201d",text:"On-screen hook (swap per post)",
-  know:"She's in a ridiculous disguise and something got her here. Curiosity only. No plot yet.",
-  essence:"The strangest image first, then we rewind to the cause.",cut:"Hard cut: 'the night before'."},
- {id:"v3-02",th:"A",tag:"11:04 PM · DATING",img:"img/f02.jpg",s:2.2,title:"Hân, bored, swiping",shot:"WIDE · static · night bedroom",
-  hear:"Fan hum. Hân mumbling (lip-sync): \u201cno… no… ew… no…\u201d",text:"Chip top-left: \u201c11:04 pm · dating\u201d",
-  know:"It's night. She's single and bored, on a dating app. This is HER free time.",
-  essence:"Sets her life before the job, and shows the rejection pattern we pay off later.",cut:"Her thumb flicks → the app on screen."},
- {id:"v3-03",th:"A",tag:"DATING",img:"img/v3_sw1.jpg",s:2.1,title:"Swipe, swipe, swipe: ew, ew, ew",shot:"INSERT · 3 profile cards, 0.7 s each",
-  hear:"swish · swish · swish (a rising comedic 'ew' each time)",text:"\u201cBrad, 34: crypto. gym. crypto.\u201d · \u201cKevin, 29: 9 photos holding a fish\u201d · \u201cDan, 31: just ask me anything\u201d",
-  know:"She's rejecting men one after another. Fast and funny.",
-  essence:"Shows her swiping on a dating app, as you asked: the picky detective-to-be.",cut:"A different card lands. She stops."},
- {id:"v3-04",th:"A",tag:"DATING",img:"img/v3_jprofile.jpg",s:1.9,title:"J: three photos, zero faces",shot:"INSERT · profile, photos slightly blurry",
-  hear:"Swipe stops. Hân VO (low): \u201c…oh.\u201d",text:"\u201cJ, 32 · traveller. coffee snob. good listener.\u201d · \u201c3 photos · 0 faces\u201d",
-  know:"This is J: a gym selfie, a beach from far away, a yacht torso. Slightly blurry, no face. The joke is on J.",
-  essence:"Plants Part 3's twist: we'll see this torso guy's face later. The photos are only body shots, as you asked.",cut:"She swipes right: match chime."},
- {id:"v3-05",th:"A",tag:"DATING",img:"img/f04.jpg",s:2.0,title:"It's a match. He texts fast.",shot:"CU · face-mask glow · slow push",
-  hear:"Match chime. Hân thought VO: \u201che types fast. a man of ac—\u201d (CUT OFF)",text:"J: \u201cyou look like trouble ;)\u201d (small pop-up)",
-  know:"She matched with J and she's charmed. A romance thread has started.",
-  essence:"The thought is left unfinished on purpose, so the interruption lands.",cut:"BRRRING: the interruption."},
- {id:"v3-06",th:"X",tag:"INTERRUPTION",img:"img/v3_interrupt.jpg",s:1.5,title:"Rude work notification cancels her thought",shot:"CU · bright green banner drops over her face",
-  hear:"Loud WhatsApp ping + record scratch. Silence. Hân (flat): \u201c…seriously? At 11pm?\u201d",text:"Banner: WhatsApp · +84 90 ••• ••• · \u201chi is this snap saigon? weird request…\u201d · chip: \u201c11:21 pm · WORK\u201d",
-  know:"A WORK message barged in and she's annoyed. The dating chat is paused. She is NOT texting J.",
-  essence:"Fixes the confusion: a different app (green, not pink), a different sound, and her face says 'ugh, work'.",cut:"She sighs and opens it."},
- {id:"v3-07",th:"B",tag:"NEW CLIENT",img:"img/p05.jpg",s:2.4,title:"Trâm's brief: a camera-shy \u201cmodel\u201d",shot:"INSERT · WhatsApp, messages pop in one by one",
-  hear:"pop · pop · pop (a different sound from the dating chat)",text:"Header: \u201cNEW CLIENT · Trâm\u201d · the three messages · chip: \u201cwork\u201d",
-  know:"A new client, Trâm, wants discreet photos of her 'model' at a co-working space. Hân's job tomorrow.",
-  essence:"Thread B starts. The cheating motive stays hidden.",cut:"Booking page loads."},
- {id:"v3-08",th:"B",tag:"WORK",img:"img/p05b.jpg",s:1.4,title:"Booking approved & paid (2–6 pm)",shot:"INSERT · snapsaigon.com confirmation",
-  hear:"Confirmation ding. Hân VO: \u201cOkay… booked.\u201d",text:"\u201cBooking approved · Payment received · 2–6 pm\u201d",
-  know:"It's a real booking, through the snapper company's site.",essence:"Shows how booking works and that it's all legit.",cut:"Trâm replies in person."},
- {id:"v3-09",th:"B",tag:"WORK",img:"img/f06b.jpg",s:1.6,title:"Trâm, breezy: \u201cnothing major\u201d",shot:"MS · Trâm faces LEFT · relaxed",
-  hear:"Nora: \u201cIt's nothing major, just natural shots.\u201d",text:"none",
-  know:"Trâm is casual about it. (Only the face-down couple photo hints otherwise.)",
-  essence:"Keeps the job sounding harmless.",cut:"The rules arrive."},
- {id:"v3-10",th:"B",tag:"WORK",img:"img/p07r.jpg",s:1.8,title:"\u201cJust 2 rules.\u201d",shot:"INSERT · rules pop in line by line",
-  hear:"pop · pop · pop. Music drops out on 'only talk to me'.",text:"\u201c1) don't talk to him  2) only talk to me. got it?\u201d",
-  know:"Odd. Rule 1 is 'don't talk to him'. The audience starts to wonder.",
-  essence:"The first oddness.",cut:"Hân bolts upright."},
- {id:"v3-11",th:"B",tag:"WORK",img:"img/f07.jpg",s:0.8,title:"Bolt upright, mask flies",shot:"MS · cut on action",
-  hear:"WHOOSH + wet mask SPLAT.",text:"none",know:"She reacts to the rules with her whole body. Comic beat.",
-  essence:"Her personality in one gag.",cut:"Her thoughts, same shot."},
- {id:"v3-12",th:"B",tag:"WORK",img:"img/p08.jpg",s:2.4,title:"\u201cthis is so sus\u201d",shot:"Same shot · 3 thought bubbles",
-  hear:"ding · ding · DING",text:"\u201ca camera-shy… model?\u201d → \u201cdon't TALK to him??\u201d → \u201cthis is so sus.\u201d",
-  know:"Hân thinks it's weird, same as us. Nothing is explained yet.",
-  essence:"Suspicion, not shock.",cut:"Cut to her typing a reply."},
- {id:"v3-13",th:"B",tag:"WORK",img:"img/p11.jpg",s:2.2,title:"\u201cSure! Yeah, we can totally do this!\u201d",shot:"CU · bright customer-service smile",
-  hear:"Hân (lip-sync): \u201cSure! Yeah, we can totally do this!\u201d Thought VO: \u201cgood customer service. five stars.\u201d",text:"\u201cSure, we can do this! 😊\u201d",
-  know:"She says yes to be accommodating, not for money.",essence:"People-pleaser: the engine of the series.",cut:"Send whoosh."},
- {id:"v3-14",th:"B",tag:"WORK",img:"img/f10.jpg",s:1.6,title:"\u201cPerfect. Remember, only talk to me.\u201d",shot:"CU · Trâm faces LEFT",
-  hear:"Nora (lip-sync, cool): \u201cPerfect. Remember, only talk to me.\u201d One low note.",text:"same line",
-  know:"The job is on, with a small ominous hint.",essence:"Closes the work thread with a button.",cut:"Her phone buzzes: back to dating. Pink chip."},
- {id:"v3-15",th:"A",tag:"11:40 PM · DATING",img:"img/v3_facejoke.jpg",s:3.0,title:"J asks about tomorrow, and the face joke",shot:"INSERT · dating chat, pink again",
-  hear:"J ding. Hân typing. Thought VO: \u201c…wait. have I ever seen his face?\u201d",text:"J: \u201cwhat are you up to tomorrow? ;)\u201d · Hân: \u201ccan't say. classified\u201d · J: \u201cmysterious. i like it\u201d · J: \u201ci'll reveal everything tomorrow. including my face ;)\u201d",
-  know:"Back to the dating thread. She's keeping the job secret, and J jokes he'll 'reveal everything, including his face'. She's never seen it.",
-  essence:"Pays off the blurry photos AND plants the twist: tomorrow they'll both meet someone they've never really seen.",cut:"Smash cut to her photo wall."},
- {id:"v3-16",th:"A",tag:"DATING",img:"img/v3_montage.jpg",s:1.6,title:"Three torsos. Zero faces.",shot:"INSERT · 3 photos side by side, big '?'",
+  know:"A ridiculous disguise. Something got her here. Curiosity only.",essence:"Strangest image first, then we rewind.",cut:"Hard cut to the night before."},
+ {id:"v4-02",th:"A",tag:"11:04 PM · DATING",img:"img/v4_h1.jpg",s:2.4,title:"Hân's room: the world is set",shot:"CAM W · foot of bed, 24mm, locked off with a 3% slow push-in",
+  hear:"Fan hum, faint city. Hân murmurs (lip-sync): \u201cno… no… ew… no…\u201d",text:"Chip: \u201c11:04 pm\u201d",
+  know:"Night. Her room. She's single and bored, swiping on her phone.",essence:"Shows the whole room once, so every later shot feels like the same place.",cut:"Cut on her thumb flick to CAM M."},
+ {id:"v4-03",th:"A",tag:"DATING",img:"img/v4_h2.jpg",s:1.6,title:"Swipe, swipe, swipe",shot:"CAM M · window side, 35mm · phone glow on her face",
+  hear:"Swish, swish, swish. Her thumb flicks about once per 0.7 s.",text:"none (the screen is the next shot)",
+  know:"She's rejecting men, one after another.",essence:"Gives the swipe cards a real eyeline: she looks at the phone, then we see what she sees.",cut:"Eyeline match to the phone screen."},
+ {id:"v4-04",th:"A",tag:"DATING",img:"img/v3_sw1.jpg",s:2.1,title:"Brad, Kevin, Dan: ew, ew, ew",shot:"INSERT · phone screen POV, 3 cards × 0.7 s",
+  hear:"swish · swish · swish (a rising comedic 'ew')",text:"\u201cBrad, 34 · crypto. gym. crypto.\u201d · \u201cKevin, 29 · 9 photos holding a fish\u201d · \u201cDan, 31 · just ask me anything\u201d",
+  know:"Funny rejects. She's picky.",essence:"Shows the swiping, as you asked.",cut:"A different card lands."},
+ {id:"v4-05",th:"A",tag:"DATING",img:"img/v3_jprofile.jpg",s:1.9,title:"J: three photos, zero faces",shot:"INSERT · phone screen POV · photos slightly blurry",
+  hear:"The swipes stop. A soft chime.",text:"\u201cJ, 32 · traveller. coffee snob. good listener.\u201d · \u201c3 photos · 0 faces\u201d",
+  know:"J: gym selfie, a beach from far away, a yacht torso. No faces. The joke is on J.",essence:"Plants the twist visually, as you asked: slightly blurry, body shots only.",cut:"Back to her face."},
+ {id:"v4-06",th:"A",tag:"DATING",img:"img/v4_h3.jpg",s:2.0,title:"\u201c…oh.\u201d (match, and he texts fast)",shot:"CAM M · close-up · lamp at LEFT",
+  hear:"Match chime. Hân thought VO: \u201che types fast. a man of ac—\u201d (cut off)",text:"J: \u201cyou look like trouble ;)\u201d (small pop-up)",
+  know:"They matched. She's charmed. A romance thread has started.",essence:"The unfinished thought is the setup for the interruption.",cut:"BRRRING."},
+ {id:"v4-07",th:"X",tag:"INTERRUPTION",img:"img/v4_h4call.jpg",s:1.5,title:"Rude incoming video call",shot:"CAM M · same close-up · call banner drops over her face",
+  hear:"A loud ring + record scratch. Hân (flat): \u201c…seriously? At 11pm?\u201d",text:"\u201cIncoming video call · Unknown number · Snap Saigon enquiry\u201d",
+  know:"A WORK call barged in. She's annoyed. She is NOT texting J.",essence:"A different thing (a call, not a chat), a different sound, and her face says 'ugh'.",cut:"She sighs and accepts."},
+ {id:"v4-08",th:"B",tag:"THE CALL",img:"img/v4_h5.jpg",s:1.8,title:"She answers: mask pushed up, polite voice",shot:"CAM M2 · medium · propped phone on her knees",
+  hear:"Call connects chime. Hân: \u201cHi, Snap Saigon, how can I help?\u201d (too cheerful)",text:"none",
+  know:"She's in her pyjamas, being professional.",essence:"Gives us her side of the call before we see Trâm.",cut:"Reverse shot: Trâm."},
+ {id:"v4-09",th:"B",tag:"THE CALL",img:"img/v4_t1call.jpg",s:4.0,title:"Trâm's brief: a camera-shy \u201cmodel\u201d",shot:"TRÂM CAM · propped phone, 28mm · call overlay",
+  hear:"Trâm (lip-sync, breezy): \u201cHi! I need natural shots of my model tomorrow, from afar. He's camera shy, so please don't let him notice.\u201d",text:"Call tile: Trâm · 00:14",
+  know:"A new client wants discreet photos of her 'model'. Hân's job tomorrow.",essence:"She says the brief aloud, in her own room, to a face.",cut:"Hân reaction."},
+ {id:"v4-10",th:"B",tag:"THE CALL",img:"img/v4_h8book.jpg",s:2.2,title:"\u201cSure! Yeah, we can totally do this!\u201d",shot:"CAM M · close-up · same lens as her other close-ups",
+  hear:"Hân (lip-sync): \u201cSure! Yeah, we can totally do this!\u201d Thought VO: \u201cgood customer service. five stars.\u201d",text:"A banner drops over the shot: \u201cBooking approved · Paid · 2–6 pm\u201d",
+  know:"She says yes to be accommodating, and the booking is real.",essence:"The people-pleaser, plus your booking-approved note, as a banner instead of a cut.",cut:"Trâm again."},
+ {id:"v4-11",th:"B",tag:"THE CALL",img:"img/v4_t2call.jpg",s:3.0,title:"\u201cJust two rules.\u201d",shot:"TRÂM CAM · close-up",
+  hear:"Trâm (lip-sync, calm): \u201cJust two rules. One, don't talk to him. Two, only talk to me. Got it?\u201d",text:"Call tile: Trâm · 00:31",
+  know:"Odd. 'Don't talk to him.' The audience starts wondering.",essence:"The first oddness, delivered by a face.",cut:"Hân bolts upright."},
+ {id:"v4-12",th:"B",tag:"THE CALL",img:"img/v4_h6.jpg",s:0.9,title:"Bolt upright, mask flies",shot:"CAM M2 · medium · same framing as the answer shot",
+  hear:"WHOOSH + wet mask SPLAT on the wall.",text:"none",know:"Her whole body reacts to the rules. Comic beat.",essence:"Her personality in one gag.",cut:"Close-up on her thinking."},
+ {id:"v4-13",th:"B",tag:"THE CALL",img:"img/v4_h7.jpg",s:2.4,title:"\u201cthis is so sus\u201d (silent, thoughts only)",shot:"CAM M · close-up · mask off · suspicious side-glance",
+  hear:"ding · ding · DING. Thoughts: \u201ca camera-shy… model?\u201d → \u201cdon't TALK to him??\u201d → \u201cthis is so sus.\u201d",text:"Thought bubbles",
+  know:"Hân thinks it's weird, same as us. Nothing is explained.",essence:"Suspicion, not shock.",cut:"Trâm's last line."},
+ {id:"v4-14",th:"B",tag:"THE CALL",img:"img/v4_t3call.jpg",s:2.2,title:"\u201cPerfect. Remember, only talk to me.\u201d",shot:"TRÂM CAM · close-up · cold half-smile",
+  hear:"Trâm (lip-sync, cool): \u201cPerfect. Remember, only talk to me.\u201d Call-end tone.",text:"Call tile: Trâm · 00:49",
+  know:"The job is on. A small ominous hint.",essence:"Closes the call with a button.",cut:"The call ends: her phone goes back to the dating chat."},
+ {id:"v4-15",th:"A",tag:"11:40 PM · DATING",img:"img/v3_facejoke.jpg",s:3.0,title:"J asks about tomorrow, and the face joke",shot:"INSERT · dating chat on her phone",
+  hear:"J ding. Thought VO: \u201c…wait. have I ever seen his face?\u201d",text:"J: \u201cwhat are you up to tomorrow?\u201d · \u201ccan't say. classified\u201d · J: \u201cmysterious. i like it\u201d · J: \u201ci'll reveal everything tomorrow. including my face ;)\u201d",
+  know:"Back to dating. J jokes he'll 'reveal everything, including his face'.",essence:"Pays off the blurry photos and plants the Part 3 twist.",cut:"Smash cut: the three photos."},
+ {id:"v4-16",th:"A",tag:"DATING",img:"img/v3_montage.jpg",s:1.6,title:"Three torsos. Zero faces.",shot:"INSERT · 3 photos side by side, big '?'",
   hear:"A comedic 'bwomp'. Hân VO: \u201cI'm going on a date with a torso.\u201d",text:"\u201cface: not found\u201d",
-  know:"The gag: she has literally no idea what he looks like.",essence:"The laugh that closes the J thread.",cut:"Cut to Day 1."},
- {id:"v3-17",th:"H",tag:"DAY 1",img:"img/f13b.jpg",s:3.0,title:"Day 1. Jaw drops, shades tip (loop)",shot:"FULL · same frame as the hook",
+  know:"She has literally no idea what he looks like.",essence:"The laugh that closes the J thread.",cut:"Cut to Day 1."},
+ {id:"v4-17",th:"H",tag:"DAY 1",img:"img/f13b.jpg",s:3.0,title:"Day 1. Jaw drops, shades tip (loop)",shot:"FULL · same frame as the hook",
   hear:"Street ambience. Button sting.",text:"\u201cDay 1.\u201d → \u201cPart 2 →\u201d · \u201cwould YOU take this job?\u201d",
-  know:"Now we know how she got here: a work job, plus a date with a torso.",essence:"The loop closes. We know how she got here.",cut:"End. Loops to 1."},
+  know:"Now we know how she got here: a work job, plus a date with a torso.",essence:"The loop closes.",cut:"End. Loops to 1."},
 ];
 const st={};const $=s=>document.querySelector(s);
 function esc(t){const d=document.createElement("div");d.textContent=t;return d.innerHTML}
@@ -249,7 +277,7 @@ async function save(id,patch,label){
   const sv=document.getElementById("sv-"+id);
   if(!db){sv.textContent="Can't save here: notes need you signed in on claude.ai.";return}
   if(readOnly){sv.textContent="View only: you can't save notes on this link.";return}
-  try{await db.collection("notes").doc(id).set({status:st[id].status||null,note:st[id].note||"",panel:PANELS.findIndex(p=>p.id===id)+1,board:"v3",updatedAt:new Date().toISOString()});sv.textContent="Saved ✓"}
+  try{await db.collection("notes").doc(id).set({status:st[id].status||null,note:st[id].note||"",panel:PANELS.findIndex(p=>p.id===id)+1,board:"v4",updatedAt:new Date().toISOString()});sv.textContent="Saved ✓"}
   catch(e){if(e&&e.code==="invalid_argument"){readOnly=true;sv.textContent="View only: you can't save notes on this link."}else sv.textContent="Couldn't save. Try again in a moment."}
 }
 document.addEventListener("click",e=>{const b=e.target.closest(".seg button");if(!b)return;const id=b.dataset.id;const cur=st[id]?.status;save(id,{status:cur===b.dataset.v?null:b.dataset.v})});
@@ -258,6 +286,6 @@ document.addEventListener("input",e=>{const ta=e.target.closest("textarea");if(!
 (async()=>{
   try{db=await window.claude?.use?.("db")}catch{db=null}
   if(!db){for(const p of PANELS)document.getElementById("sv-"+p.id).textContent="Open on claude.ai while signed in to save notes.";return}
-  db.collection("notes").onSnapshot(snap=>{for(const d of snap.docs){const v=d.data();if(v&&d.id.startsWith("v3-"))st[d.id]={status:v.status||null,note:v.note||""}}paint()},()=>{});
+  db.collection("notes").onSnapshot(snap=>{for(const d of snap.docs){const v=d.data();if(v&&d.id.startsWith("v4-"))st[d.id]={status:v.status||null,note:v.note||""}}paint()},()=>{});
 })();
 </script>
