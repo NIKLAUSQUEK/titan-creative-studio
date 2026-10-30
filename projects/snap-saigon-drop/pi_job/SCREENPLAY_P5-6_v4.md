@@ -42,3 +42,10 @@ After Klaus said "feels like a lot of individual parts" and shared the reference
   - word-by-word captions;
   - the last frame freezes with "Part 7 →" over it.
 - Cost: 4 stills (6 credits) + 3 clips at 480p (36 credits) ≈ 42 credits. Output `pi_job_part5-6_v5_480p.mp4`, 27 s.
+
+## Part 1 v1 draft (30 Oct 2026)
+Built from the approved storyboard (https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp, v2.1) by `assemble_p1.py` → `pi_job_part1_v1_480p.mp4` (32.7 s).
+- Clips (7 × 480p, 12 credits each): `p1/clips/c02,c04,c06,c07,c10,c11,c13`. The phone screens are free Pillow stills in `p1/ui/`.
+- Voices (Gia = Hân, Nora = Trâm) in `p1/vo/L*.mp3`. Lip-sync lines use the line's own job id as `audio_references`. Thoughts are sped up 1.22× in the edit; spoken lines stay at natural pace.
+- Trâm's brief and rules play as pop-in messages with sound effects, not voice-over, because the TTS read ran 7+ s.
+- Known: it is 32.7 s against a 22 s plan.

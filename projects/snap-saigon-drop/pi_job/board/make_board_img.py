@@ -77,3 +77,13 @@ im=Image.open("img/f10b.jpg");d=ImageDraw.Draw(im)
 f=F(30);t="good customer service. 5 stars."
 w_=d.textlength(t,font=f)+40;d.rounded_rectangle((40,120,40+w_,190),22,fill=(255,199,39));d.text((60,137),t,font=f,fill=(30,22,84))
 im.save("img/p11.jpg",quality=86)
+
+# p05b: snapsaigon.com booking approval + payment
+def booking(d,x,y,w):
+  d.rounded_rectangle((x+20,y+30,x+w-20,y+700),22,fill=(255,255,255))
+  d.text((x+44,y+56),"snapsaigon.com",font=F(22),fill=(30,22,84))
+  d.rounded_rectangle((x+44,y+110,x+w-44,y+200),16,fill=(232,246,236));d.text((x+64,y+128),"Booking approved",font=F(26),fill=(31,138,76));d.text((x+64,y+166),"Payment received",font=F(18,False),fill=(60,110,80))
+  for i,(k,v) in enumerate([("Date","Tomorrow"),("Time","2:00 pm - 6:00 pm"),("Snapper","Hân (Junior)"),("Where","address to follow")]):
+    d.text((x+44,y+240+i*58),k,font=F(16,False),fill=(120,120,130));d.text((x+190,y+240+i*58),v,font=F(20),fill=(30,22,84))
+  d.rounded_rectangle((x+44,y+520,x+w-44,y+580),30,fill=(255,199,39));d.text((x+w/2-80,y+536),"Confirmed ✓".replace("✓","(ok)"),font=F(24),fill=(30,22,84))
+phone((236,229,221),"snapsaigon.com",(30,22,84),"p05b",booking,base="raw/f02.png")
