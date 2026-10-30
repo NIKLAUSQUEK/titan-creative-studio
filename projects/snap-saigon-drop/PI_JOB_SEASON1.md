@@ -25,6 +25,14 @@
 
 ---
 
+### Part 1 v5 (30 Oct 2026, Klaus's v4 flow notes; current beat order)
+Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (18 panels). Master spec for animation once Klaus says go.
+- Swipe cards have photos and ick bios (Brad / Chad / Greg, "passport bro" satire of behaviour, not nationality). Hân: "ugh. passport bros."
+- J's profile: blurry body-only photos, zero faces → match → "he types fast. a man of ac—"
+- **Interruption:** an incoming video call from an unknown number. She DECLINES, then texts the number back at once ("Hi! Snap Saigon here. Can't talk right now. How can I help?").
+- **Work thread is WhatsApp text** (shown as bubbles over Trâm's own typing shots, not flat mock-ups): brief → "Sure! Yeah, we can totally do this!" + booking-approved banner → 2 rules → bolt upright → "this is so sus" → "perfect. remember… only talk to me."
+- Back to the dating chat: J's "I'll reveal everything tomorrow, including my face" → "…have I ever seen his face?" The torso montage is CUT. Then the Day 1 loop (jaw drop, shades tip).
+
 ### Part 1 v3 (30 Oct 2026, replaces the v2 beat order): two clear threads
 Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (17 panels, about 36 s of beats; trim after approval).
 1. Hook → bedroom (11:04 pm · dating) → Hân swipes ew-ew-ew (cards: Brad/crypto, Kevin/fish, Dan/"just ask me anything") → J's profile: gym selfie, far-away beach, yacht torso. All slightly blurry, zero faces → match → "he types fast. a man of ac—"
