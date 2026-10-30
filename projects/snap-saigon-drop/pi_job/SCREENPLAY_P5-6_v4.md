@@ -28,3 +28,17 @@ Rules for this cut:
 
 **New lip-sync renders:** shots 2, 5, 7, 9, 11, 15, 16 (7 × 12 credits at 480p ≈ 84).
 **Reused:** shots 1, 3, 4, 6, 8, 10, 13, 14 (existing clips and stills).
+
+## v5 (30 Oct 2026): one continuous scene
+After Klaus said "feels like a lot of individual parts" and shared the reference reel DfD0qcCMqJy:
+- **Re-shot** (v5/): opening wide `s2`, two-shot `s7` and the lean-back `t10`, all in the same café with Hân LEFT and Jake RIGHT and a calm crowd. v4's `s7` was in a different café with the sides flipped, and `c5` already showed the splash water.
+- **Edit** (`assemble_p56_v5.py`):
+  - one timeline, with continuous café ambience and an original music cue;
+  - J-cuts and L-cuts on every line, so each line starts under the previous shot;
+  - an eyeline insert on the eagle shirt;
+  - the "just say no" thought split over a cutaway of his arm on her chair;
+  - thought VOs with their inner pauses tightened to 0.25 s, at natural speed;
+  - music dies on "I know you want it", then a splash hit, then a comedic bounce;
+  - word-by-word captions;
+  - the last frame freezes with "Part 7 →" over it.
+- Cost: 4 stills (6 credits) + 3 clips at 480p (36 credits) ≈ 42 credits. Output `pi_job_part5-6_v5_480p.mp4`, 27 s.
