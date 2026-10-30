@@ -2,13 +2,13 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__higgsfield__(generate_.*|shorts_studio_create|ai_influencer_generate|upscale_.*|outpaint_image|reframe|remove_background|motion_control|dubbing|voice_change|ads_studio_generate|execute_preset)",
+        "matcher": "mcp__[Hh]iggsfield__(generate_.*|shorts_studio_create|ai_influencer_generate|build_ai_influencer|upscale_.*|outpaint_image|reframe|remove_background|motion_control|dubbing|voice_change|ads_studio_generate|execute_preset)",
         "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/cost_gate.py\"" }]
       }
     ],
     "PostToolUse": [
       {
-        "matcher": "mcp__higgsfield__(generate_.*|shorts_studio_create|upscale_.*|outpaint_image|reframe|motion_control|dubbing|voice_change|execute_preset)",
+        "matcher": "mcp__[Hh]iggsfield__(generate_.*|shorts_studio_create|upscale_.*|outpaint_image|reframe|motion_control|dubbing|voice_change|execute_preset)",
         "hooks": [{ "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/log_generation.py\"" }]
       }
     ]

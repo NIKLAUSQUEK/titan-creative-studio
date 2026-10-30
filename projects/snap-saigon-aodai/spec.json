@@ -1,0 +1,35 @@
+{
+  "project": "snap-saigon-aodai",
+  "brand": "snap-saigon",
+  "approved": false,
+  "approval_scope": "drafts only at the lowest quality (nano_banana_2 1k, seedance_2_5 480p). Finals need a new quote and a new yes.",
+  "cost_quote": {
+    "read_on": "2026-10-30",
+    "balance_credits": 361.66,
+    "unit_prices": {"nano_banana_2_1k": 1.5, "gpt_image_2_low_1k": "0.5-1", "seedance_2_5_480p_5s": 15},
+    "pilot_estimate_credits": 40.5,
+    "pilot_cap_credits": 55
+  },
+  "workflow": ".claude/skills/higgsfield-creative-director/references/cultural-wear-tryon.md",
+  "sights": ".claude/skills/higgsfield-creative-director/references/locations-hcmc.md",
+  "depends_on": ["projects/snap-saigon-drop Stage 1 sheets (Ben, Mia, Jay)", "Klaus's face + full-body photo for P3"],
+  "shots": [
+    {"id": "P1", "who": "@BEN", "garment": "ao dai nam navy silk + black khan dong", "plate": "Central Post Office facade (real photo)", "aspect": "4:5", "model": "nano_banana_2", "resolution": "1k"},
+    {"id": "P2", "who": "@HAN", "garment": "yellow #FFC727 cach tan + white wide trousers", "plate": "Nguyen Hue, City Hall end, blue hour (real photo)", "aspect": "9:16", "model": "nano_banana_2", "resolution": "1k"},
+    {"id": "P3", "who": "@KLAUS (own photos, own consent)", "garment": "ao dai nam cream brocade", "plate": "Ben Thanh south gate clock tower (real photo)", "aspect": "4:5", "model": "nano_banana_2", "resolution": "1k"},
+    {"id": "P4", "who": "@MIA + @JAY", "garment": "matching red silk ao dai + ao dai nam", "plate": "Saigon Opera House steps (real photo)", "aspect": "4:5", "model": "nano_banana_2", "resolution": "1k"},
+    {"id": "M1", "who": "@BEN", "action": "spin from backpacker outfit into the ao dai", "start_frame": "Ben sheet", "end_frame": "P1", "aspect": "9:16", "model": "seedance_2_5", "resolution": "480p", "duration": 5},
+    {"id": "M2", "who": "@MIA + @JAY", "action": "slow walk down the steps, front panels lifting in the breeze", "start_frame": "P4", "aspect": "9:16", "model": "seedance_2_5", "resolution": "480p", "duration": 5}
+  ],
+  "hard_rules": [
+    "Garment must show: mandarin collar, side slits from the WAIST, long separate front and back panels, wide trousers visible under the slits, buttons along the right side. Qipao / cheongsam / kimono / hanbok features = REGEN.",
+    "Never slim, reshape, lighten skin or beautify any person; identity exactly as the reference.",
+    "Landmarks only from real photo plates; no generated landmarks presented as real; no text or signage in generation.",
+    "Religious sites: modest poses outside the gates; no flags, state symbols or political banners as props.",
+    "Customer images: private previews only; ads need a separate written ad opt-in.",
+    "Copy says 'preview' of style and colour, never a size fit.",
+    "No AI label in posts (ledger 2026-10-28); platform AI toggle only where required.",
+    "Paid creative: Vietnamese headline first; partner rental labelled 'Quang cao / Sponsored'; no 'best', '#1', 'official', 'tour'.",
+    "No try-on, glam or booking posts on remembrance dates (30/4, 27/7, 10/8, 2/9, 7/5)."
+  ]
+}

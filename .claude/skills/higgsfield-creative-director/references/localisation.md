@@ -31,6 +31,7 @@ Manglish (lah/ma/meh, "can la", "alamak"), mamak stall at night (teh tarik pour)
 
 ## 🇻🇳 VIETNAM (HCMC)
 Motorbike sea at rush hour, alley (hẻm) cafés with tiny stools, Thao Dien villas/cafés, Ben Thanh-style market (generic), rooftop bars, rain + raincoats on bikes. Humour: motorbike chaos, cafe culture, family dinners, haggling. Language: Vietnamese with English subs; Saigon accent.
+Sights, culture cues and landmark rules: `locations-hcmc.md`. Áo dài try-on and accuracy QC: `cultural-wear-tryon.md`.
 **COMPLIANCE (VN, verify):** see compliance-packs.md "Vietnam detail".
 - Paid ads lead in Vietnamese, with any foreign language below it at no more than 3/4 size (Ad Law Art. 18).
 - Label sponsored posts (Law 75/2025).
