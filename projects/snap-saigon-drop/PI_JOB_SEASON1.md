@@ -39,6 +39,15 @@ Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (14 panels, about 22 s)
   - Part 3 ("my customer's boyfriend… was my date") then lands harder.
 
 
+### Part 2 "The Stakeout" (storyboard v1, 30 Oct 2026; Klaus approved Part 1 and said "proceed")
+Board: https://claude.ai/artifact/2U8LDyN1KN7ioaSUH8VtuN (16 panels, about 24 s). Not animated yet: it waits for Klaus's notes.
+- Hân arrives at the co-working space (day pass prepaid by Trâm), spots "the model" Jake smiling at his phone instead of working, and is almost caught by her own camera flash. A plant takes the blame.
+- **Audience-only hint:** each J text to Hân cuts to Jake smiling at his phone (match cut). Hân never notices.
+- Rule #1 comedy: she can't answer Jake's "Rough day?" in the coffee queue.
+- Trâm's replies ("is he on his phone? who is he texting? is he with anyone?") let Hân solve it: "This isn't a photoshoot. This is a STAKEOUT."
+- Golden hour: Jake buys roses, Hân spies behind a bánh mì cart. A J text ("can't wait to see you tonight") lands while Jake types.
+- Cliffhanger: "Booking extended +2 hours · paid by Trâm" → Part 3.
+
 ## Part 1, "The Booking" (≈35 s)
 **Hook (0-2 s):** black, then a WhatsApp ding. Text: *"the weirdest booking I've ever taken"*
 

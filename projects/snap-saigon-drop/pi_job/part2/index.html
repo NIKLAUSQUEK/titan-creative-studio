@@ -1,0 +1,249 @@
+<title>PI Job Part 2 Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: an edit-bay storyboard. Pacing strip on top (widths = seconds), then one row per panel: frame | beat sheet | notes. */
+:root{
+  --bg:#f3f2f7; --panel:#ffffff; --ink:#17142e; --muted:#5d5878; --line:#dcd9e8;
+  --accent:#ffc727; --accent-ink:#1e1654; --navy:#1e1654; --ok:#1f8a4c; --chg:#c2410c; --flag-bg:#fff4d6;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Figtree",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110e24;--panel:#1b1734;--ink:#efedf8;--muted:#a7a2c4;--line:#2f2a50;--flag-bg:#3a2f10;--ok:#4ade80;--chg:#fb923c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#110e24;--panel:#1b1734;--ink:#efedf8;--muted:#a7a2c4;--line:#2f2a50;--flag-bg:#3a2f10;--ok:#4ade80;--chg:#fb923c;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font:800 clamp(28px,5vw,44px)/1.05 var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font:700 20px/1.2 var(--f-display);margin:0}
+.eyebrow{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{max-width:68ch;color:var(--muted);margin:8px 0 0}
+.lede b{color:var(--ink)}
+/* pacing strip */
+.strip{display:flex;gap:3px;align-items:stretch;overflow-x:auto;padding-bottom:4px}
+.strip a{flex:var(--s) 0 0;min-width:34px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink)}
+.strip img{width:100%;height:84px;object-fit:cover;border-radius:6px;border:2px solid transparent}
+.strip a[data-st="ok"] img{border-color:var(--ok)} .strip a[data-st="change"] img{border-color:var(--chg)}
+.strip span{font:500 11px var(--f-mono);color:var(--muted);white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)}
+.legend b{color:var(--ink)}
+/* panels */
+.panel{display:grid;grid-template-columns:200px minmax(0,1fr) 260px;gap:20px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;scroll-margin-top:16px}
+.frame{position:relative}
+.frame img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;background:var(--line)}
+.num{position:absolute;top:8px;left:8px;background:var(--navy);color:#fff;font:700 13px var(--f-mono);padding:3px 8px;border-radius:6px}
+.dur{position:absolute;bottom:8px;right:8px;background:var(--accent);color:var(--accent-ink);font:700 12px var(--f-mono);padding:3px 7px;border-radius:6px}
+.beat{display:flex;flex-direction:column;gap:10px;min-width:0}
+.beat h3{font:700 19px/1.25 var(--f-display);margin:0}
+.shot{font:500 12px var(--f-mono);color:var(--muted)}
+dl{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 12px;margin:0}
+dt{font:600 12px var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+dd{margin:0}
+.essence{background:color-mix(in srgb,var(--accent) 22%,transparent);border-radius:8px;padding:8px 10px}
+.cut{font-family:var(--f-mono);font-size:13px}
+.flag{background:var(--flag-bg);border-left:3px solid var(--chg);padding:6px 10px;border-radius:4px;font-size:13.5px}
+.changed{border-left:3px solid var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent);padding:6px 10px;border-radius:4px;font-size:13.5px}
+.notes{display:flex;flex-direction:column;gap:8px}
+.seg{display:flex;gap:6px}
+.seg button{flex:1;font:600 13px var(--f-body);padding:8px 6px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"].ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.seg button[aria-pressed="true"].change{background:var(--chg);border-color:var(--chg);color:#fff}
+.seg button:focus-visible,textarea:focus-visible,.strip a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+textarea{width:100%;min-height:110px;resize:vertical;font:14px/1.45 var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.saved{font:500 11px var(--f-mono);color:var(--muted);min-height:14px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.box ul{margin:8px 0 0;padding-left:18px} .box li{margin:4px 0}
+.hooks{margin:10px 0 0;padding-left:22px;display:grid;gap:6px;font:600 15px var(--f-body)}
+.summary{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:14px}
+.pill{font:600 12px var(--f-mono);padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+@media (max-width:860px){.panel{grid-template-columns:150px minmax(0,1fr)}.notes{grid-column:1/-1}.cols{grid-template-columns:1fr}}
+@media (max-width:480px){.panel{grid-template-columns:1fr}.frame{max-width:220px}dl{grid-template-columns:1fr}dt{padding-top:6px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Snap Saigon · The PI Job · Part 2 "The Stakeout" · storyboard v1 · 30 Oct 2026</div>
+    <h1>Part 2: tap ✅ or ✏️ on every panel before any video is rendered</h1>
+    <p class="lede">Part 1 is approved. Same process: cheap stills and free phone screens, <b>your notes first</b>, animation after. Target length: <b>about 24 s</b>. Panels 4 and 12 plant a hint only the audience can see: <b>every time Hân's phone buzzes with J, Jake smiles at his phone.</b> Hân never notices.</p>
+  </header>
+
+  <section class="box">
+    <div class="eyebrow">Pacing strip · width = seconds on screen · tap a frame to jump to it</div>
+    <div class="strip" id="strip"></div>
+    <div class="legend" style="margin-top:10px"><span><b>Shape:</b> fast 1 s hook → slow, cosy room (1.8 s) → speeds up as the texts arrive → 0.4 s bursts on the joke → long hold on the punchline loop</span></div>
+  </section>
+
+
+  <section class="box">
+    <h2>Hook bank: a different on-screen hook for each post</h2>
+    <p class="lede" style="margin-top:4px">Same video, a different top line, so each post tests an angle.</p>
+    <ol class="hooks">
+      <li>“I almost got caught by a plant”</li>
+      <li>“my ‘camera-shy model’ spent 4 hours smiling at his phone”</li>
+      <li>“rule #1 of being a detective: don't talk to the target”</li>
+      <li>“she paid me to watch her boyfriend… and she never said that”</li>
+      <li>“I figured out what this booking really was by 3 pm”</li>
+    </ol>
+    <p class="lede">Tick the ones you like in the notes on panel 1, or add your own.</p>
+  </section>
+
+  <section class="box summary" id="summary" aria-live="polite"></section>
+
+  <div id="panels" style="display:flex;flex-direction:column;gap:16px"></div>
+
+  <section class="cols">
+    <div class="box">
+      <h2>From the café reel (one continuous scene)</h2>
+      <ul>
+        <li>One sound bed runs under every cut. The room tone only changes when the place changes.</li>
+        <li>Lines cross the cuts: we hear the next person just before we see them.</li>
+        <li>Screen sides never flip. Hân always faces <b>right</b>, Trâm always faces <b>left</b>, so their texting reads as a conversation across the cut.</li>
+        <li>Eyelines drive the cuts: she looks at the phone, we see the phone, we see her face again.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h2>From the real-footage edit (why human edits grip)</h2>
+      <ul>
+        <li><b>Open on a question or the strangest image.</b> Here that's the trench coat and fake moustache, then "12 hours earlier".</li>
+        <li><b>Uneven rhythm.</b> Hold one shot for about 2 s, then fire 0.4 s bursts. Never a steady 2.5 s beat.</li>
+        <li><b>Quick detail inserts:</b> a thumb on the screen, the photo turned face-down, the mask landing.</li>
+        <li><b>Real room sound</b> under the voices: the fan, distant scooters, keyboard taps. No sterile silence.</li>
+        <li><b>A tiny handheld drift</b> on the close-ups, and a whip zoom on the punchline.</li>
+        <li><b>End by looping back</b> to the opening image, plus a question for the comments.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+const PANELS=[
+ {id:"p2-01",img:"img/s01.jpg",s:1.8,title:"Cold open: the plant is a spy",shot:"MS · peeking round a giant monstera · slight handheld push",
+  hear:"Co-working murmur, keyboard taps. Hân whispering VO: \u201cRule number one: don't talk to him.\u201d",text:"Hook (swap per post, see the bank below)",
+  essence:"Opens on the funniest image. Hân commits fully to being a detective in a trench coat, a moustache and a plant.",
+  cut:"Smash cut back 20 minutes: the lobby."},
+ {id:"p2-02",img:"img/s02.jpg",s:2.0,title:"Lobby: \u201cDay pass?\u201d",shot:"MS two-shot · receptionist left, Hân right",
+  hear:"Receptionist: \u201cDay pass?\u201d Hân, very casual: \u201cPrepaid. Snap Saigon. For… a client.\u201d Receptionist, eyeing the coat: \u201cRight this way, agent.\u201d",text:"Visitor badge: GUEST",
+  essence:"Shows the booking is real: entry already paid, as Trâm promised. Also the first outside person to find her weird.",
+  cut:"Walk-through: follow Hân's eyeline across the floor.",flag:"Receptionist is a new one-scene character. Fine, or cut her to save a shot?"},
+ {id:"p2-03",img:"img/s03.jpg",s:2.2,title:"Found him: the \u201cmodel\u201d",shot:"WIDE · Hân small in the foreground hiding, Jake mid-ground",
+  hear:"Soft lo-fi. Hân thought VO: \u201cOkay. The model. He doesn't look very… busy.\u201d",text:"Thought bubble",
+  essence:"Plants the geography (Hân left, Jake right). We see him smiling at his phone instead of working.",
+  cut:"Her phone buzzes: J-cut into the buzz."},
+ {id:"p2-04",img:"img/u1.jpg",s:1.2,title:"J texts: \u201cthinking about you at work\u201d",shot:"INSERT · dating-app chat",
+  hear:"Buzz + ding. Thought VO: \u201che's so thoughtful.\u201d",text:"J: \u201cthinking about you at work ;)\u201d",
+  essence:"Dramatic irony starts: the audience will soon connect J and the 'model'.",
+  cut:"Cut on the swoon → panel 5."},
+ {id:"p2-05",img:"img/s04.jpg",s:1.0,title:"Hân swoons (hiding behind the leaf)",shot:"CU · hearts glow off her phone",
+  hear:"Little romantic sting.",text:"none",
+  essence:"She's genuinely charmed by J: a fun contrast with her stakeout face.",
+  cut:"MATCH CUT: she smiles at her phone → Jake smiles at his phone (same angle)."},
+ {id:"p2-06",img:"img/s05.jpg",s:1.0,title:"Match cut: Jake smiles at his phone",shot:"CU · same framing and tilt as panel 5",
+  hear:"Same romantic sting, held.",text:"none",
+  essence:"The audience-only hint. Hân doesn't see this, we do. It reads as a lovely coincidence until Part 3.",
+  cut:"Back to Hân raising the camera.",flag:"This is the clue. Obvious enough, or too obvious for Part 2? You can tone it down."},
+ {id:"p2-07",img:"img/s06.jpg",s:0.9,title:"Photo attempt: the flash goes off",shot:"MS · flash burst · coworkers turn",
+  hear:"CLICK + loud flash POP + a collective gasp.",text:"none",
+  essence:"Physical comedy: a stealth mission wrecked by her own camera flash.",
+  cut:"Hard cut to the target's face."},
+ {id:"p2-08",img:"img/s07.jpg",s:1.4,title:"Jake squints at the \u201cplant\u201d",shot:"CU · plant leaves rustle behind him",
+  hear:"Silence. A tiny rustle. Jake: \u201c…hm.\u201d Shrugs and goes back to his phone.",text:"none",
+  essence:"He doesn't notice her. Hân stays undiscovered, so the stakeout can continue.",
+  cut:"Cut to the coffee queue."},
+ {id:"p2-09",img:"img/s08.jpg",s:2.4,title:"Rule #1 is tested: the coffee queue",shot:"MS · Hân rigid with a fake smile, Jake leaning in behind",
+  hear:"Barista: \u201cName for the order?\u201d Jake (friendly): \u201cRough day?\u201d Hân says nothing, nods like a bobblehead, then hurries away.",text:"none",
+  essence:"The rule ('don't talk to him') becomes the comedy: she can't answer a simple question.",
+  cut:"She dashes into the glass phone pod.",flag:"I told it to put the moustache in her pocket but it stayed on. I'll fix it before animating."},
+ {id:"p2-10",img:"img/s09.jpg",s:1.2,title:"Safe in the pod: texting Trâm",shot:"MS · glass pod · Jake's blurred silhouette walks past",
+  hear:"Hân whispering: \u201cI got them.\u201d A relieved exhale. Whoosh send.",text:"none",
+  essence:"A breath between the gags. Jake's silhouette shows we're never far from him.",
+  cut:"Reply buzz."},
+ {id:"p2-11",img:"img/u2.jpg",s:2.0,title:"Trâm's questions get strange",shot:"INSERT · WhatsApp, messages pop one by one",
+  hear:"pop · pop · pop (each more intense).",text:"\u201cwait… is he on his phone?\u201d \u201cwho is he texting?\u201d \u201cis he with anyone?\u201d",
+  essence:"The questions give away that this isn't about modelling. Hân sees what we see.",
+  cut:"Push into Hân's face."},
+ {id:"p2-12",img:"img/s10.jpg",s:2.0,title:"\u201cThis is a STAKEOUT.\u201d",shot:"ECU · sunglasses slide down · slow push-in",
+  hear:"Thoughts: \u201cWhy does she want to know who he's texting?\u201d → \u201cThis isn't a photoshoot.\u201d → \u201cThis is a STAKEOUT.\u201d Detective sting.",text:"3 bubbles",
+  essence:"Hân solves the premise, and it's the joke she's been waiting for: she's finally a detective.",
+  cut:"Sunset: time jump."},
+ {id:"p2-13",img:"img/s11.jpg",s:1.8,title:"5:30 pm: roses, and a newspaper with eye-holes",shot:"WIDE · golden hour · Jake with a huge bouquet, Hân spying",
+  hear:"Scooters, street. Hân thought VO: \u201cRoses. For who??\u201d",text:"Thought bubble",
+  essence:"The last 'evidence' beat. She suspects another woman, the audience suspects it's for J. Both are right.",
+  cut:"Cut to Jake's thumb typing."},
+ {id:"p2-14",img:"img/s12.jpg",s:0.9,title:"Jake types, grinning",shot:"CU · roses against his chest · thumbs typing",
+  hear:"Typing taps, rising.",text:"none",
+  essence:"Second hint: he types exactly as her phone is about to buzz.",
+  cut:"SMASH CUT to Hân's phone buzzing."},
+ {id:"p2-15",img:"img/u3.jpg",s:1.5,title:"J: \u201ccan't wait to see you tonight\u201d",shot:"INSERT · dating-app chat",
+  hear:"Buzz. Thought VO: \u201cok J. you're ON.\u201d",text:"J: \u201ccan't wait to see you tonight\u201d · \u201cwear something nice\u201d",
+  essence:"She's excited for J while spying on his lookalike. The audience is screaming.",
+  cut:"A new notification slides in."},
+ {id:"p2-16",img:"img/u4.jpg",s:1.6,title:"Booking extended +2 hours. (Part 3 →)",shot:"INSERT · snapsaigon.com notification",
+  hear:"Confirmation ding. Hân, deadpan to camera: \u201cThe hustle never stops.\u201d",text:"\u201cBooking extended · +2 hours · paid by Trâm\u201d → \u201cPart 3 →\u201d",
+  essence:"The cliffhanger: Trâm pays for 2 more hours, which puts Hân right where J wants to meet.",
+  cut:"End card: \u201cwould you take the extra shift?\u201d"},
+];
+const st={};const $=s=>document.querySelector(s);
+function esc(t){const d=document.createElement("div");d.textContent=t;return d.innerHTML}
+function renderStrip(){
+  let t=0;$("#strip").innerHTML=PANELS.map(p=>{const a=`<a href="#${p.id}" style="--s:${p.s}" data-st="${st[p.id]?.status||""}" aria-label="Panel ${PANELS.indexOf(p)+1}, ${p.s} seconds"><img src="${p.img}" alt=""><span>${String(PANELS.indexOf(p)+1).padStart(2,"0")} · ${t.toFixed(1)}s</span></a>`;t+=p.s;return a}).join("");
+}
+function renderSummary(){
+  const ok=PANELS.filter(p=>st[p.id]?.status==="ok").length,ch=PANELS.filter(p=>st[p.id]?.status==="change").length;
+  const total=PANELS.reduce((a,p)=>a+p.s,0);
+  $("#summary").innerHTML=`<span class="pill">${PANELS.length} panels · ${total.toFixed(1)} s</span><span class="pill" style="color:var(--ok)">✅ ${ok} good</span><span class="pill" style="color:var(--chg)">✏️ ${ch} to change</span><span>${ok===PANELS.length?"All good: tell me “animate Part 2” and I'll render the 480p draft.":"Tap ✅ or ✏️ on each panel. Your notes save automatically."}</span>`;
+}
+function renderPanels(){
+  $("#panels").innerHTML=PANELS.map((p,i)=>`
+  <article class="panel" id="${p.id}">
+    <div class="frame"><img src="${p.img}" alt="Storyboard frame ${i+1}: ${esc(p.title)}" loading="lazy"><span class="num">${String(i+1).padStart(2,"0")}</span><span class="dur">${p.s.toFixed(1)}s</span></div>
+    <div class="beat">
+      <div><div class="shot">${esc(p.shot)}</div><h3>${esc(p.title)}</h3></div>
+      <dl>
+        <dt>We hear</dt><dd>${esc(p.hear)}</dd>
+        <dt>On screen</dt><dd>${esc(p.text)}</dd>
+        <dt>Why it's here</dt><dd class="essence">${esc(p.essence)}</dd>
+        <dt>Cut to next</dt><dd class="cut">${esc(p.cut)}</dd>
+      </dl>
+      ${p.changed?`<div class="changed"><b>Changed from your note:</b> ${esc(p.changed)}</div>`:""}
+      ${p.flag?`<div class="flag"><b>I spotted:</b> ${esc(p.flag)}</div>`:""}
+    </div>
+    <div class="notes">
+      <div class="seg" role="group" aria-label="Verdict for panel ${i+1}">
+        <button class="ok" id="ok-${p.id}" data-id="${p.id}" data-v="ok" aria-pressed="false">✅ Good</button>
+        <button class="change" id="ch-${p.id}" data-id="${p.id}" data-v="change" aria-pressed="false">✏️ Change</button>
+      </div>
+      <label class="eyebrow" for="note-${p.id}">Your note</label>
+      <textarea id="note-${p.id}" data-id="${p.id}" placeholder="e.g. make her face more shocked · cut this shorter · funnier line…"></textarea>
+      <div class="saved" id="sv-${p.id}"></div>
+    </div>
+  </article>`).join("");
+}
+function paint(){
+  for(const p of PANELS){const s=st[p.id]||{};
+    for(const b of document.querySelectorAll(`button[data-id="${p.id}"]`))b.setAttribute("aria-pressed",String(s.status===b.dataset.v));
+    const ta=document.getElementById("note-"+p.id);if(ta&&document.activeElement!==ta&&typeof s.note==="string")ta.value=s.note;}
+  renderStrip();renderSummary();
+}
+renderPanels();paint();
+let db=null,readOnly=false;
+async function save(id,patch,label){
+  st[id]={...(st[id]||{}),...patch};paint();
+  const sv=document.getElementById("sv-"+id);
+  if(!db){sv.textContent="Can't save here: notes need you signed in on claude.ai.";return}
+  if(readOnly){sv.textContent="View only: you can't save notes on this link.";return}
+  try{await db.collection("notes").doc(id).set({status:st[id].status||null,note:st[id].note||"",panel:PANELS.findIndex(p=>p.id===id)+1,board:"p2",updatedAt:new Date().toISOString()});sv.textContent="Saved ✓"}
+  catch(e){if(e&&e.code==="invalid_argument"){readOnly=true;sv.textContent="View only: you can't save notes on this link."}else sv.textContent="Couldn't save. Try again in a moment."}
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".seg button");if(!b)return;const id=b.dataset.id;const cur=st[id]?.status;save(id,{status:cur===b.dataset.v?null:b.dataset.v})});
+const timers={};
+document.addEventListener("input",e=>{const ta=e.target.closest("textarea");if(!ta)return;const id=ta.dataset.id;st[id]={...(st[id]||{}),note:ta.value};document.getElementById("sv-"+id).textContent="Typing…";clearTimeout(timers[id]);timers[id]=setTimeout(()=>save(id,{note:ta.value}),900)});
+(async()=>{
+  try{db=await window.claude?.use?.("db")}catch{db=null}
+  if(!db){for(const p of PANELS)document.getElementById("sv-"+p.id).textContent="Open on claude.ai while signed in to save notes.";return}
+  db.collection("notes").onSnapshot(snap=>{for(const d of snap.docs){const v=d.data();if(v&&d.id.startsWith("p2-"))st[d.id]={status:v.status||null,note:v.note||""}}paint()},()=>{});
+})();
+</script>
