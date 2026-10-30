@@ -25,6 +25,12 @@
 
 ---
 
+### Part 1 v3 (30 Oct 2026, replaces the v2 beat order): two clear threads
+Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (17 panels, about 36 s of beats; trim after approval).
+1. Hook → bedroom (11:04 pm · dating) → Hân swipes ew-ew-ew (cards: Brad/crypto, Kevin/fish, Dan/"just ask me anything") → J's profile: gym selfie, far-away beach, yacht torso. All slightly blurry, zero faces → match → "he types fast. a man of ac—"
+2. **Interruption:** a loud green WhatsApp banner cuts her thought mid-word ("…seriously? at 11pm?") → Thread B: Trâm's brief → booking approved → "nothing major" → 2 rules → mask flies, "this is so sus" → "Sure! Yeah, we can totally do this!" → "Perfect. Remember, only talk to me."
+3. **Back to dating (11:40 pm):** J: "what are you up to tomorrow?" → "classified" → J: "I'll reveal everything tomorrow. including my face ;)" → Hân: "…wait. have I ever seen his face?" → three torsos, "face: not found" → "I'm going on a date with a torso." → Day 1 loop.
+
 ### Part 1 v2: Klaus's storyboard notes (30 Oct 2026, master spec)
 Board: https://claude.ai/artifact/MccuJtnZGDHE5qc1KskhMp (14 panels, about 22 s).
 - **Cold open:** freeze-frame on Hân in the trench coat and moustache. VO: "You might be wondering how I got here…". The on-screen hook changes per post (hook bank on the board).
