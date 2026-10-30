@@ -23,3 +23,9 @@ research/style-studies/*/videos/
 research/style-studies/*/*.jpg
 tools/motion/node_modules/
 tools/motion/package-lock.json
+
+# PI Job edit build cache / intermediates
+projects/snap-saigon-drop/pi_job/_v*/
+projects/snap-saigon-drop/pi_job/amb.wav
+projects/snap-saigon-drop/pi_job/music.wav
+projects/snap-saigon-drop/pi_job/_p1/
