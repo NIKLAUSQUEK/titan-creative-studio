@@ -26,7 +26,7 @@ def avatar(d,cx,cy,col,sc=1.0):
 # --- swipe cards ---
 cards=[("Brad, 34","crypto. gym. crypto.",(120,140,170)),("Kevin, 29","9 photos holding a fish",(140,170,130)),("Dan, 31","just ask me anything",(170,140,150))]
 for i,(nm,bio,col) in enumerate(cards,1):
-  im,d,x,y,w=phone((255,255,255),"Flirtly",PINK,"../v4set/s02.png")
+  im,d,x,y,w=phone((255,255,255),"Tindre",PINK,"../v4set/s02.png")
   d.rounded_rectangle((x+24,y+20,x+w-24,y+560),24,fill=(236,236,244));avatar(d,x+w/2,y+210,col)
   d.text((x+44,y+470),nm,font=F(30),fill=NAVY);d.text((x+44,y+512),bio,font=F(18,False),fill=(90,90,110))
   d.ellipse((x+90,y+600,x+170,y+680),fill=(255,255,255),outline=(220,60,60),width=5);d.text((x+116,y+612),"✕".replace("✕","X"),font=F(40),fill=(220,60,60))
@@ -36,7 +36,7 @@ for i,(nm,bio,col) in enumerate(cards,1):
 # --- J's profile: slightly blurry, body shots only ---
 def jprofile():
   photos=[Image.open(f"raw/{n}.png").convert("RGB") for n in ["j1","j2","j3"] if os.path.exists(f"raw/{n}.png")]
-  im,d,x,y,w=phone((255,255,255),"Flirtly",PINK,"../v4set/s02.png")
+  im,d,x,y,w=phone((255,255,255),"Tindre",PINK,"../v4set/s02.png")
   gw=(w-60)//2
   slots=[(x+24,y+20,gw,330),(x+36+gw,y+20,gw,160),(x+36+gw,y+190,gw,160)]
   for p,(sx,sy,sw,sh) in zip(photos,slots):

@@ -36,7 +36,7 @@ cards=[("m1","Brad, 38","Moved here 6 months ago. Looking for a traditional Asia
 for i,(m,nm,bio,th) in enumerate(cards,1):
   im=load("s02").filter(ImageFilter.GaussianBlur(14));d=ImageDraw.Draw(im,"RGBA");px,py,pw,ph=60,60,420,840
   d.rounded_rectangle((px-10,py-10,px+pw+10,py+ph+10),46,fill=(20,20,24));d.rounded_rectangle((px,py,px+pw,py+ph),38,fill=(255,255,255))
-  d.rounded_rectangle((px,py,px+pw,py+80),38,fill=PINK);d.rectangle((px,py+44,px+pw,py+80),fill=PINK);d.text((px+22,py+26),"Flirtly",font=F(22),fill="white")
+  d.rounded_rectangle((px,py,px+pw,py+80),38,fill=PINK);d.rectangle((px,py+44,px+pw,py+80),fill=PINK);d.text((px+22,py+26),"Tindre",font=F(22),fill="white")
   ph_=ImageOps.fit(Image.open(V+m+".png").convert("RGB"),(pw-40,430),centering=(0.5,0.3));im.paste(ph_,(px+20,py+96));d=ImageDraw.Draw(im,"RGBA")
   d.text((px+24,py+544),nm,font=F(30),fill=NAVY)
   for k,l in enumerate(wrap(d,bio,F(19,False),pw-48)):d.text((px+24,py+590+k*26),l,font=F(19,False),fill=(70,70,90))
@@ -57,7 +57,7 @@ chat("h5c","v5_text_han",  "WhatsApp · +84 90 ••• •••",GREEN,[("out
 chat("tt1c","v5_text_brief","WhatsApp · Trâm",GREEN,[("in","hi! I need natural shots of my model tomorrow, from afar"),("in","he's very camera shy, so don't let him notice"),("in","he'll be at a co-working space. I've paid your entry already"),("in","a few natural shots every hour. I'll send the address")],y0=420)
 chat("tt1c","v5_text_rules","WhatsApp · Trâm",GREEN,[("in","just 2 rules:"),("in","1) don't talk to him"),("in","2) only talk to me. got it?"),("out","got it!")],y0=450)
 chat("tt2","v5_text_perfect","WhatsApp · Trâm",GREEN,[("in","perfect. remember… only talk to me.")],y0=640)
-chat("s02","v5_text_j","Flirtly · J",PINK,[("in","what are you up to tomorrow? ;)"),("out","can't say. classified (shh)"),("in","mysterious. i like it"),("in","i'll reveal everything tomorrow. including my face ;)")],y0=380,thought="…wait. have I ever seen his face?")
+chat("s02","v5_text_j","Tindre · J",PINK,[("in","what are you up to tomorrow? ;)"),("out","can't say. classified (shh)"),("in","mysterious. i like it"),("in","i'll reveal everything tomorrow. including my face ;)")],y0=380,thought="…wait. have I ever seen his face?")
 # plain frames for the board
 for a,b in[("h5c","v5_h5c"),("tt1c","v5_tt1"),("tt2","v5_tt2")]:load(a).save(f"img/{b}.jpg",quality=86)
 print("ok")
