@@ -183,6 +183,8 @@ def card(text, W, H, style="outline", y=0.18, size=0.05, font=None, color="#FFFF
 
 def needs_card(t, st):
     """Use a PNG card when the text has emoji, or the style asks for a card look libass can't draw."""
+    if t["type"] == "credit":
+        return False  # credit texts are never drawn (ledger [credits])
     ht = st.get("hook_text", {})
     return bool(EMOJI.search(t.get("text", ""))) or t.get("style") in ("box", "label", "kicker", "outline") or \
         (t["type"] in ("hook", "header", "title") and ht.get("renderer") == "card")

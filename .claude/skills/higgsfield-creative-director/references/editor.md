@@ -88,7 +88,7 @@ The tool is local and free. Claude makes decisions only and edits only the **rec
 - **Scene labels:** `describe` is zero-token CLIP labels ("a man exercising in a gym, lifting weights"). That is the text Claude reads when picking.
 - **Web images:** `broll-match --web` (or the `web_image` type) searches Openverse then Wikimedia Commons.
   - Licences: CC0, PD, CC BY and CC BY-SA only. Images are ranked locally with CLIP.
-  - CC BY images get an on-screen credit plus `web/ATTRIBUTION.md` for the caption.
+  - CC BY images get no on-screen credit (ledger [credits]); the credit goes in `web/ATTRIBUTION.md` for the caption, and QC checks it is listed.
   - Never Google Images (no licence data; ToS).
   - Real people only as credited editorial/commentary context, never in ads (QC flags).
 - **Assignment:** the strongest beat↔clip pairs are assigned first, each clip is used once, and weak matches reserve nothing.
